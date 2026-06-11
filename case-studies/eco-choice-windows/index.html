@@ -3536,6 +3536,25 @@ section.hero-cover .hero-bg {
   .ecw-duo { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 24px; grid-column: span 3; align-items: start; }
   .ecw-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: #8C8A87; background: rgba(20,20,20,0.04); border: 1px dashed rgba(20,20,20,0.18); border-radius: 8px; padding: 14px 18px; margin-top: 40px; }
   @media (max-width: 760px) { .ecw-gallery { grid-template-columns: 1fr; } .ecw-wide, .ecw-duo { grid-column: span 1; grid-template-columns: 1fr; } }
+
+  /* Work-in-motion marquee */
+  .csm-sec { padding: 100px 0 90px; overflow: hidden; }
+  .csm-head { max-width: 1200px; margin: 0 auto 56px; padding: 0 32px; display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: end; }
+  .csm-row { display: flex; overflow: hidden; margin-bottom: 28px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .csm-track { display: flex; gap: 24px; width: max-content; padding: 14px 12px; animation: csm-scroll 60s linear infinite; }
+  .csm-track.csm-rev { animation-direction: reverse; animation-duration: 70s; }
+  .csm-row:hover .csm-track { animation-play-state: paused; }
+  @keyframes csm-scroll { to { transform: translateX(-50%); } }
+  .csm-card { display: block; width: 240px; flex: none; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.08); border-radius: 12px; padding: 10px 10px 12px; box-shadow: 0 14px 36px -22px rgba(20,20,20,0.35); transition: transform .3s ease, box-shadow .3s ease; }
+  .csm-card:nth-child(odd) { transform: rotate(-1.4deg); }
+  .csm-card:nth-child(even) { transform: rotate(1.2deg); }
+  .csm-card:hover { transform: rotate(0deg) translateY(-6px) scale(1.03); box-shadow: 0 26px 56px -22px rgba(20,20,20,0.45); }
+  .csm-card img, .csm-card video { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; display: block; }
+  .csm-card .csm-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #8C8A87; margin-top: 9px; display: flex; justify-content: space-between; }
+  .csm-cta-row { max-width: 1200px; margin: 36px auto 0; padding: 0 32px; }
+  @media (prefers-reduced-motion: reduce) { .csm-track { animation: none; } }
+  @media (max-width: 640px) { .csm-head { grid-template-columns: 1fr; gap: 16px; } .csm-card { width: 180px; } }
+
 </style>
 
   <section class="hero-cover">
@@ -3588,14 +3607,26 @@ section.hero-cover .hero-bg {
 
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Work</div>
+      <div class="section-lbl" id="the-work">The Work</div>
       <h2 class="sec-title">Straight from the <span class="sem">working files</span>.</h2>
     </div>
     <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These are real creatives from Batch 2 of the Eco Choice program, exactly as they shipped to Meta. Offer-led statics, UGC video concepts, and a curb-appeal carousel.</p>
+
+  <!-- Work-in-motion marquee -->
+  <section class="csm-sec" id="work-in-motion">
+    <div class="csm-head">
+      <div>
+        <div class="section-lbl">The Output</div>
+        <h2 class="sec-title" style="margin-top:24px">The creative wall. <span class="sem">All Eco Choice.</span></h2>
+      </div>
+      <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:520px;justify-self:end;align-self:end">Statics, UGC video, carousels. Concepted, designed, and tested in-house for one client, in one month. Hover to stop the line.</p>
+    </div>
+    <div class="csm-row"><div class="csm-track"><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/offer-v1.jpg" alt="Static · Offer ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Offer</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Static · Comfort ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Comfort</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/curb-appeal.jpg" alt="Static · Curb Appeal ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Curb Appeal</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/energy-ac.jpg" alt="Static · Energy ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Energy</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><video src="/assets/work/eco-choice/video-loop-1.mp4" autoplay muted loop playsinline></video><div class="csm-lbl"><span>Video Ad · Hook A</span><span>Reels</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/brand-2.jpg" alt="Static · Brand ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Brand</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/sound.jpg" alt="Static · Sound ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Sound</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/door-v2.jpg" alt="Static · Doors ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Doors</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/offer-v1.jpg" alt="Static · Offer ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Offer</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Static · Comfort ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Comfort</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/curb-appeal.jpg" alt="Static · Curb Appeal ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Curb Appeal</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/energy-ac.jpg" alt="Static · Energy ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Energy</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><video src="/assets/work/eco-choice/video-loop-1.mp4" autoplay muted loop playsinline></video><div class="csm-lbl"><span>Video Ad · Hook A</span><span>Reels</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/brand-2.jpg" alt="Static · Brand ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Brand</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/sound.jpg" alt="Static · Sound ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Sound</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/door-v2.jpg" alt="Static · Doors ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Doors</span><span>Meta</span></div></a></div></div>
+    <div class="csm-row"><div class="csm-track csm-rev"><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/brand.jpg" alt="Static · Brand ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Brand</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="Static · Curb Appeal ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Curb Appeal</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/static-ad-1.png" alt="Static · 40% Offer ad creative" loading="lazy"><div class="csm-lbl"><span>Static · 40% Offer</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/energy.jpg" alt="Static · Energy ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Energy</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><video src="/assets/work/eco-choice/video-loop-2.mp4" autoplay muted loop playsinline></video><div class="csm-lbl"><span>Video Ad · Hook B</span><span>Reels</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/comfort-2.jpg" alt="Static · Comfort ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Comfort</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/static-ad-2.png" alt="Static · Financing ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Financing</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/static-ad-3.png" alt="Static · Doors ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Doors</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/brand.jpg" alt="Static · Brand ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Brand</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="Static · Curb Appeal ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Curb Appeal</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/static-ad-1.png" alt="Static · 40% Offer ad creative" loading="lazy"><div class="csm-lbl"><span>Static · 40% Offer</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/energy.jpg" alt="Static · Energy ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Energy</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><video src="/assets/work/eco-choice/video-loop-2.mp4" autoplay muted loop playsinline></video><div class="csm-lbl"><span>Video Ad · Hook B</span><span>Reels</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/statics/comfort-2.jpg" alt="Static · Comfort ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Comfort</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/static-ad-2.png" alt="Static · Financing ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Financing</span><span>Meta</span></div></a><a class="csm-card" href="#the-work"><img src="/assets/work/eco-choice/static-ad-3.png" alt="Static · Doors ad creative" loading="lazy"><div class="csm-lbl"><span>Static · Doors</span><span>Meta</span></div></a></div></div>
+      </section>
+
+
     <div class="ecw-gallery">
-      <div class="ecw-shot"><img src="/assets/work/eco-choice/static-ad-1.png" alt="Eco Choice static ad: 40% off windows plus free triple pane glass upgrade"><div class="ecw-shot-lbl"><span>Static &middot; Offer</span><span>Meta</span></div></div>
-      <div class="ecw-shot"><img src="/assets/work/eco-choice/static-ad-2.png" alt="Eco Choice static ad: 0% interest financing, don't pay until 2027"><div class="ecw-shot-lbl"><span>Static &middot; Financing</span><span>Meta</span></div></div>
-      <div class="ecw-shot"><img src="/assets/work/eco-choice/static-ad-3.png" alt="Eco Choice static ad: 35% off steel and fiberglass entry doors"><div class="ecw-shot-lbl"><span>Static &middot; Doors</span><span>Meta</span></div></div>
       <div class="ecw-duo">
         <div class="ecw-shot"><img src="/assets/work/eco-choice/ugc-1.png" alt="UGC video concept: The Things I Stopped Doing, comfort angle"><div class="ecw-shot-lbl"><span>UGC Video &middot; Comfort</span><span>Reels</span></div></div>
         <div class="ecw-shot"><img src="/assets/work/eco-choice/ugc-2.png" alt="UGC video concept: The Thermostat War, energy angle"><div class="ecw-shot-lbl"><span>UGC Video &middot; Energy</span><span>Reels</span></div></div>
@@ -3887,5 +3918,21 @@ if (typeof setMegaTab !== 'function') {
 }
 </script>
 <script src="/assets/case-study-banner.js" defer></script>
+
+<script>
+/* Marquee video loops: muted, looping, always on. */
+(function () {
+  function go() {
+    document.querySelectorAll('.csm-card video').forEach(function (v) {
+      v.muted = true;
+      v.play().catch(function () {});
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go);
+  else go();
+  window.addEventListener('scroll', go, { once: true, passive: true });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) go(); });
+})();
+</script>
 </body>
 </html>
