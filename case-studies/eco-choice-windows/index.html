@@ -3620,6 +3620,45 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Attribution */
+  .ecw-attr-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; margin-top: 48px; align-items: start; }
+  .ecw-journey { list-style: none; margin: 0; padding: 0; position: relative; }
+  .ecw-journey::before { content: ''; position: absolute; left: 11px; top: 14px; bottom: 14px; width: 2px; background: #E1DCD1; }
+  .ecw-journey li { position: relative; padding: 0 0 30px 44px; }
+  .ecw-journey li:last-child { padding-bottom: 0; }
+  .ecw-journey .jdot { position: absolute; left: 4px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: #FAF8F3; border: 3px solid #1A40C7; z-index: 1; }
+  .ecw-journey li:last-child .jdot { background: #FFEC00; border-color: #141414; }
+  .ecw-journey .jlbl { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: #1A40C7; }
+  .ecw-journey .jtxt { font-size: 15px; color: #2A2A2A; line-height: 1.5; margin-top: 4px; }
+  .ecw-crm { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; box-shadow: 0 24px 56px -28px rgba(20,20,20,0.35); overflow: hidden; }
+  .ecw-crm-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: #F5F2EC; border-bottom: 1px solid rgba(20,20,20,0.08); font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; color: #6A686B; }
+  .ecw-crm-head .live { width: 7px; height: 7px; border-radius: 50%; background: #2D8F5F; }
+  .ecw-crm-rows { padding: 8px 20px; }
+  .ecw-crm-row { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 11px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); font-size: 14px; }
+  .ecw-crm-row:last-child { border-bottom: none; }
+  .ecw-crm-row .k { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #8C8A87; padding-top: 2px; }
+  .ecw-crm-row .v { color: #141414; font-weight: 500; }
+  .ecw-crm-row .v .tag { display: inline-block; background: #E9EEFD; color: #1A40C7; border-radius: 6px; padding: 2px 9px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 11px; }
+  .ecw-crm-stages { display: flex; gap: 8px; flex-wrap: wrap; padding: 14px 20px 18px; border-top: 1px solid rgba(20,20,20,0.08); }
+  .ecw-stage { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; border: 1px solid #2D8F5F; color: #2D8F5F; }
+  .ecw-stage.won { background: #FFEC00; border-color: #FFEC00; color: #141414; font-weight: 600; }
+  /* CRO loop */
+  .ecw-loop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; margin-top: 48px; }
+  .ecw-exp { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.08); border-radius: 12px; padding: 24px 22px; position: relative; }
+  .ecw-loop .ecw-exp:not(:last-child)::after { content: '\2192'; position: absolute; right: -32px; top: 50%; transform: translateY(-50%); font-size: 22px; color: #8C8A87; }
+  .ecw-exp-tag { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A40C7; }
+  .ecw-exp-hyp { font-family: var(--serif); font-style: italic; font-size: 16.5px; line-height: 1.45; color: #141414; margin: 12px 0 18px; min-height: 72px; }
+  .ecw-exp-up { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #141414; }
+  .ecw-exp-up small { display: block; font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8A87; margin-top: 4px; }
+  .ecw-exp-pill { display: inline-flex; margin-top: 16px; padding: 6px 13px; border-radius: 100px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9.5px; letter-spacing: 0.07em; text-transform: uppercase; }
+  .ecw-exp-pill.base { background: #141414; color: #FAF8F3; }
+  .ecw-exp-pill.run { border: 1px solid #5D7BEA; color: #1A40C7; }
+  @media (max-width: 860px) {
+    .ecw-attr-grid { grid-template-columns: 1fr; }
+    .ecw-loop { grid-template-columns: 1fr; gap: 28px; }
+    .ecw-loop .ecw-exp:not(:last-child)::after { content: '\2193'; right: auto; left: 50%; top: auto; bottom: -26px; transform: translateX(-50%); }
+  }
+
   /* Search rebuild */
   .ecw-search-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; margin-top: 48px; align-items: start; }
   .ecw-tree { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 48px -28px rgba(20,20,20,0.3); position: sticky; top: 100px; }
@@ -3921,6 +3960,73 @@ section.hero-cover .hero-bg {
         </div>
       </div>
       <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Numbers are illustrative placeholders. Swap in the live creative analytics export before this ships.</p>
+    </div>
+  </section>
+
+  
+  <section class="sec">
+    <div class="sec-head">
+      <div class="section-lbl">The Attribution</div>
+      <h2 class="sec-title">Every quote knows <span class="sem">which ad sent it</span>.</h2>
+    </div>
+    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">No more "leads are up, not sure why." Source, campaign, creative, and page angle ride with every lead from first click to closed revenue inside Zoho CRM.</p>
+    <div class="ecw-attr-grid">
+      <ul class="ecw-journey">
+        <li><span class="jdot"></span><div class="jlbl">Touch 01 &middot; Meta</div><div class="jtxt">Homeowner stops on the Comment Reply energy ad. UTM tags fire on the click.</div></li>
+        <li><span class="jdot"></span><div class="jlbl">Touch 02 &middot; Landing Page</div><div class="jtxt">Lands on the campaign page. The angle, the creative, and the session ride along.</div></li>
+        <li><span class="jdot"></span><div class="jlbl">Touch 03 &middot; Quote Form</div><div class="jtxt">Submits the quote request. Duplicate-submission handling means one lead, one record, one notification.</div></li>
+        <li><span class="jdot"></span><div class="jlbl">Touch 04 &middot; Zoho CRM</div><div class="jtxt">Lead record created with full source data. Speed-to-lead automation fires in minutes.</div></li>
+        <li><span class="jdot"></span><div class="jlbl">Closed &middot; Revenue Posts Back</div><div class="jtxt">The win posts back to the exact ad that started it. That's what the scoreboard runs on.</div></li>
+      </ul>
+      <div class="ecw-crm">
+        <div class="ecw-crm-head"><span class="live"></span><span>Zoho CRM &middot; Lead Record</span><span style="margin-left:auto">#EC-4821</span></div>
+        <div class="ecw-crm-rows">
+          <div class="ecw-crm-row"><div class="k">Lead</div><div class="v">Homeowner &middot; Etobicoke</div></div>
+          <div class="ecw-crm-row"><div class="k">Source</div><div class="v">Meta &middot; Paid Social</div></div>
+          <div class="ecw-crm-row"><div class="k">Campaign</div><div class="v">Prospecting &middot; Bill Fighter</div></div>
+          <div class="ecw-crm-row"><div class="k">Creative</div><div class="v">Comment Reply &middot; Energy <span class="tag">Hook B</span></div></div>
+          <div class="ecw-crm-row"><div class="k">LP Angle</div><div class="v"><span class="tag">drafty-windows</span></div></div>
+          <div class="ecw-crm-row"><div class="k">First Response</div><div class="v">11 minutes</div></div>
+        </div>
+        <div class="ecw-crm-stages">
+          <span class="ecw-stage">New &#10003;</span>
+          <span class="ecw-stage">Contacted &#10003;</span>
+          <span class="ecw-stage">Quote Sent &#10003;</span>
+          <span class="ecw-stage won">Won</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#8C8A87;margin-top:24px">[PROTOTYPE NOTE] Sample record shown. Field mapping mirrors the live Zoho CRM build.</p>
+  </section>
+
+  <section class="sec bone-full">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <div class="section-lbl">The Loop</div>
+        <h2 class="sec-title">Test. Win. <span class="sem">New baseline.</span> Repeat.</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">CRO here isn't a quarterly report. Every experiment starts as a written hypothesis in Zoho PageSense, runs as an A/B test on live traffic, and the winner becomes the new floor. Then the next test starts.</p>
+      <div class="ecw-loop">
+        <div class="ecw-exp">
+          <div class="ecw-exp-tag">Experiment 01</div>
+          <p class="ecw-exp-hyp">"Moving the quote form above the fold will lift form starts on mobile."</p>
+          <div class="ecw-exp-up">+34%<small>Form Starts &middot; B Beat A</small></div>
+          <span class="ecw-exp-pill base">Winner &middot; Now The Baseline</span>
+        </div>
+        <div class="ecw-exp">
+          <div class="ecw-exp-tag">Experiment 02</div>
+          <p class="ecw-exp-hyp">"A three-step quote flow will beat the long single form on completion."</p>
+          <div class="ecw-exp-up">+21%<small>Completed Quotes &middot; B Beat A</small></div>
+          <span class="ecw-exp-pill base">Winner &middot; Now The Baseline</span>
+        </div>
+        <div class="ecw-exp">
+          <div class="ecw-exp-tag">Experiment 03</div>
+          <p class="ecw-exp-hyp">"Showing the 0% financing badge beside the form will lift submits from the Bill Fighter segment."</p>
+          <div class="ecw-exp-up">&hellip;<small>Running Now &middot; Heat Maps + A/B Live</small></div>
+          <span class="ecw-exp-pill run">Collecting Data</span>
+        </div>
+      </div>
+      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#8C8A87;margin-top:28px">[PROTOTYPE NOTE] Uplifts are illustrative placeholders. Swap with the PageSense experiment log before this ships.</p>
     </div>
   </section>
 
