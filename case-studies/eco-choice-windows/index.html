@@ -3620,6 +3620,17 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* CRO experiment overlays on the laptops */
+  .ecw-cro-overlay { position: absolute; right: -18px; top: 64px; z-index: 5; display: flex; flex-direction: column; gap: 12px; width: 250px; pointer-events: none; }
+  .ecw-cro-chip { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.12); border-radius: 10px; padding: 13px 15px; box-shadow: 0 18px 40px -16px rgba(20,20,20,0.5); }
+  .ecw-cro-chip .t { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A40C7; }
+  .ecw-cro-chip .h { font-style: italic; font-size: 12.5px; line-height: 1.45; color: #2A2A2A; margin: 6px 0 9px; }
+  .ecw-cro-chip .u { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 17px; font-weight: 600; color: #141414; letter-spacing: -0.02em; }
+  .ecw-cro-chip .u small { display: block; font-size: 9px; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; color: #8C8A87; margin-top: 3px; }
+  .ecw-cro-chip .w { display: inline-flex; margin-top: 9px; padding: 4px 10px; border-radius: 100px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.07em; text-transform: uppercase; background: #141414; color: #FAF8F3; }
+  .ecw-cro-chip .w.run { background: transparent; border: 1px solid #5D7BEA; color: #1A40C7; }
+  @media (max-width: 760px) { .ecw-cro-overlay { right: 8px; width: 210px; top: 52px; } }
+
   /* Attribution */
   .ecw-attr-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; margin-top: 48px; align-items: start; }
   .ecw-journey { list-style: none; margin: 0; padding: 0; position: relative; }
@@ -3872,15 +3883,22 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">The Pages</div>
       <h2 class="sec-title">Layer one, <span class="sem">live</span>.</h2>
     </div>
-    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These aren't mockups. The left laptop is the live campaign page Meta traffic lands on. The right one is the same build doing something smarter for Google Ads: it rewrites its own pain points to match the search. Drafty windows, failed seals, full reno. One page, seven angles, every click lands on its own story.</p>
+    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These aren't mockups. The left laptop is the live campaign page Meta traffic lands on. The right one is the same build doing something smarter for Google Ads: it rewrites its own pain points to match the search. And the annotations are the CRO loop at work, every experiment starts as a written hypothesis in Zoho PageSense, the winner becomes the new baseline, and the next test starts the same day.</p>
     <div class="ecw-pages-grid">
       <div class="ecw-browser">
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca</div></div>
+        <div class="ecw-cro-overlay">
+          <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 01 &middot; PageSense</div><div class="h">"Quote form above the fold lifts mobile starts."</div><div class="u">+34%<small>Form Starts &middot; B Beat A</small></div><span class="w">Winner &middot; Now The Baseline</span></div>
+          <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 02 &middot; PageSense</div><div class="h">"Three-step quote flow beats the long form."</div><div class="u">+21%<small>Completed Quotes</small></div><span class="w">Winner &middot; Now The Baseline</span></div>
+        </div>
         <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice campaign landing page" tabindex="-1"></iframe></div>
         <div class="ecw-browser-foot"><span class="flbl">Campaign LP &middot; Triple-Pane Installed In A Day</span><a href="https://landing.ecochoicewindows.ca/" target="_blank" rel="noopener">Visit live &rarr;</a></div>
       </div>
       <div class="ecw-browser">
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca/?angle=drafty-windows</div></div>
+        <div class="ecw-cro-overlay">
+          <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 03 &middot; Live Now</div><div class="h">"Financing badge beside the form lifts Bill Fighter submits."</div><div class="u">&hellip;<small>Heat Maps + A/B Running</small></div><span class="w run">Collecting Data</span></div>
+        </div>
         <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/?angle=drafty-windows" title="Eco Choice dynamic Google Ads landing page" tabindex="-1"></iframe></div>
         <div class="ecw-browser-foot"><span class="flbl">Dynamic Google Ads LP &middot; One Page, Seven Angles</span><a href="https://landing.ecochoicewindows.ca/?angle=drafty-windows" target="_blank" rel="noopener">Visit live &rarr;</a></div>
       </div>
@@ -3997,37 +4015,6 @@ section.hero-cover .hero-bg {
       </div>
     </div>
     <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#8C8A87;margin-top:24px">[PROTOTYPE NOTE] Sample record shown. Field mapping mirrors the live Zoho CRM build.</p>
-  </section>
-
-  <section class="sec bone-full">
-    <div class="sec-inner">
-      <div class="sec-head">
-        <div class="section-lbl">The Loop</div>
-        <h2 class="sec-title">Test. Win. <span class="sem">New baseline.</span> Repeat.</h2>
-      </div>
-      <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">CRO here isn't a quarterly report. Every experiment starts as a written hypothesis in Zoho PageSense, runs as an A/B test on live traffic, and the winner becomes the new floor. Then the next test starts.</p>
-      <div class="ecw-loop">
-        <div class="ecw-exp">
-          <div class="ecw-exp-tag">Experiment 01</div>
-          <p class="ecw-exp-hyp">"Moving the quote form above the fold will lift form starts on mobile."</p>
-          <div class="ecw-exp-up">+34%<small>Form Starts &middot; B Beat A</small></div>
-          <span class="ecw-exp-pill base">Winner &middot; Now The Baseline</span>
-        </div>
-        <div class="ecw-exp">
-          <div class="ecw-exp-tag">Experiment 02</div>
-          <p class="ecw-exp-hyp">"A three-step quote flow will beat the long single form on completion."</p>
-          <div class="ecw-exp-up">+21%<small>Completed Quotes &middot; B Beat A</small></div>
-          <span class="ecw-exp-pill base">Winner &middot; Now The Baseline</span>
-        </div>
-        <div class="ecw-exp">
-          <div class="ecw-exp-tag">Experiment 03</div>
-          <p class="ecw-exp-hyp">"Showing the 0% financing badge beside the form will lift submits from the Bill Fighter segment."</p>
-          <div class="ecw-exp-up">&hellip;<small>Running Now &middot; Heat Maps + A/B Live</small></div>
-          <span class="ecw-exp-pill run">Collecting Data</span>
-        </div>
-      </div>
-      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#8C8A87;margin-top:28px">[PROTOTYPE NOTE] Uplifts are illustrative placeholders. Swap with the PageSense experiment log before this ships.</p>
-    </div>
   </section>
 
   <section class="sec">

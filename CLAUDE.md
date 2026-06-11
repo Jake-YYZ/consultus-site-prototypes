@@ -117,13 +117,12 @@ All buttons are pills (`border-radius: 100px`):
 5. **The Build**: numbered layers (Pages / Creative / CRO via Zoho PageSense / CRM via Zoho CRM). Say "Zoho CRM" for CRM work, NOT GoHighLevel, even when GHL is the actual stack; Jake's call.
 6. **The Timeline**: kickoff-to-live milestones with real dates (pulled from the ClickUp Living Brief).
 7. **The Search Rebuild** (bone): Google Ads story, numbered beats (audit / intent ad groups / PMax fed by Meta winners / negative wall) beside a mono account-structure tree card. PMax branch highlighted yellow.
-8. **The Pages**: live production pages embedded in scaled-down laptop frames (iframes, eager-loaded, pointer-events none, JS scales 1280px renders to card width). Eco Choice's site has no X-Frame-Options; check before assuming another client's site is frameable.
+8. **The Pages**: live production pages embedded in scaled-down laptop frames (iframes, eager-loaded, pointer-events none, JS scales 1280px renders to card width), with CRO experiment chips overlaid on the screens (hypothesis, uplift, "Winner · Now The Baseline" / "Collecting Data" pills). Eco Choice's site has no X-Frame-Options; check before assuming another client's site is frameable.
 9. **The Motion** (bone): 3 hook-family cards with looping video ads as evidence; copy explains hooks-as-hypotheses feeding statics and page copy.
 10. **The Scoreboard** (dark): creative-analytics-style table (hook rate bars, ROAS, winner/testing/iterating/killed pills). Numbers are illustrative placeholders marked with a [PROTOTYPE NOTE]; the old GTA targeting map this replaced lives in git history.
 11. **The Attribution**: 5-touch lead journey timeline beside a mock Zoho CRM lead record card (source, campaign, creative, LP angle, stage pills ending in a yellow Won).
-12. **The Loop** (bone): CRO experiment cards, hypothesis quote, uplift number, "Winner · Now The Baseline" pill, last card always "Collecting Data" to show the loop never stops. Illustrative numbers marked.
-13. **The Work**: counter-scrolling creative wall (marquee) of real statics + muted looping video ads. Hover pauses. All assets in `assets/work/<client>/`.
-14. **CTA** (dark): vertical-targeted ("If you sell windows and doors, this is your sign") + Book a Strategy Call + See All Case Studies.
+12. **The Work**: counter-scrolling creative wall (marquee) of real statics + muted looping video ads. Hover pauses. All assets in `assets/work/<client>/`.
+13. **CTA** (dark): vertical-targeted ("If you sell windows and doors, this is your sign") + Book a Strategy Call + See All Case Studies.
 Assets came from the client's Drive folders (statics + 150-235MB video masters compressed to 8s loops via `avconvert --preset Preset960x540 --start 0 --duration 8`). Performance metrics intentionally omitted; a `[PROTOTYPE NOTE]` block marks where verified numbers go. Videos need a JS `play()` kick (script at end of page); browser screenshots of hidden tabs show videos/iframes blank, that's tab throttling, not a bug. Revert checkpoint: git tag `checkpoint-before-v2-redesign`.
 
 ## Working preferences (Jake's rules)
