@@ -3620,6 +3620,56 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Hero rebalance + cycling ad card */
+  .ecw-hv-a { margin-left: -170px; }
+  .ecw-hv-c { right: -6px; top: 52px; z-index: 4; width: 205px; }
+  .ecw-hv-d { z-index: 5; }
+  .ecw-hv-e { left: 118px; top: -16px; width: 150px; z-index: 2; padding: 6px; animation: ecwFloatC 9s ease-in-out infinite; }
+  .ecw-hv-e img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 9px; display: block; transition: opacity .4s ease; }
+  @media (max-width: 900px) { .ecw-hv-e { display: none; } }
+  /* North Star card */
+  .ecw-brief-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+  .ecw-ns { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 56px -30px rgba(20,20,20,0.35); position: sticky; top: 100px; }
+  .ecw-ns-head { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 12px 18px; border-bottom: 1px solid rgba(20,20,20,0.08); }
+  .ecw-ns-body { padding: 20px; }
+  .ecw-ns-body svg { width: 100%; height: auto; display: block; }
+  .ecw-ns-foot { padding: 0 20px 18px; }
+  .ecw-ns-foot p { font-size: 13px; line-height: 1.55; color: #6A686B; margin: 0 0 12px; }
+  .ecw-ns-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .ecw-ns-chips i { font-style: normal; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 11px; border-radius: 100px; border: 1px solid rgba(20,20,20,0.18); color: #2A2A2A; }
+  @media (max-width: 860px) { .ecw-brief-grid { grid-template-columns: 1fr; } .ecw-ns { position: static; } }
+  /* A/B verdict deck */
+  .ecw-ab-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 64px; align-items: center; }
+  .ecw-ab-copy h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: #141414; margin: 0 0 12px; }
+  .ecw-ab-copy p { font-size: 16px; line-height: 1.6; color: #6A686B; margin: 0; max-width: 440px; }
+  .ecw-ab { position: relative; height: 300px; }
+  .ecw-ab-card { position: absolute; inset: 0; margin: auto; width: min(340px, 92%); height: 260px; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 16px; box-shadow: 0 26px 60px -24px rgba(20,20,20,0.45); padding: 24px; box-sizing: border-box; opacity: 0; display: flex; flex-direction: column; justify-content: space-between; }
+  .ecw-ab-card .t { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: #1A40C7; }
+  .ecw-ab-card .h { font-size: 17px; font-weight: 600; color: #141414; line-height: 1.35; letter-spacing: -0.01em; }
+  .ecw-ab-card .r { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #141414; }
+  .ecw-ab-card .r small { display: block; font-size: 10px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: #8C8A87; margin-top: 2px; }
+  .ecw-ab-stamp { position: absolute; top: 20px; right: 18px; border: 3px solid #2D8F5F; color: #2D8F5F; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 6px; transform: rotate(12deg); }
+  .ecw-ab-card.lose .ecw-ab-stamp { border-color: #D94545; color: #D94545; transform: rotate(-12deg); }
+  .ecw-ab-card.c1 { animation: ecwAbR 16s ease-in-out infinite; }
+  .ecw-ab-card.c2 { animation: ecwAbL 16s ease-in-out infinite 4s; }
+  .ecw-ab-card.c3 { animation: ecwAbR 16s ease-in-out infinite 8s; }
+  .ecw-ab-card.c4 { animation: ecwAbL 16s ease-in-out infinite 12s; }
+  @keyframes ecwAbR { 0% { opacity: 0; transform: scale(0.94) translateY(10px) } 3% { opacity: 1; transform: none } 22% { opacity: 1; transform: none } 28% { opacity: 0; transform: translateX(135%) rotate(15deg) } 100% { opacity: 0 } }
+  @keyframes ecwAbL { 0% { opacity: 0; transform: scale(0.94) translateY(10px) } 3% { opacity: 1; transform: none } 22% { opacity: 1; transform: none } 28% { opacity: 0; transform: translateX(-135%) rotate(-15deg) } 100% { opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) { .ecw-ab-card { animation: none !important; } .ecw-ab-card.c1 { opacity: 1; } }
+  @media (max-width: 860px) { .ecw-ab-wrap { grid-template-columns: 1fr; } }
+  /* Persona creative fans */
+  .ecw-fan { position: relative; height: 158px; margin-top: 18px; }
+  .ecw-fan img, .ecw-fan video { position: absolute; width: 47%; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; border: 2px solid #2A2A2A; box-shadow: 0 10px 26px -10px rgba(0,0,0,0.6); }
+  .ecw-fan .f1 { left: 0; top: 8px; transform: rotate(-6deg); z-index: 1; }
+  .ecw-fan .f2 { left: 26%; top: 0; transform: rotate(1.5deg); z-index: 2; }
+  .ecw-fan .f3 { left: 52%; top: 10px; transform: rotate(6deg); z-index: 3; }
+  .ecw-fan-badge { position: absolute; right: -4px; bottom: -4px; z-index: 4; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #141414; background: #FFEC00; border-radius: 100px; padding: 4px 9px; font-weight: 600; }
+  .ecw-fmt { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
+  .ecw-fmt i { font-style: normal; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 7.5px; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; border: 1px solid #3a3a3a; color: #C7C5C8; }
+  .ecw-fun { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #5e5c5a; margin-top: 11px; }
+  .ecw-fun b { color: #FFEC00; font-weight: 600; }
+
   /* Scroll reveals */
   .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
   .rv.in { opacity: 1; transform: none; }
@@ -3791,9 +3841,10 @@ section.hero-cover .hero-bg {
       </div>
       
       <div class="ecw-hero-visual" aria-hidden="true">
+        <div class="ecw-hv-card ecw-hv-e"><img id="ecw-hero-cycle" src="/assets/work/eco-choice/statics/offer-v1.jpg" alt=""></div>
         <div class="ecw-hv-card ecw-hv-b"><div class="ecw-gmock">
           <div class="ecw-mock-tag">Google Search &middot; Intent</div>
-          <div class="ecw-gmock-bar">window replacement vaughan</div>
+          <div class="ecw-gmock-bar" id="ecw-gq">window replacement vaughan</div>
           <div class="ecw-gmock-sp">Sponsored</div>
           <div class="ecw-gmock-t">Eco Choice Windows &amp; Doors | 40% Off Replacement Windows</div>
           <div class="ecw-gmock-u">ecochoicewindows.ca</div>
@@ -3817,6 +3868,7 @@ section.hero-cover .hero-bg {
         <div class="cell"><span class="mono">Engagement</span><strong>Active &middot; ongoing</strong></div>
       </div>
     </div>
+
   </section>
 
   <section class="sec dark-full">
@@ -3831,7 +3883,9 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">The Brief</div>
       <h2 class="sec-title">The objective, and what stood <span class="sem">in the way</span>.</h2>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
+    <div class="ecw-brief-grid">
+      <div>
+      <div class="content-block" style="border-top:none;padding-top:0">
       <h3>The Objective</h3>
       <div><p>Turn a Vaughan-based windows and doors manufacturer into a predictable growth engine. Qualified quote requests week in, week out, with every dollar accountable from first click to closed install. Not more traffic. More installs.</p></div>
     </div>
@@ -3842,7 +3896,30 @@ section.hero-cover .hero-bg {
     <div class="content-block">
       <h3>The Bet</h3>
       <div><p>Build the whole engine before scaling spend. Understand the buyer first, rebuild the accounts around intent, give every click a page built to convert, and wire attribution through to the CRM so the results are facts, not feelings.</p></div>
+    </div></div>
+      <div class="ecw-ns rv">
+        <div class="ecw-ns-head">The North Star &middot; Set Before Launch</div>
+        <div class="ecw-ns-body">
+          <svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Projected quote volume ramp">
+            <rect x="34" y="38" width="312" height="56" fill="#E9EEFD" opacity="0.7" rx="4"/>
+            <text x="40" y="55" font-family="ui-monospace,Menlo,monospace" font-size="9" fill="#5D7BEA" letter-spacing="1">INDUSTRY BENCHMARK BAND</text>
+            <g stroke="#E1DCD1" stroke-width="1"><line x1="34" y1="150" x2="346" y2="150"/><line x1="34" y1="110" x2="346" y2="110"/><line x1="34" y1="70" x2="346" y2="70"/></g>
+            <polyline points="40,156 110,140 180,116 250,88 330,56" fill="none" stroke="#1A40C7" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="40" cy="156" r="4" fill="#1A40C7"/><circle cx="110" cy="140" r="4" fill="#1A40C7"/><circle cx="180" cy="116" r="4" fill="#1A40C7"/><circle cx="250" cy="88" r="4" fill="#1A40C7"/>
+            <circle cx="330" cy="56" r="7" fill="#FFEC00" stroke="#141414" stroke-width="2"/>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="9" fill="#8C8A87" letter-spacing="1">
+              <text x="34" y="178">APR</text><text x="104" y="178">MAY</text><text x="174" y="178">JUN</text><text x="244" y="178">JUL</text><text x="318" y="178">QBR 1</text>
+            </g>
+            <text x="252" y="44" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700" fill="#141414" letter-spacing="1">TARGET</text>
+          </svg>
+        </div>
+        <div class="ecw-ns-foot">
+          <p>Hard projections modeled on Eco Choice's first-party data and industry benchmarks, signed off before a dollar of media ran. Everyone knew the target. Everyone knows the score.</p>
+          <div class="ecw-ns-chips"><i>Quote Volume Ramp</i><i>Cost Per Quote Range</i><i>Payback Window</i></div>
+        </div>
+      </div>
     </div>
+    
   </section>
 
   
@@ -3862,7 +3939,7 @@ section.hero-cover .hero-bg {
           <p class="q">"One room is a freezer. The next one is a sauna."</p>
           <div class="hook-lbl">The Hook</div>
           <p class="hook">Windows built for maximum home comfort.</p>
-          <img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Comfort persona ad" loading="lazy">
+          <div class="ecw-fan"><img class="f1" src="/assets/work/eco-choice/statics/comfort.jpg" alt="" loading="lazy"><img class="f2" src="/assets/work/eco-choice/ugc-1.png" alt="" loading="lazy"><img class="f3" src="/assets/work/eco-choice/statics/comfort-2.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+9 in market</span></div><div class="ecw-fmt"><i>Static</i><i>UGC</i><i>Lo-Fi</i></div><div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; BOF</div>
         </div>
         <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 02</div>
@@ -3870,7 +3947,7 @@ section.hero-cover .hero-bg {
           <p class="q">"Why is hydro up again? Nothing changed."</p>
           <div class="hook-lbl">The Hook</div>
           <p class="hook">Your A/C isn't the problem. Your windows are.</p>
-          <img src="/assets/work/eco-choice/statics/energy-ac.jpg" alt="Energy persona ad" loading="lazy">
+          <div class="ecw-fan"><img class="f1" src="/assets/work/eco-choice/statics/energy-ac.jpg" alt="" loading="lazy"><video class="f2" src="/assets/work/eco-choice/video-loop-4.mp4" muted loop playsinline></video><img class="f3" src="/assets/work/eco-choice/ugc-2.png" alt="" loading="lazy"><span class="ecw-fan-badge">+11 in market</span></div><div class="ecw-fmt"><i>Static</i><i>Motion</i><i>UGC</i></div><div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; <b>BOF</b></div>
         </div>
         <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 03</div>
@@ -3878,7 +3955,7 @@ section.hero-cover .hero-bg {
           <p class="q">"The street might as well run through our bedroom."</p>
           <div class="hook-lbl">The Hook</div>
           <p class="hook">Noise keeping you up at night?</p>
-          <img src="/assets/work/eco-choice/statics/sound.jpg" alt="Sound persona ad" loading="lazy">
+          <div class="ecw-fan"><img class="f1" src="/assets/work/eco-choice/statics/sound.jpg" alt="" loading="lazy"><video class="f2" src="/assets/work/eco-choice/video-loop-3.mp4" muted loop playsinline></video><img class="f3" src="/assets/work/eco-choice/statics/brand.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+7 in market</span></div><div class="ecw-fmt"><i>Static</i><i>Motion</i><i>Testimonial</i></div><div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; BOF</div>
         </div>
         <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 04</div>
@@ -3886,10 +3963,10 @@ section.hero-cover .hero-bg {
           <p class="q">"The house is great. The front of it isn't."</p>
           <div class="hook-lbl">The Hook</div>
           <p class="hook">Transform your home. From the outside in.</p>
-          <img src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="Curb appeal persona ad" loading="lazy">
+          <div class="ecw-fan"><img class="f1" src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="" loading="lazy"><img class="f2" src="/assets/work/eco-choice/statics/curb-appeal.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/eco-choice/statics/door-v2.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+8 in market</span></div><div class="ecw-fmt"><i>Static</i><i>Carousel</i><i>Hi-Fi</i></div><div class="ecw-fun"><b>TOF</b> &middot; MOF &middot; <b>BOF</b></div>
         </div>
       </div>
-      <p class="ecw-personas-foot">Financing rides with all four. 0% till 2027 is the offer layer, not the story.</p>
+      <p class="ecw-personas-foot">Dozens of creatives per persona. Static, motion, hi-fi, lo-fi, UGC. Built for every funnel stage: TOF hooks, MOF proof, BOF offers. Financing rides with all four.</p>
     </div>
   </section>
 
@@ -3976,6 +4053,19 @@ section.hero-cover .hero-bg {
         <div class="ecw-browser-foot"><span class="flbl">Dynamic Google Ads LP &middot; One Page, Seven Angles</span><a href="https://landing.ecochoicewindows.ca/?angle=drafty-windows" target="_blank" rel="noopener">Visit live &rarr;</a></div>
       </div>
     </div>
+    <div class="ecw-ab-wrap rv">
+      <div class="ecw-ab-copy">
+        <h3>Variants get verdicts.</h3>
+        <p>Every page change runs as an A/B in Zoho PageSense. Winners swipe right into the new baseline. Losers get archived with their receipts. No opinions, just verdicts.</p>
+      </div>
+      <div class="ecw-ab" aria-hidden="true">
+        <div class="ecw-ab-card c1"><div><div class="t">Variant B &middot; Experiment 01</div><div class="h">Quote form above the fold</div></div><div class="r">5.2x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Winner</div></div>
+        <div class="ecw-ab-card c2 lose"><div><div class="t">Variant A &middot; Experiment 01</div><div class="h">Long-scroll form below gallery</div></div><div class="r">2.4x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Archived</div></div>
+        <div class="ecw-ab-card c3"><div><div class="t">Variant B &middot; Experiment 02</div><div class="h">Three-step quote flow</div></div><div class="r">4.8x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Winner</div></div>
+        <div class="ecw-ab-card c4 lose"><div><div class="t">Variant A &middot; Experiment 02</div><div class="h">Single long form</div></div><div class="r">3.1x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Archived</div></div>
+      </div>
+    </div>
+
   </section>
 
 
@@ -4406,7 +4496,7 @@ if (typeof setMegaTab !== 'function') {
 /* Marquee video loops: muted, looping, always on. */
 (function () {
   function go() {
-    document.querySelectorAll('.csm-card video, .ecw-hv-card video, .ecw-hook video, .ecw-score video').forEach(function (v) {
+    document.querySelectorAll('.csm-card video, .ecw-hv-card video, .ecw-hook video, .ecw-score video, .ecw-fan video').forEach(function (v) {
       v.muted = true;
       v.play().catch(function () {});
     });
@@ -4451,6 +4541,25 @@ if (typeof setMegaTab !== 'function') {
   els.forEach(function (e) { io.observe(e); });
   /* Failsafe: never leave content hidden if the observer can't fire. */
   setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 3000);
+})();
+</script>
+
+<script>
+/* Hero: cycle the ad card and the Google query. */
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var pre = location.pathname.indexOf('/consultus-site-prototypes/') === 0 ? '/consultus-site-prototypes' : '';
+  var ads = ['statics/offer-v1.jpg','statics/energy.jpg','statics/brand-2.jpg','statics/door-v2.jpg','statics/curb-appeal.jpg','statics/sound.jpg'];
+  var img = document.getElementById('ecw-hero-cycle');
+  var i = 0;
+  if (img) setInterval(function () {
+    img.style.opacity = '0';
+    setTimeout(function () { i = (i + 1) % ads.length; img.src = pre + '/assets/work/eco-choice/' + ads[i]; img.style.opacity = '1'; }, 380);
+  }, 3400);
+  var qs = ['window replacement vaughan', 'entry doors toronto', 'triple pane windows gta', 'tilt and turn windows'];
+  var q = document.getElementById('ecw-gq');
+  var j = 0;
+  if (q) setInterval(function () { j = (j + 1) % qs.length; q.textContent = qs[j]; }, 4200);
 })();
 </script>
 </body>
