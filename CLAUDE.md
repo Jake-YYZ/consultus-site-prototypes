@@ -107,15 +107,20 @@ All buttons are pills (`border-radius: 100px`):
 
 ## Previewing locally
 
-Run a local server from the project root (absolute `/...` paths require a server, double-clicking files won't work):
+Run a local server from the project root (absolute `/...` paths require a server, double-clicking individual HTML files won't work):
 
 ```
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080/` (homepage) or `http://localhost:8080/<folder>/` for any page.
+Then open `http://localhost:8080/` (homepage) or `http://localhost:8080/<folder>/` for any page. Jake can also double-click `Preview Site.command` in Finder, which does the same thing.
 
-## Deployment
+## Deployment (already set up, working as of June 2026)
 
-- GitHub repo: `consultus-site-prototypes` (private), GitHub Pages for shareable previews.
-- Remember the case-sensitivity and absolute-path caveats above when anything 404s on Pages but works locally.
+- GitHub account: **Jake-YYZ**. Repo: **public**, `https://github.com/Jake-YYZ/consultus-site-prototypes`
+- `gh` CLI installed at `~/.local/bin/gh`, authenticated, and wired into git credentials.
+- GitHub Pages deploys automatically on every push to `main` via `.github/workflows/deploy-pages.yml`.
+- Live preview URL format: `https://jake-yyz.github.io/consultus-site-prototypes/<folder>/`
+  (homepage: `https://jake-yyz.github.io/consultus-site-prototypes/`)
+- The workflow rewrites root-relative URLs (`href="/..."`, `src="/..."`, `location.href='/...'`, `url(/...)`) to include the `/consultus-site-prototypes/` prefix at publish time. **Local files keep plain root-relative paths** — write new pages with `/assets/...` and `/contact/`-style links and the workflow handles the rest.
+- After a push, deploys take about 1 minute. When a page is done, give Jake BOTH links: local (`http://localhost:8080/<folder>/`) and live (`https://jake-yyz.github.io/consultus-site-prototypes/<folder>/`).
