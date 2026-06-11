@@ -33,10 +33,18 @@ jobs:
         run: |
           mkdir -p /tmp/site
           rsync -a --exclude '.git' --exclude '.github' ./ /tmp/site/
+          # The href= pattern also matches JS "location.href='...'" assignments,
+          # so a separate rule for those would double-prefix them.
           find /tmp/site \( -name '*.html' -o -name '*.css' \) -print0 | xargs -0 perl -pi -e '
             s{((?:href|src|action|poster|content|data-src)=)(["\x27])/(?!/)}{$1$2/consultus-site-prototypes/}g;
-            s{(location\.href\s*=\s*)(["\x27])/(?!/)}{$1$2/consultus-site-prototypes/}g;
             s{(url\()(["\x27]?)/(?!/)}{$1$2/consultus-site-prototypes/}g;
+          '
+
+      - name: Keep preview site out of search engines
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > /tmp/site/robots.txt
+          find /tmp/site -name '*.html' -print0 | xargs -0 perl -0777 -pi -e '
+            s{<head>}{<head>\n<meta name="robots" content="noindex, nofollow">}i;
           '
 
       - uses: actions/upload-pages-artifact@v3
