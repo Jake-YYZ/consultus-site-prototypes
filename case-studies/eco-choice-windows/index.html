@@ -3536,6 +3536,25 @@ section.hero-cover .hero-bg {
   .ecw-duo { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 24px; grid-column: span 3; align-items: start; }
   .ecw-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: #8C8A87; background: rgba(20,20,20,0.04); border: 1px dashed rgba(20,20,20,0.18); border-radius: 8px; padding: 14px 18px; margin-top: 40px; }
   @media (max-width: 760px) { .ecw-gallery { grid-template-columns: 1fr; } .ecw-wide, .ecw-duo { grid-column: span 1; grid-template-columns: 1fr; } }
+  /* Split hero with floating work collage */
+  .hero-cover .cover-grid { grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+  .hero-cover .cover-main h1 { font-size: clamp(38px, 4.4vw, 68px); }
+  .hero-cover .cover-meta { grid-column: 1 / -1; }
+  .ecw-hero-visual { position: relative; height: 470px; }
+  .ecw-hv-card { position: absolute; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.08); border-radius: 14px; padding: 8px; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.45); }
+  .ecw-hv-card video, .ecw-hv-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 9px; display: block; }
+  .ecw-hv-a { left: 50%; margin-left: -125px; top: 35px; width: 250px; z-index: 3; animation: ecwFloatA 7s ease-in-out infinite; }
+  .ecw-hv-b { left: 0; top: 130px; width: 185px; z-index: 2; animation: ecwFloatB 8.5s ease-in-out infinite; }
+  .ecw-hv-c { right: 0; top: 100px; width: 185px; z-index: 1; animation: ecwFloatC 9.5s ease-in-out infinite; }
+  @keyframes ecwFloatA { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-12px) rotate(-1.5deg); } }
+  @keyframes ecwFloatB { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-9px) rotate(-5deg); } }
+  @keyframes ecwFloatC { 0%,100% { transform: translateY(0) rotate(4.5deg); } 50% { transform: translateY(-14px) rotate(4.5deg); } }
+  .ecw-hv-tag { position: absolute; top: 18px; left: 18px; z-index: 4; display: inline-flex; align-items: center; gap: 7px; background: #FFEC00; color: #141414; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 100px; }
+  .ecw-hv-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: #D94545; animation: ecwPulse 1.6s ease-in-out infinite; }
+  @keyframes ecwPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  @media (prefers-reduced-motion: reduce) { .ecw-hv-a, .ecw-hv-b, .ecw-hv-c, .ecw-hv-tag .dot { animation: none; } }
+  @media (max-width: 900px) { .hero-cover .cover-grid { grid-template-columns: 1fr; } .ecw-hero-visual { height: 400px; max-width: 480px; } }
+
 
   /* Work-in-motion marquee */
   .csm-sec { padding: 100px 0 90px; overflow: hidden; }
@@ -3565,6 +3584,12 @@ section.hero-cover .hero-bg {
         <h1 class="display">Eco Choice got the <span class="sem">whole engine</span>, not a channel.</h1>
         <p class="lede" style="max-width:680px">Windows and doors is a considered purchase in a brutal auction. So we didn't run ads at a leaky funnel. We built the pages, the creative, and the conversion program as one system.</p>
         <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Performance Creatives</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Paid Media</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">CRO</span></div>
+      </div>
+      
+      <div class="ecw-hero-visual" aria-hidden="true">
+        <div class="ecw-hv-card ecw-hv-b"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt=""></div>
+        <div class="ecw-hv-card ecw-hv-a"><div class="ecw-hv-tag"><span class="dot"></span>Live in market</div><video src="/assets/work/eco-choice/video-loop-1.mp4" autoplay muted loop playsinline></video></div>
+        <div class="ecw-hv-card ecw-hv-c"><img src="/assets/work/eco-choice/statics/offer-v1.jpg" alt=""></div>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>Eco Choice Windows &amp; Doors</strong></div>
@@ -3923,7 +3948,7 @@ if (typeof setMegaTab !== 'function') {
 /* Marquee video loops: muted, looping, always on. */
 (function () {
   function go() {
-    document.querySelectorAll('.csm-card video').forEach(function (v) {
+    document.querySelectorAll('.csm-card video, .ecw-hv-card video').forEach(function (v) {
       v.muted = true;
       v.play().catch(function () {});
     });
