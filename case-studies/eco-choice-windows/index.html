@@ -3620,6 +3620,13 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  .ecw-zmock .zroas { display: flex; justify-content: space-between; align-items: center; margin-top: 11px; padding-top: 10px; border-top: 1px solid rgba(20,20,20,0.08); }
+  .ecw-zmock .zroas span { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 7.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #8C8A87; }
+  .ecw-zmock .zroas b { background: #FFEC00; color: #141414; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 6px; }
+
+  /* Sandpaper grain on light surfaces */
+  body, .hero-cover, .sec.bone-full { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
   /* Hero rebalance + cycling ad card */
   .ecw-hv-a { margin-left: -170px; }
   .ecw-hv-c { right: -6px; top: 52px; z-index: 4; width: 205px; }
@@ -3688,7 +3695,6 @@ section.hero-cover .hero-bg {
   @media (prefers-reduced-motion: reduce) { .ecw-band-track { animation: none; } }
   /* Ghost serif texture in dark sections */
   .ecw-rel { position: relative; overflow: hidden; }
-  .ecw-ghost { position: absolute; right: 12px; bottom: -40px; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(120px, 17vw, 250px); line-height: 1; color: #FAF8F3; opacity: 0.04; pointer-events: none; user-select: none; }
   /* Yellow highlight chip (from the E11ement video language) */
   .ecw-hl { background: #FFEC00; color: #141414; font-style: normal; padding: 1px 16px 4px; border-radius: 6px; display: inline-block; transform: rotate(-1.2deg); }
 
@@ -3834,10 +3840,10 @@ section.hero-cover .hero-bg {
     <div class="ghost-monogram">C</div>
     <div class="cover-grid">
       <div class="cover-main">
-        <div class="eyebrow yellow-dot"><span>Case Study &middot; Home Improvement</span></div>
+        <div class="eyebrow yellow-dot"><span>Case Study &middot; Home Services</span></div>
         <h1 class="display">Eco Choice got the <span class="sem">whole engine</span>, not a channel.</h1>
         <p class="lede" style="max-width:680px">Windows and doors is a considered purchase in a brutal auction. So we didn't run ads at a leaky funnel. We built the pages, the creative, and the conversion program as one system.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:#E9EEFD;border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1A40C7">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:#E9EEFD;border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1A40C7">Performance Creatives</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:#E9EEFD;border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1A40C7">Paid Media</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:#E9EEFD;border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1A40C7">CRO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:#E9EEFD;border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#1A40C7">Zoho CRM</span></div>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Performance Creatives</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Paid Media</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">CRO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Zoho CRM</span></div>
       </div>
       
       <div class="ecw-hero-visual" aria-hidden="true">
@@ -3855,15 +3861,16 @@ section.hero-cover .hero-bg {
         <div class="ecw-hv-card ecw-hv-c"><div class="ecw-zmock">
           <div class="ecw-mock-tag" style="color:#2D8F5F">Zoho CRM &middot; Attribution</div>
           <div class="ecw-zmock-head">Lead #EC-4821</div>
-          <div class="zr"><span>Source</span><b>Meta &middot; Hook B</b></div>
-          <div class="zr"><span>LP Angle</span><b>drafty-windows</b></div>
-          <div class="zr"><span>Response</span><b>11 minutes</b></div>
+          <div class="zr"><span>Lead Cost</span><b>$230</b></div>
+          <div class="zr"><span>Close Rate</span><b>27.5%</b></div>
+          <div class="zr"><span>Sale Value</span><b>$32,000</b></div>
           <div class="zs"><i>Quote &#10003;</i><i class="won">Won</i></div>
+          <div class="zroas"><span>Return On Ad Spend</span><b>38x</b></div>
         </div></div>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>Eco Choice Windows &amp; Doors</strong></div>
-        <div class="cell"><span class="mono">Industry</span><strong>Home Improvement</strong></div>
+        <div class="cell"><span class="mono">Industry</span><strong>Home Services</strong></div>
         <div class="cell"><span class="mono">Scope</span><strong>Web, creative, paid media, CRO, CRM</strong></div>
         <div class="cell"><span class="mono">Engagement</span><strong>Active &middot; ongoing</strong></div>
       </div>
@@ -3928,7 +3935,7 @@ section.hero-cover .hero-bg {
   <section class="sec dark-full ecw-rel">
     <div class="sec-inner">
       <div class="sec-head rv">
-        <div class="section-lbl dark">The Personas</div><div class="ecw-ghost">buyers</div>
+        <div class="section-lbl dark">The Personas</div>
         <h2 class="sec-title">We reverse engineered the <span class="sem">buyer</span>.</h2>
       </div>
       <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Before a single dollar of media ran, we mapped who actually replaces windows in the GTA and what makes each of them move. Four personas. Four hook families. Every ad below answers to one of them.</p>
@@ -4103,7 +4110,7 @@ section.hero-cover .hero-bg {
   <section class="sec dark-full ecw-rel">
     <div class="sec-inner">
       <div class="sec-head rv">
-        <div class="section-lbl dark">The Scoreboard</div><div class="ecw-ghost">tested</div>
+        <div class="section-lbl dark">The Scoreboard</div>
         <h2 class="sec-title">Every ad earns its budget, or <span class="sem">loses it</span>.</h2>
       </div>
       <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Creative analytics run on every test: hook rate, hold rate, return on spend. Winners scale the same week. Losers die before they burn budget. The scoreboard decides, not opinions.</p>
@@ -4168,6 +4175,10 @@ section.hero-cover .hero-bg {
           <div class="ecw-crm-row"><div class="k">Creative</div><div class="v">Comment Reply &middot; Energy <span class="tag">Hook B</span></div></div>
           <div class="ecw-crm-row"><div class="k">LP Angle</div><div class="v"><span class="tag">drafty-windows</span></div></div>
           <div class="ecw-crm-row"><div class="k">First Response</div><div class="v">11 minutes</div></div>
+          <div class="ecw-crm-row"><div class="k">Lead Cost</div><div class="v">$230</div></div>
+          <div class="ecw-crm-row"><div class="k">Close Rate</div><div class="v">27.5%</div></div>
+          <div class="ecw-crm-row"><div class="k">Sale Value</div><div class="v">$32,000</div></div>
+          <div class="ecw-crm-row"><div class="k">ROAS</div><div class="v"><span style="background:#FFEC00;color:#141414;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-weight:700;font-size:13px;padding:3px 12px;border-radius:6px">38x</span></div></div>
         </div>
         <div class="ecw-crm-stages">
           <span class="ecw-stage">New &#10003;</span>
