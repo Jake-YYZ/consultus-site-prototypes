@@ -3620,6 +3620,16 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Program status strip */
+  .ecw-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; overflow: hidden; margin-top: 48px; }
+  .ecw-status-cell { padding: 22px 24px; border-right: 1px solid rgba(20,20,20,0.08); }
+  .ecw-status-cell:last-child { border-right: none; }
+  .ecw-status-cell .k { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8C8A87; display: flex; align-items: center; gap: 7px; }
+  .ecw-status-cell .k .sdot { width: 6px; height: 6px; border-radius: 50%; background: #2D8F5F; flex: none; position: static; }
+  .ecw-status-cell .v { font-size: 15.5px; font-weight: 600; color: #141414; margin-top: 9px; letter-spacing: -0.01em; }
+  .ecw-status-cell .s { font-size: 12px; color: #6A686B; margin-top: 3px; }
+  @media (max-width: 860px) { .ecw-status { grid-template-columns: 1fr 1fr; } .ecw-status-cell { border-bottom: 1px solid rgba(20,20,20,0.08); } }
+
   /* CRO experiment overlays on the laptops */
   .ecw-cro-overlay { position: absolute; right: -18px; top: 64px; z-index: 5; display: flex; flex-direction: column; gap: 12px; width: 250px; pointer-events: none; }
   .ecw-cro-chip { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.12); border-radius: 10px; padding: 13px 15px; box-shadow: 0 18px 40px -16px rgba(20,20,20,0.5); }
@@ -3765,12 +3775,20 @@ section.hero-cover .hero-bg {
 
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Challenge</div>
-      <h2 class="sec-title">Where <span class="sem">Eco Choice</span> started.</h2>
+      <div class="section-lbl">The Brief</div>
+      <h2 class="sec-title">The objective, and what stood <span class="sem">in the way</span>.</h2>
     </div>
     <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Context</h3>
-      <div><p>Eco Choice manufactures and installs windows and doors from their Vaughan headquarters, serving homeowners across the GTA. The product is excellent. The category is savage: long consideration cycles, seasonal demand, and competitors flooding the auction with discount messaging. Traffic without a conversion system would have burned budget. So the engagement started at the foundation.</p></div>
+      <h3>The Objective</h3>
+      <div><p>Turn a Vaughan-based windows and doors manufacturer into a predictable growth engine. Qualified quote requests week in, week out, with every dollar accountable from first click to closed install. Not more traffic. More installs.</p></div>
+    </div>
+    <div class="content-block">
+      <h3>The Challenge</h3>
+      <div><p>The category is savage. A considered, high-ticket purchase with a long decision cycle, seasonal demand, and an auction flooded with discount messaging. The inherited account was flat: broad keywords, one-size ad copy, repair-intent clicks burning budget, and no way to tell which ad actually produced a quote. Traffic without a conversion system would have burned the budget faster.</p></div>
+    </div>
+    <div class="content-block">
+      <h3>The Bet</h3>
+      <div><p>Build the whole engine before scaling spend. Understand the buyer first, rebuild the accounts around intent, give every click a page built to convert, and wire attribution through to the CRM so the results are facts, not feelings.</p></div>
     </div>
   </section>
 
@@ -4038,7 +4056,12 @@ section.hero-cover .hero-bg {
       </section>
 
 
-    <div class="ecw-note">[PROTOTYPE NOTE] Performance metrics land here once verified: cost per qualified quote, quote-to-appointment rate, ROAS by batch. Pull from the monthly performance deck before this page ships.</div>
+    <div class="ecw-status">
+      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Engine</div><div class="v">Live in market</div><div class="s">Video ads running since May 23</div></div>
+      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Experiments</div><div class="v">Running</div><div class="s">A/B tests + heat maps via PageSense</div></div>
+      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Attribution</div><div class="v">Wired</div><div class="s">Click to closed revenue in Zoho CRM</div></div>
+      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Verified Results</div><div class="v">QBR 1 &middot; July 2026</div><div class="s">Numbers published when they're facts</div></div>
+    </div>
   </section>
 
   <section class="sec dark-full">
