@@ -109,7 +109,15 @@ All buttons are pills (`border-radius: 100px`):
 
 **Homepage manifesto band** (`#manifesto` section + `#csx-styles` in `index.html`): "tailored programs, not cookie-cutter" positioning statement after the client logo strip, with pill links to all 10 industry pages. Red strikethrough on "Cookie-cutter" via `.csx-strike`.
 
-**Eco Choice case study** (`case-studies/eco-choice-windows/`): built from the bow-city-storage shell. Real Batch 2 ad creatives live in `assets/work/eco-choice/` (cropped from the Canva deck "Eco Choice Windows - Batch 2 Creatives", design id DAHMMOHN7TQ). Performance metrics are intentionally NOT included; a `[PROTOTYPE NOTE]` block marks where verified numbers go. Revert checkpoint for the v2 redesign work: git tag `checkpoint-before-v2-redesign`.
+**Eco Choice case study** (`case-studies/eco-choice-windows/`): THE TEMPLATE for all future case study pages. Jake wants every client case study to follow this story arc:
+1. **Split hero**: narrative left (headline, lede, blue scope pills), floating work collage right. Center card is a real video ad looping muted with a yellow "Live in market" pulsing badge; flanking static cards crossfade through the client's creative set on offset timers.
+2. **Thesis band** (dark): one italic serif statement framing the program philosophy.
+3. **The Challenge**: where the client started.
+4. **The Build**: numbered layers (Pages / Creative / CRO via Zoho PageSense / CRM via Zoho CRM). Say "Zoho CRM" for CRM work, NOT GoHighLevel, even when GHL is the actual stack; Jake's call.
+5. **The Pages**: live production pages embedded in scaled-down browser-frame cards (iframes, eager-loaded, pointer-events none, JS scales 1280px renders to card width). Eco Choice's site has no X-Frame-Options; check before assuming another client's site is frameable.
+6. **The Work**: counter-scrolling creative wall (marquee) of real statics + muted looping video ads. Hover pauses. All assets in `assets/work/<client>/`.
+7. **CTA** (dark): "Want the whole engine?"
+Assets came from the client's Drive folders (statics + 150-235MB video masters compressed to 8s loops via `avconvert --preset Preset960x540 --start 0 --duration 8`). Performance metrics intentionally omitted; a `[PROTOTYPE NOTE]` block marks where verified numbers go. Videos need a JS `play()` kick (script at end of page); browser screenshots of hidden tabs show videos/iframes blank, that's tab throttling, not a bug. Revert checkpoint: git tag `checkpoint-before-v2-redesign`.
 
 ## Working preferences (Jake's rules)
 
