@@ -3620,6 +3620,30 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Creative scoreboard */
+  .ecw-score { margin-top: 48px; }
+  .ecw-score-head { display: grid; grid-template-columns: 2fr 1.2fr 0.6fr 1.4fr; gap: 18px; padding: 0 18px 12px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A878B; }
+  .ecw-score-row { display: grid; grid-template-columns: 2fr 1.2fr 0.6fr 1.4fr; gap: 18px; align-items: center; background: #1E1E1E; border: 1px solid #262626; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; }
+  .ecw-score-row.dead { opacity: 0.55; }
+  .ecw-score-id { display: flex; align-items: center; gap: 14px; }
+  .ecw-score-id img, .ecw-score-id video { width: 52px; height: 65px; object-fit: cover; border-radius: 6px; flex: none; display: block; }
+  .ecw-score-id strong { display: block; font-size: 14.5px; font-weight: 600; color: #FAF8F3; letter-spacing: -0.01em; }
+  .ecw-score-id span { display: block; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A878B; margin-top: 4px; }
+  .ecw-score-hook { display: flex; align-items: center; gap: 12px; }
+  .ecw-score-hook .bar { flex: 1; height: 6px; background: #2A2A2A; border-radius: 100px; overflow: hidden; }
+  .ecw-score-hook .bar i { display: block; height: 100%; background: #FFEC00; border-radius: 100px; }
+  .ecw-score-hook em { font-style: normal; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 12px; color: #FAF8F3; min-width: 34px; }
+  .ecw-score-roas { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 19px; font-weight: 600; color: #FAF8F3; letter-spacing: -0.02em; }
+  .ecw-pill { display: inline-flex; align-items: center; padding: 6px 13px; border-radius: 100px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9.5px; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
+  .ecw-pill.win { background: #FFEC00; color: #141414; font-weight: 600; }
+  .ecw-pill.test { border: 1px solid #5D7BEA; color: #5D7BEA; }
+  .ecw-pill.iter { border: 1px solid #8A878B; color: #C7C5C8; }
+  .ecw-pill.kill { border: 1px solid #D94545; color: #D94545; }
+  @media (max-width: 860px) {
+    .ecw-score-head { display: none; }
+    .ecw-score-row { grid-template-columns: 1fr; gap: 12px; }
+  }
+
 
 
 
@@ -3656,8 +3680,8 @@ section.hero-cover .hero-bg {
       
       <div class="ecw-hero-visual" aria-hidden="true">
         <div class="ecw-hv-card ecw-hv-b"><img id="ecw-cycle-b" src="/assets/work/eco-choice/statics/comfort.jpg" alt="" style="transition:opacity .4s ease"></div>
-        <div class="ecw-hv-card ecw-hv-a"><div class="ecw-hv-tag"><span class="dot"></span>Live in market</div><video src="/assets/work/eco-choice/video-loop-4.mp4" autoplay muted loop playsinline></video></div>
-        <div class="ecw-hv-card ecw-hv-d"><div class="ecw-frame"><iframe src="https://ecochoicewindows.ca/special-offers/" title="Eco Choice landing page" tabindex="-1"></iframe></div></div>
+        <div class="ecw-hv-card ecw-hv-a"><video src="/assets/work/eco-choice/video-loop-4.mp4" autoplay muted loop playsinline></video></div>
+        <div class="ecw-hv-card ecw-hv-d"><div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice landing page" tabindex="-1"></iframe></div></div>
         <div class="ecw-hv-card ecw-hv-c"><img id="ecw-cycle-c" src="/assets/work/eco-choice/statics/offer-v1.jpg" alt="" style="transition:opacity .4s ease"></div>
       </div>
       <div class="cover-meta">
@@ -3765,17 +3789,17 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">The Pages</div>
       <h2 class="sec-title">Layer one, <span class="sem">live</span>.</h2>
     </div>
-    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These aren't mockups. These are the production pages, embedded straight from ecochoicewindows.ca, doing their job right now.</p>
+    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These aren't mockups. The left laptop is the live campaign page Meta traffic lands on. The right one is the same build doing something smarter for Google Ads: it rewrites its own pain points to match the search. Drafty windows, failed seals, full reno. One page, seven angles, every click lands on its own story.</p>
     <div class="ecw-pages-grid">
       <div class="ecw-browser">
-        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">ecochoicewindows.ca</div></div>
-        <div class="ecw-frame"><iframe src="https://ecochoicewindows.ca" title="Eco Choice homepage" tabindex="-1"></iframe></div>
-        <div class="ecw-browser-foot"><span class="flbl">Lead-Gen Home &middot; Quote Form Above the Fold</span><a href="https://ecochoicewindows.ca" target="_blank" rel="noopener">Visit live &rarr;</a></div>
+        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca</div></div>
+        <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice campaign landing page" tabindex="-1"></iframe></div>
+        <div class="ecw-browser-foot"><span class="flbl">Campaign LP &middot; Triple-Pane Installed In A Day</span><a href="https://landing.ecochoicewindows.ca/" target="_blank" rel="noopener">Visit live &rarr;</a></div>
       </div>
       <div class="ecw-browser">
-        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">ecochoicewindows.ca/special-offers/</div></div>
-        <div class="ecw-frame"><iframe src="https://ecochoicewindows.ca/special-offers/" title="Eco Choice special offers landing page" tabindex="-1"></iframe></div>
-        <div class="ecw-browser-foot"><span class="flbl">Campaign Landing Page &middot; Matches the Ads</span><a href="https://ecochoicewindows.ca/special-offers/" target="_blank" rel="noopener">Visit live &rarr;</a></div>
+        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca/?angle=drafty-windows</div></div>
+        <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/?angle=drafty-windows" title="Eco Choice dynamic Google Ads landing page" tabindex="-1"></iframe></div>
+        <div class="ecw-browser-foot"><span class="flbl">Dynamic Google Ads LP &middot; One Page, Seven Angles</span><a href="https://landing.ecochoicewindows.ca/?angle=drafty-windows" target="_blank" rel="noopener">Visit live &rarr;</a></div>
       </div>
     </div>
   </section>
@@ -3815,41 +3839,44 @@ section.hero-cover .hero-bg {
   <section class="sec dark-full">
     <div class="sec-inner">
       <div class="sec-head">
-        <div class="section-lbl dark">The Targeting</div>
-        <h2 class="sec-title">One market. <span class="sem">Dozens of micro-campaigns.</span></h2>
+        <div class="section-lbl dark">The Scoreboard</div>
+        <h2 class="sec-title">Every ad earns its budget, or <span class="sem">loses it</span>.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Offers and creative are matched to place. The doors message that wins in Vaughan is not the financing offer that wins downtown. City-level structure, scored separately, budgets follow the winners.</p>
-      <div class="ecw-map-wrap">
-        <svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized map of GTA targeting">
-          <path d="M 300 540 C 430 430, 650 385, 900 415 L 900 540 Z" fill="#1A2747" opacity="0.55"/>
-          <text x="700" y="500" font-family="ui-monospace,Menlo,monospace" font-size="11" font-style="italic" fill="#5D7BEA" letter-spacing="2">LAKE ONTARIO</text>
-          <g stroke="#2E2E2E" stroke-width="1" stroke-dasharray="3 6">
-            <line x1="430" y1="150" x2="280" y2="205"/><line x1="430" y1="150" x2="495" y2="118"/>
-            <line x1="430" y1="150" x2="560" y2="162"/><line x1="430" y1="150" x2="470" y2="288"/>
-            <line x1="430" y1="150" x2="330" y2="318"/><line x1="430" y1="150" x2="250" y2="378"/>
-            <line x1="430" y1="150" x2="112" y2="455"/><line x1="430" y1="150" x2="615" y2="248"/>
-            <line x1="430" y1="150" x2="718" y2="208"/><line x1="430" y1="150" x2="182" y2="425"/>
-          </g>
-          <g font-family="ui-monospace,Menlo,monospace" font-size="10" fill="#8A878B" letter-spacing="1">
-            <g><circle class="ecw-pin-ring" cx="430" cy="150" r="9" fill="none" stroke="#FFEC00" stroke-width="1.5"/><circle cx="430" cy="150" r="6" fill="#FFEC00"/><circle cx="430" cy="150" r="2.4" fill="#141414"/><text x="446" y="146" fill="#FFEC00">VAUGHAN &#183; HQ</text></g>
-            <g><circle class="ecw-pin-ring" cx="470" cy="288" r="7" fill="none" stroke="#FFEC00" stroke-width="1"/><circle cx="470" cy="288" r="4" fill="#FFEC00"/><text x="484" y="300">TORONTO</text></g>
-            <g><circle cx="280" cy="205" r="4" fill="#FFEC00"/><text x="232" y="190">BRAMPTON</text></g>
-            <g><circle cx="495" cy="118" r="4" fill="#FFEC00"/><text x="509" y="114">RICHMOND HILL</text></g>
-            <g><circle cx="560" cy="162" r="4" fill="#FFEC00"/><text x="574" y="168">MARKHAM</text></g>
-            <g><circle cx="330" cy="318" r="4" fill="#FFEC00"/><text x="240" y="334">MISSISSAUGA</text></g>
-            <g><circle class="ecw-pin-ring" cx="250" cy="378" r="7" fill="none" stroke="#FFEC00" stroke-width="1"/><circle cx="250" cy="378" r="4" fill="#FFEC00"/><text x="264" y="390">OAKVILLE</text></g>
-            <g><circle cx="182" cy="425" r="4" fill="#FFEC00"/><text x="196" y="437">BURLINGTON</text></g>
-            <g><circle cx="112" cy="455" r="4" fill="#FFEC00"/><text x="126" y="467">HAMILTON</text></g>
-            <g><circle cx="615" cy="248" r="4" fill="#FFEC00"/><text x="629" y="254">SCARBOROUGH</text></g>
-            <g><circle cx="718" cy="208" r="4" fill="#FFEC00"/><text x="732" y="214">WHITBY</text></g>
-          </g>
-          <g class="ecw-mapcard c1"><rect x="448" y="50" width="216" height="56" rx="9" fill="#FAF8F3"/><path d="M 460 106 L 452 122 L 476 106 Z" fill="#FAF8F3"/><text x="464" y="73" font-family="ui-monospace,Menlo,monospace" font-size="10" fill="#6A686B" letter-spacing="1">VAUGHAN &#183; DOORS PERSONA</text><text x="464" y="93" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#141414">Entry Doors &#183; 35% Off</text></g>
-          <g class="ecw-mapcard c2"><rect x="500" y="316" width="226" height="56" rx="9" fill="#FAF8F3"/><path d="M 512 316 L 504 300 L 528 316 Z" fill="#FAF8F3"/><text x="516" y="339" font-family="ui-monospace,Menlo,monospace" font-size="10" fill="#6A686B" letter-spacing="1">TORONTO &#183; BILL FIGHTER</text><text x="516" y="359" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#141414">0% Financing till 2027</text></g>
-          <g class="ecw-mapcard c3"><rect x="280" y="404" width="216" height="56" rx="9" fill="#FAF8F3"/><path d="M 292 404 L 284 388 L 308 404 Z" fill="#FAF8F3"/><text x="296" y="427" font-family="ui-monospace,Menlo,monospace" font-size="10" fill="#6A686B" letter-spacing="1">OAKVILLE &#183; COMFORT SEEKER</text><text x="296" y="447" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#141414">Triple-Pane &#183; 40% Off</text></g>
-          <g class="ecw-mapcard c4"><rect x="574" y="76" width="216" height="56" rx="9" fill="#FAF8F3"/><path d="M 586 132 L 578 148 L 602 132 Z" fill="#FAF8F3"/><text x="590" y="99" font-family="ui-monospace,Menlo,monospace" font-size="10" fill="#6A686B" letter-spacing="1">MARKHAM &#183; LIGHT SLEEPER</text><text x="590" y="119" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#141414">Noise Hook &#183; UGC Reply</text></g>
-        </svg>
+      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Creative analytics run on every test: hook rate, hold rate, return on spend. Winners scale the same week. Losers die before they burn budget. The scoreboard decides, not opinions.</p>
+      <div class="ecw-score">
+        <div class="ecw-score-head"><span>Creative</span><span>Hook Rate</span><span>ROAS</span><span>Status</span></div>
+        <div class="ecw-score-row">
+          <div class="ecw-score-id"><video src="/assets/work/eco-choice/video-loop-4.mp4" muted loop playsinline></video><div><strong>Comment Reply &middot; Energy</strong><span>Video &middot; Bill Fighter</span></div></div>
+          <div class="ecw-score-hook"><div class="bar"><i style="width:41%"></i></div><em>41%</em></div>
+          <div class="ecw-score-roas">4.6x</div>
+          <div><span class="ecw-pill win">Winner &middot; Scaling</span></div>
+        </div>
+        <div class="ecw-score-row">
+          <div class="ecw-score-id"><img src="/assets/work/eco-choice/static-ad-2.png" alt="0% financing static ad"><div><strong>0% Financing Static</strong><span>Static &middot; Offer Layer</span></div></div>
+          <div class="ecw-score-hook"><div class="bar"><i style="width:38%"></i></div><em>38%</em></div>
+          <div class="ecw-score-roas">5.2x</div>
+          <div><span class="ecw-pill win">Winner &middot; Scaling</span></div>
+        </div>
+        <div class="ecw-score-row">
+          <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Comfort static ad"><div><strong>Max Comfort Static</strong><span>Static &middot; Comfort Seeker</span></div></div>
+          <div class="ecw-score-hook"><div class="bar"><i style="width:24%"></i></div><em>24%</em></div>
+          <div class="ecw-score-roas">2.1x</div>
+          <div><span class="ecw-pill test">Testing &middot; More Data Needed</span></div>
+        </div>
+        <div class="ecw-score-row">
+          <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="Curb appeal ad"><div><strong>Outside-In Static</strong><span>Static &middot; Curb Appeal Buyer</span></div></div>
+          <div class="ecw-score-hook"><div class="bar"><i style="width:19%"></i></div><em>19%</em></div>
+          <div class="ecw-score-roas">1.4x</div>
+          <div><span class="ecw-pill iter">Iterating &middot; New Hook In Production</span></div>
+        </div>
+        <div class="ecw-score-row dead">
+          <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/door-v2.jpg" alt="Entry doors static ad"><div><strong>Entry Doors V1</strong><span>Static &middot; Doors</span></div></div>
+          <div class="ecw-score-hook"><div class="bar"><i style="width:12%"></i></div><em>12%</em></div>
+          <div class="ecw-score-roas">0.6x</div>
+          <div><span class="ecw-pill kill">Killed &middot; Budget Moved To Winners</span></div>
+        </div>
       </div>
-      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Illustrative targeting view. Swap pins and offers to the live city structure before shipping.</p>
+      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Numbers are illustrative placeholders. Swap in the live creative analytics export before this ships.</p>
     </div>
   </section>
 
@@ -4164,7 +4191,7 @@ if (typeof setMegaTab !== 'function') {
 /* Marquee video loops: muted, looping, always on. */
 (function () {
   function go() {
-    document.querySelectorAll('.csm-card video, .ecw-hv-card video, .ecw-hook video').forEach(function (v) {
+    document.querySelectorAll('.csm-card video, .ecw-hv-card video, .ecw-hook video, .ecw-score video').forEach(function (v) {
       v.muted = true;
       v.play().catch(function () {});
     });
