@@ -1,0 +1,47 @@
+/* Consultus Digital — NuberNext Webfont Declarations
+   Per brand guidelines: "One face. Two voices."
+   Regular (400) + DemiBold (600). Wide variant for H3/subhead only. */
+
+@font-face {
+  font-family: "NuberNext";
+  src: url("/assets/fonts/nubernext-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NuberNext";
+  src: url("/assets/fonts/nubernext-regularitalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NuberNext";
+  src: url("/assets/fonts/nubernext-demibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NuberNext";
+  src: url("/assets/fonts/nubernext-demibolditalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+/* Wide variant — H3 / section labels only. Never body text. */
+@font-face {
+  font-family: "NuberNext Wide";
+  src: url("/assets/fonts/nubernext-demiboldwide.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NuberNext Wide";
+  src: url("/assets/fonts/nubernext-demiboldwideitalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}

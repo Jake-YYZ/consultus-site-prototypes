@@ -1,0 +1,18 @@
+[PASS] SPA exists
+[PASS] SPA size sane — 32,891,157 bytes
+[PASS] Standalone count — 138 per-URL files
+[PASS] All standalone have JSON-LD — 138 files
+[PASS] No em dashes in SPA — found 0
+[PASS] No "$X.X" — clean
+[PASS] No "[Draft bio" — clean
+[PASS] No "lorem ipsum" — clean
+[PASS] No "Lorem ipsum" — clean
+[PASS] All goPage targets exist — 1 targets all resolve
+[PASS] Nav is consistent across pages — 1 unique nav block(s)
+[PASS] All hero SVGs have viewBox — 0 missing
+[PASS] Redirect map written — 107 lines
+[PASS] Case studies index exists
+[PASS] Case studies count — 10 case pages
+[PASS] Healthcare specialty pages — 6 found
+[PASS] All industry mother pages exist
+[PASS] Pre-launch backup exists — 23,145,115 bytes

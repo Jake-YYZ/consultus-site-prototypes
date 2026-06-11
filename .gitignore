@@ -1,0 +1,12 @@
+# macOS clutter
+.DS_Store
+**/.DS_Store
+
+# Leftover zip bundles from the Netlify download (43MB of junk)
+zi4edkzp
+zirh7zqj
+zivb9k9s
+
+# Local scratch files
+*.log
+.claude/settings.local.json

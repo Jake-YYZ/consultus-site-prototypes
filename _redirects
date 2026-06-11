@@ -1,0 +1,6 @@
+# Consultus Digital redirect map
+# Generated for site cutover — review before deploying.
+# Format: <old-path> <new-path> <status>
+
+/team/  /about/  301
+/our-process/  /about/  301

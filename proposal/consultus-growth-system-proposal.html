@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Consultus Digital · Growth System Proposal</title>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+:root {
+  --onyx: #0A0A0A;
+  --ink: #141414;
+  --paper: #FAF8F3;
+  --bone: #F5F2EC;
+  --blue: #1A40C7;
+  --yellow: #FFEC00;
+  --line: rgba(20,20,20,0.12);
+  --muted: #5A5A5A;
+  --serif: 'Fraunces', 'Liberation Serif', 'DejaVu Serif', Georgia, serif;
+  --sans: 'Inter', 'Liberation Sans', 'DejaVu Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', 'DejaVu Sans Mono', 'Liberation Mono', ui-monospace, monospace;
+}
+@page { size: letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--paper); }
+body { font-family: var(--sans); color: var(--ink); font-size: 10.5pt; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.6in 0.7in 1in; /* leave 1in bottom for the absolute-positioned footer */
+  background: var(--paper);
+  position: relative;
+  page-break-after: always;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ===== HEADER & FOOTER ===== */
+.page-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 14px; border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+.brand { font-family: var(--serif); font-weight: 600; font-size: 13pt; letter-spacing: -0.01em; }
+.brand .digital { font-family: var(--mono); font-size: 8pt; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-left: 4px; vertical-align: 2px; }
+.head-right { font-family: var(--mono); font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+.page-foot {
+  position: absolute; bottom: 0.45in; left: 0.7in; right: 0.7in;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ===== SECTION LABELS ===== */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 8pt;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 22px;
+}
+.eyebrow::before {
+  content: ''; display: inline-block;
+  width: 8px; height: 8px; background: var(--yellow);
+}
+.section-num {
+  font-family: var(--mono); font-size: 8pt; font-weight: 500;
+  letter-spacing: 0.18em; color: var(--ink);
+}
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; color: var(--ink); }
+h1.display { font-size: 56pt; line-height: 1.0; letter-spacing: -0.025em; font-weight: 300; }
+h1.display em, h1 em, h2 em, h3 em { font-style: italic; color: var(--blue); font-weight: 400; }
+h2.section-title { font-size: 32pt; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+h3.subhead { font-size: 14pt; line-height: 1.25; margin-bottom: 12px; font-weight: 500; }
+h3.label { font-family: var(--mono); font-size: 8.5pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
+
+p { margin-bottom: 12px; }
+p.lede { font-size: 12pt; line-height: 1.55; color: var(--ink); max-width: 5.8in; margin-bottom: 24px; }
+p.body { font-size: 10pt; line-height: 1.6; color: #2A2A2A; max-width: 6in; margin-bottom: 12px; }
+
+ul.deliverables { list-style: none; padding-left: 0; margin: 0 0 14px; }
+ul.deliverables li {
+  position: relative; padding-left: 22px; margin-bottom: 7px;
+  font-size: 9.5pt; line-height: 1.5; color: #2A2A2A;
+}
+ul.deliverables li::before {
+  content: ''; position: absolute; left: 2px; top: 0.65em;
+  width: 10px; height: 1px; background: var(--blue);
+}
+
+.mono-label { font-family: var(--mono); font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+/* ===== COVER PAGE ===== */
+.cover {
+  background: var(--paper);
+  height: 11in; width: 8.5in;
+  padding: 0.7in;
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  page-break-after: always;
+  overflow: hidden;
+}
+.cover .cover-eyebrow {
+  font-family: var(--mono); font-size: 8.5pt; font-weight: 500;
+  letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted);
+}
+.cover h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: 96pt; line-height: 0.92; letter-spacing: -0.035em;
+  margin-top: auto; margin-bottom: 18px;
+}
+.cover h1 em { font-style: italic; color: var(--blue); font-weight: 400; }
+.cover-sub {
+  font-family: var(--sans); font-size: 12pt; line-height: 1.5; color: #2A2A2A;
+  max-width: 5.5in; margin-bottom: 56px;
+}
+.cover-meta {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line); padding-top: 22px;
+  margin-bottom: 24px;
+}
+.cover-meta .cell {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.cover-meta .mono { font-family: var(--mono); font-size: 7.5pt; letter-spacing: 0.20em; text-transform: uppercase; color: var(--muted); }
+.cover-meta strong { font-family: var(--serif); font-weight: 500; font-size: 14pt; color: var(--ink); }
+.cover-partners {
+  display: flex; gap: 32px; align-items: center;
+  border-top: 1px solid var(--line); padding-top: 18px;
+  font-family: var(--mono); font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+}
+.cover-partners .label { color: var(--ink); font-weight: 500; }
+.cover-partners .name { color: var(--ink); font-weight: 500; letter-spacing: 0.06em; }
+
+.ghost-c {
+  position: absolute; right: -1.6in; bottom: -2.4in;
+  font-family: var(--serif); font-weight: 300;
+  font-size: 32in; line-height: 1; color: rgba(20,20,20,0.035);
+  pointer-events: none; user-select: none;
+}
+
+/* ===== SECTION DIVIDER (dark slide) ===== */
+.divider {
+  background: var(--onyx);
+  height: 11in; width: 8.5in;
+  padding: 0.7in;
+  color: var(--paper);
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  page-break-after: always;
+  overflow: hidden;
+}
+.divider .div-num {
+  font-family: var(--serif); font-weight: 300;
+  font-size: 280pt; line-height: 0.85; letter-spacing: -0.04em;
+  color: var(--paper);
+  margin-top: 0.4in;
+}
+.divider .div-title {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 36pt; line-height: 1.05; letter-spacing: -0.015em;
+  color: var(--yellow);
+  max-width: 5.5in;
+}
+.divider .div-foot {
+  font-family: var(--mono); font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(250,248,243,0.55);
+  display: flex; justify-content: space-between;
+}
+
+/* ===== STAT ROW ===== */
+.stat-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 22px 0; margin: 24px 0;
+}
+.stat-row .stat {
+  padding: 0 14px;
+  border-right: 1px solid var(--line);
+}
+.stat-row .stat:last-child { border-right: 0; }
+.stat-num { font-family: var(--serif); font-weight: 400; font-size: 28pt; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 4px; }
+.stat-num em { font-style: italic; color: var(--blue); }
+.stat-lbl { font-family: var(--mono); font-size: 7pt; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
+/* ===== ENGAGEMENT STEPS ===== */
+.steps {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  margin: 30px 0;
+}
+.step {
+  border-top: 1px solid var(--ink);
+  padding: 14px 0;
+}
+.step .step-num { font-family: var(--mono); font-size: 8pt; font-weight: 500; letter-spacing: 0.16em; color: var(--blue); margin-bottom: 8px; }
+.step .step-title { font-family: var(--serif); font-size: 12pt; line-height: 1.2; font-weight: 500; }
+
+/* ===== SCOPE TABLE ===== */
+table.scope { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 9.5pt; }
+table.scope thead th {
+  font-family: var(--mono); font-size: 7.5pt; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); text-align: left; padding: 10px 0; border-bottom: 1px solid var(--ink);
+}
+table.scope tbody td {
+  padding: 11px 0; border-bottom: 1px solid var(--line); vertical-align: top;
+}
+table.scope td.phase { font-family: var(--mono); font-size: 8pt; font-weight: 500; color: var(--ink); width: 1.1in; letter-spacing: 0.04em; }
+table.scope td.deliverable { font-family: var(--sans); font-size: 10pt; color: var(--ink); }
+table.scope td.type { font-family: var(--mono); font-size: 7.5pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); width: 1in; text-align: right; }
+
+/* ===== PRICING TABLE ===== */
+table.pricing { width: 100%; border-collapse: collapse; margin: 14px 0 28px; font-size: 9.5pt; }
+table.pricing thead th {
+  font-family: var(--mono); font-size: 7.5pt; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); text-align: left; padding: 10px 0; border-bottom: 1px solid var(--ink);
+}
+table.pricing thead th.right { text-align: right; }
+table.pricing tbody td { padding: 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.pricing td.svc { font-family: var(--serif); font-size: 11pt; font-weight: 500; color: var(--ink); width: 2.4in; }
+table.pricing td.scope { font-family: var(--sans); font-size: 9pt; color: #3A3A3A; line-height: 1.45; }
+table.pricing td.amt { font-family: var(--mono); font-size: 10pt; font-weight: 500; text-align: right; color: var(--ink); width: 1.1in; letter-spacing: -0.01em; }
+table.pricing tbody.total td { padding: 16px 0 4px; border-top: 2px solid var(--ink); border-bottom: none; }
+table.pricing tbody.total td.svc { font-family: var(--serif); font-size: 14pt; font-weight: 500; }
+table.pricing tbody.total td.amt { font-family: var(--serif); font-size: 18pt; font-weight: 500; }
+.subhead-bar {
+  font-family: var(--mono); font-size: 8.5pt; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); padding: 14px 0 6px; margin-top: 8px;
+  display: flex; align-items: center; gap: 12px;
+}
+.subhead-bar::before { content: ''; width: 12px; height: 1px; background: var(--blue); }
+
+/* ===== ACCENT CARDS (projections) ===== */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.proj-card {
+  background: var(--bone);
+  border-left: 3px solid var(--yellow);
+  padding: 18px 18px 18px 18px;
+}
+.proj-card .proj-eye { font-family: var(--mono); font-size: 7pt; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.proj-card .proj-metric { font-family: var(--mono); font-size: 8.5pt; font-weight: 500; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 10px; }
+.proj-card .proj-value { font-family: var(--serif); font-size: 22pt; line-height: 1.05; font-weight: 500; color: var(--blue); margin-bottom: 8px; letter-spacing: -0.01em; }
+.proj-card .proj-desc { font-size: 8.5pt; line-height: 1.45; color: #3A3A3A; }
+
+/* ===== TIMELINE ===== */
+.timeline { display: grid; grid-template-columns: 1.1in 1.4in 1fr; gap: 14px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.timeline:last-child { border-bottom: 0; }
+.timeline .tm-when { font-family: var(--mono); font-size: 8.5pt; font-weight: 500; letter-spacing: 0.10em; color: var(--muted); }
+.timeline .tm-phase { font-family: var(--serif); font-size: 14pt; font-weight: 500; color: var(--ink); }
+.timeline .tm-phase em { font-style: italic; color: var(--blue); }
+.timeline .tm-desc { font-size: 9.5pt; line-height: 1.5; color: #2A2A2A; }
+
+/* ===== TEAM GRID ===== */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 18px; margin: 22px 0; }
+.team-card {
+  border-top: 1px solid var(--ink);
+  padding-top: 14px;
+}
+.team-card .ini {
+  font-family: var(--serif); font-weight: 400; font-size: 18pt;
+  width: 38px; height: 38px; border: 1px solid var(--ink); border-radius: 100px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px; letter-spacing: -0.02em;
+}
+.team-card .role { font-family: var(--mono); font-size: 7.5pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.team-card .name { font-family: var(--serif); font-size: 13pt; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+.team-card .desc { font-size: 8.5pt; line-height: 1.5; color: #3A3A3A; }
+
+/* ===== SCOPE BLOCK (Section 06) ===== */
+.scope-block { margin-bottom: 28px; padding-top: 16px; border-top: 1px solid var(--line); }
+.scope-block .scope-num { font-family: var(--mono); font-size: 9pt; font-weight: 500; letter-spacing: 0.14em; color: var(--blue); margin-bottom: 6px; }
+.scope-block h3 { font-family: var(--serif); font-size: 17pt; font-weight: 500; line-height: 1.15; margin-bottom: 10px; letter-spacing: -0.005em; }
+.scope-block h3 em { font-style: italic; color: var(--blue); }
+.scope-block .scope-lede { font-size: 9.5pt; line-height: 1.55; color: #2A2A2A; margin-bottom: 14px; max-width: 6.4in; }
+.scope-block .scope-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+.scope-block .scope-col h4 { font-family: var(--mono); font-size: 7.5pt; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+.scope-block .scope-col ul { list-style: none; padding: 0; }
+.scope-block .scope-col li {
+  position: relative; padding-left: 16px; margin-bottom: 6px;
+  font-size: 9pt; line-height: 1.45; color: #2A2A2A;
+}
+.scope-block .scope-col li::before {
+  content: ''; position: absolute; left: 0; top: 0.6em;
+  width: 8px; height: 1px; background: var(--blue);
+}
+
+/* ===== TERMS LIST ===== */
+.terms { margin-top: 18px; }
+.term {
+  display: grid; grid-template-columns: 0.5in 1fr; gap: 18px;
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+}
+.term .term-num { font-family: var(--mono); font-size: 8.5pt; font-weight: 500; letter-spacing: 0.14em; color: var(--blue); padding-top: 4px; }
+.term h4 { font-family: var(--serif); font-size: 13pt; font-weight: 500; margin-bottom: 6px; color: var(--ink); }
+.term p { font-size: 9.5pt; line-height: 1.55; color: #2A2A2A; margin-bottom: 0; }
+
+/* ===== SIGNATURE PAGE ===== */
+.sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 56px; }
+.sig-block { }
+.sig-block .sig-eye { font-family: var(--mono); font-size: 8pt; font-weight: 500; letter-spacing: 0.20em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+.sig-line { border-bottom: 1px solid var(--ink); margin-bottom: 8px; height: 38px; }
+.sig-label { font-family: var(--mono); font-size: 7pt; font-weight: 500; letter-spacing: 0.20em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+.sig-block .sig-name { font-family: var(--serif); font-size: 13pt; font-weight: 500; color: var(--ink); margin-top: 4px; }
+.sig-block .sig-title { font-family: var(--mono); font-size: 7.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* ===== TESTIMONIAL QUOTE ===== */
+.quote-card {
+  background: var(--bone);
+  border-left: 3px solid var(--yellow);
+  padding: 26px 30px;
+  margin-top: 28px;
+}
+.quote-card .quote-text {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 16pt; line-height: 1.35; color: var(--ink);
+  margin-bottom: 12px;
+}
+.quote-card .quote-author {
+  font-family: var(--mono); font-size: 7.5pt; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<section class="cover">
+  <div class="ghost-c">C</div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="cover-eyebrow">The Growth Systems Agency</div>
+  </div>
+
+  <div>
+    <h1>Growth<br>system<br>proposal<br>for <em>[Client]</em>.</h1>
+    <p class="cover-sub">A complete performance marketing engagement, engineered as one system across website, content, creative, paid media, and tracking.</p>
+
+    <div class="cover-meta">
+      <div class="cell">
+        <span class="mono">Visit</span>
+        <strong>consultusdigital.com</strong>
+      </div>
+      <div class="cell">
+        <span class="mono">Prepared for</span>
+        <strong>[Client Name]</strong>
+      </div>
+      <div class="cell">
+        <span class="mono">Enclosed</span>
+        <strong>Growth System Proposal</strong>
+      </div>
+    </div>
+
+    <div class="cover-partners">
+      <span class="label">Certified Partners</span>
+      <span class="name">Google</span>
+      <span class="name">Meta</span>
+      <span class="name">Zoho</span>
+      <span class="name">HubSpot</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAGE 2 — EXECUTIVE SUMMARY ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>01 / Executive Summary</span></div>
+  <h2 class="section-title">A complete growth<br>system for <em>[Client Name]</em>.</h2>
+
+  <p class="body">This proposal outlines the recommended engagement between Consultus Digital and [Client Name]: a fully integrated performance marketing system spanning the website, landing pages, content, video, conversion optimization, creative, paid media, and tracking infrastructure.</p>
+
+  <p class="body">Each service is scoped to work as part of one revenue engine, not as isolated tactics. The engagement is delivered entirely in-house by a dedicated team with a named Account Strategist as your single point of contact.</p>
+
+  <h3 class="label" style="margin-top:32px">Engagement structure</h3>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><div class="step-title">Build the Foundation</div></div>
+    <div class="step"><div class="step-num">02</div><div class="step-title">Drive Traffic</div></div>
+    <div class="step"><div class="step-num">03</div><div class="step-title">Generate Leads</div></div>
+    <div class="step"><div class="step-num">04</div><div class="step-title">Sell</div></div>
+    <div class="step"><div class="step-num">05</div><div class="step-title">Measure &amp; Modify</div></div>
+  </div>
+
+  <p class="body" style="margin-top:14px">The engagement runs in two phases. Phase One is the one-time build of your growth foundation: website, landing page, content, video testimonials, CRO setup, creative package, and performance tracking. Phase Two is the ongoing monthly engagement that drives, converts, and compounds traffic through paid media, recurring creative production, continuous optimization, and strategic oversight.</p>
+
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">2019</div><div class="stat-lbl">Founded in Toronto</div></div>
+    <div class="stat"><div class="stat-num">20+</div><div class="stat-lbl">In-house specialists</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-lbl">Integrated capabilities</div></div>
+    <div class="stat"><div class="stat-num">100<em>%</em></div><div class="stat-lbl">In-house, no offshoring</div></div>
+  </div>
+
+  <p class="body" style="font-size:9pt;color:#5A5A5A;max-width:none">As featured on The Globe and Mail's Canada's Top Growing Companies. Certified partner: Google, Meta, Zoho, HubSpot.</p>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 02 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 3 — ENGAGEMENT OVERVIEW ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>02 / Engagement Overview</span></div>
+  <h2 class="section-title"><em>What's</em> included.</h2>
+
+  <p class="body">The table below maps every service in this engagement to its phase and cadence. Detailed scope for each line item follows in Section 06.</p>
+
+  <table class="scope">
+    <thead>
+      <tr><th>Phase</th><th>Deliverable</th><th style="text-align:right">Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="phase">Phase 1</td><td class="deliverable">Website Development</td><td class="type">One-time</td></tr>
+      <tr><td class="phase">Phase 1</td><td class="deliverable">Landing Page Development</td><td class="type">One-time</td></tr>
+      <tr><td class="phase">Phase 1</td><td class="deliverable">Website Content (30 pages, SEO optimized)</td><td class="type">One-time</td></tr>
+      <tr><td class="phase">Phase 1</td><td class="deliverable">Video Testimonials (10 videos)</td><td class="type">One-time</td></tr>
+      <tr><td class="phase">Phase 1</td><td class="deliverable">Direct Response Creative Package</td><td class="type">One-time</td></tr>
+      <tr><td class="phase">Phase 1</td><td class="deliverable">Performance Tracking Setup</td><td class="type">One-time</td></tr>
+      <tr><td class="phase">Phase 2</td><td class="deliverable">Google Ads Management</td><td class="type">Monthly</td></tr>
+      <tr><td class="phase">Phase 2</td><td class="deliverable">Meta Ads Management</td><td class="type">Monthly</td></tr>
+      <tr><td class="phase">Phase 2</td><td class="deliverable">Recurring Direct Response Creative</td><td class="type">Monthly</td></tr>
+      <tr><td class="phase">Phase 2</td><td class="deliverable">Conversion Rate Optimization</td><td class="type">Monthly</td></tr>
+      <tr><td class="phase">Phase 2</td><td class="deliverable">Performance Tracking &amp; Account Strategy</td><td class="type">Monthly</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quote-card">
+    <p class="quote-text">"They did not sell us tactics. They built us a revenue system and stayed accountable to the number."</p>
+    <div class="quote-author">Client Partner · Home Services</div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 03 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 4 — INVESTMENT SUMMARY ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>03 / Investment Summary</span></div>
+  <h2 class="section-title"><em>Investment.</em></h2>
+
+  <p class="body" style="font-size:9pt;color:#5A5A5A">All pricing in Canadian dollars, excluding applicable taxes and third-party ad spend. Ad spend is paid directly by [Client Name] to Google and Meta.</p>
+
+  <div class="subhead-bar">Phase 1 / One-Time Setup</div>
+  <table class="pricing">
+    <thead>
+      <tr><th>Service</th><th>Scope</th><th class="right">Investment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="svc">Website Development</td><td class="scope">Custom WordPress build, up to 30 pages</td><td class="amt">$25,000</td></tr>
+      <tr><td class="svc">Landing Page Development</td><td class="scope">1 conversion-optimized landing page</td><td class="amt">$2,300</td></tr>
+      <tr><td class="svc">Website Content</td><td class="scope">30 pages of SEO-optimized copy, E-E-A-T aligned</td><td class="amt">$12,000</td></tr>
+      <tr><td class="svc">Video Testimonials</td><td class="scope">10 professionally produced client videos</td><td class="amt">$8,000</td></tr>
+      <tr><td class="svc">Direct Response Creative Package</td><td class="scope">Initial DR bank: hooks, static, video, variants</td><td class="amt">$5,000</td></tr>
+      <tr><td class="svc">Performance Tracking Setup</td><td class="scope">GA4, GTM, Meta CAPI, call tracking, conversions</td><td class="amt">$500</td></tr>
+    </tbody>
+    <tbody class="total">
+      <tr><td class="svc">Total One-Time Setup</td><td></td><td class="amt">$52,800</td></tr>
+    </tbody>
+  </table>
+
+  <div class="subhead-bar">Phase 2 / Monthly Retainer</div>
+  <table class="pricing">
+    <thead>
+      <tr><th>Service</th><th>Scope</th><th class="right">Monthly</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="svc">Google Ads Management</td><td class="scope">Full-service campaign management &amp; optimization</td><td class="amt">$2,500</td></tr>
+      <tr><td class="svc">Meta Ads Management</td><td class="scope">Facebook &amp; Instagram campaign management</td><td class="amt">$2,500</td></tr>
+      <tr><td class="svc">Recurring Direct Response Creative</td><td class="scope">Monthly DR creative refresh for paid campaigns</td><td class="amt">$2,500</td></tr>
+      <tr><td class="svc">Conversion Rate Optimization</td><td class="scope">Audit, A/B testing, funnel improvements, heatmaps</td><td class="amt">$1,500</td></tr>
+      <tr><td class="svc">Performance Tracking &amp; Strategy</td><td class="scope">Reporting, attribution, dedicated strategist</td><td class="amt">$500</td></tr>
+    </tbody>
+    <tbody class="total">
+      <tr><td class="svc">Total Monthly Retainer</td><td></td><td class="amt">$9,500</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 04 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 5 — PERFORMANCE PROJECTIONS ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>04 / Performance Projections</span></div>
+  <h2 class="section-title">What to <em>expect</em>.</h2>
+
+  <p class="body">Projections below reflect benchmarks from comparable engagements across our client portfolio. Final targets are calibrated to [Client Name]'s industry, offer, geography, and market dynamics during onboarding.</p>
+
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-eye">Acquisition</div>
+      <div class="proj-metric">Cost Per Lead</div>
+      <div class="proj-value">$50 – $150</div>
+      <div class="proj-desc">Blended CPL across Google and Meta, varies by industry and competition.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Efficiency</div>
+      <div class="proj-metric">Return on Ad Spend</div>
+      <div class="proj-value">3× – 8×</div>
+      <div class="proj-desc">Stabilized ROAS by month 4–6 post-launch, assuming closed-loop tracking.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Conversion</div>
+      <div class="proj-metric">Website Conversion Rate</div>
+      <div class="proj-value">3% – 8%</div>
+      <div class="proj-desc">Landing page and funnel conversion lift from baseline via CRO program.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Volume</div>
+      <div class="proj-metric">Qualified Leads / Month</div>
+      <div class="proj-value">80 – 250</div>
+      <div class="proj-desc">Based on $20K ad spend across Google and Meta at target CPL ranges.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Growth</div>
+      <div class="proj-metric">Organic Traffic Lift</div>
+      <div class="proj-value">40% – 120%</div>
+      <div class="proj-desc">Year-over-year organic growth from SEO-optimized content and site build.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-eye">Quality</div>
+      <div class="proj-metric">CRO Test Win Rate</div>
+      <div class="proj-value">25% – 40%</div>
+      <div class="proj-desc">Share of A/B tests that produce statistically significant conversion lift.</div>
+    </div>
+  </div>
+
+  <h3 class="label" style="margin-top:36px">Expected timeline</h3>
+  <div style="margin-top:8px;border-top:1px solid var(--ink)">
+    <div class="timeline">
+      <div class="tm-when">Months 1–2</div>
+      <div class="tm-phase"><em>Foundation</em></div>
+      <div class="tm-desc">Website, landing page, tracking, and content live. Paid campaigns launched with initial learning budget.</div>
+    </div>
+    <div class="timeline">
+      <div class="tm-when">Months 3–4</div>
+      <div class="tm-phase"><em>Optimization</em></div>
+      <div class="tm-desc">Early performance data informs creative refresh and CRO testing. Expect lead volume ramp and CPL stabilization.</div>
+    </div>
+    <div class="timeline">
+      <div class="tm-when">Months 5–6</div>
+      <div class="tm-phase"><em>Compound</em></div>
+      <div class="tm-desc">ROAS hits target range. SEO signals begin compounding. CRO wins stack into month-over-month conversion improvement.</div>
+    </div>
+    <div class="timeline">
+      <div class="tm-when">Months 7–12</div>
+      <div class="tm-phase"><em>Scale</em></div>
+      <div class="tm-desc">Scaling ad spend against proven unit economics. Organic growth accelerates as content and authority build.</div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 05 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 6 — YOUR TEAM ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>05 / Your Team</span></div>
+  <h2 class="section-title">Built by <em>specialists</em>.</h2>
+
+  <p class="body">Your engagement is delivered by an in-house team of specialists, each accountable for their discipline. No generalists stretched across every channel. No offshore handoffs. The Account Strategist is your single point of contact across all services.</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="ini">JM</div>
+      <div class="role">Founder &amp; President</div>
+      <div class="name">Jake Matzanke</div>
+      <div class="desc">Executive sponsor. Owns strategic direction and the commercial relationship.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">AS</div>
+      <div class="role">Account Strategist</div>
+      <div class="name">[Name]</div>
+      <div class="desc">Your day-to-day lead. Owns strategy, reporting, and cross-channel coordination.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">PM</div>
+      <div class="role">Paid Media Lead</div>
+      <div class="name">[Name]</div>
+      <div class="desc">Google and Meta campaign architecture, optimization, and spend efficiency.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">SL</div>
+      <div class="role">SEO Lead</div>
+      <div class="name">[Name]</div>
+      <div class="desc">On-page, technical, and content SEO strategy. AEO and GEO optimization.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">CL</div>
+      <div class="role">CRO Lead</div>
+      <div class="name">[Name]</div>
+      <div class="desc">Funnel diagnostics, A/B testing framework, and conversion improvement.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">WD</div>
+      <div class="role">Web Development Lead</div>
+      <div class="name">[Name]</div>
+      <div class="desc">WordPress architecture, landing page development, and technical integration.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">CV</div>
+      <div class="role">Direct Response Creative</div>
+      <div class="name">[Name]</div>
+      <div class="desc">Hook, offer, and conversion-focused creative for paid campaigns. Video and brand execution.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">AO</div>
+      <div class="role">CRM &amp; Automation Lead</div>
+      <div class="name">Ana Orjuela</div>
+      <div class="desc">Zoho CRM architecture, lead routing, automation, and closed-loop reporting.</div>
+    </div>
+    <div class="team-card">
+      <div class="ini">AM</div>
+      <div class="role">Account Management</div>
+      <div class="name">Isaac Ferguson</div>
+      <div class="desc">Client success, performance reviews, and ongoing engagement management.</div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 06 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 7 — SCOPE: WEBSITE ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>06 / Scope of Work</span></div>
+  <h2 class="section-title">What you're getting, <em>exactly</em>.</h2>
+  <p class="body">Deliverables, client responsibilities, and exclusions for each service included in this engagement.</p>
+
+  <div class="scope-block">
+    <div class="scope-num">01 / Website Development</div>
+    <h3>Custom WordPress build, performance-<em>optimized</em>.</h3>
+    <p class="scope-lede">Consultus Digital will design and develop a custom, performance-optimized website for [Client Name], built on WordPress and aligned with [Client Name]'s brand guidelines.</p>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Discovery workshop and sitemap approval</li>
+          <li>Custom WordPress design, up to 30 pages</li>
+          <li>Mobile-responsive build (desktop, tablet, mobile)</li>
+          <li>On-page SEO foundation: meta, schema, sitemap, robots</li>
+          <li>Integration with CRM, forms, and call tracking</li>
+          <li>Two rounds of design revisions</li>
+          <li>Launch QA, redirects, and 30-day post-launch support</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Provide brand assets, logos, and photography</li>
+          <li>Provide access to domain, hosting, and CMS</li>
+          <li>Approve designs and revisions promptly</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Ongoing maintenance beyond 30-day post-launch window</li>
+          <li>Additional pages beyond the 30-page scope (quoted separately)</li>
+          <li>E-commerce functionality</li>
+          <li>Custom plugin or integration development beyond listed integrations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="scope-block">
+    <div class="scope-num">02 / Landing Page Development</div>
+    <h3>One conversion-focused page, <em>built</em> for paid traffic.</h3>
+    <p class="scope-lede">Consultus Digital will design and develop a custom, conversion-focused landing page optimized for paid traffic, lead capture, and performance tracking.</p>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Conversion-focused layout, page structure, and ad copy</li>
+          <li>Custom design, two rounds of revisions</li>
+          <li>Mobile-responsive WordPress build</li>
+          <li>Lead capture forms routed to CRM or email</li>
+          <li>Tracking verification for forms and key conversions</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Provide final copy, offers, disclaimers, brand assets</li>
+          <li>Approve designs and revisions promptly</li>
+          <li>Provide CRM or email integration details</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Multi-variant CRO testing (covered under Ongoing CRO)</li>
+          <li>Additional landing pages beyond the one included</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 07 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 8 — SCOPE: VIDEO + DR CREATIVE ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>06 / Scope of Work, continued</span></div>
+
+  <div class="scope-block" style="border-top:none;padding-top:0">
+    <div class="scope-num">03 / Video Testimonials</div>
+    <h3>Ten professionally produced <em>client</em> videos.</h3>
+    <p class="scope-lede">Professionally shot and edited client video testimonials designed for use across the website, paid advertising, and social media.</p>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Half-day to full-day on-site shoot with creative direction</li>
+          <li>10 edited testimonial videos, short-form and long-form cuts</li>
+          <li>Audio mastering and brand-aligned color grading</li>
+          <li>Subtitle and caption files for accessibility</li>
+          <li>Multiple aspect ratios: 16:9, 9:16, 1:1</li>
+          <li>Rights-cleared MP4 deliverables</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Coordinate and confirm testimonial participants</li>
+          <li>Secure signed release forms (template provided)</li>
+          <li>Provide shoot location access</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Additional shoot days beyond scoped production</li>
+          <li>Talent payment or location fees</li>
+          <li>Animation or 3D production</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="scope-block">
+    <div class="scope-num">04 / Direct Response Creative</div>
+    <h3>Creative <em>engineered</em> to drive action.</h3>
+    <p class="scope-lede">Hooks, offers, and formats purpose-built for conversion. Initial creative bank built for paid media launch, followed by a recurring monthly refresh that feeds ongoing testing and prevents ad fatigue.</p>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Month 1 Foundation</h4>
+        <ul>
+          <li>Creative strategy brief: offer, hook angles, audience messaging</li>
+          <li>Initial bank: 12–20 statics, 4–6 short-form videos, 3+ copy variants per concept</li>
+          <li>Thumb-stop hooks for Meta Feed and Reels</li>
+          <li>DR formats for Google Search, Display, Performance Max</li>
+          <li>Landing page alignment so creative and LP tell one story</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Ongoing Monthly Refresh</h4>
+        <ul>
+          <li>New concepts and variants based on performance data</li>
+          <li>Winner iteration: scale what's working, kill what isn't</li>
+          <li>Seasonal and promotional creative aligned to business calendar</li>
+          <li>Creative reporting: CTR, CPA, fatigue signals</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>High-production video shoots (quoted separately)</li>
+          <li>Licensed music or stock footage beyond included library</li>
+          <li>Talent, model, or influencer fees</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 08 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 9 — SCOPE: PAID MEDIA ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>06 / Scope of Work, continued</span></div>
+
+  <div class="scope-block" style="border-top:none;padding-top:0">
+    <div class="scope-num">05 / Google Ads Management</div>
+    <h3>Full-service campaign management &amp; <em>optimization</em>.</h3>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Account audit and structural rebuild</li>
+          <li>Search, Display, YouTube, and Performance Max campaigns as fit</li>
+          <li>Conversion-tracking QA and bid strategy selection</li>
+          <li>Creative rotation and ad copy testing</li>
+          <li>Daily monitoring and ongoing optimization</li>
+          <li>Monthly performance reporting and strategy calls</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Maintain active ad spend budget (paid directly to Google)</li>
+          <li>Provide access to Google Ads, Analytics, and website backend</li>
+          <li>Approve creative and campaign strategy</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Ad spend (paid directly by client to Google)</li>
+          <li>SEO services (separate scope)</li>
+          <li>Custom landing page builds beyond included scope</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="scope-block">
+    <div class="scope-num">06 / Meta Ads Management</div>
+    <h3>Facebook &amp; Instagram, run as a <em>performance</em> channel.</h3>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Audit of existing Meta account and Business Manager</li>
+          <li>Pixel and Conversion API (server-side) setup and QA</li>
+          <li>Campaign structure, audience development, and testing</li>
+          <li>Creative rotation and performance testing</li>
+          <li>Retargeting and warm-audience management</li>
+          <li>Daily monitoring and optimization</li>
+          <li>Monthly performance reporting and strategy calls</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Maintain active ad spend budget (paid directly to Meta)</li>
+          <li>Provide access to Business Manager, Pixel, website backend</li>
+          <li>Approve creative and campaign strategy</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Ad spend (paid directly by client to Meta)</li>
+          <li>Organic social media management or posting</li>
+          <li>Influencer partnerships or creator campaigns</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 09 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 10 — SCOPE: CRO + TRACKING + CONTENT ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>06 / Scope of Work, continued</span></div>
+
+  <div class="scope-block" style="border-top:none;padding-top:0">
+    <div class="scope-num">07 / Conversion Rate Optimization</div>
+    <h3>Funnel diagnostics &amp; <em>continuous</em> testing.</h3>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Initial UX and analytics audit of key conversion paths</li>
+          <li>Heatmapping and session-recording instrumentation</li>
+          <li>Test roadmap with prioritized hypotheses</li>
+          <li>Monthly A/B and multivariate experiments</li>
+          <li>Statistical analysis and shipped winners</li>
+          <li>Monthly readout of test results and next-cycle plan</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Provide CMS access for test deployment</li>
+          <li>Approve test variants and shipping decisions</li>
+          <li>Make stakeholders available for test reviews</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Major site redesigns or rebuilds</li>
+          <li>Custom analytics platform implementation beyond GA4</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="scope-block">
+    <div class="scope-num">08 / Performance Tracking &amp; Strategy</div>
+    <h3>Closed-loop attribution &amp; <em>strategic</em> oversight.</h3>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Setup Deliverables</h4>
+        <ul>
+          <li>GA4, GTM, Meta CAPI, and call tracking implementation</li>
+          <li>Conversion event mapping across channels</li>
+          <li>UTM hygiene and source-of-truth dashboards</li>
+          <li>CRM-to-ad-platform conversion handshake</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Ongoing Deliverables</h4>
+        <ul>
+          <li>Monthly performance reporting across all channels</li>
+          <li>Cross-channel attribution and budget reallocation</li>
+          <li>Dedicated Account Strategist as single point of contact</li>
+          <li>Quarterly business review with leadership</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Custom data warehouse or BI platform builds</li>
+          <li>Third-party attribution platform licensing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 10 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 11 — SCOPE: CONTENT + WRAP ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>06 / Scope of Work, continued</span></div>
+
+  <div class="scope-block" style="border-top:none;padding-top:0">
+    <div class="scope-num">09 / Website Content</div>
+    <h3>Thirty pages of SEO-optimized, <em>E-E-A-T</em> aligned copy.</h3>
+    <p class="scope-lede">Long-form copy written for ranking, authority, and conversion. Aligned to Google's E-E-A-T guidelines and the Consultus Digital editorial voice.</p>
+    <div class="scope-cols">
+      <div class="scope-col">
+        <h4>Deliverables</h4>
+        <ul>
+          <li>Keyword research and topical mapping</li>
+          <li>30 pages of long-form copy (~600–1500 words each)</li>
+          <li>On-page SEO: titles, descriptions, header structure, internal links</li>
+          <li>Schema.org markup for service, product, and authority pages</li>
+          <li>One round of revisions per page</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Client Responsibilities</h4>
+        <ul>
+          <li>Subject-matter expert availability for interviews</li>
+          <li>Provide existing materials, decks, transcripts</li>
+          <li>Approve drafts within agreed turnaround</li>
+        </ul>
+      </div>
+      <div class="scope-col">
+        <h4>Exclusions</h4>
+        <ul>
+          <li>Ongoing blog or article production beyond 30 pages</li>
+          <li>Translation or localization</li>
+          <li>Third-party content licensing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <p class="quote-text">"The team behaved like operators, not vendors. They built our funnel and stayed accountable to revenue."</p>
+    <div class="quote-author">VP Marketing · B2B Services</div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 11 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 12 — TERMS ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>07 / Terms</span></div>
+  <h2 class="section-title">Engagement <em>terms</em>.</h2>
+
+  <div class="terms" style="border-top:1px solid var(--ink);margin-top:8px">
+    <div class="term">
+      <div class="term-num">01</div>
+      <div>
+        <h4>Term</h4>
+        <p>Initial term of twelve (12) months from Effective Date, renewing month-to-month thereafter unless terminated per this agreement.</p>
+      </div>
+    </div>
+    <div class="term">
+      <div class="term-num">02</div>
+      <div>
+        <h4>Payment</h4>
+        <p>Phase 1 invoiced 50% on signature, 50% on delivery. Phase 2 invoiced on the first business day of each month. Ad spend paid directly by client.</p>
+      </div>
+    </div>
+    <div class="term">
+      <div class="term-num">03</div>
+      <div>
+        <h4>Taxes &amp; Late Payment</h4>
+        <p>Fees exclude HST/GST. Invoices unpaid beyond 15 days accrue 1.5% monthly interest; services may be paused for accounts over 30 days past due.</p>
+      </div>
+    </div>
+    <div class="term">
+      <div class="term-num">04</div>
+      <div>
+        <h4>Termination</h4>
+        <p>Either party may terminate with 30 days written notice after the initial 12-month term. Fees earned through the termination date remain due.</p>
+      </div>
+    </div>
+    <div class="term">
+      <div class="term-num">05</div>
+      <div>
+        <h4>Ownership &amp; IP</h4>
+        <p>Client owns final deliverables upon full payment. Consultus retains proprietary frameworks, methodologies, and pre-existing IP.</p>
+      </div>
+    </div>
+    <div class="term">
+      <div class="term-num">06</div>
+      <div>
+        <h4>Performance &amp; Governing Law</h4>
+        <p>Consultus will use commercially reasonable efforts; no specific results guaranteed. Agreement governed by the laws of Ontario, Canada.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com</span>
+    <span>Page 12 / 13</span>
+  </div>
+</section>
+
+<!-- ===== PAGE 13 — ACCEPTANCE ===== -->
+<section class="page">
+  <div class="page-head">
+    <div class="brand">Consultus<span class="digital">DIGITAL</span></div>
+    <div class="head-right">Growth System Proposal · [Client Name]</div>
+  </div>
+
+  <div class="eyebrow"><span>08 / Acceptance</span></div>
+  <h2 class="section-title"><em>Let's</em> build it.</h2>
+
+  <p class="body">By signing below, both parties agree to the Scope of Work, Investment Summary, and Terms set out in this proposal. This document, once countersigned, serves as a binding agreement between Consultus Digital and [Client Name].</p>
+
+  <div class="sig-grid">
+    <div class="sig-block">
+      <div class="sig-eye">For Consultus Digital</div>
+      <div class="sig-line"></div>
+      <div class="sig-label">Signature</div>
+      <div class="sig-name">Jake Matzanke</div>
+      <div class="sig-title">President, Consultus Digital</div>
+      <div style="margin-top:36px"></div>
+      <div class="sig-line"></div>
+      <div class="sig-label">Date</div>
+    </div>
+    <div class="sig-block">
+      <div class="sig-eye">For [Client Name]</div>
+      <div class="sig-line"></div>
+      <div class="sig-label">Signature</div>
+      <div class="sig-line" style="margin-top:36px"></div>
+      <div class="sig-label">Printed Name &amp; Title</div>
+      <div style="margin-top:24px"></div>
+      <div class="sig-line"></div>
+      <div class="sig-label">Date</div>
+    </div>
+  </div>
+
+  <div class="page-foot">
+    <span>consultusdigital.com · 136 Geary Ave, Toronto, ON</span>
+    <span>Page 13 / 13</span>
+  </div>
+</section>
+
+</body>
+</html>
