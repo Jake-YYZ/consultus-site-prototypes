@@ -3620,6 +3620,23 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Hero scope mocks */
+  .ecw-hv-b, .ecw-hv-c { width: 200px; }
+  .ecw-gmock, .ecw-zmock { padding: 12px 13px 14px; width: 100%; box-sizing: border-box; }
+  .ecw-mock-tag { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8px; letter-spacing: 0.09em; text-transform: uppercase; color: #1A40C7; margin-bottom: 10px; }
+  .ecw-gmock-bar { border: 1px solid rgba(20,20,20,0.16); border-radius: 100px; padding: 6px 11px; font-size: 10.5px; color: #2A2A2A; margin-bottom: 11px; white-space: nowrap; overflow: hidden; }
+  .ecw-gmock-sp { font-size: 8.5px; font-weight: 700; color: #2A2A2A; margin-bottom: 4px; }
+  .ecw-gmock-t { font-size: 11.5px; line-height: 1.35; color: #1a0dab; font-weight: 500; margin-bottom: 3px; }
+  .ecw-gmock-u { font-size: 9.5px; color: #2D8F5F; margin-bottom: 5px; }
+  .ecw-gmock-d { font-size: 9.5px; line-height: 1.5; color: #6A686B; }
+  .ecw-zmock-head { font-size: 12px; font-weight: 600; color: #141414; padding-bottom: 7px; border-bottom: 1px solid rgba(20,20,20,0.08); margin-bottom: 4px; }
+  .ecw-zmock .zr { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px dashed rgba(20,20,20,0.08); font-size: 9.5px; }
+  .ecw-zmock .zr span { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8A87; }
+  .ecw-zmock .zr b { color: #141414; font-weight: 600; white-space: nowrap; }
+  .ecw-zmock .zs { display: flex; gap: 6px; margin-top: 10px; }
+  .ecw-zmock .zs i { font-style: normal; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8px; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 100px; border: 1px solid #2D8F5F; color: #2D8F5F; }
+  .ecw-zmock .zs i.won { background: #FFEC00; border-color: #FFEC00; color: #141414; font-weight: 600; }
+
   /* Program status strip */
   .ecw-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; overflow: hidden; margin-top: 48px; }
   .ecw-status-cell { padding: 22px 24px; border-right: 1px solid rgba(20,20,20,0.08); }
@@ -3752,10 +3769,24 @@ section.hero-cover .hero-bg {
       </div>
       
       <div class="ecw-hero-visual" aria-hidden="true">
-        <div class="ecw-hv-card ecw-hv-b"><img id="ecw-cycle-b" src="/assets/work/eco-choice/statics/comfort.jpg" alt="" style="transition:opacity .4s ease"></div>
+        <div class="ecw-hv-card ecw-hv-b"><div class="ecw-gmock">
+          <div class="ecw-mock-tag">Google Search &middot; Intent</div>
+          <div class="ecw-gmock-bar">window replacement vaughan</div>
+          <div class="ecw-gmock-sp">Sponsored</div>
+          <div class="ecw-gmock-t">Eco Choice Windows &amp; Doors | 40% Off Replacement Windows</div>
+          <div class="ecw-gmock-u">ecochoicewindows.ca</div>
+          <div class="ecw-gmock-d">Canadian-made, energy efficient, installed by pros. 0% financing till 2027. Free quote.</div>
+        </div></div>
         <div class="ecw-hv-card ecw-hv-a"><video src="/assets/work/eco-choice/video-loop-4.mp4" autoplay muted loop playsinline></video></div>
         <div class="ecw-hv-card ecw-hv-d"><div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice landing page" tabindex="-1"></iframe></div></div>
-        <div class="ecw-hv-card ecw-hv-c"><img id="ecw-cycle-c" src="/assets/work/eco-choice/statics/offer-v1.jpg" alt="" style="transition:opacity .4s ease"></div>
+        <div class="ecw-hv-card ecw-hv-c"><div class="ecw-zmock">
+          <div class="ecw-mock-tag" style="color:#2D8F5F">Zoho CRM &middot; Attribution</div>
+          <div class="ecw-zmock-head">Lead #EC-4821</div>
+          <div class="zr"><span>Source</span><b>Meta &middot; Hook B</b></div>
+          <div class="zr"><span>LP Angle</span><b>drafty-windows</b></div>
+          <div class="zr"><span>Response</span><b>11 minutes</b></div>
+          <div class="zs"><i>Quote &#10003;</i><i class="won">Won</i></div>
+        </div></div>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>Eco Choice Windows &amp; Doors</strong></div>
@@ -4056,9 +4087,7 @@ section.hero-cover .hero-bg {
       </section>
 
 
-    <div class="ecw-status">
-      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Engine</div><div class="v">Live in market</div><div class="s">Video ads running since May 23</div></div>
-      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Experiments</div><div class="v">Running</div><div class="s">A/B tests + heat maps via PageSense</div></div>
+          <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Experiments</div><div class="v">Running</div><div class="s">A/B tests + heat maps via PageSense</div></div>
       <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Attribution</div><div class="v">Wired</div><div class="s">Click to closed revenue in Zoho CRM</div></div>
       <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Verified Results</div><div class="v">QBR 1 &middot; July 2026</div><div class="s">Numbers published when they're facts</div></div>
     </div>
@@ -4363,31 +4392,6 @@ if (typeof setMegaTab !== 'function') {
 })();
 </script>
 
-<script>
-/* Hero flank cards: keep cycling through the creative set. */
-(function () {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var base = '/assets/work/eco-choice/statics/';
-  var pre = location.pathname.indexOf('/consultus-site-prototypes/') === 0 ? '/consultus-site-prototypes' : '';
-  var setB = ['comfort.jpg','sound.jpg','curb-appeal.jpg','brand-2.jpg','energy.jpg'];
-  var setC = ['offer-v1.jpg','energy-ac.jpg','door-v2.jpg','brand.jpg','curb-appeal-2.jpg'];
-  function cycle(id, list, offset) {
-    var img = document.getElementById(id);
-    if (!img) return;
-    var i = 0;
-    setInterval(function () {
-      img.style.opacity = '0';
-      setTimeout(function () {
-        i = (i + 1) % list.length;
-        img.src = pre + base + list[i];
-        img.style.opacity = '1';
-      }, 400);
-    }, 3600 + offset);
-  }
-  cycle('ecw-cycle-b', setB, 0);
-  cycle('ecw-cycle-c', setC, 900);
-})();
-</script>
 
 <script>
 /* Scale embedded live pages to fit their frames like a desktop preview. */
