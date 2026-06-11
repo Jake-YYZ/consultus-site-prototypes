@@ -3620,6 +3620,19 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Search rebuild */
+  .ecw-search-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; margin-top: 48px; align-items: start; }
+  .ecw-tree { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 48px -28px rgba(20,20,20,0.3); position: sticky; top: 100px; }
+  .ecw-tree-head { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 12px 18px; border-bottom: 1px solid rgba(20,20,20,0.08); display: flex; justify-content: space-between; }
+  .ecw-tree-body { padding: 18px 20px 20px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 12.5px; line-height: 2.1; color: #2A2A2A; }
+  .ecw-tree-body .root { font-weight: 600; color: #141414; }
+  .ecw-tree-body .branch { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ecw-tree-body .branch b { color: #1A40C7; font-weight: 600; }
+  .ecw-tree-body .branch.pmax b { color: #141414; background: #FFEC00; padding: 1px 7px; border-radius: 4px; }
+  .ecw-tree-body .branch .dim { color: #8C8A87; }
+  .ecw-tree-foot { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10.5px; letter-spacing: 0.04em; color: #6A686B; border-top: 1px dashed rgba(20,20,20,0.15); padding: 12px 20px 16px; }
+  @media (max-width: 860px) { .ecw-search-grid { grid-template-columns: 1fr; } .ecw-tree { position: static; } }
+
   /* Creative scoreboard */
   .ecw-score { margin-top: 48px; }
   .ecw-score-head { display: grid; grid-template-columns: 2fr 1.2fr 0.6fr 1.4fr; gap: 18px; padding: 0 18px 12px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A878B; }
@@ -3781,6 +3794,37 @@ section.hero-cover .hero-bg {
       <div class="ecw-tl-step"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 17</div><div class="ecw-tl-evt">Performance dashboard live. Landing page first draft in the client's inbox.</div></div>
       <div class="ecw-tl-step"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 23</div><div class="ecw-tl-evt">Creative batch one delivered: ten statics, five video scripts.</div></div>
       <div class="ecw-tl-step live"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">May 23</div><div class="ecw-tl-evt">Video ads approved in the morning, in market the same day.</div></div>
+    </div>
+  </section>
+
+  
+  <section class="sec bone-full">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <div class="section-lbl">The Search Rebuild</div>
+        <h2 class="sec-title">Google, rebuilt from <span class="sem">intent up</span>.</h2>
+      </div>
+      <div class="ecw-search-grid">
+        <div>
+          <div class="content-block" style="border-top:none;padding-top:0"><h3>01. Audit</h3><div><p>We inherited a flat account: broad keywords, one-size ad copy, and repair-intent traffic quietly burning budget on a company that sells replacements.</p></div></div>
+          <div class="content-block"><h3>02. Search, by intent</h3><div><p>Ad groups split by what the searcher actually wants: window replacement, door replacement, tilt and turn, brand. Headlines pinned so the offer never rotates out of position one.</p></div></div>
+          <div class="content-block"><h3>03. Performance Max</h3><div><p>PMax runs on curated asset groups built from the Meta-proven creative, so Google's machine learns from hooks that already won, not stock guesses.</p></div></div>
+          <div class="content-block"><h3>04. The negative wall</h3><div><p>Repair, parts, DIY, rental. Blocked before they spend a dollar. Then every search click lands on the angle-matched dynamic page you'll see below.</p></div></div>
+        </div>
+        <div class="ecw-tree">
+          <div class="ecw-tree-head"><span>Google Ads &middot; Account Structure</span><span>Rebuilt Apr 2026</span></div>
+          <div class="ecw-tree-body">
+            <span class="root">Eco Choice &middot; GTA</span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; Window Replacement <span class="dim">&middot; intent</span></span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; Door Replacement <span class="dim">&middot; intent</span></span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; Tilt &amp; Turn <span class="dim">&middot; niche intent</span></span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; Brand Defense</span>
+            <span class="branch pmax">&#9500;&#9472; <b>PMax</b> &middot; GTA <span class="dim">&middot; assets from Meta winners</span></span>
+            <span class="branch">&#9492;&#9472; Shared negatives <span class="dim">&middot; repair &middot; parts &middot; diy &middot; rental</span></span>
+          </div>
+          <div class="ecw-tree-foot">Conversion signal flows back from Zoho CRM, so the machine optimizes to quotes, not clicks.</div>
+        </div>
+      </div>
     </div>
   </section>
 
