@@ -52,10 +52,20 @@
     '#csb-card .csb-bottom{padding:12px 14px 14px}',
     '#csb-card .csb-title{font-size:14px;font-weight:600;color:#FAF8F3;letter-spacing:-.01em}',
     '#csb-card .csb-sub{font-size:12px;color:#8A878B;margin-top:2px}',
-    '#csb-pill{position:fixed;right:20px;bottom:20px;z-index:99990;display:inline-flex;align-items:center;gap:10px;background:#141414;color:#FAF8F3;border:none;border-radius:100px;padding:12px 20px;font-family:\'NuberNext\',\'Helvetica Neue\',Arial,sans-serif;font-size:13px;font-weight:500;cursor:pointer;box-shadow:0 12px 32px rgba(13,13,13,0.3);transition:background .25s ease,color .25s ease,transform .2s ease}',
-    '#csb-pill:hover{background:#FFEC00;color:#141414;transform:translateY(-1px)}',
-    '#csb-pill .csb-play{width:0;height:0;border-left:8px solid #FFEC00;border-top:5px solid transparent;border-bottom:5px solid transparent;transition:border-color .25s ease}',
-    '#csb-pill:hover .csb-play{border-left-color:#141414}',
+    '#csb-dock{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:99990;display:flex;align-items:center;gap:6px;background:#141414;border:1px solid #262626;border-radius:100px;padding:6px;font-family:\'NuberNext\',\'Helvetica Neue\',Arial,sans-serif;box-shadow:0 16px 40px rgba(13,13,13,0.35)}',
+    '#csb-dock .csb-dock-video{display:inline-flex;align-items:center;gap:9px;background:transparent;border:none;color:#FAF8F3;border-radius:100px;padding:10px 16px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .25s ease,color .25s ease}',
+    '#csb-dock .csb-dock-video:hover{background:#FFEC00;color:#141414}',
+    '#csb-dock .csb-play{width:0;height:0;border-left:8px solid #FFEC00;border-top:5px solid transparent;border-bottom:5px solid transparent;transition:border-color .25s ease;flex:none}',
+    '#csb-dock .csb-dock-video:hover .csb-play{border-left-color:#141414}',
+    '#csb-dock .csb-dock-sep{width:1px;height:22px;background:rgba(255,255,255,0.16);flex:none}',
+    '#csb-dock .csb-dock-explore{display:inline-flex;align-items:baseline;gap:7px;padding:10px 14px;color:#C7C5C8;font-size:12px;text-decoration:none;border-radius:100px;transition:color .2s ease;min-width:200px}',
+    '#csb-dock .csb-dock-explore:hover{color:#FFEC00}',
+    '#csb-dock .csb-dock-explore .csb-x-lbl{font-family:ui-monospace,\'SF Mono\',Menlo,Consolas,monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8A878B;flex:none}',
+    '#csb-dock .csb-dock-explore .csb-x-svc{font-weight:500;color:inherit;white-space:nowrap;transition:opacity .3s ease}',
+    '#csb-dock .csb-dock-explore .csb-x-svc.csb-fade{opacity:0}',
+    '#csb-dock .csb-dock-cta{display:inline-flex;align-items:center;background:#FFEC00;color:#141414;border-radius:100px;padding:10px 20px;font-size:13px;font-weight:600;text-decoration:none;transition:background .25s ease,color .25s ease,transform .2s ease;flex:none}',
+    '#csb-dock .csb-dock-cta:hover{background:#FAF8F3;transform:translateY(-1px)}',
+    '@media (max-width:760px){#csb-dock .csb-dock-explore,#csb-dock .csb-dock-sep{display:none}#csb-dock{bottom:12px}}',
     '#csb-theater{position:fixed;inset:0;z-index:99999;background:rgba(13,13,13,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease}',
     '#csb-theater.csb-in{opacity:1}',
     '#csb-theater .csb-stage{width:min(960px,94vw);font-family:\'NuberNext\',\'Helvetica Neue\',Arial,sans-serif}',
@@ -70,7 +80,7 @@
     '.csb-btn.csb-primary:hover{background:#FFEC00;transform:translateY(-1px)}',
     '.csb-btn.csb-ghost{border:1px solid rgba(255,255,255,.4);color:#FAF8F3;background:transparent}',
     '.csb-btn.csb-ghost:hover{border-color:#FFEC00;color:#FFEC00}',
-    '@media (max-width:640px){#csb-card{right:12px;bottom:12px;width:min(300px,calc(100vw - 24px))}#csb-pill{right:12px;bottom:12px}#csb-theater{padding:12px}}'
+    '@media (max-width:640px){#csb-card{right:12px;bottom:12px;width:min(300px,calc(100vw - 24px))}#csb-theater{padding:12px}}'
   ].join('\n');
   var styleEl = document.createElement('style');
   styleEl.textContent = css;
@@ -149,14 +159,51 @@
     return card;
   }
 
-  /* ---------- pill (collapsed state) ---------- */
-  function buildPill() {
-    var pill = document.createElement('button');
-    pill.id = 'csb-pill';
-    pill.innerHTML = '<span class="csb-play"></span><span>Watch: ' + TITLE + '</span>';
-    pill.addEventListener('click', openTheater);
-    document.body.appendChild(pill);
-    return pill;
+  /* ---------- dock (collapsed state) ----------
+     Persistent conversion bar: video pill + rotating service link +
+     Book a Call. Replaces the old lone pill. */
+  var EXPLORE = [
+    { label: 'Google Ads', href: '/google-ads/' },
+    { label: 'Meta Ads', href: '/meta-ads/' },
+    { label: 'SEO', href: '/seo/' },
+    { label: 'Conversion Rate Optimization', href: '/cro/' },
+    { label: 'Web Development', href: '/web-development/' },
+    { label: 'Performance Creatives', href: '/performance-creatives/' },
+    { label: 'Zoho CRM', href: '/zoho-crm/' }
+  ];
+
+  function buildDock() {
+    var dock = document.createElement('div');
+    dock.id = 'csb-dock';
+    dock.innerHTML =
+      '<button class="csb-dock-video" aria-label="Watch the ' + TITLE + '">' +
+        '<span class="csb-play"></span><span>' + TITLE + '</span>' +
+      '</button>' +
+      '<span class="csb-dock-sep"></span>' +
+      '<a class="csb-dock-explore" href="' + BASE + EXPLORE[0].href + '">' +
+        '<span class="csb-x-lbl">Explore</span>' +
+        '<span class="csb-x-svc">' + EXPLORE[0].label + ' &rarr;</span>' +
+      '</a>' +
+      '<span class="csb-dock-sep"></span>' +
+      '<a class="csb-dock-cta" href="' + CONTACT_URL + '">Book a Call</a>';
+    document.body.appendChild(dock);
+    dock.querySelector('.csb-dock-video').addEventListener('click', openTheater);
+
+    var i = 0;
+    var link = dock.querySelector('.csb-dock-explore');
+    var svc = dock.querySelector('.csb-x-svc');
+    if (!reduceMotion) {
+      setInterval(function () {
+        svc.classList.add('csb-fade');
+        setTimeout(function () {
+          i = (i + 1) % EXPLORE.length;
+          svc.innerHTML = EXPLORE[i].label + ' &rarr;';
+          link.href = BASE + EXPLORE[i].href;
+          svc.classList.remove('csb-fade');
+        }, 300);
+      }, 3500);
+    }
+    return dock;
   }
 
   function removeEl(id) { var el = document.getElementById(id); if (el) el.parentNode.removeChild(el); }
@@ -164,7 +211,7 @@
   function collapseToPill() {
     if (miniHandle) { try { miniHandle.pause(); } catch (e) {} }
     removeEl('csb-card');
-    if (!document.getElementById('csb-pill')) buildPill();
+    if (!document.getElementById('csb-dock')) buildDock();
     try { sessionStorage.setItem(STATE_KEY, 'pill'); } catch (e) {}
   }
 
@@ -220,7 +267,7 @@
 
   /* ---------- boot ---------- */
   function boot() {
-    if (state === 'pill') buildPill();
+    if (state === 'pill') buildDock();
     else buildCard();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
