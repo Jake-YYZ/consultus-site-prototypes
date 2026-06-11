@@ -102,10 +102,14 @@ All buttons are pills (`border-radius: 100px`):
 **Sticky case study video banner** (`assets/case-study-banner.js`, loaded by every page via a `<script defer>` tag before `</body>`):
 - Floating bottom-right card promoting the E11ement case study video (Wistia media `3fl1o2nq2n`, account `consultus.wistia.com`).
 - First page of a session: card slides in after 1.2s, video auto-plays muted and loops. Click anywhere on it = full-screen theater with sound, resuming from the teaser's position, with "See All Case Studies" and "Book a Call" CTAs.
-- Closing the card, closing the theater, or visiting later pages in the same session collapses it to a black pill ("Watch: E11ement Case Study"). State lives in sessionStorage key `csBannerState`; clear sessionStorage to see the auto-open again.
+- Closing the card, closing the theater, or visiting later pages in the same session collapses it to the **conversion dock**: a bottom-center black bar with the video pill, a rotating "Explore: [service]" link (cycles every 3.5s), and a yellow Book a Call button. State lives in sessionStorage key `csBannerState`; clear sessionStorage to see the auto-open again.
 - Skips the `/case-studies/` hub, respects `prefers-reduced-motion`, detects the GitHub Pages prefix at runtime for its CTA links.
 - Muted autoplay must be triggered through the Wistia player API in `onReady` (`video.mute(); video.play()`); the `autoPlay=true` embed option alone does not fire.
 - To swap in a future video: change `WISTIA_ID` and `TITLE` at the top of the file.
+
+**Homepage manifesto band** (`#manifesto` section + `#csx-styles` in `index.html`): "tailored programs, not cookie-cutter" positioning statement after the client logo strip, with pill links to all 10 industry pages. Red strikethrough on "Cookie-cutter" via `.csx-strike`.
+
+**Eco Choice case study** (`case-studies/eco-choice-windows/`): built from the bow-city-storage shell. Real Batch 2 ad creatives live in `assets/work/eco-choice/` (cropped from the Canva deck "Eco Choice Windows - Batch 2 Creatives", design id DAHMMOHN7TQ). Performance metrics are intentionally NOT included; a `[PROTOTYPE NOTE]` block marks where verified numbers go. Revert checkpoint for the v2 redesign work: git tag `checkpoint-before-v2-redesign`.
 
 ## Working preferences (Jake's rules)
 
