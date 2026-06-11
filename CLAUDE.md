@@ -97,6 +97,16 @@ All buttons are pills (`border-radius: 100px`):
 - Cards: white or bone backgrounds, ~10px border-radius, subtle `rgba(20,20,20,0.08)` borders
 - Page texture alternates light (paper) → bone → dark (ink) sections; heroes are typically dark with yellow accents or paper with blue accents
 
+## Site-wide components
+
+**Sticky case study video banner** (`assets/case-study-banner.js`, loaded by every page via a `<script defer>` tag before `</body>`):
+- Floating bottom-right card promoting the E11ement case study video (Wistia media `3fl1o2nq2n`, account `consultus.wistia.com`).
+- First page of a session: card slides in after 1.2s, video auto-plays muted and loops. Click anywhere on it = full-screen theater with sound, resuming from the teaser's position, with "See All Case Studies" and "Book a Call" CTAs.
+- Closing the card, closing the theater, or visiting later pages in the same session collapses it to a black pill ("Watch: E11ement Case Study"). State lives in sessionStorage key `csBannerState`; clear sessionStorage to see the auto-open again.
+- Skips the `/case-studies/` hub, respects `prefers-reduced-motion`, detects the GitHub Pages prefix at runtime for its CTA links.
+- Muted autoplay must be triggered through the Wistia player API in `onReady` (`video.mute(); video.play()`); the `autoPlay=true` embed option alone does not fire.
+- To swap in a future video: change `WISTIA_ID` and `TITLE` at the top of the file.
+
 ## Working preferences (Jake's rules)
 
 1. **Never use em dashes in any copy.** Use commas, periods, or restructure. (This is also official Consultus style, enforced in their QA.)
