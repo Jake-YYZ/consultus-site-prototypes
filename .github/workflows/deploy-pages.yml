@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+# Publishes the site to GitHub Pages on every push to main.
+# The site was built for a domain root (links like /assets/...), but GitHub
+# Pages serves it under /consultus-site-prototypes/. This workflow copies the
+# site and prefixes all root-relative URLs so everything resolves. Local files
+# are never modified.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prefix root-relative URLs for project-page hosting
+        run: |
+          mkdir -p /tmp/site
+          rsync -a --exclude '.git' --exclude '.github' ./ /tmp/site/
+          find /tmp/site \( -name '*.html' -o -name '*.css' \) -print0 | xargs -0 perl -pi -e '
+            s{((?:href|src|action|poster|content|data-src)=)(["\x27])/(?!/)}{$1$2/consultus-site-prototypes/}g;
+            s{(location\.href\s*=\s*)(["\x27])/(?!/)}{$1$2/consultus-site-prototypes/}g;
+            s{(url\()(["\x27]?)/(?!/)}{$1$2/consultus-site-prototypes/}g;
+          '
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
