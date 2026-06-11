@@ -3620,6 +3620,28 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Scroll reveals */
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+  .rv.in { opacity: 1; transform: none; }
+  .ecw-personas .rv:nth-child(2) { transition-delay: .08s; } .ecw-personas .rv:nth-child(3) { transition-delay: .16s; } .ecw-personas .rv:nth-child(4) { transition-delay: .24s; }
+  .ecw-hooks .rv:nth-child(2) { transition-delay: .1s; } .ecw-hooks .rv:nth-child(3) { transition-delay: .2s; }
+  .ecw-tl .rv:nth-child(2) { transition-delay: .08s; } .ecw-tl .rv:nth-child(3) { transition-delay: .16s; } .ecw-tl .rv:nth-child(4) { transition-delay: .24s; } .ecw-tl .rv:nth-child(5) { transition-delay: .32s; }
+  .ecw-score .rv:nth-child(3) { transition-delay: .07s; } .ecw-score .rv:nth-child(4) { transition-delay: .14s; } .ecw-score .rv:nth-child(5) { transition-delay: .21s; } .ecw-score .rv:nth-child(6) { transition-delay: .28s; }
+  .ecw-pages-grid .rv:nth-child(2) { transition-delay: .12s; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+  /* Kinetic type bands */
+  .ecw-band { background: #141414; overflow: hidden; padding: 20px 0; border-top: 1px solid #262626; border-bottom: 1px solid #262626; }
+  .ecw-band-track { display: flex; align-items: baseline; gap: 38px; width: max-content; animation: csm-scroll 38s linear infinite; }
+  .ecw-band-track.rev { animation-direction: reverse; }
+  .ecw-band-track span { font-family: var(--wide); font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FAF8F3; white-space: nowrap; }
+  .ecw-band-track span.y { color: #FFEC00; }
+  @media (prefers-reduced-motion: reduce) { .ecw-band-track { animation: none; } }
+  /* Ghost serif texture in dark sections */
+  .ecw-rel { position: relative; overflow: hidden; }
+  .ecw-ghost { position: absolute; right: 12px; bottom: -40px; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(120px, 17vw, 250px); line-height: 1; color: #FAF8F3; opacity: 0.04; pointer-events: none; user-select: none; }
+  /* Yellow highlight chip (from the E11ement video language) */
+  .ecw-hl { background: #FFEC00; color: #141414; font-style: normal; padding: 1px 16px 4px; border-radius: 6px; display: inline-block; transform: rotate(-1.2deg); }
+
   /* Hero scope mocks */
   .ecw-hv-b, .ecw-hv-c { width: 200px; }
   .ecw-gmock, .ecw-zmock { padding: 12px 13px 14px; width: 100%; box-sizing: border-box; }
@@ -3805,7 +3827,7 @@ section.hero-cover .hero-bg {
   </section>
 
   <section class="sec">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="section-lbl">The Brief</div>
       <h2 class="sec-title">The objective, and what stood <span class="sem">in the way</span>.</h2>
     </div>
@@ -3824,15 +3846,17 @@ section.hero-cover .hero-bg {
   </section>
 
   
-  <section class="sec dark-full">
+  
+  <div class="ecw-band" aria-hidden="true"><div class="ecw-band-track"><span>Pages</span><span class="y">&middot;</span><span>Creative</span><span class="y">&middot;</span><span>Media</span><span class="y">&middot;</span><span>CRO</span><span class="y">&middot;</span><span>Zoho CRM</span><span class="y">&middot;</span><span>Hooks</span><span class="y">&middot;</span><span>Attribution</span><span class="y">&middot;</span><span>Pages</span><span class="y">&middot;</span><span>Creative</span><span class="y">&middot;</span><span>Media</span><span class="y">&middot;</span><span>CRO</span><span class="y">&middot;</span><span>Zoho CRM</span><span class="y">&middot;</span><span>Hooks</span><span class="y">&middot;</span><span>Attribution</span><span class="y">&middot;</span><span>Pages</span><span class="y">&middot;</span><span>Creative</span><span class="y">&middot;</span><span>Media</span><span class="y">&middot;</span><span>CRO</span><span class="y">&middot;</span><span>Zoho CRM</span><span class="y">&middot;</span><span>Hooks</span><span class="y">&middot;</span><span>Attribution</span><span class="y">&middot;</span><span>Pages</span><span class="y">&middot;</span><span>Creative</span><span class="y">&middot;</span><span>Media</span><span class="y">&middot;</span><span>CRO</span><span class="y">&middot;</span><span>Zoho CRM</span><span class="y">&middot;</span><span>Hooks</span><span class="y">&middot;</span><span>Attribution</span><span class="y">&middot;</span></div></div>
+  <section class="sec dark-full ecw-rel">
     <div class="sec-inner">
-      <div class="sec-head">
-        <div class="section-lbl dark">The Personas</div>
+      <div class="sec-head rv">
+        <div class="section-lbl dark">The Personas</div><div class="ecw-ghost">buyers</div>
         <h2 class="sec-title">We reverse engineered the <span class="sem">buyer</span>.</h2>
       </div>
       <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Before a single dollar of media ran, we mapped who actually replaces windows in the GTA and what makes each of them move. Four personas. Four hook families. Every ad below answers to one of them.</p>
       <div class="ecw-personas">
-        <div class="ecw-persona">
+        <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 01</div>
           <h3>The Comfort Seeker</h3>
           <p class="q">"One room is a freezer. The next one is a sauna."</p>
@@ -3840,7 +3864,7 @@ section.hero-cover .hero-bg {
           <p class="hook">Windows built for maximum home comfort.</p>
           <img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Comfort persona ad" loading="lazy">
         </div>
-        <div class="ecw-persona">
+        <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 02</div>
           <h3>The Bill Fighter</h3>
           <p class="q">"Why is hydro up again? Nothing changed."</p>
@@ -3848,7 +3872,7 @@ section.hero-cover .hero-bg {
           <p class="hook">Your A/C isn't the problem. Your windows are.</p>
           <img src="/assets/work/eco-choice/statics/energy-ac.jpg" alt="Energy persona ad" loading="lazy">
         </div>
-        <div class="ecw-persona">
+        <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 03</div>
           <h3>The Light Sleeper</h3>
           <p class="q">"The street might as well run through our bedroom."</p>
@@ -3856,7 +3880,7 @@ section.hero-cover .hero-bg {
           <p class="hook">Noise keeping you up at night?</p>
           <img src="/assets/work/eco-choice/statics/sound.jpg" alt="Sound persona ad" loading="lazy">
         </div>
-        <div class="ecw-persona">
+        <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 04</div>
           <h3>The Curb Appeal Buyer</h3>
           <p class="q">"The house is great. The front of it isn't."</p>
@@ -3871,7 +3895,7 @@ section.hero-cover .hero-bg {
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head rv">
         <div class="section-lbl">The Build</div>
         <h2 class="sec-title">Four layers, <span class="sem">one</span> scoreboard.</h2>
       </div>
@@ -3883,23 +3907,23 @@ section.hero-cover .hero-bg {
   </section>
   
   <section class="sec">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="section-lbl">The Timeline</div>
-      <h2 class="sec-title">Zero to engine in <span class="sem">eight weeks</span>.</h2>
+      <h2 class="sec-title">Zero to engine in <span class="ecw-hl">eight weeks</span>.</h2>
     </div>
     <div class="ecw-tl">
-      <div class="ecw-tl-step"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Mar 30</div><div class="ecw-tl-evt">Kickoff. Access, tracking, and the account audit start the same week.</div></div>
-      <div class="ecw-tl-step"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 8</div><div class="ecw-tl-evt">Paid media management live on Google and Meta.</div></div>
-      <div class="ecw-tl-step"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 17</div><div class="ecw-tl-evt">Performance dashboard live. Landing page first draft in the client's inbox.</div></div>
-      <div class="ecw-tl-step"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 23</div><div class="ecw-tl-evt">Creative batch one delivered: ten statics, five video scripts.</div></div>
-      <div class="ecw-tl-step live"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">May 23</div><div class="ecw-tl-evt">Video ads approved in the morning, in market the same day.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Mar 30</div><div class="ecw-tl-evt">Kickoff. Access, tracking, and the account audit start the same week.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 8</div><div class="ecw-tl-evt">Paid media management live on Google and Meta.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 17</div><div class="ecw-tl-evt">Performance dashboard live. Landing page first draft in the client's inbox.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 23</div><div class="ecw-tl-evt">Creative batch one delivered: ten statics, five video scripts.</div></div>
+      <div class="ecw-tl-step live rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">May 23</div><div class="ecw-tl-evt">Video ads approved in the morning, in market the same day.</div></div>
     </div>
   </section>
 
   
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head rv">
         <div class="section-lbl">The Search Rebuild</div>
         <h2 class="sec-title">Google, rebuilt from <span class="sem">intent up</span>.</h2>
       </div>
@@ -3910,7 +3934,7 @@ section.hero-cover .hero-bg {
           <div class="content-block"><h3>03. Performance Max</h3><div><p>PMax runs on curated asset groups built from the Meta-proven creative, so Google's machine learns from hooks that already won, not stock guesses.</p></div></div>
           <div class="content-block"><h3>04. The negative wall</h3><div><p>Repair, parts, DIY, rental. Blocked before they spend a dollar. Then every search click lands on the angle-matched dynamic page you'll see below.</p></div></div>
         </div>
-        <div class="ecw-tree">
+        <div class="ecw-tree rv">
           <div class="ecw-tree-head"><span>Google Ads &middot; Account Structure</span><span>Rebuilt Apr 2026</span></div>
           <div class="ecw-tree-body">
             <span class="root">Eco Choice &middot; GTA</span>
@@ -3928,13 +3952,13 @@ section.hero-cover .hero-bg {
   </section>
 
   <section class="sec">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="section-lbl">The Pages</div>
       <h2 class="sec-title">Layer one, <span class="sem">live</span>.</h2>
     </div>
     <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These aren't mockups. The left laptop is the live campaign page Meta traffic lands on. The right one is the same build doing something smarter for Google Ads: it rewrites its own pain points to match the search. And the annotations are the CRO loop at work, every experiment starts as a written hypothesis in Zoho PageSense, the winner becomes the new baseline, and the next test starts the same day.</p>
     <div class="ecw-pages-grid">
-      <div class="ecw-browser">
+      <div class="ecw-browser rv">
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca</div></div>
         <div class="ecw-cro-overlay">
           <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 01 &middot; PageSense</div><div class="h">"Quote form above the fold lifts mobile starts."</div><div class="u">+34%<small>Form Starts &middot; B Beat A</small></div><span class="w">Winner &middot; Now The Baseline</span></div>
@@ -3943,7 +3967,7 @@ section.hero-cover .hero-bg {
         <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice campaign landing page" tabindex="-1"></iframe></div>
         <div class="ecw-browser-foot"><span class="flbl">Campaign LP &middot; Triple-Pane Installed In A Day</span><a href="https://landing.ecochoicewindows.ca/" target="_blank" rel="noopener">Visit live &rarr;</a></div>
       </div>
-      <div class="ecw-browser">
+      <div class="ecw-browser rv">
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca/?angle=drafty-windows</div></div>
         <div class="ecw-cro-overlay">
           <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 03 &middot; Live Now</div><div class="h">"Financing badge beside the form lifts Bill Fighter submits."</div><div class="u">&hellip;<small>Heat Maps + A/B Running</small></div><span class="w run">Collecting Data</span></div>
@@ -3958,25 +3982,25 @@ section.hero-cover .hero-bg {
   
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head rv">
         <div class="section-lbl">The Motion</div>
         <h2 class="sec-title">Hooks are tested, not <span class="sem">guessed</span>.</h2>
       </div>
       <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">Five scripts went to camera. Every hook is a hypothesis: the format, the first line, the first frame. Winners graduate into statics, headlines, and the landing page itself.</p>
       <div class="ecw-hooks">
-        <div class="ecw-hook">
+        <div class="ecw-hook rv">
           <video src="/assets/work/eco-choice/video-loop-1.mp4" muted loop playsinline></video>
           <div class="ecw-hook-tag">Hook &middot; Did You Know</div>
           <h3>Showroom authority</h3>
           <p>The owner on camera, product within reach. Credibility you can't stock-photo.</p>
         </div>
-        <div class="ecw-hook">
+        <div class="ecw-hook rv">
           <video src="/assets/work/eco-choice/video-loop-2.mp4" muted loop playsinline></video>
           <div class="ecw-hook-tag">Hook &middot; Comparison Demo</div>
           <h3>Show, don't tell</h3>
           <p>Triple pane next to builder grade, held side by side. The demo does the convincing.</p>
         </div>
-        <div class="ecw-hook">
+        <div class="ecw-hook rv">
           <video src="/assets/work/eco-choice/video-loop-3.mp4" muted loop playsinline></video>
           <div class="ecw-hook-tag">Hook &middot; Comment Reply</div>
           <h3>Real questions win</h3>
@@ -3986,40 +4010,40 @@ section.hero-cover .hero-bg {
     </div>
   </section>
 
-  <section class="sec dark-full">
+  <section class="sec dark-full ecw-rel">
     <div class="sec-inner">
-      <div class="sec-head">
-        <div class="section-lbl dark">The Scoreboard</div>
+      <div class="sec-head rv">
+        <div class="section-lbl dark">The Scoreboard</div><div class="ecw-ghost">tested</div>
         <h2 class="sec-title">Every ad earns its budget, or <span class="sem">loses it</span>.</h2>
       </div>
       <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Creative analytics run on every test: hook rate, hold rate, return on spend. Winners scale the same week. Losers die before they burn budget. The scoreboard decides, not opinions.</p>
       <div class="ecw-score">
         <div class="ecw-score-head"><span>Creative</span><span>Hook Rate</span><span>ROAS</span><span>Status</span></div>
-        <div class="ecw-score-row">
+        <div class="ecw-score-row rv">
           <div class="ecw-score-id"><video src="/assets/work/eco-choice/video-loop-4.mp4" muted loop playsinline></video><div><strong>Comment Reply &middot; Energy</strong><span>Video &middot; Bill Fighter</span></div></div>
           <div class="ecw-score-hook"><div class="bar"><i style="width:41%"></i></div><em>41%</em></div>
           <div class="ecw-score-roas">4.6x</div>
           <div><span class="ecw-pill win">Winner &middot; Scaling</span></div>
         </div>
-        <div class="ecw-score-row">
+        <div class="ecw-score-row rv">
           <div class="ecw-score-id"><img src="/assets/work/eco-choice/static-ad-2.png" alt="0% financing static ad"><div><strong>0% Financing Static</strong><span>Static &middot; Offer Layer</span></div></div>
           <div class="ecw-score-hook"><div class="bar"><i style="width:38%"></i></div><em>38%</em></div>
           <div class="ecw-score-roas">5.2x</div>
           <div><span class="ecw-pill win">Winner &middot; Scaling</span></div>
         </div>
-        <div class="ecw-score-row">
+        <div class="ecw-score-row rv">
           <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Comfort static ad"><div><strong>Max Comfort Static</strong><span>Static &middot; Comfort Seeker</span></div></div>
           <div class="ecw-score-hook"><div class="bar"><i style="width:24%"></i></div><em>24%</em></div>
           <div class="ecw-score-roas">2.1x</div>
           <div><span class="ecw-pill test">Testing &middot; More Data Needed</span></div>
         </div>
-        <div class="ecw-score-row">
+        <div class="ecw-score-row rv">
           <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="Curb appeal ad"><div><strong>Outside-In Static</strong><span>Static &middot; Curb Appeal Buyer</span></div></div>
           <div class="ecw-score-hook"><div class="bar"><i style="width:19%"></i></div><em>19%</em></div>
           <div class="ecw-score-roas">1.4x</div>
           <div><span class="ecw-pill iter">Iterating &middot; New Hook In Production</span></div>
         </div>
-        <div class="ecw-score-row dead">
+        <div class="ecw-score-row dead rv">
           <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/door-v2.jpg" alt="Entry doors static ad"><div><strong>Entry Doors V1</strong><span>Static &middot; Doors</span></div></div>
           <div class="ecw-score-hook"><div class="bar"><i style="width:12%"></i></div><em>12%</em></div>
           <div class="ecw-score-roas">0.6x</div>
@@ -4032,20 +4056,20 @@ section.hero-cover .hero-bg {
 
   
   <section class="sec">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="section-lbl">The Attribution</div>
       <h2 class="sec-title">Every quote knows <span class="sem">which ad sent it</span>.</h2>
     </div>
     <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">No more "leads are up, not sure why." Source, campaign, creative, and page angle ride with every lead from first click to closed revenue inside Zoho CRM.</p>
     <div class="ecw-attr-grid">
-      <ul class="ecw-journey">
+      <ul class="ecw-journey rv">
         <li><span class="jdot"></span><div class="jlbl">Touch 01 &middot; Meta</div><div class="jtxt">Homeowner stops on the Comment Reply energy ad. UTM tags fire on the click.</div></li>
         <li><span class="jdot"></span><div class="jlbl">Touch 02 &middot; Landing Page</div><div class="jtxt">Lands on the campaign page. The angle, the creative, and the session ride along.</div></li>
         <li><span class="jdot"></span><div class="jlbl">Touch 03 &middot; Quote Form</div><div class="jtxt">Submits the quote request. Duplicate-submission handling means one lead, one record, one notification.</div></li>
         <li><span class="jdot"></span><div class="jlbl">Touch 04 &middot; Zoho CRM</div><div class="jtxt">Lead record created with full source data. Speed-to-lead automation fires in minutes.</div></li>
         <li><span class="jdot"></span><div class="jlbl">Closed &middot; Revenue Posts Back</div><div class="jtxt">The win posts back to the exact ad that started it. That's what the scoreboard runs on.</div></li>
       </ul>
-      <div class="ecw-crm">
+      <div class="ecw-crm rv">
         <div class="ecw-crm-head"><span class="live"></span><span>Zoho CRM &middot; Lead Record</span><span style="margin-left:auto">#EC-4821</span></div>
         <div class="ecw-crm-rows">
           <div class="ecw-crm-row"><div class="k">Lead</div><div class="v">Homeowner &middot; Etobicoke</div></div>
@@ -4067,7 +4091,7 @@ section.hero-cover .hero-bg {
   </section>
 
   <section class="sec">
-    <div class="sec-head">
+    <div class="sec-head rv">
       <div class="section-lbl" id="the-work">The Work</div>
       <h2 class="sec-title">Straight from the <span class="sem">working files</span>.</h2>
     </div>
@@ -4093,6 +4117,8 @@ section.hero-cover .hero-bg {
     </div>
   </section>
 
+  
+  <div class="ecw-band" aria-hidden="true"><div class="ecw-band-track rev"><span>Test</span><span class="y">&middot;</span><span>Win</span><span class="y">&middot;</span><span>New Baseline</span><span class="y">&middot;</span><span>Repeat</span><span class="y">&middot;</span><span>Test</span><span class="y">&middot;</span><span>Win</span><span class="y">&middot;</span><span>New Baseline</span><span class="y">&middot;</span><span>Repeat</span><span class="y">&middot;</span><span>Test</span><span class="y">&middot;</span><span>Win</span><span class="y">&middot;</span><span>New Baseline</span><span class="y">&middot;</span><span>Repeat</span><span class="y">&middot;</span><span>Test</span><span class="y">&middot;</span><span>Win</span><span class="y">&middot;</span><span>New Baseline</span><span class="y">&middot;</span><span>Repeat</span><span class="y">&middot;</span></div></div>
   <section class="sec dark-full">
     <div class="sec-inner" style="text-align:center">
       <div class="section-lbl dark" style="justify-content:center">Next</div>
@@ -4406,6 +4432,25 @@ if (typeof setMegaTab !== 'function') {
   window.addEventListener('resize', fit);
   fit();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fit);
+})();
+</script>
+
+<script>
+/* Scroll reveals: sections and cards rise in as they enter the viewport. */
+(function () {
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    els.forEach(function (e) { e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (e) { io.observe(e); });
+  /* Failsafe: never leave content hidden if the observer can't fire. */
+  setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 3000);
 })();
 </script>
 </body>
