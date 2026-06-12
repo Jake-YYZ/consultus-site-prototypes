@@ -3546,9 +3546,9 @@ section.hero-cover .hero-bg {
   .ecw-hv-a { left: 50%; margin-left: -125px; top: 35px; width: 250px; z-index: 3; animation: ecwFloatA 7s ease-in-out infinite; }
   .ecw-hv-b { left: 0; top: 130px; width: 185px; z-index: 2; animation: ecwFloatB 8.5s ease-in-out infinite; }
   .ecw-hv-c { right: 0; top: 100px; width: 185px; z-index: 1; animation: ecwFloatC 9.5s ease-in-out infinite; }
-  @keyframes ecwFloatA { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-12px) rotate(-1.5deg); } }
-  @keyframes ecwFloatB { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-9px) rotate(-5deg); } }
-  @keyframes ecwFloatC { 0%,100% { transform: translateY(0) rotate(4.5deg); } 50% { transform: translateY(-14px) rotate(4.5deg); } }
+  @keyframes ecwFloatA { 0%,100% { transform: translateY(var(--par,0px)) rotate(-1.5deg); } 50% { transform: translateY(calc(var(--par,0px) - 12px)) rotate(-1.5deg); } }
+  @keyframes ecwFloatB { 0%,100% { transform: translateY(var(--par,0px)) rotate(-5deg); } 50% { transform: translateY(calc(var(--par,0px) - 9px)) rotate(-5deg); } }
+  @keyframes ecwFloatC { 0%,100% { transform: translateY(var(--par,0px)) rotate(4.5deg); } 50% { transform: translateY(calc(var(--par,0px) - 14px)) rotate(4.5deg); } }
   .ecw-hv-tag { position: absolute; top: 18px; left: 18px; z-index: 4; display: inline-flex; align-items: center; gap: 7px; background: #FFEC00; color: #141414; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 100px; }
   .ecw-hv-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: #D94545; animation: ecwPulse 1.6s ease-in-out infinite; }
   @keyframes ecwPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
@@ -3595,7 +3595,7 @@ section.hero-cover .hero-bg {
   .ecw-hv-d { left: auto; top: auto; right: -20px; bottom: -26px; width: 300px; z-index: 4; padding: 0; border: 8px solid #141414; border-radius: 12px; background: #FFFFFF; animation: ecwFloatD 10s ease-in-out infinite; overflow: visible; }
   .ecw-hv-d .ecw-frame { aspect-ratio: 16/10; border-radius: 4px; }
   .ecw-hv-d::after { content: ''; position: absolute; left: -8%; right: -8%; bottom: -20px; height: 13px; background: linear-gradient(180deg, #313131, #161616); border-radius: 0 0 10px 10px; }
-  @keyframes ecwFloatD { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(-1deg); } }
+  @keyframes ecwFloatD { 0%,100% { transform: translateY(var(--par,0px)) rotate(-1deg); } 50% { transform: translateY(calc(var(--par,0px) - 8px)) rotate(-1deg); } }
   /* Hooks */
   .ecw-hooks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
   .ecw-hook { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.08); border-radius: 12px; padding: 12px 12px 20px; }
@@ -3620,6 +3620,39 @@ section.hero-cover .hero-bg {
     .ecw-hv-d { display: none; }
   }
   @media (max-width: 560px) { .ecw-personas { grid-template-columns: 1fr; } }
+  /* Motion-style creative dashboard */
+  .ecw-mdash { background: #FFFFFF; border-radius: 14px; overflow: hidden; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.6); margin-top: 48px; }
+  .ecw-mdash-bar { background: #141414; padding: 11px 16px; display: flex; gap: 6px; }
+  .ecw-mdash-bar span { width: 9px; height: 9px; border-radius: 50%; background: #3a3a3a; }
+  .ecw-mstats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid rgba(20,20,20,0.08); }
+  .ecw-mstat { padding: 18px 22px; border-right: 1px solid rgba(20,20,20,0.08); }
+  .ecw-mstat:last-child { border-right: none; }
+  .ecw-mstat .k { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8C8A87; }
+  .ecw-mstat .v { display: flex; align-items: center; gap: 10px; margin-top: 7px; font-size: 21px; font-weight: 600; letter-spacing: -0.02em; color: #141414; }
+  .ecw-chip-up { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10.5px; font-weight: 600; color: #2D8F5F; background: #E7F4EE; border-radius: 6px; padding: 3px 8px; }
+  .ecw-chip-dn { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10.5px; font-weight: 600; color: #D94545; background: #FBEAEA; border-radius: 6px; padding: 3px 8px; }
+  .ecw-mcards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 22px; }
+  .ecw-mcard { border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; padding: 12px; background: #FFFFFF; }
+  .ecw-mcard.dead { opacity: 0.55; }
+  .ecw-mthumb { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/5; }
+  .ecw-mthumb img, .ecw-mthumb video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ecw-mtype { position: absolute; left: 8px; bottom: 8px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(20,20,20,0.78); color: #FAF8F3; padding: 3px 8px; border-radius: 5px; }
+  .ecw-mname { font-size: 14px; font-weight: 600; color: #141414; margin: 12px 0 8px; letter-spacing: -0.01em; }
+  .ecw-mrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 5.5px 0; border-bottom: 1px dashed rgba(20,20,20,0.08); font-size: 12px; color: #6A686B; }
+  .ecw-mrow b { color: #141414; font-weight: 600; font-size: 12.5px; }
+  .ecw-mrow .with-chip { display: flex; align-items: center; gap: 6px; }
+  .ecw-mbar { display: flex; align-items: center; gap: 7px; min-width: 76px; justify-content: flex-end; }
+  .ecw-mbar i { display: block; width: 44px; height: 5px; border-radius: 100px; background: #ECEAE6; position: relative; overflow: hidden; }
+  .ecw-mbar i::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: var(--w, 50%); background: var(--c, #2D8F5F); border-radius: 100px; }
+  .ecw-mtags { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #B4B1AD; margin: 11px 0 7px; }
+  .ecw-mchips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ecw-mchips i { font-style: normal; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; padding: 4px 9px; border-radius: 6px; }
+  .ecw-mchips i.fmt { background: #E7F4EE; color: #1f7a4d; }
+  .ecw-mchips i.per { background: #FBE4EE; color: #C2185B; }
+  .ecw-mchips i.test { background: #E9EEFD; color: #1A40C7; }
+  .ecw-mchips i.kill { background: #FBEAEA; color: #D94545; }
+  @media (max-width: 960px) { .ecw-mcards { grid-template-columns: repeat(2, 1fr); } .ecw-mstats { grid-template-columns: 1fr; } .ecw-mstat { border-right: none; border-bottom: 1px solid rgba(20,20,20,0.08); } }
+
   .ecw-zmock .zroas { display: flex; justify-content: space-between; align-items: center; margin-top: 11px; padding-top: 10px; border-top: 1px solid rgba(20,20,20,0.08); }
   .ecw-zmock .zroas span { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 7.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #8C8A87; }
   .ecw-zmock .zroas b { background: #FFEC00; color: #141414; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 6px; }
@@ -4114,40 +4147,57 @@ section.hero-cover .hero-bg {
         <h2 class="sec-title">Every ad earns its budget, or <span class="sem">loses it</span>.</h2>
       </div>
       <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Creative analytics run on every test: hook rate, hold rate, return on spend. Winners scale the same week. Losers die before they burn budget. The scoreboard decides, not opinions.</p>
-      <div class="ecw-score">
-        <div class="ecw-score-head"><span>Creative</span><span>Hook Rate</span><span>ROAS</span><span>Status</span></div>
-        <div class="ecw-score-row rv">
-          <div class="ecw-score-id"><video src="/assets/work/eco-choice/video-loop-4.mp4" muted loop playsinline></video><div><strong>Comment Reply &middot; Energy</strong><span>Video &middot; Bill Fighter</span></div></div>
-          <div class="ecw-score-hook"><div class="bar"><i style="width:41%"></i></div><em>41%</em></div>
-          <div class="ecw-score-roas">4.6x</div>
-          <div><span class="ecw-pill win">Winner &middot; Scaling</span></div>
+      <div class="ecw-mdash rv">
+        <div class="ecw-mdash-bar"><span></span><span></span><span></span></div>
+        <div class="ecw-mstats">
+          <div class="ecw-mstat"><div class="k">Spend This Month</div><div class="v">$38,400 <span class="ecw-chip-up">+24%</span></div></div>
+          <div class="ecw-mstat"><div class="k">Blended ROAS</div><div class="v">3.8x <span class="ecw-chip-up">+0.6</span></div></div>
+          <div class="ecw-mstat"><div class="k">Creatives Live</div><div class="v">14</div></div>
         </div>
-        <div class="ecw-score-row rv">
-          <div class="ecw-score-id"><img src="/assets/work/eco-choice/static-ad-2.png" alt="0% financing static ad"><div><strong>0% Financing Static</strong><span>Static &middot; Offer Layer</span></div></div>
-          <div class="ecw-score-hook"><div class="bar"><i style="width:38%"></i></div><em>38%</em></div>
-          <div class="ecw-score-roas">5.2x</div>
-          <div><span class="ecw-pill win">Winner &middot; Scaling</span></div>
-        </div>
-        <div class="ecw-score-row rv">
-          <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Comfort static ad"><div><strong>Max Comfort Static</strong><span>Static &middot; Comfort Seeker</span></div></div>
-          <div class="ecw-score-hook"><div class="bar"><i style="width:24%"></i></div><em>24%</em></div>
-          <div class="ecw-score-roas">2.1x</div>
-          <div><span class="ecw-pill test">Testing &middot; More Data Needed</span></div>
-        </div>
-        <div class="ecw-score-row rv">
-          <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/curb-appeal-2.jpg" alt="Curb appeal ad"><div><strong>Outside-In Static</strong><span>Static &middot; Curb Appeal Buyer</span></div></div>
-          <div class="ecw-score-hook"><div class="bar"><i style="width:19%"></i></div><em>19%</em></div>
-          <div class="ecw-score-roas">1.4x</div>
-          <div><span class="ecw-pill iter">Iterating &middot; New Hook In Production</span></div>
-        </div>
-        <div class="ecw-score-row dead rv">
-          <div class="ecw-score-id"><img src="/assets/work/eco-choice/statics/door-v2.jpg" alt="Entry doors static ad"><div><strong>Entry Doors V1</strong><span>Static &middot; Doors</span></div></div>
-          <div class="ecw-score-hook"><div class="bar"><i style="width:12%"></i></div><em>12%</em></div>
-          <div class="ecw-score-roas">0.6x</div>
-          <div><span class="ecw-pill kill">Killed &middot; Budget Moved To Winners</span></div>
+        <div class="ecw-mcards">
+          <div class="ecw-mcard">
+            <div class="ecw-mthumb"><video src="/assets/work/eco-choice/video-loop-4.mp4" muted loop playsinline></video><span class="ecw-mtype">Video</span></div>
+            <div class="ecw-mname">Comment Reply &middot; Energy</div>
+            <div class="ecw-mrow"><span>Spend</span><span class="with-chip"><b>$9,120</b><span class="ecw-chip-up">+41%</span></span></div>
+            <div class="ecw-mrow"><span>ROAS</span><b>4.6</b></div>
+            <div class="ecw-mrow"><span>Hook score</span><span class="ecw-mbar"><i style="--w:82%;--c:#2D8F5F"></i><b>41</b></span></div>
+            <div class="ecw-mrow"><span>Convert score</span><span class="ecw-mbar"><i style="--w:74%;--c:#2D8F5F"></i><b>74</b></span></div>
+            <div class="ecw-mtags">Tags</div>
+            <div class="ecw-mchips"><i class="fmt">UGC Reply Video</i><i class="per">"Bill Fighter" Persona</i></div>
+          </div>
+          <div class="ecw-mcard">
+            <div class="ecw-mthumb"><img src="/assets/work/eco-choice/static-ad-2.png" alt="0% financing static ad"><span class="ecw-mtype">Image</span></div>
+            <div class="ecw-mname">0% Financing Static</div>
+            <div class="ecw-mrow"><span>Spend</span><span class="with-chip"><b>$8,450</b><span class="ecw-chip-up">+32%</span></span></div>
+            <div class="ecw-mrow"><span>ROAS</span><b>5.2</b></div>
+            <div class="ecw-mrow"><span>Hook score</span><span class="ecw-mbar"><i style="--w:76%;--c:#2D8F5F"></i><b>38</b></span></div>
+            <div class="ecw-mrow"><span>Convert score</span><span class="ecw-mbar"><i style="--w:81%;--c:#2D8F5F"></i><b>81</b></span></div>
+            <div class="ecw-mtags">Tags</div>
+            <div class="ecw-mchips"><i class="fmt">Offer-First Banner</i><i class="per">"Payment Planner" Persona</i></div>
+          </div>
+          <div class="ecw-mcard">
+            <div class="ecw-mthumb"><img src="/assets/work/eco-choice/statics/comfort.jpg" alt="Comfort static ad"><span class="ecw-mtype">Image</span></div>
+            <div class="ecw-mname">Max Comfort Static</div>
+            <div class="ecw-mrow"><span>Spend</span><span class="with-chip"><b>$4,210</b><span class="ecw-chip-up">+12%</span></span></div>
+            <div class="ecw-mrow"><span>ROAS</span><b>2.1</b></div>
+            <div class="ecw-mrow"><span>Hook score</span><span class="ecw-mbar"><i style="--w:48%;--c:#FDD200"></i><b>24</b></span></div>
+            <div class="ecw-mrow"><span>Convert score</span><span class="ecw-mbar"><i style="--w:48%;--c:#FDD200"></i><b>48</b></span></div>
+            <div class="ecw-mtags">Tags</div>
+            <div class="ecw-mchips"><i class="fmt">Feature Call-Out</i><i class="per">"Comfort Seeker" Persona</i><i class="test">Testing &middot; More Data</i></div>
+          </div>
+          <div class="ecw-mcard dead">
+            <div class="ecw-mthumb"><img src="/assets/work/eco-choice/statics/door-v2.jpg" alt="Entry doors static ad"><span class="ecw-mtype">Image</span></div>
+            <div class="ecw-mname">Entry Doors V1</div>
+            <div class="ecw-mrow"><span>Spend</span><span class="with-chip"><b>$1,980</b><span class="ecw-chip-dn">-64%</span></span></div>
+            <div class="ecw-mrow"><span>ROAS</span><b>0.6</b></div>
+            <div class="ecw-mrow"><span>Hook score</span><span class="ecw-mbar"><i style="--w:24%;--c:#D94545"></i><b>12</b></span></div>
+            <div class="ecw-mrow"><span>Convert score</span><span class="ecw-mbar"><i style="--w:22%;--c:#D94545"></i><b>22</b></span></div>
+            <div class="ecw-mtags">Tags</div>
+            <div class="ecw-mchips"><i class="fmt">Offer-First Banner</i><i class="per">"Doors" Persona</i><i class="kill">Killed &middot; Budget Moved</i></div>
+          </div>
         </div>
       </div>
-      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Numbers are illustrative placeholders. Swap in the live creative analytics export before this ships.</p>
+            <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Numbers are illustrative placeholders. Swap in the live creative analytics export before this ships.</p>
     </div>
   </section>
 
@@ -4571,6 +4621,25 @@ if (typeof setMegaTab !== 'function') {
   var q = document.getElementById('ecw-gq');
   var j = 0;
   if (q) setInterval(function () { j = (j + 1) % qs.length; q.textContent = qs[j]; }, 4200);
+})();
+</script>
+
+<script>
+/* Motion-style scroll parallax: hero cards drift at different depths. */
+(function () {
+  if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900) return;
+  var map = [['.ecw-hv-e', -0.16], ['.ecw-hv-b', -0.07], ['.ecw-hv-a', -0.11], ['.ecw-hv-c', -0.2], ['.ecw-hv-d', -0.045]];
+  var els = [];
+  map.forEach(function (m) { var e = document.querySelector(m[0]); if (e) els.push([e, m[1]]); });
+  if (!els.length) return;
+  var tick = false;
+  function upd() {
+    tick = false;
+    var y = Math.min(window.scrollY || 0, 1100);
+    els.forEach(function (p) { p[0].style.setProperty('--par', (y * p[1]).toFixed(1) + 'px'); });
+  }
+  window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+  upd();
 })();
 </script>
 </body>
