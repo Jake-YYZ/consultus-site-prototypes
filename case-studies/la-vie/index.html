@@ -3922,6 +3922,40 @@ section.hero-cover .hero-bg {
 .e11-dgp-row:last-child { border-bottom: none; }
 .e11-dgp-row b { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #1A40C7; min-width: 64px; flex-shrink: 0; }
 .e11-dgp-row span { font-size: 14px; line-height: 1.5; color: #2A2A2A; }
+
+/* ===== Story hero (chapter rotation) ===== */
+.lvh-rail { position: absolute; left: 0; top: 8px; z-index: 6; display: flex; flex-direction: column; gap: 13px; }
+.lvh-step { display: flex; align-items: center; gap: 8px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A5A0; transition: color 0.35s ease; }
+.lvh-step .n { font-size: 9px; margin-right: 2px; }
+.lvh-step::before { content: ''; width: 14px; height: 1px; background: currentColor; opacity: 0.6; transition: width 0.35s ease; }
+.lvh-step.on { color: #1A40C7; }
+.lvh-step.on::before { width: 26px; }
+.lvh-stage { position: absolute; right: 8px; top: 0; width: 272px; aspect-ratio: 4/5; z-index: 4; transition: opacity 0.5s ease; }
+.lvh-stage.lvh-dim { opacity: 0.3; }
+.lvh-panel { position: absolute; inset: 0; background: #FFFFFF; border-radius: 14px; padding: 8px; box-shadow: 0 24px 60px -28px rgba(20,20,20,0.45); opacity: 0; transform: translateY(10px) rotate(1.5deg); transition: opacity 0.28s ease, transform 0.28s ease; pointer-events: none; }
+.lvh-panel.on { opacity: 1; transform: translateY(0) rotate(1.5deg); transition: opacity 0.45s ease 0.18s, transform 0.45s ease 0.18s; }
+.lvh-panel > video, .lvh-panel > img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; display: block; }
+.lvh-chip { position: absolute; left: 16px; bottom: 16px; background: #141414; color: #FAF8F3; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 100px; z-index: 3; white-space: nowrap; }
+.lvh-chip.y { background: #FFEC00; color: #141414; }
+.lvh-serp { background: #FFFFFF; padding: 24px 20px 50px; display: flex; flex-direction: column; gap: 9px; }
+.lvh-serp-tag { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.06em; color: #141414; }
+.lvh-serp-url { font-size: 12px; color: #2D6A30; }
+.lvh-serp-h { font-size: 16.5px; line-height: 1.3; color: #1A0DAB; font-weight: 500; }
+.lvh-serp-d { font-size: 12.5px; line-height: 1.5; color: #4D5156; }
+.lvh-serp-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.lvh-serp-links span { font-size: 11px; color: #1A0DAB; border: 1px solid rgba(20,20,20,0.12); border-radius: 100px; padding: 4px 10px; }
+.lvh-crm { background: #141414; padding: 22px 20px 50px; display: flex; flex-direction: column; gap: 0; }
+.lvh-crm-head { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8C8A87; padding-bottom: 12px; border-bottom: 1px solid #262626; margin-bottom: 4px; }
+.lvh-crm-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+.lvh-crm-row span { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8A87; }
+.lvh-crm-row b { font-size: 12px; font-weight: 500; color: #FAF8F3; text-align: right; }
+.lvh-crm-stages { display: flex; gap: 6px; margin-top: 14px; }
+.lvh-crm-stages i { font-style: normal; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 9px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; border-radius: 100px; border: 1px solid #262626; color: #C7C5C8; }
+.lvh-crm-stages i.won { background: #FFEC00; border-color: #FFEC00; color: #141414; }
+.lvh-laptop { transition: opacity 0.5s ease, transform 0.5s ease; }
+.lvh-laptop.lvh-dim { opacity: 0.42; }
+.lvh-laptop.lvh-focus { transform: scale(1.04); }
+@media (max-width: 900px) { .lvh-rail { position: static; flex-direction: row; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; } }
 </style>
 
   <section class="hero-cover">
@@ -3934,13 +3968,37 @@ section.hero-cover .hero-bg {
         <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Performance Creative</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Meta Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Google Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">LinkedIn Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">SEO / AEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">CRM Integration</span></div>
       </div>
       <div class="ecw-hero-visual st-hero-exit" aria-hidden="true">
-        <div class="ecw-hv-card ecw-hv-e"><img id="e11-cycle" src="/assets/work/la-vie/comparison-2-hrs.jpg" alt="" style="transition:opacity .4s ease"></div>
-        <div class="ecw-hv-card ecw-hv-b"><img src="/assets/work/la-vie/pull-quote-undiagnosed.jpg" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:9px;display:block"></div>
-        <div class="ecw-hv-card ecw-hv-a"><video src="/assets/work/la-vie/loop-c5.mp4" autoplay muted loop playsinline></video></div>
-        <div class="ecw-hv-card ecw-hv-c"><img src="/assets/work/la-vie/statement-oakville.jpg" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:9px;display:block"></div>
-        <div class="ecw-hv-card ecw-hv-d"><div class="ecw-frame"><iframe src="https://oakville.laviehealth.com/" title="La Vie Oakville landing page" tabindex="-1"></iframe></div></div>
-      </div>
-      <div class="cover-meta">
+<div class="lvh-rail">
+<div class="lvh-step on"><span class="n">01</span>The Website</div>
+<div class="lvh-step"><span class="n">02</span>The Creative</div>
+<div class="lvh-step"><span class="n">03</span>Meta Ads</div>
+<div class="lvh-step"><span class="n">04</span>Google Ads</div>
+<div class="lvh-step"><span class="n">05</span>CRM &amp; Rev Ops</div>
+</div>
+<div class="lvh-stage">
+<div class="lvh-panel"><video src="/assets/work/la-vie/loop-c5.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="lvh-chip y">&#9679; Live in market</span></div>
+<div class="lvh-panel"><img src="/assets/work/la-vie/statement-oakville.jpg" alt="La Vie Meta ad"><span class="lvh-chip">Meta &middot; $89.53 per lead</span></div>
+<div class="lvh-panel lvh-serp">
+<div class="lvh-serp-tag">Sponsored</div>
+<div class="lvh-serp-url">laviehealth.com &rsaquo; oakville</div>
+<div class="lvh-serp-h">Private Medical Clinic in Oakville | Two Hours With Your Physician</div>
+<div class="lvh-serp-d">Comprehensive Foundation Assessments. Advanced diagnostics, physician-led preventive care, and a plan for the decades ahead.</div>
+<div class="lvh-serp-links"><span>Foundation Assessment</span><span>Ongoing Care</span><span>Book a Visit</span></div>
+<span class="lvh-chip">Google &middot; 136 calls &middot; month one</span>
+</div>
+<div class="lvh-panel lvh-crm">
+<div class="lvh-crm-head">New Lead &middot; CRM Record</div>
+<div class="lvh-crm-row"><span>Source</span><b>Meta &middot; C5 Video</b></div>
+<div class="lvh-crm-row"><span>Campaign</span><b>Oakville Launch</b></div>
+<div class="lvh-crm-row"><span>Landing Page</span><b>oakville.laviehealth.com</b></div>
+<div class="lvh-crm-row"><span>First touch to booked</span><b>6 days</b></div>
+<div class="lvh-crm-stages"><i>Lead</i><i>Qualified</i><i class="won">Booked</i></div>
+<span class="lvh-chip">Every lead, attributed</span>
+</div>
+</div>
+<div class="ecw-hv-card ecw-hv-d lvh-laptop"><div class="ecw-frame"><iframe src="https://oakville.laviehealth.com/" title="La Vie Oakville landing page" loading="eager" tabindex="-1"></iframe></div></div>
+</div>
+<div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>La Vie Executive Health</strong></div>
         <div class="cell"><span class="mono">Industry</span><strong>Concierge Medicine</strong></div>
         <div class="cell"><span class="mono">Scope</span><strong>Creative, paid, SEO, web, CRM</strong></div>
@@ -4538,6 +4596,33 @@ if (typeof setMegaTab !== 'function') {
   }
   window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
   upd();
+})();
+</script>
+
+<script>
+/* Story hero: rotate through the program chapters. */
+(function () {
+  var vis = document.querySelector('.ecw-hero-visual');
+  if (!vis) return;
+  var steps = [].slice.call(vis.querySelectorAll('.lvh-step'));
+  var panels = [].slice.call(vis.querySelectorAll('.lvh-panel'));
+  var laptop = vis.querySelector('.lvh-laptop');
+  var stage = vis.querySelector('.lvh-stage');
+  if (!steps.length || !stage) return;
+  var i = 0, t = null;
+  function show(n) {
+    i = n % steps.length;
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+    panels.forEach(function (p, k) { p.classList.toggle('on', k === i - 1); });
+    if (i === 0) { laptop.classList.remove('lvh-dim'); laptop.classList.add('lvh-focus'); stage.classList.add('lvh-dim'); }
+    else { laptop.classList.add('lvh-dim'); laptop.classList.remove('lvh-focus'); stage.classList.remove('lvh-dim'); }
+  }
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { show(1); return; }
+  show(0);
+  function tick() { t = setInterval(function () { show(i + 1); }, 3400); }
+  tick();
+  vis.addEventListener('mouseenter', function () { if (t) clearInterval(t); });
+  vis.addEventListener('mouseleave', tick);
 })();
 </script>
 </body>
