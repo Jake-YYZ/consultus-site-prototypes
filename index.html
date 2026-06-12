@@ -3514,6 +3514,9 @@
   .svc-marquee-track{ animation: none; }
 }
 /* === /Service-pills marquee === */
+
+.if-anchor-media { border-radius: 10px; overflow: hidden; margin-bottom: 18px; aspect-ratio: 16/10; }
+.if-anchor-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: opacity 0.3s ease; }
 </style>
   <link rel="canonical" href="https://consultusdigital.com/" />
 <script type="application/ld+json">
@@ -3766,12 +3769,13 @@
       </div>
       <div class="if-right">
         <div class="if-anchor">
-          <div class="if-anchor-eyebrow" id="if-anchor-eyebrow">Anchor Case &middot; Healthcare</div>
-          <div class="if-anchor-title" id="if-anchor-title">La Vie Executive Health, <span class="sem">tripled</span> in nine months.</div>
-          <p class="if-anchor-sub" id="if-anchor-sub">Ottawa to Oakville market expansion, with a closed-loop media + CRM system built around the concierge care model.</p>
-          <div class="if-anchor-metric" id="if-anchor-metric">3.4&times;</div>
-          <div class="if-anchor-metric-lbl" id="if-anchor-metric-lbl">Qualified pipeline lift</div>
-        </div>
+<div class="if-anchor-media"><img id="if-anchor-img" src="/assets/work/la-vie/statement-oakville.jpg" alt="Anchor case creative" loading="lazy"></div>
+<div class="if-anchor-eyebrow" id="if-anchor-eyebrow">Anchor Case &middot; Healthcare</div>
+<div class="if-anchor-title" id="if-anchor-title">La Vie Executive Health: <span class="sem">512 leads</span> in month one.</div>
+<p class="if-anchor-sub" id="if-anchor-sub">Oakville launch: creative, paid media, search, and CRM built as one engine.</p>
+<div class="if-anchor-metric" id="if-anchor-metric">512</div>
+<div class="if-anchor-metric-lbl" id="if-anchor-metric-lbl">Leads in month one</div>
+</div>
       </div>
     </div>
 
@@ -4088,6 +4092,42 @@ if (typeof setMegaTab !== 'function') {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
   window.addEventListener('scroll', go, { once: true, passive: true });
   document.addEventListener('visibilitychange', function () { if (!document.hidden) go(); });
+})();
+</script>
+
+<script>
+/* Industry switcher: real anchor cases per vertical. */
+(function () {
+  var pre = location.pathname.indexOf('/consultus-site-prototypes/') === 0 ? '/consultus-site-prototypes' : '';
+  var DATA = {
+    'healthcare': { eyebrow: '/01 \u00b7 Healthcare & Medical', headline: 'Healthcare marketing built for <span class="sem">retention</span>.', sub: 'Clinics, concierge health, dental, and specialty practices competing for patient lifetime value. We engineer the acquisition system, the booking flow, and the retention loop against one scoreboard.', cta1: ['/healthcare/', 'Read the healthcare playbook \u2192'], cta2: ['/case-studies/la-vie/', 'See La Vie case \u2192'], s1: ['512', 'Leads in month one, La Vie'], s2: ['~20:1', 'Month-one ROAS, La Vie'], aEye: 'Anchor Case \u00b7 Healthcare', aTitle: 'La Vie Executive Health: <span class="sem">512 leads</span> in month one.', aSub: 'Oakville launch: creative, paid media, search, and CRM built as one engine.', metric: '512', metricLbl: 'Leads in month one', img: '/assets/work/la-vie/statement-oakville.jpg', note: 'Viewing for healthcare operators' },
+    'home-services': { eyebrow: '/02 \u00b7 Home Services', headline: 'Home services marketing built for <span class="sem">booked jobs</span>.', sub: 'Windows, HVAC, roofing, and trades selling considered purchases into local markets. We reverse engineer the buyer, build the funnel, and wire every lead to the CRM.', cta1: ['/home-services-marketing/', 'Read the home services playbook \u2192'], cta2: ['/case-studies/eco-choice-windows/', 'See Eco Choice case \u2192'], s1: ['4', 'Buyer personas, reverse engineered'], s2: ['PMax', 'Search rebuilt, fed by Meta winners'], aEye: 'Anchor Case \u00b7 Home Services', aTitle: 'Eco Choice Windows &amp; Doors: the <span class="sem">full-funnel</span> build.', aSub: 'Pages, creative, CRO experiments, a rebuilt search account, and Zoho CRM attribution.', metric: 'Live', metricLbl: 'In market, compounding', img: '/assets/work/eco-choice/statics/curb-appeal.jpg', note: 'Viewing for home services operators' },
+    'ecommerce': { eyebrow: '/03 \u00b7 E-commerce & DTC', headline: 'Ecommerce marketing built for <span class="sem">repeat customers</span>.', sub: 'DTC brands competing on creative velocity and honest measurement. Hooks tested scientifically, MER over platform flattery, and a path from first order to loyalty.', cta1: ['/ecommerce-marketing-toronto/', 'Read the ecommerce playbook \u2192'], cta2: ['/case-studies/e11ement/', 'See e11ement case \u2192'], s1: ['89', 'Page Digital Growth Plan'], s2: ['12', 'Months, one roadmap'], aEye: 'Anchor Case \u00b7 DTC', aTitle: 'e11ement: from one hero product to <span class="sem">Walmart shelves</span>.', aSub: 'UGC personas, a rebuilt website, Amazon overhaul, and SEO conquesting for a physician-founded skincare brand.', metric: '89', metricLbl: 'Page DGP, executed', img: '/assets/work/e11ement/product-shot.jpg', note: 'Viewing for ecommerce operators' },
+    'b2b-saas': { eyebrow: '/04 \u00b7 B2B & SaaS', headline: 'B2B marketing built for <span class="sem">pipeline</span>.', sub: 'Considered purchases, long cycles, and buying committees. We build demand on search, capture it with landing pages, and hand sales a CRM that tells the truth.', cta1: ['/b2b-saas-marketing/', 'Read the B2B playbook \u2192'], cta2: ['/case-studies/spieth-america/', 'See Spieth case \u2192'], s1: ['757%', 'ROAS increase, Spieth America'], s2: ['+40%', 'Organic traffic, year over year'], aEye: 'Anchor Case \u00b7 B2B', aTitle: 'Spieth America: a <span class="sem">757%</span> ROAS increase.', aSub: 'Gymnastics equipment sold to institutions: search, shopping, landing pages, and remarketing.', metric: '757%', metricLbl: 'ROAS increase', img: '/assets/work/spieth-america.jpg', note: 'Viewing for B2B operators' },
+    'professional': { eyebrow: '/05 \u00b7 Professional Services', headline: 'Professional services marketing built for <span class="sem">signed files</span>.', sub: 'Law firms, accountants, and consultancies where one client is worth five figures. The KPI is not leads. It is signed engagements, attributed to the ad that started them.', cta1: ['/professional-services-marketing/', 'Read the professional playbook \u2192'], cta2: ['/case-studies/zayouna-law-firm/', 'See Zayouna case \u2192'], s1: ['$72.70', 'Meta cost per lead vs $200+ benchmark'], s2: ['4', 'Signed files in month one'], aEye: 'Anchor Case \u00b7 Legal', aTitle: 'Zayouna Law: <span class="sem">signed files</span>, not leads.', aSub: 'Dynamic landing pages, intake CRM rev ops, and creative-led targeting for a personal injury firm.', metric: '4', metricLbl: 'Signed files, month one', img: '/assets/work/zayouna/zl-s01.jpg', note: 'Viewing for professional services firms' }
+  };
+  function set(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+  function apply(key) {
+    var v = DATA[key]; if (!v) return;
+    set('if-eyebrow', v.eyebrow); set('if-headline', v.headline); set('if-sub', v.sub);
+    var c1 = document.getElementById('if-cta-primary'); if (c1) { c1.setAttribute('href', pre + v.cta1[0]); c1.innerHTML = v.cta1[1]; }
+    var c2 = document.getElementById('if-cta-secondary'); if (c2) { c2.setAttribute('href', pre + v.cta2[0]); c2.innerHTML = v.cta2[1]; }
+    set('if-stat-1-num', v.s1[0]); set('if-stat-1-lbl', v.s1[1]);
+    set('if-stat-2-num', v.s2[0]); set('if-stat-2-lbl', v.s2[1]);
+    set('if-anchor-eyebrow', v.aEye); set('if-anchor-title', v.aTitle); set('if-anchor-sub', v.aSub);
+    set('if-anchor-metric', v.metric); set('if-anchor-metric-lbl', v.metricLbl);
+    var img = document.getElementById('if-anchor-img');
+    if (img) { img.style.opacity = '0'; setTimeout(function () { img.src = pre + v.img; img.style.opacity = '1'; }, 220); }
+    var note = document.getElementById('ipn-text'); if (note) note.textContent = v.note;
+    var card = document.getElementById('industry-focus-card'); if (card) card.setAttribute('data-industry', key);
+  }
+  document.querySelectorAll('.is-chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('.is-chip').forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      apply(chip.getAttribute('data-industry'));
+    });
+  });
 })();
 </script>
 </body>
