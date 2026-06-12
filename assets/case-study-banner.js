@@ -65,7 +65,7 @@
     '#csb-dock .csb-dock-explore .csb-x-svc.csb-fade{opacity:0}',
     '#csb-dock .csb-dock-cta{display:inline-flex;align-items:center;background:#FFEC00;color:#141414;border-radius:100px;padding:10px 20px;font-size:13px;font-weight:600;text-decoration:none;transition:background .25s ease,color .25s ease,transform .2s ease;flex:none}',
     '#csb-dock .csb-dock-cta:hover{background:#FAF8F3;transform:translateY(-1px)}',
-    '@media (max-width:760px){#csb-dock .csb-dock-explore,#csb-dock .csb-dock-sep{display:none}#csb-dock{bottom:12px}}',
+    '@media (max-width:760px){#csb-dock{display:none !important}#csb-dock{bottom:12px}}',
     '#csb-theater{position:fixed;inset:0;z-index:99999;background:rgba(13,13,13,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease}',
     '#csb-theater.csb-in{opacity:1}',
     '#csb-theater .csb-stage{width:min(960px,94vw);font-family:\'NuberNext\',\'Helvetica Neue\',Arial,sans-serif}',
