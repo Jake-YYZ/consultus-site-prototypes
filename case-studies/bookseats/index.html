@@ -3488,8 +3488,19 @@ section.hero-cover .hero-bg {
   inset: 0 !important;
 }
 /* ========== END HERO BG FIX ========== */
+
+  /* Hero collage v2: deliberate scatter, minimal overlap */
+  .ecw-hero-visual { height: 560px; }
+  .ecw-hv-e { left: 4px; top: -10px; width: 132px; z-index: 1; }
+  .ecw-hv-b { left: -8px; top: 200px; width: 166px; z-index: 2; }
+  .ecw-hv-a { left: 42%; margin-left: -112px; top: 30px; width: 220px; z-index: 3; }
+  .ecw-hv-c { right: -6px; top: 2px; width: 184px; z-index: 2; }
+  .ecw-hv-d { right: -16px; bottom: -22px; width: 300px; z-index: 5; }
+
+  .ecw-ab-card { padding-right: 116px; }
+  .ecw-ab-card .abthumb { position: absolute; right: 14px; bottom: 14px; width: 86px; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; border: 1px solid rgba(20,20,20,0.14); }
 </style>
-  <meta name="description" content="How Consultus took BookSeats from 1.4x to 8.10x ROAS: a UGC-first creative engine, league-specific funnels, and A/B tests with receipts. 71 added monthly sales, $43,803 incremental revenue, 3.17% CTR." />
+  <meta name="description" content="How Consultus took BookSeats from 1.4x to 8.10x ROAS: a UGC-first creative engine, league-specific funnels, persona testing, and a Google Ads program built around the sports calendar." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/bow-city-storage/" />
   <meta property="og:title" content="Eco Choice Windows & Doors case study: 2,900% increase in return on ad spend | Consultus Digital" />
   <meta property="og:description" content="Multi-facility paid media rebuild took return on ad spend from underperforming to 2,900% within the program window. Industry: Self-Storage." />
@@ -3632,7 +3643,7 @@ section.hero-cover .hero-bg {
   .ecw-chip-dn { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 10.5px; font-weight: 600; color: #D94545; background: #FBEAEA; border-radius: 6px; padding: 3px 8px; }
   .ecw-mcards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 22px; }
   .ecw-mcard { border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; padding: 12px; background: #FFFFFF; }
-  .ecw-mcard.dead { opacity: 0.55; }
+  .ecw-mcard.dead { opacity: 1; border-color: #D94545; }
   .ecw-mthumb { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/5; }
   .ecw-mthumb img, .ecw-mthumb video { width: 100%; height: 100%; object-fit: cover; display: block; }
   .ecw-mtype { position: absolute; left: 8px; bottom: 8px; font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(20,20,20,0.78); color: #FAF8F3; padding: 3px 8px; border-radius: 5px; }
@@ -3914,7 +3925,7 @@ section.hero-cover .hero-bg {
         <div class="eyebrow yellow-dot"><span>Case Study &middot; Sports Travel</span></div>
         <h1 class="display">From 1.4x to <span class="sem">8.10x ROAS</span>.</h1>
         <p class="lede" style="max-width:680px">BookSeats bundles flights, hotels, and tickets for sports fans. We rebuilt their creative engine around UGC and league-specific funnels, and tested our way to a number worth publishing.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Performance Creative</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Meta Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Google Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">A/B Testing</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Landing Page CRO</span></div>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Performance Creative</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Meta Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Google Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">A/B Testing</span> </div>
       </div>
       <div class="ecw-hero-visual st-hero-exit" aria-hidden="true">
         <div class="ecw-hv-card ecw-hv-e"><img id="e11-cycle" src="/assets/work/bookseats/static-pf-blue.jpg" alt="" style="transition:opacity .4s ease"></div>
@@ -3926,7 +3937,7 @@ section.hero-cover .hero-bg {
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>BookSeats.com</strong></div>
         <div class="cell"><span class="mono">Industry</span><strong>Sports &amp; Live-Event Travel</strong></div>
-        <div class="cell"><span class="mono">Scope</span><strong>Creative, Meta, Google, CRO</strong></div>
+        <div class="cell"><span class="mono">Scope</span><strong>Creative, Meta Ads, Google Ads, A/B Testing</strong></div>
         <div class="cell"><span class="mono">Result</span><strong>8.10x ROAS on the UGC program</strong></div>
       </div>
     </div>
@@ -3939,7 +3950,7 @@ section.hero-cover .hero-bg {
       <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,2vw,26px);color:rgba(250,248,243,0.85)">Return on ad spend, UGC program, verified</div>
       <div class="bks-substats">
         <div class="bks-substat"><b>71</b><span>Added Monthly Sales</span></div>
-        <div class="bks-substat"><b>$43,803</b><span>Incremental Revenue &middot; Month One</span></div>
+        <div class="bks-substat"><b>Six Figures</b><span>Annualized Incremental Revenue</span></div>
         <div class="bks-substat"><b>3.17%</b><span>Overall CTR</span></div>
         <div class="bks-substat"><b>+248%</b><span>CTR &middot; UGC vs Static</span></div>
       </div>
@@ -3987,43 +3998,53 @@ section.hero-cover .hero-bg {
   <section class="sec dark-full ecw-rel">
     <div class="sec-inner">
       <div class="sec-head rv">
-        <div class="section-lbl dark">The Personas</div>
-        <h2 class="sec-title">Fans don't buy tickets. They buy <span class="sem">trips</span>.</h2>
+        <div class="section-lbl dark">The Persona Test</div>
+        <h2 class="sec-title">Four personas walked in. <span class="sem">One</span> walked out.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Every creative batch was built around a fan with a trip to plan, real creators, league-specific hooks, formats for every placement.</p>
-      <div class="ecw-personas">
-        <div class="ecw-persona rv">
-          <div class="ecw-persona-tag">Persona 01</div>
-          <h3>The NFL Road-Tripper</h3>
-          <p class="q">"Flights, hotel, tickets... I have eleven tabs open."</p>
-          <div class="hook-lbl">The Hook</div>
-          <p class="hook">Close all your tabs. Book the trip in minutes.</p>
-          <div class="ecw-fan"><video class="f1" src="/assets/work/bookseats/loop-jake.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/bookseats/static-uvt-blue.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/bookseats/static-pf-blue.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">3 cuts per ad</span></div>
-          <div class="ecw-fmt"><i>UGC</i><i>Us vs Them</i><i>Static</i></div>
-          <div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; BOF</div>
-        </div>
-        <div class="ecw-persona rv">
-          <div class="ecw-persona-tag">Persona 02</div>
-          <h3>The Season Loyalist</h3>
-          <p class="q">"My team, on the road, at least once a year."</p>
+      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">We didn't guess the audience. Four persona programs ran head to head, each with its own creators, hooks, and budget. Sports won decisively. So we tripled down: a fresh batch of sports-first ads, new creators, new hooks.</p>
+      <div class="ecw-personas" style="grid-template-columns:repeat(4,1fr)">
+        <div class="ecw-persona rv" style="border-color:#FFEC00">
+          <div class="ecw-persona-tag">Persona A &middot; Winner</div>
+          <h3>The Sports Fan</h3>
+          <p class="q">"My team, on the road, at least once a season."</p>
           <div class="hook-lbl">The Hook</div>
           <p class="hook">Your team's road game, fully booked. Zero spreadsheets.</p>
-          <div class="ecw-fan"><video class="f1" src="/assets/work/bookseats/loop-shawn.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/bookseats/static-test-blue.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/bookseats/static-pf-teal.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">3 cuts per ad</span></div>
-          <div class="ecw-fmt"><i>UGC</i><i>Social Proof</i><i>Static</i></div>
-          <div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; <b>BOF</b></div>
+          <div class="ecw-fan"><video class="f1" src="/assets/work/bookseats/loop-shawn.mp4" muted loop playsinline></video><video class="f2" src="/assets/work/bookseats/loop-jessica.mp4" muted loop playsinline></video><img class="f3" src="/assets/work/bookseats/static-test-blue.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">Tripled Down</span></div>
+          <div class="ecw-fmt"><i>UGC</i><i>Social Proof</i><i>New Batch Built</i></div>
+          <div class="ecw-fun"><b>Winner &middot; Scaled</b></div>
         </div>
         <div class="ecw-persona rv">
-          <div class="ecw-persona-tag">Persona 03</div>
+          <div class="ecw-persona-tag">Persona B</div>
+          <h3>The NFL Faithful</h3>
+          <p class="q">"Game day is the trip. Everything else is logistics."</p>
+          <div class="hook-lbl">The Hook</div>
+          <p class="hook">NFL packages, announced like news.</p>
+          <div class="ecw-fan"><video class="f1" src="/assets/work/bookseats/loop-jake.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/bookseats/static-uvt-blue.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/bookseats/static-pf-blue.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">Strong Signal</span></div>
+          <div class="ecw-fmt"><i>UGC News</i><i>Static</i></div>
+          <div class="ecw-fun">Merged Into <b>Sports</b></div>
+        </div>
+        <div class="ecw-persona rv" style="opacity:0.78">
+          <div class="ecw-persona-tag">Persona C</div>
           <h3>The Festival Chaser</h3>
-          <p class="q">"The lineup dropped. Now the logistics nightmare starts."</p>
+          <p class="q">"Lineup drops, then the logistics nightmare starts."</p>
           <div class="hook-lbl">The Hook</div>
           <p class="hook">Flights, hotel, pit pass. One checkout.</p>
-          <div class="ecw-fan"><video class="f1" src="/assets/work/bookseats/loop-laura.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/bookseats/static-uvt-teal.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/bookseats/static-pf-orange.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">3 cuts per ad</span></div>
-          <div class="ecw-fmt"><i>UGC</i><i>Festivals</i><i>Static</i></div>
-          <div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; BOF</div>
+          <div class="ecw-fan"><video class="f1" src="/assets/work/bookseats/loop-laura.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/bookseats/static-uvt-teal.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/bookseats/static-pf-orange.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">Archived</span></div>
+          <div class="ecw-fmt"><i>UGC</i><i>Festivals</i></div>
+          <div class="ecw-fun">Tested &middot; Didn't Beat Sports</div>
+        </div>
+        <div class="ecw-persona rv" style="opacity:0.78">
+          <div class="ecw-persona-tag">Persona D</div>
+          <h3>The Bundle Hunter</h3>
+          <p class="q">"I'll book it myself if it saves me forty bucks."</p>
+          <div class="hook-lbl">The Hook</div>
+          <p class="hook">Close all your tabs. Save 30% booking it together.</p>
+          <div class="ecw-fan"><img class="f1" src="/assets/work/bookseats/static-uvt-blue.jpg" alt="" loading="lazy"><img class="f2" src="/assets/work/bookseats/static-test-orange.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/bookseats/static-pf-teal.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">Archived</span></div>
+          <div class="ecw-fmt"><i>Us vs Them</i><i>Static</i></div>
+          <div class="ecw-fun">Tested &middot; Hooks Recycled</div>
         </div>
       </div>
-      <p class="ecw-personas-foot">Plus official partner-team campaigns: Packers, Saints, Texans, Wild, Golden Knights, Hurricanes, Utes. The Packers playbook performed so well it was cloned across teams.</p>
+      <p class="ecw-personas-foot">The science: same budget rules, same windows, one variable at a time. When sports won, the next creative batch went all-in on it.</p>
     </div>
   </section>
 
@@ -4039,10 +4060,10 @@ section.hero-cover .hero-bg {
           <p>Every variant ran live against the same audiences. League-specific landing pages beat the homepage. UGC video crushed static images. Losers were killed fast, and the surviving statics were recycled into video hooks.</p>
         </div>
         <div class="ecw-ab" aria-hidden="true">
-          <div class="ecw-ab-card c1"><div><div class="t">Test 1 &middot; Variant B</div><div class="h">League-specific landing pages</div></div><div class="r">-10.92%<small>Cost Per Purchase &middot; +13% CTR</small></div><div class="ecw-ab-stamp">Winner</div></div>
-          <div class="ecw-ab-card c2 lose"><div><div class="t">Test 1 &middot; Variant A</div><div class="h">Everything lands on the homepage</div></div><div class="r">&mdash;<small>Costlier Purchases, Weaker CTR</small></div><div class="ecw-ab-stamp">Archived</div></div>
-          <div class="ecw-ab-card c3"><div><div class="t">Test 2 &middot; Variant B</div><div class="h">UGC video testimonials</div></div><div class="r">3.17%<small>CTR &middot; +248% vs Static</small></div><div class="ecw-ab-stamp">Winner</div></div>
-          <div class="ecw-ab-card c4 lose"><div><div class="t">Test 2 &middot; Variant A</div><div class="h">Static image ads</div></div><div class="r">0.91%<small>CTR &middot; Recycled Into Hooks</small></div><div class="ecw-ab-stamp">Archived</div></div>
+          <div class="ecw-ab-card c1"><div><div class="t">Test 1 &middot; Variant B</div><div class="h">League-specific landing pages</div></div><div class="r">-10.92%<small>Cost Per Purchase &middot; +13% CTR</small></div><div class="ecw-ab-stamp">Winner</div><img class="abthumb" src="/assets/work/bookseats/static-uvt-blue.jpg" alt=""></div>
+          <div class="ecw-ab-card c2 lose"><div><div class="t">Test 1 &middot; Variant A</div><div class="h">Everything lands on the homepage</div></div><div class="r">&mdash;<small>Costlier Purchases, Weaker CTR</small></div><div class="ecw-ab-stamp">Archived</div><img class="abthumb" src="/assets/work/bookseats/static-pf-blue.jpg" alt=""></div>
+          <div class="ecw-ab-card c3"><div><div class="t">Test 2 &middot; Variant B</div><div class="h">UGC video testimonials</div></div><div class="r">3.17%<small>CTR &middot; +248% vs Static</small></div><div class="ecw-ab-stamp">Winner</div><video class="abthumb" src="/assets/work/bookseats/loop-shawn.mp4" muted loop playsinline autoplay></video></div>
+          <div class="ecw-ab-card c4 lose"><div><div class="t">Test 2 &middot; Variant A</div><div class="h">Static image ads</div></div><div class="r">0.91%<small>CTR &middot; Recycled Into Hooks</small></div><div class="ecw-ab-stamp">Archived</div><img class="abthumb" src="/assets/work/bookseats/static-pf-orange.jpg" alt=""></div>
         </div>
       </div>
     </div>
@@ -4070,6 +4091,37 @@ section.hero-cover .hero-bg {
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">bookseats.com/nhl-tickets</div></div>
         <div class="ecw-frame"><iframe src="https://bookseats.com/nhl-tickets" title="BookSeats NHL page" tabindex="-1"></iframe></div>
         <div class="ecw-browser-foot"><span class="flbl">NHL Funnel &middot; Live</span><a href="https://bookseats.com/nhl-tickets" target="_blank" rel="noopener">Visit live &rarr;</a></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="sec bone-full">
+    <div class="sec-inner">
+      <div class="sec-head rv">
+        <div class="section-lbl">The Search Calendar</div>
+        <h2 class="sec-title">Google, played like a <span class="sem">season ticket</span>.</h2>
+      </div>
+      <div class="ecw-search-grid">
+        <div>
+          <div class="content-block" style="border-top:none;padding-top:0"><h3>01. Partner-team campaigns</h3><div><p>Dedicated campaigns for BookSeats' official team partnerships: Packers, Saints, Texans, Wild, Golden Knights, Hurricanes, Utes. Co-branded inventory, team-specific copy, fan-specific intent.</p></div></div>
+          <div class="content-block"><h3>02. Season and playoff surges</h3><div><p>Campaigns timed to the sports calendar: NFL kickoff, NHL playoffs, NBA runs, NCAA tournaments, holiday gifting. Budgets surge exactly when fans start planning trips, and rest when they don't.</p></div></div>
+          <div class="content-block"><h3>03. The niche play</h3><div><p>We never entered the ticket-only arms race against Ticketmaster and Vivid Seats. The account owns one thing: high-intent sports travel package searches, where the bundle is the advantage.</p></div></div>
+          <div class="content-block"><h3>04. The cadence</h3><div><p>Daily checks, weekly optimization, seasonal launches, and a full account restructure that folded partner campaigns into tiers. Boring, disciplined, compounding.</p></div></div>
+        </div>
+        <div class="ecw-tree rv">
+          <div class="ecw-tree-head"><span>Google Ads &middot; Account Structure</span><span>Built On The Calendar</span></div>
+          <div class="ecw-tree-body">
+            <span class="root">BookSeats &middot; North America</span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; NFL Teams <span class="dim">&middot; Packers &middot; Saints &middot; Texans</span></span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; NHL <span class="dim">&middot; Wild &middot; Knights &middot; Canes &middot; + playoffs</span></span>
+            <span class="branch">&#9500;&#9472; <b>Search</b> &middot; NBA + NCAA <span class="dim">&middot; season windows</span></span>
+            <span class="branch pmax">&#9500;&#9472; <b>Packages</b> &middot; Sports Travel <span class="dim">&middot; the niche we own</span></span>
+            <span class="branch">&#9500;&#9472; Seasonal <span class="dim">&middot; playoffs &middot; holidays &middot; announcements</span></span>
+            <span class="branch">&#9492;&#9472; Avoided <span class="dim">&middot; the ticket-only bidding war</span></span>
+          </div>
+          <div class="ecw-tree-foot">Hundreds of seasonal team campaigns over two years, all answering to one number.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -4134,15 +4186,15 @@ section.hero-cover .hero-bg {
   <section class="sec">
     <div class="sec-head rv">
       <div class="section-lbl">The Timeline</div>
-      <h2 class="sec-title">An audit that became <span class="ecw-hl">two years</span>.</h2>
+      <h2 class="sec-title">From zero ads to <span class="ecw-hl">hundreds</span>.</h2>
     </div>
     <div class="ecw-tl">
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Day 1</div><div class="ecw-tl-evt">A 20-hour Google Ads audit. Not a pitch deck.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 2</div><div class="ecw-tl-evt">Audit converts to full Google Ads management.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 9</div><div class="ecw-tl-evt">Meta program launches. The UGC bank stands up.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 10</div><div class="ecw-tl-evt">Holiday push plus partner-team campaigns: Packers, Saints, Wild.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Year 1</div><div class="ecw-tl-evt">The number lands: 8.10x on the UGC program. Published with the client's blessing.</div></div>
-      <div class="ecw-tl-step live rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Year 2</div><div class="ecw-tl-evt">The winning Packers playbook gets cloned across teams.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Day 1</div><div class="ecw-tl-evt">Zero ads in the Meta Ad Library. Literally none. A 20-hour Google Ads audit starts the story.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 2</div><div class="ecw-tl-evt">Audit converts to full Google Ads management. The calendar machine starts.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 9</div><div class="ecw-tl-evt">Meta launches: first UGC batch, eight concepts, four personas under test.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 12</div><div class="ecw-tl-evt">Sports wins the persona war. The 8.10x number lands, published with the client's blessing.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Year 2</div><div class="ecw-tl-evt">Tripled down: new sports batches, new creators, the Packers playbook cloned across teams.</div></div>
+      <div class="ecw-tl-step live rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Today</div><div class="ecw-tl-evt">Hundreds of ads in the library. The machine compounds.</div></div>
     </div>
   </section>
 
