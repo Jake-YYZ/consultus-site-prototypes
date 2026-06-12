@@ -4565,7 +4565,7 @@ if (typeof setMegaTab !== 'function') {
 /* Marquee video loops: muted, looping, always on. */
 (function () {
   function go() {
-    document.querySelectorAll('.csm-card video, .ecw-hv-card video, .ecw-hook video, .ecw-score video, .ecw-fan video').forEach(function (v) {
+    document.querySelectorAll('video').forEach(function (v) {
       v.muted = true;
       v.play().catch(function () {});
     });
