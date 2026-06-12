@@ -3850,6 +3850,15 @@ section.hero-cover .hero-bg {
   .e11-dgp-row span { font-size: 14px; color: #2A2A2A; }
   .e11-artifacts { display: flex; flex-direction: column; gap: 24px; }
   .e11-adrow { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  .e11-scroll.homeonly img { animation-name: e11ScrollH; animation-duration: 22s; }
+  @keyframes e11ScrollH { 0% { transform: translateY(0); } 10% { transform: translateY(0); } 100% { transform: translateY(-26%); } }
+  /* Hero collage: spread the cards so nothing hides */
+  .ecw-hero-visual { height: 520px; }
+  .ecw-hv-a { width: 225px; margin-left: -160px; top: 40px; }
+  .ecw-hv-b { left: -12px; top: 150px; z-index: 2; width: 195px; }
+  .ecw-hv-e { left: 168px; top: -18px; }
+  .ecw-hv-c { right: -8px; top: 22px; width: 195px; }
   @media (prefers-reduced-motion: reduce) { .e11-scroll img { animation: none; } }
   @media (max-width: 900px) { .ecw-tl { grid-template-columns: 1fr; } }
 </style>
@@ -3868,7 +3877,7 @@ section.hero-cover .hero-bg {
         <div class="ecw-hv-card ecw-hv-b"><img src="/assets/work/e11ement/search-ad.jpg" alt="" style="width:100%;border-radius:9px;display:block"></div>
         <div class="ecw-hv-card ecw-hv-a"><video src="/assets/work/e11ement/loop-renita.mp4" autoplay muted loop playsinline></video></div>
         <div class="ecw-hv-card ecw-hv-c"><img src="/assets/work/e11ement/static-usvsthem.jpg" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:9px;display:block"></div>
-        <div class="ecw-hv-card ecw-hv-d"><div class="e11-scroll"><img src="/assets/work/e11ement/after-site-full.jpg" alt=""></div></div>
+        <div class="ecw-hv-card ecw-hv-d"><div class="e11-scroll homeonly"><img src="/assets/work/e11ement/after-site-full.jpg" alt=""></div></div>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>e11ement Inc.</strong></div>
@@ -3876,6 +3885,18 @@ section.hero-cover .hero-bg {
         <div class="cell"><span class="mono">Scope</span><strong>Web, creative, paid, SEO, Amazon, retail</strong></div>
         <div class="cell"><span class="mono">Engagement</span><strong>12-month program &middot; complete</strong></div>
       </div>
+    </div>
+  </section>
+
+  
+  <section class="sec" style="padding-bottom:60px">
+    <div class="sec-head rv">
+      <div class="section-lbl">The Walkthrough</div>
+      <h2 class="sec-title">The whole story in <span class="sem">three minutes</span>.</h2>
+    </div>
+    <div class="ecw-browser rv" style="max-width:940px;margin:0 auto">
+      <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement &times; consultus &middot; case study film</div></div>
+      <div style="aspect-ratio:16/9;background:#000"><iframe src="https://fast.wistia.net/embed/iframe/3fl1o2nq2n" title="e11ement case study video" allow="autoplay; fullscreen" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
     </div>
   </section>
 
@@ -3907,7 +3928,7 @@ section.hero-cover .hero-bg {
       </div>
       </div>
       <div class="ecw-ns rv">
-        <div class="ecw-ns-head">The Digital Growth Plan &middot; Delivered Jan 17, 2025</div>
+        <div class="ecw-ns-head">The Digital Growth Plan &middot; Set Before A Dollar Moved</div>
         <div class="ecw-ns-body" style="padding:8px 20px 6px">
           <div class="e11-dgp-row"><b>11</b><span>subject-matter experts embedded: Google, Meta, SEO, email, UX, creative, data</span></div>
           <div class="e11-dgp-row"><b>6</b><span>weeks tearing through the ecosystem: site, ads, content, SEO, competitors, CAC</span></div>
@@ -3997,12 +4018,12 @@ section.hero-cover .hero-bg {
       <h2 class="sec-title">A full rebuild in <span class="ecw-hl">twelve months</span>.</h2>
     </div>
     <div class="ecw-tl">
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Nov 2024</div><div class="ecw-tl-evt">Program signed. Twelve months, every channel.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Dec 2024</div><div class="ecw-tl-evt">Kickoff. Eleven experts embedded, audit begins.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Jan 2025</div><div class="ecw-tl-evt">Digital Growth Plan delivered in a half-day working session.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Apr 2025</div><div class="ecw-tl-evt">New Shopify store live: quiz, reviews, loyalty.</div></div>
-      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Jun 2025</div><div class="ecw-tl-evt">Dr. Renita production day: twelve concepts shot at Mintroom Studios.</div></div>
-      <div class="ecw-tl-step live rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Sep 2025</div><div class="ecw-tl-evt">Amazon storefront rebrand ships. Engine fully assembled.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Day 1</div><div class="ecw-tl-evt">Program signed. Twelve months, every channel.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Week 3</div><div class="ecw-tl-evt">Kickoff. Eleven experts embedded, audit begins.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Week 8</div><div class="ecw-tl-evt">Digital Growth Plan delivered in a half-day working session.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 4</div><div class="ecw-tl-evt">New Shopify store live: quiz, reviews, loyalty.</div></div>
+      <div class="ecw-tl-step rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 7</div><div class="ecw-tl-evt">Dr. Renita production day: twelve concepts shot at Mintroom Studios.</div></div>
+      <div class="ecw-tl-step live rv"><div class="ecw-tl-dot"></div><div class="ecw-tl-date">Month 10</div><div class="ecw-tl-evt">Amazon storefront rebrand ships. Engine fully assembled.</div></div>
     </div>
   </section>
 
@@ -4015,13 +4036,13 @@ section.hero-cover .hero-bg {
       <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">Step one was the store. These are the real pages, scrolling themselves: the template site we inherited, and the conversion machine that replaced it.</p>
       <div class="ecw-pages-grid">
         <div class="ecw-browser rv">
-          <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement.ca &middot; 2024</div></div>
+          <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement.ca &middot; before</div></div>
           <div class="e11-scroll short"><span class="e11-tag">Before</span><img src="/assets/work/e11ement/before-site-full.jpg" alt="Old e11ement website"></div>
           <div class="ecw-browser-foot"><span class="flbl">Template Store &middot; Pretty, Not Persuasive</span></div>
         </div>
         <div class="ecw-browser rv">
-          <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement.ca &middot; rebuilt Apr 2025</div></div>
-          <div class="e11-scroll"><span class="e11-tag after">After</span><img src="/assets/work/e11ement/after-site-full.jpg" alt="Rebuilt e11ement website"></div>
+          <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement.ca &middot; rebuilt</div></div>
+          <div class="e11-scroll homeonly"><span class="e11-tag after">After</span><img src="/assets/work/e11ement/after-site-full.jpg" alt="Rebuilt e11ement website"></div>
           <div class="ecw-browser-foot"><span class="flbl">Conversion Build &middot; Quiz, Reviews, Bundles, Loyalty</span><a href="https://e11ement.ca" target="_blank" rel="noopener">Visit live &rarr;</a></div>
         </div>
       </div>
@@ -4097,7 +4118,7 @@ section.hero-cover .hero-bg {
       <div class="ecw-browser rv">
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">amazon.ca &middot; storefront design</div></div>
         <div class="e11-scroll short"><span class="e11-tag">Rebrand V2</span><img src="/assets/work/e11ement/amazon-rebrand.jpg" alt="Amazon storefront rebrand design"></div>
-        <div class="ecw-browser-foot"><span class="flbl">Storefront Design &middot; Sep 2025</span></div>
+        <div class="ecw-browser-foot"><span class="flbl">Storefront Design &middot; Built To Convert</span></div>
       </div>
       <div class="ecw-browser rv">
         <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">amazon.ca &middot; e11ement store</div></div>
