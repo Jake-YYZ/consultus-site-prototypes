@@ -10,3 +10,4 @@ zivb9k9s
 # Local scratch files
 *.log
 .claude/settings.local.json
+HANDOFF.md
