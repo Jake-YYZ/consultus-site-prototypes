@@ -3963,8 +3963,8 @@ section.hero-cover .hero-bg {
     <div class="cover-grid">
       <div class="cover-main">
         <div class="eyebrow yellow-dot"><span>Case Study &middot; Executive Health</span></div>
-        <h1 class="display">La Vie Executive Health &times; <span class="sem">Consultus</span>.</h1>
-        <p class="lede" style="max-width:680px">Oakville&#39;s premier private medical clinic gives patients two hours with a physician instead of fifteen minutes. Consultus built the patient growth engine: creative, paid media, search, and a CRM that knows where every lead came from. The result: 512 leads in month one.</p>
+        <h1 class="display">La Vie Executive Health &times; <span class="sem">Consultus Digital</span>.</h1>
+        <p class="lede" style="max-width:680px">Oakville&#39;s premier private medical clinic gives patients two hours with a physician instead of fifteen minutes. Consultus Digital built the patient growth engine: creative, paid media, search, and a CRM that knows where every lead came from. The result: 512 leads in month one.</p>
         <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Performance Creative</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Meta Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Google Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">LinkedIn Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">SEO / AEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">CRM Integration</span></div>
       </div>
       <div class="ecw-hero-visual st-hero-exit" aria-hidden="true">
@@ -4016,7 +4016,7 @@ section.hero-cover .hero-bg {
         <div class="bks-substat"><b>~20:1</b><span>Projected Lifetime ROAS</span></div>
         <div class="bks-substat"><b>$89.53</b><span>Meta CPL &middot; First 10 Days</span></div>
         <div class="bks-substat"><b>23</b><span>Keywords Top-3 In Oakville</span></div>
-        <div class="bks-substat"><b>9 Weeks</b><span>Signature To First Lead</span></div>
+        <div class="bks-substat"><b>9 Weeks</b><span>Signature To Launch &middot; Then Month One</span></div>
       </div>
     </div>
   </section>
@@ -4325,7 +4325,7 @@ section.hero-cover .hero-bg {
           <div class="loc-icons">
             <div class="loc-icon">
               <div class="loc-icon-svg"><svg viewBox="0 0 64 64"><line x1="32" y1="4" x2="32" y2="14"/><line x1="28" y1="14" x2="36" y2="14"/><path d="M26 18 C 26 14, 38 14, 38 18 C 38 24, 26 24, 26 18 Z"/><line x1="30" y1="24" x2="28" y2="32"/><line x1="34" y1="24" x2="36" y2="32"/><path d="M28 32 L 24 58 L 40 58 L 36 32 Z"/><line x1="20" y1="58" x2="44" y2="58"/></svg></div>
-              <div class="loc-name">Toronto</div>
+              <div class="loc-name">Toronto</div><div style="font-family:var(--mono);font-size:10px;line-height:1.7;color:#8C8A87;margin-top:8px">136 Geary Ave, Unit 109<br>Toronto, ON M6H 4H1</div>
             </div>
             
           </div>
@@ -4484,7 +4484,7 @@ function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = documen
 
   <div class="mega-promo">
     <div>
-      <div class="mega-promo-lbl">The Consultus Method</div>
+      <div class="mega-promo-lbl">The Consultus Digital Method</div>
       <h3 class="mega-promo-title">Growth isn't a channel. It's a <span class="sem">system</span>.</h3>
       <p class="mega-promo-desc">The five-step framework turns ad spend into predictable pipeline.</p>
     </div>
@@ -4615,7 +4615,8 @@ if (typeof setMegaTab !== 'function') {
   function show(n) {
     i = n % steps.length;
     steps.forEach(function (s, k) { s.classList.toggle('on', k === i); });
-    panels.forEach(function (p, k) { p.classList.toggle('on', k === i - 1); });
+    var active = (i === 0) ? 0 : i - 1;
+    panels.forEach(function (p, k) { p.classList.toggle('on', k === active); });
     if (i === 0) { laptop.classList.remove('lvh-dim'); laptop.classList.add('lvh-focus'); stage.classList.add('lvh-dim'); }
     else { laptop.classList.add('lvh-dim'); laptop.classList.remove('lvh-focus'); stage.classList.remove('lvh-dim'); }
   }

@@ -141,7 +141,8 @@ Assets came from the client's Drive folders (statics + 150-235MB video masters c
 
 ## Working preferences (Jake's rules)
 
-1. **Never use em dashes in any copy.** Use commas, periods, or restructure. (This is also official Consultus style, enforced in their QA.)
+1. **Never use em dashes in any copy.** Use commas, periods, or restructure. (This is also official Consultus Digital style, enforced in their QA.)
+1b. **The brand name in copy is always "Consultus Digital", never bare "Consultus".** Headlines, ledes, body, everywhere.
 2. Marketing copy: punchy, confident, direct.
 3. Always confirm before deleting anything or making changes that can't be undone.
 4. When a page is done, give both the local preview path AND the shareable GitHub Pages link.
