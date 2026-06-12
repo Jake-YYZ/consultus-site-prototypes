@@ -3527,6 +3527,28 @@
 .wd-foot { display: flex; justify-content: space-between; align-items: center; padding: 13px 16px; }
 .wd-foot b { display: block; font-weight: 500; font-size: 14.5px; color: #141414; }
 .wd-foot small { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #6A686B; }
+
+/* Device-mockup website scroller */
+.wsl-scroller { display: flex; gap: 34px; overflow-x: auto; padding: 14px 32px 30px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; width: 100vw; margin-left: calc(50% - 50vw); scrollbar-width: thin; }
+.wsl-card { flex: 0 0 440px; scroll-snap-align: center; }
+.wsl-devices { position: relative; padding: 0 26px 16px 0; }
+.wsl-laptop { width: 100%; }
+.wsl-screen { border: 9px solid #141414; border-bottom-width: 13px; border-radius: 12px 12px 0 0; background: #FFFFFF; aspect-ratio: 16/10; overflow: hidden; position: relative; }
+.wsl-screen iframe { width: 1280px; height: 2400px; border: 0; position: absolute; top: 0; left: 0; transform-origin: top left; pointer-events: none; transform: scale(var(--ls, 0.3)); transition: transform 6s cubic-bezier(0.45, 0, 0.25, 1); }
+.wsl-card:hover .wsl-screen iframe { transform: scale(var(--ls, 0.3)) translateY(-1300px); }
+.wsl-base { height: 11px; background: linear-gradient(#202020, #0D0D0D); border-radius: 0 0 16px 16px; width: 110%; margin-left: -5%; box-shadow: 0 20px 42px -20px rgba(20,20,20,0.55); }
+.wsl-phone { position: absolute; right: 0; bottom: -4px; width: 96px; aspect-ratio: 9/19; border: 6px solid #141414; border-radius: 18px; overflow: hidden; background: #FFFFFF; box-shadow: 0 18px 36px -16px rgba(20,20,20,0.6); z-index: 3; }
+.wsl-phone iframe { width: 390px; height: 1900px; border: 0; transform-origin: top left; pointer-events: none; transform: scale(var(--ps, 0.221)); transition: transform 6s cubic-bezier(0.45, 0, 0.25, 1); }
+.wsl-card:hover .wsl-phone iframe { transform: scale(var(--ps, 0.221)) translateY(-1100px); }
+.wsl-shotscroll img { width: 100%; display: block; }
+.wsl-screen.wsl-shotscroll img { animation: wslShot 16s ease-in-out infinite alternate; }
+.wsl-phone.wsl-shotscroll img { animation: wslShot 18s ease-in-out infinite alternate; }
+@keyframes wslShot { 0%, 8% { transform: translateY(0); } 92%, 100% { transform: translateY(calc(-100% + 240px)); } }
+.wsl-meta { display: flex; justify-content: space-between; align-items: center; padding: 14px 6px 0; }
+.wsl-meta b { display: block; font-weight: 500; font-size: 15px; color: #141414; }
+.wsl-meta small { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #6A686B; }
+.wsl-meta a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A40C7; text-decoration: none; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .wsl-screen iframe, .wsl-phone iframe, .wsl-shotscroll img { transition: none; animation: none !important; } }
 </style>
   <meta name="description" content="Mobile-first, performance-tuned websites on Webflow, Shopify, WordPress, and headless stacks. Designed around how your buyer actually decides, instrumented end-" />
   <link rel="canonical" href="https://consultusdigital.com/web-development/" />
@@ -3612,8 +3634,6 @@
       <div class="content-block"><h3>CMS without <span class="sem">trapping</span> you.</h3><div><p>Webflow, Shopify, WordPress, or headless. We build on the stack that fits your team's editorial workflow, not the one that pays our agency the highest commission.</p></div></div>
       <div class="content-block"><h3>Analytics and <span class="sem">attribution</span> baked in.</h3><div><p>GA4, server-side tracking, and CRM integration shipped with the site, not bolted on three months later. Every page launches with closed-loop reporting from the start.</p></div></div>
   </section>
-<section class="sec" id="websites-we-built"><div class="sec-head"><div class="section-lbl">The Portfolio</div><h2 class="sec-title">Websites we <span class="sem">actually built</span>.</h2><p style="font-size:17px;line-height:1.6;color:#6A686B">These are not mockups. Every framed site below is the live production build, embedded straight from the web. The rest are one click away.</p></div><div class="wd-grid"><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">www.gogordons.com</span></div><div class="wd-frame"><iframe src="https://www.gogordons.com/" title="Gordon's Downsizing website" loading="lazy" tabindex="-1"></iframe></div><div class="wd-foot"><span><b>Gordon's Downsizing</b><small>Full rebuild · Real Estate Plus</small></span><a href="/case-studies/gordons-downsizing/" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Case Study &rarr;</a></div></div><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">ontariodoulas.org</span></div><div class="wd-frame"><iframe src="https://ontariodoulas.org/" title="Doula Association of Ontario website" loading="lazy" tabindex="-1"></iframe></div><div class="wd-foot"><span><b>Doula Association of Ontario</b><small>Membership platform · Find a Doula</small></span><a href="https://ontariodoulas.org" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Visit Live &rarr;</a></div></div><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">oakville.laviehealth.com</span></div><div class="wd-frame"><iframe src="https://oakville.laviehealth.com/" title="La Vie Executive Health website" loading="lazy" tabindex="-1"></iframe></div><div class="wd-foot"><span><b>La Vie Executive Health</b><small>Campaign site · Concierge medicine</small></span><a href="/case-studies/la-vie/" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Case Study &rarr;</a></div></div><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">www.discoverbirth.com</span></div><div class="wd-frame"><iframe src="https://www.discoverbirth.com/" title="Discover Birth website" loading="lazy" tabindex="-1"></iframe></div><div class="wd-foot"><span><b>Discover Birth</b><small>New website + Meta enablement</small></span><a href="https://www.discoverbirth.com" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Visit Live &rarr;</a></div></div><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">harmonyresorts.ca</span></div><div class="wd-frame"><iframe src="https://harmonyresorts.ca/" title="Harmony Resorts website" loading="lazy" tabindex="-1"></iframe></div><div class="wd-foot"><span><b>Harmony Resorts</b><small>Resort network · Booking-first</small></span><a href="https://harmonyresorts.ca" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Visit Live &rarr;</a></div></div><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">www.gorillabins.ca</span></div><div class="wd-frame"><iframe src="https://www.gorillabins.ca/" title="Gorilla Bins website" loading="lazy" tabindex="-1"></iframe></div><div class="wd-foot"><span><b>Gorilla Bins</b><small>Quote-first service site</small></span><a href="https://www.gorillabins.ca" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Visit Live &rarr;</a></div></div><div class="wd-browser rv"><div class="wd-bar"><span class="wd-dots"><i></i><i></i><i></i></span><span class="wd-url">e11ement.ca</span></div><div class="wd-shot"><img src="/assets/work/e11ement/after-site-full.jpg" alt="e11ement website" loading="lazy"></div><div class="wd-foot"><span><b>e11ement</b><small>Story-first DTC rebuild</small></span><a href="/case-studies/e11ement/" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A40C7;text-decoration:none">Case Study &rarr;</a></div></div><div class="wd-browser rv" style="display:flex;flex-direction:column;background:#F5F2EC;border:1px solid #E1DCD1;padding:26px 26px 12px"><div style="font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:8px">More Builds</div><a href="https://ontariobusinesscentral.ca" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">Ontario Business Central</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">ontariobusinesscentral.ca &rarr;</span></a><a href="https://comwave.net" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">Comwave</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">comwave.net &rarr;</span></a><a href="https://orrandassociates.ca" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">Orr Insurance &amp; Investment</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">orrandassociates.ca &rarr;</span></a><a href="https://asigroup.ca" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">ASI Group</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">asigroup.ca &rarr;</span></a><a href="https://theofficeshop.ca" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">The Office Shop</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">theofficeshop.ca &rarr;</span></a><a href="https://ecyclesolutions.com" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">eCycle Solutions</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">ecyclesolutions.com &rarr;</span></a><a href="https://zaylaw.com" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid rgba(20,20,20,0.07);text-decoration:none"><span style="font-weight:500;font-size:15px;color:#141414">Zayouna Law &middot; Dynamic LPs</span><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:#6A686B">zaylaw.com &rarr;</span></a><p style="font-size:12.5px;color:#8C8A87;margin:14px 0 8px">Some sites block embedding, so these open in a new tab.</p></div></div></section>
-
 
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -3665,143 +3685,7 @@
         <a href="/results/?type=websites" style="font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#141414;text-decoration:none;border-bottom:1px solid #141414;padding-bottom:4px">View all work &rarr;</a>
       </div>
     </div>
-    <div class="lw-marquee" style="position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);mask-image:linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%)">
-      <div class="lw-track" style="display:inline-flex;gap:18px;padding:6px 24px;width:max-content;animation:lw-marquee 90s linear infinite">
-          <a class="lw-card" href="/case-studies/bookseats/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#0A0A0A 0%,#1A1A20 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Booking</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">BS</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">BookSeats redesign.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">High-volume reservations, rebuilt for speed. 5→3 steps.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" href="/case-studies/la-vie/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#1A40C7 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Healthcare</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">LV</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">La Vie market entry.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">Persona-built site for Ottawa+Oakville rollout.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" href="/case-studies/ecycle/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#3D8C40 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website + CRM · Ops</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">eC</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">eCycle workflow rebuild.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">Custom Zoho workflow ended a spreadsheet era.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" href="/case-studies/western-asphalt/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#5A5A5A 0%,#0A0A0A 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Industrial</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">WA</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">Western Asphalt revival.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">80-year brand revived for the digital era.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" href="/case-studies/harmony-resorts/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#A23B72 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Resort</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">HR</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">Harmony Resorts booking flow.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">74% above-industry conversion lift.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" href="/case-studies/office-shop/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#3D6A8C 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Local SEO</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">OS</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">The Office Shop city rollout.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">13 cities ranking on page one of Google.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" aria-hidden="true" tabindex="-1" href="/case-studies/bookseats/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#0A0A0A 0%,#1A1A20 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Booking</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">BS</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">BookSeats redesign.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">High-volume reservations, rebuilt for speed. 5→3 steps.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" aria-hidden="true" tabindex="-1" href="/case-studies/la-vie/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#1A40C7 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Healthcare</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">LV</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">La Vie market entry.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">Persona-built site for Ottawa+Oakville rollout.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" aria-hidden="true" tabindex="-1" href="/case-studies/ecycle/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#3D8C40 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website + CRM · Ops</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">eC</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">eCycle workflow rebuild.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">Custom Zoho workflow ended a spreadsheet era.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" aria-hidden="true" tabindex="-1" href="/case-studies/western-asphalt/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#5A5A5A 0%,#0A0A0A 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Industrial</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">WA</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">Western Asphalt revival.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">80-year brand revived for the digital era.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" aria-hidden="true" tabindex="-1" href="/case-studies/harmony-resorts/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#A23B72 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Resort</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">HR</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">Harmony Resorts booking flow.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">74% above-industry conversion lift.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-          <a class="lw-card" aria-hidden="true" tabindex="-1" href="/case-studies/office-shop/" style="flex:0 0 auto;width:340px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:6px;text-decoration:none;color:inherit;overflow:hidden;transition:border-color 0.2s ease,transform 0.2s ease">
-            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#3D6A8C 0%,#0E2B7E 100%);position:relative;overflow:hidden">
-              <div style="position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Website · Local SEO</div>
-              <div style="position:absolute;bottom:14px;right:14px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#0A0A0A;border-radius:50%;font-family:var(--serif);font-weight:500;font-size:13px">OS</div>
-            </div>
-            <div style="padding:18px;display:flex;flex-direction:column;gap:6px">
-              <div style="font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;color:#141414">The Office Shop city rollout.</div>
-              <div style="font-family:var(--sans);font-size:13px;line-height:1.45;color:#5A5A5A">13 cities ranking on page one of Google.</div>
-              <div style="margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1A40C7">Read case &rarr;</div>
-            </div>
-          </a>
-      </div>
-    </div>
-  </section>
+    <div class="wsl-scroller"><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://www.gogordons.com/" title="Gordon's Downsizing website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://www.gogordons.com/" title="Gordon's Downsizing mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>Gordon's Downsizing</b><small>Real Estate Plus, rebuilt</small></span><a href="/case-studies/gordons-downsizing/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://oakville.laviehealth.com/" title="La Vie Executive Health website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://oakville.laviehealth.com/" title="La Vie Executive Health mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>La Vie Executive Health</b><small>Concierge medicine launch</small></span><a href="/case-studies/la-vie/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://ontariodoulas.org/" title="Doula Association of Ontario website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://ontariodoulas.org/" title="Doula Association of Ontario mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>Doula Association of Ontario</b><small>Membership platform</small></span><a href="https://ontariodoulas.org">Visit live &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://www.discoverbirth.com/" title="Discover Birth website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://www.discoverbirth.com/" title="Discover Birth mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>Discover Birth</b><small>New site + Meta enablement</small></span><a href="https://www.discoverbirth.com">Visit live &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://bookseats.com/" title="BookSeats website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://bookseats.com/" title="BookSeats mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>BookSeats</b><small>High-volume booking funnels</small></span><a href="/case-studies/bookseats/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://harmonyresorts.ca/" title="Harmony Resorts website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://harmonyresorts.ca/" title="Harmony Resorts mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>Harmony Resorts</b><small>Booking-first resort network</small></span><a href="/case-studies/harmony-resorts/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://www.westernasphalt.com/" title="Western Asphalt website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://www.westernasphalt.com/" title="Western Asphalt mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>Western Asphalt</b><small>80-year brand, revived</small></span><a href="/case-studies/western-asphalt/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://www.theofficeshop.ca/" title="The Office Shop website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://www.theofficeshop.ca/" title="The Office Shop mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>The Office Shop</b><small>13-city local SEO rollout</small></span><a href="/case-studies/office-shop/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://ecyclesolutions.com/" title="eCycle Solutions website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://ecyclesolutions.com/" title="eCycle Solutions mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>eCycle Solutions</b><small>Workflow + web rebuild</small></span><a href="/case-studies/ecycle/">Read case &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen"><iframe src="https://www.gorillabins.ca/" title="Gorilla Bins website" loading="lazy" tabindex="-1"></iframe></div><div class="wsl-base"></div></div><div class="wsl-phone"><iframe src="https://www.gorillabins.ca/" title="Gorilla Bins mobile" loading="lazy" tabindex="-1"></iframe></div></div><div class="wsl-meta"><span><b>Gorilla Bins</b><small>Quote-first service site</small></span><a href="https://www.gorillabins.ca">Visit live &rarr;</a></div></div><div class="wsl-card"><div class="wsl-devices"><div class="wsl-laptop"><div class="wsl-screen wsl-shotscroll"><img src="/assets/work/e11ement/after-site-full.jpg" alt="e11ement website"></div><div class="wsl-base"></div></div><div class="wsl-phone wsl-shotscroll"><img src="/assets/work/e11ement/after-site-full.jpg" alt="e11ement mobile"></div></div><div class="wsl-meta"><span><b>e11ement</b><small>Story-first DTC rebuild</small></span><a href="/case-studies/e11ement/">Read case &rarr;</a></div></div></div><div style="max-width:1200px;margin:18px auto 0;padding:0 32px;display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-right:6px">More builds</span><a href="https://www.ontariobusinesscentral.ca" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#141414;border:1px solid rgba(20,20,20,0.18);border-radius:100px;padding:8px 14px;text-decoration:none">Ontario Business Central &rarr;</a> <a href="https://www.comwave.net" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#141414;border:1px solid rgba(20,20,20,0.18);border-radius:100px;padding:8px 14px;text-decoration:none">Comwave &rarr;</a> <a href="https://www.orrandassociates.ca" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#141414;border:1px solid rgba(20,20,20,0.18);border-radius:100px;padding:8px 14px;text-decoration:none">Orr Insurance &amp; Investment &rarr;</a> <a href="https://www.asigroup.ca" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#141414;border:1px solid rgba(20,20,20,0.18);border-radius:100px;padding:8px 14px;text-decoration:none">ASI Group &rarr;</a> <a href="https://zaylaw.com" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#141414;border:1px solid rgba(20,20,20,0.18);border-radius:100px;padding:8px 14px;text-decoration:none">Zayouna Law &middot; Dynamic LPs &rarr;</a></div></section>
   <style>
     @keyframes lw-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .lw-marquee:hover .lw-track { animation-play-state: paused; }
@@ -4096,6 +3980,21 @@ if (typeof setMegaTab !== 'function') {
   }
   window.addEventListener('load', fit); window.addEventListener('resize', fit); fit();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fit);
+})();
+</script>
+
+<script>
+(function () {
+  function fitWsl() {
+    document.querySelectorAll('.wsl-screen').forEach(function (s) {
+      if (s.querySelector('iframe')) s.style.setProperty('--ls', (s.clientWidth / 1280));
+    });
+    document.querySelectorAll('.wsl-phone').forEach(function (p) {
+      if (p.querySelector('iframe')) p.style.setProperty('--ps', (p.clientWidth / 390));
+    });
+  }
+  window.addEventListener('load', fitWsl); window.addEventListener('resize', fitWsl); fitWsl();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fitWsl);
 })();
 </script>
 </body>
