@@ -3570,6 +3570,13 @@
 .rl-crm-title { font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 1.15; color: #FAF8F3; }
 .rl-crm-sub { font-size: 13px; line-height: 1.5; color: #C7C5C8; flex: 1; }
 .rl-crm-link { font-family: var(--mono); font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FFEC00; }
+
+/* Latest case study video panel */
+.lcs-video { position: relative; border-radius: 12px; overflow: hidden; background: #0D0D0D; aspect-ratio: 16/10; box-shadow: 0 30px 70px -30px rgba(20,20,20,0.5); }
+.lcs-video wistia-player { width: 100%; height: 100%; display: block; }
+.lcs-badge { position: absolute; top: 14px; left: 14px; z-index: 3; display: inline-flex; align-items: center; gap: 7px; background: #FFEC00; color: #141414; font-family: var(--mono); font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 11px; border-radius: 100px; }
+.lcs-dot { width: 6px; height: 6px; border-radius: 50%; background: #D94545; animation: lcsPulse 1.6s ease-in-out infinite; }
+@keyframes lcsPulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
 </style>
   <link rel="canonical" href="https://consultusdigital.com/results/" />
 <script type="application/ld+json">
@@ -3614,59 +3621,27 @@
 
   
 <!-- Full case studies strip -->
-<section style="max-width:1200px;margin:0 auto;padding:0 32px 26px"><div style="display:flex;align-items:center;gap:12px;margin-bottom:18px"><span style="display:inline-block;width:32px;height:1px;background:#1A40C7"></span><span style="font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#141414">The Full Case Studies</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px"><a href="/case-studies/eco-choice-windows/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">Live</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">Full-funnel build</div><div style="font-weight:500;font-size:14px;color:#141414">Eco Choice <span style="color:#1A40C7">&rarr;</span></div></a><a href="/case-studies/e11ement/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">89</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">Page DGP, executed</div><div style="font-weight:500;font-size:14px;color:#141414">e11ement <span style="color:#1A40C7">&rarr;</span></div></a><a href="/case-studies/bookseats/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">8.10&times;</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">ROAS with UGC</div><div style="font-weight:500;font-size:14px;color:#141414">BookSeats <span style="color:#1A40C7">&rarr;</span></div></a><a href="/case-studies/gordons-downsizing/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">53</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">Leads at $164</div><div style="font-weight:500;font-size:14px;color:#141414">Gordon&#39;s <span style="color:#1A40C7">&rarr;</span></div></a><a href="/case-studies/la-vie/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">512</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">Leads in month one</div><div style="font-weight:500;font-size:14px;color:#141414">La Vie Health <span style="color:#1A40C7">&rarr;</span></div></a><a href="/case-studies/zayouna-law-firm/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">4</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">Signed files, month one</div><div style="font-weight:500;font-size:14px;color:#141414">Zayouna Law <span style="color:#1A40C7">&rarr;</span></div></a><a href="/case-studies/dragonscale-supplies/" style="display:block;background:#FFFFFF;border:1px solid rgba(20,20,20,0.08);border-radius:10px;padding:20px 18px 16px;text-decoration:none;color:inherit;transition:transform 0.25s ease,border-color 0.25s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='#1A40C7'" onmouseout="this.style.transform='';this.style.borderColor='rgba(20,20,20,0.08)'"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;line-height:1;letter-spacing:-0.02em;color:#1A40C7;margin-bottom:6px">13.2</div><div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#6A686B;margin-bottom:12px">MER at last close</div><div style="font-weight:500;font-size:14px;color:#141414">Dragonscale <span style="color:#1A40C7">&rarr;</span></div></a></div></section>
-<!-- Latest Work featured -->
-  <section class="latest-work">
-    <div class="latest-work-inner">
-      <div class="latest-work-media work-thumb latest-work-thumb" data-theme="onyx" data-accent="yellow" data-texture="off" onclick="window.location.href='/case-studies/la-vie/'" style="cursor:pointer">
-        <!-- La Vie site mockup (swap for real clinic footage when available) -->
-        <div class="lv-site-mock">
-          <div class="lv-site-nav">
-            <div class="lv-site-logo"><span class="lv-bracket">[</span><span class="lv-word">LAVIE</span><span class="lv-bracket">]</span></div>
-            <nav class="lv-site-links"><span>About La Vie</span><span>Why La Vie</span><span>Ongoing Care</span><span>Programs</span></nav>
-            <div class="lv-site-cta">Book Your Assessment</div>
-          </div>
-          <div class="lv-site-hero">
-            <div class="lv-site-eyebrow">· AT LA VIE</div>
-            <div class="lv-site-title">Make time<br>for <em>what matters</em>.</div>
-            <div class="lv-site-sub">Year-round concierge care for executives, professionals, and families who value time, discretion, and precision.</div>
-            <div class="lv-site-btn">Connect with a Patient Advisor →</div>
-            <div class="lv-site-dots"></div>
-          </div>
-        </div>
-        <div class="thumb-video-grad"></div>
-        <div class="thumb-ov ov--stat lw-ov">
-          <div class="ov-row"><span class="ov-num">512</span><span class="ov-lbl">Leads · Mo 1</span></div>
-          <div class="ov-row"><span class="ov-num">~20:1</span><span class="ov-lbl">ROAS · Mo 1</span></div>
-        </div>
-        <div class="thumb-brand">
-          <div class="brand-mark brand-mark--consultus">C</div>
-          <span class="brand-mark-x">×</span>
-          <div class="brand-mark brand-mark--client" data-len="2">LV</div>
-        </div>
-      </div>
-      <div class="latest-work-copy">
-        <div class="eyebrow" style="margin-bottom:20px"><span class="eyebrow-dot"></span><span>Latest Work · Healthcare</span></div>
-        <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,56px);line-height:1.04;letter-spacing:-0.02em;font-weight:400;color:#141414;margin-bottom:16px">From standing start to <span class="sem">512 leads</span> in month one.</h2>
-        <p style="font-size:16px;line-height:1.55;color:#2A2A2A;max-width:540px;margin-bottom:32px">Physician-led preventative healthcare brand launched into Oakville with creative, paid, search, and CRM as one engine. Full Consultus Digital methodology end-to-end.</p>
-        <div class="latest-work-stats">
-          <div>
-            <div class="latest-work-stat-num">512</div>
-<div class="latest-work-stat-lbl">Leads in month one</div>
-          </div>
-          <div>
-            <div class="latest-work-stat-num" style="color:#141414">~20:1</div>
-<div class="latest-work-stat-lbl">Month-one ROAS</div>
-          </div>
-          <div>
-            <div class="latest-work-stat-num" style="color:#141414">$89.53</div>
-<div class="latest-work-stat-lbl">Meta cost per lead</div>
-          </div>
-        </div>
-        <a class="btn primary" href="/case-studies/la-vie/">Read the full case →</a>
-      </div>
+<!-- Latest Case Study: e11ement video -->
+<section class="latest-work">
+  <div class="latest-work-inner">
+    <div class="lcs-video" onclick="window.location.href='/case-studies/e11ement/'" style="cursor:pointer">
+      <wistia-player media-id="3fl1o2nq2n" aspect="1.7777" autoplay muted loop></wistia-player>
+      <span class="lcs-badge"><span class="lcs-dot"></span>Latest Case Study &middot; Video</span>
     </div>
-  </section>
+    <div>
+      <div class="section-lbl">The Latest</div>
+      <h2 class="sec-title" style="margin:18px 0 16px">e11ement, on <span class="sem">film</span>.</h2>
+      <p style="font-size:17px;line-height:1.6;color:#2A2A2A;max-width:520px">A physician-founded skincare brand, taken from one hero product to Walmart shelves. Watch the full story: the 89-page Digital Growth Plan, the UGC engine, the website and Amazon rebuild, and the SEO conquesting that did it.</p>
+      <div class="latest-work-stats">
+        <div><div class="latest-work-stat-num">89</div><div class="latest-work-stat-lbl">Page Digital Growth Plan</div></div>
+        <div><div class="latest-work-stat-num" style="color:#141414">11</div><div class="latest-work-stat-lbl">Experts on the build</div></div>
+        <div><div class="latest-work-stat-num" style="color:#141414">12</div><div class="latest-work-stat-lbl">Months, kickoff to scale</div></div>
+      </div>
+      <a class="btn primary cta-yellow-hover" href="/case-studies/e11ement/">Watch the full case &rarr;</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- Filter pills -->
   <!-- Results: pill marquee -->
@@ -4055,5 +4030,7 @@ if (typeof setMegaTab !== 'function') {
   document.addEventListener('visibilitychange', function () { if (!document.hidden) kick(); });
 })();
 </script>
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/3fl1o2nq2n.js" async type="module"></script>
 </body>
 </html>
