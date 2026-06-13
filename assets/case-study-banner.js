@@ -1,7 +1,7 @@
 /* ============================================================
    Consultus Digital — Sticky Case Study Video Banner
    ------------------------------------------------------------
-   Site-wide floating video promo for the E11ement case study.
+   Site-wide floating video promo for the e11ement case study.
 
    Behavior spec (for WordPress rebuild):
    - First page of a visit: card slides in bottom-right after
@@ -21,7 +21,7 @@
   'use strict';
 
   var WISTIA_ID = '3fl1o2nq2n';
-  var TITLE = 'E11ement Case Study';
+  var TITLE = 'e11ement Case Study';
   var SUBTITLE = 'Tap to watch with sound';
   // Links work both at a domain root (real site, local preview) and under
   // the GitHub Pages project prefix.
@@ -230,7 +230,7 @@
       '<div class="csb-stage">' +
         '<div class="csb-head">' +
           '<span class="csb-dot"></span>' +
-          '<span class="csb-lbl">Case Study / E11ement</span>' +
+          '<span class="csb-lbl">Case Study / e11ement</span>' +
           '<button class="csb-icon" data-csb="close-theater" aria-label="Close">' +
             '<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 1l10 10M11 1L1 11"/></svg>' +
           '</button>' +
