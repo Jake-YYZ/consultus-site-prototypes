@@ -3541,6 +3541,9 @@
 .pw-svg.pw-color { fill: none; }
 .pw-name { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; color: #FAF8F3; }
 .pw-tier { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #8C8A87; }
+
+/* Team monogram tile (specialists without a portrait yet) */
+.team-member .team-mono { position: absolute; inset: 0; z-index: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(120% 120% at 30% 20%, #232838 0%, #141414 70%); color: rgba(250,248,243,0.92); font-family: var(--serif); font-weight: 400; font-size: clamp(40px,5vw,64px); letter-spacing: 0.02em; }
 </style>
   <link rel="canonical" href="https://consultusdigital.com/about/" />
 <script type="application/ld+json">
@@ -3618,13 +3621,13 @@
       <div class="team-member" data-team-id="shannon-stoneburgh" data-media-slug="shannon-stoneburgh" tabindex="0" onclick="openTeamBio('shannon-stoneburgh')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('shannon-stoneburgh')}"><img src="/assets/team/shannon-stoneburgh.jpg" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('img-failed')" alt="Shannon Stoneburgh" loading="lazy"/><div class="team-lbl"><div class="team-name">Shannon Stoneburgh</div><div class="team-role">VP Marketing</div></div></div>
       <!-- Row 2: Client + Specialist leads -->
       <div class="team-member" data-team-id="isaac-ferguson" data-media-slug="isaac-ferguson" tabindex="0" onclick="openTeamBio('isaac-ferguson')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('isaac-ferguson')}"><img src="/assets/team/isaac-ferguson.jpg" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('img-failed')" alt="Isaac Ferguson" loading="lazy"/><div class="team-lbl"><div class="team-name">Isaac Ferguson</div><div class="team-role">Director, Client Services</div></div></div>
-      <div class="team-member" data-team-id="paid-media-lead" data-media-slug="paid-media-lead" tabindex="0" onclick="openTeamBio('paid-media-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('paid-media-lead')}"><svg preserveAspectRatio="xMidYMid slice"><use href="#portrait-illus"/></svg><div class="team-lbl"><div class="team-name">Paid Media Lead</div><div class="team-role">Google &amp; Meta</div></div></div>
-      <div class="team-member" data-team-id="seo-lead" data-media-slug="seo-lead" tabindex="0" onclick="openTeamBio('seo-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('seo-lead')}"><svg preserveAspectRatio="xMidYMid slice"><use href="#portrait-illus"/></svg><div class="team-lbl"><div class="team-name">SEO Lead</div><div class="team-role">Technical &amp; Content</div></div></div>
-      <div class="team-member" data-team-id="cro-web-lead" data-media-slug="cro-web-lead" tabindex="0" onclick="openTeamBio('cro-web-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('cro-web-lead')}"><svg preserveAspectRatio="xMidYMid slice"><use href="#portrait-illus"/></svg><div class="team-lbl"><div class="team-name">CRO &amp; Web Lead</div><div class="team-role">Experimentation &amp; Web</div></div></div>
+      <div class="team-member" data-team-id="paid-media-lead" data-media-slug="paid-media-lead" tabindex="0" onclick="openTeamBio('paid-media-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('paid-media-lead')}"><div class="team-mono">GN</div><div class="team-lbl"><div class="team-name">Gow Naguleswaran</div><div class="team-role">Paid Media Manager</div></div></div>
+      <div class="team-member" data-team-id="seo-lead" data-media-slug="seo-lead" tabindex="0" onclick="openTeamBio('seo-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('seo-lead')}"><div class="team-mono">PS</div><div class="team-lbl"><div class="team-name">Paul Sreeley</div><div class="team-role">SEO Lead</div></div></div>
+      <div class="team-member" data-team-id="cro-web-lead" data-media-slug="cro-web-lead" tabindex="0" onclick="openTeamBio('cro-web-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('cro-web-lead')}"><div class="team-mono">WT</div><div class="team-lbl"><div class="team-name">Walid Tahiri</div><div class="team-role">CRO &amp; Web</div></div></div>
       <!-- Row 3: Creative + Data + CRM -->
-      <div class="team-member" data-team-id="creative-director" data-media-slug="creative-director" tabindex="0" onclick="openTeamBio('creative-director')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('creative-director')}"><svg preserveAspectRatio="xMidYMid slice"><use href="#portrait-illus"/></svg><div class="team-lbl"><div class="team-name">Creative Director</div><div class="team-role">Performance Creative</div></div></div>
-      <div class="team-member" data-team-id="analytics-lead" data-media-slug="analytics-lead" tabindex="0" onclick="openTeamBio('analytics-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('analytics-lead')}"><svg preserveAspectRatio="xMidYMid slice"><use href="#portrait-illus"/></svg><div class="team-lbl"><div class="team-name">Analytics Lead</div><div class="team-role">Attribution &amp; Measurement</div></div></div>
-      <div class="team-member" data-team-id="crm-lead" data-media-slug="crm-lead" tabindex="0" onclick="openTeamBio('crm-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('crm-lead')}"><svg preserveAspectRatio="xMidYMid slice"><use href="#portrait-illus"/></svg><div class="team-lbl"><div class="team-name">CRM Lead</div><div class="team-role">Zoho Implementation</div></div></div>
+      <div class="team-member" data-team-id="creative-director" data-media-slug="creative-director" tabindex="0" onclick="openTeamBio('creative-director')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('creative-director')}"><div class="team-mono">JL</div><div class="team-lbl"><div class="team-name">Jennifer Lau</div><div class="team-role">Creative Strategist</div></div></div>
+      <div class="team-member" data-team-id="analytics-lead" data-media-slug="analytics-lead" tabindex="0" onclick="openTeamBio('analytics-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('analytics-lead')}"><div class="team-mono">LI</div><div class="team-lbl"><div class="team-name">Lukas Iafrates</div><div class="team-role">Sales Enablement</div></div></div>
+      <div class="team-member" data-team-id="crm-lead" data-media-slug="crm-lead" tabindex="0" onclick="openTeamBio('crm-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('crm-lead')}"><div class="team-mono">TH</div><div class="team-lbl"><div class="team-name">Toshi Hayashi</div><div class="team-role">Lead Designer</div></div></div>
       <div class="team-member" data-team-id="evan-jones" data-media-slug="evan-jones" tabindex="0" onclick="openTeamBio('evan-jones')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('evan-jones')}"><img src="/assets/team/evan-jones.jpg" alt="Evan Jones" loading="lazy"/><div class="team-lbl"><div class="team-name">Evan Jones</div><div class="team-role">Account Manager</div></div></div>
     </div>
   </section>
@@ -3798,10 +3801,7 @@
         <div class="tl-role" id="tl-role"></div>
         <div class="tl-bio" id="tl-bio"></div>
         <div class="tl-meta">
-          <div class="tl-meta-cell">
-            <div class="tl-meta-lbl">Joined</div>
-            <div class="tl-meta-val" id="tl-joined">-</div>
-          </div>
+          <div class="tl-meta-cell" id="tl-joined-cell"> <div class="tl-meta-lbl">Joined</div> <div class="tl-meta-val" id="tl-joined">-</div> </div>
           <div class="tl-meta-cell">
             <div class="tl-meta-lbl">Based in</div>
             <div class="tl-meta-val" id="tl-location">-</div>
@@ -4096,7 +4096,7 @@ window.TEAM_DATA = {
     joined: '2020 · Co-founder',
     location: 'Toronto, ON',
     specialties: ['Strategy', 'Paid Media', 'CRM', 'Growth Systems'],
-    bio: '<p>Jake co-founded Consultus in 2020 on a single thesis: agencies should be measured on the revenue they engineer, not the campaigns they ship. <em>Full bio coming soon.</em></p><p>Today he leads strategy, partnerships, and the build-out of the Toronto studio. He runs point on the largest accounts and writes the playbooks the rest of the team executes.</p>'
+    bio: '<p>Jake co-founded Consultus in 2020 on a single thesis: agencies should be measured on the revenue they engineer, not the campaigns they ship.</p><p>Today he leads strategy, partnerships, and the build-out of the Toronto studio. He runs point on the largest accounts and writes the playbooks the rest of the team executes.</p>'
   },
   'grace-natarelli-matzanke': {
     name: 'Grace Natarelli Matzanke',
@@ -4106,7 +4106,7 @@ window.TEAM_DATA = {
     joined: '2020 · Co-founder',
     location: 'Toronto, ON',
     specialties: ['Client Strategy', 'Retention', 'Account Leadership'],
-    bio: '<p>Grace co-founded Consultus alongside Jake and runs the entire client services practice. Every retained account rolls up through her. <em>Full bio coming soon.</em></p><p>She built the operating model that keeps retention running year over year: specialists on the execution, partners on the strategy, and zero surprises on the monthly reporting.</p>'
+    bio: '<p>Grace co-founded Consultus alongside Jake and runs the entire client services practice. Every retained account rolls up through her.</p><p>She built the operating model that keeps retention running year over year: specialists on the execution, partners on the strategy, and zero surprises on the monthly reporting.</p>'
   },
   'mo-farazi': {
     name: 'Mo Farazi',
@@ -4116,7 +4116,7 @@ window.TEAM_DATA = {
     joined: '',
     location: 'Toronto, ON',
     specialties: ['Operations', 'Delivery', 'Process Design'],
-    bio: '<p>Mo owns how the work actually gets done. Staffing, utilization, delivery cadence, and the connective tissue between specialist pods and client teams all sit in his practice. <em>Full bio coming soon.</em></p><p>Before Consultus, Mo a senior leadership track at a previous agency. At Consultus he has been the architect of the operating rhythm that makes the methodology scale across both offices.</p>'
+    bio: '<p>Mo owns how the work actually gets done. Staffing, utilization, delivery cadence, and the connective tissue between specialist pods and client teams all sit in his practice.</p><p>Before Consultus, Mo a senior leadership track at a previous agency. At Consultus he has been the architect of the operating rhythm that makes the methodology scale across both offices.</p>'
   },
   'shannon-stoneburgh': {
     name: 'Shannon Stoneburgh',
@@ -4126,7 +4126,7 @@ window.TEAM_DATA = {
     joined: '',
     location: 'Toronto, ON',
     specialties: ['Brand', 'Content', 'Demand Gen'],
-    bio: '<p>Shannon runs Consultus marketing end to end. She owns the brand standard, the demand engine, and the thought leadership that puts Consultus\'s thinking into the market. <em>Full bio coming soon.</em></p><p>She came to Consultus from a senior leadership track at a previous agency and has quietly built the function into a pipeline contributor in its own right.</p>'
+    bio: '<p>Shannon runs Consultus marketing end to end. She owns the brand standard, the demand engine, and the thought leadership that puts Consultus\'s thinking into the market.</p><p>She came to Consultus from a senior leadership track at a previous agency and has quietly built the function into a pipeline contributor in its own right.</p>'
   },
   'isaac-ferguson': {
     name: 'Isaac Ferguson',
@@ -4136,69 +4136,63 @@ window.TEAM_DATA = {
     joined: '',
     location: 'Toronto, ON',
     specialties: ['Account Leadership', 'Strategy', 'Partner to Clients'],
-    bio: '<p>Isaac is the senior client lead on a book of retained accounts across healthcare, home services, and B2B SaaS. <em>Full bio coming soon.</em></p><p>Clients describe him as the person they call first &mdash; the one who pushes back when it matters and moves faster than anyone expects when it counts.</p>'
+    bio: '<p>Isaac is the senior client lead on a book of retained accounts across healthcare, home services, and B2B SaaS.</p><p>Clients describe him as the person they call first &mdash; the one who pushes back when it matters and moves faster than anyone expects when it counts.</p>'
   },
   'paid-media-lead': {
-    name: 'Paid Media Lead',
-    role: 'Google & Meta',
-    hiring: true,
-    eyebrow: 'We\'re hiring',
-    joined: 'Open seat',
-    location: 'Toronto',
-    specialties: ['Google Ads', 'Meta Ads', 'Attribution', 'Pipeline Targeting'],
-    bio: '<p>This seat is open. We\'re looking for a paid media specialist who lives in the numbers. Deep Google and Meta expertise, a track record of tying spend to pipeline (not impressions), and a preference for specialists-only shops over generalist pods.</p><p>Interested or know someone? Email <strong>careers@consultusdigital.com</strong>.</p>'
+    name: 'Gow Naguleswaran',
+    role: 'Paid Media Manager',
+    eyebrow: 'Specialist',
+    joined: '',
+    location: 'Toronto, ON',
+    specialties: ['Google Ads', 'Meta Ads', 'Scaling', 'Attribution'],
+    bio: '<p>Gow runs paid media across Google and Meta for the agency\'s largest ad accounts, scaling spend while holding the line on efficiency. He lives in the numbers: bid strategy, account structure, and the weekly optimization cadence that compounds.</p>'
   },
   'seo-lead': {
-    name: 'SEO Lead',
-    role: 'Technical & Content',
-    hiring: true,
-    eyebrow: 'We\'re hiring',
-    joined: 'Open seat',
-    location: 'Toronto',
-    specialties: ['Technical SEO', 'Content Strategy', 'AEO / AI Search'],
-    bio: '<p>Open seat. We need a senior SEO lead who owns both the technical surface (Core Web Vitals, schema, crawl health) and the content practice (topical authority, editorial ops, AEO for AI search). The person who can go deep on either conversation at the dinner table.</p><p>Interested or know someone? Email <strong>careers@consultusdigital.com</strong>.</p>'
+    name: 'Paul Sreeley',
+    role: 'SEO Lead',
+    eyebrow: 'Specialist',
+    joined: '',
+    location: 'Toronto, ON',
+    specialties: ['Technical SEO', 'AEO / AI Search', 'Content'],
+    bio: '<p>Paul develops the strategies that grow organic visibility on Google and surface our clients inside AI answer engines. His command of search algorithms and content optimization drives targeted traffic and durable, compounding growth.</p>'
   },
   'cro-web-lead': {
-    name: 'CRO & Web Lead',
-    role: 'Experimentation & Web',
-    hiring: true,
-    eyebrow: 'We\'re hiring',
-    joined: 'Open seat',
-    location: 'Toronto',
-    specialties: ['Experimentation', 'Landing Pages', 'Web Development'],
-    bio: '<p>Open seat. Looking for someone who can run disciplined experimentation programs, ship landing pages that actually move the conversion rate, and own the web build quality bar end to end.</p><p>Interested or know someone? Email <strong>careers@consultusdigital.com</strong>.</p>'
+    name: 'Walid Tahiri',
+    role: 'CRO & Web',
+    eyebrow: 'Specialist',
+    joined: '',
+    location: 'Toronto, ON',
+    specialties: ['Experimentation', 'Landing Pages', 'UX'],
+    bio: '<p>Walid owns conversion rate optimization: disciplined experimentation that turns existing traffic into more revenue. His data-driven tests sharpen the user experience and turn visitors into customers.</p>'
   },
   'creative-director': {
-    name: 'Creative Director',
-    role: 'Performance Creative',
-    hiring: true,
-    eyebrow: 'We\'re hiring',
-    joined: 'Open seat',
-    location: 'Toronto',
-    specialties: ['Creative Strategy', 'Video', 'Ad Creative at Scale'],
-    bio: '<p>Open seat. We need a creative director who understands that performance creative is a science, not a beauty contest. Someone who can run a testing program, turn learnings into a brief, and ship volume without losing the craft.</p><p>Interested or know someone? Email <strong>careers@consultusdigital.com</strong>.</p>'
+    name: 'Jennifer Lau',
+    role: 'Creative Strategist',
+    eyebrow: 'Specialist',
+    joined: '',
+    location: 'Toronto, ON',
+    specialties: ['Creative Strategy', 'Short-form Video', 'UGC'],
+    bio: '<p>Jennifer uses psychology and short-form video to build direct-response creative that converts. Collaborating with UGC creators, she turns hooks into hypotheses and ships the ads that win across ecommerce and B2B.</p>'
   },
   'analytics-lead': {
-    name: 'Analytics Lead',
-    role: 'Attribution & Measurement',
-    hiring: true,
-    eyebrow: 'We\'re hiring',
-    joined: 'Open seat',
-    location: 'Toronto',
-    specialties: ['Attribution', 'Measurement', 'BI & Reporting'],
-    bio: '<p>Open seat. Looking for an analytics lead who can build the measurement layer that makes every other function on the team sharper. GA4, server-side tracking, MMM when it earns its place, and dashboards clients actually read.</p><p>Interested or know someone? Email <strong>careers@consultusdigital.com</strong>.</p>'
+    name: 'Lukas Iafrates',
+    role: 'Sales Enablement',
+    eyebrow: 'Specialist',
+    joined: '',
+    location: 'Toronto, ON',
+    specialties: ['Sales Systems', 'Apollo & Clay', 'Pipeline'],
+    bio: '<p>Lukas supercharges how our clients sell, wiring modern sales tooling like Apollo and Clay into the pipeline. He bridges marketing and sales so the leads we generate actually close.</p>'
   },
   'crm-lead': {
-    name: 'CRM Lead',
-    role: 'Zoho Implementation',
-    hiring: true,
-    eyebrow: 'We\'re hiring',
-    joined: 'Open seat',
-    location: 'Toronto',
-    specialties: ['Zoho CRM', 'Automation', 'Sales Enablement'],
-    bio: '<p>Open seat. We need a senior CRM lead who has shipped Zoho implementations end to end &mdash; CRM, Campaigns, Analytics, Desk &mdash; and can translate a client\'s sales motion into clean, automated, reportable reality.</p><p>Interested or know someone? Email <strong>careers@consultusdigital.com</strong>.</p>'
+    name: 'Toshi Hayashi',
+    role: 'Lead Designer',
+    eyebrow: 'Specialist',
+    joined: '',
+    location: 'Toronto, ON',
+    specialties: ['Web Design', 'Landing Pages', 'Brand'],
+    bio: '<p>Toshi designs the conversion-driven websites, landing pages, and ad creative behind our campaigns. Blending craft with tools like Midjourney, he ships work that captures attention and moves the metric.</p>'
   },
-  'evan-jones': { name: 'Evan Jones', role: 'Account Manager', img: '/assets/team/evan-jones.jpg', eyebrow: 'Client Services', joined: '', location: 'Toronto, ON', specialties: ['Account Management', 'Client Strategy', 'Reporting'], bio: '<p>Evan is the day-to-day owner of client accounts: the person who knows your numbers, your team, and your next move. <em>Full bio coming soon.</em></p>' }
+  'evan-jones': { name: 'Evan Jones', role: 'Account Manager', img: '/assets/team/evan-jones.jpg', eyebrow: 'Client Services', joined: '', location: 'Toronto, ON', specialties: ['Account Management', 'Client Strategy', 'Reporting'], bio: '<p>Evan is the day-to-day owner of client accounts: the person who knows your numbers, your team, and your next move.</p>' }
 };
 
 function openTeamBio(id) {
@@ -4256,7 +4250,7 @@ function openTeamBio(id) {
   document.getElementById('tl-name').innerHTML = d.name;
   document.getElementById('tl-role').textContent = d.role || '';
   document.getElementById('tl-bio').innerHTML = d.bio || '';
-  document.getElementById('tl-joined').textContent = d.joined || '-';
+  document.getElementById('tl-joined').textContent = d.joined || '-'; (function(){var jc=document.getElementById('tl-joined-cell'); if(jc) jc.style.display=(d.joined && String(d.joined).trim())?'':'none';})();
   document.getElementById('tl-location').textContent = d.location || '-';
 
   const specs = document.getElementById('tl-specialties');
