@@ -1,0 +1,374 @@
+old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (Jake)
+/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/careers/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/bookseats/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/bow-city-storage/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/harmony-resorts/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/ontario-business-central/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/spieth-america/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/western-asphalt/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/case-studies/zayouna-law-firm/,KEEP (same URL),200,keep,high,Case study,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/content-marketing-for-ecommerce-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/conversion-rate-optimization-for-ecommerce-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/conversion-rate-optimization-for-insurance-brokers-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/conversion-rate-optimization-for-law-firms-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/conversion-rate-optimization-for-self-storage-companies-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-calgary/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-chicago/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-houston/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-london/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-los-angeles/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-montreal/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-new-york/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-san-antonio/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/cro-agency-in-vancouver/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/ecommerce-businesses-website-development-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-calgary/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-chicago/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-houston/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-london/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-los-angeles/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-montreal/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-new-york/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-toronto/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/facebook-advertising-agency-in-vancouver/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/insurance-brokerages-success-with-content-marketing-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/law-firm-marketing-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/legal-practice-search-engine-optimization-for-law-firms-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/calgary/google-ads-agency-in-calgary/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/calgary/seo-agency-in-calgary/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/chicago/google-ads-agency-in-chicago/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/chicago/seo-agency-in-chicago/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/houston/google-ads-agency-in-houston/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/houston/seo-agency-in-houston/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-calgary/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-chicago/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-houston/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-london/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-los-angeles/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-montreal/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-new-york/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-san-antonio/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-toronto/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/instagram-advertising-agency-in-vancouver/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/la/google-ads-agency-in-los-angeles/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/london/google-ads-agency-in-london/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/london/seo-agency-in-london/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/montreal/google-ads-agency-in-montreal/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/montreal/seo-agency-in-montreal/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/nyc/google-ads-agency-in-new-york-city/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/sanantonio/google-ads-agency-in-san-antonio/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/toronto/google-ads-agency-in-toronto/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/toronto/seo-agency-in-toronto/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/vancouver/google-ads-agency-in-vancouver/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/locations/vancouver/seo-agency-in-vancouver/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/maximizing-law-firm-growth-with-paid-media-advertising-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/paid-media-advertising-for-ecommerce-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/paid-media-advertising-for-insurance-brokers-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/paid-media-advertising-for-self-storage-companies-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/pioneering-content-marketing-for-law-firms-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/search-engine-optimization-for-ecommerce-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/seo-services-for-self-storage-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/seo-strategies-for-insurance-brokers-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/seo-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/strategic-content-marketing-for-self-storage-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-calgary/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-chicago/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-houston/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-london/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-los-angeles/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-montreal/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-new-york/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-san-antonio/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-toronto/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/the-best-microsoft-advertising-agency-in-vancouver/,KEEP (same URL),200,keep,high,Location,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/website-development-for-self-storage-businesses-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/website-development-strategies-for-insurance-brokers-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/website-development-strategies-for-law-firms-toronto/,KEEP (same URL),200,keep,high,Page,Unchanged URL; no redirect needed.,Confirmed — keep at same URL
+/about-us-online-marketing-agency/,/about/,301,redirect_exact_equivalent,high,Page,Old About Us page maps directly to the new About page.,Confirmed 301 (Jake: do all)
+/ad-creatives/,/performance-creatives/,301,redirect_exact_equivalent,high,Page,"Old ad-creative showcase maps directly to the new Performance Creatives service page, which exists in the index.",Confirmed 301 (Jake: do all)
+/amazon-ad-management-services/,/ecommerce-marketing-toronto/,301,redirect_parent_category,medium,Page,"No Amazon-ads page exists on the new site, so the closest topical parent is Ecommerce Marketing; disposition corrected to parent_category since the old URL is being retired and needs a live redirect, not kept.",Confirmed 301 (Jake: do all)
+/answer-engine-optimization/,/aeo-ai-search/,301,redirect_exact_equivalent,high,Page,"AEO is literally Answer Engine Optimization and /aeo-ai-search/ is the direct successor covering citations in ChatGPT, Perplexity, and Google AI Overviews; target confirmed present in the index.",Confirmed 301 (Jake: do all)
+/bing-advertising-toronto/,/microsoft-ads/,301,redirect_exact_equivalent,high,Page,"Bing advertising is now consolidated under the new Microsoft Advertising channel page, which exists in the index.",Confirmed 301 (Jake: do all)
+/blog/,KEEP (same URL) — redesigned Insights hub deploys here,200,keep,high,Blog,Blog hub stays at /blog/ since all 214 posts stay at /blog/<slug>/. The new /insights/ design is the hub; serve it at /blog/ (or 301 /insights/ -> /blog/).,Confirmed — keep at same URL
+/case-studies/comwave/,/case-studies/,301,redirect_parent_category,medium,Case study,"No Comwave case study exists on the new site, so route this work URL to the case studies hub, the closest topical parent; rebuild_then_keep_url was wrong because no rebuild is in scope and keeping the URL while pointing at the hub is contradictory.",Confirmed 301 (Jake: do all)
+/case-studies/the-office-shop/,/case-studies/office-shop/,301,redirect_exact_equivalent,high,Case study,Direct one-to-one match: the new site has a dedicated The Office Shop case study at /case-studies/office-shop/.,Confirmed 301 (Jake: do all)
+/case-study/ecycle-crm/,/case-studies/ecycle/,301,redirect_exact_equivalent,high,Case study,Exact equivalent: the new eCycle case study covers the same custom CRM productivity story (40% boost).,Confirmed 301 (Jake: do all)
+/case-study/tonic-eye-care/,/case-studies/tonic-eye-care/,301,redirect_exact_equivalent,high,Case study,Direct one-to-one match: the new site has a dedicated Tonic Eye Care & Vision Therapy case study covering the same UGC campaign.,Confirmed 301 (Jake: do all)
+/contact-us/,/contact/,301,redirect_exact_equivalent,high,Page,Old Contact Us maps directly to the new Contact page.,Confirmed 301 (Jake: do all)
+/content-marketing-toronto/,/content-marketing/,301,redirect_exact_equivalent,high,Page,"Old Toronto content marketing service page maps directly to the new dedicated content marketing service page, which exists in the index.",Confirmed 301 (Jake: do all)
+/conversion-rate-optimization/,/cro/,301,redirect_exact_equivalent,high,Page,The old CRO agency page is the exact topical equivalent of the new /cro/ service page.,Confirmed 301 (Jake: do all)
+/crm-implementation-toronto/,/zoho-crm/,301,redirect_related,medium,Page,"CRM implementation work maps to the only CRM-focused new page, the Zoho CRM implementation page.",Confirmed 301 (Jake: do all)
+/cro-agency-in-toronto/,/cro/,301,redirect_related,high,Location,"No Toronto-specific CRO page exists in the index, so the canonical CRO service page is the closest match; this is a related redirect, not an exact geo equivalent.",Confirmed 301 (Jake: do all)
+/cro-packages/,/cro/,301,redirect_exact_equivalent,high,Page,CRO packages/services page collapses into the single new /cro/ service page.,Confirmed 301 (Jake: do all)
+/custom-photography-toronto/,/performance-creatives/,301,redirect_related,medium,Page,Custom photography is creative asset production; the closest existing new page is Performance Creatives.,Confirmed 301 (Jake: do all)
+/digital-growth-plan/,/scorecard/,301,redirect_related,medium,Page,"The growth-plan/audit offer maps to the new free marketing scorecard, the equivalent lead-magnet audit page.",Confirmed 301 (Jake: do all)
+/digital-marketing-toronto-strategy-development/,/services/,301,redirect_parent_category,medium,Page,"No dedicated strategy page exists, so the Services hub is the closest topical parent for a marketing-strategy page.",Confirmed 301 (Jake: do all)
+/ecommerce-marketing/,/ecommerce-marketing-toronto/,301,redirect_exact_equivalent,high,Page,"Old ecommerce marketing service page maps directly to the new ecommerce marketing page, which exists in the index as /ecommerce-marketing-toronto/.",Confirmed 301 (Jake: do all)
+/ecommerce-website-development-toronto/,/ecommerce-businesses-website-development-toronto/,301,redirect_exact_equivalent,high,Page,"Old ecommerce website development page maps to the new ecommerce website development page, confirmed present in the index.",Confirmed 301 (Jake: do all)
+/email-marketing-toronto/,/marketing-automation/,301,redirect_related,medium,Page,No standalone email page on the new site; email/nurture work is folded into the new lifecycle Marketing Automation page.,Confirmed 301 (Jake: do all)
+/facebook-advertising-toronto/,/facebook-advertising-agency-in-toronto/,301,redirect_exact_equivalent,high,Page,Exact geo equivalent exists: the new Toronto Facebook advertising agency page in the index.,Confirmed 301 (Jake: do all)
+/generative-engine-optimization/,/aeo-ai-search/,301,redirect_related,high,Page,"GEO was consolidated into the single AI-search service page, whose scope (generative answer engines and AI Overviews) is the closest topical successor; target exists in the index.",Confirmed 301 (Jake: do all)
+/google-ads-management-toronto/,/locations/toronto/google-ads-agency-in-toronto/,301,redirect_exact_equivalent,high,Page,"A Toronto-specific Google Ads agency page exists in the index, a stronger geo match than the generic Google Ads service page.",Confirmed 301 (Jake: do all)
+/google-business-profile-optimization-toronto/,/local-seo/,301,redirect_related,high,Page,Google Business Profile optimization is core local SEO work covered by the Local SEO page.,Confirmed 301 (Jake: do all)
+/google-display-network-advertising-toronto/,/google-ads/,301,redirect_related,high,Page,"Google Display Network is a subset of Google Ads, which has no dedicated display page, so the Google Ads service page is the closest equivalent.",Confirmed 301 (Jake: do all)
+/growth-marketing-plan/,/scorecard/,301,redirect_related,medium,Page,Duplicate growth-plan lead-magnet page; maps to the new marketing scorecard audit offer rather than the homepage.,Confirmed 301 (Jake: do all)
+/influencer-marketing-toronto/,/influencer-marketing/,301,redirect_exact_equivalent,high,Page,Direct equivalent of the Toronto influencer marketing page on the new site.,Confirmed 301 (Jake: do all)
+/instagram-marketing-toronto/,/locations/instagram-advertising-agency-in-toronto/,301,redirect_exact_equivalent,high,Page,Exact geo equivalent exists: the new Toronto Instagram advertising agency page in the index.,Confirmed 301 (Jake: do all)
+/insurance-industry/,/industries/,200 (rebuild),rebuild_then_keep_url,medium,Page,"No insurance industry hub exists on the new site; this vertical page should be rebuilt, pointing meanwhile at the Industries hub which exists.",Confirmed — rebuild at same URL
+/landing-page-design-toronto/,/landing-pages/,301,redirect_exact_equivalent,high,Page,Old landing page design service maps directly to the new /landing-pages/ service page.,Confirmed 301 (Jake: do all)
+/landing/andromeda-unpacked-webinar/,/meta-ads/,410,prune_410,high,Page,"One-off expired 2025 Meta Ads webinar registration landing page with no evergreen value; prune via 410, topical fallback is Meta Ads.","Confirmed prune — check backlinks first, else 410"
+/linkedin-advertising-toronto/,/meta-ads/,301,redirect_related,low,Page,"No LinkedIn ads page exists; the nearest live paid-social channel page is Meta Ads, which avoids the soft-404 risk of pointing at the bare Services hub.",Confirmed 301 (Jake: do all)
+/links/,/contact/,410,prune_410,medium,Page,"Internal Linktree quick-links utility page with no SEO equity, so prune it; target is a neutral placeholder only.","Confirmed prune — check backlinks first, else 410"
+/llm-info/,/aeo-ai-search/,301,redirect_related,medium,Page,"This is a machine-readable llms.txt-style discovery file with no file equivalent on the new site, so among valid page targets /aeo-ai-search/ is the only topically relevant home to retain its AI-context equity; flagged as a mild mismatch risk for QA.",Confirmed 301 (Jake: do all)
+/llm-seo-services/,/aeo-ai-search/,301,redirect_related,high,Page,"LLM SEO Services maps to the new AI-search offering covering brand visibility and citations across ChatGPT, Gemini, and Copilot; target confirmed in the index.",Confirmed 301 (Jake: do all)
+/locations/la/seo-agency-in-los-angeles/,/locations/los-angeles/seo-agency-in-los-angeles/,301,redirect_exact_equivalent,high,Location,"The new site carries the identical LA SEO geo page under the canonical los-angeles path, a verified one-to-one match in the index.",Confirmed 301 (Jake: do all)
+/locations/nyc/seo-agency-in-new-york-city/,/locations/new-york/seo-agency-in-new-york/,301,redirect_exact_equivalent,high,Location,The NYC SEO geo page now lives under the canonical new-york path; /locations/new-york/seo-agency-in-new-york/ is confirmed present and is the exact topical equivalent.,Confirmed 301 (Jake: do all)
+/marketing-automation-toronto/,/marketing-automation/,301,redirect_exact_equivalent,high,Page,Old marketing automation Toronto page maps directly to the new Marketing Automation service page.,Confirmed 301 (Jake: do all)
+/off-page-seo/,/seo/,301,redirect_parent_category,high,Page,"No dedicated off-page, link-building, or authority page exists in the index (local-seo is a different discipline), so the parent /seo/ service page is the closest topical home for link and authority work.",Confirmed 301 (Jake: do all)
+/on-page-seo/,/seo/,301,redirect_parent_category,high,Page,"No dedicated on-page SEO page exists in the index, so the parent /seo/ service page is the nearest topical match for on-page optimization equity.",Confirmed 301 (Jake: do all)
+/origin-story/,/about/,301,redirect_related,high,Page,The company origin story is now folded into the About page.,Confirmed 301 (Jake: do all)
+/portfolio/,/case-studies/,301,redirect_related,high,Case study,"The old portfolio hub showcasing client work maps directly to the new case studies hub, the topical replacement for the work showcase.",Confirmed 301 (Jake: do all)
+/portfolio/asi-group/,/case-studies/,301,redirect_parent_category,medium,Case study,"No ASI Group case study exists on the new site, so route this portfolio item to the case studies hub, the closest topical parent.",Confirmed 301 (Jake: do all)
+/portfolio/comwave/,/case-studies/,301,redirect_parent_category,medium,Case study,"No Comwave case study exists on the new site, so route this portfolio item to the case studies hub, the closest topical parent; corrected from rebuild_then_keep_url, which contradicted itself by pointing a kept URL at the hub.",Confirmed 301 (Jake: do all)
+/portfolio/ecycle-solutions/,/case-studies/ecycle/,301,redirect_exact_equivalent,high,Case study,"Same client as the new eCycle case study, so route this portfolio item to its dedicated case study page.",Confirmed 301 (Jake: do all)
+/portfolio/gorilla-bins/,/case-studies/,301,redirect_parent_category,medium,Case study,"No Gorilla Bins case study exists on the new site, so route this portfolio item to the case studies hub, the closest topical parent.",Confirmed 301 (Jake: do all)
+/portfolio/harmony-resort/,/case-studies/harmony-resorts/,301,redirect_exact_equivalent,high,Case study,"Same client as the new Harmony Resorts case study (verified at /case-studies/harmony-resorts/ in the index), so route this portfolio item to its dedicated case study page.",Confirmed 301 (Jake: do all)
+/portfolio/ontario-business-central/,/case-studies/ontario-business-central/,301,redirect_exact_equivalent,high,Case study,"Same client as the new Ontario Business Central case study (41% revenue increase), so route this portfolio item to its dedicated case study page.",Confirmed 301 (Jake: do all)
+/portfolio/orr-insurance-investment/,/case-studies/,301,redirect_parent_category,medium,Case study,"No Orr Insurance & Investment case study exists on the new site, so route this work item to the case studies hub, the closest topical parent, rather than a service page since it is portfolio content.",Confirmed 301 (Jake: do all)
+/portfolio/the-office-shop/,/case-studies/office-shop/,301,redirect_exact_equivalent,high,Case study,"Same client as the new The Office Shop case study, so route this portfolio item to its dedicated case study page.",Confirmed 301 (Jake: do all)
+/portfolio/zayouna-law-firm/,/case-studies/zayouna-law-firm/,301,redirect_exact_equivalent,high,Case study,"Same client as the new Zayouna Law case study, so route this portfolio item to its dedicated case study page.",Confirmed 301 (Jake: do all)
+/privacy-policy/,/privacy-policy/,200 (rebuild),rebuild_then_keep_url,high,Page,Every site legally needs a privacy policy. Rebuild at same URL; do NOT redirect to /contact/.,Confirmed — rebuild at same URL
+/programmatic-advertising-toronto/,/google-ads/,301,redirect_related,medium,Page,Programmatic is bought through Google Ads (DV360/PMax); no dedicated programmatic page exists. ADDED post-audit (critic catch).,Confirmed 301 (Jake: do all)
+/remarketing-marketing-toronto/,/google-ads/,301,redirect_related,medium,Page,"Remarketing is delivered primarily through Google Ads, the closest channel page with no dedicated remarketing equivalent on the new site.",Confirmed 301 (Jake: do all)
+/reputation-advertising-toronto/,/meta-ads/,200 (rebuild),rebuild_then_keep_url,low,Page,"Reputation advertising is a paid-social activity, not creative production, so Performance Creatives would be a soft-404 mismatch; the closest topical existing page is Meta Ads, but the page should be rebuilt to preserve its keyword equity.",Confirmed — rebuild at same URL
+/reviews/,/case-studies/,301,redirect_related,medium,Page,"Client reviews are social proof, best matched to the Case Studies hub of client stories and outcomes.",Confirmed 301 (Jake: do all)
+/sales-enablement-toronto/,/sales-enablement/,301,redirect_exact_equivalent,high,Page,Old sales enablement Toronto page maps directly to the new Sales Enablement service page.,Confirmed 301 (Jake: do all)
+/sales-letter/,/contact/,301,redirect_related,medium,Page,A sales-letter is a conversion asset; redirecting to Contact preserves any residual equity instead of dropping it with a 410.,Confirmed 301 (Jake: do all)
+/self-storage-division/,/self-storage-marketing-toronto/,301,redirect_related,high,Page,"The self-storage industry division page maps to the new self-storage marketing page, confirmed present in the index.",Confirmed 301 (Jake: do all)
+/site-map/,/contact/,410,prune_410,high,Page,"HTML sitemap utility page the new site regenerates, so prune it; target is a neutral placeholder only.","Confirmed prune — check backlinks first, else 410"
+/social-media-marketing-toronto/,/meta-ads/,301,redirect_related,medium,Page,No general social media management page on the new site; Meta Ads is the closest topical social channel page.,Confirmed 301 (Jake: do all)
+/tik-tok-advertising-agency-toronto/,/meta-ads/,301,redirect_related,low,Page,"No TikTok ads page exists; the nearest live paid-social channel page is Meta Ads, avoiding the soft-404 risk of the generic Services hub.",Confirmed 301 (Jake: do all)
+/ugc-creator/,/influencer-marketing/,301,redirect_related,medium,Page,"Creator-roster recruitment page maps to the new Influencer Marketing page, which covers real creators and UGC.",Confirmed 301 (Jake: do all)
+/user-generated-content-agency/,/influencer-marketing/,301,redirect_related,medium,Page,"UGC agency service maps to the new Influencer Marketing page, the page covering real creators and UGC attribution.",Confirmed 301 (Jake: do all)
+/video-testimonial-toronto/,/performance-creatives/,301,redirect_related,medium,Page,Video testimonial production is creative asset production; closest existing new page is Performance Creatives.,Confirmed 301 (Jake: do all)
+/videographer-toronto/,/performance-creatives/,301,redirect_related,medium,Page,"Videography service maps to the new Performance Creatives page, which houses creative/video production.",Confirmed 301 (Jake: do all)
+/web-design-toronto/,/web-development/,301,redirect_related,high,Page,No standalone web design page on the new site; web design folds into the new Web Development service page.,Confirmed 301 (Jake: do all)
+/web-development-toronto/,/web-development/,301,redirect_exact_equivalent,high,Page,Old web development Toronto page maps directly to the new Web Development service page.,Confirmed 301 (Jake: do all)
+/youtube-advertising-toronto/,/google-ads/,301,redirect_related,high,Page,"YouTube advertising runs through Google Ads, the closest channel page since no dedicated YouTube page exists in the index.",Confirmed 301 (Jake: do all)
+/blog/10-absolute-best-free-chrome-extensions-web-designers/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/10-cro-tips-improve-ecommerce-conversion-rates/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/10-digital-marketing-trends-for-2023/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/10-expert-google-ads-management-tips/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/10-features-of-a-killer-sales-funnel/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/10-seo-ecommerce-tips-that-actually-work/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/12-best-conversion-rate-optimization-tools/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/3-methods-to-spark-curiosity-in-your-ugc-hooks/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/5-a-b-testing-techniques-for-boosting-your-websites-conversion-rate/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/5-benefits-working-with-a-google-partner-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/5-effective-content-writing-tips/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/5-steps-to-create-a-powerful-digital-marketing-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/5-tips-facebook-ads-creation/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/5-ways-create-content-google-adwords/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/6-benefits-google-ads-management-agency/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/6-google-ads-best-practices-for-high-converting-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/6-tips-updating-website/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/6-ways-engaging-content-can-help-your-business-goals/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/7-benefits-to-linkedin-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/7-proven-growth-marketing-strategies-that-drive-roi/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/7-tips-for-creating-effective-facebook-ads-that-convert/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/8-ways-to-increase-your-google-ads-ctr/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/9-best-practices-for-conversion-rate-optimization/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/9-business-growth-strategies-in-2023/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/abm-what-is-it-and-how-can-it-benefit-your-target-audience/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/agency-vs-consultancy-what-to-know/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/anatomy-of-high-converting-landing-page-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/artificial-intelligence-digital-transformation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/b2b-influencer-marketing-campaign-ideas/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/b2c-influencer-marketing-campaign-ideas/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/benefits-of-digital-transformation-for-smbs/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/benefits-of-influencer-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/benefits-of-leveraging-video-content-for-seo/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/benefits-of-youtube-for-business/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/best-practices-for-leveraging-ugc-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/best-social-media-management-tools-for-2024/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/best-tech-stack-digital-marketing-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/best-ways-utilize-local-store-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/boost-your-conversion-rates-with-these-tips/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/boosting-sales-with-user-generated-content-ugc-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/build-business-visual-brand-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/building-your-email-list-with-lead-magnets/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/buzz-worthy-branded-digital-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/cdap-canada-digital-adoption-program-eligibility/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/choose-internet-marketing-company/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/client-spotlight-increase-in-conversion-rate-for-zayouna-law-firm/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/client-spotlight-on-comwave-ranking-first-on-google-search/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/client-spotlight-on-ontario-business-central-41-increase-in-revenue/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/compelling-email-subject-lines-boost-engagement/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/complete-restaurant-seo-guide/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/consultus-academy-learning/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/consultus-digital-announced-as-official-advisor-in-canadas-4-billion-digital-grant/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/consultus-digital-rebrand/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/content-marketing-can-improve-your-seo/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/content-marketing-vs-copywriting/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/content-repurposing-how-to-get-more-blog-content-value/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/copywriting-in-conversion-rate-optimization-cro/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/copywriting-tips-increase-conversions/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/creative-best-practices-for-youtube-ad-design-and-video-production/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/crm-for-small-businesses-how-to-implement-and-leverage-crm-for-growth-and-success/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/crm-marketing-automation-integration/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/cro-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/cro-vs-seo-working-together/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/digital-advertising-rules-for-lawyers-in-canada/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/digital-marketing-gift-guide/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/digital-marketing-trends/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/digital-transformation-business-success/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/driving-retail-sales-digital-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/ecommerce-seo-how-to-get-started/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/ecommerce-seo-tips-to-increase-traffic/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/effective-content-marketing-for-law-firms-best-practices-for-blogging-email-and-video/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/email-marketing-ecommerce-how-to-boost-sales/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/email-marketing-more-important-than-ever/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/expert-remarketing-strategies/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/future-proof-seo-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/generate-leads-with-content-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/google-ads-benchmark-a-guide-for-small-businesses/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/google-ads-paid-search/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/google-ads-vs-facebook-ads-what-you-need-to-know/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/google-business-profile-optimization/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/growth-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/guest-blogging-inbound-marketing-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/guide-to-google-ad-campaigns-search-ads/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/harnessing-power-of-different-types-ugc-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/hiding-likes-influencer-marketing/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/how-can-blogging-help-grow-my-business/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-google-is-shifting-to-user-journeys-and-why-it-matters-to-you/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-many-hashtags-should-i-use-on-social-media/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/how-to-apply-for-the-cdap-grant/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/how-to-best-utilize-experiential-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-boost-your-business-with-15k-cdap/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/how-to-build-a-growth-marketing-plan/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-choose-the-right-crm-system-for-your-business-tips-and-best-practices/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/how-to-create-a-facebook-ads-strategy-that-works-for-your-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/how-to-create-compelling-email-newsletters-that-will-be-opened-and-read/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-create-compelling-visuals-for-your-facebook-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-create-high-converting-tiktok-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-edit-ads-on-facebook/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/how-to-manage-your-online-reputation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-migrate-to-google-analytics-4/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/how-to-optimize-your-social-media/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-successfully-run-cro-audit/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-use-heatmaps-to-improve-your-websites-conversion-rate/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-use-seo-to-boost-your-online-reputation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-utilize-instagram-shopping/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-to-write-successful-google-ads-copy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/how-your-business-can-grow-with-influencer-marketing/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/improve-lead-generation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/improve-sales-process/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/improve-website-conversion-rate/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/improve-your-short-form-video-content/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/increase-website-traffic-by-using-these-4-seo-blogging-tips/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/increase-your-website-revenue-with-cro-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/influence-of-micro-influencers-ugc-strategies-for-niche-marketing-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/influence-of-ugc-creators-in-shaping-brand-perception/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/innovative-insurance-marketing-tactics-how-to-stand-out-in-a-crowded-market/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/leverage-social-media-for-seo-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/linkedin-message-ads-a-complete-guide/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/local-seo-improve-visibility-google/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/marketing-automation-for-insurance-how-to-streamline-your-processes-and-improve-efficiency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/marketing-automation-is-your-digital-marketing-secure-efficient/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/mastering-perplexity-ai-top-seo-strategies-for-success/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/maximizing-conversions-cro-tools-techniques-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/meta-ads-benchmarks-a-guide-for-small-businesses/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/my-take-on-how-ai-will-transform-digital-marketing-in-2023/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/off-page-seo-tips/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/online-competitor-analysis-preparing-for-2024/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/partner-with-influencer-marketing-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/performance-marketing-vs-digital-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/power-of-social-proof-with-conversion-rate-optimization/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/product-listing-ads-management-guide/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/pros-cons-facebook-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/push-and-pull-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/quick-guide-google-ads-campaigns-performance-max/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/quick-guide-google-display-ads-campaigns/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/quick-guide-to-google-ads-campaigns-video-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/quick-guide-to-google-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/quick-guide-to-google-shopping-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/rank-business-locally-maps/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/real-time-marketing-social-media-2019/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/reasons-your-business-should-apply-for-cdap/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/remarketing-advertising-for-ecommerce/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/remarketing-right-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/reputation-management-mistakes/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/role-of-social-media-reputation-management/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/sales-enablement/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/seo-and-google-security/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/seo-audit-5-essential-things-to-check/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/seo-link-relevancy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/signs-its-time-to-hire-a-digital-marketing-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/signs-you-need-professional-seo-help/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/small-business-marketing-budgets-how-much-to-spend-and-best-practices/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/small-business-seo-budget-guide-2025/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/social-media-advertising-platforms/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/social-media-scams-targeting-businesses/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/social-proof/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/strategies-for-increasing-email-open-rates/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/strategies-to-boost-your-seo/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/the-basics-conversion-rate-optimization/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-beginners-guide-to-crm-understanding-the-basics-and-benefits-for-your-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/the-beginners-guide-to-microsoft-advertising-how-to-get-started/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/the-connection-between-content-marketing-and-sales-enablement/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-dos-and-donts-of-facebook-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-dos-and-donts-of-tiktok-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-eight-best-seo-tools-to-boost-your-rankings-in-2025/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/the-impact-of-effective-sales-enablement-on-customer-experience/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-power-of-a-b-testing-how-small-changes-lead-to-big-conversions-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-power-of-bing-ads-why-your-business-should-be-using-microsoft-advertising/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/the-power-of-seo-for-law-firms/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-secrets-of-direct-response-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-top-5-benefits-of-instagram-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/the-ultimate-local-seo-tactic-how-to-optimize-your-business-for-ai-voice-search/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/tiktok-ads-how-to-win-more-customers/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/tips-choosing-right-seo-specialist/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/tips-to-create-high-converting-landing-page/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/top-10-blog-writing-tips-2019/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/top-10-latest-google-ad-enhancements-2/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/top-10-on-page-seo-tips-beginners/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/top-5-free-digital-marketing-courses/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/top-6-free-google-docs-add-ons-content-writers/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/top-digital-marketing-trends-2024/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/top-examples-of-landing-pages-for-saas-companies-2023/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/ugc-marketing-social-media/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/ultimate-guide-making-social-media-accessible/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/ultimate-guide-programmatic-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/ultimate-seo-guide/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/understanding-the-customer-journey-and-content-needed-for-each-stage/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/user-generated-content-brand-engagement/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/using-pr-boost-your-seo/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/ux-and-web-design-trends-for-2023/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/video-ideas-for-your-marketing-content/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/video-testimonials-benefits-for-business/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/voice-search-optimization-for-cro-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/what-does-great-facebook-ad-creative-look-like/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/what-is-a-subdomain-how-it-fits-seo/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/what-is-answer-engine-optimization-how-to-improve-your-online-visibility/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/what-is-seo-cloaking-and-how-to-avoid-it/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/what-to-know-cdap-interest-free-loan/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,Confirmed — keep at same URL
+/blog/when-to-hire-a-sales-consultant/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/which-crm-system-is-right-for-your-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/why-canadian-smbs-must-undergo-a-digital-marketing-and-sales-transformation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-choose-consultus-digital-as-your-cdap-digital-advisor/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-consultus-is-better/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-every-business-should-be-a-b-testing/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/why-google-ads-management-service-agency/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/why-reputation-management-matters-more-than-ever/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-you-need-a-social-media-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-your-advertising-hook-matters/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-your-business-needs-crm/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/why-your-business-needs-video-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-your-ppc-campaign-needs-landing-page/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/why-your-website-conversion-rates-suck/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL
+/blog/work-with-facebook-advertising-agency/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/youtube-advertising-how-to-set-up-a-video-ad/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,Confirmed — keep at same URL

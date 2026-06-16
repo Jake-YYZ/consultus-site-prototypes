@@ -1,6 +1,88 @@
-# Consultus Digital redirect map
-# Generated for site cutover — review before deploying.
-# Format: <old-path> <new-path> <status>
+# Consultus Digital — production redirect map (site relaunch)
+# Generated from seo-migration/03-redirect-map.csv. Format: <old-path> <new-path> <status>
+# Deploy on consultusdigital.com at cutover. For WordPress, import 03-redirect-map.csv into the Redirection plugin instead.
 
+# --- Legacy redirects (pre-existing) ---
 /team/  /about/  301
 /our-process/  /about/  301
+
+# NOTE: the blog stays at /blog/ (hub) and /blog/<slug>/ (all 214 posts). The redesigned
+#       'Insights' hub should be served at /blog/, or 301 /insights/ -> /blog/.
+
+# --- URL restructure + retired pages (64 redirects) ---
+/about-us-online-marketing-agency/                /about/  301
+/ad-creatives/                                    /performance-creatives/  301
+/amazon-ad-management-services/                   /ecommerce-marketing-toronto/  301
+/answer-engine-optimization/                      /aeo-ai-search/  301
+/bing-advertising-toronto/                        /microsoft-ads/  301
+/case-studies/comwave/                            /case-studies/  301
+/case-studies/the-office-shop/                    /case-studies/office-shop/  301
+/case-study/ecycle-crm/                           /case-studies/ecycle/  301
+/case-study/tonic-eye-care/                       /case-studies/tonic-eye-care/  301
+/contact-us/                                      /contact/  301
+/content-marketing-toronto/                       /content-marketing/  301
+/conversion-rate-optimization/                    /cro/  301
+/crm-implementation-toronto/                      /zoho-crm/  301
+/cro-agency-in-toronto/                           /cro/  301
+/cro-packages/                                    /cro/  301
+/custom-photography-toronto/                      /performance-creatives/  301
+/digital-growth-plan/                             /scorecard/  301
+/digital-marketing-toronto-strategy-development/  /services/  301
+/ecommerce-marketing/                             /ecommerce-marketing-toronto/  301
+/ecommerce-website-development-toronto/           /ecommerce-businesses-website-development-toronto/  301
+/email-marketing-toronto/                         /marketing-automation/  301
+/facebook-advertising-toronto/                    /facebook-advertising-agency-in-toronto/  301
+/generative-engine-optimization/                  /aeo-ai-search/  301
+/google-ads-management-toronto/                   /locations/toronto/google-ads-agency-in-toronto/  301
+/google-business-profile-optimization-toronto/    /local-seo/  301
+/google-display-network-advertising-toronto/      /google-ads/  301
+/growth-marketing-plan/                           /scorecard/  301
+/influencer-marketing-toronto/                    /influencer-marketing/  301
+/instagram-marketing-toronto/                     /locations/instagram-advertising-agency-in-toronto/  301
+/landing-page-design-toronto/                     /landing-pages/  301
+/linkedin-advertising-toronto/                    /meta-ads/  301
+/llm-info/                                        /aeo-ai-search/  301
+/llm-seo-services/                                /aeo-ai-search/  301
+/locations/la/seo-agency-in-los-angeles/          /locations/los-angeles/seo-agency-in-los-angeles/  301
+/locations/nyc/seo-agency-in-new-york-city/       /locations/new-york/seo-agency-in-new-york/  301
+/marketing-automation-toronto/                    /marketing-automation/  301
+/off-page-seo/                                    /seo/  301
+/on-page-seo/                                     /seo/  301
+/origin-story/                                    /about/  301
+/portfolio/                                       /case-studies/  301
+/portfolio/asi-group/                             /case-studies/  301
+/portfolio/comwave/                               /case-studies/  301
+/portfolio/ecycle-solutions/                      /case-studies/ecycle/  301
+/portfolio/gorilla-bins/                          /case-studies/  301
+/portfolio/harmony-resort/                        /case-studies/harmony-resorts/  301
+/portfolio/ontario-business-central/              /case-studies/ontario-business-central/  301
+/portfolio/orr-insurance-investment/              /case-studies/  301
+/portfolio/the-office-shop/                       /case-studies/office-shop/  301
+/portfolio/zayouna-law-firm/                      /case-studies/zayouna-law-firm/  301
+/programmatic-advertising-toronto/                /google-ads/  301
+/remarketing-marketing-toronto/                   /google-ads/  301
+/reviews/                                         /case-studies/  301
+/sales-enablement-toronto/                        /sales-enablement/  301
+/sales-letter/                                    /contact/  301
+/self-storage-division/                           /self-storage-marketing-toronto/  301
+/social-media-marketing-toronto/                  /meta-ads/  301
+/tik-tok-advertising-agency-toronto/              /meta-ads/  301
+/ugc-creator/                                     /influencer-marketing/  301
+/user-generated-content-agency/                   /influencer-marketing/  301
+/video-testimonial-toronto/                       /performance-creatives/  301
+/videographer-toronto/                            /performance-creatives/  301
+/web-design-toronto/                              /web-development/  301
+/web-development-toronto/                         /web-development/  301
+/youtube-advertising-toronto/                     /google-ads/  301
+
+# --- Rebuild at same URL (3): build these, do NOT redirect ---
+#   /insurance-industry/  (rebuild)
+#   /privacy-policy/  (rebuild)
+#   /reputation-advertising-toronto/  (rebuild)
+
+# --- Prune (3): serve 410 Gone, UNLESS the URL has backlinks (then 301) ---
+#   /landing/andromeda-unpacked-webinar/  410
+#   /links/  410
+#   /site-map/  410
+
+# --- Blog consolidations (30): 301 each merged post to its survivor, set in content review (06-blog-inventory.csv) ---

@@ -1,0 +1,3436 @@
+{
+ "redirects": [
+  {
+   "old_url": "/answer-engine-optimization/",
+   "new_target": "/aeo-ai-search/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "AEO is literally Answer Engine Optimization and /aeo-ai-search/ is the direct successor covering citations in ChatGPT, Perplexity, and Google AI Overviews; target confirmed present in the index."
+  },
+  {
+   "old_url": "/generative-engine-optimization/",
+   "new_target": "/aeo-ai-search/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "GEO was consolidated into the single AI-search service page, whose scope (generative answer engines and AI Overviews) is the closest topical successor; target exists in the index."
+  },
+  {
+   "old_url": "/llm-info/",
+   "new_target": "/aeo-ai-search/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "This is a machine-readable llms.txt-style discovery file with no file equivalent on the new site, so among valid page targets /aeo-ai-search/ is the only topically relevant home to retain its AI-context equity; flagged as a mild mismatch risk for QA."
+  },
+  {
+   "old_url": "/llm-seo-services/",
+   "new_target": "/aeo-ai-search/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "LLM SEO Services maps to the new AI-search offering covering brand visibility and citations across ChatGPT, Gemini, and Copilot; target confirmed in the index."
+  },
+  {
+   "old_url": "/locations/la/seo-agency-in-los-angeles/",
+   "new_target": "/locations/los-angeles/seo-agency-in-los-angeles/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "The new site carries the identical LA SEO geo page under the canonical los-angeles path, a verified one-to-one match in the index."
+  },
+  {
+   "old_url": "/locations/nyc/seo-agency-in-new-york-city/",
+   "new_target": "/locations/new-york/seo-agency-in-new-york/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "The NYC SEO geo page now lives under the canonical new-york path; /locations/new-york/seo-agency-in-new-york/ is confirmed present and is the exact topical equivalent."
+  },
+  {
+   "old_url": "/off-page-seo/",
+   "new_target": "/seo/",
+   "disposition": "redirect_parent_category",
+   "confidence": "high",
+   "rationale": "No dedicated off-page, link-building, or authority page exists in the index (local-seo is a different discipline), so the parent /seo/ service page is the closest topical home for link and authority work."
+  },
+  {
+   "old_url": "/on-page-seo/",
+   "new_target": "/seo/",
+   "disposition": "redirect_parent_category",
+   "confidence": "high",
+   "rationale": "No dedicated on-page SEO page exists in the index, so the parent /seo/ service page is the nearest topical match for on-page optimization equity."
+  },
+  {
+   "old_url": "/ad-creatives/",
+   "new_target": "/performance-creatives/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old ad-creative showcase maps directly to the new Performance Creatives service page, which exists in the index."
+  },
+  {
+   "old_url": "/amazon-ad-management-services/",
+   "new_target": "/ecommerce-marketing-toronto/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No Amazon-ads page exists on the new site, so the closest topical parent is Ecommerce Marketing; disposition corrected to parent_category since the old URL is being retired and needs a live redirect, not kept."
+  },
+  {
+   "old_url": "/bing-advertising-toronto/",
+   "new_target": "/microsoft-ads/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Bing advertising is now consolidated under the new Microsoft Advertising channel page, which exists in the index."
+  },
+  {
+   "old_url": "/cro-agency-in-toronto/",
+   "new_target": "/cro/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "No Toronto-specific CRO page exists in the index, so the canonical CRO service page is the closest match; this is a related redirect, not an exact geo equivalent."
+  },
+  {
+   "old_url": "/facebook-advertising-toronto/",
+   "new_target": "/facebook-advertising-agency-in-toronto/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Exact geo equivalent exists: the new Toronto Facebook advertising agency page in the index."
+  },
+  {
+   "old_url": "/google-ads-management-toronto/",
+   "new_target": "/locations/toronto/google-ads-agency-in-toronto/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "A Toronto-specific Google Ads agency page exists in the index, a stronger geo match than the generic Google Ads service page."
+  },
+  {
+   "old_url": "/google-display-network-advertising-toronto/",
+   "new_target": "/google-ads/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "Google Display Network is a subset of Google Ads, which has no dedicated display page, so the Google Ads service page is the closest equivalent."
+  },
+  {
+   "old_url": "/instagram-marketing-toronto/",
+   "new_target": "/locations/instagram-advertising-agency-in-toronto/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Exact geo equivalent exists: the new Toronto Instagram advertising agency page in the index."
+  },
+  {
+   "old_url": "/linkedin-advertising-toronto/",
+   "new_target": "/meta-ads/",
+   "disposition": "redirect_related",
+   "confidence": "low",
+   "rationale": "No LinkedIn ads page exists; the nearest live paid-social channel page is Meta Ads, which avoids the soft-404 risk of pointing at the bare Services hub."
+  },
+  {
+   "old_url": "/remarketing-marketing-toronto/",
+   "new_target": "/google-ads/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Remarketing is delivered primarily through Google Ads, the closest channel page with no dedicated remarketing equivalent on the new site."
+  },
+  {
+   "old_url": "/tik-tok-advertising-agency-toronto/",
+   "new_target": "/meta-ads/",
+   "disposition": "redirect_related",
+   "confidence": "low",
+   "rationale": "No TikTok ads page exists; the nearest live paid-social channel page is Meta Ads, avoiding the soft-404 risk of the generic Services hub."
+  },
+  {
+   "old_url": "/youtube-advertising-toronto/",
+   "new_target": "/google-ads/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "YouTube advertising runs through Google Ads, the closest channel page since no dedicated YouTube page exists in the index."
+  },
+  {
+   "old_url": "/content-marketing-toronto/",
+   "new_target": "/content-marketing/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old Toronto content marketing service page maps directly to the new dedicated content marketing service page, which exists in the index."
+  },
+  {
+   "old_url": "/conversion-rate-optimization/",
+   "new_target": "/cro/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "The old CRO agency page is the exact topical equivalent of the new /cro/ service page."
+  },
+  {
+   "old_url": "/crm-implementation-toronto/",
+   "new_target": "/zoho-crm/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "CRM implementation work maps to the only CRM-focused new page, the Zoho CRM implementation page."
+  },
+  {
+   "old_url": "/cro-packages/",
+   "new_target": "/cro/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "CRO packages/services page collapses into the single new /cro/ service page."
+  },
+  {
+   "old_url": "/custom-photography-toronto/",
+   "new_target": "/performance-creatives/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Custom photography is creative asset production; the closest existing new page is Performance Creatives."
+  },
+  {
+   "old_url": "/digital-growth-plan/",
+   "new_target": "/scorecard/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "The growth-plan/audit offer maps to the new free marketing scorecard, the equivalent lead-magnet audit page."
+  },
+  {
+   "old_url": "/ecommerce-marketing/",
+   "new_target": "/ecommerce-marketing-toronto/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old ecommerce marketing service page maps directly to the new ecommerce marketing page, which exists in the index as /ecommerce-marketing-toronto/."
+  },
+  {
+   "old_url": "/ecommerce-website-development-toronto/",
+   "new_target": "/ecommerce-businesses-website-development-toronto/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old ecommerce website development page maps to the new ecommerce website development page, confirmed present in the index."
+  },
+  {
+   "old_url": "/email-marketing-toronto/",
+   "new_target": "/marketing-automation/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "No standalone email page on the new site; email/nurture work is folded into the new lifecycle Marketing Automation page."
+  },
+  {
+   "old_url": "/growth-marketing-plan/",
+   "new_target": "/scorecard/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Duplicate growth-plan lead-magnet page; maps to the new marketing scorecard audit offer rather than the homepage."
+  },
+  {
+   "old_url": "/landing-page-design-toronto/",
+   "new_target": "/landing-pages/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old landing page design service maps directly to the new /landing-pages/ service page."
+  },
+  {
+   "old_url": "/landing/andromeda-unpacked-webinar/",
+   "new_target": "/meta-ads/",
+   "disposition": "prune_410",
+   "confidence": "high",
+   "rationale": "One-off expired 2025 Meta Ads webinar registration landing page with no evergreen value; prune via 410, topical fallback is Meta Ads."
+  },
+  {
+   "old_url": "/marketing-automation-toronto/",
+   "new_target": "/marketing-automation/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old marketing automation Toronto page maps directly to the new Marketing Automation service page."
+  },
+  {
+   "old_url": "/reputation-advertising-toronto/",
+   "new_target": "/meta-ads/",
+   "disposition": "rebuild_then_keep_url",
+   "confidence": "low",
+   "rationale": "Reputation advertising is a paid-social activity, not creative production, so Performance Creatives would be a soft-404 mismatch; the closest topical existing page is Meta Ads, but the page should be rebuilt to preserve its keyword equity."
+  },
+  {
+   "old_url": "/sales-enablement-toronto/",
+   "new_target": "/sales-enablement/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old sales enablement Toronto page maps directly to the new Sales Enablement service page."
+  },
+  {
+   "old_url": "/self-storage-division/",
+   "new_target": "/self-storage-marketing-toronto/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "The self-storage industry division page maps to the new self-storage marketing page, confirmed present in the index."
+  },
+  {
+   "old_url": "/social-media-marketing-toronto/",
+   "new_target": "/meta-ads/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "No general social media management page on the new site; Meta Ads is the closest topical social channel page."
+  },
+  {
+   "old_url": "/ugc-creator/",
+   "new_target": "/influencer-marketing/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Creator-roster recruitment page maps to the new Influencer Marketing page, which covers real creators and UGC."
+  },
+  {
+   "old_url": "/user-generated-content-agency/",
+   "new_target": "/influencer-marketing/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "UGC agency service maps to the new Influencer Marketing page, the page covering real creators and UGC attribution."
+  },
+  {
+   "old_url": "/video-testimonial-toronto/",
+   "new_target": "/performance-creatives/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Video testimonial production is creative asset production; closest existing new page is Performance Creatives."
+  },
+  {
+   "old_url": "/videographer-toronto/",
+   "new_target": "/performance-creatives/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Videography service maps to the new Performance Creatives page, which houses creative/video production."
+  },
+  {
+   "old_url": "/web-design-toronto/",
+   "new_target": "/web-development/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "No standalone web design page on the new site; web design folds into the new Web Development service page."
+  },
+  {
+   "old_url": "/web-development-toronto/",
+   "new_target": "/web-development/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old web development Toronto page maps directly to the new Web Development service page."
+  },
+  {
+   "old_url": "/case-studies/comwave/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No Comwave case study exists on the new site, so route this work URL to the case studies hub, the closest topical parent; rebuild_then_keep_url was wrong because no rebuild is in scope and keeping the URL while pointing at the hub is contradictory."
+  },
+  {
+   "old_url": "/case-studies/the-office-shop/",
+   "new_target": "/case-studies/office-shop/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Direct one-to-one match: the new site has a dedicated The Office Shop case study at /case-studies/office-shop/."
+  },
+  {
+   "old_url": "/case-study/ecycle-crm/",
+   "new_target": "/case-studies/ecycle/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Exact equivalent: the new eCycle case study covers the same custom CRM productivity story (40% boost)."
+  },
+  {
+   "old_url": "/case-study/tonic-eye-care/",
+   "new_target": "/case-studies/tonic-eye-care/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Direct one-to-one match: the new site has a dedicated Tonic Eye Care & Vision Therapy case study covering the same UGC campaign."
+  },
+  {
+   "old_url": "/portfolio/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "The old portfolio hub showcasing client work maps directly to the new case studies hub, the topical replacement for the work showcase."
+  },
+  {
+   "old_url": "/portfolio/asi-group/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No ASI Group case study exists on the new site, so route this portfolio item to the case studies hub, the closest topical parent."
+  },
+  {
+   "old_url": "/portfolio/comwave/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No Comwave case study exists on the new site, so route this portfolio item to the case studies hub, the closest topical parent; corrected from rebuild_then_keep_url, which contradicted itself by pointing a kept URL at the hub."
+  },
+  {
+   "old_url": "/portfolio/ecycle-solutions/",
+   "new_target": "/case-studies/ecycle/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Same client as the new eCycle case study, so route this portfolio item to its dedicated case study page."
+  },
+  {
+   "old_url": "/portfolio/gorilla-bins/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No Gorilla Bins case study exists on the new site, so route this portfolio item to the case studies hub, the closest topical parent."
+  },
+  {
+   "old_url": "/portfolio/harmony-resort/",
+   "new_target": "/case-studies/harmony-resorts/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Same client as the new Harmony Resorts case study (verified at /case-studies/harmony-resorts/ in the index), so route this portfolio item to its dedicated case study page."
+  },
+  {
+   "old_url": "/portfolio/ontario-business-central/",
+   "new_target": "/case-studies/ontario-business-central/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Same client as the new Ontario Business Central case study (41% revenue increase), so route this portfolio item to its dedicated case study page."
+  },
+  {
+   "old_url": "/portfolio/orr-insurance-investment/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No Orr Insurance & Investment case study exists on the new site, so route this work item to the case studies hub, the closest topical parent, rather than a service page since it is portfolio content."
+  },
+  {
+   "old_url": "/portfolio/the-office-shop/",
+   "new_target": "/case-studies/office-shop/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Same client as the new The Office Shop case study, so route this portfolio item to its dedicated case study page."
+  },
+  {
+   "old_url": "/portfolio/zayouna-law-firm/",
+   "new_target": "/case-studies/zayouna-law-firm/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Same client as the new Zayouna Law case study, so route this portfolio item to its dedicated case study page."
+  },
+  {
+   "old_url": "/about-us-online-marketing-agency/",
+   "new_target": "/about/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old About Us page maps directly to the new About page."
+  },
+  {
+   "old_url": "/blog/",
+   "new_target": "/insights/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "The new Insights page is the rebranded blog and article hub."
+  },
+  {
+   "old_url": "/contact-us/",
+   "new_target": "/contact/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Old Contact Us maps directly to the new Contact page."
+  },
+  {
+   "old_url": "/digital-marketing-toronto-strategy-development/",
+   "new_target": "/services/",
+   "disposition": "redirect_parent_category",
+   "confidence": "medium",
+   "rationale": "No dedicated strategy page exists, so the Services hub is the closest topical parent for a marketing-strategy page."
+  },
+  {
+   "old_url": "/google-business-profile-optimization-toronto/",
+   "new_target": "/local-seo/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "Google Business Profile optimization is core local SEO work covered by the Local SEO page."
+  },
+  {
+   "old_url": "/influencer-marketing-toronto/",
+   "new_target": "/influencer-marketing/",
+   "disposition": "redirect_exact_equivalent",
+   "confidence": "high",
+   "rationale": "Direct equivalent of the Toronto influencer marketing page on the new site."
+  },
+  {
+   "old_url": "/insurance-industry/",
+   "new_target": "/industries/",
+   "disposition": "rebuild_then_keep_url",
+   "confidence": "medium",
+   "rationale": "No insurance industry hub exists on the new site; this vertical page should be rebuilt, pointing meanwhile at the Industries hub which exists."
+  },
+  {
+   "old_url": "/links/",
+   "new_target": "/contact/",
+   "disposition": "prune_410",
+   "confidence": "medium",
+   "rationale": "Internal Linktree quick-links utility page with no SEO equity, so prune it; target is a neutral placeholder only."
+  },
+  {
+   "old_url": "/origin-story/",
+   "new_target": "/about/",
+   "disposition": "redirect_related",
+   "confidence": "high",
+   "rationale": "The company origin story is now folded into the About page."
+  },
+  {
+   "old_url": "/privacy-policy/",
+   "new_target": "/contact/",
+   "disposition": "rebuild_then_keep_url",
+   "confidence": "medium",
+   "rationale": "Legal privacy page must be rebuilt and kept at its own URL; interim target is the neutral Contact page rather than the About narrative to avoid a soft-404 mismatch."
+  },
+  {
+   "old_url": "/reviews/",
+   "new_target": "/case-studies/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "Client reviews are social proof, best matched to the Case Studies hub of client stories and outcomes."
+  },
+  {
+   "old_url": "/sales-letter/",
+   "new_target": "/contact/",
+   "disposition": "redirect_related",
+   "confidence": "medium",
+   "rationale": "A sales-letter is a conversion asset; redirecting to Contact preserves any residual equity instead of dropping it with a 410."
+  },
+  {
+   "old_url": "/site-map/",
+   "new_target": "/contact/",
+   "disposition": "prune_410",
+   "confidence": "high",
+   "rationale": "HTML sitemap utility page the new site regenerates, so prune it; target is a neutral placeholder only."
+  }
+ ],
+ "meta": [
+  {
+   "url": "/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "lost_service_keyword",
+    "lost_rank_modifier"
+   ],
+   "recommended_title": "Performance Marketing Agency Toronto | Consultus Digital",
+   "recommended_meta_description": "Consultus Digital is a Toronto performance marketing agency. Paid media, SEO, creative, web and CRM built as one engine, with results we can defend.",
+   "recommended_h1": "Performance marketing, engineered for scaling brands.",
+   "priority": "P1"
+  },
+  {
+   "url": "/about/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "About Us | Toronto Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "Meet the team behind Consultus Digital. Toronto operators who engineer revenue systems: paid media, search, creative, web and CRM under one roof.",
+   "recommended_h1": "We engineer revenue systems.",
+   "priority": "P3"
+  },
+  {
+   "url": "/article/",
+   "title_verdict": "missing_or_broken",
+   "regression_flags": [
+    "vague",
+    "lost_service_keyword"
+   ],
+   "recommended_title": "Why Cost Per Click Is the Wrong Metric | Consultus Digital",
+   "recommended_meta_description": "Why cost per click is the wrong metric for home services, and what to measure instead. Field notes from the Consultus Digital team.",
+   "recommended_h1": "Why cost per click is the wrong metric for home services.",
+   "priority": "P3"
+  },
+  {
+   "url": "/careers/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Careers at Consultus Digital | Join a 5-Star Team",
+   "recommended_meta_description": "Grow your career, make an impact, and join a 5-star Toronto marketing team. See open roles at Consultus Digital and how we hire.",
+   "recommended_h1": "Grow your career. Make an impact. Join a 5-star team.",
+   "priority": "P3"
+  },
+  {
+   "url": "/case-studies/",
+   "title_verdict": "minor_regression",
+   "regression_flags": [
+    "lost_service_keyword"
+   ],
+   "recommended_title": "Case Studies | Real Results, Real Growth | Consultus Digital",
+   "recommended_meta_description": "Case studies across ecommerce, healthcare, self-storage, hospitality and B2B. 8X ROAS, 757% lift, 40% productivity gains, and more.",
+   "recommended_h1": "Real results. Real growth.",
+   "priority": "P2"
+  },
+  {
+   "url": "/contact/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Contact Us | Toronto Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "Book a strategy call with Consultus Digital. Tell us where growth is stuck and we will show you the plan we would run, no obligation.",
+   "recommended_h1": "Start with a strategy call.",
+   "priority": "P3"
+  },
+  {
+   "url": "/insights/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Insights | Growth Marketing Blog | Consultus Digital",
+   "recommended_meta_description": "Field notes from building growth systems: paid media, SEO, creative testing, CRO and CRM lessons from the Consultus Digital team.",
+   "recommended_h1": "Field notes from building growth systems.",
+   "priority": "P3"
+  },
+  {
+   "url": "/results/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Results | Verified Client Outcomes | Consultus Digital",
+   "recommended_meta_description": "Client results from Consultus Digital: verified outcomes across paid media, SEO, creative and CRM, with the receipts to back them.",
+   "recommended_h1": "The work, built to be defended.",
+   "priority": "P3"
+  },
+  {
+   "url": "/scorecard/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Free Marketing Scorecard | Consultus Digital",
+   "recommended_meta_description": "Get a free marketing scorecard from Consultus Digital. A real audit of your ads, site and search presence, not a thinly disguised sales call.",
+   "recommended_h1": "A real audit, not a sales call.",
+   "priority": "P3"
+  },
+  {
+   "url": "/services/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Digital Marketing Services Toronto | Consultus Digital",
+   "recommended_meta_description": "Every Consultus Digital service, one engine: paid media, SEO, AEO, creative, web development, CRO, CRM and automation, with specialists at every step.",
+   "recommended_h1": "Specialists at every step.",
+   "priority": "P3"
+  },
+  {
+   "url": "/ab-testing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "A/B Testing & CRO Experimentation | Consultus Digital",
+   "recommended_meta_description": "A/B and multivariate testing run as a discipline, not a tool. Hypothesis backlog, statistical rigor, and a searchable experiment archive that compounds.",
+   "recommended_h1": "Experimentation programs that compound.",
+   "priority": "P3"
+  },
+  {
+   "url": "/aeo-ai-search/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "AEO / AI Search Optimization | Consultus Digital",
+   "recommended_meta_description": "Answer Engine Optimization rebuilds your content so ChatGPT, Perplexity, Google AI Overviews, and Claude can find, parse, and cite your business.",
+   "recommended_h1": "Get cited by ChatGPT, Perplexity, and Google AI Overviews.",
+   "priority": "P3"
+  },
+  {
+   "url": "/analytics-attribution/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Analytics & Attribution Services | Consultus Digital",
+   "recommended_meta_description": "GA4, server-side tracking, post-purchase survey capture, and marketing-mix modeling for accounts that have outgrown last-click attribution.",
+   "recommended_h1": "Attribution that survives post-iOS reality.",
+   "priority": "P3"
+  },
+  {
+   "url": "/content-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Content Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "Editorial content engineered around topical authority, buyer-journey mapping, and earned distribution. Long-form research and pillar-cluster architecture.",
+   "recommended_h1": "Content programs built for authority.",
+   "priority": "P3"
+  },
+  {
+   "url": "/cro/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Conversion Rate Optimization (CRO) | Consultus Digital",
+   "recommended_meta_description": "Conversion rate optimization for the surfaces where buyers decide: product pages, contact forms, booking flows, checkout, and consultation requests.",
+   "recommended_h1": "CRO that lifts the metric that actually matters.",
+   "priority": "P3"
+  },
+  {
+   "url": "/ecommerce-marketing-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Ecommerce Marketing Agency Toronto | Consultus Digital",
+   "recommended_meta_description": "Ecommerce marketing for Toronto brands: SEO, paid media, content, web development, and CRO built on creative cadence and real attribution.",
+   "recommended_h1": "Ecommerce marketing in Toronto, built on creative cadence and real attribution.",
+   "priority": "P1"
+  },
+  {
+   "url": "/google-ads/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Management Agency | Consultus Digital",
+   "recommended_meta_description": "Search, Shopping, Performance Max, and YouTube programs measured against booked outcomes, not platform-reported ROAS. Architecture to creative.",
+   "recommended_h1": "Google Ads, engineered for pipeline.",
+   "priority": "P3"
+  },
+  {
+   "url": "/influencer-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Influencer Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "Influencer marketing with real attribution. Consultus Digital pairs vetted creators with tracking that ties every post to pipeline, not impressions.",
+   "recommended_h1": "Real creators. Real attribution.",
+   "priority": "P3"
+  },
+  {
+   "url": "/landing-pages/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Landing Page Design & Optimization | Consultus Digital",
+   "recommended_meta_description": "Dedicated landing-page programs for paid traffic, partnership campaigns, and offer-led testing. Conversion-led design, copy, and instrumentation.",
+   "recommended_h1": "Landing pages that earn the click.",
+   "priority": "P3"
+  },
+  {
+   "url": "/local-seo/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Local SEO Services | Map Pack & GBP | Consultus Digital",
+   "recommended_meta_description": "Google Business Profile optimization, location-page architecture, citation cleanup, review systems, and local schema for map-pack visibility.",
+   "recommended_h1": "Local SEO that fills the map pack.",
+   "priority": "P3"
+  },
+  {
+   "url": "/marketing-automation/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Marketing Automation Services | Consultus Digital",
+   "recommended_meta_description": "Email, SMS, and lifecycle automation built on real segmentation, post-purchase flows, and the data architecture that lets every touch respond to behavior.",
+   "recommended_h1": "Lifecycle automation that compounds the customer.",
+   "priority": "P3"
+  },
+  {
+   "url": "/meta-ads/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Meta Ads (Facebook & Instagram) | Consultus Digital",
+   "recommended_meta_description": "Facebook and Instagram programs engineered around incrementality and creative cadence. Account architecture, audience hygiene, and weekly creative sprints.",
+   "recommended_h1": "Meta Ads built for ROAS, not reach.",
+   "priority": "P3"
+  },
+  {
+   "url": "/microsoft-ads/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising (Bing Ads) | Consultus Digital",
+   "recommended_meta_description": "Bing, Yahoo, and the Microsoft Audience Network reach an older, higher-income buyer competitors underbid. We run Microsoft Ads as a serious channel.",
+   "recommended_h1": "Microsoft Ads, the forgotten performance channel.",
+   "priority": "P3"
+  },
+  {
+   "url": "/performance-creatives/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Performance Creative Production | Consultus Digital",
+   "recommended_meta_description": "Performance creative engineered to convert: UGC, statics, and video built on buyer personas, tested scientifically, and scaled by the numbers.",
+   "recommended_h1": "Creative, engineered to perform.",
+   "priority": "P3"
+  },
+  {
+   "url": "/sales-enablement/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Sales Enablement Services | Consultus Digital",
+   "recommended_meta_description": "CRM hygiene, lead routing, sales-content production, and closed-loop reporting that makes marketing accountable to pipeline rather than MQLs.",
+   "recommended_h1": "Sales enablement that turns leads into bookings.",
+   "priority": "P3"
+  },
+  {
+   "url": "/seo-toronto/",
+   "title_verdict": "minor_regression",
+   "regression_flags": [
+    "lost_rank_modifier"
+   ],
+   "recommended_title": "SEO Agency in Toronto | SEO + AI Search | Consultus Digital",
+   "recommended_meta_description": "Toronto SEO and Generative Engine Optimization agency. Rank higher on Google, get cited by ChatGPT and AI Overviews, and turn organic traffic into revenue.",
+   "recommended_h1": "Toronto SEO & AI Search: rank on Google, get cited by ChatGPT, grow revenue.",
+   "priority": "P1"
+  },
+  {
+   "url": "/seo/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency & Services | Consultus Digital",
+   "recommended_meta_description": "Technical SEO, on-page hygiene, content authority, and link earning, measured in Search Console and tied to organic revenue, not rank-tracker vanity.",
+   "recommended_h1": "SEO that compounds, not stacks.",
+   "priority": "P2"
+  },
+  {
+   "url": "/services/google-ads/",
+   "title_verdict": "missing_or_broken",
+   "regression_flags": [
+    "duplicate_title"
+   ],
+   "recommended_title": "Google Ads Management Agency | Consultus Digital",
+   "recommended_meta_description": "Search, Shopping, Performance Max, and YouTube programs measured against booked outcomes. This page should 301-redirect to /google-ads/.",
+   "recommended_h1": "Google Ads, engineered for pipeline.",
+   "priority": "P2"
+  },
+  {
+   "url": "/web-development/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Web Development & Design Agency | Consultus Digital",
+   "recommended_meta_description": "Mobile-first, performance-tuned websites on Webflow, Shopify, WordPress, and headless stacks. Built around how your buyer decides, instrumented end to end.",
+   "recommended_h1": "Websites built for conversion, not awards.",
+   "priority": "P3"
+  },
+  {
+   "url": "/zoho-crm/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Zoho CRM Implementation Partner | Consultus Digital",
+   "recommended_meta_description": "Zoho CRM implementation by operators who use it daily: pipelines, automation, attribution, and intake flows your team will actually adopt.",
+   "recommended_h1": "The Zoho CRM team operators actually want.",
+   "priority": "P3"
+  },
+  {
+   "url": "/cro-agency-in-calgary/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in Calgary | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in Calgary. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in Calgary",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-chicago/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in Chicago | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in Chicago. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in Chicago",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-houston/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in Houston | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in Houston. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in Houston",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-london/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in London | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in London. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in London",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-los-angeles/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in Los Angeles | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in Los Angeles. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in Los Angeles",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-montreal/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in Montreal | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in Montreal. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in Montreal",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-new-york/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in New York | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in New York. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in New York",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-san-antonio/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in San Antonio | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in San Antonio. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in San Antonio",
+   "priority": "P1"
+  },
+  {
+   "url": "/cro-agency-in-vancouver/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_service_keyword",
+    "too_long"
+   ],
+   "recommended_title": "CRO Agency in Vancouver | Consultus Digital",
+   "recommended_meta_description": "The best CRO agency in Vancouver. Conversion rate optimization tied to a real revenue scoreboard, not vanity metrics.",
+   "recommended_h1": "The Best CRO Agency in Vancouver",
+   "priority": "P1"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-calgary/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Calgary | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Calgary. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Calgary",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-chicago/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Chicago | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Chicago. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Chicago",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-houston/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Houston | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Houston. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Houston",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-london/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in London | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in London. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in London",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-los-angeles/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Los Angeles | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Los Angeles. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Los Angeles",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-montreal/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Montreal | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Montreal. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Montreal",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-new-york/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in New York | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in New York. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in New York",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-san-antonio/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in San Antonio | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in San Antonio. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in San Antonio",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-tampa/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Tampa | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Tampa. A powerful Facebook ad strategy that drives conversions while protecting your ROI.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Tampa",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-toronto/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Toronto | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Toronto. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Toronto",
+   "priority": "P3"
+  },
+  {
+   "url": "/facebook-advertising-agency-in-vancouver/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Facebook Advertising Agency in Vancouver | Consultus Digital",
+   "recommended_meta_description": "The best Facebook advertising agency in Vancouver. Facebook ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Facebook Advertising Agency in Vancouver",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "lost_service_keyword",
+    "lost_rank_modifier",
+    "vague"
+   ],
+   "recommended_title": "Digital Marketing Agency Locations Across North America | Consultus Digital",
+   "recommended_meta_description": "Consultus Digital runs Google Ads, SEO, CRO and Instagram teams from Toronto across ten more North American cities. Find your market.",
+   "recommended_h1": "One Team. Every Market.",
+   "priority": "P1"
+  },
+  {
+   "url": "/locations/calgary/google-ads-agency-in-calgary/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Calgary | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Calgary. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Calgary",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/calgary/seo-agency-in-calgary/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Calgary | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Calgary. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Calgary",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/chicago/google-ads-agency-in-chicago/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Chicago | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Chicago. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Chicago",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/chicago/seo-agency-in-chicago/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Chicago | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Chicago. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Chicago",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/houston/google-ads-agency-in-houston/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Houston | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Houston. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Houston",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/houston/seo-agency-in-houston/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Houston | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Houston. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Houston",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-calgary/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Calgary | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Calgary. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Calgary",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-chicago/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Chicago | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Chicago. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Chicago",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-houston/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Houston | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Houston. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Houston",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-london/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in London | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in London. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in London",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-los-angeles/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Los Angeles | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Los Angeles. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Los Angeles",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-montreal/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Montreal | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Montreal. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Montreal",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-new-york/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in New York | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in New York. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in New York",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-san-antonio/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in San Antonio | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in San Antonio. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in San Antonio",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-toronto/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Toronto | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Toronto. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Toronto",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/instagram-advertising-agency-in-vancouver/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Instagram Advertising Agency in Vancouver | Consultus Digital",
+   "recommended_meta_description": "The best Instagram advertising agency in Vancouver. Instagram ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Instagram Advertising Agency in Vancouver",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/la/google-ads-agency-in-los-angeles/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Los Angeles | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Los Angeles. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Los Angeles",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/london/google-ads-agency-in-london/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in London | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in London. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in London",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/london/seo-agency-in-london/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in London | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in London. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in London",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/los-angeles/seo-agency-in-los-angeles/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Los Angeles | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Los Angeles. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Los Angeles",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/montreal/google-ads-agency-in-montreal/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Montreal | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Montreal. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Montreal",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/montreal/seo-agency-in-montreal/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Montreal | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Montreal. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Montreal",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/new-york/seo-agency-in-new-york/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in New York | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in New York. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in New York",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/nyc/google-ads-agency-in-new-york-city/",
+   "title_verdict": "minor_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Google Ads Agency in New York City | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in New York City. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in New York City",
+   "priority": "P2"
+  },
+  {
+   "url": "/locations/sanantonio/google-ads-agency-in-san-antonio/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in San Antonio | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in San Antonio. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in San Antonio",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/toronto/google-ads-agency-in-toronto/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Toronto | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Toronto. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Toronto",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/toronto/seo-agency-in-toronto/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Toronto | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Toronto. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Toronto",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/vancouver/google-ads-agency-in-vancouver/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Google Ads Agency in Vancouver | Consultus Digital",
+   "recommended_meta_description": "The best Google Ads agency in Vancouver. Google Ads management tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Google Ads Agency in Vancouver",
+   "priority": "P3"
+  },
+  {
+   "url": "/locations/vancouver/seo-agency-in-vancouver/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "SEO Agency in Vancouver | Consultus Digital",
+   "recommended_meta_description": "The best SEO agency in Vancouver. SEO services tied to a real revenue scoreboard, not vanity rankings.",
+   "recommended_h1": "The Best SEO Agency in Vancouver",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-calgary/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Calgary | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Calgary. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Calgary",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-chicago/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Chicago | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Chicago. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Chicago",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-houston/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Houston | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Houston. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Houston",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-london/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in London | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in London. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in London",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-los-angeles/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Los Angeles | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Los Angeles. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Los Angeles",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-montreal/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Montreal | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Montreal. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Montreal",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-new-york/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in New York | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in New York. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in New York",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-san-antonio/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in San Antonio | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in San Antonio. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in San Antonio",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-toronto/",
+   "title_verdict": "equivalent",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Toronto | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Toronto. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Toronto",
+   "priority": "P3"
+  },
+  {
+   "url": "/the-best-microsoft-advertising-agency-in-vancouver/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Microsoft Advertising Agency in Vancouver | Consultus Digital",
+   "recommended_meta_description": "The best Microsoft Advertising agency in Vancouver. Bing and Microsoft ad campaigns tied to a real revenue scoreboard.",
+   "recommended_h1": "The Best Microsoft Advertising Agency in Vancouver",
+   "priority": "P3"
+  },
+  {
+   "url": "/b2b-saas-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "B2B SaaS Marketing Agency Toronto | Consultus Digital",
+   "recommended_meta_description": "B2B SaaS marketing that drives qualified pipeline. SEO, paid media, content, web, and CRO for software and technology companies.",
+   "recommended_h1": "B2B SaaS marketing that drives qualified pipeline.",
+   "priority": "P3"
+  },
+  {
+   "url": "/content-marketing-for-ecommerce-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Ecommerce Content Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Content marketing for ecommerce brands in Toronto. A dedicated ecommerce practice that builds organic demand and ranks product content.",
+   "recommended_h1": "Content marketing for ecommerce brands.",
+   "priority": "P2"
+  },
+  {
+   "url": "/conversion-rate-optimization-for-ecommerce-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Ecommerce CRO Services Toronto | Consultus Digital",
+   "recommended_meta_description": "Conversion rate optimization (CRO) for ecommerce brands in Toronto. A dedicated ecommerce practice that turns more traffic into sales.",
+   "recommended_h1": "Conversion rate optimization for ecommerce storefronts.",
+   "priority": "P1"
+  },
+  {
+   "url": "/conversion-rate-optimization-for-insurance-brokers-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Insurance Broker CRO Services Toronto | Consultus Digital",
+   "recommended_meta_description": "Conversion rate optimization (CRO) for insurance brokers in Toronto. A dedicated insurance practice that turns quote traffic into bound policies.",
+   "recommended_h1": "Conversion rate optimization for insurance brokers.",
+   "priority": "P1"
+  },
+  {
+   "url": "/conversion-rate-optimization-for-law-firms-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Law Firm CRO Services Toronto | Consultus Digital",
+   "recommended_meta_description": "Conversion rate optimization (CRO) for law firms in Toronto. A dedicated law firm practice that turns case-seeker traffic into signed files.",
+   "recommended_h1": "Conversion rate optimization for law firms.",
+   "priority": "P1"
+  },
+  {
+   "url": "/conversion-rate-optimization-for-self-storage-companies-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Self-Storage CRO Services Toronto | Consultus Digital",
+   "recommended_meta_description": "Conversion rate optimization (CRO) for self-storage operators in Toronto. A dedicated self-storage practice that lifts move-in conversions.",
+   "recommended_h1": "Conversion rate optimization for self-storage operators.",
+   "priority": "P1"
+  },
+  {
+   "url": "/ecommerce-businesses-website-development-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Ecommerce Website Development Toronto | Consultus Digital",
+   "recommended_meta_description": "Website development for ecommerce brands in Toronto. A dedicated ecommerce practice building fast, high-converting online stores.",
+   "recommended_h1": "Website development for ecommerce businesses.",
+   "priority": "P1"
+  },
+  {
+   "url": "/healthcare-marketing/dental-practices/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Dental Practice Marketing | Consultus Digital",
+   "recommended_meta_description": "Digital marketing for family dentistry, orthodontics, and cosmetic dental groups. Win new patients and keep recall visits booked.",
+   "recommended_h1": "Growth marketing for dental practices.",
+   "priority": "P3"
+  },
+  {
+   "url": "/healthcare-marketing/med-spas/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Med Spa Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "Digital marketing for med spas and aesthetic clinics. Acquisition and retention systems for injectables, laser, and body contouring.",
+   "recommended_h1": "Marketing for med spas and aesthetic clinics.",
+   "priority": "P3"
+  },
+  {
+   "url": "/healthcare-marketing/medical-clinics/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Medical Clinic Marketing | Consultus Digital",
+   "recommended_meta_description": "Digital marketing for family medicine, walk-in, and primary care groups. We engineer a steady local patient pipeline to booked appointments.",
+   "recommended_h1": "Patient acquisition for medical clinics.",
+   "priority": "P3"
+  },
+  {
+   "url": "/healthcare-marketing/plastic-surgery/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Plastic Surgery Marketing | Consultus Digital",
+   "recommended_meta_description": "Digital marketing for cosmetic and reconstructive surgical practices. Multi-touch funnels that turn early research into booked consultations.",
+   "recommended_h1": "Marketing for plastic surgery practices.",
+   "priority": "P3"
+  },
+  {
+   "url": "/healthcare-marketing/preventative-health/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Preventative Health Marketing | Consultus Digital",
+   "recommended_meta_description": "Digital marketing for executive health, biomarker testing, longevity, and preventative health brands scaling demand in a new market.",
+   "recommended_h1": "Growth for preventative and executive health.",
+   "priority": "P3"
+  },
+  {
+   "url": "/healthcare-marketing/specialty-allied-health/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Specialty & Allied Health Marketing | Consultus Digital",
+   "recommended_meta_description": "Digital marketing for physio, chiro, optometry, mental health, and specialty practices. Per-discipline acquisition programs that book patients.",
+   "recommended_h1": "Marketing for specialty and allied practices.",
+   "priority": "P3"
+  },
+  {
+   "url": "/healthcare/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "brand_only"
+   ],
+   "recommended_title": "Healthcare Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "The Consultus Digital Healthcare Division builds patient growth systems for clinics and health brands: paid media, SEO, and intake CRM.",
+   "recommended_h1": "Growth systems for healthcare operators.",
+   "priority": "P2"
+  },
+  {
+   "url": "/home-improvement-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Home Improvement Marketing | Consultus Digital",
+   "recommended_meta_description": "Home improvement marketing that turns research into booked projects. SEO, paid media, content, web, and CRO for renovation brands.",
+   "recommended_h1": "Home improvement marketing that turns research into booked projects.",
+   "priority": "P3"
+  },
+  {
+   "url": "/home-services-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Home Services Marketing | Consultus Digital",
+   "recommended_meta_description": "Home services marketing that fills the booking calendar. SEO, paid media, content, web, and CRO for home service operators.",
+   "recommended_h1": "Home services marketing that fills the booking calendar.",
+   "priority": "P3"
+  },
+  {
+   "url": "/industries/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "vague"
+   ],
+   "recommended_title": "Industries We Serve | Consultus Digital",
+   "recommended_meta_description": "Industries where Consultus Digital goes deep: healthcare, home services, legal, real estate, ecommerce, and more, each with its own playbook.",
+   "recommended_h1": "We go deep where we can actually win.",
+   "priority": "P3"
+  },
+  {
+   "url": "/industries/healthcare/",
+   "title_verdict": "missing_or_broken",
+   "regression_flags": [
+    "duplicate_title",
+    "brand_only"
+   ],
+   "recommended_title": "Healthcare Marketing Agency | Consultus Digital",
+   "recommended_meta_description": "Duplicate of /healthcare/. This URL is noindexed and empty. Redirect 301 to /healthcare/ to consolidate equity and avoid duplicate titles.",
+   "recommended_h1": "Growth systems for healthcare operators.",
+   "priority": "P2"
+  },
+  {
+   "url": "/insurance-brokerages-success-with-content-marketing-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Insurance Broker Content Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Content marketing for insurance brokers in Toronto. A dedicated insurance practice that builds authority and drives quote-ready traffic.",
+   "recommended_h1": "Content marketing for insurance brokers.",
+   "priority": "P2"
+  },
+  {
+   "url": "/law-firm-marketing-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Law Firm Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Law firm marketing in Toronto that builds authority and attracts clients. SEO, paid media, content, web, and CRO for law firms.",
+   "recommended_h1": "Law firm marketing that builds authority and attracts clients.",
+   "priority": "P1"
+  },
+  {
+   "url": "/legal-practice-search-engine-optimization-for-law-firms-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "SEO for Law Firms Toronto | Consultus Digital",
+   "recommended_meta_description": "SEO for law firms in Toronto. A dedicated law firm practice that ranks your practice for high-intent legal searches.",
+   "recommended_h1": "SEO for law firms.",
+   "priority": "P1"
+  },
+  {
+   "url": "/maximizing-law-firm-growth-with-paid-media-advertising-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Paid Media for Law Firms Toronto | Consultus Digital",
+   "recommended_meta_description": "Paid media advertising for law firms in Toronto. A dedicated law firm practice that turns ad spend into signed-file pipeline.",
+   "recommended_h1": "Maximizing law firm growth with paid media advertising.",
+   "priority": "P1"
+  },
+  {
+   "url": "/medical/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Medical & Healthcare Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Patient growth engines for clinics and health brands: paid media, landing pages, websites, SEO/AEO, and intake CRM. Live work that books patients.",
+   "recommended_h1": "We fill waiting rooms.",
+   "priority": "P2"
+  },
+  {
+   "url": "/paid-media-advertising-for-ecommerce-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Ecommerce Paid Media Toronto | Consultus Digital",
+   "recommended_meta_description": "Paid media advertising for ecommerce brands in Toronto. A dedicated ecommerce practice that scales profitable ROAS across channels.",
+   "recommended_h1": "Paid media advertising for ecommerce brands.",
+   "priority": "P1"
+  },
+  {
+   "url": "/paid-media-advertising-for-insurance-brokers-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Insurance Broker Paid Media Toronto | Consultus Digital",
+   "recommended_meta_description": "Paid media advertising for insurance brokers in Toronto. A dedicated insurance practice that drives quote-ready leads at target cost.",
+   "recommended_h1": "Paid media advertising for insurance brokers.",
+   "priority": "P1"
+  },
+  {
+   "url": "/paid-media-advertising-for-self-storage-companies-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Self-Storage Paid Media Toronto | Consultus Digital",
+   "recommended_meta_description": "Paid media advertising for self-storage operators in Toronto. A dedicated self-storage practice that drives demand and fills units.",
+   "recommended_h1": "Driving storage demand with paid media advertising.",
+   "priority": "P1"
+  },
+  {
+   "url": "/pioneering-content-marketing-for-law-firms-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "vague"
+   ],
+   "recommended_title": "Law Firm Content Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Content marketing for law firms in Toronto. A dedicated law firm practice that builds authority and attracts qualified case inquiries.",
+   "recommended_h1": "Content marketing for law firms.",
+   "priority": "P2"
+  },
+  {
+   "url": "/professional-services-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Professional Services Marketing | Consultus Digital",
+   "recommended_meta_description": "Professional services marketing that turns authority into pipeline. SEO, paid media, content, web, and CRO for professional firms.",
+   "recommended_h1": "Professional services marketing that turns authority into pipeline.",
+   "priority": "P3"
+  },
+  {
+   "url": "/real-estate-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Real Estate Marketing | Consultus Digital",
+   "recommended_meta_description": "Real estate marketing that builds authority and attracts clients. SEO, paid media, content, web, and CRO for brokerages and agents.",
+   "recommended_h1": "Real estate marketing for brokerages and agents.",
+   "priority": "P3"
+  },
+  {
+   "url": "/retail-consumer-marketing/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Retail & Consumer Marketing | Consultus Digital",
+   "recommended_meta_description": "Retail and consumer brand marketing that scales revenue across channels. SEO, paid media, content, web, and CRO for consumer brands.",
+   "recommended_h1": "Retail and consumer brand marketing that scales revenue across channels.",
+   "priority": "P3"
+  },
+  {
+   "url": "/search-engine-optimization-for-ecommerce-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Ecommerce SEO Services Toronto | Consultus Digital",
+   "recommended_meta_description": "SEO for ecommerce brands in Toronto. A dedicated ecommerce practice that ranks product and category pages for buyer-intent searches.",
+   "recommended_h1": "Search engine optimization for ecommerce businesses.",
+   "priority": "P1"
+  },
+  {
+   "url": "/self-storage-marketing-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Self-Storage Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Self-storage marketing in Toronto built for occupancy, not vanity clicks. SEO, paid media, content, web, and CRO for storage operators.",
+   "recommended_h1": "Self-storage marketing built for occupancy, not vanity clicks.",
+   "priority": "P1"
+  },
+  {
+   "url": "/seo-services-for-self-storage-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Self-Storage SEO Services Toronto | Consultus Digital",
+   "recommended_meta_description": "SEO for self-storage operators in Toronto. A dedicated self-storage practice that ranks facilities for local move-in searches.",
+   "recommended_h1": "SEO for self-storage businesses.",
+   "priority": "P1"
+  },
+  {
+   "url": "/seo-strategies-for-insurance-brokers-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword"
+   ],
+   "recommended_title": "Insurance Broker SEO Toronto | Consultus Digital",
+   "recommended_meta_description": "SEO for insurance brokers in Toronto. A dedicated insurance practice that ranks your brokerage for high-intent quote searches.",
+   "recommended_h1": "SEO strategies for insurance brokers.",
+   "priority": "P1"
+  },
+  {
+   "url": "/strategic-content-marketing-for-self-storage-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "vague"
+   ],
+   "recommended_title": "Self-Storage Content Marketing Toronto | Consultus Digital",
+   "recommended_meta_description": "Content marketing for self-storage operators in Toronto. A dedicated self-storage practice that builds local authority and demand.",
+   "recommended_h1": "Strategic content marketing for self-storage businesses.",
+   "priority": "P2"
+  },
+  {
+   "url": "/website-development-for-self-storage-businesses-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Self-Storage Website Development Toronto | Consultus Digital",
+   "recommended_meta_description": "Website development for self-storage operators in Toronto. A dedicated self-storage practice building fast, high-converting facility sites.",
+   "recommended_h1": "Website development for self-storage operators.",
+   "priority": "P1"
+  },
+  {
+   "url": "/website-development-strategies-for-insurance-brokers-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Insurance Broker Website Development Toronto | Consultus Digital",
+   "recommended_meta_description": "Website development for insurance brokers in Toronto. A dedicated insurance practice building fast, quote-ready brokerage websites.",
+   "recommended_h1": "Website development for insurance brokers.",
+   "priority": "P1"
+  },
+  {
+   "url": "/website-development-strategies-for-law-firms-toronto/",
+   "title_verdict": "seo_regression",
+   "regression_flags": [
+    "lost_geo_keyword",
+    "too_long"
+   ],
+   "recommended_title": "Law Firm Website Development Toronto | Consultus Digital",
+   "recommended_meta_description": "Website development for law firms in Toronto. A dedicated law firm practice building fast, high-converting legal websites.",
+   "recommended_h1": "Website development for law firms.",
+   "priority": "P1"
+  },
+  {
+   "url": "/case-studies/bookseats/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "BookSeats Case Study: 1.4x to 8.10x ROAS with UGC | Consultus Digital",
+   "recommended_meta_description": "How Consultus Digital took BookSeats from 1.4x to 8.10x ROAS with a UGC-first creative engine and league-specific funnels.",
+   "recommended_h1": "BookSeats: from 1.4x to 8.10x ROAS.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/bow-city-storage/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Bow City Storage Case Study: 2,900% ROAS Increase | Consultus Digital",
+   "recommended_meta_description": "Multi-facility self-storage paid media rebuild lifted return on ad spend by 2,900% and broke monthly sales records.",
+   "recommended_h1": "Bow City Storage: a 2,900% ROAS increase.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/dragonscale-supplies/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Dragonscale Supplies Case Study: MER 13.23 | Consultus Digital",
+   "recommended_meta_description": "How Consultus Digital scaled Dragonscale Supplies' graded-card protection brand to MER 13.23 with honest, MER-first measurement.",
+   "recommended_h1": "Dragonscale Supplies: a niche brand, played at MER 13.",
+   "priority": "P3"
+  },
+  {
+   "url": "/case-studies/e11ement/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "e11ement Case Study: a 12-Month Ecosystem Rebuild | Consultus Digital",
+   "recommended_meta_description": "How Consultus Digital rebuilt e11ement's full digital ecosystem in 12 months: Shopify, 100+ ad creatives, SEO, and Amazon.",
+   "recommended_h1": "e11ement: twelve months, one brand, every channel.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/eco-choice-windows/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "Eco Choice Windows & Doors Case Study | Consultus Digital",
+   "recommended_meta_description": "Website, paid media creative, and CRO for Eco Choice Windows & Doors. One team, one scoreboard, every layer built to convert.",
+   "recommended_h1": "Eco Choice Windows & Doors: the whole engine, not a channel.",
+   "priority": "P3"
+  },
+  {
+   "url": "/case-studies/ecycle/",
+   "title_verdict": "new_better",
+   "regression_flags": [],
+   "recommended_title": "eCycle Case Study: 40% Productivity Boost with CRM | Consultus Digital",
+   "recommended_meta_description": "Custom Zoho CRM build replaced spreadsheet-driven operations for eCycle and lifted productivity by 40%, cutting manual handoffs.",
+   "recommended_h1": "eCycle: a custom CRM lifted productivity 40%.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/gordons-downsizing/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Gordon's Downsizing Case Study: Real Estate Plus | Consultus Digital",
+   "recommended_meta_description": "How Consultus Digital repositioned Gordon's Downsizing and delivered 53 paid leads in month one at a $164 CPL, under benchmark.",
+   "recommended_h1": "Gordon's Downsizing: Real Estate Plus, under one roof.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/harmony-resorts/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Harmony Resorts Case Study: 74% Above Conversion Avg | Consultus Digital",
+   "recommended_meta_description": "Booking-flow CRO and creative-led paid media built a conversion engine running 74% above the hospitality category average.",
+   "recommended_h1": "Harmony Resorts converts 74% above industry baseline.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/la-vie/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "La Vie Executive Health Case Study: 512 Leads | Consultus Digital",
+   "recommended_meta_description": "How Consultus Digital launched La Vie Executive Health into Oakville: 512 leads in month one across Meta, Google, and SEO.",
+   "recommended_h1": "La Vie Executive Health: 512 leads in month one.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/office-shop/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "The Office Shop Case Study: Page One in 13 Cities | Consultus Digital",
+   "recommended_meta_description": "Multi-location SEO program landed The Office Shop on page one of Google in 13 target markets at once, with no cannibalization.",
+   "recommended_h1": "The Office Shop: page one of Google in 13 cities.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/ontario-business-central/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Ontario Business Central Case Study: 41% Revenue Lift | Consultus Digital",
+   "recommended_meta_description": "Long-tenured engagement rebuilt acquisition, lifecycle, and CRM for Ontario Business Central, lifting revenue by 41% over time.",
+   "recommended_h1": "Ontario Business Central lifted revenue 41%.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/spieth-america/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Spieth America Case Study: 757% ROAS Lift | Consultus Digital",
+   "recommended_meta_description": "Full-funnel paid rebuild across Meta, Google, and TikTok lifted Spieth America's return on ad spend by 757% in-window.",
+   "recommended_h1": "Spieth America: a 757% lift in return on ad spend.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/tonic-eye-care/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Tonic Eye Care Case Study: 94% Lift with UGC Ads | Consultus Digital",
+   "recommended_meta_description": "UGC-led paid program lifted engagement on Tonic Eye Care's vision-therapy offering by 94% and built a patient-acquisition flywheel.",
+   "recommended_h1": "Tonic Eye Care: 94% more engagement with UGC ads.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/western-asphalt/",
+   "title_verdict": "new_better",
+   "regression_flags": [
+    "too_long"
+   ],
+   "recommended_title": "Western Asphalt Case Study: 80-Year Brand Reborn | Consultus Digital",
+   "recommended_meta_description": "Full digital transformation for Western Asphalt: a new site and lead surface that modernized an 80-year-old heritage brand.",
+   "recommended_h1": "Western Asphalt: an 80-year-old brand revitalized.",
+   "priority": "P2"
+  },
+  {
+   "url": "/case-studies/zayouna-law-firm/",
+   "title_verdict": "minor_regression",
+   "regression_flags": [
+    "lost_service_keyword"
+   ],
+   "recommended_title": "Zayouna Law Case Study: Signed Files, Not Leads | Consultus Digital",
+   "recommended_meta_description": "How Consultus Digital rebuilt Zayouna Law's intake engine: persona creative, a dynamic LP, and a $72.70 Meta CPL in month one.",
+   "recommended_h1": "Zayouna Law: the KPI isn't leads, it's signed files.",
+   "priority": "P2"
+  }
+ ],
+ "blogs": [
+  {
+   "url": "/blog/10-absolute-best-free-chrome-extensions-web-designers/",
+   "topic": "Web/Design",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/10-cro-tips-improve-ecommerce-conversion-rates/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/10-digital-marketing-trends-for-2023/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/10-expert-google-ads-management-tips/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/10-features-of-a-killer-sales-funnel/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/10-seo-ecommerce-tips-that-actually-work/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/12-best-conversion-rate-optimization-tools/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/3-methods-to-spark-curiosity-in-your-ugc-hooks/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/5-a-b-testing-techniques-for-boosting-your-websites-conversion-rate/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/5-benefits-working-with-a-google-partner-agency/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/5-effective-content-writing-tips/",
+   "topic": "Content Marketing",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/5-steps-to-create-a-powerful-digital-marketing-strategy/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/5-tips-facebook-ads-creation/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/5-ways-create-content-google-adwords/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/6-benefits-google-ads-management-agency/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/6-google-ads-best-practices-for-high-converting-ads/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/6-tips-updating-website/",
+   "topic": "Web/Design",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/6-ways-engaging-content-can-help-your-business-goals/",
+   "topic": "Content Marketing",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/7-benefits-to-linkedin-advertising/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/7-proven-growth-marketing-strategies-that-drive-roi/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/7-tips-for-creating-effective-facebook-ads-that-convert/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/8-ways-to-increase-your-google-ads-ctr/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/9-best-practices-for-conversion-rate-optimization/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/9-business-growth-strategies-in-2023/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/abm-what-is-it-and-how-can-it-benefit-your-target-audience/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/agency-vs-consultancy-what-to-know/",
+   "topic": "Strategy/Agency",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/anatomy-of-high-converting-landing-page-infographic/",
+   "topic": "CRO",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/artificial-intelligence-digital-transformation/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/b2b-influencer-marketing-campaign-ideas/",
+   "topic": "Influencer/UGC",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/b2c-influencer-marketing-campaign-ideas/",
+   "topic": "Influencer/UGC",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/benefits-of-digital-transformation-for-smbs/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/benefits-of-influencer-marketing/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/benefits-of-leveraging-video-content-for-seo/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/benefits-of-youtube-for-business/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/best-practices-for-leveraging-ugc-infographic/",
+   "topic": "Influencer/UGC",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/best-social-media-management-tools-for-2024/",
+   "topic": "Social Media",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/best-tech-stack-digital-marketing-agency/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/best-ways-utilize-local-store-marketing/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/boost-your-conversion-rates-with-these-tips/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/boosting-sales-with-user-generated-content-ugc-infographic/",
+   "topic": "Influencer/UGC",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/build-business-visual-brand-strategy/",
+   "topic": "Web/Design",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/building-your-email-list-with-lead-magnets/",
+   "topic": "Email",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/buzz-worthy-branded-digital-marketing/",
+   "topic": "Content Marketing",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/cdap-canada-digital-adoption-program-eligibility/",
+   "topic": "CDAP/Grants",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/choose-internet-marketing-company/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/client-spotlight-increase-in-conversion-rate-for-zayouna-law-firm/",
+   "topic": "Client Spotlight",
+   "type": "spotlight",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/client-spotlight-on-comwave-ranking-first-on-google-search/",
+   "topic": "Client Spotlight",
+   "type": "spotlight",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/client-spotlight-on-ontario-business-central-41-increase-in-revenue/",
+   "topic": "Client Spotlight",
+   "type": "spotlight",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/compelling-email-subject-lines-boost-engagement/",
+   "topic": "Email",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/complete-restaurant-seo-guide/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/consultus-academy-learning/",
+   "topic": "Strategy/Agency",
+   "type": "news",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/consultus-digital-announced-as-official-advisor-in-canadas-4-billion-digital-grant/",
+   "topic": "CDAP/Grants",
+   "type": "news",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/consultus-digital-rebrand/",
+   "topic": "Strategy/Agency",
+   "type": "news",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/content-marketing-can-improve-your-seo/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/content-marketing-vs-copywriting/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/content-repurposing-how-to-get-more-blog-content-value/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/copywriting-in-conversion-rate-optimization-cro/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/copywriting-tips-increase-conversions/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/creative-best-practices-for-youtube-ad-design-and-video-production/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/crm-for-small-businesses-how-to-implement-and-leverage-crm-for-growth-and-success/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/crm-marketing-automation-integration/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/cro-strategy/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/cro-vs-seo-working-together/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/digital-advertising-rules-for-lawyers-in-canada/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/digital-marketing-gift-guide/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/digital-marketing-trends/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/digital-transformation-business-success/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/driving-retail-sales-digital-marketing/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/ecommerce-seo-how-to-get-started/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/ecommerce-seo-tips-to-increase-traffic/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/effective-content-marketing-for-law-firms-best-practices-for-blogging-email-and-video/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/email-marketing-ecommerce-how-to-boost-sales/",
+   "topic": "Email",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/email-marketing-more-important-than-ever/",
+   "topic": "Email",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/expert-remarketing-strategies/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/future-proof-seo-strategy/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/generate-leads-with-content-marketing/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/google-ads-benchmark-a-guide-for-small-businesses/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/google-ads-paid-search/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/google-ads-vs-facebook-ads-what-you-need-to-know/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/google-business-profile-optimization/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/growth-marketing/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/guest-blogging-inbound-marketing-strategy/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/guide-to-google-ad-campaigns-search-ads/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/harnessing-power-of-different-types-ugc-infographic/",
+   "topic": "Influencer/UGC",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/hiding-likes-influencer-marketing/",
+   "topic": "Influencer/UGC",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/how-can-blogging-help-grow-my-business/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-google-is-shifting-to-user-journeys-and-why-it-matters-to-you/",
+   "topic": "SEO",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-many-hashtags-should-i-use-on-social-media/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/how-to-apply-for-the-cdap-grant/",
+   "topic": "CDAP/Grants",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/how-to-best-utilize-experiential-marketing/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-boost-your-business-with-15k-cdap/",
+   "topic": "CDAP/Grants",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/how-to-build-a-growth-marketing-plan/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-choose-the-right-crm-system-for-your-business-tips-and-best-practices/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/how-to-create-a-facebook-ads-strategy-that-works-for-your-business/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/how-to-create-compelling-email-newsletters-that-will-be-opened-and-read/",
+   "topic": "Email",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-create-compelling-visuals-for-your-facebook-ads/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-create-high-converting-tiktok-ads/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-edit-ads-on-facebook/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/how-to-manage-your-online-reputation/",
+   "topic": "Other",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-migrate-to-google-analytics-4/",
+   "topic": "Other",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/how-to-optimize-your-social-media/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-successfully-run-cro-audit/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-use-heatmaps-to-improve-your-websites-conversion-rate/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-use-seo-to-boost-your-online-reputation/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-utilize-instagram-shopping/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-to-write-successful-google-ads-copy/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/how-your-business-can-grow-with-influencer-marketing/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/improve-lead-generation/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/improve-sales-process/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/improve-website-conversion-rate/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/improve-your-short-form-video-content/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/increase-website-traffic-by-using-these-4-seo-blogging-tips/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/increase-your-website-revenue-with-cro-infographic/",
+   "topic": "CRO",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/influence-of-micro-influencers-ugc-strategies-for-niche-marketing-infographic/",
+   "topic": "Influencer/UGC",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/influence-of-ugc-creators-in-shaping-brand-perception/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/innovative-insurance-marketing-tactics-how-to-stand-out-in-a-crowded-market/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/leverage-social-media-for-seo-marketing/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/linkedin-message-ads-a-complete-guide/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/local-seo-improve-visibility-google/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/marketing-automation-for-insurance-how-to-streamline-your-processes-and-improve-efficiency/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/marketing-automation-is-your-digital-marketing-secure-efficient/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/mastering-perplexity-ai-top-seo-strategies-for-success/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/maximizing-conversions-cro-tools-techniques-infographic/",
+   "topic": "CRO",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/meta-ads-benchmarks-a-guide-for-small-businesses/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/my-take-on-how-ai-will-transform-digital-marketing-in-2023/",
+   "topic": "Strategy/Agency",
+   "type": "opinion",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/off-page-seo-tips/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/online-competitor-analysis-preparing-for-2024/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/partner-with-influencer-marketing-agency/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/performance-marketing-vs-digital-marketing/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/power-of-social-proof-with-conversion-rate-optimization/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/product-listing-ads-management-guide/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/pros-cons-facebook-advertising/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/push-and-pull-marketing/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/quick-guide-google-ads-campaigns-performance-max/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/quick-guide-google-display-ads-campaigns/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/quick-guide-to-google-ads-campaigns-video-ads/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/quick-guide-to-google-ads/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/quick-guide-to-google-shopping-ads/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/rank-business-locally-maps/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/real-time-marketing-social-media-2019/",
+   "topic": "Social Media",
+   "type": "opinion",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/reasons-your-business-should-apply-for-cdap/",
+   "topic": "CDAP/Grants",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/remarketing-advertising-for-ecommerce/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/remarketing-right-business/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/reputation-management-mistakes/",
+   "topic": "Other",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/role-of-social-media-reputation-management/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/sales-enablement/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/seo-and-google-security/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/seo-audit-5-essential-things-to-check/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/seo-link-relevancy/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/signs-its-time-to-hire-a-digital-marketing-agency/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/signs-you-need-professional-seo-help/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/small-business-marketing-budgets-how-much-to-spend-and-best-practices/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/small-business-seo-budget-guide-2025/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/social-media-advertising-platforms/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/social-media-scams-targeting-businesses/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/social-proof/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/strategies-for-increasing-email-open-rates/",
+   "topic": "Email",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/strategies-to-boost-your-seo/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/the-basics-conversion-rate-optimization/",
+   "topic": "CRO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-beginners-guide-to-crm-understanding-the-basics-and-benefits-for-your-business/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/the-beginners-guide-to-microsoft-advertising-how-to-get-started/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/the-connection-between-content-marketing-and-sales-enablement/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-dos-and-donts-of-facebook-advertising/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-dos-and-donts-of-tiktok-advertising/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-eight-best-seo-tools-to-boost-your-rankings-in-2025/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/the-impact-of-effective-sales-enablement-on-customer-experience/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-power-of-a-b-testing-how-small-changes-lead-to-big-conversions-infographic/",
+   "topic": "CRO",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-power-of-bing-ads-why-your-business-should-be-using-microsoft-advertising/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/the-power-of-seo-for-law-firms/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-secrets-of-direct-response-advertising/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-top-5-benefits-of-instagram-advertising/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/the-ultimate-local-seo-tactic-how-to-optimize-your-business-for-ai-voice-search/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/tiktok-ads-how-to-win-more-customers/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/tips-choosing-right-seo-specialist/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/tips-to-create-high-converting-landing-page/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/top-10-blog-writing-tips-2019/",
+   "topic": "Content Marketing",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/top-10-latest-google-ad-enhancements-2/",
+   "topic": "Paid Media",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/top-10-on-page-seo-tips-beginners/",
+   "topic": "SEO",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/top-5-free-digital-marketing-courses/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/top-6-free-google-docs-add-ons-content-writers/",
+   "topic": "Content Marketing",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/top-digital-marketing-trends-2024/",
+   "topic": "Strategy/Agency",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/top-examples-of-landing-pages-for-saas-companies-2023/",
+   "topic": "CRO",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/ugc-marketing-social-media/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/ultimate-guide-making-social-media-accessible/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/ultimate-guide-programmatic-advertising/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/ultimate-seo-guide/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/understanding-the-customer-journey-and-content-needed-for-each-stage/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/user-generated-content-brand-engagement/",
+   "topic": "Influencer/UGC",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/using-pr-boost-your-seo/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/ux-and-web-design-trends-for-2023/",
+   "topic": "Web/Design",
+   "type": "listicle",
+   "year_specific": true,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/video-ideas-for-your-marketing-content/",
+   "topic": "Content Marketing",
+   "type": "listicle",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/video-testimonials-benefits-for-business/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/voice-search-optimization-for-cro-infographic/",
+   "topic": "CRO",
+   "type": "infographic",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/what-does-great-facebook-ad-creative-look-like/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/what-is-a-subdomain-how-it-fits-seo/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/what-is-answer-engine-optimization-how-to-improve-your-online-visibility/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/what-is-seo-cloaking-and-how-to-avoid-it/",
+   "topic": "SEO",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/what-to-know-cdap-interest-free-loan/",
+   "topic": "CDAP/Grants",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "refresh"
+  },
+  {
+   "url": "/blog/when-to-hire-a-sales-consultant/",
+   "topic": "Strategy/Agency",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/which-crm-system-is-right-for-your-business/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/why-canadian-smbs-must-undergo-a-digital-marketing-and-sales-transformation/",
+   "topic": "Strategy/Agency",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-choose-consultus-digital-as-your-cdap-digital-advisor/",
+   "topic": "CDAP/Grants",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-consultus-is-better/",
+   "topic": "Strategy/Agency",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-every-business-should-be-a-b-testing/",
+   "topic": "CRO",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/why-google-ads-management-service-agency/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/why-reputation-management-matters-more-than-ever/",
+   "topic": "Other",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-you-need-a-social-media-strategy/",
+   "topic": "Social Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-your-advertising-hook-matters/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-your-business-needs-crm/",
+   "topic": "CRM/Automation",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/why-your-business-needs-video-marketing/",
+   "topic": "Content Marketing",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-your-ppc-campaign-needs-landing-page/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/why-your-website-conversion-rates-suck/",
+   "topic": "CRO",
+   "type": "opinion",
+   "year_specific": false,
+   "disposition": "keep"
+  },
+  {
+   "url": "/blog/work-with-facebook-advertising-agency/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "consolidate"
+  },
+  {
+   "url": "/blog/youtube-advertising-how-to-set-up-a-video-ad/",
+   "topic": "Paid Media",
+   "type": "guide",
+   "year_specific": false,
+   "disposition": "keep"
+  }
+ ],
+ "critic": {
+  "all_old_covered": false,
+  "missing_old": [
+   "/programmatic-advertising-toronto/"
+  ],
+  "all_new_covered": true,
+  "missing_new": [],
+  "notes": "CHECK 1 (orphans -> redirect coverage): 70 of 71 orphans (67 orphan_pages + 4 orphan_cs) appear in the redirect coverage list. ONE is missing: /programmatic-advertising-toronto/. It is a real live page in orphan_pages (status 200, robots 'follow, index', self-canonical, title 'Toronto's Top Programmatic Advertising Agency | Consultus Digital', h1 'Smarter Programmatic Advertising That Converts') with no matching new URL, so it carries SEO equity and would return a 404 on migration unless a redirect is added. Note the dataset's own redirect_todo_*.json files DO list all 71 orphans including this one, so the gap is specifically in the redirect coverage list provided, not in the underlying to-do data. The provided coverage list has 70 entries (all unique, none stray); every other orphan is accounted for.\n\nCHECK 2 (new pages -> meta coverage): PASS. new_meta has exactly 143 keys = matched (88) + new_only (55) = counts.new_pages (143). All 143 appear in the meta comparison list; zero missing in either direction. No new page is omitted from the meta comparison and the meta list contains no phantom URLs.\n\nREDIRECT TARGETS / DUPLICATES: The dataset has no old-to-new target mapping to audit (redirect_todo_*.json files contain only old_url/title/h1/desc, no destination field; new_targets_index.json lists new-page metadata only). So no wrong or duplicate redirect TARGET can be confirmed from the data. Two items to flag for whoever assigns destinations: (1) /case-studies/comwave/ (orphan_cs) has NO new equivalent (no 'comwave' page exists among the 143 new pages), so it needs a deliberate fallback such as /case-studies/; the other three orphan_cs map cleanly (ecycle-crm -> /case-studies/ecycle/, the-office-shop -> /case-studies/office-shop/, tonic-eye-care -> /case-studies/tonic-eye-care/, all present). (2) Both /google-ads/ and /services/google-ads/ exist as new pages, an ambiguity to resolve when assigning targets for the old Google/paid orphans. No duplicate old_urls exist across the redirect_todo files."
+ },
+ "summary": {
+  "redirect_rows": 70,
+  "meta_rows": 143,
+  "blog_rows": 214
+ }
+}

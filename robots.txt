@@ -1,0 +1,5 @@
+# robots.txt for consultusdigital.com
+User-agent: *
+Allow: /
+
+Sitemap: https://consultusdigital.com/sitemap.xml
