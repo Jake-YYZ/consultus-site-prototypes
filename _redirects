@@ -1,4 +1,4 @@
-# Consultus Digital — production redirect map (site relaunch)
+# Consultus Digital: production redirect map (site relaunch)
 # Generated from seo-migration/03-redirect-map.csv. Format: <old-path> <new-path> <status>
 # Deploy on consultusdigital.com at cutover. For WordPress, import 03-redirect-map.csv into the Redirection plugin instead.
 

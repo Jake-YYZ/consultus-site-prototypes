@@ -1,9 +1,9 @@
-# SEO Migration Pack — Consultus Digital relaunch
+# SEO Migration Pack: Consultus Digital relaunch
 
 **Prepared for:** Jake · **Date:** June 2026 · **Question answered:** "If we launch the new site, do we lose any of the SEO we've built?"
 
 ## The short answer
-Yes — a lot, if we launch as-is. But it's all fixable, and this pack tells the rebuild team exactly how. The new design is both a **URL restructure** and a **content cut**, and the live site has far more indexed content than the new prototype contains.
+Yes, a lot, if we launch as-is. But it's all fixable, and this pack tells the rebuild team exactly how. The new design is both a **URL restructure** and a **content cut**, and the live site has far more indexed content than the new prototype contains.
 
 ## The picture in one table
 | | Live site (today) | New design (prototype) |
@@ -30,13 +30,15 @@ None of this is a reason not to launch. It's a checklist to launch *without* los
 | **`04-meta-and-headers-comparison.csv`** | Page-by-page old vs new title + H1, a recommended title/H1/description for each, and a blank Decision column for you. |
 | **`05-new-site-seo-requirements.md`** | The spec for the rebuild team: P0 launch blockers → P2 polish. |
 | **`06-blog-inventory.csv`** | All 214 posts with topic, type, and a keep/refresh/consolidate call. |
+| **`07-dev-handoff-brief.md`** | One-page launch runbook for the WordPress rebuild team. |
+| `redirects/` | Deploy-ready redirect files in three formats: Apache `.htaccess`, nginx `.conf`, and Redirection-plugin import CSV. |
 | `data/` | The raw extracted data behind all of the above (for the dev team). |
 
-## Decisions — APPROVED & APPLIED (Jun 16 2026)
+## Decisions: APPROVED & APPLIED (Jun 16 2026)
 Jake approved all five; here's what was done.
 1. **Blog:** migrate all 214 at existing `/blog/` URLs. Confirmed in `03-redirect-map.csv` (the `/blog/` hub stays put too) and `06-blog-inventory.csv` (30 consolidations + 28 refreshes approved).
 2. **Redirects:** all confirmed. Deploy file `_redirects` generated at the project root (64 active 301s); full map in `03-…csv`.
-3. **Prune (410):** 3 pages confirmed (check backlinks first — noted in the file).
+3. **Prune (410):** 3 pages confirmed (check backlinks first, noted in the file).
 4. **Title tags:** recommended titles + meta descriptions written into the **39 regression pages** (title, meta description, og:title, og:description). The 88 already-good titles were left as designed. Each page's status is in the Decision column of `04-…csv`.
 5. **Internal linking:** keep the sitewide mega-menu breadth (already preserved in the new nav/footer).
 

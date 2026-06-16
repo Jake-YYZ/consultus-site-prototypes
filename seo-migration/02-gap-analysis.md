@@ -1,4 +1,4 @@
-# 02 — Gap Analysis & Action Plan (old site vs new site)
+# 02: Gap Analysis & Action Plan (old site vs new site)
 
 > What exists on the live site, what the new design covers, and what to do about the difference. Every one of the 373 live URLs is assigned a disposition in `03-redirect-map.csv`. This document is the readable summary plus the decisions that are yours to make.
 
@@ -16,13 +16,13 @@ The 95 redirects + the missing blog are where the SEO risk lives.
 
 ---
 
-## Bucket 1 — Keep (272 URLs, no redirect)
-88 marketing pages keep their exact URL (all the `*-toronto` vertical pages, the location grid, most service-vertical pages, 7 case studies). **But the blog (184 of these) only "keeps" its URL if the blog is actually migrated** — see the blog section below. A "kept" URL that isn't rebuilt is just a 404 with extra steps.
+## Bucket 1: Keep (272 URLs, no redirect)
+88 marketing pages keep their exact URL (all the `*-toronto` vertical pages, the location grid, most service-vertical pages, 7 case studies). **But the blog (184 of these) only "keeps" its URL if the blog is actually migrated**, see the blog section below. A "kept" URL that isn't rebuilt is just a 404 with extra steps.
 
-## Bucket 2 — Redirect (95 URLs, 301)
+## Bucket 2: Redirect (95 URLs, 301)
 Two kinds:
 
-**a) URL restructure** — the page survives but the slug changes. These are clean, high-confidence 1:1 redirects:
+**a) URL restructure**, the page survives but the slug changes. These are clean, high-confidence 1:1 redirects:
 
 | Old URL | New URL |
 |---|---|
@@ -37,21 +37,21 @@ Two kinds:
 | `/ad-creatives/` | `/performance-creatives/` |
 | `/locations/nyc/seo-agency-in-new-york-city/` | `/locations/new-york/seo-agency-in-new-york/` |
 
-**b) Retired services with no exact equivalent** — these 301 to the closest parent. They work, but they're judgment calls you should confirm (full list with confidence levels in the CSV; the 24 medium/low-confidence ones are the "Decisions for you" list at the bottom). Examples: `/youtube-advertising-toronto/` and `/remarketing-marketing-toronto/` → `/google-ads/`; `/linkedin-advertising-toronto/` and `/tik-tok-advertising-agency-toronto/` → `/meta-ads/` (weak — these are distinct channels; consider rebuilding).
+**b) Retired services with no exact equivalent**, these 301 to the closest parent. They work, but they're judgment calls you should confirm (full list with confidence levels in the CSV; the 24 medium/low-confidence ones are the "Decisions for you" list at the bottom). Examples: `/youtube-advertising-toronto/` and `/remarketing-marketing-toronto/` → `/google-ads/`; `/linkedin-advertising-toronto/` and `/tik-tok-advertising-agency-toronto/` → `/meta-ads/` (weak, these are distinct channels; consider rebuilding).
 
-## Bucket 3 — Rebuild at same URL (3)
-- `/privacy-policy/` — legally required. Rebuild it; do **not** redirect to contact.
-- `/insurance-industry/` — an industry landing page with no new equivalent. Rebuild or fold into the verticals.
-- `/reputation-advertising-toronto/` — a distinct service; rebuild rather than dumping into Meta Ads.
+## Bucket 3: Rebuild at same URL (3)
+- `/privacy-policy/`, legally required. Rebuild it; do **not** redirect to contact.
+- `/insurance-industry/`, an industry landing page with no new equivalent. Rebuild or fold into the verticals.
+- `/reputation-advertising-toronto/`, a distinct service; rebuild rather than dumping into Meta Ads.
 
-## Bucket 4 — Prune / 410 (3)
-- `/landing/andromeda-unpacked-webinar/` — expired webinar LP.
-- `/links/` — link-in-bio page.
-- `/site-map/` — old HTML sitemap (replaced by the XML sitemap).
+## Bucket 4: Prune / 410 (3)
+- `/landing/andromeda-unpacked-webinar/`, expired webinar LP.
+- `/links/`, link-in-bio page.
+- `/site-map/`, old HTML sitemap (replaced by the XML sitemap).
 
 These have little to no SEO value. 410 ("gone") is fine, **unless** any has backlinks, in which case 301 it instead. Quick to check in Search Console / Ahrefs.
 
-## Bucket 5 — Brand-new pages (55)
+## Bucket 5: Brand-new pages (55)
 The redesign adds 55 pages with no old URL: `/about/`, `/cro/`, `/seo/`, `/meta-ads/`, `/google-ads/`, the healthcare sub-verticals, `/scorecard/`, `/zoho-crm/`, `/performance-creatives/`, the new case studies, etc. No migration needed. Just make sure they land in the XML sitemap and get internal links so Google finds them.
 
 ---
@@ -69,7 +69,7 @@ Topic mix: Paid Media 48, Strategy/Agency 35, SEO 33, CRO 25, Content 18, Influe
 
 ---
 
-## Case studies — clean up the three URL patterns
+## Case studies: clean up the three URL patterns
 The live site has case studies under three different paths. Consolidate onto the new `/case-studies/<client>/`:
 - `/portfolio/<client>/` (7 legacy) → new `/case-studies/<client>/` where it exists, else the `/case-studies/` hub.
 - `/case-study/ecycle-crm/` → `/case-studies/ecycle/`; `/case-study/tonic-eye-care/` → `/case-studies/tonic-eye-care/`; `/case-studies/the-office-shop/` → `/case-studies/office-shop/`.
@@ -77,8 +77,8 @@ The live site has case studies under three different paths. Consolidate onto the
 
 ---
 
-## On-page titles & headers — 34 SEO regressions to rule on
-The redesign rewrote 71 of 88 existing titles. Most are fine or better (the case studies now lead with real results — great for click-through). But **34 are SEO regressions** (31 are high-priority commercial pages) where the rewrite dropped the keyword, the geo modifier, or the rank signal the page ranks on. The clearest example:
+## On-page titles & headers: 34 SEO regressions to rule on
+The redesign rewrote 71 of 88 existing titles. Most are fine or better (the case studies now lead with real results, great for click-through). But **34 are SEO regressions** (31 are high-priority commercial pages) where the rewrite dropped the keyword, the geo modifier, or the rank signal the page ranks on. The clearest example:
 
 | Page | Old title (ranks today) | New title (proposed) | Recommended |
 |---|---|---|---|
@@ -96,5 +96,5 @@ Everything above is staged so you can decide rather than have it decided for you
 1. **Blog:** migrate all 214 at the same URLs? (Strong recommend: yes.) Approve the 30 consolidations and 28 refreshes, or keep everything as-is.
 2. **24 medium/low-confidence redirects** (in `03-redirect-map.csv`, filter confidence ≠ high): mainly retired channel pages (LinkedIn, TikTok, YouTube, programmatic, social, reputation, email, UGC, photography/video) pointing to the closest surviving page. Confirm the targets, or decide which deserve a rebuilt page instead.
 3. **3 prune (410) pages:** OK to let go, or 301 them somewhere?
-4. **34 title regressions:** work the Decision column in `04-…csv` — keep new / use recommended / write your own.
+4. **34 title regressions:** work the Decision column in `04-…csv`, keep new / use recommended / write your own.
 5. **Internal linking:** keep the sitewide mega-menu breadth (preserves long-tail rankings) or slim it for the cleaner design?

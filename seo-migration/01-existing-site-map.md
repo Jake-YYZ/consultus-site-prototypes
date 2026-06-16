@@ -1,13 +1,13 @@
-# 01 — Existing Site Map (consultusdigital.com)
+# 01: Existing Site Map (consultusdigital.com)
 
-> Source: the live WordPress site's four XML sitemaps (`page-sitemap`, `post-sitemap1/2`, `case_study-sitemap`) plus the open WordPress REST API and a direct crawl of every page. Captured June 2026. This is the authoritative inventory of what Google currently indexes — the SEO equity the relaunch must not lose.
+> Source: the live WordPress site's four XML sitemaps (`page-sitemap`, `post-sitemap1/2`, `case_study-sitemap`) plus the open WordPress REST API and a direct crawl of every page. Captured June 2026. This is the authoritative inventory of what Google currently indexes, the SEO equity the relaunch must not lose.
 
 ## The numbers
 
 | Bucket | Live URLs | In the new design |
 |---|---:|---|
 | Marketing/service/location/industry pages | 148 | 88 kept at same URL, 67 have **no new URL yet** |
-| Blog posts (`/blog/…`) | 214 | **0** — the entire blog is missing from the new design |
+| Blog posts (`/blog/…`) | 214 | **0**, the entire blog is missing from the new design |
 | Case studies (`/case-studies/`, `/case-study/`, `/portfolio/`) | 11 + 7 portfolio | mix of kept, renamed, and new |
 | **Total indexable URLs** | **373** | |
 
@@ -226,9 +226,9 @@ The blog is the single biggest content asset and is **entirely absent from the n
 
 ## I. Internal-link structure (inter-links)
 
-**Sitewide mega-menu + footer.** Every live page carries a large header mega-menu and footer that link to ~180 of the money pages (services, locations, verticals, blog hub, contact). That is why almost every page shows ~180 inbound internal links in the crawl — the link equity is spread sitewide by template, not by editorial linking. **The new design must reproduce this dense internal linking** (or deliberately decide to slim it), or the deep service/location/vertical pages lose the internal PageRank that currently keeps them ranking.
+**Sitewide mega-menu + footer.** Every live page carries a large header mega-menu and footer that link to ~180 of the money pages (services, locations, verticals, blog hub, contact). That is why almost every page shows ~180 inbound internal links in the crawl, the link equity is spread sitewide by template, not by editorial linking. **The new design must reproduce this dense internal linking** (or deliberately decide to slim it), or the deep service/location/vertical pages lose the internal PageRank that currently keeps them ranking.
 
-**Weakly linked (≈1 internal inbound link) — at risk regardless of redesign:**
+**Weakly linked (≈1 internal inbound link), at risk regardless of redesign:**
 
 - `/generative-engine-optimization/`
 - `/google-display-network-advertising-toronto/`
@@ -248,6 +248,6 @@ The blog is the single biggest content asset and is **entirely absent from the n
 - `/portfolio/zayouna-law-firm/`
 - `/privacy-policy/`
 
-The legacy `/portfolio/<client>/` case studies are only reachable from the `/portfolio/` hub (itself weakly linked), so they are near-orphans today. In the new design they are being replaced by richer `/case-studies/<client>/` pages — make sure each old portfolio URL 301s to its new case study (see redirect map).
+The legacy `/portfolio/<client>/` case studies are only reachable from the `/portfolio/` hub (itself weakly linked), so they are near-orphans today. In the new design they are being replaced by richer `/case-studies/<client>/` pages, make sure each old portfolio URL 301s to its new case study (see redirect map).
 
 **New-design internal linking (for comparison):** the new prototype links every page from its nav/footer too (most pages show ~140 inbound), so the dense-linking pattern is preserved in structure. The gap is purely the *missing pages and blog* that currently receive and pass that equity.
