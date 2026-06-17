@@ -99,6 +99,8 @@ All buttons are pills (`border-radius: 100px`):
 
 ## Site-wide components
 
+**City hub pages** (`digital-marketing-agency-in-<slug>/`): dedicated "The #1 Digital Marketing Agency in [City]" landing pages for every service area. 11 of them: toronto (HQ), vancouver, calgary, montreal, london (London **Ontario**, not UK), new-york, los-angeles, chicago, houston, san-antonio, tampa. Each = hero ("The #1 digital marketing agency in [City]." + localized lede), why-city band, all-services grid (links to the general /google-ads/, /seo/, /cro/, etc. service pages — NOT per-city service pages, to avoid broken links), dark proof scoreboard (real case-study numbers: La Vie 512, BookSeats 8.10×, Dragonscale 13.2 MER, Zayouna $72.70), local FAQ, CTA. Built from the `cro-agency-in-los-angeles` shell via `/tmp/citygen.py` (CITIES dict holds each city's localized line + industries; rerun to regenerate). The **footer Service Areas band** city tiles link here (Toronto = lead tile, white CN-Tower symbol + yellow "HQ" badge via `.svc-area.is-hq`; all others blue skylines). These replaced the old tiles that pointed to per-city SEO/Google-Ads sub-pages.
+
 **Sticky case study video banner** (`assets/case-study-banner.js`, loaded by every page via a `<script defer>` tag before `</body>`):
 - Floating bottom-right card promoting the E11ement case study video (Wistia media `3fl1o2nq2n`, account `consultus.wistia.com`).
 - First page of a session: card slides in after 1.2s, video auto-plays muted and loops. Click anywhere on it = full-screen theater with sound, resuming from the teaser's position, with "See All Case Studies" and "Book a Call" CTAs.
