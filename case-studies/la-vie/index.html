@@ -3490,9 +3490,22 @@ section.hero-cover .hero-bg {
 /* ========== END HERO BG FIX ========== */
 
   
-/* Service-areas band: Clutch-badge style */
-/* Service-areas: Toronto HQ tile (white symbol) */
-.footer-service-areas .svc-area.is-hq{position:relative}.footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#FAF8F3;opacity:1}.footer-service-areas .svc-area-hq{position:absolute;top:10px;right:12px;font-family:var(--mono);font-size:9px;letter-spacing:0.12em;color:#141414;background:#FFEC00;padding:2px 6px;border-radius:4px;font-weight:600;line-height:1}.footer-service-areas .svc-area{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px}.footer-service-areas .svc-area:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.22);transform:translateY(-2px)}.footer-service-areas .svc-area-sky svg{stroke:#5D7BEA;opacity:0.85}.footer-service-areas .svc-area-name{color:#FAF8F3}.footer-service-areas .svc-area-name::after{color:#9A989C}</style>
+/* Service-areas band: clean flat (footer-native) */
+.footer-service-areas .svc-area-grid{grid-template-columns:repeat(4,1fr);gap:11px 34px}
+.footer-service-areas .svc-area{flex-direction:row;align-items:center;gap:11px;background:none;border:none;border-radius:0;overflow:visible;padding:7px 0}
+.footer-service-areas .svc-area:hover{background:none;border:none;transform:none}
+.footer-service-areas .svc-area-sky{order:1;height:22px;width:30px;flex:0 0 30px;padding:0}
+.footer-service-areas .svc-area-sky svg{stroke:#6C7591;stroke-width:1.6;opacity:1}
+.footer-service-areas .svc-area:hover .svc-area-sky svg{stroke:#5D7BEA;opacity:1}
+.footer-service-areas .svc-area-name{order:2;padding:0;font-family:var(--sans);font-size:14px;font-weight:500;color:#B9B7BB;display:flex;align-items:center;gap:8px;transition:color .2s ease}
+.footer-service-areas .svc-area:hover .svc-area-name{color:#FAF8F3}
+.footer-service-areas .svc-area-name::after{display:none;content:""}
+.footer-service-areas .svc-area.is-hq{position:relative}
+.footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#FAF8F3}
+.footer-service-areas .svc-area-hq{order:3;position:static;font-family:var(--mono);font-size:8px;letter-spacing:0.1em;color:#141414;background:#FFEC00;padding:2px 5px;border-radius:3px;font-weight:600;line-height:1.4}
+@media(max-width:1024px){.footer-service-areas .svc-area-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.footer-service-areas .svc-area-grid{grid-template-columns:repeat(2,1fr)}}
+/* end service-areas clean */</style>
   <meta name="description" content="How Consultus launched La Vie Executive Health into Oakville: 512 leads in the first full month of paid media, ~20:1 projected lifetime ROAS, and a full-funnel engine across Meta, Google, LinkedIn, SEO, and CRM." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/la-vie/" />
   <meta property="og:title" content="La Vie Executive Health case study: 512 leads in month one | Consultus Digital" />
