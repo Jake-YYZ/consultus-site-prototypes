@@ -3488,20 +3488,20 @@ section.hero-cover .hero-bg {
   inset: 0 !important;
 }
 /* ========== END HERO BG FIX ========== */
-/* Service-areas band: sand-grain tiles */
-.footer-service-areas .svc-area-grid{grid-template-columns:repeat(5,1fr);gap:14px}
-.footer-service-areas .svc-area{position:relative;overflow:hidden;flex-direction:column;align-items:flex-start;gap:12px;background:#FBF8F2;border:1px solid rgba(20,20,20,0.07);border-radius:12px;padding:16px 18px 15px;transition:transform .2s ease,box-shadow .2s ease}
-.footer-service-areas .svc-area::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='ng'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23ng)'/></svg>");mix-blend-mode:multiply;opacity:.2}
-.footer-service-areas .svc-area:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,0.30)}
-.footer-service-areas .svc-area-sky{order:1;position:relative;z-index:1;height:32px;width:58px;flex:0 0 auto;padding:0}
-.footer-service-areas .svc-area-sky svg{stroke:#1A40C7;stroke-width:1.7;opacity:.9}
-.footer-service-areas .svc-area:hover .svc-area-sky svg{opacity:1}
-.footer-service-areas .svc-area-name{order:2;position:relative;z-index:1;padding:0;font-family:var(--sans);font-weight:700;font-size:19px;color:#141414;letter-spacing:-0.015em;display:flex;align-items:center;gap:8px}
+/* Service-areas band: pills */
+.footer-service-areas .svc-area-grid{display:flex;flex-wrap:wrap;gap:12px}
+.footer-service-areas .svc-area{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;gap:9px;background:#FCFAF6;border:1px solid rgba(20,20,20,0.10);border-radius:100px;padding:11px 20px;overflow:hidden;position:relative;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.footer-service-areas .svc-area::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='ng'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23ng)'/></svg>");mix-blend-mode:multiply;opacity:.12}
+.footer-service-areas .svc-area:hover{background:#FFEC00;border-color:#FFEC00;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.30)}
+.footer-service-areas .svc-area-sky{order:1;position:relative;z-index:1;height:18px;width:26px;flex:0 0 auto;padding:0}
+.footer-service-areas .svc-area-sky svg{stroke:#1A40C7;stroke-width:1.8;opacity:.9}
+.footer-service-areas .svc-area:hover .svc-area-sky svg{stroke:#141414;opacity:1}
+.footer-service-areas .svc-area-name{order:2;position:relative;z-index:1;padding:0;font-family:var(--sans);font-weight:600;font-size:15px;color:#141414;letter-spacing:-0.01em;white-space:nowrap}
+.footer-service-areas .svc-area:hover .svc-area-name{color:#141414}
 .footer-service-areas .svc-area-name::after{display:none;content:""}
+.footer-service-areas .svc-area.is-hq{background:#FFEC00;border-color:#FFEC00}
 .footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#141414}
-.footer-service-areas .svc-area-hq{order:3;position:absolute;top:12px;right:12px;z-index:2;background:#FFEC00;color:#141414;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:3px 6px;border-radius:4px;line-height:1}
-@media(max-width:1024px){.footer-service-areas .svc-area-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.footer-service-areas .svc-area-grid{grid-template-columns:repeat(2,1fr)}}
+.footer-service-areas .svc-area-hq{order:3;position:relative;z-index:2;background:#141414;color:#FFEC00;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:100px;line-height:1.3}
 /* end service-areas clean */</style>
   <meta name="description" content="Booking-flow CRO and creative-led paid media built a conversion engine that runs above the hospitality category average. Industry: Hospitality." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/harmony-resorts/" />
