@@ -190,11 +190,12 @@
   }
   .hero-cover .cover-meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-top: 88px;
     padding-top: 32px;
     border-top: 1px solid #E1DCD1;
+    text-align: center;
   }
   .hero-cover .cover-meta .cell {
     display: flex;
@@ -936,10 +937,11 @@
   .case-card svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
   .case-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, transparent 28%, transparent 46%, rgba(20,20,20,0.90) 100%); z-index: 1; }
   .case-content { position: absolute; inset: 0; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; color: #FAF8F3; z-index: 2; }
-  .case-cat { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #FFEC00; }
-  .case-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
-  .case-title { font-weight: 500; font-size: 22px; line-height: 1.1; letter-spacing: -0.02em; max-width: 70%; }
-  .case-metric { font-family: var(--serif); font-style: italic; font-size: 48px; line-height: 1; color: #FFEC00; }
+  .case-bottom { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .case-title { font-weight: 500; font-size: 26px; line-height: 1.1; letter-spacing: -0.02em; }
+  .case-cats { display: flex; flex-wrap: wrap; gap: 6px; }
+  .case-cat { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #FAF8F3; border: 1px solid rgba(255,255,255,0.35); border-radius: 100px; padding: 4px 10px; display: inline-block; }
+  .case-metric { font-family: var(--mono); font-style: normal; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #141414; background: #FFEC00; border-radius: 100px; padding: 7px 16px; display: inline-block; }
 
   /* Testimonial */
   .testimonial { padding: 100px 32px; max-width: 1000px; margin: 0 auto; text-align: center; }
@@ -2900,18 +2902,11 @@
   border-radius: 2px;
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4/5;
   min-height: 360px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
   padding: 36px;
-}
-.if-right::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 55%, rgba(10,10,10,0.1) 100%);
-  z-index: 1;
-  pointer-events: none;
 }
 .if-anchor {
   position: relative; z-index: 2;
@@ -2959,6 +2954,52 @@
   text-transform: uppercase;
   color: #C7C5C8;
 }
+
+/* Industry client roster (right panel) */
+.if-clients { position: relative; z-index: 2; width: 100%; color: #FAF8F3; }
+.if-clients-head {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C7C5C8;
+  margin-bottom: 20px;
+}
+.if-clients-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.if-logo-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 86px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.if-logo-tile:hover { border-color: rgba(255,236,0,0.5); background: rgba(255,255,255,0.07); }
+.if-logo-tile .if-client-logo {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #FAF8F3;
+}
+/* Real logo images, normalized to a uniform light gray */
+.if-logo-tile img.if-logo-img {
+  max-width: 100%;
+  max-height: 44px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0) invert(1) opacity(0.65);
+  transition: filter 0.2s ease;
+}
+.if-logo-tile:hover img.if-logo-img { filter: grayscale(1) brightness(0) invert(1) opacity(0.9); }
+@media (max-width: 600px) { .if-clients-list { grid-template-columns: 1fr 1fr; } }
 
 .if-cta-row {
   display: flex;
@@ -3533,8 +3574,8 @@
 
 /* Partner badge wall v2 (real logos) */
 .pw-band .pw-head { margin-bottom: 44px; }
-.pw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 760px) { .pw-grid { grid-template-columns: repeat(2, 1fr); } }
+.pw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) { .pw-grid { grid-template-columns: repeat(2, 1fr); } }
 .pw-card { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 40px 20px 34px; background: #131313; border: 1px solid #242424; border-radius: 16px; overflow: hidden; transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease; }
 .pw-card::before { content: ''; position: absolute; left: 50%; top: -50px; transform: translateX(-50%); width: 180px; height: 110px; background: radial-gradient(ellipse, rgba(255,236,0,0.10), transparent 70%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
 .pw-card:hover { border-color: #3a3a3a; background: #161616; transform: translateY(-3px); }
@@ -3547,8 +3588,8 @@
 
 /* Partner wall v3 (real color logos, no redundant name) */
 .pw-band .pw-head { margin-bottom: 44px; }
-.pw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 760px){ .pw-grid { grid-template-columns: repeat(2,1fr); } }
+.pw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px){ .pw-grid { grid-template-columns: repeat(2,1fr); } }
 .pw-card { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; min-height: 150px; padding: 36px 20px; background: #131313; border: 1px solid #242424; border-radius: 16px; overflow: hidden; transition: border-color .3s ease, transform .3s ease, background .3s ease; }
 .pw-card::before { content:''; position:absolute; left:50%; top:-50px; transform:translateX(-50%); width:200px; height:120px; background:radial-gradient(ellipse,rgba(255,236,0,0.08),transparent 70%); opacity:0; transition:opacity .35s ease; pointer-events:none; }
 .pw-card:hover { border-color:#3a3a3a; background:#161616; transform:translateY(-3px); }
@@ -3674,7 +3715,7 @@
       <div class="cover-main" style="text-align:center">
         <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center">Digital marketing &amp; CRM agency</div>
         <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Marketing, <span class="sem">engineered</span> for scaling brands.</h1>
-        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">Paid media, SEO, CRO, web, creative, analytics, and CRM, all against one scoreboard.</p>
+        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">We build the marketing and sales systems designed to grow businesses, combining performance marketing with strategy and execution as one connected operation.</p>
         <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call →</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
@@ -3682,32 +3723,28 @@
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Since</span><strong>Toronto, 2020</strong></div>
-        <div class="cell"><span class="mono">Clutch</span><strong>4.9 ★ · 47 reviews</strong></div>
-        <div class="cell"><span class="mono">Team</span><strong>Senior specialists</strong></div>
-        <div class="cell"><span class="mono">Range</span><strong>North America</strong></div>
+        <div class="cell"><span class="mono">Critics say</span><strong>4.9 ★ · 47 reviews</strong></div>
+        <div class="cell"><span class="mono">Serving</span><strong>North America</strong></div>
       </div>
     </div>
   </section>
   <!-- Tailored-programs manifesto band -->
-  <section class="sec dark-full pw-band"><div class="sec-inner"><div class="pw-head"><div class="section-lbl dark">Partners &amp; Certifications</div><h2 class="sec-title">Certified where it <span class="sem">counts</span>.</h2></div><div class="pw-grid"><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 48" class="pw3"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g><text x="54" y="32" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-0.5" fill="#FAF8F3">Google</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 130 24" class="pw3"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/><text x="34" y="18.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Meta</text></svg></div><div class="pw-tier">Business Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 24" class="pw3"><path fill="#F25022" d="M0 0h11v11H0z"/><path fill="#7FBA00" d="M13 0h11v11H13z"/><path fill="#00A4EF" d="M0 13h11v11H0z"/><path fill="#FFB900" d="M13 13h11v11H13z"/><text x="32" y="18" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" fill="#FAF8F3">Microsoft</text></svg></div><div class="pw-tier">Advertising Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 132 26" class="pw3"><g transform="translate(0,1) scale(1)"><path fill="#95BF47" transform="scale(1)" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></g><text x="30" y="19" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#FAF8F3">Shopify</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 116 34" class="pw3"><text x="0" y="22" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1" fill="#FAF8F3">amazon</text><path d="M4 27 C26 35 80 35 100 26" fill="none" stroke="#FF9900" stroke-width="3.4" stroke-linecap="round"/><path d="M97 23l6 3-5 4z" fill="#FF9900"/></svg></div><div class="pw-tier">Verified Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 158 30" class="pw3"><g fill="none" stroke-width="2.4"><rect x="1.5" y="6.5" width="16" height="16" rx="4.8" stroke="#E42527" transform="rotate(-13 9.5 14.5)"/><rect x="13.5" y="6.5" width="16" height="16" rx="4.8" stroke="#16A94C" transform="rotate(-13 21.5 14.5)"/><rect x="25.5" y="6.5" width="16" height="16" rx="4.8" stroke="#2A66B0" transform="rotate(-13 33.5 14.5)"/><rect x="37.5" y="6.5" width="16" height="16" rx="4.8" stroke="#F6B017" transform="rotate(-13 45.5 14.5)"/></g><text x="61" y="23" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="-0.3" fill="#FAF8F3">Zoho</text></svg></div><div class="pw-tier">Authorized · CRM</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><g transform="translate(0,2)"><path fill="#25F4EE" transform="translate(-1.7,-1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(1.7,1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FAF8F3" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g><text x="31.3" y="19.6" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#25F4EE">TikTok</text><text x="32.7" y="22.4" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FE2C55">TikTok</text><text x="32" y="21" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">TikTok</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><text x="0" y="21.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Linked</text><g transform="translate(62,1)"><rect x="0" y="2" width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" transform="translate(0.6,0)" d="M7.6 10.6v9.2H4.8v-9.2h2.8zM6.2 6.4a1.6 1.6 0 110 3.2 1.6 1.6 0 010-3.2zM9.6 10.6h2.7v1.25h.04c.38-.7 1.3-1.45 2.66-1.45 2.85 0 3.38 1.85 3.38 4.27v4.85h-2.82v-4.3c0-1.02-.02-2.34-1.43-2.34-1.43 0-1.65 1.12-1.65 2.27v4.37H9.6v-7.19z"/></g></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><div class="pw-clutch"><span class="pw-clutch-stars">★★★★★</span><span class="pw-clutch-word">Clutch</span></div></div><div class="pw-tier">4.9 ★ · 47 reviews</div></div></div></div></section>
+  <section class="sec dark-full pw-band"><div class="sec-inner"><div class="pw-head"><div class="section-lbl dark">Partners &amp; Certifications</div><h2 class="sec-title">Certified where it <span class="sem">counts</span>.</h2></div><div class="pw-grid"><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 48" class="pw3"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g><text x="54" y="32" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-0.5" fill="#FAF8F3">Google</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 130 24" class="pw3"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/><text x="34" y="18.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Meta</text></svg></div><div class="pw-tier">Business Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 24" class="pw3"><path fill="#F25022" d="M0 0h11v11H0z"/><path fill="#7FBA00" d="M13 0h11v11H13z"/><path fill="#00A4EF" d="M0 13h11v11H0z"/><path fill="#FFB900" d="M13 13h11v11H13z"/><text x="32" y="18" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" fill="#FAF8F3">Microsoft</text></svg></div><div class="pw-tier">Advertising Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 132 26" class="pw3"><g transform="translate(0,1) scale(1)"><path fill="#95BF47" transform="scale(1)" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></g><text x="30" y="19" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#FAF8F3">Shopify</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 116 34" class="pw3"><text x="0" y="22" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1" fill="#FAF8F3">amazon</text><path d="M4 27 C26 35 80 35 100 26" fill="none" stroke="#FF9900" stroke-width="3.4" stroke-linecap="round"/><path d="M97 23l6 3-5 4z" fill="#FF9900"/></svg></div><div class="pw-tier">Verified Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 158 30" class="pw3"><g fill="none" stroke-width="2.4"><rect x="1.5" y="6.5" width="16" height="16" rx="4.8" stroke="#E42527" transform="rotate(-13 9.5 14.5)"/><rect x="13.5" y="6.5" width="16" height="16" rx="4.8" stroke="#16A94C" transform="rotate(-13 21.5 14.5)"/><rect x="25.5" y="6.5" width="16" height="16" rx="4.8" stroke="#2A66B0" transform="rotate(-13 33.5 14.5)"/><rect x="37.5" y="6.5" width="16" height="16" rx="4.8" stroke="#F6B017" transform="rotate(-13 45.5 14.5)"/></g><text x="61" y="23" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="-0.3" fill="#FAF8F3">Zoho</text></svg></div><div class="pw-tier">Authorized · CRM</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><g transform="translate(0,2)"><path fill="#25F4EE" transform="translate(-1.7,-1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(1.7,1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FAF8F3" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g><text x="31.3" y="19.6" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#25F4EE">TikTok</text><text x="32.7" y="22.4" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FE2C55">TikTok</text><text x="32" y="21" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">TikTok</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><text x="0" y="21.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Linked</text><g transform="translate(62,1)"><rect x="0" y="2" width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" transform="translate(0.6,0)" d="M7.6 10.6v9.2H4.8v-9.2h2.8zM6.2 6.4a1.6 1.6 0 110 3.2 1.6 1.6 0 010-3.2zM9.6 10.6h2.7v1.25h.04c.38-.7 1.3-1.45 2.66-1.45 2.85 0 3.38 1.85 3.38 4.27v4.85h-2.82v-4.3c0-1.02-.02-2.34-1.43-2.34-1.43 0-1.65 1.12-1.65 2.27v4.37H9.6v-7.19z"/></g></svg></div><div class="pw-tier">Marketing Partner</div></div></div></div></section>
   <section class="sec bone-full" id="manifesto">
     <div class="sec-inner csx-manifesto">
       <div class="section-lbl">The Difference</div>
-      <h2 class="csx-statement">Niched agencies sell you the same playbook they sold the last guy. We engineer <span class="sem">tailored programs</span> around your economics, your market, your stage. <span class="csx-strike">Cookie-cutter</span> isn't in the build.</h2>
+      <h2 class="csx-statement">Niched agencies sell you fragmented tactics. We engineer <span class="sem">tailored marketing systems</span> around your economics, your market, your growth goals. <span class="csx-strike">Cookie cutter</span> isn't in our vocabulary.</h2>
       <div class="csx-router">
-        <span class="csx-router-lbl">Find your build</span>
+        <span class="csx-router-lbl">Find your vertical</span>
         <div class="csx-router-links">
           <a href="/ecommerce-marketing-toronto/">Ecommerce &amp; DTC</a>
-          <a href="/law-firm-marketing-toronto/">Law Firms</a>
-          <a href="/healthcare-marketing/">Healthcare</a>
-          <a href="/home-improvement-marketing/">Home Improvement</a>
-          <a href="/home-services-marketing/">Home Services</a>
-          <a href="/self-storage-marketing-toronto/">Self Storage</a>
-          <a href="/real-estate-marketing/">Real Estate</a>
-          <a href="/b2b-saas-marketing/">B2B &amp; SaaS</a>
           <a href="/professional-services-marketing/">Professional Services</a>
           <a href="/retail-consumer-marketing/">Retail &amp; Consumer</a>
-          <a class="csx-router-cta" href="/contact/">Something else? We build from scratch &rarr;</a>
+          <a href="/law-firm-marketing-toronto/">Legal</a>
+          <a href="/healthcare-marketing/">Healthcare &amp; Medical</a>
+          <a href="/home-services-marketing/">Home Services</a>
+          <a href="/b2b-saas-marketing/">B2B &amp; SaaS</a>
+          <a class="csx-router-cta" href="/contact/">Something else? Let's talk &rarr;</a>
         </div>
       </div>
     </div>
@@ -3728,43 +3765,49 @@
   </section>
 
   <!-- CLIENT VIDEO TESTIMONIALS -->
-  <section class="sec">
-    <div class="sec-inner">
+  <section class="sec" style="padding-bottom:0;">
+    <div class="sec-inner" style="padding-bottom:0;">
       <div class="sec-head">
         <div class="section-lbl">Client Stories</div>
         <h2 class="sec-title">Teams who've run our <span class="sem">playbook</span>.</h2>
       </div>
-      <div class="video-testimonials">
-        <div class="video-card">
-          <div class="video-thumb" data-media-slug="home-testimonial-la-vie-health"><video src="/assets/work/la-vie/loop-c5.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block"></video><div class="video-overlay"></div><div class="video-client-badge">La Vie Health</div></div>
-          <div class="video-content">
-            <p class="video-quote">512 leads in month one. A growth engine, not an ad account.</p>
-            <div class="video-attr-name">La Vie Executive Health</div>
-            <div class="video-attr-role">Concierge Medicine · Oakville</div>
+      <div class="case-grid" style="grid-template-columns:repeat(3,1fr);">
+        <a class="case-card" href="/case-studies/bookseats/" style="aspect-ratio:3/4;text-decoration:none;background:#141414">
+          <img src="/assets/work/bookseats/static-pf-blue.jpg" alt="BookSeats" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0">
+          <div class="case-overlay"></div>
+          <div class="case-content">
+            <div class="case-bottom">
+              <h3 class="case-title">BookSeats.</h3>
+              <div class="case-cats"><span class="case-cat">DTC</span><span class="case-cat">Travel</span></div>
+              <div class="case-metric">8.10× ROAS</div>
+            </div>
           </div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb" data-media-slug="home-testimonial-spieth"><div style="position:absolute;inset:0;background:#141414;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px"><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:64px;line-height:0.6;color:#FFEC00;margin-bottom:14px">&ldquo;</div><div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:56px;letter-spacing:-0.02em;color:#FAF8F3">757%</div><div style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8C8A87">ROAS increase</div></div><div class="video-client-badge">SPIETH</div></div>
-          <div class="video-content">
-            <p class="video-quote">"Working with Consultus Digital over the last year has allowed us to scale our online business significantly."</p>
-            <div class="video-attr-name">Victoria Buott</div>
-            <div class="video-attr-role">Director of Marketing · Spieth America</div>
+        </a>
+        <a class="case-card" href="/case-studies/e11ement/" style="text-decoration:none;background:#141414;aspect-ratio:3/4;">
+          <img src="/assets/work/e11ement/social-model.jpg" alt="e11ement" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0">
+          <div class="case-overlay"></div>
+          <div class="case-content">
+            <div class="case-bottom">
+              <h3 class="case-title">e11ement.</h3>
+              <div class="case-cats"><span class="case-cat">DTC</span><span class="case-cat">Skincare</span></div>
+              <div class="case-metric">6.8× Blended ROAS</div>
+            </div>
           </div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb has-youtube" data-youtube-id="Jw7s42Op2ao" data-media-slug="home-testimonial-yt-Jw7s42Op2ao" tabindex="0" role="button" aria-label="Play video testimonial" onclick="openYouTube('Jw7s42Op2ao')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openYouTube('Jw7s42Op2ao')}">
-            <img src="https://img.youtube.com/vi/Jw7s42Op2ao/maxresdefault.jpg" alt="Client video testimonial" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Jw7s42Op2ao/hqdefault.jpg'" loading="lazy" />
-            <div class="video-overlay"></div>
-            <div class="video-duration">Play</div>
-            <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20"/></svg></div>
-            <div class="video-client-badge">HUB Interiors</div>
+        </a>
+        <a class="case-card" href="https://consultusdigital.com/case-study/ecycle-crm/" style="text-decoration:none;background:#141414;aspect-ratio:3/4;" target="_blank" rel="noopener">
+          <img src="/assets/work/ecycle-solutions.png" alt="eCycle Solutions" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0">
+          <div class="case-overlay"></div>
+          <div class="case-content">
+            <div class="case-bottom">
+              <h3 class="case-title">eCycle Solutions.</h3>
+              <div class="case-cats"><span class="case-cat">B2B</span><span class="case-cat">Electronic Recycling</span></div>
+              <div class="case-metric">40% Productivity Boost</div>
+            </div>
           </div>
-          <div class="video-content">
-            <p class="video-quote">The full story, in their own words. Press play.</p>
-            <div class="video-attr-name">HUB Interiors</div>
-            <div class="video-attr-role">Client Video Testimonial</div>
-          </div>
-        </div>
+        </a>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:48px;">
+        <a class="btn primary cta-yellow-hover" href="/case-studies/">View all case studies &rarr;</a>
       </div>
     </div>
   </section>
@@ -3824,46 +3867,7 @@
   <section class="industry-focus-section" id="industry-focus-section">
     <div class="sec-head">
       <div class="section-lbl">Industries</div>
-      <h2 class="sec-title">We go deep where we can<br><span class="sem">actually win</span>.</h2>
-    </div>
-
-    <div class="personalization-note" id="industry-personalization-note" hidden>
-      <span class="pn-dot"></span>
-      <span id="ipn-text">Viewing for healthcare operators</span>
-    </div>
-
-    <div class="industry-focus-card" id="industry-focus-card" data-industry="healthcare">
-      <div class="if-left">
-        <div>
-          <div class="if-eyebrow" id="if-eyebrow">/01 &middot; Healthcare &amp; Medical</div>
-          <h3 class="if-headline" id="if-headline">Healthcare marketing built for <span class="sem">retention</span>.</h3>
-          <p class="if-sub" id="if-sub">Clinics, concierge health, dental, and specialty practices competing for patient lifetime value. We engineer the acquisition system, the booking flow, and the retention loop against one scoreboard.</p>
-          <div class="if-cta-row">
-            <a class="btn primary" id="if-cta-primary" href="/healthcare/">Read the healthcare playbook &rarr;</a>
-            <a class="btn secondary" id="if-cta-secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/case-studies/la-vie/">See La Vie case &rarr;</a>
-          </div>
-        </div>
-        <div class="if-stats">
-          <div class="if-stat">
-            <div class="if-stat-num" id="if-stat-1-num">512</div>
-            <div class="if-stat-lbl" id="if-stat-1-lbl">Leads in month one, La Vie</div>
-          </div>
-          <div class="if-stat">
-            <div class="if-stat-num" id="if-stat-2-num">~20:1</div>
-            <div class="if-stat-lbl" id="if-stat-2-lbl">Month-one ROAS, La Vie</div>
-          </div>
-        </div>
-      </div>
-      <div class="if-right">
-        <div class="if-anchor">
-<div class="if-anchor-media"><img id="if-anchor-img" src="/assets/work/la-vie/statement-oakville.jpg" alt="Anchor case creative" loading="lazy"></div>
-<div class="if-anchor-eyebrow" id="if-anchor-eyebrow">Anchor Case &middot; Healthcare</div>
-<div class="if-anchor-title" id="if-anchor-title">La Vie Executive Health: <span class="sem">512 leads</span> in month one.</div>
-<p class="if-anchor-sub" id="if-anchor-sub">Oakville launch: creative, paid media, search, and CRM built as one engine.</p>
-<div class="if-anchor-metric" id="if-anchor-metric">512</div>
-<div class="if-anchor-metric-lbl" id="if-anchor-metric-lbl">Leads in month one</div>
-</div>
-      </div>
+      <h2 class="sec-title">We are <span class="sem">industry agnostic</span>.</h2>
     </div>
 
     <div class="industry-switcher">
@@ -3876,15 +3880,144 @@
         <button class="is-chip" data-industry="professional">Professional Services</button>
       </div>
     </div>
+
+    <div class="industry-focus-card" id="industry-focus-card" data-industry="healthcare">
+      <div class="if-left">
+        <div>
+          <div class="if-eyebrow" id="if-eyebrow">/01 &middot; Healthcare &amp; Medical</div>
+          <h3 class="if-headline" id="if-headline">Healthcare marketing built for <span class="sem">retention</span>.</h3>
+          <p class="if-sub" id="if-sub">Clinics, concierge health, dental, and specialty practices competing for patient lifetime value. We engineer the acquisition system, the booking flow, and the retention loop against one scoreboard.</p>
+          <div class="if-cta-row">
+            <a class="btn primary" id="if-cta-primary" href="/healthcare/">Explore Healthcare Marketing &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="if-right">
+        <div class="if-clients">
+          <div class="if-clients-head" id="if-clients-head">Clients we've grown in healthcare</div>
+          <div class="if-clients-list" id="if-clients-list">
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/la-vie.png" alt="La Vie Executive Health"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/healthy-back.png" alt="Healthy Back"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/tonic.png" alt="Tonic Eye Care"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/nuvista.svg" alt="Nuvista Mental Health"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/schoolcraft.png" alt="Schoolcraft Memorial Hospital"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/discover.png" alt="Discover Birth"></div>
+            <div class="if-logo-tile"><img class="if-logo-img" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="sec">
-    <div class="sec-head"><div class="section-lbl">Featured Work</div><h2 class="sec-title">Real teams. <span class="sem">Real</span> pipelines.</h2></div>
-    <div class="case-grid"><a class="case-card" href="/case-studies/bookseats/" style="text-decoration:none;background:#141414"><img src="/assets/work/bookseats/ugc-jessica-frame.jpg" alt="BookSeats UGC creators" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;z-index:0"><div class="case-overlay"></div><div class="case-content"><div class="case-cat">Travel &middot; UGC Creative</div><div class="case-bottom"><h3 class="case-title">BookSeats.com</h3><div class="case-metric">8.10&times;<span style="display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:0.1em;color:#FAF8F3;margin-top:4px">UGC ROAS</span></div></div></div></a><a class="case-card" href="/case-studies/zayouna-law-firm/" style="text-decoration:none;background:#0b2a6b"><img src="/assets/work/zayouna/zl-s01.jpg" alt="Zayouna Law" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%;z-index:0"><div class="case-overlay"></div><div class="case-content"><div class="case-cat">Legal &middot; Personal Injury</div><div class="case-bottom"><h3 class="case-title">Zayouna Law Firm</h3><div class="case-metric">$72.70<span style="display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:0.1em;color:#FAF8F3;margin-top:4px">META CPL</span></div></div></div></a></div> </section> <section class="testimonial">
-    <div class="quote-mark">&ldquo;</div>
-    <p class="quote">The most impressive digital agency we've worked with to date. They don't just run campaigns. They build the <span class="sem">infrastructure</span> that makes growth actually work.</p>
-    <div class="attr"><div class="attr-dot">BF</div><div class="attr-text"><div class="attr-name">Ben Fishbein</div><div class="attr-role">Marketing Manager, Comwave</div></div></div>
+  <!-- Text testimonial slider -->
+  <section class="vts-section">
+    <div class="vts-inner">
+      <div class="vts-track" id="vts-track">
+
+        <!-- Slide 1: Helen Stergiou — The Office Shop -->
+        <div class="vts-slide active">
+          <div class="vts-openquote">&#8220;</div>
+          <p class="vts-quote">The team at Consultus Digital won our business due to their thorough assessment and realignment of our digital sales and marketing strategy. Within only a few weeks of partnering with them, we increased our inbound leads significantly by reconfiguring the user experience of our website.</p>
+          <div class="vts-attr">
+            <img class="vts-avatar" src="https://consultusdigital.com/wp-content/uploads/2025/09/Helen-Stergiou.webp" alt="Helen Stergiou">
+            <div>
+              <div class="vts-name">Helen Stergiou</div>
+              <div class="vts-role">Partner, The Office Shop</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Kim Benedict — Talent Minded -->
+        <div class="vts-slide">
+          <div class="vts-openquote">&#8220;</div>
+          <p class="vts-quote">Consultus Digital took the time to understand our unique business goals and crafted strategies tailored to our needs. Their expertise in SEO, content marketing, and social media management was evident in the results we received. Working with Consultus Digital has had a positive impact on our business.</p>
+          <div class="vts-attr">
+            <img class="vts-avatar" src="https://consultusdigital.com/wp-content/uploads/2025/09/Kim-Benedict.webp" alt="Kim Benedict">
+            <div>
+              <div class="vts-name">Kim Benedict</div>
+              <div class="vts-role">Talent Minded</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Shawn Mintz — Mentor City -->
+        <div class="vts-slide">
+          <div class="vts-openquote">&#8220;</div>
+          <p class="vts-quote">I love companies that walk the walk, and that's what sold us on Consultus Digital. Everything they talk about and every strategy they recommend — they have used themselves, and that's what helps them stand out from the competition.</p>
+          <div class="vts-attr">
+            <img class="vts-avatar" src="https://consultusdigital.com/wp-content/uploads/2025/09/testi_img6.webp" alt="Shawn Mintz">
+            <div>
+              <div class="vts-name">Shawn Mintz</div>
+              <div class="vts-role">Mentor City</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Ben Fishbein — Comwave -->
+        <div class="vts-slide">
+          <div class="vts-openquote">&#8220;</div>
+          <p class="vts-quote">Consultus Digital has been the most impressive digital agency we've worked with to date. Since we began working with them, our online visibility nationwide has grown immensely, thanks to the in-depth SEO work done by their team. The results from their omni-channel strategy continue to have a direct impact on the growth of our customer acquisition efforts.</p>
+          <div class="vts-attr">
+            <img class="vts-avatar" src="https://consultusdigital.com/wp-content/uploads/2023/09/unnamed.png" alt="Ben Fishbein">
+            <div>
+              <div class="vts-name">Ben Fishbein</div>
+              <div class="vts-role">Marketing Manager, Comwave</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /vts-track -->
+
+      <div class="vts-dots" id="vts-dots">
+        <button class="vts-dot active" data-idx="0"></button>
+        <button class="vts-dot" data-idx="1"></button>
+        <button class="vts-dot" data-idx="2"></button>
+        <button class="vts-dot" data-idx="3"></button>
+      </div>
+
+    </div>
   </section>
+
+  <style>
+  .vts-section { background: var(--paper); padding: 100px 32px; }
+  .vts-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .vts-track { overflow: hidden; }
+  .vts-slide { display: none; flex-direction: column; align-items: center; text-align: center; }
+  .vts-slide.active { display: flex; }
+  .vts-openquote { font-family: var(--serif); font-size: 72px; line-height: 1; color: var(--deep-blue); margin-bottom: 24px; opacity: 0.5; }
+  .vts-quote { font-family: var(--sans); font-style: normal; font-size: clamp(20px, 2.4vw, 30px); font-weight: 400; line-height: 1.45; color: var(--ink); letter-spacing: -0.02em; margin: 0 0 48px; }
+  .vts-attr { display: flex; align-items: center; gap: 14px; }
+  .vts-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .vts-name { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 3px; text-align: left; }
+  .vts-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal); text-align: left; }
+  .vts-arrow { position: absolute; top: 48%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: var(--paper); border: none; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease, background 0.2s ease; z-index: 10; }
+  .vts-arrow:hover { transform: translateY(-50%) scale(1.08); background: var(--deep-blue); }
+  .vts-prev { left: -72px; }
+  .vts-next { right: -72px; }
+  .vts-dots { display: flex; justify-content: center; gap: 10px; margin-top: 48px; }
+  .vts-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--onyx-border); border: none; cursor: pointer; padding: 0; transition: background 0.2s ease, transform 0.2s ease; }
+  .vts-dot.active { background: var(--deep-blue); transform: scale(1.2); }
+  @media (max-width: 768px) {
+    .vts-prev { left: -8px; } .vts-next { right: -8px; }
+  }
+  </style>
+
+  <script>
+  (function(){
+    var slides = document.querySelectorAll('.vts-slide');
+    var dots = document.querySelectorAll('.vts-dot');
+    var cur = 0;
+    function go(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+    }
+    dots.forEach(function(d){ d.addEventListener('click', function(){ go(+d.getAttribute('data-idx')); }); });
+  })();
+  </script>
 
   <section class="cta-sec">
     <div class="cta-inner">
@@ -4188,13 +4321,62 @@ if (typeof setMegaTab !== 'function') {
 (function () {
   var pre = location.pathname.indexOf('/consultus-site-prototypes/') === 0 ? '/consultus-site-prototypes' : '';
   var DATA = {
-    'healthcare': { eyebrow: '/01 \u00b7 Healthcare & Medical', headline: 'Healthcare marketing built for <span class="sem">retention</span>.', sub: 'Clinics, concierge health, dental, and specialty practices competing for patient lifetime value. We engineer the acquisition system, the booking flow, and the retention loop against one scoreboard.', cta1: ['/healthcare/', 'Read the healthcare playbook \u2192'], cta2: ['/case-studies/la-vie/', 'See La Vie case \u2192'], s1: ['512', 'Leads in month one, La Vie'], s2: ['~20:1', 'Month-one ROAS, La Vie'], aEye: 'Anchor Case \u00b7 Healthcare', aTitle: 'La Vie Executive Health: <span class="sem">512 leads</span> in month one.', aSub: 'Oakville launch: creative, paid media, search, and CRM built as one engine.', metric: '512', metricLbl: 'Leads in month one', img: '/assets/work/la-vie/statement-oakville.jpg', note: 'Viewing for healthcare operators' },
-    'home-services': { eyebrow: '/02 \u00b7 Home Services', headline: 'Home services marketing built for <span class="sem">booked jobs</span>.', sub: 'Windows, HVAC, roofing, and trades selling considered purchases into local markets. We reverse engineer the buyer, build the funnel, and wire every lead to the CRM.', cta1: ['/home-services-marketing/', 'Read the home services playbook \u2192'], cta2: ['/case-studies/eco-choice-windows/', 'See Eco Choice case \u2192'], s1: ['4', 'Buyer personas, reverse engineered'], s2: ['PMax', 'Search rebuilt, fed by Meta winners'], aEye: 'Anchor Case \u00b7 Home Services', aTitle: 'Eco Choice Windows &amp; Doors: the <span class="sem">full-funnel</span> build.', aSub: 'Pages, creative, CRO experiments, a rebuilt search account, and Zoho CRM attribution.', metric: 'Live', metricLbl: 'In market, compounding', img: '/assets/work/eco-choice/statics/curb-appeal.jpg', note: 'Viewing for home services operators' },
-    'ecommerce': { eyebrow: '/03 \u00b7 E-commerce & DTC', headline: 'Ecommerce marketing built for <span class="sem">repeat customers</span>.', sub: 'DTC brands competing on creative velocity and honest measurement. Hooks tested scientifically, MER over platform flattery, and a path from first order to loyalty.', cta1: ['/ecommerce-marketing-toronto/', 'Read the ecommerce playbook \u2192'], cta2: ['/case-studies/e11ement/', 'See e11ement case \u2192'], s1: ['89', 'Page Digital Growth Plan'], s2: ['12', 'Months, one roadmap'], aEye: 'Anchor Case \u00b7 DTC', aTitle: 'e11ement: from one hero product to <span class="sem">Walmart shelves</span>.', aSub: 'UGC personas, a rebuilt website, Amazon overhaul, and SEO conquesting for a physician-founded skincare brand.', metric: '89', metricLbl: 'Page DGP, executed', img: '/assets/work/e11ement/product-shot.jpg', note: 'Viewing for ecommerce operators' },
-    'b2b-saas': { eyebrow: '/04 \u00b7 B2B & SaaS', headline: 'B2B marketing built for <span class="sem">pipeline</span>.', sub: 'Considered purchases, long cycles, and buying committees. We build demand on search, capture it with landing pages, and hand sales a CRM that tells the truth.', cta1: ['/b2b-saas-marketing/', 'Read the B2B playbook \u2192'], cta2: ['/case-studies/spieth-america/', 'See Spieth case \u2192'], s1: ['757%', 'ROAS increase, Spieth America'], s2: ['+40%', 'Organic traffic, year over year'], aEye: 'Anchor Case \u00b7 B2B', aTitle: 'Spieth America: a <span class="sem">757%</span> ROAS increase.', aSub: 'Gymnastics equipment sold to institutions: search, shopping, landing pages, and remarketing.', metric: '757%', metricLbl: 'ROAS increase', img: '/assets/work/spieth-america.jpg', note: 'Viewing for B2B operators' },
-    'professional': { eyebrow: '/05 \u00b7 Professional Services', headline: 'Professional services marketing built for <span class="sem">signed files</span>.', sub: 'Law firms, accountants, and consultancies where one client is worth five figures. The KPI is not leads. It is signed engagements, attributed to the ad that started them.', cta1: ['/professional-services-marketing/', 'Read the professional playbook \u2192'], cta2: ['/case-studies/zayouna-law-firm/', 'See Zayouna case \u2192'], s1: ['$72.70', 'Meta cost per lead vs $200+ benchmark'], s2: ['4', 'Signed files in month one'], aEye: 'Anchor Case \u00b7 Legal', aTitle: 'Zayouna Law: <span class="sem">signed files</span>, not leads.', aSub: 'Dynamic landing pages, intake CRM rev ops, and creative-led targeting for a personal injury firm.', metric: '4', metricLbl: 'Signed files, month one', img: '/assets/work/zayouna/zl-s01.jpg', note: 'Viewing for professional services firms' }
+    'healthcare': { eyebrow: '/01 \u00b7 Healthcare & Medical', headline: 'Healthcare marketing built for <span class="sem">retention</span>.', sub: 'Clinics, concierge health, dental, and specialty practices competing for patient lifetime value. We engineer the acquisition system, the booking flow, and the retention loop against one scoreboard.', cta1: ['/healthcare/', 'Explore Healthcare Marketing \u2192'], cta2: ['/case-studies/la-vie/', 'See La Vie case \u2192'], s1: ['512', 'Leads in month one, La Vie'], s2: ['~20:1', 'Month-one ROAS, La Vie'], note: 'Viewing for healthcare operators', clientsHead: "Clients we've grown in healthcare", clients: [
+      { name: 'La Vie Executive Health', logo: 'la-vie.png' },
+      { name: 'Healthy Back', logo: 'healthy-back.png' },
+      { name: 'Tonic Eye Care', logo: 'tonic.png' },
+      { name: 'Nuvista Mental Health', logo: 'nuvista.svg' },
+      { name: 'Schoolcraft Memorial Hospital', logo: 'schoolcraft.png' },
+      { name: 'Ignite Nutrition', logo: 'ignite.png' },
+      { name: 'Discover Birth', logo: 'discover.png' },
+      { name: 'Association of Ontario Doulas', logo: 'aod.svg' }
+    ] },
+    'home-services': { eyebrow: '/02 \u00b7 Home Services', headline: 'Home services marketing built for <span class="sem">booked jobs</span>.', sub: 'Windows, HVAC, roofing, and trades selling considered purchases into local markets. We reverse engineer the buyer, build the funnel, and wire every lead to the CRM.', cta1: ['/home-services-marketing/', 'Explore Home Services Marketing \u2192'], cta2: ['/case-studies/eco-choice-windows/', 'See Eco Choice case \u2192'], s1: ['4', 'Buyer personas, reverse engineered'], s2: ['PMax', 'Search rebuilt, fed by Meta winners'], note: 'Viewing for home services operators', clientsHead: "Clients we've grown in home services", clients: [
+      { name: 'Chrysalis Construction', logo: 'chrysalis.webp' },
+      { name: 'Paint My Condo', logo: 'paint-my-condo.svg' },
+      { name: 'Malcolm Excavating', logo: 'malcolm.webp' },
+      { name: 'My Plumber Kelowna', logo: 'my-plumber.svg' },
+      { name: 'Hersey Bins', logo: 'hersey.png' },
+      { name: 'Gorilla Bins', logo: 'gorilla.png' }
+    ] },
+    'ecommerce': { eyebrow: '/03 \u00b7 E-commerce & DTC', headline: 'Ecommerce marketing built for <span class="sem">repeat customers</span>.', sub: 'DTC brands competing on creative velocity and honest measurement. Hooks tested scientifically, MER over platform flattery, and a path from first order to loyalty.', cta1: ['/ecommerce-marketing-toronto/', 'Explore Ecommerce Marketing \u2192'], cta2: ['/case-studies/e11ement/', 'See e11ement case \u2192'], s1: ['89', 'Page Digital Growth Plan'], s2: ['12', 'Months, one roadmap'], note: 'Viewing for ecommerce operators', clientsHead: "Clients we've grown in ecommerce", clients: [
+      { name: 'e11ement', logo: 'e11ement.webp' },
+      { name: 'BookSeats', logo: 'bookseats.png' },
+      { name: 'Dragonscale Supplies', logo: 'dragonscale.png' },
+      { name: 'Spieth America', logo: 'spieth.png' },
+      { name: 'Harmony Resorts', logo: 'harmony.png' },
+      { name: 'Hardy Carts & Equipment', logo: 'hardy.png' }
+    ] },
+    'b2b-saas': { eyebrow: '/04 \u00b7 B2B & SaaS', headline: 'B2B marketing built for <span class="sem">pipeline</span>.', sub: 'Considered purchases, long cycles, and buying committees. We build demand on search, capture it with landing pages, and hand sales a CRM that tells the truth.', cta1: ['/b2b-saas-marketing/', 'Explore B2B & SaaS Marketing \u2192'], cta2: ['/case-studies/spieth-america/', 'See Spieth case \u2192'], s1: ['757%', 'ROAS increase, Spieth America'], s2: ['+40%', 'Organic traffic, year over year'], note: 'Viewing for B2B operators', clientsHead: "Clients we've grown in B2B & SaaS", clients: [
+      { name: 'MentorCity', logo: 'mentorcity.svg' },
+      { name: 'CYPFER', logo: 'cypfer.svg' },
+      { name: 'Ontario Business Central', logo: 'obc.png' },
+      { name: 'Opticca Consulting', logo: 'opticca.svg' },
+      { name: 'The Office Shop', logo: 'office-shop.png' },
+      { name: 'eCycle Solutions', logo: 'ecycle.webp' },
+      { name: 'Western Asphalt', logo: 'western-asphalt.svg' }
+    ] },
+    'professional': { eyebrow: '/05 \u00b7 Professional Services', headline: 'Professional services marketing built for <span class="sem">signed files</span>.', sub: 'Law firms, accountants, and consultancies where one client is worth five figures. The KPI is not leads. It is signed engagements, attributed to the ad that started them.', cta1: ['/professional-services-marketing/', 'Explore Professional Services Marketing \u2192'], cta2: ['/case-studies/zayouna-law-firm/', 'See Zayouna case \u2192'], s1: ['$72.70', 'Meta cost per lead vs $200+ benchmark'], s2: ['4', 'Signed files in month one'], note: 'Viewing for professional services firms', clientsHead: "Clients we've grown in professional services", clients: [
+      { name: 'Comwave', logo: 'comwave.png' },
+      { name: 'Zayouna Law Firm', logo: 'zayouna.png' },
+      { name: 'Share Lawyers', logo: 'share-lawyers.svg' },
+      { name: 'Robichaud Insurance', logo: 'robichaud.png' },
+      { name: 'Orr Insurance', logo: 'orr.png' },
+      { name: 'Oegema Nicholson Insurance', logo: 'oegema.webp' },
+      { name: "Gordon's Real Estate", logo: 'gordons.webp' },
+      { name: 'Bow City Storage', logo: 'bowcity.png' }
+    ] }
   };
   function set(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+  function renderClients(v) {
+    var list = document.getElementById('if-clients-list'); if (!list) return;
+    list.innerHTML = (v.clients || []).map(function (c) {
+      var inner = c.logo
+        ? '<img class="if-logo-img" src="' + pre + '/assets/work/logos/' + c.logo + '" alt="' + c.name + '">'
+        : '<div class="if-client-logo">' + c.name + '</div>';
+      return '<div class="if-logo-tile">' + inner + '</div>';
+    }).join('');
+  }
   function apply(key) {
     var v = DATA[key]; if (!v) return;
     set('if-eyebrow', v.eyebrow); set('if-headline', v.headline); set('if-sub', v.sub);
@@ -4202,10 +4384,8 @@ if (typeof setMegaTab !== 'function') {
     var c2 = document.getElementById('if-cta-secondary'); if (c2) { c2.setAttribute('href', pre + v.cta2[0]); c2.innerHTML = v.cta2[1]; }
     set('if-stat-1-num', v.s1[0]); set('if-stat-1-lbl', v.s1[1]);
     set('if-stat-2-num', v.s2[0]); set('if-stat-2-lbl', v.s2[1]);
-    set('if-anchor-eyebrow', v.aEye); set('if-anchor-title', v.aTitle); set('if-anchor-sub', v.aSub);
-    set('if-anchor-metric', v.metric); set('if-anchor-metric-lbl', v.metricLbl);
-    var img = document.getElementById('if-anchor-img');
-    if (img) { img.style.opacity = '0'; setTimeout(function () { img.src = pre + v.img; img.style.opacity = '1'; }, 220); }
+    set('if-clients-head', v.clientsHead);
+    renderClients(v);
     var note = document.getElementById('ipn-text'); if (note) note.textContent = v.note;
     var card = document.getElementById('industry-focus-card'); if (card) card.setAttribute('data-industry', key);
   }
@@ -4217,6 +4397,40 @@ if (typeof setMegaTab !== 'function') {
     });
   });
 })();
+</script>
+
+<!-- Vimeo lightbox -->
+<div class="yt-lightbox" id="vimeo-lightbox" onclick="if(event.target===this)closeVimeo()">
+  <div class="yt-modal">
+    <button class="yt-close" onclick="closeVimeo()" aria-label="Close">&times;</button>
+    <div class="yt-iframe-wrap" id="vimeo-iframe-wrap"></div>
+  </div>
+</div>
+<script>
+function openYT(id) {
+  var wrap = document.getElementById('vimeo-iframe-wrap');
+  wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+  var lb = document.getElementById('vimeo-lightbox');
+  lb.style.display = 'flex';
+  requestAnimationFrame(function(){ lb.classList.add('open'); });
+  document.addEventListener('keydown', _vimeoEsc);
+}
+function openVimeo(id) {
+  var wrap = document.getElementById('vimeo-iframe-wrap');
+  wrap.innerHTML = '<iframe src="https://player.vimeo.com/video/' + id + '?autoplay=1&color=FFEC00" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+  var lb = document.getElementById('vimeo-lightbox');
+  lb.style.display = 'flex';
+  requestAnimationFrame(function(){ lb.classList.add('open'); });
+  document.addEventListener('keydown', _vimeoEsc);
+}
+function closeVimeo() {
+  var lb = document.getElementById('vimeo-lightbox');
+  lb.classList.remove('open');
+  document.getElementById('vimeo-iframe-wrap').innerHTML = '';
+  setTimeout(function(){ lb.style.display = ''; }, 260);
+  document.removeEventListener('keydown', _vimeoEsc);
+}
+function _vimeoEsc(e) { if(e.key === 'Escape') closeVimeo(); }
 </script>
 </body>
 </html>
