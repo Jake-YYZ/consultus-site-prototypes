@@ -3870,6 +3870,10 @@ section.hero-cover .hero-bg {
   .e11-dgp-row:last-child { border-bottom: none; }
   .e11-dgp-row b { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; color: #1A40C7; min-width: 52px; }
   .e11-dgp-row span { font-size: 14px; color: #2A2A2A; }
+  .ecw-goal-row { padding: 14px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+  .ecw-goal-row:last-child { border-bottom: none; }
+  .ecw-goal-row b { display: block; font-family: var(--wide); font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: #1A40C7; margin-bottom: 6px; }
+  .ecw-goal-row span { display: block; font-size: 14px; line-height: 1.5; color: #2A2A2A; }
   .e11-artifacts { display: flex; flex-direction: column; gap: 24px; }
   .e11-adrow { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
@@ -3892,7 +3896,7 @@ section.hero-cover .hero-bg {
         <div class="eyebrow yellow-dot"><span>Case Study &middot; DTC Skincare</span></div>
         <h1 class="display">Twelve months. One brand. <span class="sem">Every channel.</span></h1>
         <p class="lede" style="max-width:680px">A Toronto skincare brand with a hero product and a template website. We rebuilt the entire digital ecosystem: site, creative, paid, SEO, social, Amazon, retail. All of it working together.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Paid Media</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">SEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Amazon &amp; Retail</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">UGC &amp; Ambassador</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Email &amp; Loyalty</span></div>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Web Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Google Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Meta Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">SEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Amazon Storefront Build</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">UGC &amp; Ambassador</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:transparent;border:1px solid rgba(20,20,20,0.28);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#141414">Email &amp; Loyalty</span></div>
       </div>
       <div class="ecw-hero-visual" aria-hidden="true">
         <div class="ecw-hv-card ecw-hv-e"><img id="e11-cycle" src="/assets/work/e11ement/static-feature-1.jpg" alt="" style="transition:opacity .4s ease"></div>
@@ -3922,13 +3926,6 @@ section.hero-cover .hero-bg {
     </div>
   </section>
 
-  <section class="sec dark-full">
-    <div class="sec-inner" style="text-align:center">
-      <div class="section-lbl dark" style="justify-content:center">The Thesis</div>
-      <div style="font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(28px,3.6vw,52px);line-height:1.2;letter-spacing:-0.02em;color:#FAF8F3;max-width:900px;margin:36px auto 0">Eleven experts. A six-week teardown. One <span style="color:#FFEC00">Digital Growth Plan</span>. Then twelve months of execution.</div>
-    </div>
-  </section>
-
   <section class="sec">
     <div class="sec-head rv">
       <div class="section-lbl">The Brief</div>
@@ -3950,15 +3947,13 @@ section.hero-cover .hero-bg {
       </div>
       </div>
       <div class="ecw-ns rv">
-        <div class="ecw-ns-head">The Digital Growth Plan &middot; Set Before A Dollar Moved</div>
+        <div class="ecw-ns-head">The Goal &middot; Their Primary Objectives</div>
         <div class="ecw-ns-body" style="padding:8px 20px 6px">
-          <div class="e11-dgp-row"><b>11</b><span>subject-matter experts embedded: Google, Meta, SEO, email, UX, creative, data</span></div>
-          <div class="e11-dgp-row"><b>6</b><span>weeks tearing through the ecosystem: site, ads, content, SEO, competitors, CAC</span></div>
-          <div class="e11-dgp-row"><b>89</b><span>pages of playbook: the Digital Growth Plan</span></div>
-          <div class="e11-dgp-row"><b>1</b><span>half-day working session to walk it through and get sign-off</span></div>
+          <div class="ecw-goal-row"><b>Brand Credibility</b><span>Build real trust around hypochlorous acid, an effective but unfamiliar ingredient, so skeptical buyers convert.</span></div>
+          <div class="ecw-goal-row"><b>Conversion Rate Growth</b><span>Replace a template website that wasn't converting, and lift average order value past a sub-$50 cart.</span></div>
+          <div class="ecw-goal-row"><b>Full-Funnel Scale</b><span>Grow demand across Meta, Google, SEO, and retail as one connected engine, not a single channel.</span></div>
         </div>
         <div class="ecw-ns-foot" style="padding-top:14px">
-          <p>Nothing untouched. Everyone knew the plan before a dollar moved.</p>
           <div class="ecw-ns-chips"><i>Audit &#10003;</i><i>Playbook &#10003;</i><i>Sign-Off &#10003;</i></div>
         </div>
       </div>
@@ -3979,8 +3974,6 @@ section.hero-cover .hero-bg {
           <div class="ecw-persona-tag">Persona 01</div>
           <h3>The Super Organic</h3>
           <p class="q">"If I can't read the label, it's not going on my skin."</p>
-          <div class="hook-lbl">The Hook</div>
-          <p class="hook">Two ingredients. Water and salt.</p>
           <div class="ecw-fan"><video class="f1" src="/assets/work/e11ement/loop-organic.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/e11ement/social-ingredients.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/e11ement/static-feature-1.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+ creator batches</span></div>
           <div class="ecw-fmt"><i>UGC</i><i>Static</i><i>Organic Social</i></div>
           <div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; BOF</div>
@@ -3989,8 +3982,6 @@ section.hero-cover .hero-bg {
           <div class="ecw-persona-tag">Persona 02</div>
           <h3>The Dealhunter</h3>
           <p class="q">"I want the bundle math to make sense."</p>
-          <div class="hook-lbl">The Hook</div>
-          <p class="hook">Refill sizes the other brands don't have.</p>
           <div class="ecw-fan"><img class="f1" src="/assets/work/e11ement/static-usvsthem.jpg" alt="" loading="lazy"><video class="f2" src="/assets/work/e11ement/loop-ugc3.mp4" muted loop playsinline></video><img class="f3" src="/assets/work/e11ement/social-new.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+ creator batches</span></div>
           <div class="ecw-fmt"><i>Comparison</i><i>UGC</i><i>Static</i></div>
           <div class="ecw-fun">TOF &middot; <b>MOF</b> &middot; <b>BOF</b></div>
@@ -3999,8 +3990,6 @@ section.hero-cover .hero-bg {
           <div class="ecw-persona-tag">Persona 03</div>
           <h3>The Summer Traveller</h3>
           <p class="q">"My skin falls apart in humidity and on planes."</p>
-          <div class="hook-lbl">The Hook</div>
-          <p class="hook">One bottle, every situation.</p>
           <div class="ecw-fan"><video class="f1" src="/assets/work/e11ement/loop-travel.mp4" muted loop playsinline></video><img class="f2" src="/assets/work/e11ement/social-model.jpg" alt="" loading="lazy"><img class="f3" src="/assets/work/e11ement/social-safeskin.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+ creator batches</span></div>
           <div class="ecw-fmt"><i>UGC</i><i>Organic Social</i><i>Lo-Fi</i></div>
           <div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; BOF</div>
@@ -4009,14 +3998,11 @@ section.hero-cover .hero-bg {
           <div class="ecw-persona-tag">Persona 04</div>
           <h3>The Skin Struggler</h3>
           <p class="q">"Eczema cream is goopy, drippy, and sticky."</p>
-          <div class="hook-lbl">The Hook</div>
-          <p class="hook">The eczema solution that isn't.</p>
           <div class="ecw-fan"><img class="f1" src="/assets/work/e11ement/static-feature-2.jpg" alt="" loading="lazy"><video class="f2" src="/assets/work/e11ement/loop-taylor.mp4" muted loop playsinline></video><img class="f3" src="/assets/work/e11ement/static-feature-3.jpg" alt="" loading="lazy"><span class="ecw-fan-badge">+ creator batches</span></div>
           <div class="ecw-fmt"><i>Static</i><i>UGC</i><i>Before/After</i></div>
           <div class="ecw-fun"><b>TOF</b> &middot; <b>MOF</b> &middot; <b>BOF</b></div>
         </div>
       </div>
-      <p class="ecw-personas-foot">Plus Moms, Maskers and Handwashers, students, and fitness. Every persona got its own creators, briefs, and monthly batches.</p>
     </div>
   </section>
 
@@ -4053,9 +4039,8 @@ section.hero-cover .hero-bg {
     <div class="sec-inner">
       <div class="sec-head rv">
         <div class="section-lbl">The Website</div>
-        <h2 class="sec-title">From <span class="sem">this</span>, to <span class="sem">this</span>.</h2>
+        <h2 class="sec-title">From <span class="sem">old</span> to <span class="sem">new</span>.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">Step one was the store. These are the real pages, scrolling themselves: the template site we inherited, and the conversion machine that replaced it.</p>
       <div class="ecw-pages-grid">
         <div class="ecw-browser rv">
           <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement.ca &middot; before</div></div>
@@ -4094,11 +4079,7 @@ section.hero-cover .hero-bg {
           <div class="content-block"><h3>03. The content library</h3><div><p style="color:#C7C5C8">One production day, twelve concepts, a library of authority content reused across ads, the website, social, and four PR features. Credibility, manufactured properly.</p></div></div>
         </div>
         <div class="e11-artifacts">
-          <div class="ecw-browser rv" style="margin-bottom:0">
-            <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">walmart.ca &middot; e11ement</div></div>
-            <img src="/assets/work/e11ement/walmart-launch.jpg" alt="e11ement live on Walmart Canada" style="width:100%;display:block">
-          </div>
-          <div class="ecw-shot rv" style="max-width:300px;align-self:center"><video src="/assets/work/e11ement/loop-renita.mp4" muted loop playsinline style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block"></video><div class="ecw-shot-lbl"><span>Dr. Renita &middot; Ambassador Ad</span><span>Meta</span></div></div>
+<div class="ecw-shot rv" style="max-width:300px;align-self:center"><video src="/assets/work/e11ement/loop-renita.mp4" muted loop playsinline style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block"></video><div class="ecw-shot-lbl"><span>Dr. Renita &middot; Ambassador Ad</span><span>Meta</span></div></div>
         </div>
       </div>
     </div>
@@ -4113,39 +4094,13 @@ section.hero-cover .hero-bg {
       <div class="ecw-search-grid">
         <div>
           <div class="content-block" style="border-top:none;padding-top:0"><h3>01. Conquesting pages</h3><div><p>Comparison pages targeting the big competitors, so when shoppers searched for them, e11ement showed up with receipts. Organic traffic and paid conquesting from the same asset.</p></div></div>
-          <div class="content-block"><h3>02. Full-funnel Google</h3><div><p>Search, display, and shopping, all running against the same scoreboard, with feeds optimized and creative matched to intent.</p></div></div>
-          <div class="content-block"><h3>03. The pivot</h3><div><p>We started optimizing for ROAS. Then the data spoke: average cart under $50. So we pivoted to a volume strategy and scaled efficiently instead of expensively. The plan serves the math, not the other way around.</p></div></div>
         </div>
         <div class="e11-artifacts">
           <div class="ecw-browser rv" style="margin-bottom:0">
             <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">e11ement.ca &middot; vs. Tower 28</div></div>
             <div class="e11-scroll"><img src="/assets/work/e11ement/seo-comparison.jpg" alt="e11ement vs Tower 28 comparison page"></div>
           </div>
-          <div class="e11-adrow">
-            <div class="ecw-shot rv"><img src="/assets/work/e11ement/search-ad.jpg" alt="Google search ad" style="width:100%;border-radius:8px;display:block"><div class="ecw-shot-lbl"><span>Search</span><span>Google</span></div></div>
-            <div class="ecw-shot rv"><img src="/assets/work/e11ement/display-ad.jpg" alt="Display ad" style="width:100%;border-radius:8px;display:block"><div class="ecw-shot-lbl"><span>Display</span><span>Google</span></div></div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="sec-head rv">
-      <div class="section-lbl">The Amazon</div>
-      <h2 class="sec-title">Same playbook, <span class="sem">Amazon's</span> rules.</h2>
-    </div>
-    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">A full storefront and product page overhaul: stronger imagery, clearer messaging, more social proof. It didn't just look better. It converted better.</p>
-    <div class="ecw-pages-grid">
-      <div class="ecw-browser rv">
-        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">amazon.ca &middot; storefront design</div></div>
-        <div class="e11-scroll short"><span class="e11-tag">Rebrand V2</span><img src="/assets/work/e11ement/amazon-rebrand.jpg" alt="Amazon storefront rebrand design"></div>
-        <div class="ecw-browser-foot"><span class="flbl">Storefront Design &middot; Built To Convert</span></div>
-      </div>
-      <div class="ecw-browser rv">
-        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">amazon.ca &middot; e11ement store</div></div>
-        <div class="e11-scroll"><span class="e11-tag after">Live</span><img src="/assets/work/e11ement/amazon-after.jpg" alt="Live Amazon storefront"></div>
-        <div class="ecw-browser-foot"><span class="flbl">Live Storefront &middot; Dr. Renita Front And Center</span></div>
       </div>
     </div>
   </section>
