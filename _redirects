@@ -6,6 +6,10 @@
 /team/  /about/  301
 /our-process/  /about/  301
 
+# --- Stub pages (HTML meta-refresh stubs kept as fallback for hosts without redirect support) ---
+/services/google-ads/  /google-ads/  301
+/industries/healthcare/  /healthcare/  301
+
 # NOTE: the blog stays at /blog/ (hub) and /blog/<slug>/ (all 214 posts). The redesigned
 #       'Insights' hub should be served at /blog/, or 301 /insights/ -> /blog/.
 
