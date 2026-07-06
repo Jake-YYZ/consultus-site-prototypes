@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
-<title>eCycle case study: 40% productivity boost on a custom crm | Consultus Digital</title>
+<title>eCycle Solutions case study: 40% productivity boost with a Zoho CRM build | Consultus Digital</title>
 <link rel="stylesheet" href="/assets/fonts.css">
 
 <style>
@@ -132,11 +132,13 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 56px;
+    grid-template-columns: 1.05fr 0.92fr;
+    gap: 48px;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
+  .hero-cover .cover-meta { grid-column: 1 / -1; }
   .hero-cover .cover-main { max-width: 1100px; }
   .hero-cover .eyebrow.yellow-dot {
     font-family: var(--mono);
@@ -3503,16 +3505,16 @@ section.hero-cover .hero-bg {
 .footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#141414}
 .footer-service-areas .svc-area-hq{order:3;position:relative;z-index:2;background:#141414;color:#FFEC00;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:100px;line-height:1.3}
 /* end service-areas clean */</style>
-  <meta name="description" content="Custom Zoho CRM build replaced spreadsheet-driven operations and cut manual handoffs by nearly half. Industry: Operations · CRM." />
+  <meta name="description" content="How Consultus Digital rebuilt eCycle Solutions on Zoho CRM: 19,000+ records migrated, automated sales workflows, integrated telephony and AI notes, and custom dashboards, driving a 40% productivity boost, 75% faster lead response, and 100% call tracking." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/ecycle/" />
-  <meta property="og:title" content="eCycle case study: 40% productivity boost on a custom crm | Consultus Digital" />
-  <meta property="og:description" content="Custom Zoho CRM build replaced spreadsheet-driven operations and cut manual handoffs by nearly half. Industry: Operations · CRM." />
+  <meta property="og:title" content="eCycle Solutions case study: 40% productivity boost with a Zoho CRM build | Consultus Digital" />
+  <meta property="og:description" content="How Consultus Digital rebuilt eCycle Solutions on Zoho CRM: 19,000+ records migrated, automated sales workflows, integrated telephony and AI notes, and custom dashboards, driving a 40% productivity boost, 75% faster lead response, and 100% call tracking." />
   <meta property="og:url" content="https://consultusdigital.com/case-studies/ecycle/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Consultus Digital" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="eCycle case study: 40% productivity boost on a custom crm | Consultus Digital" />
-  <meta name="twitter:description" content="Custom Zoho CRM build replaced spreadsheet-driven operations and cut manual handoffs by nearly half. Industry: Operations · CRM." />
+  <meta name="twitter:title" content="eCycle Solutions case study: 40% productivity boost with a Zoho CRM build | Consultus Digital" />
+  <meta name="twitter:description" content="How Consultus Digital rebuilt eCycle Solutions on Zoho CRM: 19,000+ records migrated, automated sales workflows, integrated telephony and AI notes, and custom dashboards, driving a 40% productivity boost, 75% faster lead response, and 100% call tracking." />
 </head>
 <body>
 <nav class="main">
@@ -3540,130 +3542,138 @@ section.hero-cover .hero-bg {
 }
 </script>
 
+  <style>
+    .ecw-brief-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+    .ecw-ns { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 56px -30px rgba(20,20,20,0.35); position: sticky; top: 100px; }
+    .ecw-ns-head { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 12px 18px; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .ecw-ns-body { padding: 20px; }
+    .ecw-ns-foot { padding: 0 20px 18px; }
+    .ecw-ns-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .ecw-ns-chips i { font-style: normal; font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 11px; border-radius: 100px; border: 1px solid rgba(20,20,20,0.18); color: #2A2A2A; }
+    .ecw-goal-row { padding: 14px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+    .ecw-goal-row:last-child { border-bottom: none; }
+    .ecw-goal-row b { display: block; font-family: var(--wide); font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: #1A40C7; margin-bottom: 6px; }
+    .ecw-goal-row span { display: block; font-size: 14px; line-height: 1.5; color: #2A2A2A; }
+    .bks-num { font-family: var(--serif); font-weight: 300; font-size: clamp(90px, 14vw, 200px); line-height: 0.92; letter-spacing: -0.045em; color: #FFEC00; }
+    .bks-num small { font-size: 0.4em; letter-spacing: -0.01em; }
+    .ecy-tech { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; align-items: center; margin-top: 30px; }
+    .ecy-tech .chip { display: inline-flex; align-items: center; justify-content: center; background: #fff; border: 1px solid var(--bone-border, #E1DCD1); border-radius: 14px; padding: 18px 30px; box-shadow: 0 12px 32px -20px rgba(20,20,20,0.3); }
+    .ecy-tech .chip img { height: 30px; width: auto; display: block; }
+    .ecy-rgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; max-width: 1040px; margin: 48px auto 0; }
+    .ecy-rcard { text-align: center; padding: 22px 12px; border: 1px solid rgba(250,248,243,0.14); border-radius: 10px; }
+    .ecy-rcard b { display: block; font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1; letter-spacing: -0.02em; color: #FFEC00; }
+    .ecy-rcard span { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #C7C5C8; margin-top: 10px; line-height: 1.45; }
+    .tab-collage { position: relative; height: 560px; }
+    .tab-cc { position: absolute; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.08); border-radius: 14px; padding: 8px; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.45); }
+    .tab-cc img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 9px; display: block; }
+    .ecy-c-recycle { right: 4px; top: 0; width: 172px; z-index: 2; }
+    .tab-lap { position: absolute; right: -14px; bottom: -18px; width: 320px; z-index: 5; padding: 0; border: 8px solid #141414; border-radius: 12px; background: #fff; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.5); }
+    .tab-lap .tab-screen { aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; }
+    .tab-lap .tab-screen img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; }
+    .tab-lap::after { content: ''; position: absolute; left: -8%; right: -8%; bottom: -20px; height: 13px; background: linear-gradient(180deg,#313131,#161616); border-radius: 0 0 10px 10px; }
+    .ecy-crm { position: absolute; left: 0; top: 118px; width: 250px; z-index: 4; background: #fff; border: 1px solid rgba(20,20,20,0.1); border-radius: 12px; overflow: hidden; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.5); }
+    .ecy-crm-bar { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 9px 13px; border-bottom: 1px solid rgba(20,20,20,0.08); display: flex; align-items: center; gap: 7px; }
+    .ecy-dot { width: 7px; height: 7px; border-radius: 50%; background: #2D8F5F; display: inline-block; }
+    .ecy-crm-body { padding: 11px 13px 13px; }
+    .ecy-crm-row { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+    .ecy-crm-row span { color: #6A686B; font-family: var(--mono); font-size: 8px; letter-spacing: 0.06em; text-transform: uppercase; align-self: center; }
+    .ecy-crm-row b { color: #141414; font-weight: 600; font-size: 11px; text-align: right; }
+    .ecy-crm-stages { display: flex; gap: 5px; margin-top: 11px; }
+    .ecy-crm-stages i { font-style: normal; font-family: var(--mono); font-size: 8px; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 8px; border-radius: 100px; background: rgba(20,20,20,0.06); color: #6A686B; }
+    .ecy-crm-stages i.won { background: #FFEC00; color: #141414; font-weight: 700; }
+    .ecy-ill { position: absolute; background: #fff; border: 1px solid rgba(20,20,20,0.08); border-radius: 14px; padding: 10px; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.42); }
+    .ecy-ill img { width: 100%; display: block; border-radius: 8px; }
+    .ecy-ill-1 { left: 10px; top: 0; width: 338px; z-index: 2; }
+    .ecy-ill-2 { right: 0; top: 150px; width: 300px; z-index: 4; }
+    .ecy-ill-3 { left: 0; top: 296px; width: 338px; z-index: 3; }
+    @media (max-width: 900px) { .hero-cover .cover-grid { grid-template-columns: 1fr !important; } .tab-collage { display: none; } .ecw-brief-grid { grid-template-columns: 1fr; gap: 32px; } .ecw-ns { position: static; } .ecy-rgrid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
   <section class="hero-cover">
     <div class="ghost-monogram">C</div>
     <div class="cover-grid">
       <div class="cover-main">
-        <div class="cobrand-mark" style="display:flex;align-items:center;gap:18px;margin-bottom:32px;height:36px">
-          <span class="cobrand-consultus" aria-label="Consultus" style="display:inline-flex;align-items:center;color:#141414;height:36px"><svg viewBox="595 305 175 140" width="56" height="44.8" fill="currentColor" aria-hidden="true" preserveAspectRatio="xMidYMid meet" style="display:block"><path d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span>
-          <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(20,20,20,0.32);line-height:1;display:inline-flex;align-items:center;height:36px">&times;</span>
-          <span class="cobrand-client" data-media-slug="case-ecycle-client-logo" data-media-alt="eCycle logo" style="display:inline-flex;align-items:center;height:36px;font-family:var(--sans);font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#141414">ecycle</span>
-        </div>
-        <div class="eyebrow yellow-dot fade-in delay-1"><span>Operations · Custom CRM</span></div>
-        <h1 class="display fade-in delay-2">A custom CRM lifted eCycle productivity <span class="sem">40%</span>.</h1>
-        <p class="lede fade-in delay-3" style="max-width:680px">Custom Zoho CRM build replaced spreadsheet-driven operations and cut manual handoffs by nearly half.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Zoho CRM</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Workflow Design</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Integration</span></div>
+        <div class="eyebrow yellow-dot fade-in delay-1"><span>Case Study &middot; CRM &amp; Rev Ops</span></div>
+        <h1 class="display fade-in delay-2">How a CRM rebuild drove a <span class="sem">40% productivity boost</span>.</h1>
+        <p class="lede fade-in delay-3" style="max-width:680px">By consolidating their tech stack, automating workflows, and centralizing data, we freed the eCycle Solutions team from data entry to focus on selling.</p>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Zoho CRM Implementation</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Sales Enablement</span></div>
+      </div>
+      <div class="tab-collage" aria-hidden="true">
+        <div class="ecy-ill ecy-ill-1"><img src="/assets/work/ecycle/connect-records-across-your-process.svg" alt="" loading="lazy"></div>
+        <div class="ecy-ill ecy-ill-2"><img src="/assets/work/ecycle/find-your-diamonds-in-the-rough.svg" alt="" loading="lazy"></div>
+        <div class="ecy-ill ecy-ill-3"><img src="/assets/work/ecycle/follow-ups-made-easy.svg" alt="" loading="lazy"></div>
       </div>
       <div class="cover-meta">
-        <div class="cell"><span class="mono">Client</span><strong>eCycle</strong></div>
-        <div class="cell"><span class="mono">Industry</span><strong>Operations · CRM</strong></div>
-        <div class="cell"><span class="mono">Result</span><strong>40% productivity boost on a custom crm</strong></div>
-        <div class="cell"><span class="mono">Engagement</span><strong>Active &middot; ongoing</strong></div>
+        <div class="cell"><span class="mono">Client</span><strong>eCycle Solutions</strong></div>
+        <div class="cell"><span class="mono">Industry</span><strong>Electronics Recycling &middot; ITAD</strong></div>
+        <div class="cell"><span class="mono">Result</span><strong>40% productivity boost</strong></div>
+        <div class="cell"><span class="mono">Engagement</span><strong>Zoho CRM implementation</strong></div>
       </div>
     </div>
   </section>
-  <!-- ========== FOUNDER WALKTHROUGH VIDEO ========== -->
-  <section class="sec walkthrough" style="background:var(--bone, #F5F2EC);padding-top:72px;padding-bottom:96px;border-top:1px solid rgba(20,20,20,0.06);border-bottom:1px solid rgba(20,20,20,0.06)">
-    <div class="sec-inner" style="max-width:1240px">
-      <div class="walkthrough-grid" style="display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start">
-        <div class="walkthrough-media">
-          <div class="eyebrow yellow-dot" style="margin-bottom:18px"><span>The Walkthrough &middot; 4:12</span></div>
-          <h2 class="sec-title" style="font-size:clamp(36px,4.4vw,56px);margin-bottom:14px;line-height:1.04;letter-spacing:-0.02em"><em>How</em> we did it.</h2>
-          <p class="lede" style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:580px;margin-bottom:32px">The story behind a 40% productivity lift, told in four minutes. The spreadsheet workflow we replaced, the integrations we wired, the hours we got back.</p>
-
-          <div class="walkthrough-player" data-media-slug="case-ecycle-walkthrough-video" style="position:relative;aspect-ratio:16/9;width:100%;background:linear-gradient(135deg,#0A0A0A 0%,#1A1A20 60%,#0A0A0A 100%);border-radius:6px;overflow:hidden;cursor:pointer;box-shadow:0 24px 60px -20px rgba(20,20,20,0.35)">
-            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 30% 35%, rgba(26,64,199,0.16) 0%, transparent 45%), radial-gradient(circle at 75% 70%, rgba(255,236,0,0.05) 0%, transparent 35%);pointer-events:none"></div>
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:40px;color:#FAF8F3">
-              <button class="wt-play-btn" type="button" aria-label="Play walkthrough" style="position:relative;width:88px;height:88px;border-radius:50%;background:#FFEC00;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.2s ease;box-shadow:0 8px 24px -6px rgba(0,0,0,0.35)">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="#141414" style="margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,243,0.75)">Drop walkthrough video</div>
-              <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,243,0.4)">Slug: case-ecycle-walkthrough-video</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="walkthrough-rail">
-          <div style="font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#5A5A5A;margin-bottom:14px">The Story Behind the Number</div>
-          <div data-walkthrough-story style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A"><p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:14px"><strong style="color:#141414">Before.</strong> A spreadsheet-driven inventory and dispatch process. Drivers were calling the office to confirm pickups. Reporting took two days a month to assemble.</p>
-          <p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:14px"><strong style="color:#141414">After.</strong> A custom Zoho-based CRM with mobile dispatch, real-time inventory, and one-click reporting. 40% productivity lift, no spreadsheets.</p>
-          <p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:24px"><strong style="color:#141414">Why this matters.</strong> No agency makes the work. We made the work, and we&rsquo;re showing you exactly how.</p></div>
-
-          <div style="border-top:1px solid rgba(20,20,20,0.12);padding-top:22px;margin-top:24px">
-            <div style="font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#5A5A5A;margin-bottom:14px">Cuts for Social</div>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-              <div data-media-slug="case-ecycle-walkthrough-cut-vertical" style="aspect-ratio:9/16;background:linear-gradient(135deg,#1A40C7 0%,#0E2B7E 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">9:16 &middot; Reels</div>
-              </div>
-              <div data-media-slug="case-ecycle-walkthrough-cut-square" style="aspect-ratio:1/1;background:linear-gradient(135deg,#0A0A0A 0%,#2A2A2A 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">1:1 &middot; Feed</div>
-              </div>
-              <div data-media-slug="case-ecycle-walkthrough-cut-landscape" style="aspect-ratio:16/9;background:linear-gradient(135deg,#5A5A5A 0%,#1A1A20 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">16:9 &middot; Long</div>
-              </div>
-            </div>
-            <div style="margin-top:14px;font-family:var(--sans, 'Inter', sans-serif);font-size:12px;line-height:1.5;color:#5A5A5A">One walkthrough &rarr; three cuts. Long-form, Reels, square Feed. Story compounds across surfaces.</div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .walkthrough-player:hover .wt-play-btn { transform: scale(1.06); }
-    .walkthrough-player .wt-play-btn:focus-visible { outline: 3px solid #1A40C7; outline-offset: 4px; }
-    @media (max-width: 900px) {
-      .walkthrough-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-    }
-  </style>
-
-
-  <section class="sec dark-full">
-    <div class="sec-inner" style="text-align:center">
-      <div class="section-lbl dark">The Result</div>
-      <div style="font-family:var(--serif);font-weight:300;font-size:clamp(80px,12vw,180px);line-height:0.95;letter-spacing:-0.04em;color:#FFEC00;margin:32px 0 16px">40%</div>
-      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,2vw,28px);color:rgba(250,248,243,0.88);max-width:640px;margin:0 auto">Productivity boost on a custom CRM</div>
-    </div>
-  </section>
-
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Challenge</div>
-      <h2 class="sec-title">Where <span class="sem">eCycle</span> started.</h2>
+      <div class="section-lbl">The Brief</div>
+      <h2 class="sec-title">A system built on <span class="sem">friction</span>.</h2>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Context</h3>
-      <div><p>eCycle was running a growing operation through spreadsheets, email threads, and tribal knowledge. Lead handoffs got dropped, scheduling conflicts surfaced after the fact, and the leadership team had no real visibility into pipeline or capacity.</p></div>
+    <div class="ecw-brief-grid">
+      <div>
+        <div class="content-block" style="border-top:none;padding-top:0"><h3>About eCycle Solutions</h3><div><p>eCycle Solutions is a trusted provider of electronics recycling and IT asset disposition (ITAD) services, helping businesses across Canada responsibly manage their end-of-life technology.</p></div></div>
+        <div class="content-block"><h3>The Challenge</h3><div><p>Before Zoho CRM, eCycle ran on a fragmented system: disconnected tools, redundant data entry, and clunky workarounds. Poor usability meant many reps avoided the platform altogether, leaving outdated records, an unreliable pipeline, and no standardized sales process. Sales and marketing were losing 30 to 40% of their time to data clean-up and patching gaps.</p></div></div>
+      </div>
+      <div class="ecw-ns">
+        <div class="ecw-ns-head">The Goal &middot; A Single Source of Truth</div>
+        <div class="ecw-ns-body" style="padding:8px 20px 6px">
+          <div class="ecw-goal-row"><b>Centralize Everything</b><span>Every lead, call, and meeting in one place instead of scattered across tools.</span></div>
+          <div class="ecw-goal-row"><b>Automate Routine Tasks</b><span>Free the team from data entry so they can focus on selling.</span></div>
+          <div class="ecw-goal-row"><b>Reliable Insights</b><span>Performance data leadership can actually trust, in real time.</span></div>
+        </div>
+        <div class="ecw-ns-foot" style="padding-top:14px"><div class="ecw-ns-chips"><i>Migrate &#10003;</i><i>Automate &#10003;</i><i>Report &#10003;</i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="sec-inner" style="max-width:1000px;margin:0 auto;text-align:center">
+      <div class="section-lbl" style="justify-content:center">Technology Implemented</div>
+      <div class="ecy-tech"><span class="chip"><img src="/assets/work/logos/zoho-crm.svg" alt="Zoho CRM"></span><span class="chip"><img src="/assets/work/logos/zoho-phonebridge-trim.png" alt="Zoho PhoneBridge"></span><span class="chip"><img src="/assets/work/logos/fireflies-trim.png" alt="Fireflies.ai"></span></div>
     </div>
   </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
-        <div class="section-lbl">The Approach</div>
-        <h2 class="sec-title">What we <span class="sem">actually</span> did.</h2>
+        <div class="section-lbl">How We Did It</div>
+        <h2 class="sec-title">Rebuilt on <span class="sem">Zoho CRM</span>.</h2>
       </div>
-      <div class="content-block" style="border-top:none;padding-top:0"><h3>01.</h3><div><p>Mapped the full operational workflow before writing a single Zoho automation. Process design first, software second.</p></div></div>
-      <div class="content-block"><h3>02.</h3><div><p>Built a custom Zoho CRM with the schema, modules, and automations that fit eCycle's actual handoffs, not a templated implementation.</p></div></div>
-      <div class="content-block"><h3>03.</h3><div><p>Integrated with the existing tools the team already relied on so the rollout did not turn into a reset.</p></div></div>
+      <div class="content-block" style="border-top:none;padding-top:0"><h3>01. CRM Migration &amp; Data Validation</h3><div><p>We replaced the disconnected legacy system with Zoho CRM Enterprise Edition, carefully migrating and validating all 19,000+ records so the team started on clean, complete, and reliable data.</p></div></div>
+      <div class="content-block"><h3>02. Data Standardization &amp; Cleanup</h3><div><p>Clear data standards, unique record IDs to prevent duplicates, correct field mapping, and global field sets kept data consistent across the system and improved the accuracy of reports.</p></div></div>
+      <div class="content-block"><h3>03. Clear, Automated Sales Workflows</h3><div><p>One easy-to-follow workflow. Leads auto-assign to the right rep by region and service, and the system generates tasks and notifications to guide every lead through each stage.</p></div></div>
+      <div class="content-block"><h3>04. Integrated Sales &amp; Communication Tools</h3><div><p>A one-click ZoomInfo integration for instant lead enrichment, plus a built-in telephony system and an AI notetaker, so every call and meeting note is captured directly in the CRM.</p></div></div>
+      <div class="content-block"><h3>05. Custom Reporting for Visibility</h3><div><p>Custom dashboards and reports show pipeline health, completed tasks, and revenue broken down by service line, region, or individual, giving everyone real-time information.</p></div></div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">The Outcome</div>
-      <h2 class="sec-title">What <span class="sem">moved</span>.</h2>
-    </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Result</h3>
-      <div><p>Productivity lift of 40% measured against the pre-implementation baseline. Lead drops effectively eliminated. Leadership got real-time pipeline and capacity visibility for the first time.</p></div>
+  <section class="sec dark-full">
+    <div class="sec-inner" style="text-align:center">
+      <div class="section-lbl dark" style="justify-content:center">Key Results</div>
+      <div class="bks-num" style="margin:32px 0 6px">40<small>%</small></div>
+      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,2vw,26px);color:rgba(250,248,243,0.85)">Less admin work, more time selling</div>
+      <div class="ecy-rgrid">
+        <div class="ecy-rcard"><b>75%</b><span>Faster lead response</span></div>
+        <div class="ecy-rcard"><b>100%</b><span>Call tracking &amp; auditing</span></div>
+        <div class="ecy-rcard"><b>18%</b><span>More user engagement</span></div>
+        <div class="ecy-rcard"><b>Zero</b><span>Data lost between systems</span></div>
+        <div class="ecy-rcard"><b>One</b><span>Home for every meeting note</span></div>
+      </div>
     </div>
   </section>
 
-  
+  <section class="testimonial">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote">Working with their team was an exceptional experience. Their project management was seamless. They mapped our sales process thoroughly, ran a focus group for validation, and capped it off with an <span class="sem">in-person training day</span> that was instrumental for our team&rsquo;s adoption. They were true partners in our success.</p>
+    <div style="font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6A686B">Tricia Oldfield &middot; VP Marketing &amp; Sales, eCycle Solutions</div>
+  </section>
+
   <!-- ========== RELATED CASE STUDIES ========== -->
   <section class="sec rcx-section" style="background:#141414;padding-top:84px;padding-bottom:88px;max-width:none">
     <div class="sec-inner" style="max-width:1280px">
