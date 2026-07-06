@@ -2,7 +2,9 @@
 
 ## What this project is
 
-A complete static export of consultusdigital.com (downloaded from Netlify). It is a **design prototyping environment, not a production site**. Jake (President of Consultus Digital, not a developer) uses it to design campaign landing pages, interactive concepts, and page redesigns. Everything built here is a visual and behavioral spec that his team will rebuild in WordPress. Explain technical things in plain English and handle all technical steps for him.
+A complete static export of consultusdigital.com (downloaded from Netlify). Jake (President of Consultus Digital, not a developer) uses it to design campaign landing pages, interactive concepts, and page redesigns. Explain technical things in plain English and handle all technical steps for him.
+
+**Production plan (decided July 2026): the site ships as this static HTML, NOT a WordPress rebuild.** Only the blog will live on WordPress. Edits made here are production-bound, not throwaway spec: SEO fixes, redirects, metadata, and content changes in these files are the real thing. Anything that needs a real server (true 301 redirects, per-page lastmod, etc.) must be solved with the static host's tooling (e.g. `_redirects` on Netlify) rather than assumed away.
 
 ## How the site is structured
 
