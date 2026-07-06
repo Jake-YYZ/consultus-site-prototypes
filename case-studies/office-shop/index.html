@@ -132,12 +132,14 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 56px;
+    grid-template-columns: 1.05fr 0.92fr;
+    gap: 48px;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
   .hero-cover .cover-main { max-width: 1100px; }
+  .hero-cover .cover-meta { grid-column: 1 / -1; }
   .hero-cover .eyebrow.yellow-dot {
     font-family: var(--mono);
     font-size: 11px;
@@ -162,8 +164,8 @@
   .hero-cover h1.display {
     font-family: var(--serif) !important;
     font-weight: 400 !important;
-    font-size: clamp(48px, 6.2vw, 88px);
-    line-height: 0.98;
+    font-size: clamp(44px, 5vw, 68px);
+    line-height: 1.0;
     letter-spacing: -0.025em;
     color: #141414 !important;
     -webkit-text-fill-color: #141414 !important;
@@ -3503,16 +3505,16 @@ section.hero-cover .hero-bg {
 .footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#141414}
 .footer-service-areas .svc-area-hq{order:3;position:relative;z-index:2;background:#141414;color:#FFEC00;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:100px;line-height:1.3}
 /* end service-areas clean */</style>
-  <meta name="description" content="Multi-location SEO program landed page-one rankings in thirteen target markets simultaneously, without cannibalization. Industry: Multi-Location Retail." />
+  <meta name="description" content="An SEO program built on city location pages, backlinks, and technical fixes grew search impressions 114% and organic clicks 83%, with page-one rankings in 13 Canadian cities. Industry: Office Furniture Retail." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/office-shop/" />
   <meta property="og:title" content="The Office Shop case study: 13 cities ranking on page one of google | Consultus Digital" />
-  <meta property="og:description" content="Multi-location SEO program landed page-one rankings in thirteen target markets simultaneously, without cannibalization. Industry: Multi-Location Retail." />
+  <meta property="og:description" content="An SEO program built on city location pages, backlinks, and technical fixes grew search impressions 114% and organic clicks 83%, with page-one rankings in 13 Canadian cities. Industry: Office Furniture Retail." />
   <meta property="og:url" content="https://consultusdigital.com/case-studies/office-shop/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Consultus Digital" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Office Shop case study: 13 cities ranking on page one of google | Consultus Digital" />
-  <meta name="twitter:description" content="Multi-location SEO program landed page-one rankings in thirteen target markets simultaneously, without cannibalization. Industry: Multi-Location Retail." />
+  <meta name="twitter:description" content="An SEO program built on city location pages, backlinks, and technical fixes grew search impressions 114% and organic clicks 83%, with page-one rankings in 13 Canadian cities. Industry: Office Furniture Retail." />
 </head>
 <body>
 <nav class="main">
@@ -3532,7 +3534,7 @@ section.hero-cover .hero-bg {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "The Office Shop case study",
-  "about": "Multi-Location Retail",
+  "about": "Office Furniture Retail",
   "author": {
     "@type": "Organization",
     "name": "Consultus Digital"
@@ -3540,137 +3542,191 @@ section.hero-cover .hero-bg {
 }
 </script>
 
+  <style>
+    .os-brief-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+    .os-ns { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 56px -30px rgba(20,20,20,0.35); position: sticky; top: 100px; }
+    .os-ns-head { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 12px 18px; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .os-goal-row { padding: 14px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+    .os-goal-row:last-child { border-bottom: none; }
+    .os-goal-row b { display: block; font-family: var(--wide); font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: #1A40C7; margin-bottom: 6px; }
+    .os-goal-row span { display: block; font-size: 14px; line-height: 1.5; color: #2A2A2A; }
+    .os-ns-foot { padding: 0 20px 18px; }
+    .os-ns-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .os-ns-chips i { font-style: normal; font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 11px; border-radius: 100px; border: 1px solid rgba(20,20,20,0.18); color: #2A2A2A; }
+    .bks-num { font-family: var(--serif); font-weight: 300; font-size: clamp(90px, 14vw, 200px); line-height: 0.92; letter-spacing: -0.045em; color: #FFEC00; }
+    .bks-num small { font-size: 0.4em; letter-spacing: -0.01em; }
+    .os-rgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 780px; margin: 48px auto 0; }
+    .os-rcard { text-align: center; padding: 26px 14px; border: 1px solid rgba(250,248,243,0.14); border-radius: 10px; }
+    .os-rcard b { display: block; font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -0.02em; color: #FFEC00; }
+    .os-rcard span { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #C7C5C8; margin-top: 12px; line-height: 1.45; }
+    /* Hero metrics panel */
+    .os-collage { position: relative; height: 470px; }
+    .os-panel { position: absolute; left: 0; top: 74px; width: 316px; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 66px -28px rgba(20,20,20,0.45); z-index: 3; }
+    .os-panel-head { display: flex; align-items: center; justify-content: space-between; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 11px 16px; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .os-panel-head .os-live { display: inline-flex; align-items: center; gap: 6px; color: #2D8F5F; }
+    .os-live::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #2D8F5F; display: inline-block; }
+    .os-panel-body { padding: 6px 16px 14px; }
+    .os-prow { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+    .os-prow:last-child { border-bottom: none; }
+    .os-prow .os-plabel { font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: #6A686B; }
+    .os-prow .os-pval { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1; letter-spacing: -0.02em; color: #141414; }
+    .os-prow .os-pdelta { font-family: var(--mono); font-size: 10px; font-weight: 500; color: #2D8F5F; margin-top: 4px; }
+    .os-prow .os-right { text-align: right; }
+    /* Floating stat chip */
+    .os-chip { position: absolute; right: 0; bottom: 6px; width: 190px; background: #141414; border-radius: 14px; padding: 22px 24px; box-shadow: 0 30px 66px -28px rgba(20,20,20,0.55); z-index: 4; }
+    .os-chip .os-chip-num { font-family: var(--serif); font-weight: 300; font-size: 56px; line-height: 0.9; letter-spacing: -0.03em; color: #FFEC00; }
+    .os-chip .os-chip-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #C7C5C8; margin-top: 10px; line-height: 1.5; }
+    /* Mini bar-chart card */
+    .os-bars { position: absolute; right: 0; bottom: 0; width: 236px; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; padding: 18px 20px 20px; box-shadow: 0 30px 66px -28px rgba(20,20,20,0.45); z-index: 2; }
+    .os-bars .os-bars-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; margin-bottom: 16px; }
+    .os-bars .os-bar-track { display: flex; align-items: flex-end; gap: 10px; height: 96px; }
+    .os-bars .os-bar { flex: 1; border-radius: 4px 4px 0 0; background: #E1DCD1; }
+    .os-bars .os-bar.b1 { height: 30%; } .os-bars .os-bar.b2 { height: 44%; } .os-bars .os-bar.b3 { height: 58%; } .os-bars .os-bar.b4 { height: 76%; }
+    .os-bars .os-bar.b5 { height: 100%; background: #1A40C7; }
+    .os-bars .os-bars-foot { font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: #141414; margin-top: 14px; }
+    @media (max-width: 900px) { .hero-cover .cover-grid { grid-template-columns: 1fr !important; } .os-collage { display: none; } .os-brief-grid { grid-template-columns: 1fr; gap: 32px; } .os-ns { position: static; } .os-rgrid { grid-template-columns: 1fr; } }
+  </style>
   <section class="hero-cover">
     <div class="ghost-monogram">C</div>
     <div class="cover-grid">
       <div class="cover-main">
-        <div class="cobrand-mark" style="display:flex;align-items:center;gap:18px;margin-bottom:32px;height:36px">
-          <span class="cobrand-consultus" aria-label="Consultus" style="display:inline-flex;align-items:center;color:#141414;height:36px"><svg viewBox="595 305 175 140" width="56" height="44.8" fill="currentColor" aria-hidden="true" preserveAspectRatio="xMidYMid meet" style="display:block"><path d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span>
-          <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(20,20,20,0.32);line-height:1;display:inline-flex;align-items:center;height:36px">&times;</span>
-          <span class="cobrand-client" data-media-slug="case-office-shop-client-logo" data-media-alt="The Office Shop logo" style="display:inline-flex;align-items:center;height:36px;font-family:var(--sans);font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#141414">the office shop</span>
+        <div class="eyebrow yellow-dot fade-in delay-1"><span>Case Study &middot; B2B Retail &middot; SEO</span></div>
+        <h1 class="display fade-in delay-2">How SEO put The Office Shop on <span class="sem">page one in 13 cities</span>.</h1>
+        <p class="lede fade-in delay-3" style="max-width:680px">The Office Shop, a Canadian office furniture supplier of 25-plus years, partnered with Consultus Digital to reach buyers searching in new markets. An SEO program built on location pages and technical fixes grew impressions 114% and organic clicks 83%.</p>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">SEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Local SEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Web Development</span></div>
+      </div>
+      <div class="os-collage" aria-hidden="true">
+        <div class="os-chip">
+          <div class="os-chip-num">13</div>
+          <div class="os-chip-lbl">Cities on page one</div>
         </div>
-        <div class="eyebrow yellow-dot fade-in delay-1"><span>Retail · Multi-Location SEO</span></div>
-        <h1 class="display fade-in delay-2">The Office Shop on page one in <span class="sem">13 cities</span>.</h1>
-        <p class="lede fade-in delay-3" style="max-width:680px">Multi-location SEO program landed page-one rankings in thirteen target markets simultaneously, without cannibalization.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Multi-Location SEO</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Local Schema</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Content Strategy</span></div>
+        <div class="os-search-card" id="osSearchCard">
+          <div class="os-gbar">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#6A686B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+            <span class="os-q">Office furniture in <span class="os-city" id="osCity">Toronto</span></span><span class="os-cursor"></span>
+          </div>
+          <div class="os-serp">
+            <div class="os-serp-item os-serp-top">
+              <div class="os-serp-badge">#1</div>
+              <div class="os-serp-url"><span class="os-fav">O</span><span>theofficeshop.ca &rsaquo; <span class="os-city2" id="osCity2">toronto</span></span></div>
+              <div class="os-serp-title">Office Furniture in <span class="os-city3" id="osCity3">Toronto</span> | The Office Shop</div>
+              <div class="os-serp-snippet">Independently owned Canadian office furniture supplier for 25+ years. Desks, chairs, and full office fit-outs, delivered locally.</div>
+            </div>
+            <div class="os-serp-item os-dim">
+              <div class="os-serp-url"><span class="os-fav os-fav-g"></span><span>officefurniture-competitor.ca</span></div>
+              <div class="os-serp-title">Commercial Office Furniture &amp; Supplies</div>
+              <div class="os-serp-snippet">Browse our catalogue of office desks and seating.</div>
+            </div>
+            <div class="os-serp-item os-dim">
+              <div class="os-serp-url"><span class="os-fav os-fav-g"></span><span>workspace-outfitters.ca</span></div>
+              <div class="os-serp-title">Office Chairs, Desks &amp; Workstations</div>
+              <div class="os-serp-snippet">Everything you need to furnish your workspace.</div>
+            </div>
+          </div>
+        </div>
+        <style>
+          .os-search-card { position: absolute; left: 0; top: 58px; width: 372px; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 16px; padding: 22px 20px 20px; box-shadow: 0 30px 66px -28px rgba(20,20,20,0.45); z-index: 3; }
+          .os-search-card .os-gbar { display: flex; align-items: center; gap: 12px; border: 1px solid #E1DCD1; border-radius: 100px; padding: 12px 18px; box-shadow: 0 1px 8px rgba(20,20,20,0.06); }
+          .os-search-card .os-q { font-family: var(--sans); font-size: 15px; color: #141414; white-space: nowrap; letter-spacing: -0.005em; }
+          .os-search-card .os-city { color: #1A40C7; font-weight: 600; }
+          .os-search-card .os-cursor { width: 1.5px; height: 18px; background: #1A40C7; margin-left: -6px; animation: osBlink 1.05s steps(1) infinite; }
+          @keyframes osBlink { 50% { opacity: 0; } }
+          .os-search-card .os-serp { margin-top: 16px; }
+          .os-search-card .os-serp-item { position: relative; padding: 12px 0; border-bottom: 1px dashed rgba(20,20,20,0.08); }
+          .os-search-card .os-serp-item:last-child { border-bottom: none; padding-bottom: 2px; }
+          .os-search-card .os-serp-badge { position: absolute; right: 0; top: 12px; background: #FFEC00; color: #141414; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.02em; padding: 3px 10px; border-radius: 100px; }
+          .os-search-card .os-serp-url { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #2A2A2A; margin-bottom: 4px; }
+          .os-search-card .os-fav { width: 17px; height: 17px; border-radius: 50%; background: #141414; color: #FFEC00; font-family: var(--wide); font-size: 9px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+          .os-search-card .os-fav-g { background: #C7C5C8; }
+          .os-search-card .os-serp-title { font-size: 16px; line-height: 1.25; color: #1A40C7; letter-spacing: -0.01em; margin-bottom: 4px; }
+          .os-search-card .os-serp-snippet { font-size: 12px; line-height: 1.5; color: #6A686B; max-width: 320px; }
+          .os-search-card .os-dim { opacity: 0.4; }
+          .os-search-card .os-dim .os-serp-title { color: #2A2A2A; font-size: 14px; }
+          .os-search-card .os-city, .os-search-card .os-serp-top .os-serp-url, .os-search-card .os-serp-top .os-serp-title { transition: opacity 0.25s ease; }
+          .os-search-card.os-swap .os-city, .os-search-card.os-swap .os-serp-top .os-serp-url, .os-search-card.os-swap .os-serp-top .os-serp-title { opacity: 0.12; }
+        </style>
+        <script>
+          (function () {
+            var cities = ["Toronto", "Ottawa", "London", "Oakville", "Vaughan", "Kitchener"];
+            var i = 0;
+            var card = document.getElementById('osSearchCard');
+            var c1 = document.getElementById('osCity'), c2 = document.getElementById('osCity2'), c3 = document.getElementById('osCity3');
+            if (!card || !c1) return;
+            setInterval(function () {
+              i = (i + 1) % cities.length;
+              card.classList.add('os-swap');
+              setTimeout(function () {
+                c1.textContent = cities[i];
+                if (c2) c2.textContent = cities[i].toLowerCase();
+                if (c3) c3.textContent = cities[i];
+                card.classList.remove('os-swap');
+              }, 250);
+            }, 2400);
+          })();
+        </script>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>The Office Shop</strong></div>
-        <div class="cell"><span class="mono">Industry</span><strong>Multi-Location Retail</strong></div>
-        <div class="cell"><span class="mono">Result</span><strong>13 cities ranking on page one of google</strong></div>
-        <div class="cell"><span class="mono">Engagement</span><strong>Active &middot; ongoing</strong></div>
+        <div class="cell"><span class="mono">Industry</span><strong>Office Furniture &middot; Retail</strong></div>
+        <div class="cell"><span class="mono">Result</span><strong>Page one in 13 Canadian cities</strong></div>
+        <div class="cell"><span class="mono">Engagement</span><strong>SEO &amp; Web Development</strong></div>
       </div>
-    </div>
-  </section>
-  <!-- ========== FOUNDER WALKTHROUGH VIDEO ========== -->
-  <section class="sec walkthrough" style="background:var(--bone, #F5F2EC);padding-top:72px;padding-bottom:96px;border-top:1px solid rgba(20,20,20,0.06);border-bottom:1px solid rgba(20,20,20,0.06)">
-    <div class="sec-inner" style="max-width:1240px">
-      <div class="walkthrough-grid" style="display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start">
-        <div class="walkthrough-media">
-          <div class="eyebrow yellow-dot" style="margin-bottom:18px"><span>The Walkthrough &middot; 4:12</span></div>
-          <h2 class="sec-title" style="font-size:clamp(36px,4.4vw,56px);margin-bottom:14px;line-height:1.04;letter-spacing:-0.02em"><em>How</em> we did it.</h2>
-          <p class="lede" style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:580px;margin-bottom:32px">The story behind 13 cities ranking on page one, told in four minutes. How we found the keywords, what content we built, what compounded.</p>
-
-          <div class="walkthrough-player" data-media-slug="case-office-shop-walkthrough-video" style="position:relative;aspect-ratio:16/9;width:100%;background:linear-gradient(135deg,#0A0A0A 0%,#1A1A20 60%,#0A0A0A 100%);border-radius:6px;overflow:hidden;cursor:pointer;box-shadow:0 24px 60px -20px rgba(20,20,20,0.35)">
-            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 30% 35%, rgba(26,64,199,0.16) 0%, transparent 45%), radial-gradient(circle at 75% 70%, rgba(255,236,0,0.05) 0%, transparent 35%);pointer-events:none"></div>
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:40px;color:#FAF8F3">
-              <button class="wt-play-btn" type="button" aria-label="Play walkthrough" style="position:relative;width:88px;height:88px;border-radius:50%;background:#FFEC00;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.2s ease;box-shadow:0 8px 24px -6px rgba(0,0,0,0.35)">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="#141414" style="margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,243,0.75)">Drop walkthrough video</div>
-              <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,243,0.4)">Slug: case-office-shop-walkthrough-video</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="walkthrough-rail">
-          <div style="font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#5A5A5A;margin-bottom:14px">The Story Behind the Number</div>
-          <div data-walkthrough-story style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A"><p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:14px"><strong style="color:#141414">Before.</strong> A multi-location office furniture retailer ranking inconsistently across 30+ city queries.</p>
-          <p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:14px"><strong style="color:#141414">After.</strong> A content + technical SEO program with city-page architecture. 13 priority cities now rank on page one of Google for high-intent terms.</p>
-          <p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:24px"><strong style="color:#141414">Why this matters.</strong> No agency makes the work. We made the work, and we&rsquo;re showing you exactly how.</p></div>
-
-          <div style="border-top:1px solid rgba(20,20,20,0.12);padding-top:22px;margin-top:24px">
-            <div style="font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#5A5A5A;margin-bottom:14px">Cuts for Social</div>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-              <div data-media-slug="case-office-shop-walkthrough-cut-vertical" style="aspect-ratio:9/16;background:linear-gradient(135deg,#1A40C7 0%,#0E2B7E 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">9:16 &middot; Reels</div>
-              </div>
-              <div data-media-slug="case-office-shop-walkthrough-cut-square" style="aspect-ratio:1/1;background:linear-gradient(135deg,#0A0A0A 0%,#2A2A2A 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">1:1 &middot; Feed</div>
-              </div>
-              <div data-media-slug="case-office-shop-walkthrough-cut-landscape" style="aspect-ratio:16/9;background:linear-gradient(135deg,#5A5A5A 0%,#1A1A20 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">16:9 &middot; Long</div>
-              </div>
-            </div>
-            <div style="margin-top:14px;font-family:var(--sans, 'Inter', sans-serif);font-size:12px;line-height:1.5;color:#5A5A5A">One walkthrough &rarr; three cuts. Long-form, Reels, square Feed. Story compounds across surfaces.</div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .walkthrough-player:hover .wt-play-btn { transform: scale(1.06); }
-    .walkthrough-player .wt-play-btn:focus-visible { outline: 3px solid #1A40C7; outline-offset: 4px; }
-    @media (max-width: 900px) {
-      .walkthrough-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-    }
-  </style>
-
-
-  <section class="sec dark-full">
-    <div class="sec-inner" style="text-align:center">
-      <div class="section-lbl dark">The Result</div>
-      <div style="font-family:var(--serif);font-weight:300;font-size:clamp(80px,12vw,180px);line-height:0.95;letter-spacing:-0.04em;color:#FFEC00;margin:32px 0 16px">13</div>
-      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,2vw,28px);color:rgba(250,248,243,0.88);max-width:640px;margin:0 auto">Cities ranking on page one of Google</div>
     </div>
   </section>
 
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Challenge</div>
-      <h2 class="sec-title">Where <span class="sem">The Office Shop</span> started.</h2>
+      <div class="section-lbl">The Brief</div>
+      <h2 class="sec-title">Invisible in new <span class="sem">markets</span>.</h2>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Context</h3>
-      <div><p>The Office Shop had grown into thirteen markets and watched their own pages compete with each other in search. Multiple locations were ranking, none of them well, and the brand was losing local share to specialist competitors who had cleaner architecture.</p></div>
+    <div class="os-brief-grid">
+      <div>
+        <div class="content-block" style="border-top:none;padding-top:0"><h3>About The Office Shop</h3><div><p>The Office Shop is an independently owned Canadian office furniture supplier that has helped design and furnish offices across the country for more than 25 years.</p></div></div>
+        <div class="content-block"><h3>The Challenge</h3><div><p>The Office Shop wanted to grow beyond its home market and reach buyers searching for office furniture in cities across Canada. Almost every one of those buyers starts on Google, but the site was not showing up for the high-intent local searches that lead to sales. They needed organic visibility in market after market, not just at home.</p></div></div>
+      </div>
+      <div class="os-ns">
+        <div class="os-ns-head">The Goal &middot; Own Local Search</div>
+        <div class="os-ns-body" style="padding:8px 20px 6px">
+          <div class="os-goal-row"><b>Enter New Markets</b><span>Rank for office-furniture searches in target cities beyond the home base.</span></div>
+          <div class="os-goal-row"><b>Grow Organic Traffic</b><span>Turn higher search visibility into real clicks and inbound leads.</span></div>
+          <div class="os-goal-row"><b>Page-One Rankings</b><span>Land on the first page of Google for the keywords that matter most.</span></div>
+        </div>
+        <div class="os-ns-foot" style="padding-top:14px"><div class="os-ns-chips"><i>Build &#10003;</i><i>Optimize &#10003;</i><i>Rank &#10003;</i></div></div>
+      </div>
     </div>
   </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
-        <div class="section-lbl">The Approach</div>
-        <h2 class="sec-title">What we <span class="sem">actually</span> did.</h2>
+        <div class="section-lbl">How We Did It</div>
+        <h2 class="sec-title">A search program built to <span class="sem">rank</span>.</h2>
       </div>
-      <div class="content-block" style="border-top:none;padding-top:0"><h3>01.</h3><div><p>Rebuilt the site architecture so each location has its own optimized page with location-specific schema, GBP, and content.</p></div></div>
-      <div class="content-block"><h3>02.</h3><div><p>Deduplicated and standardized the Google Business Profile portfolio across all thirteen markets.</p></div></div>
-      <div class="content-block"><h3>03.</h3><div><p>Layered a content program against the procurement and office-fitout questions buyers actually research before reaching out.</p></div></div>
+      <div class="content-block" style="border-top:none;padding-top:0"><h3>01. Website Development</h3><div><p>We started with the foundation, developing the site so it was structured, crawlable, and ready to support a serious SEO program across many markets.</p></div></div>
+      <div class="content-block"><h3>02. Location Pages for Targeted Cities</h3><div><p>We built dedicated, optimized pages for each target city so The Office Shop could rank for local searches in every market it wanted to enter, not just its home base.</p></div></div>
+      <div class="content-block"><h3>03. On-Page SEO Optimizations</h3><div><p>Titles, headings, metadata, and content were tuned around the keywords buyers actually search, both on-page and off-page, to signal relevance to Google in each city.</p></div></div>
+      <div class="content-block"><h3>04. Strategic Backlinks</h3><div><p>We earned quality backlinks to build the site&rsquo;s authority, giving those location pages the off-page strength they needed to climb into page-one positions.</p></div></div>
+      <div class="content-block"><h3>05. Website Performance Improvements</h3><div><p>Speed and technical performance upgrades made the site faster and healthier, improving both the user experience and how search engines ranked it.</p></div></div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">The Outcome</div>
-      <h2 class="sec-title">What <span class="sem">moved</span>.</h2>
-    </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Result</h3>
-      <div><p>Page-one rankings in all thirteen target cities for the priority commercial-procurement keywords. Local share recovered. Each location now competes in its own market without poaching authority from the next one over.</p></div>
+  <section class="sec dark-full">
+    <div class="sec-inner" style="text-align:center">
+      <div class="section-lbl dark" style="justify-content:center">The Result</div>
+      <div class="bks-num" style="margin:32px 0 6px">+114<small>%</small></div>
+      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,2vw,26px);color:rgba(250,248,243,0.85)">Increase in search impressions, year over year</div>
+      <div class="os-rgrid">
+        <div class="os-rcard"><b>+114%</b><span>Search impressions</span></div>
+        <div class="os-rcard"><b>+83%</b><span>Organic clicks</span></div>
+        <div class="os-rcard"><b>13</b><span>Cities on page one</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="sec bone-full">
-    <div class="sec-inner">
-      <div style="max-width:880px;margin:0 auto;text-align:center;padding:40px 0">
-        <div class="eyebrow" style="margin-bottom:32px;justify-content:center"><span class="eyebrow-dot"></span><span>In their words</span></div>
-        <p style="font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.4vw,32px);line-height:1.4;color:#141414;letter-spacing:-0.01em;margin-bottom:28px">"The team at Consultus Digital won our business due to their thorough assessment and realignment of our digital sales and marketing strategy. Within only a few weeks of partnering with them, we saw immediate gains."</p>
-        <div style="font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#5A5A5A">Helen Stergiou, Partner, The Office Shop</div>
-      </div>
-    </div>
+  <section class="testimonial">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote">The team at Consultus Digital won our business due to their thorough assessment and realignment of our digital sales and marketing strategy. Within only a few weeks of partnering with them, we <span class="sem">increased our inbound leads significantly</span> by reconfiguring the user experience of our website.</p>
+    <div style="font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6A686B">Helen Stergiou &middot; Partner, The Office Shop</div>
   </section>
 
   
