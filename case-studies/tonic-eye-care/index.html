@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
-<title>Tonic Eye Care & Vision Therapy case study: 94% lift in engagement with ugc ads | Consultus Digital</title>
+<title>Tonic Eye Care case study: 400+ leads from a fall UGC campaign | Consultus Digital</title>
 <link rel="stylesheet" href="/assets/fonts.css">
 
 <style>
@@ -132,11 +132,13 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 56px;
+    grid-template-columns: 1.05fr 0.92fr;
+    gap: 48px;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
+  .hero-cover .cover-meta { grid-column: 1 / -1; }
   .hero-cover .cover-main { max-width: 1100px; }
   .hero-cover .eyebrow.yellow-dot {
     font-family: var(--mono);
@@ -3503,16 +3505,16 @@ section.hero-cover .hero-bg {
 .footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#141414}
 .footer-service-areas .svc-area-hq{order:3;position:relative;z-index:2;background:#141414;color:#FFEC00;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:100px;line-height:1.3}
 /* end service-areas clean */</style>
-  <meta name="description" content="UGC-led paid program lifted engagement on a niche specialty offering by 94% and built a repeatable patient-acquisition flywheel. Industry: Healthcare · Specialty." />
+  <meta name="description" content="How Consultus Digital grew Tonic Eye Care with a UGC-led Meta ads program: 410 leads, a 4.52% click-through rate versus 2.40% on static, 74% more conversions from the winning hook, and a 92% increase in performance." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/tonic-eye-care/" />
-  <meta property="og:title" content="Tonic Eye Care & Vision Therapy case study: 94% lift in engagement with ugc ads | Consultus Digital" />
-  <meta property="og:description" content="UGC-led paid program lifted engagement on a niche specialty offering by 94% and built a repeatable patient-acquisition flywheel. Industry: Healthcare · Specialty." />
+  <meta property="og:title" content="Tonic Eye Care case study: 400+ leads from a fall UGC campaign | Consultus Digital" />
+  <meta property="og:description" content="How Consultus Digital grew Tonic Eye Care with a UGC-led Meta ads program: 410 leads, a 4.52% click-through rate versus 2.40% on static, 74% more conversions from the winning hook, and a 92% increase in performance." />
   <meta property="og:url" content="https://consultusdigital.com/case-studies/tonic-eye-care/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Consultus Digital" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tonic Eye Care & Vision Therapy case study: 94% lift in engagement with ugc ads | Consultus Digital" />
-  <meta name="twitter:description" content="UGC-led paid program lifted engagement on a niche specialty offering by 94% and built a repeatable patient-acquisition flywheel. Industry: Healthcare · Specialty." />
+  <meta name="twitter:title" content="Tonic Eye Care case study: 400+ leads from a fall UGC campaign | Consultus Digital" />
+  <meta name="twitter:description" content="How Consultus Digital grew Tonic Eye Care with a UGC-led Meta ads program: 410 leads, a 4.52% click-through rate versus 2.40% on static, 74% more conversions from the winning hook, and a 92% increase in performance." />
 </head>
 <body>
 <nav class="main">
@@ -3540,130 +3542,181 @@ section.hero-cover .hero-bg {
 }
 </script>
 
+  <style>
+    /* ported case-study components (brief grid, goal card, A/B chips, scoreboard) */
+    .ecw-brief-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+    .ecw-ns { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 56px -30px rgba(20,20,20,0.35); position: sticky; top: 100px; }
+    .ecw-ns-head { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 12px 18px; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .ecw-ns-body { padding: 20px; }
+    .ecw-ns-foot { padding: 0 20px 18px; }
+    .ecw-ns-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .ecw-ns-chips i { font-style: normal; font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 11px; border-radius: 100px; border: 1px solid rgba(20,20,20,0.18); color: #2A2A2A; }
+    .ecw-goal-row { padding: 14px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+    .ecw-goal-row:last-child { border-bottom: none; }
+    .ecw-goal-row b { display: block; font-family: var(--wide); font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: #1A40C7; margin-bottom: 6px; }
+    .ecw-goal-row span { display: block; font-size: 14px; line-height: 1.5; color: #2A2A2A; }
+    .ecw-cro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; }
+    .ecw-cro-chip { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.12); border-radius: 10px; padding: 18px 20px; box-shadow: 0 18px 40px -22px rgba(20,20,20,0.35); }
+    .ecw-cro-chip .t { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A40C7; }
+    .ecw-cro-chip .h { font-style: italic; font-size: 13px; line-height: 1.45; color: #2A2A2A; margin: 8px 0 12px; }
+    .ecw-cro-chip .u { font-family: var(--mono); font-size: 20px; font-weight: 600; color: #141414; letter-spacing: -0.02em; }
+    .ecw-cro-chip .u small { display: block; font-size: 9px; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; color: #8C8A87; margin-top: 4px; }
+    .ecw-cro-chip .w { display: inline-flex; margin-top: 12px; padding: 5px 11px; border-radius: 100px; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.07em; text-transform: uppercase; background: #141414; color: #FAF8F3; }
+    .bks-num { font-family: var(--serif); font-weight: 300; font-size: clamp(90px, 14vw, 200px); line-height: 0.92; letter-spacing: -0.045em; color: #FFEC00; }
+    .bks-num small { font-size: 0.32em; letter-spacing: -0.01em; font-style: italic; }
+    .bks-substats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-top: 44px; }
+    .bks-substat { text-align: center; }
+    .bks-substat b { display: block; font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -0.02em; color: #FAF8F3; }
+    .bks-substat span { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A878B; margin-top: 8px; }
+    .tab-test { display: grid; grid-template-columns: auto 1fr; gap: 44px; align-items: center; padding: 32px 0; border-top: 1px solid rgba(20,20,20,0.1); }
+    .tab-test:first-child { border-top: none; padding-top: 6px; }
+    .tab-creatives { display: flex; gap: 16px; }
+    .tab-media { position: relative; width: 152px; }
+    .tab-media video, .tab-media img { width: 152px; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; display: block; border: 1px solid rgba(20,20,20,0.12); background: #000; }
+    .tab-cr.win .tab-media video, .tab-cr.win .tab-media img { border: 2px solid #FFEC00; box-shadow: 0 12px 32px -14px rgba(20,20,20,0.45); }
+    .tab-badge { position: absolute; top: 8px; left: 8px; background: #FFEC00; color: #141414; font-family: var(--mono); font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; }
+    .tab-cr { margin: 0; }
+    .tab-cr figcaption { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6A686B; margin-top: 9px; text-align: center; }
+    .tab-cr.win figcaption { color: #141414; font-weight: 600; }
+    .tab-verdict .t { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #1A40C7; }
+    .tab-verdict p { font-style: italic; font-size: 14px; line-height: 1.5; color: #2A2A2A; margin: 8px 0 14px; max-width: 440px; }
+    .tab-verdict .u { font-family: var(--mono); font-size: 26px; font-weight: 600; color: #141414; letter-spacing: -0.02em; }
+    .tab-verdict .u small { display: block; font-size: 9.5px; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; color: #8C8A87; margin-top: 4px; }
+    .tab-verdict .w { display: inline-flex; margin-top: 12px; padding: 5px 12px; border-radius: 100px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; background: #141414; color: #FAF8F3; }
+    @media (max-width: 760px) { .tab-test { grid-template-columns: 1fr; gap: 22px; } .tab-media, .tab-media video, .tab-media img { width: 132px; } }
+    /* hero creative collage */
+    .tab-collage { position: relative; height: 500px; }
+    .tab-cc { position: absolute; background: #FFFFFF; border: 1px solid rgba(20,20,20,0.08); border-radius: 14px; padding: 8px; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.45); }
+    .tab-cc video, .tab-cc img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 9px; display: block; }
+    .tab-cc.img img { object-position: top; }
+    .tab-c-ugc { left: 50%; margin-left: -122px; top: 46px; width: 244px; z-index: 3; }
+    .tab-c-hook { left: 0; top: 168px; width: 182px; z-index: 2; }
+    .tab-c-static { right: 8px; top: 0; width: 172px; z-index: 2; }
+    .tab-lap { position: absolute; right: -14px; bottom: -18px; width: 312px; z-index: 5; padding: 0; border: 8px solid #141414; border-radius: 12px; background: #fff; box-shadow: 0 28px 64px -26px rgba(20,20,20,0.5); }
+    .tab-lap .tab-screen { aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; }
+    .tab-lap .tab-screen img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; }
+    .tab-lap::after { content: ''; position: absolute; left: -8%; right: -8%; bottom: -20px; height: 13px; background: linear-gradient(180deg,#313131,#161616); border-radius: 0 0 10px 10px; }
+    @media (max-width: 900px) { .hero-cover .cover-grid { grid-template-columns: 1fr !important; } .tab-collage { display: none; } }
+  </style>
   <section class="hero-cover">
     <div class="ghost-monogram">C</div>
     <div class="cover-grid">
       <div class="cover-main">
-        <div class="cobrand-mark" style="display:flex;align-items:center;gap:18px;margin-bottom:32px;height:36px">
-          <span class="cobrand-consultus" aria-label="Consultus" style="display:inline-flex;align-items:center;color:#141414;height:36px"><svg viewBox="595 305 175 140" width="56" height="44.8" fill="currentColor" aria-hidden="true" preserveAspectRatio="xMidYMid meet" style="display:block"><path d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span>
-          <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(20,20,20,0.32);line-height:1;display:inline-flex;align-items:center;height:36px">&times;</span>
-          <span class="cobrand-client" data-media-slug="case-tonic-eye-care-client-logo" data-media-alt="Tonic Eye Care logo" style="display:inline-flex;align-items:center;height:36px;font-family:var(--sans);font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#141414">tonic eye care</span>
-        </div>
-        <div class="eyebrow yellow-dot fade-in delay-1"><span>Healthcare · Specialty Practice</span></div>
-        <h1 class="display fade-in delay-2">Tonic Eye Care made vision therapy <span class="sem">discoverable</span>.</h1>
-        <p class="lede fade-in delay-3" style="max-width:680px">UGC-led paid program lifted engagement on a niche specialty offering by 94% and built a repeatable patient-acquisition flywheel.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Paid Social</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">UGC Production</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Local SEO</span></div>
+        <div class="eyebrow yellow-dot fade-in delay-1"><span>Case Study &middot; Healthcare</span></div>
+        <h1 class="display fade-in delay-2">How we drove <span class="sem">400+ leads</span> through our fall UGC campaign.</h1>
+        <p class="lede fade-in delay-3" style="max-width:680px">Authentic voices from the community brought a local clinic to the forefront of eye care marketing.</p>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">UGC Creative</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Meta Ads</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Google Ads</span></div>
+      </div>
+      <div class="tab-collage" aria-hidden="true">
+        <div class="tab-cc tab-c-static img"><img src="/assets/work/tonic/static-vision-therapy.png" alt="" loading="lazy"></div>
+        <div class="tab-cc tab-c-hook"><video src="/assets/work/tonic/hook-1.mp4" muted loop playsinline autoplay preload="metadata"></video></div>
+        <div class="tab-cc tab-c-ugc"><video src="/assets/work/tonic/ugc.mp4" muted loop playsinline autoplay preload="metadata"></video></div>
+        <div class="tab-lap"><div class="tab-screen"><img src="/assets/work/tonic/site.jpg" alt="Tonic Eye Care website" loading="lazy"></div></div>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>Tonic Eye Care & Vision Therapy</strong></div>
-        <div class="cell"><span class="mono">Industry</span><strong>Healthcare · Specialty</strong></div>
-        <div class="cell"><span class="mono">Result</span><strong>94% lift in engagement with ugc ads</strong></div>
+        <div class="cell"><span class="mono">Industry</span><strong>Healthcare · Optometry</strong></div>
+        <div class="cell"><span class="mono">Result</span><strong>92% increase in performance</strong></div>
         <div class="cell"><span class="mono">Engagement</span><strong>Active &middot; ongoing</strong></div>
       </div>
     </div>
   </section>
-  <!-- ========== FOUNDER WALKTHROUGH VIDEO ========== -->
-  <section class="sec walkthrough" style="background:var(--bone, #F5F2EC);padding-top:72px;padding-bottom:96px;border-top:1px solid rgba(20,20,20,0.06);border-bottom:1px solid rgba(20,20,20,0.06)">
-    <div class="sec-inner" style="max-width:1240px">
-      <div class="walkthrough-grid" style="display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start">
-        <div class="walkthrough-media">
-          <div class="eyebrow yellow-dot" style="margin-bottom:18px"><span>The Walkthrough &middot; 4:12</span></div>
-          <h2 class="sec-title" style="font-size:clamp(36px,4.4vw,56px);margin-bottom:14px;line-height:1.04;letter-spacing:-0.02em"><em>How</em> we did it.</h2>
-          <p class="lede" style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:580px;margin-bottom:32px">The story behind a 94% engagement lift, told in four minutes. Why production-style failed, what creator-led unlocked, what compounded.</p>
-
-          <div class="walkthrough-player" data-media-slug="case-tonic-eye-care-walkthrough-video" style="position:relative;aspect-ratio:16/9;width:100%;background:linear-gradient(135deg,#0A0A0A 0%,#1A1A20 60%,#0A0A0A 100%);border-radius:6px;overflow:hidden;cursor:pointer;box-shadow:0 24px 60px -20px rgba(20,20,20,0.35)">
-            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 30% 35%, rgba(26,64,199,0.16) 0%, transparent 45%), radial-gradient(circle at 75% 70%, rgba(255,236,0,0.05) 0%, transparent 35%);pointer-events:none"></div>
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:40px;color:#FAF8F3">
-              <button class="wt-play-btn" type="button" aria-label="Play walkthrough" style="position:relative;width:88px;height:88px;border-radius:50%;background:#FFEC00;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.2s ease;box-shadow:0 8px 24px -6px rgba(0,0,0,0.35)">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="#141414" style="margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-              <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,243,0.75)">Drop walkthrough video</div>
-              <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,243,0.4)">Slug: case-tonic-eye-care-walkthrough-video</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="walkthrough-rail">
-          <div style="font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#5A5A5A;margin-bottom:14px">The Story Behind the Number</div>
-          <div data-walkthrough-story style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A"><p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:14px"><strong style="color:#141414">Before.</strong> A specialty vision therapy practice running production-style ads with low engagement and limited new-patient conversion.</p>
-          <p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:14px"><strong style="color:#141414">After.</strong> A creator-led UGC ad program shot weekly, paired with audience tests. Engagement lifted 94%, with measurable downstream booking gains.</p>
-          <p style="font-family:var(--sans, 'Inter', sans-serif);font-size:15px;line-height:1.6;color:#2A2A2A;margin-bottom:24px"><strong style="color:#141414">Why this matters.</strong> No agency makes the work. We made the work, and we&rsquo;re showing you exactly how.</p></div>
-
-          <div style="border-top:1px solid rgba(20,20,20,0.12);padding-top:22px;margin-top:24px">
-            <div style="font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.20em;text-transform:uppercase;color:#5A5A5A;margin-bottom:14px">Cuts for Social</div>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-              <div data-media-slug="case-tonic-eye-care-walkthrough-cut-vertical" style="aspect-ratio:9/16;background:linear-gradient(135deg,#1A40C7 0%,#0E2B7E 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">9:16 &middot; Reels</div>
-              </div>
-              <div data-media-slug="case-tonic-eye-care-walkthrough-cut-square" style="aspect-ratio:1/1;background:linear-gradient(135deg,#0A0A0A 0%,#2A2A2A 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">1:1 &middot; Feed</div>
-              </div>
-              <div data-media-slug="case-tonic-eye-care-walkthrough-cut-landscape" style="aspect-ratio:16/9;background:linear-gradient(135deg,#5A5A5A 0%,#1A1A20 100%);border-radius:3px;position:relative;overflow:hidden;cursor:pointer">
-                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,0.85)" style="margin-left:2px"><path d="M8 5v14l11-7z"/></svg></div>
-                <div style="position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFEC00">16:9 &middot; Long</div>
-              </div>
-            </div>
-            <div style="margin-top:14px;font-family:var(--sans, 'Inter', sans-serif);font-size:12px;line-height:1.5;color:#5A5A5A">One walkthrough &rarr; three cuts. Long-form, Reels, square Feed. Story compounds across surfaces.</div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .walkthrough-player:hover .wt-play-btn { transform: scale(1.06); }
-    .walkthrough-player .wt-play-btn:focus-visible { outline: 3px solid #1A40C7; outline-offset: 4px; }
-    @media (max-width: 900px) {
-      .walkthrough-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-    }
-  </style>
-
-
-  <section class="sec dark-full">
-    <div class="sec-inner" style="text-align:center">
-      <div class="section-lbl dark">The Result</div>
-      <div style="font-family:var(--serif);font-weight:300;font-size:clamp(80px,12vw,180px);line-height:0.95;letter-spacing:-0.04em;color:#FFEC00;margin:32px 0 16px">94%</div>
-      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,2vw,28px);color:rgba(250,248,243,0.88);max-width:640px;margin:0 auto">Lift in engagement with UGC ads</div>
-    </div>
-  </section>
-
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Challenge</div>
-      <h2 class="sec-title">Where <span class="sem">Tonic Eye Care & Vision Therapy</span> started.</h2>
+      <div class="section-lbl">The Brief</div>
+      <h2 class="sec-title">A community clinic, up against <span class="sem">the chains</span>.</h2>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Context</h3>
-      <div><p>Vision therapy is a niche specialty most patients do not know exists. The clinic had a strong clinical reputation locally but a digital surface that read like every other optometrist. Paid media efforts had defaulted to generic eye-exam offers that did not differentiate the practice.</p></div>
+    <div class="ecw-brief-grid">
+      <div>
+        <div class="content-block" style="border-top:none;padding-top:0"><h3>About Tonic Eye Care</h3><div><p>Tonic Eye Care is a community-focused optometry clinic in Midtown Toronto, led by Dr. Kelly Lee. Known for its personalized approach to vision therapy and family eye care, the clinic wanted to attract more qualified patients in a market dominated by chains and well-funded independents.</p></div></div>
+        <div class="content-block"><h3>The Challenge</h3><div><p>With many local clinics competing for attention, Tonic Eye Care needed to increase bookings and website traffic, stand out on a limited advertising budget, and build trust with parents and families.</p></div></div>
+        <div class="content-block"><h3>Campaign Objective</h3><div><p>Emotionally connect with families, particularly mothers, by showcasing real stories that highlight Tonic's personalized approach to eye exams and vision therapy. The aim: elevate brand trust, increase click-through rates, and outperform competitors in a saturated local market.</p></div></div>
+      </div>
+      <div class="ecw-ns">
+        <div class="ecw-ns-head">The Goal &middot; What Success Looked Like</div>
+        <div class="ecw-ns-body" style="padding:8px 20px 6px">
+          <div class="ecw-goal-row"><b>Elevate Brand Trust</b><span>Make a personalized, family-first clinic feel more credible than better-funded competitors.</span></div>
+          <div class="ecw-goal-row"><b>Increase Click-Through Rates</b><span>Creative that earns the click in a saturated local feed.</span></div>
+          <div class="ecw-goal-row"><b>Outperform Competitors</b><span>Win qualified bookings without outspending the chains.</span></div>
+        </div>
+        <div class="ecw-ns-foot" style="padding-top:14px"><div class="ecw-ns-chips"><i>Meta &#10003;</i><i>UGC &#10003;</i><i>SEO &#10003;</i></div></div>
+      </div>
     </div>
   </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
-        <div class="section-lbl">The Approach</div>
-        <h2 class="sec-title">What we <span class="sem">actually</span> did.</h2>
+        <div class="section-lbl">The Solution</div>
+        <h2 class="sec-title">Data-backed insights, <span class="sem">human-centered</span> stories.</h2>
       </div>
-      <div class="content-block" style="border-top:none;padding-top:0"><h3>01.</h3><div><p>Produced UGC creative with parents and patients walking through what vision therapy actually does. Specific, story-driven, and category-specific.</p></div></div>
-      <div class="content-block"><h3>02.</h3><div><p>Restructured the local SEO around vision therapy as a category, not as a sub-feature of an optometry practice.</p></div></div>
-      <div class="content-block"><h3>03.</h3><div><p>Layered Meta retargeting against the specific traffic that was researching specialty topics on the new landing pages.</p></div></div>
+      <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px;margin-bottom:6px">We launched a creative testing campaign on Meta, built around user-generated content and static ads, to boost trust and engagement.</p>
+      <div class="content-block"><h3>01. UGC Content Creation</h3><div><p>Testimonial-style videos featuring two mothers from the local community, each variation testing a different tone and storytelling angle. Authentic, unscripted stories about their children's eye exams and vision therapy, built for emotional resonance and trust.</p></div></div>
+      <div class="content-block"><h3>02. Static Ads</h3><div><p>In parallel, single-image creatives with direct messaging and value propositions, plus carousel ads showcasing Tonic's core services: eye exams, therapy sessions, and stylish eyewear. A clean performance baseline and a way to promote specific offerings.</p></div></div>
+      <div class="content-block"><h3>03. Targeting</h3><div><p>Women aged 30 to 55; families with children, adults, and seniors within a 10km radius of the clinic; health-conscious individuals seeking trusted, personalized eye care.</p></div></div>
     </div>
   </section>
 
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Outcome</div>
-      <h2 class="sec-title">What <span class="sem">moved</span>.</h2>
+      <div class="section-lbl">A/B Testing</div>
+      <h2 class="sec-title">Optimizing for <span class="sem">results</span>.</h2>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Result</h3>
-      <div><p>Engagement on the specialty-focused UGC ads lifted 94% over the previous baseline. Patient inquiries shifted from generic eye-exam questions to qualified vision-therapy consultations. The acquisition flywheel is now repeatable, not bespoke per quarter.</p></div>
+    <div class="tab-tests">
+      <div class="tab-test">
+        <div class="tab-creatives">
+          <figure class="tab-cr win"><div class="tab-media"><video src="/assets/work/tonic/hook-1.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="tab-badge">Winner</span></div><figcaption>Hook 1</figcaption></figure>
+          <figure class="tab-cr"><div class="tab-media"><video src="/assets/work/tonic/hook-2.mp4" muted loop playsinline autoplay preload="metadata"></video></div><figcaption>Hook 2</figcaption></figure>
+        </div>
+        <div class="tab-verdict">
+          <div class="t">Test 1 &middot; Ad Hooks</div>
+          <p>Two ad hooks, head to head. We scaled the top-performing combination.</p>
+          <div class="u">+74%<small>More Website Conversions</small></div>
+          <span class="w">Variant A &middot; Winner</span>
+        </div>
+      </div>
+      <div class="tab-test">
+        <div class="tab-creatives">
+          <figure class="tab-cr"><div class="tab-media"><img src="/assets/work/tonic/static-vision-therapy.png" alt="Static vision therapy ad" loading="lazy"></div><figcaption>Static Ad</figcaption></figure>
+          <figure class="tab-cr win"><div class="tab-media"><video src="/assets/work/tonic/ugc.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="tab-badge">Winner</span></div><figcaption>UGC Video</figcaption></figure>
+        </div>
+        <div class="tab-verdict">
+          <div class="t">Test 2 &middot; Ad Creative Types</div>
+          <p>Static ads versus UGC video ads, to find the better performer.</p>
+          <div class="u">4.52% vs 2.40%<small>UGC CTR vs Static &middot; 410 Leads</small></div>
+          <span class="w">UGC &middot; Winner</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  
+  <section class="sec dark-full">
+    <div class="sec-inner" style="text-align:center">
+      <div class="section-lbl dark" style="justify-content:center">Results That Speak Volumes</div>
+      <div class="bks-num" style="margin:36px 0 6px">410<small>&nbsp;leads</small></div>
+      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,2vw,26px);color:rgba(250,248,243,0.85)">Generated by the fall UGC campaign</div>
+      <div class="bks-substats">
+        <div class="bks-substat"><b>4.52%</b><span>UGC CTR &middot; vs 2.40% Static</span></div>
+        <div class="bks-substat"><b>+74%</b><span>More Website Conversions</span></div>
+        <div class="bks-substat"><b>92%</b><span>Increase In Performance</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote">Would highly recommend Consultus Digital. Great communication, and they bring creative ideas to the table. We use them for <span class="sem">SEO and Meta ads</span>, and moved our Google Ads management over to them too. Positive results so far, and we&rsquo;re excited to keep growing with their support.</p>
+    <div style="font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6A686B">Nick Chan &middot; Operations &amp; Finance, Tonic Eye Care</div>
+  </section>
+
+    <section class="sec">
+    <div class="sec-head">
+      <div class="section-lbl">Why It Worked</div>
+      <h2 class="sec-title">Real stories, <span class="sem">real</span> trust.</h2>
+    </div>
+    <div class="content-block" style="border-top:none;padding-top:0"><div><p>By showcasing real parent experiences, the campaign built genuine emotional connection with Tonic's target audience. The strong performance did not just drive leads, it earned Tonic's trust, leading to an expanded partnership that now includes Google Ads management.</p></div></div>
+  </section>
+
   <!-- ========== RELATED CASE STUDIES ========== -->
   <section class="sec rcx-section" style="background:#141414;padding-top:84px;padding-bottom:88px;max-width:none">
     <div class="sec-inner" style="max-width:1280px">
