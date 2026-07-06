@@ -132,12 +132,14 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 56px;
+    grid-template-columns: 1.05fr 0.92fr;
+    gap: 48px;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
   .hero-cover .cover-main { max-width: 1100px; }
+  .hero-cover .cover-meta { grid-column: 1 / -1; }
   .hero-cover .eyebrow.yellow-dot {
     font-family: var(--mono);
     font-size: 11px;
@@ -162,8 +164,8 @@
   .hero-cover h1.display {
     font-family: var(--serif) !important;
     font-weight: 400 !important;
-    font-size: clamp(48px, 6.2vw, 88px);
-    line-height: 0.98;
+    font-size: clamp(44px, 5vw, 68px);
+    line-height: 1.0;
     letter-spacing: -0.025em;
     color: #141414 !important;
     -webkit-text-fill-color: #141414 !important;
@@ -3540,24 +3542,66 @@ section.hero-cover .hero-bg {
 }
 </script>
 
+  <style>
+    .wa2-brief-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+    .wa2-ns { background: #FFFFFF; border: 1px solid rgba(20,20,20,0.1); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 56px -30px rgba(20,20,20,0.35); position: sticky; top: 100px; }
+    .wa2-ns-head { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #6A686B; background: #F5F2EC; padding: 12px 18px; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .wa2-goal-row { padding: 14px 0; border-bottom: 1px dashed rgba(20,20,20,0.1); }
+    .wa2-goal-row:last-child { border-bottom: none; }
+    .wa2-goal-row b { display: block; font-family: var(--wide); font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: #1A40C7; margin-bottom: 6px; }
+    .wa2-goal-row span { display: block; font-size: 14px; line-height: 1.5; color: #2A2A2A; }
+    /* Qualitative outcome cards (no fabricated metrics) */
+    .wa2-outcome-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; max-width: 1120px; margin: 48px auto 0; text-align: left; }
+    .wa2-ogrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .wa2-ocard { text-align: left; padding: 24px 22px; border: 1px solid rgba(250,248,243,0.14); border-radius: 10px; }
+    .wa2-ocard .wa2-oc-check { width: 26px; height: 26px; border-radius: 50%; background: #FFEC00; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .wa2-ocard b { display: block; font-family: var(--serif); font-weight: 400; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; color: #FAF8F3; margin-bottom: 8px; }
+    .wa2-ocard span { display: block; font-size: 13px; line-height: 1.5; color: #A8A5A0; }
+    /* Hero browser frame */
+    .wa2-collage { position: relative; }
+    .wa2-browser { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid rgba(20,20,20,0.12); box-shadow: 0 34px 72px -28px rgba(20,20,20,0.5); background: #fff; z-index: 2; }
+    .wa2-browser-bar { display: flex; align-items: center; gap: 7px; padding: 11px 14px; background: #F5F2EC; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .wa2-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+    .wa2-dot.r { background: #E0776B; } .wa2-dot.y { background: #E7C24B; } .wa2-dot.g { background: #7FB88A; }
+    .wa2-url { flex: 1; margin-left: 10px; background: #fff; border: 1px solid rgba(20,20,20,0.1); border-radius: 100px; padding: 5px 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; color: #6A686B; }
+    .wa2-shot { aspect-ratio: 4/3.5; overflow: hidden; }
+    .wa2-shot img { width: 100%; display: block; object-fit: cover; object-position: top; }
+    .wa2-chip { position: absolute; right: -8px; bottom: -18px; width: 168px; background: #141414; border-radius: 14px; padding: 20px 22px; box-shadow: 0 30px 66px -28px rgba(20,20,20,0.55); z-index: 3; }
+    .wa2-chip .wa2-chip-num { font-family: var(--serif); font-weight: 300; font-size: 46px; line-height: 0.9; letter-spacing: -0.03em; color: #FFEC00; }
+    .wa2-chip .wa2-chip-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #C7C5C8; margin-top: 10px; line-height: 1.5; }
+    /* Self-scrolling homepage frame */
+    .wa-scroll-frame { width: 100%; max-width: 520px; margin: 0; background: #fff; border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; overflow: hidden; box-shadow: 0 40px 90px -30px rgba(0,0,0,0.7); }
+    .wa-scroll-bar { display: flex; align-items: center; gap: 7px; padding: 11px 14px; background: #F5F2EC; border-bottom: 1px solid rgba(20,20,20,0.08); }
+    .wa-scroll-url { flex: 1; margin-left: 10px; background: #fff; border: 1px solid rgba(20,20,20,0.1); border-radius: 100px; padding: 5px 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; color: #6A686B; }
+    .wa-scroll-vp { position: relative; height: 460px; overflow: hidden; background: #fff; }
+    .wa-scroll-vp img { width: 100%; display: block; animation: waScroll 26s cubic-bezier(0.45,0,0.55,1) infinite alternate; }
+    @keyframes waScroll { from { transform: translateY(0); } to { transform: translateY(calc(-100% + 460px)); } }
+    @media (prefers-reduced-motion: reduce) { .wa-scroll-vp img { animation: none; } }
+    @media (max-width: 900px) { .hero-cover .cover-grid { grid-template-columns: 1fr !important; } .wa2-brief-grid { grid-template-columns: 1fr; gap: 32px; } .wa2-ns { position: static; } .wa2-outcome-cols { grid-template-columns: 1fr; gap: 36px; } .wa-scroll-frame { margin: 0 auto; } .wa2-chip { right: 12px; } }
+  </style>
   <section class="hero-cover">
     <div class="ghost-monogram">C</div>
     <div class="cover-grid">
       <div class="cover-main">
-        <div class="cobrand-mark" style="display:flex;align-items:center;gap:18px;margin-bottom:32px;height:36px">
-          <span class="cobrand-consultus" aria-label="Consultus" style="display:inline-flex;align-items:center;color:#141414;height:36px"><svg viewBox="595 305 175 140" width="56" height="44.8" fill="currentColor" aria-hidden="true" preserveAspectRatio="xMidYMid meet" style="display:block"><path d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span>
-          <span style="font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(20,20,20,0.32);line-height:1;display:inline-flex;align-items:center;height:36px">&times;</span>
-          <span class="cobrand-client" style="display:inline-flex;align-items:center;height:36px"><img src="/assets/work/logos/western-asphalt.svg" alt="Western Asphalt Products logo" style="height:40px;width:auto;display:block"></span>
+        <div class="eyebrow yellow-dot fade-in delay-1"><span>Case Study &middot; Web Design &amp; Development</span></div>
+        <h1 class="display fade-in delay-2">An 80-year-old brand, <span class="sem">revitalized</span>.</h1>
+        <p class="lede fade-in delay-3" style="max-width:680px">Western Asphalt has served governments, airports, and port authorities for over 80 years, but its website was stuck in 2012. We rebuilt it: a modern, mobile-first site with custom photography and video, built to match eight decades of reputation.</p>
+        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Web Development</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Design &amp; UX</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">SEO</span></div>
+      </div>
+      <div class="wa2-collage" aria-hidden="true">
+        <div class="wa2-browser">
+          <div class="wa2-browser-bar"><span class="wa2-dot r"></span><span class="wa2-dot y"></span><span class="wa2-dot g"></span><span class="wa2-url">westernasphalt.ca</span></div>
+          <div class="wa2-shot"><img src="/assets/work/screens/western-asphalt-home.jpg" alt="Western Asphalt new website" loading="lazy"></div>
         </div>
-        <div class="eyebrow yellow-dot fade-in delay-1"><span>Industrial · B2B</span></div>
-        <h1 class="display fade-in delay-2">Western Asphalt: an 80-year-old brand <span class="sem">revitalized</span>.</h1>
-        <p class="lede fade-in delay-3" style="max-width:680px">A heritage industrial brand, brought online. A modern, mobile-first website with custom photography and video, built to match eighty years of reputation.</p>
-        <div style="margin-top:32px"><span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Brand Strategy</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">Web Development</span> <span class="mono" style="display:inline-block;padding:6px 12px;background:rgba(20,20,20,0.06);border-radius:999px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2A2A2A">SEO</span></div>
+        <div class="wa2-chip">
+          <div class="wa2-chip-num">80+</div>
+          <div class="wa2-chip-lbl">Years, finally online</div>
+        </div>
       </div>
       <div class="cover-meta">
         <div class="cell"><span class="mono">Client</span><strong>Western Asphalt</strong></div>
-        <div class="cell"><span class="mono">Industry</span><strong>Industrial · B2B</strong></div>
-        <div class="cell"><span class="mono">Result</span><strong>80yr brand revitalized for the digital era</strong></div>
+        <div class="cell"><span class="mono">Industry</span><strong>Asphalt &middot; Industrial B2B</strong></div>
+        <div class="cell"><span class="mono">Result</span><strong>80-year brand, rebuilt for today</strong></div>
         <div class="cell"><span class="mono">Engagement</span><strong>Web rebuild &middot; Delivered 2024</strong></div>
       </div>
     </div>
@@ -3619,45 +3663,57 @@ section.hero-cover .hero-bg {
   })();
   </script>
 
-  <section class="sec dark-full">
-    <div class="sec-inner" style="text-align:center">
-      <div class="section-lbl dark">The Result</div>
-      <div style="font-family:var(--serif);font-weight:300;font-size:clamp(80px,12vw,180px);line-height:0.95;letter-spacing:-0.04em;color:#FFEC00;margin:32px 0 16px">80yr</div>
-      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,2vw,28px);color:rgba(250,248,243,0.88);max-width:640px;margin:0 auto">Brand revitalized for the digital era</div>
-    </div>
-  </section>
-
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">The Challenge</div>
-      <h2 class="sec-title">Where <span class="sem">Western Asphalt</span> started.</h2>
+      <div class="section-lbl">The Brief</div>
+      <h2 class="sec-title">Eighty years of reputation, <span class="sem">stuck in 2012</span>.</h2>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Context</h3>
-      <div><p>Western Asphalt is a leading provider serving governments, airports, and port authorities, with more than eighty years of reputation behind it. The website, though, was stuck in the past. It looked dated, it was hard to use on mobile, and it did nothing to communicate the scale and credibility of the company. The team also needed a backend they could update themselves, and a search foundation strong enough to be found by the buyers who matter.</p></div>
+    <div class="wa2-brief-grid">
+      <div>
+        <div class="content-block" style="border-top:none;padding-top:0"><h3>About Western Asphalt</h3><div><p>Western Asphalt is a leading B2B service provider in the asphalt industry, serving high-profile clients such as governments, airports, and port authorities. With a history spanning more than 80 years, it had built a strong reputation, but its digital presence no longer matched it.</p></div></div>
+        <div class="content-block"><h3>The Challenge</h3><div><p>Western Asphalt needed a website that was both visually compelling and technically sound: a modern design to lift brand perception, a mobile-optimized experience, a backend the internal team could update themselves, a strong SEO foundation, and richer engagement through visual storytelling and video.</p></div></div>
+      </div>
+      <div class="wa2-ns">
+        <div class="wa2-ns-head">The Brief &middot; A Site Worthy of 80 Years</div>
+        <div class="wa2-ns-body" style="padding:8px 20px 6px">
+          <div class="wa2-goal-row"><b>Modern, Engaging Design</b><span>A look that enhances brand perception and reflects industry leadership.</span></div>
+          <div class="wa2-goal-row"><b>Mobile-Optimized</b><span>A seamless browsing experience on every device.</span></div>
+          <div class="wa2-goal-row"><b>Easy to Manage</b><span>A user-friendly backend so the internal team can update it themselves.</span></div>
+          <div class="wa2-goal-row"><b>Built for Search</b><span>A strong SEO foundation to improve visibility and organic traffic.</span></div>
+        </div>
+        <div class="wa2-ns-foot" style="padding:0 20px 18px"><div class="wa2-ns-chips" style="display:flex;flex-wrap:wrap;gap:7px"><i style="font-style:normal;font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:100px;border:1px solid rgba(20,20,20,0.18);color:#2A2A2A">Design &#10003;</i><i style="font-style:normal;font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:100px;border:1px solid rgba(20,20,20,0.18);color:#2A2A2A">Build &#10003;</i><i style="font-style:normal;font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:100px;border:1px solid rgba(20,20,20,0.18);color:#2A2A2A">Optimize &#10003;</i></div></div>
+      </div>
     </div>
   </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
-        <div class="section-lbl">The Approach</div>
-        <h2 class="sec-title">What we <span class="sem">actually</span> did.</h2>
+        <div class="section-lbl">How We Did It</div>
+        <h2 class="sec-title">A rebuild in <span class="sem">three parts</span>.</h2>
       </div>
-      <div class="content-block" style="border-top:none;padding-top:0"><h3>01.</h3><div><p><strong>Design and UX.</strong> We rebuilt the site around a consistent, professional design system, with a clear navigation structure and strategic calls to action placed to turn visits into quote requests.</p></div></div>
-      <div class="content-block"><h3>02.</h3><div><p><strong>Technical upgrades.</strong> A rebuild on WordPress, chosen so the internal team can manage updates without a developer. Strong caching, asset compression, and optimized hosting keep it fast, while a clean code structure and strategic metadata give search a solid foundation.</p></div></div>
-      <div class="content-block"><h3>03.</h3><div><p><strong>Visual identity and branding.</strong> We kept the established brand kit consistent while integrating custom photography and videography, putting the true scale of Western Asphalt's operations on full display.</p></div></div>
+      <div class="content-block" style="border-top:none;padding-top:0"><h3>01. Design &amp; UX Enhancements</h3><div><p>Consistent, professional design across every page, strategic call-to-action placement to drive conversions, and a unified layout and navigation with a clear, semantic flow from top-level pages down to subpages, so browsing is intuitive.</p></div></div>
+      <div class="content-block"><h3>02. Technical Upgrades</h3><div><p>Built on WordPress so the internal team can manage updates easily. Strong caching, asset compression, and optimized hosting keep the media-rich pages fast, on a clean codebase with an optimized structure and strategic metadata for search visibility.</p></div></div>
+      <div class="content-block"><h3>03. Visual Identity &amp; Branding</h3><div><p>We used the existing brand kit to keep things consistent, then integrated custom photography and videography to add authenticity and professional polish, optimized to showcase the true scale and capabilities of the company.</p></div></div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">The Outcome</div>
-      <h2 class="sec-title">What <span class="sem">moved</span>.</h2>
-    </div>
-    <div class="content-block" style="border-top:none;padding-top:0">
-      <h3>Result</h3>
-      <div><p>Western Asphalt now has a website that reflects its scale. The media-rich design lifts engagement, the site loads faster and works properly on mobile, and the cleaner experience is built to turn more visitors into qualified leads. The brand finally feels current, without losing the equity it earned over eighty years.</p></div>
+  <section class="sec dark-full">
+    <div class="sec-inner" style="text-align:center">
+      <div class="section-lbl dark" style="justify-content:center">The Outcome</div>
+      <h2 class="sec-title" style="color:#FAF8F3;margin:24px auto 0;max-width:820px">A brand that finally <span class="sem">looks its size</span>.</h2>
+      <div class="wa2-outcome-cols">
+        <div class="wa2-ogrid">
+          <div class="wa2-ocard"><span class="wa2-oc-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b>Modernized brand image</b><span>A fully modernized website that reflects the scale of the company.</span></div>
+          <div class="wa2-ocard"><span class="wa2-oc-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b>Faster &amp; mobile-ready</b><span>Improved site speed and mobile usability across all devices.</span></div>
+          <div class="wa2-ocard"><span class="wa2-oc-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b>Media-rich engagement</b><span>Custom photography and video that keep visitors on the page.</span></div>
+          <div class="wa2-ocard"><span class="wa2-oc-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><b>Better user experience</b><span>A cleaner journey that supports stronger conversion.</span></div>
+        </div>
+        <div class="wa-scroll-frame" aria-hidden="true">
+          <div class="wa-scroll-bar"><span class="wa2-dot r"></span><span class="wa2-dot y"></span><span class="wa2-dot g"></span><span class="wa-scroll-url">westernasphalt.ca</span></div>
+          <div class="wa-scroll-vp"><img src="/assets/work/screens/western-asphalt-full.jpg" alt="Western Asphalt homepage" loading="lazy"></div>
+        </div>
+      </div>
     </div>
   </section>
 
