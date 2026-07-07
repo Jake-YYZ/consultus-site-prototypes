@@ -3758,11 +3758,6 @@
   </footer>
 <script>
 /* Standalone goPage shim — for hash routes still pointing at SPA-only pages */
-function goPage(which) {
-  var base = '../Consultus - Website Inspo - Final.html';
-  if (!which || which === 'home') window.location.href = base;
-  else window.location.href = base + '#' + which;
-}
 function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }

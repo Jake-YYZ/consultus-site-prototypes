@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
-<title>Influencer Marketing | Consultus Digital</title>
-<meta name="description" content="Influencer marketing with real attribution. Consultus pairs vetted creators with tracking that ties every post to pipeline, not just impressions.">
+<title>Influencer Marketing Agency | Consultus Digital</title>
+<meta name="description" content="Influencer marketing with real attribution. Consultus Digital pairs vetted creators with tracking that ties every post to pipeline, not just impressions.">
 <link rel="stylesheet" href="/assets/fonts.css">
 
 <style>
@@ -840,6 +840,9 @@
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
   .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  a.body-link { color: #1A40C7; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
+  a.body-link:hover { color: #142f8f; }
+  .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
   .dark-full .sec-head-sub { color: #C7C5C8; }
@@ -3535,6 +3538,18 @@
 .footer-service-areas .svc-area-hq{order:3;position:relative;z-index:2;background:#141414;color:#FFEC00;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:100px;line-height:1.3}
 /* end service-areas clean */</style>
   <link rel="canonical" href="https://consultusdigital.com/influencer-marketing/" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Consultus Digital">
+  <meta property="og:title" content="Influencer Marketing Agency | Consultus Digital">
+  <meta property="og:description" content="Influencer marketing with real attribution. Consultus Digital pairs vetted creators with tracking that ties every post to pipeline, not just impressions.">
+  <meta property="og:url" content="https://consultusdigital.com/influencer-marketing/">
+  <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Influencer Marketing Agency | Consultus Digital">
+  <meta name="twitter:description" content="Influencer marketing with real attribution. Consultus Digital pairs vetted creators with tracking that ties every post to pipeline, not just impressions.">
+  <meta name="twitter:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -3871,7 +3886,24 @@
     .lw-card:hover { border-color: #1A40C7 !important; transform: translateY(-2px); }
   </style>
 
-  <section class="cta-sec"><div class="cta-inner"><div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Influencer Marketing</span></div><h2 class="cta-title">Your next <span class="sem">hit campaign</span>, cast.</h2><a class="btn primary on-dark" href="/contact/">Book a Creator Strategy →</a></div></section>
+    <section class="sec">
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Related</div>
+        <h2 class="sec-title">Where to go <span class="sem">next</span>.</h2>
+      </div>
+    </div>
+    <div class="related-strip">
+        <a class="svc-pill" href="/case-studies/bookseats/">Case Study: UGC +248% CTR</a>
+        <a class="svc-pill" href="/case-studies/e11ement/">Case Study: e11ement</a>
+        <a class="svc-pill" href="/performance-creatives/">Performance Creatives</a>
+        <a class="svc-pill" href="/meta-ads/">Meta Ads</a>
+        <a class="svc-pill" href="/content-marketing/">Content Marketing</a>
+        <a class="svc-pill" href="/services/">All Services</a>
+    </div>
+  </section>
+
+<section class="cta-sec"><div class="cta-inner"><div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Influencer Marketing</span></div><h2 class="cta-title">Your next <span class="sem">hit campaign</span>, cast.</h2><a class="btn primary on-dark" href="/contact/">Book a Creator Strategy →</a></div></section>
   
 
 <footer>
@@ -3996,11 +4028,6 @@
   </footer>
 <script>
 /* Standalone goPage shim — for hash routes still pointing at SPA-only pages */
-function goPage(which) {
-  var base = '../Consultus - Website Inspo - Final.html';
-  if (!which || which === 'home') window.location.href = base;
-  else window.location.href = base + '#' + which;
-}
 function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }
