@@ -3546,6 +3546,61 @@
   }
 }
 </script>
+<style id="ct-enhance">
+  /* ===== Contact page enhancements ===== */
+  .ct-lede { font-size:18px; line-height:1.55; color:#2A2A2A; margin-bottom:38px; max-width:530px; }
+  .ct-lede .em { color:#141414; font-weight:500; }
+
+  /* Consultation CTA + call-now line */
+  .ct-book-btn { display:inline-flex; margin-bottom:22px; }
+  .ct-callnow { margin-bottom:34px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .ct-callnow-lbl { font-size:15px; color:#6A686B; }
+  .ct-callnow a { font-family:var(--sans); font-size:24px; font-weight:600; letter-spacing:-0.02em; color:#1A40C7; text-decoration:none; transition:color .2s ease; }
+  .ct-callnow a:hover { color:#141414; }
+
+  /* Reach / offices */
+  .ct-reach { border-top:1px solid rgba(20,20,20,0.12); padding-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:28px 32px; }
+  .ct-reach-lbl { font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6A686B; margin-bottom:8px; }
+  .ct-reach-v { font-size:15px; line-height:1.6; color:#141414; }
+  .ct-reach-v a { color:#141414; text-decoration:none; border-bottom:1px solid rgba(26,64,199,0.3); transition:border-color .2s ease; }
+  .ct-reach-v a:hover { border-bottom-color:#1A40C7; }
+  .ct-reach-sub { font-size:13.5px; line-height:1.6; color:#6A686B; }
+
+  /* Form card polish */
+  .form-card { position:relative; align-self:start; }
+  .ct-card-head { margin-bottom:22px; padding-bottom:20px; border-bottom:1px solid rgba(20,20,20,0.1); }
+  .ct-card-ey { font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#1A40C7; margin-bottom:8px; }
+  .ct-card-t { font-size:20px; font-weight:500; letter-spacing:-0.01em; color:#141414; }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { outline:none; border-color:#1A40C7; box-shadow:0 0 0 3px rgba(26,64,199,0.1); }
+  .form-row input::placeholder, .form-row textarea::placeholder { color:#9A989C; }
+  /* Two-column field grid + select */
+  .ct-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 16px; }
+  .form-row select { width:100%; padding:12px 14px; border:1px solid rgba(20,20,20,0.12); border-radius:6px; font-family:var(--sans); font-size:14px; background:#FAF8F3; color:#141414; appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236A686B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 13px center; cursor:pointer; }
+  .form-row select.is-empty { color:#9A989C; }
+  @media (max-width:560px){ .ct-form-grid { grid-template-columns:1fr; } }
+  .form-card .btn.primary { margin-top:8px; }
+  .ct-microtrust { margin-top:14px; text-align:center; font-family:var(--mono); font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; color:#8A878B; }
+  .ct-fallback { margin-top:16px; text-align:center; font-size:13px; color:#6A686B; }
+  .ct-fallback a { color:#141414; border-bottom:1px solid rgba(26,64,199,0.3); text-decoration:none; }
+
+  /* Social proof band (dark) */
+  .ct-proof { background:#F5F2EC; border-top:1px solid #E1DCD1; }
+  .ct-proof-inner { max-width:1200px; margin:0 auto; padding:84px 32px; border-bottom:1px solid #E1DCD1; }
+  .ct-proof-lbl { font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6A686B; margin-bottom:44px; display:flex; align-items:center; gap:10px; }
+  .ct-proof-lbl::before { content:''; width:28px; height:1px; background:#1A40C7; }
+  /* Scrolling client-logo marquee */
+  .ct-cmarquee { position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
+  .ct-ctrack { display:flex; align-items:center; gap:66px; width:max-content; animation:ct-cscroll 55s linear infinite; }
+  .ct-cmarquee:hover .ct-ctrack { animation-play-state:paused; }
+  .ct-clogo { height:34px; width:auto; flex:0 0 auto; object-fit:contain; filter:grayscale(1) brightness(0.4); opacity:0.72; transition:opacity .3s ease,filter .3s ease; }
+  .ct-clogo:hover { opacity:1; filter:grayscale(0); }
+  @keyframes ct-cscroll { to { transform:translateX(-50%); } }
+  @media (prefers-reduced-motion:reduce){ .ct-ctrack { animation:none; } }
+  @media (max-width:900px){
+    .ct-proof-inner { padding:60px 20px; }
+    .ct-clogo { height:28px; }
+  }
+</style>
 </head>
 <body>
 
@@ -3565,30 +3620,65 @@
 
 
   
-  <section class="sec" style="padding-top:60px">
+  <section class="sec" style="padding-top:56px;padding-bottom:84px">
     <div class="contact-grid">
+      <!-- LEFT: the pitch + what to expect -->
       <div>
-        <div class="eyebrow" style="margin-bottom:24px"><span class="eyebrow-dot"></span><span>Let's Build</span></div>
-        <h1 style="font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-0.025em;margin-bottom:24px;color:#141414">Start with a <span class="sem">Strategy Call</span>.</h1>
-        <p style="font-size:17px;line-height:1.55;color:#2A2A2A;margin-bottom:32px">30 minutes. No pitch. We'll walk through your current funnel, pressure-test your numbers, and tell you what's worth fixing. If we're a fit, we'll send a proposal. If not, you'll leave with a clearer picture.</p>
-        <div style="border-top:1px solid rgba(20,20,20,0.12);padding-top:24px;margin-top:32px">
-          <div class="eyebrow" style="margin-bottom:16px"><span>Offices</span></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
-            <div><div style="font-weight:500;font-size:15px;margin-bottom:6px;color:#141414">Toronto</div><div style="font-size:13px;line-height:1.6;color:#6A686B">136 Geary Ave, Unit 109<br>Toronto, ON M6H 4H1<br>Canada</div></div>
-            
+        <div class="eyebrow" style="margin-bottom:22px"><span class="eyebrow-dot"></span><span>Let's Build</span></div>
+        <h1 style="font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-0.025em;margin-bottom:22px;color:#141414">Start with a <span class="sem">Strategy Call</span>.</h1>
+        <p class="ct-lede">Schedule a 30-minute consultation to discuss how we can help grow your business. Book a time in our calendar, give us a call, or send us the details about your business and we'll be in touch to schedule a call.</p>
+
+        <a class="btn primary cta-yellow-hover ct-book-btn" href="#book">Schedule a 30 Minute Consultation →</a>
+
+        <div class="ct-callnow"><span class="ct-callnow-lbl">Give us a call:</span> <a href="tel:+14164601810">(416) 460-1810</a></div>
+
+        <div class="ct-reach">
+          <div>
+            <div class="ct-reach-lbl">Toronto Office</div>
+            <div class="ct-reach-sub">136 Geary Ave, Unit 109<br>Toronto, ON M6H 4H1, Canada</div>
+          </div>
+          <div>
+            <div class="ct-reach-lbl">Hours</div>
+            <div class="ct-reach-sub">Mon to Fri, 9am to 6pm ET</div>
           </div>
         </div>
       </div>
-      <div class="form-card">
-        <div class="form-row"><label>Full Name</label><input placeholder="Your name"></div>
-        <div class="form-row"><label>Work Email</label><input placeholder="you@company.com"></div>
-        <div class="form-row"><label>Company &amp; Role</label><input placeholder="Acme Co · Marketing Director"></div>
-        <div class="form-row"><label>Monthly Marketing Budget</label><input placeholder="$25K / month"></div>
+
+      <!-- RIGHT: the booking form -->
+      <div class="form-card" id="book" style="scroll-margin-top:100px">
+        <div class="ct-card-head">
+          <div class="ct-card-ey">Request your call</div>
+          <div class="ct-card-t">Tell us about your business.</div>
+        </div>
+        <div class="ct-form-grid">
+          <div class="form-row"><label>First Name</label><input placeholder="Your first name"></div>
+          <div class="form-row"><label>Last Name</label><input placeholder="Your last name"></div>
+          <div class="form-row"><label>Work Email</label><input placeholder="you@company.com"></div>
+          <div class="form-row"><label>Phone Number</label><input placeholder="(416) 555-0100"></div>
+          <div class="form-row"><label>Company</label><input placeholder="Acme Co"></div>
+          <div class="form-row"><label>Website</label><input placeholder="acme.com"></div>
+        </div>
+        <div class="form-row"><label>Approximate Revenue</label><select class="is-empty" onchange="this.classList.toggle('is-empty', !this.value)"><option value="" disabled selected>Select a range</option><option>Under $500K</option><option>$500K - $1M</option><option>Over $1M</option></select></div>
         <div class="form-row"><label>What are you trying to solve?</label><textarea rows="4" placeholder="Give us a sense of the goal..."></textarea></div>
-        <a class="btn primary" style="justify-content:center;width:100%">Book My Strategy Call →</a>
+        <a class="btn primary cta-yellow-hover" style="justify-content:center;width:100%">Book My Strategy Call →</a>
       </div>
     </div>
   </section>
+
+  <!-- Social proof band -->
+  <section class="ct-proof">
+    <div class="ct-proof-inner">
+      <div class="ct-proof-lbl">Trusted by brands across North America</div>
+      <div class="ct-cmarquee">
+        <div class="ct-ctrack">
+          <img class="ct-clogo" src="/assets/work/logos/spieth.png" alt="Spieth America"><img class="ct-clogo" src="/assets/work/logos/la-vie.png" alt="La Vie"><img class="ct-clogo" src="/assets/work/logos/e11ement.webp" alt="e11ement"><img class="ct-clogo" src="/assets/work/logos/dragonscale.png" alt="Dragonscale"><img class="ct-clogo" src="/assets/work/logos/gordons.webp" alt="Gordon's"><img class="ct-clogo" src="/assets/work/logos/zayouna.png" alt="Zayouna Law"><img class="ct-clogo" src="/assets/work/logos/office-shop.png" alt="The Office Shop"><img class="ct-clogo" src="/assets/work/logos/western-asphalt.svg" alt="Western Asphalt"><img class="ct-clogo" src="/assets/work/logos/comwave.png" alt="Comwave"><img class="ct-clogo" src="/assets/work/logos/bookseats.png" alt="BookSeats"><img class="ct-clogo" src="/assets/work/logos/hardy.png" alt="Hardy Carts"><img class="ct-clogo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition"><img class="ct-clogo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas"><img class="ct-clogo" src="/assets/work/logos/tonic.png" alt="Tonic"><img class="ct-clogo" src="/assets/work/logos/mentorcity.svg" alt="MentorCity">
+          <img class="ct-clogo" src="/assets/work/logos/spieth.png" alt="Spieth America"><img class="ct-clogo" src="/assets/work/logos/la-vie.png" alt="La Vie"><img class="ct-clogo" src="/assets/work/logos/e11ement.webp" alt="e11ement"><img class="ct-clogo" src="/assets/work/logos/dragonscale.png" alt="Dragonscale"><img class="ct-clogo" src="/assets/work/logos/gordons.webp" alt="Gordon's"><img class="ct-clogo" src="/assets/work/logos/zayouna.png" alt="Zayouna Law"><img class="ct-clogo" src="/assets/work/logos/office-shop.png" alt="The Office Shop"><img class="ct-clogo" src="/assets/work/logos/western-asphalt.svg" alt="Western Asphalt"><img class="ct-clogo" src="/assets/work/logos/comwave.png" alt="Comwave"><img class="ct-clogo" src="/assets/work/logos/bookseats.png" alt="BookSeats"><img class="ct-clogo" src="/assets/work/logos/hardy.png" alt="Hardy Carts"><img class="ct-clogo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition"><img class="ct-clogo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas"><img class="ct-clogo" src="/assets/work/logos/tonic.png" alt="Tonic"><img class="ct-clogo" src="/assets/work/logos/mentorcity.svg" alt="MentorCity">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   
 
 <footer>
