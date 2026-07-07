@@ -190,11 +190,12 @@
   }
   .hero-cover .cover-meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-top: 88px;
     padding-top: 32px;
     border-top: 1px solid #E1DCD1;
+    text-align: center;
   }
   .hero-cover .cover-meta .cell {
     display: flex;
@@ -835,7 +836,10 @@
   .sec.dark-full { max-width: none; background: #141414; color: #FAF8F3; padding: 0; }
   .sec.bone-full { max-width: none; background: #F5F2EC; padding: 0; }
   .sec-inner { max-width: 1200px; margin: 0 auto; padding: 100px 32px; }
-  .sec-head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; margin-bottom: 60px; }
+  .sec-head { display: block; margin-bottom: 60px; }
+  .sec-head .section-lbl { margin-bottom: 22px; }
+  .sec-head .sec-title { max-width: 1000px; }
+  .sec-head p { max-width: none !important; margin-top: 24px; }
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
@@ -2093,6 +2097,7 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.method-grid .accent-card { min-height: 0; padding-bottom: 32px; }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3547,8 +3552,11 @@
 
 /* Partner wall v3 (real color logos, no redundant name) */
 .pw-band .pw-head { margin-bottom: 44px; }
-.pw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 760px){ .pw-grid { grid-template-columns: repeat(2,1fr); } }
+.pw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px){ .pw-grid { grid-template-columns: repeat(2,1fr); } }
+.pw-clutch { display:flex; align-items:center; gap:12px; height:30px; }
+.pw-clutch-stars { color:#FF3D2E; font-size:22px; letter-spacing:3px; line-height:1; }
+.pw-clutch-word { font-family:Helvetica,Arial,sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.5px; color:#FAF8F3; }
 .pw-card { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; min-height: 150px; padding: 36px 20px; background: #131313; border: 1px solid #242424; border-radius: 16px; overflow: hidden; transition: border-color .3s ease, transform .3s ease, background .3s ease; }
 .pw-card::before { content:''; position:absolute; left:50%; top:-50px; transform:translateX(-50%); width:200px; height:120px; background:radial-gradient(ellipse,rgba(255,236,0,0.08),transparent 70%); opacity:0; transition:opacity .35s ease; pointer-events:none; }
 .pw-card:hover { border-color:#3a3a3a; background:#161616; transform:translateY(-3px); }
@@ -3608,40 +3616,50 @@
 
 
   
-  <!-- ================= ABOUT HERO (Cover) ================= -->
-  <section class="hero-cover about-hero">
-    <div class="ghost-monogram">C</div>
-    <div class="cover-grid">
-      <div class="cover-main">
-        <div class="eyebrow fade-in delay-1"><span class="eyebrow-dot"></span><span>About / Consultus Digital</span></div>
-        <h1 class="display fade-in delay-2">We engineer <span class="sem">revenue</span> systems.</h1>
-        <p class="lede fade-in delay-3">Paid media, SEO, CRO, creative, analytics, and CRM, built to one standard and measured against one scoreboard. Built in Toronto, working across North America. Since 2020.</p>
-        <div class="hero-ctas fade-in delay-3" style="margin-top:36px">
-          <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call →</a>
-          <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See the Work</a>
-        </div>
-      </div>
-      <div class="cover-meta">
-        <div class="cell"><span class="mono">Founded</span><strong>Toronto, 2020</strong></div>
-        <div class="cell"><span class="mono">Home Base</span><strong>Toronto, Canada</strong></div>
-        <div class="cell"><span class="mono">Headcount</span><strong>Thirty-two specialists</strong></div>
-        <div class="cell"><span class="mono">Rating</span><strong>4.9 ★ · 47 Clutch reviews</strong></div>
+  <!-- ================= ABOUT HERO (video) ================= -->
+  <style>
+    .hero { position: relative; min-height: 620px; display: flex; align-items: center; justify-content: center; padding: 100px 32px; color: #FAF8F3; overflow: hidden; text-align: center; }
+    .hero.short { min-height: 520px; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, rgba(20,20,20,0.85) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+    .hero-content .eyebrow { color: #C7C5C8; margin-bottom: 28px; justify-content: center; }
+    .hero-content .eyebrow-dot { background: #FFEC00; }
+    .hero h1 { font-weight: 400; font-size: clamp(40px, 7vw, 96px); line-height: 0.98; letter-spacing: -0.025em; color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; margin-bottom: 28px; max-width: 1100px; }
+    .hero h1 .sem { color: #FFEC00 !important; -webkit-text-fill-color: #FFEC00 !important; }
+    .hero-sub { font-size: 18px; line-height: 1.55; color: #E8E6E1; max-width: 660px; margin: 0 auto 40px; }
+    .hero .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .about-stats-strip { max-width: 1000px; margin: 0 auto; padding: 44px 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; border-bottom: 1px solid #E1DCD1; }
+    .about-stats-strip .cell { display: flex; flex-direction: column; }
+    .about-stats-strip .cell .mono { font-family: var(--mono); font-size: 10.5px; color: #6A686B; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+    .about-stats-strip .cell strong { font-family: var(--sans); font-weight: 500; font-size: 15px; color: #141414; }
+    @media (max-width: 560px) { .about-stats-strip { grid-template-columns: 1fr; gap: 24px; } }
+  </style>
+  <section class="hero short about-hero">
+    <div class="hero-bg"><video src="/assets/video/office-reel.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>About / Consultus Digital</span></div>
+      <h1>A digital marketing agency that treats your growth <span class="sem">like our own</span>.</h1>
+      <p class="hero-sub">We deliver performance-driven marketing for ambitious brands across industries. We're experts across the full funnel, from strategy and creative production to paid media and sales systems, all built around one system designed to grow revenue.</p>
+      <div class="hero-ctas">
+        <a class="btn primary on-dark cta-yellow-hover" href="/contact/">Book a Strategy Call →</a>
+        <a class="btn secondary on-dark" href="/results/">See the Work</a>
       </div>
     </div>
   </section>
-<!-- Office wall band -->
-<section style="max-width:1200px;margin:0 auto;padding:0 32px 72px">
-  <div class="rv" style="position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(20,20,20,0.08)">
-    <img src="/assets/brand/office-wall.jpg" alt="The Consultus Digital studio wall, Toronto" loading="lazy" style="width:100%;display:block">
-    <div style="position:absolute;left:18px;bottom:14px;background:rgba(20,20,20,0.72);backdrop-filter:blur(6px);color:#FAF8F3;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border-radius:100px">The Studio &middot; Toronto</div>
-  </div>
-</section>
+  <section class="about-stats-strip">
+    <div class="cell"><span class="mono">Since</span><strong>Toronto, 2020</strong></div>
+    <div class="cell"><span class="mono">Critics say</span><strong>4.9 ★ · 47 reviews</strong></div>
+    <div class="cell"><span class="mono">Serving</span><strong>North America</strong></div>
+  </section>
 <!-- ================= TEAM ================= -->
   <section class="sec">
     <div class="sec-head">
       <div class="section-lbl">The Team</div>
-      <h2 class="sec-title">Specialists, not <span class="sem">generalists</span>.</h2>
-<p style="font-size:17px;line-height:1.6;color:#6A686B;margin-top:18px;max-width:520px">What makes Consultus Digital different is not a platform or a process. It is the people: senior specialists who own their craft, on your account from day one.</p>
+      <h2 class="sec-title">Meet the <span class="sem">Leadership Team</span>.</h2>
+<p style="font-size:17px;line-height:1.6;color:#6A686B;margin-top:18px;max-width:520px">What makes Consultus Digital different starts at the top. The people who set the standard here are hands-on operators, close to the work and accountable for the results on every account.</p>
     </div>
     <div class="about-team-grid">
       <!-- Row 1: Leadership -->
@@ -3649,59 +3667,81 @@
       <div class="team-member" data-team-id="grace-natarelli-matzanke" data-media-slug="grace-natarelli-matzanke" tabindex="0" onclick="openTeamBio('grace-natarelli-matzanke')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('grace-natarelli-matzanke')}"><img src="/assets/team/grace-natarelli-matzanke.jpg" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('img-failed')" alt="Grace Natarelli Matzanke" loading="lazy"/><div class="team-lbl"><div class="team-name">Grace Natarelli Matzanke</div><div class="team-role">Co-founder · VP Client Services</div></div></div>
       <div class="team-member" data-team-id="mo-farazi" data-media-slug="mo-farazi" tabindex="0" onclick="openTeamBio('mo-farazi')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('mo-farazi')}"><img src="/assets/team/mo-farazi.jpg" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('img-failed')" alt="Mo Farazi" loading="lazy"/><div class="team-lbl"><div class="team-name">Mo Farazi</div><div class="team-role">VP Operations</div></div></div>
       <div class="team-member" data-team-id="shannon-stoneburgh" data-media-slug="shannon-stoneburgh" tabindex="0" onclick="openTeamBio('shannon-stoneburgh')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('shannon-stoneburgh')}"><img src="/assets/team/shannon-stoneburgh.jpg" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('img-failed')" alt="Shannon Stoneburgh" loading="lazy"/><div class="team-lbl"><div class="team-name">Shannon Stoneburgh</div><div class="team-role">VP Marketing</div></div></div>
-      <!-- Row 2: Client + Specialist leads -->
-      <div class="team-member" data-team-id="isaac-ferguson" data-media-slug="isaac-ferguson" tabindex="0" onclick="openTeamBio('isaac-ferguson')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('isaac-ferguson')}"><img src="/assets/team/isaac-ferguson.jpg" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('img-failed')" alt="Isaac Ferguson" loading="lazy"/><div class="team-lbl"><div class="team-name">Isaac Ferguson</div><div class="team-role">Director, Client Services</div></div></div>
-      <div class="team-member" data-team-id="paid-media-lead" data-media-slug="paid-media-lead" tabindex="0" onclick="openTeamBio('paid-media-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('paid-media-lead')}"><div class="team-mono">GN</div><div class="team-lbl"><div class="team-name">Gow Naguleswaran</div><div class="team-role">Paid Media Manager</div></div></div>
-      <div class="team-member" data-team-id="seo-lead" data-media-slug="seo-lead" tabindex="0" onclick="openTeamBio('seo-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('seo-lead')}"><div class="team-mono">PS</div><div class="team-lbl"><div class="team-name">Paul Sreeley</div><div class="team-role">SEO Lead</div></div></div>
-      <div class="team-member" data-team-id="cro-web-lead" data-media-slug="cro-web-lead" tabindex="0" onclick="openTeamBio('cro-web-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('cro-web-lead')}"><div class="team-mono">WT</div><div class="team-lbl"><div class="team-name">Walid Tahiri</div><div class="team-role">CRO &amp; Web</div></div></div>
-      <!-- Row 3: Creative + Data + CRM -->
-      <div class="team-member" data-team-id="creative-director" data-media-slug="creative-director" tabindex="0" onclick="openTeamBio('creative-director')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('creative-director')}"><div class="team-mono">JL</div><div class="team-lbl"><div class="team-name">Jennifer Lau</div><div class="team-role">Creative Strategist</div></div></div>
-      <div class="team-member" data-team-id="analytics-lead" data-media-slug="analytics-lead" tabindex="0" onclick="openTeamBio('analytics-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('analytics-lead')}"><div class="team-mono">LI</div><div class="team-lbl"><div class="team-name">Lukas Iafrates</div><div class="team-role">Sales Enablement</div></div></div>
-      <div class="team-member" data-team-id="crm-lead" data-media-slug="crm-lead" tabindex="0" onclick="openTeamBio('crm-lead')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('crm-lead')}"><div class="team-mono">TH</div><div class="team-lbl"><div class="team-name">Toshi Hayashi</div><div class="team-role">Lead Designer</div></div></div>
-      <div class="team-member" data-team-id="evan-jones" data-media-slug="evan-jones" tabindex="0" onclick="openTeamBio('evan-jones')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamBio('evan-jones')}"><img src="/assets/team/evan-jones.jpg" alt="Evan Jones" loading="lazy"/><div class="team-lbl"><div class="team-name">Evan Jones</div><div class="team-role">Account Manager</div></div></div>
     </div>
   </section>
 
   
 
 
-  <!-- ================= PRINCIPLES ================= -->
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">The Principles</div>
-      <h2 class="sec-title">Revenue systems, not <span class="sem">campaigns</span>.</h2>
-    </div>
-    <div class="principle-row" style="border-top:none">
-      <div class="principle-num">/01</div>
-      <div class="principle-head">Attribution over <span class="sem">impressions</span>.</div>
-      <p class="principle-body">Every dollar is traced to revenue, not to a dashboard vanity metric. If we can't tie spend to pipeline, we don't ship it. Closed-loop reporting is the floor, not the ceiling.</p>
-    </div>
-    <div class="principle-row">
-      <div class="principle-num">/02</div>
-      <div class="principle-head">Specialists over <span class="sem">generalists</span>.</div>
-      <p class="principle-body">Every channel is owned by someone whose entire practice is that channel. No pod models. No full-stack fiction. Depth beats breadth when the number on the invoice is tied to the number on the scoreboard.</p>
-    </div>
-    <div class="principle-row">
-      <div class="principle-num">/03</div>
-      <div class="principle-head">Process over <span class="sem">personality</span>.</div>
-      <p class="principle-body">Playbooks, not heroics. The same methodology delivers whether a senior partner runs the account or a three-year associate. Repeatable is the point. Celebrity operators aren't.</p>
-    </div>
-    <div class="principle-row">
-      <div class="principle-num">/04</div>
-      <div class="principle-head">Close the <span class="sem">loop</span>.</div>
-      <p class="principle-body">Creative, media, site, CRM, and reporting are one circuit. Signal flows end to end, and we tune the whole loop. No handoffs into black boxes (no exceptions).</p>
-    </div>
-  </section>
-
-  <!-- ================= BY THE NUMBERS ================= -->
-  <section class="sec dark-full">
+  <!-- ================= VISION / MISSION ================= -->
+  <style>
+    #vision .vm-statement{font-family:var(--sans);font-weight:400;font-size:clamp(26px,3.2vw,44px);line-height:1.26;letter-spacing:-0.022em;color:#FAF8F3;max-width:1000px;margin-top:4px}
+    #vision .vm-statement .sem{color:#FFEC00}
+    #vision .vm-web{position:relative;margin-top:60px}
+    #vision .vm-cards{display:grid;grid-template-columns:1fr 1fr;column-gap:220px;row-gap:150px;position:relative;z-index:2}
+    #vision .vm-cards .vm-card:nth-child(1){grid-column:1;grid-row:1}
+    #vision .vm-cards .vm-card:nth-child(2){grid-column:2;grid-row:1}
+    #vision .vm-cards .vm-card:nth-child(3){grid-column:2;grid-row:2}
+    #vision .vm-cards .vm-card:nth-child(4){grid-column:1;grid-row:2}
+    #vision .vm-card{position:relative;background:#161616;border:1px solid #262626;border-radius:14px;padding:28px 26px 32px;overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+    #vision .vm-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:#FFEC00;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+    #vision .vm-card:hover{transform:translateY(-4px);border-color:rgba(255,236,0,0.45);background:#1a1a1a}
+    #vision .vm-card:hover::before{transform:scaleX(1)}
+    #vision .vm-card .vm-idx{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;color:#FFEC00;display:block;margin-bottom:44px}
+    #vision .vm-card .vm-k{font-family:var(--wide);font-weight:600;font-size:18px;line-height:1.15;text-transform:uppercase;letter-spacing:0.02em;color:#FAF8F3;margin-bottom:14px;min-height:2.3em}
+    #vision .vm-card .vm-v{font-size:15px;line-height:1.52;color:#C7C5C8}
+    #vision .vm-conn{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+    #vision .vm-conn line{stroke:rgba(255,236,0,0.4);stroke-width:1.5;stroke-dasharray:4 6;vector-effect:non-scaling-stroke}
+    #vision .vm-conn path{fill:none;stroke:rgba(255,236,0,0.28);stroke-width:1.5;stroke-dasharray:4 6;vector-effect:non-scaling-stroke}
+    #vision .vm-hub{position:absolute;left:50%;top:50%;width:158px;height:158px;transform:translate(-50%,-50%);z-index:3;display:flex;align-items:center;justify-content:center}
+    #vision .vm-hub-ring{position:absolute;inset:0;border-radius:50%;border:1.5px dashed rgba(255,236,0,0.6);animation:vmspin 24s linear infinite}
+    #vision .vm-hub-ring.inner{inset:20px;border-color:rgba(255,236,0,0.25);animation:vmspin 16s linear infinite reverse}
+    #vision .vm-hub-core{position:relative;width:112px;height:112px;border-radius:50%;background:#0d0d0d;border:1px solid #2a2a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 0 46px rgba(255,236,0,0.10)}
+    #vision .vm-hub-core svg{width:38px;height:auto;color:#FFEC00}
+    #vision .vm-hub-core span{font-family:var(--mono);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8A87;text-align:center;line-height:1.3}
+    @keyframes vmspin{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){#vision .vm-hub-ring{animation:none}}
+    @media(max-width:900px){
+      #vision .vm-cards{column-gap:150px;row-gap:130px}
+      #vision .vm-hub{width:132px;height:132px}
+      #vision .vm-hub-core{width:94px;height:94px}
+      #vision .vm-hub-core svg{width:32px}
+    }
+    @media(max-width:680px){
+      #vision .vm-cards{grid-template-columns:1fr;column-gap:0;row-gap:16px}
+      #vision .vm-cards .vm-card:nth-child(1),#vision .vm-cards .vm-card:nth-child(2),#vision .vm-cards .vm-card:nth-child(3),#vision .vm-cards .vm-card:nth-child(4){grid-column:1;grid-row:auto}
+      #vision .vm-conn,#vision .vm-hub{display:none}
+      #vision .vm-card .vm-idx{margin-bottom:28px}
+    }
+  </style>
+  <section class="sec dark-full" id="vision">
     <div class="sec-inner">
-      <div class="section-lbl dark">By the numbers</div>
-      <div class="stat-row" style="margin-top:48px">
-        <div class="stat"><div class="stat-num">6<span class="unit">yrs</span></div><div class="stat-lbl">Engineering growth systems since 2020</div></div>
-        <div class="stat"><div class="stat-num">$42<span class="unit">M+</span></div><div class="stat-lbl">Ad spend traced to revenue, not to impressions</div></div>
-        <div class="stat"><div class="stat-num">30<span class="unit">+</span></div><div class="stat-lbl">CRM implementations deployed end to end</div></div>
-        <div class="stat"><div class="stat-num">94<span class="unit">%</span></div><div class="stat-lbl">Client retention, year over year</div></div>
+      <div class="sec-head">
+        <div class="section-lbl dark">The Vision</div>
+      </div>
+      <h3 class="vm-statement">Our mission is to build <span class="sem">one growth engine</span> where marketing, sales, strategy, and technology work in tandem. Because sustainable growth doesn't happen in silos, it happens when every function moves with intent.</h3>
+      <div class="vm-web">
+        <svg class="vm-conn" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M25,24 L75,24 L75,76 L25,76 Z"/>
+          <line x1="50" y1="50" x2="25" y2="24"/>
+          <line x1="50" y1="50" x2="75" y2="24"/>
+          <line x1="50" y1="50" x2="75" y2="76"/>
+          <line x1="50" y1="50" x2="25" y2="76"/>
+        </svg>
+        <div class="vm-hub">
+          <div class="vm-hub-ring"></div>
+          <div class="vm-hub-ring inner"></div>
+          <div class="vm-hub-core">
+            <svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg>
+            <span>Growth<br>Engine</span>
+          </div>
+        </div>
+        <div class="vm-cards">
+          <div class="vm-card"><span class="vm-idx">01</span><div class="vm-k">Marketing</div><p class="vm-v">Performance-driven marketing that produces measurable outcomes, not vanity metrics.</p></div>
+          <div class="vm-card"><span class="vm-idx">02</span><div class="vm-k">Sales</div><p class="vm-v">Give sales teams the resources, messaging, and systems they need to close.</p></div>
+          <div class="vm-card"><span class="vm-idx">03</span><div class="vm-k">AI &amp; Technology</div><p class="vm-v">Modern tooling and AI woven through the stack, so the whole engine runs smarter.</p></div>
+          <div class="vm-card"><span class="vm-idx">04</span><div class="vm-k">Strategy</div><p class="vm-v">Unlock untapped potential through sharp strategic counsel and deliberate planning.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -3711,85 +3751,108 @@
     <div class="sec-inner">
       <div class="sec-head">
         <div class="section-lbl">The Method</div>
-        <h2 class="sec-title">One <span class="sem">system</span>. Three surfaces.</h2>
+        <h2 class="sec-title">Our <span class="sem">growth system</span> methodology.</h2>
       </div>
       <div class="method-grid">
         <div class="accent-card">
           <div class="ac-eyebrow">/01 Acquire</div>
           <div class="ac-value">Demand, turned into measurable visits.</div>
-          <p class="ac-body">Paid search, paid social, SEO, and AEO (AI search), run against pipeline, not clicks. Every spend channel carries a CAC target on day one.</p>
-          <ul>
-            <li>Google &amp; Meta Ads</li>
-            <li>SEO · Local · AEO</li>
-            <li>Influencer</li>
-          </ul>
+          <p class="ac-body">We run paid search, paid social, SEO, and AI search to bring in qualified traffic. Every channel gets a cost-per-acquisition target on day one, and we measure each one against the pipeline it creates.</p>
         </div>
         <div class="accent-card">
           <div class="ac-eyebrow">/02 Convert</div>
           <div class="ac-value">Visits, turned into booked revenue.</div>
-          <p class="ac-body">Landing pages, full-site CRO, and performance creative built to move the conversion rate, not the design award pile. Tested in-market, not in a meeting.</p>
-          <ul>
-            <li>Web Development</li>
-            <li>Landing Pages · A/B</li>
-            <li>Performance Creative</li>
-          </ul>
+          <p class="ac-body">We build landing pages, run full-site conversion optimization, and produce performance creative to lift your conversion rate. We test every change with real traffic before we roll it out.</p>
         </div>
         <div class="accent-card">
           <div class="ac-eyebrow">/03 Scale</div>
           <div class="ac-value">Revenue, turned into a compounding system.</div>
-          <p class="ac-body">Analytics, attribution, and CRM that tie creative to cash and compound the whole engine quarter over quarter. The loop tightens every cycle.</p>
-          <ul>
-            <li>Zoho CRM Implementation</li>
-            <li>Marketing Automation</li>
-            <li>Analytics &amp; Attribution</li>
-          </ul>
+          <p class="ac-body">We use analytics, attribution, and CRM to connect your campaigns and creative to real revenue. That data shows us what to improve each quarter, so results keep building over time.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= SECTION DIVIDER (Onyx + giant numeral) ================= -->
-  <section class="section-divider">
-    <div class="sd-inner">
-      <div class="sd-num">06</div>
-      <div>
-        <div class="sd-meta">Years in market · Since 2020</div>
-        <div class="sd-title">Six years of <span class="sem">compounding</span>.</div>
+  <!-- ================= TIMELINE (horizontal) ================= -->
+  <style>
+    #story-timeline{position:relative}
+    #story-timeline .htl-wrap{position:relative}
+    #story-timeline .htl-viewport{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;scroll-behavior:smooth}
+    #story-timeline .htl-viewport::-webkit-scrollbar{display:none}
+    #story-timeline .htl-track{position:relative;display:flex;width:max-content;gap:0;padding:2px 0 4px}
+    #story-timeline .htl-track::before{content:"";position:absolute;top:76px;left:0;right:0;height:1.5px;background:rgba(20,20,20,0.14);z-index:0}
+    #story-timeline .htl-item{position:relative;z-index:1;flex:0 0 300px;max-width:300px;padding:0 22px;text-align:center}
+    #story-timeline .htl-year{font-family:var(--mono);font-size:13px;letter-spacing:0.1em;color:#1A40C7;height:28px;line-height:28px;margin-bottom:20px}
+    #story-timeline .htl-node{width:56px;height:56px;border-radius:50%;background:#141414;display:flex;align-items:center;justify-content:center;margin:0 auto;border:4px solid #FAF8F3;transition:background .25s ease,transform .25s ease}
+    #story-timeline .htl-node svg{width:27px;height:auto;color:#FFFFFF;transition:color .25s ease}
+    #story-timeline .htl-item:hover .htl-node{transform:scale(1.08)}
+    #story-timeline .htl-title{font-family:var(--sans);font-weight:400;font-size:21px;line-height:1.16;letter-spacing:-0.012em;color:#141414;margin:26px 0 12px}
+    #story-timeline .htl-title .sem{color:#141414;font-style:normal}
+    #story-timeline .htl-body{font-size:14.5px;line-height:1.5;color:#6A686B}
+    #story-timeline .htl-arrow{position:absolute;top:76px;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(20,20,20,0.2);background:#FAF8F3;color:#141414;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:background .2s ease,color .2s ease,border-color .2s ease}
+    #story-timeline .htl-arrow svg{width:16px;height:16px}
+    #story-timeline .htl-arrow:hover{background:#141414;color:#FFEC00;border-color:#141414}
+    #story-timeline .htl-arrow.prev{left:-10px}
+    #story-timeline .htl-arrow.next{right:-10px}
+    @media(max-width:640px){
+      #story-timeline .htl-item{flex:0 0 258px;max-width:258px;padding:0 16px}
+      #story-timeline .htl-arrow.prev{left:-4px}
+      #story-timeline .htl-arrow.next{right:-4px}
+    }
+  </style>
+  <section class="sec" id="story-timeline">
+    <div class="sec-head">
+      <div class="section-lbl">The Timeline</div>
+      <h2 class="sec-title">6 <span class="sem">Years</span> in the market.</h2>
+    </div>
+    <div class="htl-wrap">
+      <button class="htl-arrow prev" aria-label="Previous milestones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="htl-arrow next" aria-label="Next milestones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <div class="htl-viewport">
+        <div class="htl-track">
+          <div class="htl-item"><div class="htl-year">2020</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">Founded in <span class="sem">Toronto</span>.</div><p class="htl-body">Jake Matzanke and Grace Natarelli launch Consultus Digital from a bartop table in a Toronto condo. First clients signed, and Mo Farazi joins to build the operational backbone.</p></div>
+          <div class="htl-item"><div class="htl-year">2021</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">First office, first <span class="sem">hires</span>.</div><p class="htl-body">The first office space and the first key hires. The shift from startup hustle to structured growth, with service quality as the bar.</p></div>
+          <div class="htl-item"><div class="htl-year">2022</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">Partnered with <span class="sem">CDAP</span>.</div><p class="htl-body">Selected as a key partner for the Canada Digital Adoption Program. Tailored Digital Growth Plans for more than 70 Canadian SMBs, and proof that the strategy-first model scales.</p></div>
+          <div class="htl-item"><div class="htl-year">2023</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">The Digital Growth <span class="sem">Plan</span>.</div><p class="htl-body">The DGP becomes the front door of every engagement: a strategic roadmap across paid, search, content, sales, and technology before a dollar of media moves.</p></div>
+          <div class="htl-item"><div class="htl-year">2024</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">CRM Partners</div><p class="htl-body">CRM implementation and sales enablement move from bolt-on to core capability. Client marketing and sales finally share one scoreboard.</p></div>
+          <div class="htl-item"><div class="htl-year">2025</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">Industry Expansion</div><p class="htl-body">Top-tier hires across strategy, creative, and performance. Industry playbooks sharpen across healthcare, home services, legal, and ecommerce.</p></div>
+          <div class="htl-item"><div class="htl-year">2026</div><span class="htl-node"><svg viewBox="595 305 175 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M606.59,361.75v44.49c0,2.3,1.21,4.41,3.18,5.56l38.21,22.24c1.97,1.15,4.4,1.15,6.37,0l35.02-20.39c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-35.02,20.39c-4.25,2.47-9.55-0.62-9.55-5.56v-29.66c0-2.29,1.21-4.41,3.18-5.56l54.12-31.51c8.49-4.95,8.49-17.3,0-22.24c-3.94-2.3-8.8-2.3-12.74,0l-66.86,38.92C607.81,357.34,606.59,359.46,606.59,361.75z"/><path fill="currentColor" d="M759.41,406.24v-44.49c0-2.3-1.21-4.41-3.18-5.56l-38.21-22.24c-1.97-1.15-4.4-1.15-6.37,0l-35.03,20.39c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l35.02-20.39c4.25-2.47,9.55,0.62,9.55,5.56v29.66c0,2.29-1.21,4.41-3.18,5.56l-54.12,31.51c-8.49,4.95-8.49,17.3,0,22.24c3.94,2.3,8.8,2.3,12.74,0l66.86-38.92C758.19,410.65,759.41,408.54,759.41,406.24z"/></svg></span><div class="htl-title">Scaling, Innovating and growing our impact.</div><p class="htl-body">Today, we continue to expand our service offerings, innovate with emerging technologies, and deepen our partnerships with businesses looking for long-term digital growth.</p></div>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- ================= TIMELINE ================= -->
-  <section class="sec">
-    <div class="timeline-list">
-<div class="timeline-row"><div class="timeline-year">2020</div><div><div class="timeline-title">Founded in <span class="sem">Toronto</span>.</div><p class="timeline-body">Jake Matzanke and Grace Natarelli launch Consultus Digital from a bartop table in a Toronto condo. First clients signed, and Mo Farazi joins to build the operational backbone.</p></div></div>
-<div class="timeline-row"><div class="timeline-year">2021</div><div><div class="timeline-title">First office, first <span class="sem">hires</span>.</div><p class="timeline-body">The first office space and the first key hires. The shift from startup hustle to structured growth, with service quality as the bar.</p></div></div>
-<div class="timeline-row"><div class="timeline-year">2022</div><div><div class="timeline-title">Chosen for <span class="sem">CDAP</span>.</div><p class="timeline-body">Selected as a key partner for the Canada Digital Adoption Program. Tailored Digital Growth Plans for more than 70 Canadian SMBs, and proof that the strategy-first model scales.</p></div></div>
-<div class="timeline-row"><div class="timeline-year">2023</div><div><div class="timeline-title">The Digital Growth <span class="sem">Plan</span>.</div><p class="timeline-body">The DGP becomes the front door of every engagement: a strategic roadmap across paid, search, content, sales, and technology before a dollar of media moves.</p></div></div>
-<div class="timeline-row"><div class="timeline-year">2024</div><div><div class="timeline-title">Marketing and sales, <span class="sem">one engine</span>.</div><p class="timeline-body">CRM implementation and sales enablement move from bolt-on to core capability. Client marketing and sales finally share one scoreboard.</p></div></div>
-<div class="timeline-row"><div class="timeline-year">2025</div><div><div class="timeline-title">Specialists go <span class="sem">deeper</span>.</div><p class="timeline-body">Top-tier hires across strategy, creative, and performance. Industry playbooks sharpen across healthcare, home services, legal, and ecommerce.</p></div></div>
-<div class="timeline-row"><div class="timeline-year">2026</div><div><div class="timeline-title">The loop keeps <span class="sem">tightening</span>.</div><p class="timeline-body">Forty-seven verified Clutch reviews at a 4.9 average, case studies with receipts behind every number, and a creative engine that compounds.</p></div></div>
-</div>
-</section>
+  <script>
+    (function(){
+      var vp=document.querySelector('#story-timeline .htl-viewport');
+      if(!vp)return;
+      var item=vp.querySelector('.htl-item');
+      var step=item?item.getBoundingClientRect().width:300;
+      document.querySelectorAll('#story-timeline .htl-arrow').forEach(function(b){
+        b.addEventListener('click',function(){
+          vp.scrollBy({left:(b.classList.contains('next')?1:-1)*step,behavior:'smooth'});
+        });
+      });
+    })();
+  </script>
 
   <!-- ================= GEOGRAPHY ================= -->
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
-        <div class="section-lbl">The Offices</div>
-        <h2 class="sec-title">Built in <span class="sem">Toronto</span>.</h2>
+        <div class="section-lbl">The Office</div>
+        <h2 class="sec-title">Built in <span class="sem">Canada</span>.</h2>
 </div>
 <div class="geo-row">
 <div class="geo-card">
 <div class="geo-eyebrow">Headquarters</div>
 <div class="geo-city"><span class="sem">Toronto</span></div>
-<p>Our flagship studio sits on Geary Avenue in the west end. Five-plus years of engineering growth for operators who demand accountability and attribution.</p>
+<p>Our flagship studio sits on Geary Avenue in the west end of Toronto's creative core.</p>
 <div class="geo-addr">136 Geary Ave, Unit 109 &middot; Toronto, ON M6H 4H1</div>
 </div>
 <div class="geo-card">
 <div class="geo-eyebrow">Range</div>
 <div class="geo-city"><span class="sem">North America</span></div>
-<p>One team, one standard, clients across Canada and the United States. No franchise model, no satellite staff, no hand-offs to juniors.</p>
+<p>We work with ambitious businesses across Canada, The U.S.A, and Mexico.</p>
 <div class="geo-addr">Serving clients coast to coast</div>
 </div>
 </div>
@@ -3797,23 +3860,72 @@
 </section>
 
   
-<!-- Team culture photo band -->
-<section style="max-width:1200px;margin:0 auto;padding:0 32px 90px">
-  <div class="rv" style="position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(20,20,20,0.08)">
-    <img src="/assets/team/team-bluejays.jpg" alt="The Consultus Digital team at a Toronto Blue Jays game" loading="lazy" style="width:100%;display:block">
-    <div style="position:absolute;left:18px;bottom:14px;background:rgba(20,20,20,0.72);backdrop-filter:blur(6px);color:#FAF8F3;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border-radius:100px">The Team &middot; Blue Jays Game Day</div>
+<!-- Team culture collage -->
+<style>
+  #culture-collage { max-width: 1200px; margin: 0 auto; padding: 0 32px 90px; }
+  #culture-collage .cc-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 200px); gap: 12px; }
+  #culture-collage figure { margin: 0; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(20,20,20,0.08); }
+  #culture-collage img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+  #culture-collage figure:hover img { transform: scale(1.05); }
+  #culture-collage .cc-a { grid-column: 1 / 3; grid-row: 1 / 3; }
+  #culture-collage .cc-b { grid-column: 3 / 5; grid-row: 1 / 2; }
+  #culture-collage .cc-c { grid-column: 4 / 5; grid-row: 2 / 4; }
+  #culture-collage .cc-d { grid-column: 3 / 4; grid-row: 2 / 3; }
+  #culture-collage .cc-e { grid-column: 1 / 4; grid-row: 3 / 4; }
+  #culture-collage .cc-cap { position: absolute; left: 16px; bottom: 14px; background: rgba(20,20,20,0.72); backdrop-filter: blur(6px); color: #FAF8F3; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; }
+  @media (max-width: 820px) {
+    #culture-collage .cc-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-rows: 150px; }
+    #culture-collage .cc-a { grid-column: 1 / 3; grid-row: span 2; }
+    #culture-collage .cc-b { grid-column: 1 / 3; grid-row: span 1; }
+    #culture-collage .cc-c { grid-column: span 1; grid-row: span 1; }
+    #culture-collage .cc-d { grid-column: span 1; grid-row: span 1; }
+    #culture-collage .cc-e { grid-column: 1 / 3; grid-row: span 1; }
+  }
+</style>
+<section id="culture-collage">
+  <div class="cc-grid">
+    <figure class="cc-a"><img src="/assets/team/office-meeting.jpg" alt="The Consultus Digital team in a strategy session" loading="lazy"><figcaption class="cc-cap">Life at Consultus Digital &middot; Toronto</figcaption></figure>
+    <figure class="cc-b"><img src="/assets/team/office-lounge.jpg" alt="The Consultus Digital lounge" loading="lazy"></figure>
+    <figure class="cc-c"><img src="/assets/team/office-booth.jpg" alt="The Consultus Digital team at a conference booth" loading="lazy"></figure>
+    <figure class="cc-d"><img src="/assets/team/team-jays.jpg" alt="The Consultus Digital team at a Toronto Blue Jays game" loading="lazy"></figure>
+    <figure class="cc-e"><img src="/assets/team/office-pingpong.jpg" alt="The Consultus Digital open office in Toronto" loading="lazy"></figure>
   </div>
 </section>
 <!-- ================= PARTNERS / CERTIFICATIONS ================= -->
-  <section class="sec dark-full pw-band"><div class="sec-inner"><div class="pw-head"><div class="section-lbl dark">Partners &amp; Certifications</div><h2 class="sec-title">Certified where it <span class="sem">counts</span>.</h2></div><div class="pw-grid"><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 48" class="pw3"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g><text x="54" y="32" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-0.5" fill="#FAF8F3">Google</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 130 24" class="pw3"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/><text x="34" y="18.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Meta</text></svg></div><div class="pw-tier">Business Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 24" class="pw3"><path fill="#F25022" d="M0 0h11v11H0z"/><path fill="#7FBA00" d="M13 0h11v11H13z"/><path fill="#00A4EF" d="M0 13h11v11H0z"/><path fill="#FFB900" d="M13 13h11v11H13z"/><text x="32" y="18" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" fill="#FAF8F3">Microsoft</text></svg></div><div class="pw-tier">Advertising Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 132 26" class="pw3"><g transform="translate(0,1) scale(1)"><path fill="#95BF47" transform="scale(1)" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></g><text x="30" y="19" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#FAF8F3">Shopify</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 116 34" class="pw3"><text x="0" y="22" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1" fill="#FAF8F3">amazon</text><path d="M4 27 C26 35 80 35 100 26" fill="none" stroke="#FF9900" stroke-width="3.4" stroke-linecap="round"/><path d="M97 23l6 3-5 4z" fill="#FF9900"/></svg></div><div class="pw-tier">Verified Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 120 30" class="pw3"><text x="0" y="24" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="800" letter-spacing="-0.5" fill="#E42527">Zoho</text></svg></div><div class="pw-tier">Authorized · CRM</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><g transform="translate(0,2) scale(1.0)"><path fill="#FAF8F3" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g><text x="32" y="21" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">TikTok</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><rect x="0" y="2" width="26" height="26" rx="5" fill="#0A66C2"/><path fill="#fff" d="M7.6 10.6v9.2H4.8v-9.2h2.8zM6.2 6.4a1.6 1.6 0 110 3.2 1.6 1.6 0 010-3.2zM9.6 10.6h2.7v1.25h.04c.38-.7 1.3-1.45 2.66-1.45 2.85 0 3.38 1.85 3.38 4.27v4.85h-2.82v-4.3c0-1.02-.02-2.34-1.43-2.34-1.43 0-1.65 1.12-1.65 2.27v4.37H9.6v-7.19z"/><text x="34" y="22" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Linked</text><text x="105" y="22" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#0A66C2">in</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><div class="pw-clutch"><span class="pw-clutch-stars">★★★★★</span><span class="pw-clutch-word">Clutch</span></div></div><div class="pw-tier">4.9 ★ · 47 reviews</div></div></div></div></section>
+  <section class="sec dark-full pw-band"><div class="sec-inner"><div class="pw-head"><div class="section-lbl dark">Partners &amp; Certifications</div><h2 class="sec-title">Certified where it <span class="sem">counts</span>.</h2></div><div class="pw-grid"><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 48" class="pw3"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g><text x="54" y="32" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-0.5" fill="#FAF8F3">Google</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 130 24" class="pw3"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/><text x="34" y="18.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Meta</text></svg></div><div class="pw-tier">Business Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 24" class="pw3"><path fill="#F25022" d="M0 0h11v11H0z"/><path fill="#7FBA00" d="M13 0h11v11H13z"/><path fill="#00A4EF" d="M0 13h11v11H0z"/><path fill="#FFB900" d="M13 13h11v11H13z"/><text x="32" y="18" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" fill="#FAF8F3">Microsoft</text></svg></div><div class="pw-tier">Advertising Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 132 26" class="pw3"><g transform="translate(0,1) scale(1)"><path fill="#95BF47" transform="scale(1)" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></g><text x="30" y="19" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#FAF8F3">Shopify</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 116 34" class="pw3"><text x="0" y="22" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1" fill="#FAF8F3">amazon</text><path d="M4 27 C26 35 80 35 100 26" fill="none" stroke="#FF9900" stroke-width="3.4" stroke-linecap="round"/><path d="M97 23l6 3-5 4z" fill="#FF9900"/></svg></div><div class="pw-tier">Verified Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 158 30" class="pw3"><g fill="none" stroke-width="2.4"><rect x="1.5" y="6.5" width="16" height="16" rx="4.8" stroke="#E42527" transform="rotate(-13 9.5 14.5)"/><rect x="13.5" y="6.5" width="16" height="16" rx="4.8" stroke="#16A94C" transform="rotate(-13 21.5 14.5)"/><rect x="25.5" y="6.5" width="16" height="16" rx="4.8" stroke="#2A66B0" transform="rotate(-13 33.5 14.5)"/><rect x="37.5" y="6.5" width="16" height="16" rx="4.8" stroke="#F6B017" transform="rotate(-13 45.5 14.5)"/></g><text x="61" y="23" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="-0.3" fill="#FAF8F3">Zoho</text></svg></div><div class="pw-tier">Authorized · CRM</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><g transform="translate(0,2)"><path fill="#25F4EE" transform="translate(-1.7,-1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(1.7,1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FAF8F3" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g><text x="31.3" y="19.6" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#25F4EE">TikTok</text><text x="32.7" y="22.4" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FE2C55">TikTok</text><text x="32" y="21" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">TikTok</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><text x="0" y="21.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Linked</text><g transform="translate(62,1)"><rect x="0" y="2" width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" transform="translate(0.6,0)" d="M7.6 10.6v9.2H4.8v-9.2h2.8zM6.2 6.4a1.6 1.6 0 110 3.2 1.6 1.6 0 010-3.2zM9.6 10.6h2.7v1.25h.04c.38-.7 1.3-1.45 2.66-1.45 2.85 0 3.38 1.85 3.38 4.27v4.85h-2.82v-4.3c0-1.02-.02-2.34-1.43-2.34-1.43 0-1.65 1.12-1.65 2.27v4.37H9.6v-7.19z"/></g></svg></div><div class="pw-tier">Marketing Partner</div></div></div></div></section>
+
+  <!-- ================= CLIENTS BAND ================= -->
+  <style>
+    .clients-band{background:#FAF8F3;padding:60px 32px;overflow:hidden;border-top:1px solid #E1DCD1;border-bottom:1px solid #E1DCD1}
+    .clients-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:48px}
+    .clients-lbl{font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:#141414;flex:0 0 auto;white-space:nowrap}
+    .clients-marquee{position:relative;overflow:hidden;flex:1 1 auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+    .clients-track{display:flex;align-items:center;gap:64px;width:max-content;animation:clients-scroll 45s linear infinite}
+    .clients-marquee:hover .clients-track{animation-play-state:paused}
+    .clients-logo{height:34px;width:auto;flex:0 0 auto;object-fit:contain;filter:grayscale(1) brightness(0.4);opacity:0.72;transition:opacity .3s ease,filter .3s ease}
+    .clients-logo:hover{opacity:1}
+    @keyframes clients-scroll{to{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){.clients-track{animation:none}}
+    @media(max-width:700px){.clients-inner{flex-direction:column;align-items:flex-start;gap:26px}.clients-lbl{font-size:22px}.clients-marquee{width:100%}}
+  </style>
+  <section class="clients-band" aria-label="Our clients">
+    <div class="clients-inner">
+      <div class="clients-lbl">Our clients</div>
+      <div class="clients-marquee">
+        <div class="clients-track">
+          <img class="clients-logo" src="/assets/work/logos/spieth.png" alt="Spieth America"><img class="clients-logo" src="/assets/work/logos/la-vie.png" alt="La Vie"><img class="clients-logo" src="/assets/work/logos/e11ement.webp" alt="e11ement"><img class="clients-logo" src="/assets/work/logos/dragonscale.png" alt="Dragonscale"><img class="clients-logo" src="/assets/work/logos/gordons.webp" alt="Gordon's"><img class="clients-logo" src="/assets/work/logos/zayouna.png" alt="Zayouna Law"><img class="clients-logo" src="/assets/work/logos/office-shop.png" alt="The Office Shop"><img class="clients-logo" src="/assets/work/logos/western-asphalt.svg" alt="Western Asphalt"><img class="clients-logo" src="/assets/work/logos/comwave.png" alt="Comwave"><img class="clients-logo" src="/assets/work/logos/bookseats.png" alt="BookSeats"><img class="clients-logo" src="/assets/work/logos/hardy.png" alt="Hardy Carts"><img class="clients-logo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition"><img class="clients-logo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas"><img class="clients-logo" src="/assets/work/logos/tonic.png" alt="Tonic"><img class="clients-logo" src="/assets/work/logos/mentorcity.svg" alt="MentorCity">
+          <img class="clients-logo" src="/assets/work/logos/spieth.png" alt="Spieth America"><img class="clients-logo" src="/assets/work/logos/la-vie.png" alt="La Vie"><img class="clients-logo" src="/assets/work/logos/e11ement.webp" alt="e11ement"><img class="clients-logo" src="/assets/work/logos/dragonscale.png" alt="Dragonscale"><img class="clients-logo" src="/assets/work/logos/gordons.webp" alt="Gordon's"><img class="clients-logo" src="/assets/work/logos/zayouna.png" alt="Zayouna Law"><img class="clients-logo" src="/assets/work/logos/office-shop.png" alt="The Office Shop"><img class="clients-logo" src="/assets/work/logos/western-asphalt.svg" alt="Western Asphalt"><img class="clients-logo" src="/assets/work/logos/comwave.png" alt="Comwave"><img class="clients-logo" src="/assets/work/logos/bookseats.png" alt="BookSeats"><img class="clients-logo" src="/assets/work/logos/hardy.png" alt="Hardy Carts"><img class="clients-logo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition"><img class="clients-logo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas"><img class="clients-logo" src="/assets/work/logos/tonic.png" alt="Tonic"><img class="clients-logo" src="/assets/work/logos/mentorcity.svg" alt="MentorCity">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= CTA ================= -->
   <section class="cta-sec">
     <div class="cta-inner">
       <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Work with us</span></div>
-      <h2 class="cta-title">Build with <span class="sem">specialists</span>.</h2>
-      <p style="font-family:var(--serif);font-weight:300;font-size:22px;line-height:1.45;max-width:56ch;color:rgba(250,248,243,0.85);margin-bottom:40px">Two doors in. Pick the one that fits, and we'll route you to the right lead on the first call.</p>
-      <div class="hero-ctas" style="gap:16px">
+      <h2 class="cta-title">Ready to build <span class="sem">something great</span>?</h2>
+      <div class="hero-ctas" style="gap:16px;justify-content:flex-start;margin-top:40px">
         <a class="btn primary on-dark" href="/contact/">Book a Strategy Call →</a>
         <a class="btn secondary on-dark" href="/contact/">See Open Roles →</a>
       </div>
@@ -4151,20 +4263,20 @@ window.TEAM_DATA = {
     role: 'VP Operations',
     img: '/assets/team/mo-farazi.jpg',
     eyebrow: 'Leadership',
-    joined: '',
+    joined: '2021',
     location: 'Toronto, ON',
     specialties: ['Operations', 'Delivery', 'Process Design'],
-    bio: '<p>Mo owns how the work actually gets done. Staffing, utilization, delivery cadence, and the connective tissue between specialist pods and client teams all sit in his practice.</p><p>Before Consultus, Mo a senior leadership track at a previous agency. At Consultus he has been the architect of the operating rhythm that makes the methodology scale across both offices.</p>'
+    bio: '<p>Mo runs the day-to-day operations at Consultus Digital. He handles technology, staffing, workload, delivery timelines, and makes sure specialist teams and client teams stay connected.</p><p>Before joining Consultus Digital, Mo held a senior leadership role at a previous agency. Since coming on board, he\'s built the systems and processes that let our methodology work consistently.</p>'
   },
   'shannon-stoneburgh': {
     name: 'Shannon Stoneburgh',
     role: 'VP Marketing',
     img: '/assets/team/shannon-stoneburgh.jpg',
     eyebrow: 'Leadership',
-    joined: '',
+    joined: '2023',
     location: 'Toronto, ON',
-    specialties: ['Brand', 'Content', 'Demand Gen'],
-    bio: '<p>Shannon runs Consultus marketing end to end. She owns the brand standard, the demand engine, and the thought leadership that puts Consultus\'s thinking into the market.</p><p>She came to Consultus from a senior leadership track at a previous agency and has quietly built the function into a pipeline contributor in its own right.</p>'
+    specialties: ['Creative Strategy', 'Brand', 'Content', 'Demand Gen'],
+    bio: '<p>Shannon runs marketing at Consultus Digital end to end. She owns creative strategy for our clients, brand standards, the demand engine, and the thought leadership that puts our thinking into the market.</p><p>She came to Consultus Digital from a senior leadership role on the client side, and has turned the function into a real contributor to the agency\'s growth.</p>'
   },
   'isaac-ferguson': {
     name: 'Isaac Ferguson',
