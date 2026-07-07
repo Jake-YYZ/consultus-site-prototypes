@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3637,7 +3645,7 @@
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our Google Ads <span class="sem">process</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Keyword Research</div><div class="ac-value">Niche terms. Less competition.</div><p class="ac-body">Keyword research is the process of identifying search terms that generate qualified traffic at a sustainable cost. We look for niche keywords, less competition, lower cost per click, and direct intent alignment with your ideal customer.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Optimized Ads</div><div class="ac-value">Creative that earns the click.</div><p class="ac-body">Creating Google Ads requires a high level of expertise. We use powerful optimization tools to write persuasive, attention-grabbing ad copy, structure ad groups properly, and deploy schema markup so organic signals lift alongside paid.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Dynamic Bidding</div><div class="ac-value">Maximize ROAS, waste nothing.</div><p class="ac-body">Our goal is to maximize your return on ad spend and ensure your budget is not burned on noisy clicks. We continuously monitor spend, measure outcomes, and adjust bidding strategy to hold CPA targets.</p></div>

@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3742,7 +3750,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our tailored approach for <span class="sem">ecommerce brands</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Comprehensive Analysis</div><div class="ac-value">Heatmaps, behaviour, KPIs.</div><p class="ac-body">We initiate the process by conducting a thorough analysis of your website, user behaviour, conversion funnels, and key performance indicators. The objective is to find the load-bearing leaks before we touch design.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 A/B Testing</div><div class="ac-value">Statistical discipline.</div><p class="ac-body">Controlled experiments compare different versions of pages and elements to determine which variants drive higher conversions. Tests run to significance, not to gut feel.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Landing Page Optimization</div><div class="ac-value">Aligned to the campaign.</div><p class="ac-body">For specific campaigns, we go the extra mile by optimizing <a href="https://consultusdigital.com/landing-page-design-toronto/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">landing pages</a> to align perfectly with the campaign message, resulting in dramatic improvement in conversion rates.</p></div>

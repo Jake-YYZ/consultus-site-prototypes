@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">content marketing</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Map</div><div class="ac-value">Topical authority diagnostic.</div><p class="ac-body">We map the question network around your buyer's research. Where you have authority, where you have gaps, and where competitors are claiming territory you should own.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Plan</div><div class="ac-value">Editorial calendar tied to clusters.</div><p class="ac-body">12-week editorial calendar with pillar pieces, cluster content, and refresh cadence. Each piece has a measurable thesis and a primary search target.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Produce</div><div class="ac-value">Researched, edited, schema-tagged.</div><p class="ac-body">Pieces produced to the editorial brief, reviewed by subject-matter input, schema-tagged for the right Article or HowTo or FAQPage type, and published with internal-link discipline.</p></div>

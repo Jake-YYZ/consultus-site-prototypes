@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3637,7 +3645,7 @@
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our Instagram Advertising <span class="sem">process</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Strategy</div><div class="ac-value">Tuned to the platform.</div><p class="ac-body">Instagram is a fundamentally different surface from feed-based Facebook. Stories, Reels, and the explore algorithm each behave differently. We design strategy specifically for IG's placement mix, not a generic Meta plan with the same creative.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Creative</div><div class="ac-value">Native to Stories and Reels.</div><p class="ac-body">Instagram ads succeed or fail on whether the creative reads as native to the surface. We build vertical-first, motion-first ads that match how the platform is actually consumed.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Audience</div><div class="ac-value">Interest plus behaviour.</div><p class="ac-body">Instagram's targeting is most powerful when interest data is layered with behavioural signals (recent shoppers, profile visitors, video-completers). We build audiences that compound rather than burn out.</p></div>

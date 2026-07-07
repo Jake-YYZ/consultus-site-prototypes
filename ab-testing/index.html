@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">a/b testing & experimentation</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Backlog</div><div class="ac-value">Hypothesis bank, scored.</div><p class="ac-body">We build the test backlog: 20-40 hypotheses tied to behavioral observations, scored by ICE, ranked for the next quarter.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Design</div><div class="ac-value">Power calculation, instrumentation.</div><p class="ac-body">Each test designed with proper power calculation, success metrics, and instrumentation. No test ships without a written design doc.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Run</div><div class="ac-value">Multiple concurrent experiments.</div><p class="ac-body">Multiple tests running concurrently where traffic and surface independence support it. Daily monitoring, weekly review, statistical close on schedule.</p></div>

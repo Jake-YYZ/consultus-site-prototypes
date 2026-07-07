@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3680,7 +3688,7 @@
         <h2 class="sec-title">How we run <span class="sem">web development</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Diagnose</div><div class="ac-value">Audit the existing site or buyer journey.</div><p class="ac-body">For redesigns, we audit the existing site against conversion data. For new builds, we map the buyer journey and define the surfaces that need to exist before we touch a Figma file.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Design</div><div class="ac-value">Mobile-first, conversion-led.</div><p class="ac-body">Design starts on mobile. Hierarchy, flow, and visual system all built around the buyer's decision moment rather than the brand's aesthetic preferences alone.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Build</div><div class="ac-value">Performance, accessibility, instrumentation.</div><p class="ac-body">Built to ship fast. Lighthouse scoring, accessibility (WCAG AA), and analytics instrumentation all part of the development standard, not afterthoughts.</p></div>

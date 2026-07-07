@@ -2095,6 +2095,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3596,7 +3604,7 @@
       <div class="section-lbl">Why Consultus Digital</div>
       <h2 class="sec-title">Master your craft, <span class="sem">shape</span> your future.</h2>
     </div>
-    <div class="method-grid" style="grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch">
+    <div class="method-grid cols-4" style="gap:20px;align-items:stretch">
       
         <div class="accent-card" style="height:100%">
           <div class="ac-eyebrow">/01 Growth Budget</div>

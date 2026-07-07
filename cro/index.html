@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">conversion rate optimization</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Funnel and surface diagnostic.</div><p class="ac-body">GA4 funnel analysis, session-replay review, heuristic audit, and heatmap review on the surfaces where conversion actually happens. Written report regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Hypothesize</div><div class="ac-value">Test backlog tied to data.</div><p class="ac-body">Backlog of 20-40 hypotheses, scored by impact, confidence, and ease. The top of the backlog drives the first quarter of testing.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Experiments running concurrently.</div><p class="ac-body">Multiple tests running concurrently where traffic supports it. Each test designed for proper power, instrumented end-to-end, and documented in the experiment log.</p></div>

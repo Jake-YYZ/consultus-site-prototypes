@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3742,7 +3750,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our tailored approach for <span class="sem">insurance brokers</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Strategic Planning</div><div class="ac-value">Goals, audience, budget, mapped.</div><p class="ac-body">Before we develop your paid media strategy, we take the time to learn your business, audience, competitors, and your prior experience with paid advertising. This helps us tailor your strategy to your specific position in the market.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Compelling Ad Copy</div><div class="ac-value">Words that convert.</div><p class="ac-body">Words matter. Our experienced copywriters strengthen your ads with copy that speaks directly to potential clients, addressing their needs and connecting on the right emotional notes.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 <a href="https://consultusdigital.com/blog/5-a-b-testing-techniques-for-boosting-your-websites-conversion-rate/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">A/B Testing</a></div><div class="ac-value">Disciplined experimentation.</div><p class="ac-body">We design experiments to find what is actually working. A/B testing helps us compare different versions of ads, audiences, and landing pages to refine the strategy and eliminate guesswork.</p></div>

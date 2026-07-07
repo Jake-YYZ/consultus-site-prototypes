@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3637,7 +3645,7 @@
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our Conversion Rate Optimization <span class="sem">process</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Find the leaks first.</div><p class="ac-body">We start every CRO engagement with a structural audit of your funnel: heatmaps, scroll depth, form analytics, page speed, and conversion event configuration. The objective is to find the load-bearing leaks before we start touching design.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Hypothesize</div><div class="ac-value">Document the test thesis.</div><p class="ac-body">For every change we propose, we document the hypothesis: what we believe is broken, why we believe it, what we will change, and what success looks like. No CRO test ships without a written thesis.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">A/B with statistical discipline.</div><p class="ac-body">We run controlled experiments with proper sample-size planning. Tests run to significance, not to gut feel. Results are documented for the next test in the program.</p></div>

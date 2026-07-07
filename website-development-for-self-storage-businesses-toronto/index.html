@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3742,7 +3750,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our tailored approach for <span class="sem">self-storage operators</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 In-Depth Discovery</div><div class="ac-value">Goals, audience, content.</div><p class="ac-body">We start with a structured discovery: business goals, target audience, content inventory, technical constraints. Every build decision flows from a documented requirement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Seamless Responsiveness</div><div class="ac-value">Mobile-first, every breakpoint.</div><p class="ac-body">Our designs ensure your website looks and works flawlessly on every device. Mobile is no longer a secondary surface; it is where most of your prospects first meet your brand.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Conversion-First Architecture</div><div class="ac-value">Built to book the meeting.</div><p class="ac-body">Forms, CTAs, pricing tables, and checkout flows are designed against conversion principles, not just visual aesthetics. The site is built to move qualified visitors to a tracked outcome.</p></div>

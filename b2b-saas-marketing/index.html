@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3643,7 +3651,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">The Consultus Digital approach to <span class="sem">b2b saas</span> marketing.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Immerse</div><div class="ac-value">Audit the GTM stack.</div><p class="ac-body">Marketing automation, CRM, attribution, content, paid. We map the full stack, identify the breakage points, and define the rebuild order so every later decision rests on clean data.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Build the Foundation</div><div class="ac-value">Attribution and CRM integration.</div><p class="ac-body">Server-side tracking deployed. Identity stitching across web, product, and CRM. Marketing-source data flowing into your revenue stack so every campaign is measured against pipeline.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Acquire Pipeline</div><div class="ac-value">Multi-channel demand, instrumented.</div><p class="ac-body">Paid programs on LinkedIn, Google, and the platforms where your buyer actually lives. Content authority built around the questions your buyer is researching. Both measured against pipeline contribution, not channel-reported metrics.</p></div>
@@ -3657,7 +3665,7 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">Services</div>
       <h2 class="sec-title">Five disciplines, <span class="sem">tuned</span> for B2B software and technology companies.</h2>
     </div>
-    <div class="method-grid" style="grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch">
+    <div class="method-grid" style="gap:20px;align-items:stretch">
       
     </div>
   </section>

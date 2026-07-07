@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3643,7 +3651,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">The Consultus Digital approach to <span class="sem">professional services</span> marketing.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Immerse</div><div class="ac-value">Map the firm's authority surface.</div><p class="ac-body">We start with a content and authority audit: where the firm shows up in search, in cited research, and on LinkedIn. Strategy begins from the actual visibility footprint, not from a generic blog calendar.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Build the Foundation</div><div class="ac-value">Practice-area architecture and trust signals.</div><p class="ac-body">Each practice area gets its own optimized page, schema, and case-study integration. Trust signals (credentials, regulatory bodies, client roster) surface above the fold.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Acquire Pipeline</div><div class="ac-value">Compounding content + targeted paid.</div><p class="ac-body">Editorial content programs that build topical authority over quarters, paired with high-intent paid media on LinkedIn and Google for the bottom-of-funnel queries that convert to consultations.</p></div>
@@ -3657,7 +3665,7 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">Services</div>
       <h2 class="sec-title">Five disciplines, <span class="sem">tuned</span> for professional services firms.</h2>
     </div>
-    <div class="method-grid" style="grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch">
+    <div class="method-grid" style="gap:20px;align-items:stretch">
       
     </div>
   </section>

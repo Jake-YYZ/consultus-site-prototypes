@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3643,7 +3651,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">The Consultus Digital approach to <span class="sem">real estate</span> marketing.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Immerse</div><div class="ac-value">Audit the local surface and CRM.</div><p class="ac-body">GBP, IDX feed, neighbourhood content, <a href="/google-ads/" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(26,64,199,0.4);text-underline-offset:3px">paid programs</a>, and CRM lead-routing. We map the full ecosystem before recommending a single change.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Build the Foundation</div><div class="ac-value">Local SEO + listing infrastructure.</div><p class="ac-body">Neighbourhood-level content architecture, IDX-page schema, GBP optimization, and CRM integration so every digital touch flows into a single source of truth for the brokerage.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Acquire Demand</div><div class="ac-value">Buyer and seller intent, separately.</div><p class="ac-body">Paid programs tuned to buyer-side search intent (neighbourhood + price + features) and seller-side intent (home valuation, listing-prep, agent comparison) as parallel campaigns with different creative and offers.</p></div>
@@ -3657,7 +3665,7 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">Services</div>
       <h2 class="sec-title">Five disciplines, <span class="sem">tuned</span> for real estate brokerages and agents.</h2>
     </div>
-    <div class="method-grid" style="grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch">
+    <div class="method-grid" style="gap:20px;align-items:stretch">
       
     </div>
   </section>

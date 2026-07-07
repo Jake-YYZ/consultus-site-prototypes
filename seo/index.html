@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">SEO</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Full technical and content diagnostic.</div><p class="ac-body">Core Web Vitals, indexation, on-page hygiene, content gaps, schema coverage, and link profile. Written report you keep regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Foundation</div><div class="ac-value">Technical fixes first.</div><p class="ac-body">Site speed, crawlability, schema, and internal-link structure all addressed before content production starts. The foundation is the program.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Build</div><div class="ac-value">Content authority and link earning.</div><p class="ac-body">Content programs structured around topical authority. Editorial discipline. Outreach for earned links. No tricks, no shortcuts.</p></div>

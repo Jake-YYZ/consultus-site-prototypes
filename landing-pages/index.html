@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">landing pages</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Brief</div><div class="ac-value">Tied to a paid campaign goal.</div><p class="ac-body">Each landing-page brief starts with the campaign goal: who is clicking, what they are coming from, and what action defines success. The brief is the contract.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Build</div><div class="ac-value">Two to four variants per ad group.</div><p class="ac-body">Each ad group ships with at least two landing-page variants tied to the messaging and offer they are testing. The page is part of the experiment, not a fixed destination.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Statistical discipline, real winners.</div><p class="ac-body">Tests run to power. Winners scale, losers retire. We do not call results on partial data and we document false positives alongside wins.</p></div>

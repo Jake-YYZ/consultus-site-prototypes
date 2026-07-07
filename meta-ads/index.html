@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">Meta Ads</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Full Meta stack diagnostic.</div><p class="ac-body">Account structure, pixel and CAPI health, creative library, audience seeds, and attribution review. Written report regardless of whether you engage.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Rebuild</div><div class="ac-value">Architecture and creative engine.</div><p class="ac-body">Account restructured around incrementality-aware bidding. Creative production cadence locked in with weekly variant counts and concept-tagging.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Weekly variant cycles, scored.</div><p class="ac-body">Every sprint produces 20+ variants. Winners scale, losers get killed, the feed never goes stale. All variants tagged so we can see which concepts are doing the incremental work.</p></div>

@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">aeo / ai search</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Generative-surface diagnostic.</div><p class="ac-body">Brand mentions across ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews. Schema coverage. Crawler access. Written report regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Restructure</div><div class="ac-value">Schema and content reshape.</div><p class="ac-body">Existing content restructured around answer-first patterns. Schema deployed. llms.txt configured. Crawler access tuned for ingestion.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Produce</div><div class="ac-value">Citation-ready new content.</div><p class="ac-body">New content produced with generative ingestion as a primary lens. Sourcing, structure, and schema all tuned for parsing rather than just ranking.</p></div>

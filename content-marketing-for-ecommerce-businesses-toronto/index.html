@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3742,7 +3750,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our tailored approach for <span class="sem">ecommerce brands</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Strategic Planning</div><div class="ac-value">Goals, audience, voice.</div><p class="ac-body">We do not believe in one-size-fits-all solutions. Instead, we collaborate with your team to understand your unique business, target audience, content goals, and voice. The plan is documented before we write a word.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Content Creation</div><div class="ac-value">Long-form, well-researched.</div><p class="ac-body">Our team produces content that is both informative and engaging. Articles, guides, <a href="https://consultusdigital.com/case-studies/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">case studies</a>, and resource hubs are written by people who understand your industry, not generalist agency copywriters.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Strategic Distribution</div><div class="ac-value">Beyond just publishing.</div><p class="ac-body">Creation alone is not enough. We distribute your content strategically through your website, partner channels, social media, email campaigns, and industry-specific outlets to maximize reach.</p></div>

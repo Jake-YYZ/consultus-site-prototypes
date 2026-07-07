@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">local seo</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Multi-location footprint diagnostic.</div><p class="ac-body">Every GBP, location page, citation, and review surface audited. Conflicts and duplicates flagged. Written report regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Clean</div><div class="ac-value">Deduplication and consolidation.</div><p class="ac-body">GBP listings cleaned, claim conflicts resolved, abandoned profiles removed, location data normalized across systems.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Build</div><div class="ac-value">Location pages and review systems.</div><p class="ac-body">Per-location pages built around the buyer's actual search intent. Review-request automation deployed. Citation cleanup quarterly.</p></div>

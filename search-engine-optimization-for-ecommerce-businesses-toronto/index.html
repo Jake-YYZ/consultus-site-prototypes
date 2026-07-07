@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3742,7 +3750,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our tailored approach for <span class="sem">ecommerce brands</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Keyword Research</div><div class="ac-value">Niche terms, intent-mapped.</div><p class="ac-body">Detailed keyword research surfaces the search terms that generate qualified traffic at a sustainable cost. We look for niche keywords, less competition, lower cost per click, and direct intent alignment with your ideal client.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 On-Page Optimization</div><div class="ac-value">Titles, meta, schema, internal links.</div><p class="ac-body">We optimize site structure, content, and metadata to enhance relevance and appeal to both search engines and readers. Title tags, meta descriptions, heading hierarchy, <a href="https://consultusdigital.com/blog/2026-seo-trends/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">schema markup</a>, and internal linking on every priority page.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Local SEO</div><div class="ac-value">Location-based searches.</div><p class="ac-body">For locally-focused brokerages, we tune local SEO so potential clients near your offices can find you. Google Business Profile optimization, NAP consistency, local citations, and review velocity.</p></div>

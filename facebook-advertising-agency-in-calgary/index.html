@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3637,7 +3645,7 @@
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our Facebook Advertising <span class="sem">process</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Context</div><div class="ac-value">Understand the business first.</div><p class="ac-body">In order for our campaigns to be successful, our Facebook ad experts need a clear picture of who you are as a business, who your target audience is, and what your goals are. We sit down with you and ask about short and long-term goals, customer base, products and services, competitors, buyer personas, and value propositions.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Content</div><div class="ac-value">Creative that earns the click.</div><p class="ac-body">High-quality creatives and compelling ad copy are the two main components of any successful <a href="https://consultusdigital.com/blog/5-tips-facebook-ads-creation/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">Facebook ad campaign</a>. Our design and advertising experts will design powerful visuals and write compelling ad copy that drives clicks and conversions.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Audience</div><div class="ac-value">Targeting tuned to your buyer.</div><p class="ac-body">Facebook ads enable you to target highly specific demographics, interests, behaviours, and locations. However, you need to know which groups to target. Our team will build a targeting strategy that is tailored to your business and its target audience.</p></div>

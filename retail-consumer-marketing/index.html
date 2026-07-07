@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3643,7 +3651,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">The Consultus Digital approach to <span class="sem">retail and consumer</span> marketing.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Immerse</div><div class="ac-value">Audit the omnichannel surface.</div><p class="ac-body">Ecommerce stack, local presence, marketplace listings, and creative library. We diagnose where the program is leaking and define the rebuild order so later decisions rest on a clean foundation.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Build the Foundation</div><div class="ac-value">Attribution + creative engine.</div><p class="ac-body">Server-side tracking deployed. Offline-attribution model stood up where the brand supports it. Weekly creative production cadence locked in with concept-tagged variants.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Acquire Demand</div><div class="ac-value">Multi-channel, measured against blended margin.</div><p class="ac-body">Paid programs on Meta, Google, and TikTok built around blended margin per channel rather than channel-specific ROAS. Local SEO compounding underneath. Lifecycle programs catching every acquired customer.</p></div>
@@ -3657,7 +3665,7 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">Services</div>
       <h2 class="sec-title">Five disciplines, <span class="sem">tuned</span> for multi-channel retail and consumer brands.</h2>
     </div>
-    <div class="method-grid" style="grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch">
+    <div class="method-grid" style="gap:20px;align-items:stretch">
       
     </div>
   </section>

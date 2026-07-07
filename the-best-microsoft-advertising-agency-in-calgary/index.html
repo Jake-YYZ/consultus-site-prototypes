@@ -2102,6 +2102,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3637,7 +3645,7 @@
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">Our Microsoft Advertising <span class="sem">process</span>.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 <a href="https://consultusdigital.com/blog/10-expert-google-ads-management-tips/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">Keyword Research</a></div><div class="ac-value">Niche terms. Less competition.</div><p class="ac-body">We perform extensive keyword research to identify the best keywords to target on the Microsoft Ads network. We look for niche search terms, lower competition, lower cost per click, and direct intent alignment with your ideal customer.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Optimized Content</div><div class="ac-value">Ads and landing pages tuned to convert.</div><p class="ac-body">Microsoft Ads succeed when ad creative and the destination landing page work together. Our team writes persuasive ad copy and aligns it with landing pages built to convert the search intent into a tracked outcome.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Dynamic Management</div><div class="ac-value">Bidding tuned daily.</div><p class="ac-body">At Consultus Digital, we keep track of any changes being made to your bids and ensure your advertising budget is being spent appropriately so we can maximize <a href="https://consultusdigital.com/blog/6-benefits-google-ads-management-agency/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">ROI</a> on every dollar that goes into the Microsoft network.</p></div>

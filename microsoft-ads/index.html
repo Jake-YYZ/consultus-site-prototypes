@@ -2099,6 +2099,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <h2 class="sec-title">How we run <span class="sem">microsoft advertising</span> engagements.</h2>
       </div>
     </div>
-      <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Microsoft account diagnostic.</div><p class="ac-body">Most Microsoft accounts are imports from Google with no Bing-specific structure. We audit the account, identify the imports versus native builds, and document the cleanup.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Restructure</div><div class="ac-value">Native Bing architecture.</div><p class="ac-body">Campaign and ad-group structure rebuilt around how Bing buyers actually search. LinkedIn audience layers added. Audience Network retargeting set up properly.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Bing-specific creative.</div><p class="ac-body">Microsoft Ads creative is its own discipline. We test ad copy, extensions, and image creative against the Bing-network buyer rather than reusing Google assets.</p></div>

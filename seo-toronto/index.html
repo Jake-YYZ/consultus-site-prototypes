@@ -2095,6 +2095,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3628,7 +3636,7 @@
         <div class="section-lbl">The Method</div>
         <h2 class="sec-title">A five-step <span class="sem">SEO + GEO</span> program.</h2>
       </div>
-      <div class="method-grid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="method-grid cols-5">
         <div class="accent-card"><div class="ac-eyebrow">/01 Consultation</div><div class="ac-value">Strategic conversation, not a templated pitch.</div><p class="ac-body">Once we receive your inquiry, we schedule an initial meeting to discuss your business goals and review historical performance. We map out your ideal outcomes across both traditional search rankings and AI search visibility, identify your target audience, and ensure every element of the strategy we propose is aligned with where you want your business to go.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 SEO and GEO Audit</div><div class="ac-value">Dual-layer baseline.</div><p class="ac-body">A comprehensive audit of your digital presence. Full technical SEO analysis, keyword opportunity review, backlink profile assessment, and a structured AI visibility audit. The AI visibility audit answers a question most agencies aren't yet asking: when potential customers use ChatGPT, Perplexity, or Google AI Mode, is your brand being cited or is a competitor?</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/03 Action Plan</div><div class="ac-value">Both tracks running simultaneously.</div><p class="ac-body">For traditional SEO: technical fixes, on-page optimization, high-quality original content, and a white-hat link-building program. For GEO: answer-first formatting on priority pages, FAQ Page and Article schema, AI crawler access, and the entity clarity that AI systems use to decide which sources they trust. Strong Google rankings are the foundation that AI citations are built on.</p></div>
