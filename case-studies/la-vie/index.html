@@ -1113,9 +1113,12 @@
 
   .footer-proof {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
   .clutch-badge {
     display: flex;
@@ -1129,7 +1132,7 @@
   .clutch-left { display: flex; flex-direction: column; font-size: 10px; color: #9A989C; letter-spacing: 0.04em; text-transform: uppercase; font-family: var(--mono); }
   .clutch-logo { font-family: var(--sans); font-weight: 700; font-size: 20px; color: #FAF8F3; letter-spacing: -0.02em; margin-top: 2px; }
   .clutch-rating { display: flex; flex-direction: column; align-items: flex-end; }
-  .clutch-stars { color: #FF3D2E; font-size: 14px; letter-spacing: 1px; }
+  .clutch-stars { color: #FBBC04; font-size: 14px; letter-spacing: 1px; }
   .clutch-reviews { font-size: 10px; color: #9A989C; font-family: var(--mono); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 4px; }
 
   .footer-social {
@@ -1205,7 +1208,7 @@
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     .footer-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
     .footer-locations { flex-direction: column; align-items: flex-start; gap: 40px; }
-    .footer-proof { align-items: flex-start; }
+    .footer-proof { flex-direction: column; align-items: flex-start; }
     .loc-icons { gap: 28px; }
     .trust-inner { gap: 24px; flex-direction: column; align-items: flex-start; }
     .employee-spotlight { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
@@ -4317,7 +4320,7 @@ section.hero-cover .hero-bg {
 
       <div class="footer-proof">
           <div class="clutch-badge">
-            <div class="clutch-left">Reviewed on<div class="clutch-logo">Clutch</div></div>
+            <div class="clutch-left">Reviewed on<div class="clutch-logo">Google</div></div>
             <div class="clutch-rating">
               <div class="clutch-stars">★★★★★</div>
               <div class="clutch-reviews">47 reviews</div>
