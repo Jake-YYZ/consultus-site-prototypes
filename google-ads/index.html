@@ -838,6 +838,9 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3605,22 +3608,26 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">What We Run</div>
-      <h2 class="sec-title">Google Ads, the <span class="sem">disciplined</span> way.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Run</div>
+        <h2 class="sec-title">Google Ads, the <span class="sem">disciplined</span> way.</h2>
+      </div>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Search and <span class="sem">PMax</span>, instrumented.</h3><div><p>Account structure built around buyer-journey segments, not legacy campaign sprawl. PMax is whitelisted and constrained to spend where it actually drives incremental conversion.</p></div></div>
-      <div class="content-block"><h3>Shopping that <span class="sem">earns</span> impression share.</h3><div><p>Feed engineering, GTIN compliance, custom-label segmentation, and bid scaffolding tuned to margin and inventory rather than blanket ROAS.</p></div></div>
-      <div class="content-block"><h3>YouTube and <span class="sem">demand-gen</span>.</h3><div><p>Upper-funnel video and Demand Gen campaigns measured against incrementality, not view-through fluff. Creative production tied to weekly testing cadence.</p></div></div>
-      <div class="content-block"><h3>Attribution that <span class="sem">survives</span> last-click bias.</h3><div><p>Server-side conversion tracking, enhanced conversions, and post-purchase survey capture so revenue traces back to source on actuals, not platform reports.</p></div></div>
+    <div class="content-block" style="border-top:none;padding-top:0"><h3>Search campaigns, <span class="sem">rebuilt</span> around your buyers.</h3><div><p>We restructure your account around the way your customers actually search, instead of the tangle of overlapping campaigns most accounts collect over the years. Performance Max only gets budget when it brings in sales you would not have gotten anyway.</p></div></div>
+      <div class="content-block"><h3>Shopping ads that <span class="sem">show up</span> more often.</h3><div><p>We clean up your product feed so Google understands what you sell and shows it to more shoppers. Then we bid more on the products that make you real money, and less on the ones that do not.</p></div></div>
+      <div class="content-block"><h3>YouTube ads that <span class="sem">create</span> demand.</h3><div><p>Video campaigns that put your brand in front of people before they even start searching. We measure whether they actually added sales, not how many people half-watched a video, and we test fresh ad creative every week.</p></div></div>
+      <div class="content-block"><h3>Tracking you can <span class="sem">trust</span>.</h3><div><p>We set up conversion tracking properly so you know exactly which campaigns drove revenue. Your numbers come from real sales, not from the ad platform grading its own homework.</p></div></div>
   </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head solo">
+      <div>
         <div class="section-lbl">Our Method</div>
         <h2 class="sec-title">How we run <span class="sem">Google Ads</span> engagements.</h2>
       </div>
+    </div>
       <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Account-structure diagnostic.</div><p class="ac-body">We audit the existing account architecture, conversion definitions, attribution stack, and feed quality before we touch a single bid. The audit comes back as a written report you keep regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Rebuild around buyer journey.</div><p class="ac-body">Search and PMax restructured around segments that match the way your buyers actually search. Naming conventions, conversion goals, and audience signals tied to one shared spec.</p></div>
@@ -3633,18 +3640,22 @@
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Where We Run This</div>
         <h2 class="sec-title">Active <span class="sem">Google Ads</span> engagements.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 28px;max-width:680px">Most engagements run nationally, but we have city-level location pages for accounts that need local search and Google Business Profile work alongside their paid program.</p>
+      <p class="sec-head-sub">Most engagements run nationally, but we have city-level location pages for accounts that need local search and Google Business Profile work alongside their paid program.</p>
+    </div>
       <div><a href="/locations/toronto/google-ads-agency-in-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Toronto</a> <a href="/locations/calgary/google-ads-agency-in-calgary/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Calgary</a> <a href="/locations/vancouver/google-ads-agency-in-vancouver/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Vancouver</a> <a href="/locations/montreal/google-ads-agency-in-montreal/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Montreal</a> <a href="/locations/la/google-ads-agency-in-los-angeles/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Los Angeles</a> <a href="/locations/nyc/google-ads-agency-in-new-york-city/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">New York</a></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list" style="max-width:880px">
       <details class="faq-item"><summary>Do you require a long-term contract?</summary><div class="faq-a"><p>Standard engagements are month-to-month after an initial 90-day diagnostic and rebuild window. We have no interest in keeping accounts that are not getting a result.</p></div></details>
