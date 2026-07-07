@@ -839,6 +839,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3607,7 +3611,12 @@
 
   <!-- Creator network masonry -->
   <section class="sec">
-    <div class="sec-head"><div class="section-lbl">The Creator Network</div><h2 class="sec-title">The people who <span class="sem">move</span> the feed.</h2></div>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">The Creator Network</div>
+        <h2 class="sec-title">The people who <span class="sem">move</span> the feed.</h2>
+      </div>
+    </div>
     <div class="creator-masonry">
       <div class="creator-tile big" data-media-slug="influencer-creator-1">
         <svg preserveAspectRatio="xMidYMid slice"><use href="#creator-1"/></svg>
@@ -3696,7 +3705,12 @@
   <!-- Campaign showcase -->
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head"><div class="section-lbl">Featured Campaigns</div><h2 class="sec-title">Campaigns, measured to <span class="sem">revenue</span>.</h2></div>
+      <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Featured Campaigns</div>
+        <h2 class="sec-title">Campaigns, measured to <span class="sem">revenue</span>.</h2>
+      </div>
+    </div>
       <div class="campaign-showcase"><a class="campaign-card" href="/case-studies/bookseats/" style="text-decoration:none;color:inherit;display:block"><div class="campaign-visual"><img src="/assets/work/bookseats/ugc-jessica-frame.jpg" alt="BookSeats UGC creator" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div><div class="campaign-body"><div class="campaign-brand">BookSeats &middot; Live Sports</div><h3 class="campaign-headline">UGC creators turned cold ad spend into sold-out games</h3><div class="campaign-metrics-row"><div><div class="campaign-metric-val">8.10<span class="unit">&times;</span></div><div class="campaign-metric-lbl">ROAS</div></div><div><div class="campaign-metric-val">+248<span class="unit">%</span></div><div class="campaign-metric-lbl">UGC vs static CTR</div></div><div><div class="campaign-metric-val">71</div><div class="campaign-metric-lbl">Added monthly sales</div></div></div><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#FFEC00;display:inline-block;margin-top:18px">Read case &rarr;</span></div></a><a class="campaign-card" href="/case-studies/e11ement/" style="text-decoration:none;color:inherit;display:block"><div class="campaign-visual"><img src="/assets/work/e11ement/social-model.jpg" alt="e11ement UGC creative" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div><div class="campaign-body"><div class="campaign-brand">e11ement &middot; DTC Wellness</div><h3 class="campaign-headline">UGC personas rebuilt the entire buyer journey</h3><div class="campaign-metrics-row"><div><div class="campaign-metric-val">11</div><div class="campaign-metric-lbl">Experts briefed</div></div><div><div class="campaign-metric-val">6<span class="unit">wk</span></div><div class="campaign-metric-lbl">Growth plan</div></div><div><div class="campaign-metric-val">89</div><div class="campaign-metric-lbl">Pages shipped</div></div></div><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#FFEC00;display:inline-block;margin-top:18px">Read case &rarr;</span></div></a><a class="campaign-card" href="/case-studies/eco-choice-windows/" style="text-decoration:none;color:inherit;display:block"><div class="campaign-visual"><img src="/assets/work/eco-choice/ugc-1.png" alt="Eco Choice UGC creator" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div><div class="campaign-body"><div class="campaign-brand">Eco Choice &middot; Home Improvement</div><h3 class="campaign-headline">We reverse-engineered the buyer with persona-led UGC</h3><div class="campaign-metrics-row"><div><div class="campaign-metric-val">4</div><div class="campaign-metric-lbl">Buyer personas</div></div><div><div class="campaign-metric-val">UGC</div><div class="campaign-metric-lbl">+ paid statics</div></div><div><div class="campaign-metric-val">Live</div><div class="campaign-metric-lbl">In market</div></div></div><span style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#FFEC00;display:inline-block;margin-top:18px">Read case &rarr;</span></div></a></div>
     </div>
   </section>

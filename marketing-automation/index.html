@@ -838,6 +838,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3601,9 +3605,11 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">What We Run</div>
-      <h2 class="sec-title">Marketing Automation, the <span class="sem">disciplined</span> way.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Run</div>
+        <h2 class="sec-title">Marketing Automation, the <span class="sem">disciplined</span> way.</h2>
+      </div>
     </div>
     <div class="content-block" style="border-top:none;padding-top:0"><h3>Real <span class="sem">segmentation</span>, not list-bombing.</h3><div><p>Most lifecycle programs blast the same message to the same list every week. We rebuild segmentation around actual buyer behavior so every send is relevant to the recipient and their stage in the relationship.</p></div></div>
       <div class="content-block"><h3>Post-purchase as <span class="sem">acquisition</span>.</h3><div><p>The first-purchase customer is half the revenue math. Post-purchase flows turn one-time buyers into repeat buyers, lift average order value, and feed the acquisition program with referral signal.</p></div></div>
@@ -3613,10 +3619,12 @@
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head solo">
+      <div>
         <div class="section-lbl">Our Method</div>
         <h2 class="sec-title">How we run <span class="sem">marketing automation</span> engagements.</h2>
       </div>
+    </div>
       <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Data and lifecycle diagnostic.</div><p class="ac-body">Customer-data model, event taxonomy, list hygiene, deliverability, and current flow architecture. Written report regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Segmentation and event model.</div><p class="ac-body">Customer-data model rebuilt around the actual buyer journey. Event taxonomy normalized. Integration plumbing audited and fixed.</p></div>
@@ -3629,18 +3637,22 @@
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Where We Run This</div>
         <h2 class="sec-title">Active <span class="sem">marketing automation</span> engagements.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 28px;max-width:680px">Marketing automation pairs with paid media and lifecycle programs.</p>
+      <p class="sec-head-sub">Marketing automation pairs with paid media and lifecycle programs.</p>
+    </div>
       <div><a href="/zoho-crm/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Zoho CRM Implementation</a> <a href="/analytics-attribution/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Analytics & Attribution</a> <a href="/sales-enablement/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Sales Enablement</a> <a href="/ecommerce-marketing-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Ecommerce vertical</a></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list" style="max-width:880px">
       <details class="faq-item"><summary>Klaviyo, HubSpot, or Marketo?</summary><div class="faq-a"><p>Depends on use case. Klaviyo for ecommerce. HubSpot for B2B. Marketo for enterprise. Postscript for SMS-led DTC. We have opinions but no tooling religion. The discipline matters more than the tool.</p></div></details>

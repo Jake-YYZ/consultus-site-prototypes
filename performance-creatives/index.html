@@ -839,6 +839,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3745,7 +3749,12 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head"><div class="section-lbl">Why we launched this</div><h2 class="sec-title">Great media buying can't save <span class="sem">weak creative</span>.</h2></div>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Why we launched this</div>
+        <h2 class="sec-title">Great media buying can't save <span class="sem">weak creative</span>.</h2>
+      </div>
+    </div>
     <p style="font-size:17px;line-height:1.6;color:#2A2A2A;max-width:760px;margin-bottom:20px">Meta's own data says creative drives 70% of campaign performance. Google's Performance Max is even more creative-dependent. TikTok won't scale anything that doesn't hook in the first two seconds. The old model of licensing stock, slapping on a logo, and calling it an ad is dead.</p>
     <p style="font-size:17px;line-height:1.6;color:#2A2A2A;max-width:760px;margin-bottom:20px">Performance Creatives is our answer. A dedicated in-house production team that ships creative the same week it's briefed, tests it against live campaigns, and iterates based on what the algorithm actually rewards.</p>
     <div class="svc-metrics" style="margin-top:40px">
@@ -3758,7 +3767,12 @@
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head"><div class="section-lbl">What We Produce</div><h2 class="sec-title">Every format, <span class="sem">tuned</span> for the feed.</h2></div>
+      <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Produce</div>
+        <h2 class="sec-title">Every format, <span class="sem">tuned</span> for the feed.</h2>
+      </div>
+    </div>
       <div class="subind-grid">
         <div class="subind-card" data-wired="creative" onclick="window.location.href='/contact/'" style="cursor:pointer">
           <div class="subind-card-header"><div class="subind-num">01</div></div>
@@ -3798,10 +3812,12 @@
   <section class="sec bone-full" id="creatives-gallery">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Ad Gallery</div>
         <h2 class="sec-title">Creative that <span class="sem">moved</span> the metric.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 32px;max-width:680px">A selection of recent ad work shipped through our weekly creative sprints. Static, motion, UGC, and creator-led variants tested against live campaigns and scored against ROAS.</p>
+      <p class="sec-head-sub">A selection of recent ad work shipped through our weekly creative sprints. Static, motion, UGC, and creator-led variants tested against live campaigns and scored against ROAS.</p>
+    </div>
       <div class="ad-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px">
         <a href="/case-studies/bookseats/" class="ad-tile" data-media-slug="creative-bookseats-1" style="aspect-ratio:9/16;background:linear-gradient(135deg,#1A40C7 0%,#0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px;display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.3s ease" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
           <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px;background:linear-gradient(180deg,rgba(20,20,20,0) 50%,rgba(20,20,20,0.85) 100%);color:#FAF8F3">
@@ -3875,9 +3891,11 @@
   </section>
 
   <section class="sec" id="creatives-packages">
-    <div class="sec-head">
-      <div class="section-lbl">Engagement</div>
-      <h2 class="sec-title">Three ways to <span class="sem">work</span> with us.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Engagement</div>
+        <h2 class="sec-title">Three ways to <span class="sem">work</span> with us.</h2>
+      </div>
     </div>
     <div class="method-grid" style="grid-template-columns:repeat(3,1fr);gap:24px">
       <div class="accent-card" style="height:100%">

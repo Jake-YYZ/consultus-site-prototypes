@@ -838,6 +838,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3601,9 +3605,11 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">What We Run</div>
-      <h2 class="sec-title">Landing Pages, the <span class="sem">disciplined</span> way.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Run</div>
+        <h2 class="sec-title">Landing Pages, the <span class="sem">disciplined</span> way.</h2>
+      </div>
     </div>
     <div class="content-block" style="border-top:none;padding-top:0"><h3>Built for <span class="sem">paid</span>, not built for SEO.</h3><div><p>Landing pages for paid traffic answer one question, qualify the buyer, and drive a single action. We do not stuff them with navigation, footer links, or SEO content the buyer does not need.</p></div></div>
       <div class="content-block"><h3>Hypothesis-driven <span class="sem">design</span>.</h3><div><p>Every page is a written hypothesis tied to a paid campaign goal. Hero, social proof, offer framing, and CTA all defended against an alternative the page is testing.</p></div></div>
@@ -3613,10 +3619,12 @@
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head solo">
+      <div>
         <div class="section-lbl">Our Method</div>
         <h2 class="sec-title">How we run <span class="sem">landing pages</span> engagements.</h2>
       </div>
+    </div>
       <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="accent-card"><div class="ac-eyebrow">/01 Brief</div><div class="ac-value">Tied to a paid campaign goal.</div><p class="ac-body">Each landing-page brief starts with the campaign goal: who is clicking, what they are coming from, and what action defines success. The brief is the contract.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Build</div><div class="ac-value">Two to four variants per ad group.</div><p class="ac-body">Each ad group ships with at least two landing-page variants tied to the messaging and offer they are testing. The page is part of the experiment, not a fixed destination.</p></div>
@@ -3629,18 +3637,22 @@
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Where We Run This</div>
         <h2 class="sec-title">Active <span class="sem">landing pages</span> engagements.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 28px;max-width:680px">Landing-page work pairs with paid media programs. Browse our paid-media surfaces.</p>
+      <p class="sec-head-sub">Landing-page work pairs with paid media programs. Browse our paid-media surfaces.</p>
+    </div>
       <div><a href="/google-ads/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Google Ads</a> <a href="/meta-ads/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Meta Ads</a> <a href="/microsoft-ads/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Microsoft Ads</a> <a href="/performance-creatives/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Performance Creatives</a></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list" style="max-width:880px">
       <details class="faq-item"><summary>How is this different from web development?</summary><div class="faq-a"><p>Web dev builds your full site. Landing pages are dedicated paid-traffic destinations that live alongside the site, often on a separate stack tuned for speed and testing velocity. Different brief, different success metric.</p></div></details>

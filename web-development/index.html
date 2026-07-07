@@ -838,6 +838,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3653,9 +3657,11 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">What We Run</div>
-      <h2 class="sec-title">Web Development, the <span class="sem">disciplined</span> way.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Run</div>
+        <h2 class="sec-title">Web Development, the <span class="sem">disciplined</span> way.</h2>
+      </div>
     </div>
     <div class="content-block" style="border-top:none;padding-top:0"><h3>Mobile-first, <span class="sem">always</span>.</h3><div><p>Most rebuilds we audit were designed on a desktop, on a fast connection, by people on excellent hardware. We design for the buyer on their phone, on a coffee-shop network, in a hurry.</p></div></div>
       <div class="content-block"><h3>Performance as a <span class="sem">conversion</span> lever.</h3><div><p>Page weight, render-blocking resources, image discipline, and Core Web Vitals are not vanity metrics. They are conversion-rate inputs. We ship sites that compete on speed against the best in the category.</p></div></div>
@@ -3665,10 +3671,12 @@
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head solo">
+      <div>
         <div class="section-lbl">Our Method</div>
         <h2 class="sec-title">How we run <span class="sem">web development</span> engagements.</h2>
       </div>
+    </div>
       <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="accent-card"><div class="ac-eyebrow">/01 Diagnose</div><div class="ac-value">Audit the existing site or buyer journey.</div><p class="ac-body">For redesigns, we audit the existing site against conversion data. For new builds, we map the buyer journey and define the surfaces that need to exist before we touch a Figma file.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Design</div><div class="ac-value">Mobile-first, conversion-led.</div><p class="ac-body">Design starts on mobile. Hierarchy, flow, and visual system all built around the buyer's decision moment rather than the brand's aesthetic preferences alone.</p></div>
@@ -3681,18 +3689,22 @@
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Where We Run This</div>
         <h2 class="sec-title">Active <span class="sem">web development</span> engagements.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 28px;max-width:680px">Web development engagements are typically national. Industry-specific build pages cover the verticals.</p>
+      <p class="sec-head-sub">Web development engagements are typically national. Industry-specific build pages cover the verticals.</p>
+    </div>
       <div><a href="/website-development-strategies-for-insurance-brokers-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Insurance web development</a> <a href="/website-development-strategies-for-law-firms-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Law firm web development</a> <a href="/website-development-for-self-storage-businesses-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Self-storage web development</a> <a href="/ecommerce-businesses-website-development-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Ecommerce web development</a></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list" style="max-width:880px">
       <details class="faq-item"><summary>Webflow, WordPress, or Shopify?</summary><div class="faq-a"><p>Depends on team workflow, content frequency, and ecommerce requirements. Webflow for marketing sites with fast iteration. WordPress for content-heavy editorial sites. Shopify for ecommerce. Headless when the architecture demands it. We do not have a religion here.</p></div></details>

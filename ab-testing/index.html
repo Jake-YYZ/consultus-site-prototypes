@@ -838,6 +838,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3601,9 +3605,11 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">What We Run</div>
-      <h2 class="sec-title">A/B Testing & Experimentation, the <span class="sem">disciplined</span> way.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Run</div>
+        <h2 class="sec-title">A/B Testing & Experimentation, the <span class="sem">disciplined</span> way.</h2>
+      </div>
     </div>
     <div class="content-block" style="border-top:none;padding-top:0"><h3>A backlog tied to <span class="sem">data</span>, not opinions.</h3><div><p>Every test starts with a hypothesis tied to a behavioral observation. The backlog is scored by impact, confidence, and ease (ICE), and the top of the backlog drives the next quarter of testing.</p></div></div>
       <div class="content-block"><h3>Statistical <span class="sem">discipline</span>.</h3><div><p>Tests run to power. Bayesian or frequentist depending on the test design. We document false positives alongside wins, and we do not scale partial winners.</p></div></div>
@@ -3613,10 +3619,12 @@
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head solo">
+      <div>
         <div class="section-lbl">Our Method</div>
         <h2 class="sec-title">How we run <span class="sem">a/b testing & experimentation</span> engagements.</h2>
       </div>
+    </div>
       <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="accent-card"><div class="ac-eyebrow">/01 Backlog</div><div class="ac-value">Hypothesis bank, scored.</div><p class="ac-body">We build the test backlog: 20-40 hypotheses tied to behavioral observations, scored by ICE, ranked for the next quarter.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Design</div><div class="ac-value">Power calculation, instrumentation.</div><p class="ac-body">Each test designed with proper power calculation, success metrics, and instrumentation. No test ships without a written design doc.</p></div>
@@ -3629,18 +3637,22 @@
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Where We Run This</div>
         <h2 class="sec-title">Active <span class="sem">a/b testing & experimentation</span> engagements.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 28px;max-width:680px">Experimentation programs pair with CRO and analytics work. Browse the convert surfaces.</p>
+      <p class="sec-head-sub">Experimentation programs pair with CRO and analytics work. Browse the convert surfaces.</p>
+    </div>
       <div><a href="/cro/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">CRO programs</a> <a href="/web-development/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Web development</a> <a href="/landing-pages/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Landing pages</a> <a href="/analytics-attribution/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Analytics & Attribution</a></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list" style="max-width:880px">
       <details class="faq-item"><summary>How is this different from CRO?</summary><div class="faq-a"><p>CRO is the broader discipline. A/B testing is one method inside CRO. We run experimentation as a dedicated program when the account has the traffic, the surfaces, and the organizational appetite to make it a competitive advantage.</p></div></details>

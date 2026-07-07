@@ -838,6 +838,10 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3601,9 +3605,11 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">What We Run</div>
-      <h2 class="sec-title">AEO / AI Search, the <span class="sem">disciplined</span> way.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">What We Run</div>
+        <h2 class="sec-title">AEO / AI Search, the <span class="sem">disciplined</span> way.</h2>
+      </div>
     </div>
     <div class="content-block" style="border-top:none;padding-top:0"><h3>Schema for <span class="sem">parsing</span>, not just SERP features.</h3><div><p>AI engines parse structured data more aggressively than Google's rich-results system. We tag content with Article, HowTo, FAQPage, and Organization schema in ways tuned for generative ingestion.</p></div></div>
       <div class="content-block"><h3>Answer-first <span class="sem">content</span>.</h3><div><p>The pieces that get cited are direct, sourced, and structured around clear question-answer pairs. We restructure existing content and produce new content with citation-readiness as a primary KPI.</p></div></div>
@@ -3613,10 +3619,12 @@
 
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div class="sec-head">
+      <div class="sec-head solo">
+      <div>
         <div class="section-lbl">Our Method</div>
         <h2 class="sec-title">How we run <span class="sem">aeo / ai search</span> engagements.</h2>
       </div>
+    </div>
       <div class="method-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Generative-surface diagnostic.</div><p class="ac-body">Brand mentions across ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews. Schema coverage. Crawler access. Written report regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Restructure</div><div class="ac-value">Schema and content reshape.</div><p class="ac-body">Existing content restructured around answer-first patterns. Schema deployed. llms.txt configured. Crawler access tuned for ingestion.</p></div>
@@ -3629,18 +3637,22 @@
   <section class="sec bone-full">
     <div class="sec-inner">
       <div class="sec-head">
+      <div>
         <div class="section-lbl">Where We Run This</div>
         <h2 class="sec-title">Active <span class="sem">aeo / ai search</span> engagements.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 28px;max-width:680px">AEO programs are a national capability. Industry pages cover specific buyer journeys.</p>
+      <p class="sec-head-sub">AEO programs are a national capability. Industry pages cover specific buyer journeys.</p>
+    </div>
       <div><a href="/seo-strategies-for-insurance-brokers-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Insurance SEO</a> <a href="/legal-practice-search-engine-optimization-for-law-firms-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Law firm SEO</a> <a href="/search-engine-optimization-for-ecommerce-businesses-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Ecommerce SEO</a> <a href="/seo-services-for-self-storage-businesses-toronto/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Self-storage SEO</a></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list" style="max-width:880px">
       <details class="faq-item"><summary>Is AEO different from SEO?</summary><div class="faq-a"><p>Yes. SEO optimizes for the SERP; AEO optimizes for the answer surface. The ranking signals overlap but the content structure, the schema, and the success metrics are different. Most agencies blur the two and miss the actual generative opportunity.</p></div></details>
