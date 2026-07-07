@@ -839,6 +839,9 @@
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
   .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  a.body-link { color: #1A40C7; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
+  a.body-link:hover { color: #142f8f; }
+  .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
   .dark-full .sec-title .sem { color: #FFEC00; }
@@ -3626,7 +3629,7 @@
     <div class="content-block" style="border-top:none;padding-top:0"><h3>Search campaigns, <span class="sem">rebuilt</span> around your buyers.</h3><div><p>We restructure your account around the way your customers actually search, instead of the tangle of overlapping campaigns most accounts collect over the years. Performance Max only gets budget when it brings in sales you would not have gotten anyway.</p></div></div>
       <div class="content-block"><h3>Shopping ads that <span class="sem">show up</span> more often.</h3><div><p>We clean up your product feed so Google understands what you sell and shows it to more shoppers. Then we bid more on the products that make you real money, and less on the ones that do not.</p></div></div>
       <div class="content-block"><h3>YouTube ads that <span class="sem">create</span> demand.</h3><div><p>Video campaigns that put your brand in front of people before they even start searching. We measure whether they actually added sales, not how many people half-watched a video, and we test fresh ad creative every week.</p></div></div>
-      <div class="content-block"><h3>Tracking you can <span class="sem">trust</span>.</h3><div><p>We set up conversion tracking properly so you know exactly which campaigns drove revenue. Your numbers come from real sales, not from the ad platform grading its own homework.</p></div></div>
+      <div class="content-block"><h3>Tracking you can <span class="sem">trust</span>.</h3><div><p>We set up <a class="body-link" href="/analytics-attribution/">conversion tracking</a> properly so you know exactly which campaigns drove revenue. Your numbers come from real sales, not from the ad platform grading its own homework.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3640,7 +3643,7 @@
       <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Account-structure diagnostic.</div><p class="ac-body">We audit the existing account architecture, conversion definitions, attribution stack, and feed quality before we touch a single bid. The audit comes back as a written report you keep regardless of engagement.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Rebuild around buyer journey.</div><p class="ac-body">Search and PMax restructured around segments that match the way your buyers actually search. Naming conventions, conversion goals, and audience signals tied to one shared spec.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Operate</div><div class="ac-value">Weekly creative + bid sprints.</div><p class="ac-body">Weekly creative variant testing, bid-strategy adjustments tied to live data, and an instrumented experiment log so every change has a measurable thesis.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Operate</div><div class="ac-value">Weekly creative + bid sprints.</div><p class="ac-body">Weekly <a class="body-link" href="/ab-testing/">creative variant testing</a>, bid-strategy adjustments tied to live data, and an instrumented experiment log so every change has a measurable thesis.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Quarterly P&L review.</div><p class="ac-body">Quarterly closed-loop review against revenue, not platform metrics. The campaigns that are doing real work get more spend; the ones that flatter the dashboard get killed.</p></div>
       </div>
     </div>
@@ -3668,12 +3671,31 @@
     </div>
     <div class="faq-list">
       <details class="faq-item"><summary>Do you require a long-term contract?</summary><div class="faq-a"><p>Standard engagements are month-to-month after an initial 90-day diagnostic and rebuild window. We have no interest in keeping accounts that are not getting a result.</p></div></details>
-        <details class="faq-item"><summary>Can you work with our existing in-house Google Ads manager?</summary><div class="faq-a"><p>Yes. Some of our best engagements are co-managed with an in-house performance lead. We bring senior-tier strategy, attribution work, and creative production while your in-house team owns the daily levers.</p></div></details>
+        <details class="faq-item"><summary>Can you work with our existing in-house Google Ads manager?</summary><div class="faq-a"><p>Yes. Some of our best engagements are co-managed with an in-house performance lead. We bring senior-tier strategy, <a class="body-link" href="/analytics-attribution/">attribution work</a>, and <a class="body-link" href="/performance-creatives/">creative production</a> while your in-house team owns the daily levers.</p></div></details>
         <details class="faq-item"><summary>What size accounts do you typically work with?</summary><div class="faq-a"><p>We run accounts spending $10K to $500K+ per month on Google Ads alone. Below $10K the agency model is hard to justify; above $500K we move into custom retainer structures.</p></div></details>
     </div>
   </section>
 
-  <section class="cta-sec">
+    <section class="sec">
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Related</div>
+        <h2 class="sec-title">Where to go <span class="sem">next</span>.</h2>
+      </div>
+    </div>
+    <div class="related-strip">
+        <a class="svc-pill" href="/case-studies/dragonscale-supplies/">Case Study: 12.14x Google ROAS</a>
+        <a class="svc-pill" href="/case-studies/bookseats/">Case Study: 8.10x ROAS</a>
+        <a class="svc-pill" href="/landing-pages/">Landing Pages</a>
+        <a class="svc-pill" href="/cro/">Conversion Rate Optimization</a>
+        <a class="svc-pill" href="/performance-creatives/">Performance Creatives</a>
+        <a class="svc-pill" href="/analytics-attribution/">Analytics &amp; Attribution</a>
+        <a class="svc-pill" href="/microsoft-ads/">Microsoft Ads</a>
+        <a class="svc-pill" href="/services/">All Services</a>
+    </div>
+  </section>
+
+<section class="cta-sec">
     <div class="cta-inner">
       <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Ready to scale google ads?</span></div>
       <h2 class="cta-title">Let's build your <span class="sem">Google Ads</span> engine.</h2>
