@@ -404,6 +404,7 @@
   .hero { position: relative; min-height: 620px; display: flex; align-items: center; justify-content: center; padding: 100px 32px; color: #FAF8F3; overflow: hidden; text-align: center; }
   .hero-bg { position: absolute; inset: 0; z-index: 0; }
   .hero-bg svg { width: 100%; height: 100%; display: block; }
+  .hero-bg video { width: 100%; height: 100%; object-fit: cover; display: block; }
   .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, rgba(20,20,20,0.85) 100%); }
   .hero-content { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
   .hero-content .eyebrow { color: #C7C5C8; margin-bottom: 28px; justify-content: center; }
@@ -413,6 +414,11 @@
   .hero-sub { font-size: 18px; line-height: 1.55; color: #E8E6E1; max-width: 640px; margin: 0 auto 40px; }
   .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .hero.short { min-height: 480px; }
+  .about-stats-strip { max-width: 1000px; margin: 0 auto; padding: 44px 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; border-bottom: 1px solid #E1DCD1; }
+  .about-stats-strip .cell { display: flex; flex-direction: column; }
+  .about-stats-strip .cell .mono { font-family: var(--mono); font-size: 10.5px; color: #6A686B; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+  .about-stats-strip .cell strong { font-family: var(--sans); font-weight: 500; font-size: 15px; color: #141414; }
+  @media (max-width: 560px) { .about-stats-strip { grid-template-columns: 1fr; gap: 24px; } }
 
   /* ========== DIVISION PILLAR PAGE (Healthcare) ========== */
   .division-badge {
@@ -834,7 +840,10 @@
   .sec.dark-full { max-width: none; background: #141414; color: #FAF8F3; padding: 0; }
   .sec.bone-full { max-width: none; background: #F5F2EC; padding: 0; }
   .sec-inner { max-width: 1200px; margin: 0 auto; padding: 100px 32px; }
-  .sec-head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; margin-bottom: 60px; }
+  .sec-head { display: block; margin-bottom: 60px; }
+  .sec-head .section-lbl { margin-bottom: 20px; }
+  .sec-head .sec-title { margin: 0; }
+  .sec-head .sec-title + p, .sec-head .sec-title + div { margin-top: 28px; max-width: none; }
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
@@ -1189,7 +1198,7 @@
     .feature-band { padding: 40px 20px 60px; }
     .logo-strip { padding: 40px 20px 30px; }
     .logos-row { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .sec-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .sec-head { margin-bottom: 40px; }
     .method { grid-template-columns: 1fr; }
     .method-step { border-right: none; border-bottom: 1px solid rgba(20,20,20,0.12); }
     .dark-full .method-step { border-bottom-color: rgba(255,255,255,0.15); }
@@ -3580,302 +3589,117 @@
   </script>
 
   <!-- HERO -->
-  <section class="hero-cover">
-    <div class="ghost-monogram">C</div>
-    <div class="cover-grid" style="grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center">
-      <div class="cover-main">
-        <div class="eyebrow yellow-dot fade-in delay-1"><span>Careers / Consultus Digital</span></div>
-        <h1 class="display fade-in delay-2">Grow your <span class="sem">career</span>. Make an impact. Join a 5-star team.</h1>
-        <p class="lede fade-in delay-3">We're transforming businesses across North America, and we're looking for people who care about the craft as much as we do. Hybrid, learning-led, growth-driven.</p>
-        <div class="hero-ctas fade-in delay-3" style="margin-top:36px">
-          <a class="btn primary cta-yellow-hover" href="#open-roles">View Open Roles &rarr;</a>
-          <a class="btn secondary" href="#our-story" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)">Watch Grace's Story</a>
-        </div>
-      </div>
-      <div class="cover-meta" style="border-top:none;padding-top:0">
-        <div class="cell"><span class="mono">Founded</span><strong>Toronto, 2020</strong></div>
-        <div class="cell"><span class="mono">Home Base</span><strong>Toronto, Canada</strong></div>
-        <div class="cell"><span class="mono">Headcount</span><strong>Thirty-two specialists</strong></div>
-        <div class="cell"><span class="mono">Rating</span><strong>4.9 &#9733; &middot; 47 Clutch reviews</strong></div>
+  <section class="hero short about-hero">
+    <div class="hero-bg"><video src="/assets/video/office-reel.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Careers / Consultus Digital</span></div>
+      <h1>Grow your <span class="sem">career</span>. Make an impact. Join a 5-star team.</h1>
+      <p class="hero-sub">We're transforming businesses across North America, and we're looking for people who care about the craft as much as we do. Hybrid, learning-led, growth-driven.</p>
+      <div class="hero-ctas">
+        <a class="btn primary on-dark cta-yellow-hover" href="#open-roles">View Open Roles &rarr;</a>
       </div>
     </div>
+  </section>
+  <section class="about-stats-strip">
+    <div class="cell"><span class="mono">Since</span><strong>Toronto, 2020</strong></div>
+    <div class="cell"><span class="mono">Glassdoor</span><strong>5.0 &#9733; rating</strong></div>
+    <div class="cell"><span class="mono">Model</span><strong>Hybrid</strong></div>
   </section>
 
   <!-- LOGO STRIP -->
 
-  <!-- WHY US — 4 PILLARS -->
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">Why Consultus Digital</div>
-      <h2 class="sec-title">Master your craft, <span class="sem">shape</span> your future.</h2>
-    </div>
-    <div class="method-grid cols-4" style="gap:20px;align-items:stretch">
-      
-        <div class="accent-card" style="height:100%">
-          <div class="ac-eyebrow">/01 Growth Budget</div>
-          <div class="ac-value">$1,000 annually for your craft.</div>
-          <p class="ac-body">Every employee receives an annual development budget. Conferences, courses, certifications. Whatever moves your craft forward, we fund. The travel and the time off come with it.</p>
-        </div>
-
-        <div class="accent-card" style="height:100%">
-          <div class="ac-eyebrow">/02 Clear Career Paths</div>
-          <div class="ac-value">Promotions are mapped, not negotiated.</div>
-          <p class="ac-body">Every role has a documented progression with measurable milestones. You know what the next level looks like and what it will take to get there. No guessing, no politics.</p>
-        </div>
-
-        <div class="accent-card" style="height:100%">
-          <div class="ac-eyebrow">/03 Learning by Osmosis</div>
-          <div class="ac-value">Senior expertise, accessible.</div>
-          <p class="ac-body">Our seniors run weekly clinics, share full account walkthroughs, and pair on live work. Junior team members learn the craft by watching it happen, not from generic LMS modules.</p>
-        </div>
-
-        <div class="accent-card" style="height:100%">
-          <div class="ac-eyebrow">/04 Hybrid by Design</div>
-          <div class="ac-value">In office when it matters, remote when it doesn't.</div>
-          <p class="ac-body">Strategic hybrid model. Anchor days in the Toronto office for collaboration, focused work from wherever serves you best. "Work From Anywhere" winters for those who want them.</p>
-        </div>
-    </div>
-  </section>
-
-  <!-- TEAM IMAGE WALL — 6 slots, mixed aspect ratios -->
-  <section class="sec bone-full">
-    <div class="sec-inner">
-      <div class="sec-head">
-        <div class="section-lbl">The Team</div>
-        <h2 class="sec-title">More than colleagues. <span class="sem">A team</span>.</h2>
-      </div>
-      <div class="team-wall" style="display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:80px;gap:12px;max-width:1200px;margin:0 auto">
-        <div style="grid-column:span 5;grid-row:span 4"><div class="img-slot" data-media-slug="careers-team-1" style="aspect-ratio:1/1;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px"><img src="/assets/team/team-group.jpg" alt="The Consultus team" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Team photo · Toronto office</div>
-      </div></div>
-        <div style="grid-column:span 4;grid-row:span 2"><div class="img-slot" data-media-slug="careers-team-2" style="aspect-ratio:2/1;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Workshop session</div>
-      </div></div>
-        <div style="grid-column:span 3;grid-row:span 2"><div class="img-slot" data-media-slug="careers-team-3" style="aspect-ratio:3/2;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Off-site</div>
-      </div></div>
-        <div style="grid-column:span 4;grid-row:span 2"><div class="img-slot" data-media-slug="careers-team-4" style="aspect-ratio:2/1;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Pairing session</div>
-      </div></div>
-        <div style="grid-column:span 3;grid-row:span 2"><div class="img-slot" data-media-slug="careers-team-5" style="aspect-ratio:3/2;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Whiteboard</div>
-      </div></div>
-        <div style="grid-column:span 4;grid-row:span 3"><div class="img-slot" data-media-slug="careers-team-6" style="aspect-ratio:4/3;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Friday lunch</div>
-      </div></div>
-        <div style="grid-column:span 4;grid-row:span 3"><div class="img-slot" data-media-slug="careers-team-7" style="aspect-ratio:4/3;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Conference travel</div>
-      </div></div>
-        <div style="grid-column:span 4;grid-row:span 3"><div class="img-slot" data-media-slug="careers-team-8" style="aspect-ratio:4/3;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Office life</div>
-      </div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GRACE VIDEO — featured -->
-  <section id="our-story" class="sec dark-full" style="background:#141414;color:#FAF8F3">
-    <div class="sec-inner" style="max-width:1100px">
-      <div class="sec-head">
-        <div class="section-lbl dark">Working at Consultus Digital</div>
-        <h2 class="sec-title" style="color:#FAF8F3">Hear it from <span class="sem" style="color:#FFEC00">Grace</span>.</h2>
-      </div>
-      <div class="lite-yt" data-yt-id="LT4pqmsectQ" data-yt-params="autoplay=1&amp;rel=0&amp;modestbranding=1"
-       style="position:relative;width:100%;aspect-ratio:16/9;border-radius:2px;overflow:hidden;cursor:pointer;background:#0a0a0a;box-shadow:0 30px 80px rgba(0,0,0,0.45)"
-       role="button" tabindex="0" aria-label="Play video: Hear it from Grace">
-    <picture>
-      <source srcset="https://i.ytimg.com/vi_webp/LT4pqmsectQ/maxresdefault.webp" type="image/webp">
-      <img src="https://i.ytimg.com/vi/LT4pqmsectQ/hqdefault.jpg"
-           srcset="https://i.ytimg.com/vi/LT4pqmsectQ/hqdefault.jpg 480w, https://i.ytimg.com/vi/LT4pqmsectQ/maxresdefault.jpg 1280w"
-           alt="Grace Natarelli speaking about working at Consultus Digital"
-           loading="lazy"
-           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.85)">
-    </picture>
-    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,0) 0%,rgba(20,20,20,0.55) 100%)"></div>
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:#FFEC00;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.4);transition:transform 0.2s ease">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="#141414"><polygon points="6,4 20,12 6,20"/></svg>
-    </div>
-    <div style="position:absolute;left:32px;bottom:28px;color:#FAF8F3">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,243,0.78);margin-bottom:6px">Working at Consultus Digital &middot; 4:12</div>
-      <div style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,1.8vw,26px);line-height:1.25">Grace Natarelli on the team, the bar, and the trajectory.</div>
-    </div>
-  </div>
-  <script>
-    (function(){
-      var modal;
-      function ensureModal(){
-        if (modal) return modal;
-        modal = document.createElement('div');
-        modal.className = 'lite-yt-modal';
-        modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,0.92);display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(8px)';
-        modal.setAttribute('role','dialog');
-        modal.setAttribute('aria-modal','true');
-        modal.innerHTML = ''
-          + '<button class="lite-yt-close" aria-label="Close video"'
-          + ' style="position:absolute;top:24px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:#FAF8F3;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.2s">&times;</button>'
-          + '<div class="lite-yt-frame" style="position:relative;width:min(94vw,1280px);aspect-ratio:16/9;background:#0a0a0a;border-radius:4px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.6)"></div>'
-          + '<div class="lite-yt-fallback" style="position:absolute;left:50%;bottom:32px;transform:translateX(-50%);text-align:center;display:none">'
-          +   '<p style="color:rgba(250,248,243,0.78);font-size:13px;margin:0 0 12px;font-family:var(--mono,monospace);letter-spacing:0.12em;text-transform:uppercase">Local preview cannot embed YouTube</p>'
-          +   '<a class="lite-yt-cta" target="_blank" rel="noopener" style="display:inline-block;padding:14px 28px;background:#FFEC00;color:#141414;text-decoration:none;font-weight:500;border-radius:999px;font-size:14px">Continue on YouTube &rarr;</a>'
-          + '</div>';
-        document.body.appendChild(modal);
-        modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
-        modal.querySelector('.lite-yt-close').addEventListener('click', close);
-        document.addEventListener('keydown', function(e){
-          if (e.key === 'Escape' && modal.style.display !== 'none') close();
-        });
-        return modal;
-      }
-      function open(id){
-        var m = ensureModal();
-        var frame = m.querySelector('.lite-yt-frame');
-        var fb = m.querySelector('.lite-yt-fallback');
-        var cta = m.querySelector('.lite-yt-cta');
-        cta.href = 'https://www.youtube.com/watch?v=' + id;
-        var isLocal = window.location.protocol === 'file:';
-        if (isLocal) {
-          // YouTube blocks iframe embeds on file:// origins. Render a
-          // polished local-preview state inside the frame.
-          frame.innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#141414 0%,#0a0a0a 100%);color:#FAF8F3"><div style="text-align:center;padding:40px;max-width:520px"><div style="font-family:var(--mono,monospace);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#FFEC00;margin-bottom:18px">Local Preview</div><div style="font-family:var(--serif,serif);font-style:italic;font-weight:300;font-size:clamp(24px,2.4vw,32px);line-height:1.3;margin-bottom:18px">Video plays inline once the site is on the production domain.</div><div style="font-size:14px;line-height:1.6;color:rgba(250,248,243,0.78);margin-bottom:28px">YouTube blocks iframe embeds on file:// origins (error 153). On consultusdigital.com the video plays here in this same modal.</div></div></div>';
-          fb.style.display = 'block';
-        } else {
-          frame.innerHTML = '<iframe width="100%" height="100%"'
-            + ' src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1"'
-            + ' title="Hear it from Grace - Consultus Digital"'
-            + ' frameborder="0"'
-            + ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"'
-            + ' referrerpolicy="strict-origin-when-cross-origin"'
-            + ' allowfullscreen'
-            + ' style="position:absolute;inset:0;border:0"></iframe>';
-          fb.style.display = 'none';
-        }
-        m.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-      function close(){
-        if (!modal) return;
-        var frame = modal.querySelector('.lite-yt-frame');
-        if (frame) frame.innerHTML = '';
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-      document.querySelectorAll('.lite-yt').forEach(function(el){
-        el.addEventListener('click', function(){ open(el.dataset.ytId); });
-        el.addEventListener('keydown', function(e){
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el.dataset.ytId); }
-        });
-      });
-    })();
-  </script>
-      <div style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;margin-top:48px;align-items:start;padding-top:40px;border-top:1px solid rgba(250,248,243,0.12)">
-        <div>
-          <div class="eyebrow" style="margin-bottom:18px;color:rgba(250,248,243,0.78)"><span class="eyebrow-dot" style="background:#FFEC00"></span><span>Co-founder &middot; VP Client Services</span></div>
-          <h3 style="font-family:var(--serif);font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.35;color:#FAF8F3;letter-spacing:-0.01em;margin:0 0 20px">Grace built our client services practice from the first account onward.</h3>
-          <p style="font-size:16px;line-height:1.65;color:rgba(250,248,243,0.85);margin:0">Her view on what makes the work worth doing, and what makes the team worth being on, is the closest thing we have to a manifesto.</p>
-        </div>
-        <div>
-          <div class="eyebrow" style="margin-bottom:18px;color:rgba(250,248,243,0.78)"><span class="eyebrow-dot" style="background:#FFEC00"></span><span>What you'll hear</span></div>
-          <h3 style="font-family:var(--serif);font-weight:300;font-size:clamp(22px,2vw,28px);line-height:1.35;color:#FAF8F3;letter-spacing:-0.01em;margin:0 0 20px">The team, the bar, and the trajectory.</h3>
-          <p style="font-size:16px;line-height:1.65;color:rgba(250,248,243,0.85);margin:0 0 12px">Grace tells you what the team is, what we expect, and what we give back.</p>
-          <p style="font-size:16px;line-height:1.65;color:rgba(250,248,243,0.85);margin:0">Then read on for the values, the path, and the open roles.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GROWTH VALUES -->
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">Our Values</div>
-      <h2 class="sec-title">The <span class="sem">GROWTH</span> values, in plain English.</h2>
-    </div>
-    <div class="growth-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto">
-      
-        <div class="growth-card">
-          <div class="growth-letter">G</div>
-          <div class="growth-word">Growth-minded</div>
-          <p class="growth-body">Every role on the team is built around continuous learning. We invest in skill-building, not just deliverables.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-letter">R</div>
-          <div class="growth-word">Results-driven</div>
-          <p class="growth-body">We measure ourselves on what we move for clients, not on hours billed or activity volume.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-letter">O</div>
-          <div class="growth-word">Open and honest</div>
-          <p class="growth-body">Direct feedback is a feature, not a bug. We tell each other the truth about the work and the trajectory.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-letter">W</div>
-          <div class="growth-word">We over me</div>
-          <p class="growth-body">No siloed wins. Cross-pod collaboration is how the best work ships, and how careers compound.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-letter">T</div>
-          <div class="growth-word">Take ownership</div>
-          <p class="growth-body">Every account, every campaign, every output has a name on it. We don't outsource accountability.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-letter">H</div>
-          <div class="growth-word">Harmonize work and life</div>
-          <p class="growth-body">A core value, not a perk. Hybrid by default. "Work From Anywhere" winters. Real boundaries.</p>
-        </div>
-    </div>
-  </section>
-
   <!-- FLEXIBILITY + LIFE BALANCE -->
   <section class="sec bone-full">
     <div class="sec-inner">
-      <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto">
+      <div class="wl-split" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto">
         <div>
           <div class="eyebrow" style="margin-bottom:24px"><span class="eyebrow-dot"></span><span>Work and Life</span></div>
           <h2 class="sec-title" style="font-size:clamp(36px,4vw,52px);margin-bottom:24px">Work smarter, <span class="sem">live richer</span>.</h2>
-          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 20px;max-width:540px">Healthy work-life balance isn't a perk we advertise to attract candidates. It's a core value baked into the operating model, represented by the H in our GROWTH acronym.</p>
-          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 20px;max-width:540px">Strategic hybrid model. Anchor days in the office for collaboration, focused work from wherever serves you best. "Work From Anywhere" winters for those who want them. Real time off, actually taken.</p>
+          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 20px;max-width:540px">At Consultus Digital, we provide a dynamic and inclusive community where you can work with top brands and talented individuals. With flexible hybrid opportunities, a culture of collaboration and support, and a range of perks and benefits.</p>
+          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0 0 20px;max-width:540px">We believe work-life balance means more than a policy on paper. That's why we offer work-from-anywhere winters, giving our team the freedom to travel, experience new cultures, and see more of the world, without using up vacation days to do it.</p>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div style="grid-column:span 2"><div class="img-slot" data-media-slug="careers-flex-office" style="aspect-ratio:16/9;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Office on a Tuesday</div>
-      </div></div>
-          <div><div class="img-slot" data-media-slug="careers-flex-remote" style="aspect-ratio:1/1;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Working remote</div>
-      </div></div>
-          <div><div class="img-slot" data-media-slug="careers-flex-team" style="aspect-ratio:1/1;background:#1A40C7;background-image:linear-gradient(135deg, #1A40C7 0%, #0E2B7E 100%);position:relative;overflow:hidden;border-radius:2px">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase">Team off-site</div>
-      </div></div>
+        <div class="wl-collage">
+          <figure class="wl-jays"><img src="/assets/careers/team-bluejays.jpg" alt="The Consultus Digital team at a Toronto Blue Jays game" loading="lazy" style="object-position:center 40%"></figure>
+          <figure class="wl-laptop"><img src="/assets/careers/working-remote-v3.jpg" alt="Working remotely with a laptop and a mountain view" loading="lazy" style="object-position:center 55%"></figure>
+          <figure class="wl-jake"><img src="/assets/careers/work-from-anywhere.jpg" alt="A team member working from a balcony abroad in a Consultus Digital shirt" loading="lazy" style="object-position:center 30%"></figure>
+          <figure class="wl-budapest"><img src="/assets/careers/affiliate-world-budapest.jpg" alt="The Consultus Digital team at Affiliate World Europe in Budapest" loading="lazy" style="object-position:center 42%"></figure>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5-STAR CULTURE / TESTIMONIALS -->
+  <!-- WHY US — PERKS -->
   <section class="sec">
     <div class="sec-head">
-      <div class="section-lbl">5-Star Culture</div>
-      <h2 class="sec-title">A team you actually want to <span class="sem">be</span> on.</h2>
+      <div class="section-lbl">What's in it for you?</div>
+      <h2 class="sec-title"><span class="sem">Perks</span> at Consultus Digital.</h2>
+      <div>
+        <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0">We're on a mission to become the number one marketing and sales transformation leader for small and mid-sized businesses in North America. Here's what you get when you build it with us.</p>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto">
-      <div class="accent-card" style="background:#FAF8F3">
-        <div style="font-size:18px;color:#FFB400;letter-spacing:2px;margin-bottom:14px">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
-        <p style="font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.45;color:#141414;margin:0 0 18px;letter-spacing:-0.01em">"The growth budget is real and the seniors actually invest in junior development. I have learned more in eighteen months here than in three years anywhere else."</p>
-        <div class="ac-eyebrow" style="border-top:1px solid rgba(20,20,20,0.12);padding-top:14px">Account Strategist &middot; 2 years tenure</div>
+    <div class="perk-grid">
+
+      <div class="perk-card">
+        <div class="perk-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-4 9 4-9 4-9-4z"/><path d="M7 11v4c0 1.1 2.2 2 5 2s5-.9 5-2v-4"/><path d="M21 9v4"/></svg></div>
+        <div>
+          <h3>Annual Learning Budget</h3>
+          <p>$1,000 every year for the courses, conferences, and certifications that grow your craft.</p>
+        </div>
       </div>
-      <div class="accent-card" style="background:#FAF8F3">
-        <div style="font-size:18px;color:#FFB400;letter-spacing:2px;margin-bottom:14px">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
-        <p style="font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.45;color:#141414;margin:0 0 18px;letter-spacing:-0.01em">"The work is hard and the bar is high, but feedback is direct and the path is clear. People stay for years because the trajectory actually compounds."</p>
-        <div class="ac-eyebrow" style="border-top:1px solid rgba(20,20,20,0.12);padding-top:14px">Senior Specialist &middot; 4 years tenure</div>
+
+      <div class="perk-card">
+        <div class="perk-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div>
+        <div>
+          <h3>Career Growth</h3>
+          <p>Clear, documented paths with real milestones, so you always know what the next level takes.</p>
+        </div>
       </div>
-      <div class="accent-card" style="background:#FAF8F3">
-        <div style="font-size:18px;color:#FFB400;letter-spacing:2px;margin-bottom:14px">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
-        <p style="font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.45;color:#141414;margin:0 0 18px;letter-spacing:-0.01em">"Hybrid isn't a buzzword here. The flexibility is real, the boundaries are respected, and the work-from-anywhere weeks have actually changed how I think about my job."</p>
-        <div class="ac-eyebrow" style="border-top:1px solid rgba(20,20,20,0.12);padding-top:14px">Performance Lead &middot; 3 years tenure</div>
+
+      <div class="perk-card">
+        <div class="perk-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><rect x="9.5" y="14" width="5" height="6"/></svg></div>
+        <div>
+          <h3>Hybrid Working Model</h3>
+          <p>Three days together in the office, the rest of the week wherever you do your best work.</p>
+        </div>
       </div>
+
+      <div class="perk-card">
+        <div class="perk-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+        <div>
+          <h3>Work From Anywhere Winters</h3>
+          <p>Log in from somewhere warmer through the coldest months, January to April.</p>
+        </div>
+      </div>
+
+      <div class="perk-card">
+        <div class="perk-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4-7-10V5l7-2 7 2v6c0 6-7 10-7 10z"/><path d="M9.5 11.5l1.8 1.8 3.2-3.6"/></svg></div>
+        <div>
+          <h3>Benefits Packages</h3>
+          <p>Comprehensive health coverage that looks after you and the people who matter to you.</p>
+        </div>
+      </div>
+
+      <div class="perk-card">
+        <div class="perk-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 0 1 18 0z"/><path d="M12 11v9"/><path d="M12 20a2.5 2.5 0 0 0 4.5 0"/></svg></div>
+        <div>
+          <h3>Paid Vacation</h3>
+          <p>Real time off that people actually take, because rest is part of doing great work.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EQUAL OPPORTUNITIES -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="section-lbl">Our Commitment</div>
+      <h2 class="sec-title">Equal <span class="sem">opportunities</span>.</h2>
+    </div>
+    <div style="max-width:1000px;margin:0 auto;background:#fff;border:1px solid rgba(20,20,20,0.08);border-radius:12px;padding:44px 44px">
+      <p style="font-size:17px;line-height:1.7;color:#2A2A2A;margin:0 0 18px">Consultus Digital is an equal opportunity employer. We don't discriminate based on race, color, religion, gender, gender identity or expression, sexual orientation, national origin, genetics, disability, age, or veteran status.</p>
+      <p style="font-size:17px;line-height:1.7;color:#2A2A2A;margin:0">We're committed to a fair, inclusive hiring process and a workplace where everyone has the same opportunity to grow, based on skills, qualifications, and performance. We welcome candidates from all backgrounds to apply and help us build something great together.</p>
     </div>
   </section>
 
@@ -3885,65 +3709,10 @@
       <div class="sec-head">
         <div class="section-lbl">Your Next Chapter</div>
         <h2 class="sec-title">Open <span class="sem">positions</span>.</h2>
-      </div>
-      <div style="max-width:880px;margin:0 auto">
-        <div style="background:#fff;border:1px solid rgba(20,20,20,0.08);padding:40px 32px;text-align:center">
-          <div class="eyebrow" style="justify-content:center;margin-bottom:18px"><span class="eyebrow-dot"></span><span>Open Positions</span></div>
-          <h3 style="font-family:var(--serif);font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1.25;color:#141414;margin:0 0 14px;letter-spacing:-0.02em">We're not actively recruiting for any specific role right now.</h3>
-          <p style="font-size:16px;line-height:1.6;color:#5A5A5A;max-width:580px;margin:0 auto 28px">If you think you'd be a strong fit and the trajectory speaks to you, get in touch. We read every note and we hire opportunistically when the right person arrives.</p>
-          <a class="btn primary cta-yellow-hover" href="/contact/">Send a Note &rarr;</a>
+        <div>
+          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0">We're not currently hiring for any specific roles. However, if you think you'd be a perfect fit with us, please <a href="mailto:careers@consultusdigital.com" style="color:#1A40C7;text-decoration:underline;text-underline-offset:2px">get in touch</a>.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sec">
-    <div class="sec-head">
-      <div class="section-lbl">Frequently Asked</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span> from candidates.</h2>
-    </div>
-    <div class="faq-list" style="max-width:880px;margin:0 auto">
-      
-        <details class="faq-item">
-          <summary>What does Consultus Digital do?</summary>
-          <div class="faq-a"><p>We're a full-service digital marketing agency. Paid media, SEO, CRO, web development, performance creative, lifecycle email, and CRM. We help ambitious brands scale, profitably, with measurable outcomes.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Where is Consultus Digital located?</summary>
-          <div class="faq-a"><p>Headquartered in Toronto, Ontario, engaging clients across North America. The team works on a strategic hybrid model with anchor days in office.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the work environment like?</summary>
-          <div class="faq-a"><p>High trust, high accountability, high learning. The teams are small and senior-led. The clients are ambitious. Feedback is direct and the bar is real. People stay for years because they grow.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How do I apply for a role at Consultus Digital?</summary>
-          <div class="faq-a"><p>When we're actively recruiting, open roles are listed on this page. If we're between hiring rounds and you think you'd be a strong fit, send a note via the form below. We read every one.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What qualities make someone a great fit?</summary>
-          <div class="faq-a"><p>Curiosity, ownership, and a high standard for the craft. We hire people who care about the work as a discipline, not just as a job. Industry experience matters less than trajectory and intent.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What are the stages of the interview process?</summary>
-          <div class="faq-a"><p>Three stages typically. An initial conversation with a recruiter or hiring manager, a craft interview with the team you'd join, and a final values conversation with leadership. We move fast on candidates we love.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How should I prepare?</summary>
-          <div class="faq-a"><p>Bring real work. Walk us through campaigns or projects you owned end to end, what you tried, what you learned, what you'd do differently. We're more interested in how you think than in rehearsed answers.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Who will I be interviewing with?</summary>
-          <div class="faq-a"><p>You'll meet the team you'd join, the senior strategist for that practice, and one of the founders. We invest the time on both sides because longevity is the goal.</p></div>
-        </details>
     </div>
   </section>
 
@@ -3952,10 +3721,8 @@
     <div class="cta-inner">
       <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Ready to build something?</span></div>
       <h2 class="cta-title">Come <span class="sem">grow</span> with us.</h2>
-      <p style="font-family:var(--serif);font-weight:300;font-size:22px;line-height:1.45;max-width:56ch;color:rgba(250,248,243,0.85);margin-bottom:40px">Whether we have an open role for you or not, the door is open. The best people on our team came in through a thoughtful note rather than a posted listing.</p>
-      <div class="hero-ctas" style="gap:16px">
-        <a class="btn primary on-dark" href="/contact/">Send a Note &rarr;</a>
-        <a class="btn secondary on-dark" href="#our-story" style="background:transparent;color:#FAF8F3;border:1px solid rgba(250,248,243,0.35)">Watch the Video Again</a>
+      <div class="hero-ctas" style="gap:16px;justify-content:flex-start">
+        <a class="btn secondary on-dark" href="mailto:careers@consultusdigital.com" style="background:transparent;color:#FAF8F3;border:1px solid rgba(250,248,243,0.35)">Email careers@consultusdigital.com</a>
       </div>
     </div>
   </section>
@@ -3996,10 +3763,238 @@
       color: #2A2A2A;
       margin: 0;
     }
+    /* Work-and-Life gallery — matches the About page culture collage */
+    .wl-collage { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wl-collage figure { margin: 0; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(20,20,20,0.08); }
+    .wl-collage img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .wl-collage figure:hover img { transform: scale(1.05); }
+    /* Jays horizontal across the top */
+    .wl-jays { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 16 / 9; }
+    /* Two squares stacked in the left column */
+    .wl-laptop { grid-column: 1; grid-row: 2; aspect-ratio: 1 / 1; }
+    .wl-jake   { grid-column: 1; grid-row: 3; aspect-ratio: 1 / 1; }
+    /* Budapest as a tall vertical rectangle filling the right column */
+    .wl-budapest { grid-column: 2; grid-row: 2 / 4; }
+    @media (max-width: 820px) { .wl-split { grid-template-columns: 1fr !important; gap: 32px !important; } }
+    @media (max-width: 560px) {
+      .wl-jays { grid-column: 1 / 3; grid-row: auto; }
+      .wl-budapest { grid-column: 1 / 3; grid-row: auto; aspect-ratio: 16 / 9; }
+      .wl-laptop { grid-column: 1; grid-row: auto; }
+      .wl-jake { grid-column: 2; grid-row: auto; }
+    }
+
+    /* Perks / why-us boxes */
+    .perk-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .perk-card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid rgba(20,20,20,0.08);
+      border-radius: 12px;
+      padding: 28px 26px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .perk-card:hover {
+      transform: translateY(-3px);
+      border-color: #1A40C7;
+      box-shadow: 0 18px 44px rgba(20,20,20,0.07);
+    }
+    .perk-ico {
+      flex: 0 0 auto;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #E9EEFD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .perk-ico svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: #1A40C7;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .perk-card h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+      color: #141414;
+      margin: 0 0 6px;
+    }
+    .perk-card p {
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: #6A686B;
+      margin: 0;
+    }
+    @media (max-width: 900px) { .perk-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .perk-grid { grid-template-columns: 1fr; } }
+
+    /* Open roles */
+    .role-list {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .role-card {
+      background: #fff;
+      border: 1px solid rgba(20,20,20,0.08);
+      border-radius: 4px;
+      padding: 32px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .role-card:hover {
+      transform: translateY(-3px);
+      border-color: #1A40C7;
+      box-shadow: 0 18px 44px rgba(20,20,20,0.08);
+    }
+    .role-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: start;
+    }
+    .role-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .role-tags span {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1A40C7;
+      background: #E9EEFD;
+      padding: 5px 10px;
+      border-radius: 100px;
+    }
+    .role-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(24px, 2.6vw, 32px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #141414;
+      margin: 0 0 12px;
+    }
+    .role-focus {
+      font-size: 16px;
+      line-height: 1.55;
+      color: #2A2A2A;
+      margin: 0;
+      max-width: 56ch;
+    }
+    .role-pay {
+      text-align: right;
+      min-width: 180px;
+    }
+    .role-pay .mono {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8C8A87;
+      margin-bottom: 6px;
+    }
+    .role-pay strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #141414;
+    }
+    .role-pay-note {
+      display: block;
+      font-size: 13px;
+      color: #6A686B;
+      margin-top: 4px;
+    }
+    .role-detail {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(20,20,20,0.08);
+    }
+    .role-meta { display: flex; flex-direction: column; gap: 18px; }
+    .role-meta > div {
+      font-size: 15px;
+      color: #141414;
+      line-height: 1.4;
+    }
+    .role-meta .mono {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8C8A87;
+      margin-bottom: 5px;
+    }
+    .role-quals {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .role-quals li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #2A2A2A;
+    }
+    .role-quals li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1A40C7;
+    }
+    .role-apply { margin-top: 28px; }
+    .role-howto {
+      max-width: 720px;
+      margin: 48px auto 0;
+      text-align: center;
+    }
+    .role-howto p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #2A2A2A;
+      margin: 0;
+    }
+    .role-howto a { color: #1A40C7; text-decoration: underline; text-underline-offset: 2px; }
     @media (max-width: 900px) {
       .growth-grid { grid-template-columns: 1fr 1fr !important; }
       .team-wall { grid-template-columns: repeat(6,1fr) !important; }
       .team-wall > div { grid-column: span 6 !important; grid-row: span 3 !important; }
+      .role-card { padding: 24px; }
+      .role-head { grid-template-columns: 1fr; gap: 20px; }
+      .role-pay { text-align: left; min-width: 0; }
+      .role-detail { grid-template-columns: 1fr; gap: 24px; }
     }
   </style>
 
