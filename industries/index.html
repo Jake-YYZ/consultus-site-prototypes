@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
 <title>Industries | Consultus Digital</title>
-<meta name="description" content="Industries where Consultus goes deep: healthcare, home services, legal, real estate, ecommerce and more, each with its own playbook and proof.">
+<meta name="description" content="The seven industries Consultus Digital goes deep in: e-commerce & DTC, healthcare, legal, home services, professional services, retail, and B2B & SaaS. Each with its own playbook and proof.">
 <link rel="stylesheet" href="/assets/fonts.css">
 
 <style>
@@ -3536,7 +3536,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Consultus Digital">
   <meta property="og:title" content="Industries | Consultus Digital">
-  <meta property="og:description" content="Industries where Consultus goes deep: healthcare, home services, legal, real estate, ecommerce and more, each with its own playbook and proof.">
+  <meta property="og:description" content="The seven industries Consultus Digital goes deep in: e-commerce & DTC, healthcare, legal, home services, professional services, retail, and B2B & SaaS. Each with its own playbook and proof.">
   <meta property="og:url" content="https://consultusdigital.com/industries/">
   <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
   <meta property="og:image:width" content="1600">
@@ -3577,242 +3577,315 @@
 
 
   
-    <section class="hero-cover">
-    <div class="ghost-monogram">C</div>
-    <div class="cover-grid">
-      <div class="cover-main" style="text-align:center">
-        <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center"><span>Industries / Vertical Coverage</span></div>
-        <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">We go deep where we can <span class="sem">actually win</span>.</h1>
-        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">Nine verticals across Home &amp; Property, Professional, and Commerce. Every engagement is delivered through our core services, tuned to the playbook that actually works in your industry.</p>
-        <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
+<style id="ind2-styles">
+/* ===================== Industries hub v2 ===================== */
+#ind2{--edge:32px}
+#ind2 img{display:block}
+
+/* ---- Hero ---- */
+.ix-hero{background:var(--paper);padding:74px var(--edge) 44px;overflow:hidden}
+.ix-hero-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.ix-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink)}
+.ix-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--deep-blue)}
+.ix-hero h1{font-family:var(--sans);font-weight:400;font-size:clamp(40px,6.2vw,86px);line-height:0.98;letter-spacing:-0.026em;color:var(--ink);margin:20px 0 0}
+.ix-lede{font-size:19px;line-height:1.55;color:var(--charcoal);max-width:560px;margin:26px 0 0}
+.ix-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.ix-hero-stats{display:flex;gap:44px;margin-top:46px;flex-wrap:wrap;border-top:1px solid var(--bone-border);padding-top:30px}
+.ix-hero-stats .s b{display:block;font-size:26px;font-weight:600;color:var(--ink);letter-spacing:-0.02em}
+.ix-hero-stats .s span{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--charcoal)}
+/* hero photo fan (tilted-left staggered portrait cards) */
+.ix-fan{display:flex;gap:16px;justify-content:center;align-items:flex-start;transform:rotate(-7deg);transform-origin:center;margin:6px auto}
+.ix-fan .col{display:flex;flex-direction:column;gap:16px}
+.ix-fan .col.b{margin-top:clamp(30px,4vw,58px)}
+.ix-fan figure{box-sizing:border-box;margin:0;border:5px solid #fff;border-radius:15px;overflow:hidden;background:var(--bone);box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.ix-fan img{display:block;width:100%;height:100%;object-fit:cover}
+.ix-fan .col.a figure{width:clamp(146px,19.5vw,206px)}
+.ix-fan .col.b figure{width:clamp(172px,23vw,250px)}
+.ix-fan .a1{aspect-ratio:4/5}
+.ix-fan .a2{aspect-ratio:4/5}
+.ix-fan .b1{aspect-ratio:5/8}
+.ix-fan:hover figure{transform:translateY(-4px)}
+
+/* ---- Section shell ---- */
+.ix-sec{max-width:1200px;margin:0 auto;padding:96px var(--edge)}
+.ix-head{max-width:760px;margin-bottom:52px}
+.ix-lbl{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal)}
+.ix-lbl::before{content:"";width:30px;height:1px;background:var(--deep-blue)}
+.ix-sec-title{font-family:var(--sans);font-weight:400;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin:20px 0 0}
+
+/* ---- Industry grid ---- */
+.ix-grid{display:flex;flex-wrap:wrap;gap:22px;justify-content:flex-start}
+.ix-card{position:relative;display:flex;flex-direction:column;flex:0 1 calc((100% - 66px)/4);max-width:calc((100% - 66px)/4);min-width:0;background:var(--pure);border:1px solid var(--bone-border);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.ix-card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(20,20,20,.32);border-color:#d3cdbf}
+.ix-card-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bone)}
+.ix-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.ix-card:hover .ix-card-media img{transform:scale(1.07)}
+.ix-card-num{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:#fff;background:rgba(20,20,20,.55);backdrop-filter:blur(4px);padding:4px 9px;border-radius:20px}
+.ix-card-pill{position:absolute;top:12px;right:14px;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:0.04em;color:var(--ink);background:var(--yellow);padding:5px 11px;border-radius:20px}
+.ix-card-pill.soft{background:rgba(255,255,255,.92);color:var(--ink);box-shadow:0 2px 10px rgba(20,20,20,.12)}
+.ix-card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.ix-card-body h3{font-family:var(--wide);font-weight:600;font-size:18.5px;letter-spacing:-0.005em;color:var(--ink);margin:0}
+.ix-card-body p{font-size:14px;line-height:1.5;color:var(--charcoal);margin:10px 0 0}
+.ix-card-link{margin-top:auto;padding-top:18px;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--deep-blue)}
+.ix-card-link .arw{transition:transform .25s ease}
+.ix-card:hover .ix-card-link .arw{transform:translateX(5px)}
+
+/* ---- Proof scoreboard (dark) ---- */
+.ix-score-full{background:var(--ink)}
+.ix-score{max-width:1200px;margin:0 auto;padding:88px var(--edge)}
+.ix-score .ix-lbl{color:var(--grey)}
+.ix-score .ix-lbl::before{background:var(--yellow)}
+.ix-score-title{font-family:var(--sans);font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1.06;letter-spacing:-0.02em;color:var(--paper);margin:18px 0 0}
+.ix-score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.ix-cs{display:flex;flex-direction:column;background:var(--onyx-2);border:1px solid var(--onyx-border);border-radius:14px;padding:24px 22px 22px;transition:transform .3s ease,border-color .3s ease}
+.ix-cs:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.22)}
+.ix-cs-pill{align-self:flex-start;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);background:var(--paper);padding:6px 13px;border-radius:100px}
+.ix-cs-num{font-size:clamp(38px,4.2vw,58px);font-weight:600;color:var(--yellow);letter-spacing:-0.04em;line-height:1;margin-top:22px}
+.ix-cs-desc{font-size:14px;line-height:1.5;color:var(--grey);margin-top:14px;flex:1}
+.ix-cs-client{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--paper-dim);margin-top:18px}
+.ix-cs-btn{margin-top:16px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--paper);background:transparent;border:1px solid rgba(255,255,255,.32);padding:10px 16px;border-radius:100px;text-decoration:none;transition:background .25s ease,color .25s ease,transform .2s ease}
+.ix-cs-btn .arw{transition:transform .25s ease}
+.ix-cs:hover .ix-cs-btn{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.ix-cs:hover .ix-cs-btn .arw{transform:translateX(4px)}
+
+/* ---- Logo wall ---- */
+.ix-wall-full{background:var(--bone)}
+.ix-wall{max-width:1200px;margin:0 auto;padding:80px var(--edge)}
+.ix-wall-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.ix-wall-head h2{font-family:var(--sans);font-weight:400;font-size:clamp(26px,3vw,40px);letter-spacing:-0.02em;color:var(--ink);margin:14px 0 0}
+.ix-cm{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.ix-cm-track{display:flex;align-items:center;gap:clamp(46px,6vw,74px);width:max-content;animation:ix-cm-scroll 50s linear infinite}
+.ix-cm:hover .ix-cm-track{animation-play-state:paused}
+.ix-cm-track img{height:36px;width:auto;flex:0 0 auto;object-fit:contain;filter:grayscale(1) brightness(.4);opacity:.72;transition:opacity .3s ease,filter .3s ease}
+.ix-cm-track img:hover{opacity:1;filter:grayscale(0) brightness(1)}
+@keyframes ix-cm-scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ix-cm-track{animation:none}}
+
+/* accent word: yellow on the dark scoreboard (brand: blue on light, yellow on dark) */
+.ix-score .sem{color:var(--yellow)}
+
+/* ---- Proof bar (under hero) — matches homepage .cover-meta ---- */
+.ix-proofbar{max-width:1200px;margin:0 auto;padding:0 var(--edge)}
+.ix-proofbar-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--bone-border);text-align:center}
+.ix-proofbar .p{display:flex;flex-direction:column}
+.ix-proofbar .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#6A686B;margin-bottom:10px}
+.ix-proofbar .val{font-family:var(--sans);font-weight:500;font-size:15px;color:#141414}
+.ix-proofbar .val .star{color:#141414}
+
+/* ---- Responsive ---- */
+@media(max-width:980px){
+  .ix-hero-in{grid-template-columns:1fr;gap:44px}
+  .ix-fan{justify-content:flex-start}
+  .ix-card{flex-basis:calc((100% - 22px)/2);max-width:calc((100% - 22px)/2)}
+  .ix-score-grid{grid-template-columns:repeat(2,1fr);gap:36px 24px}
+}
+@media(max-width:600px){
+  .ix-hero{padding:52px 16px 32px}
+  .ix-sec{padding:64px 16px}
+  .ix-card{flex-basis:100%;max-width:100%}
+  .ix-score{padding:64px 16px}
+  .ix-score-grid{grid-template-columns:1fr;gap:32px}
+  .ix-wall{padding:56px 16px}
+  .ix-proofbar-row{grid-template-columns:1fr;gap:24px}
+}
+</style>
+
+<div id="ind2">
+
+  <!-- ===== HERO ===== -->
+  <section class="ix-hero">
+    <div class="ix-hero-in">
+      <div class="ix-hero-copy">
+        <span class="ix-eyebrow">Industries</span>
+        <h1>Industries we know <span class="sem">inside and out</span>.</h1>
+        <p class="ix-lede">We build marketing around how your industry works, how your customers buy, and what growth looks like for your business.</p>
+        <div class="ix-hero-ctas">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
         </div>
       </div>
-      <div class="cover-meta">
-        <div class="cell"><span class="mono">Verticals</span><strong>9 industries</strong></div>
-        <div class="cell"><span class="mono">Categories</span><strong>Home / Professional / Commerce</strong></div>
-        <div class="cell"><span class="mono">Engagement</span><strong>National &middot; North America</strong></div>
-        <div class="cell"><span class="mono">Track record</span><strong>30+ implementations</strong></div>
+      <div class="ix-fan" aria-hidden="true">
+        <div class="col a">
+          <figure class="a1"><img src="/assets/work/cards/spieth-america.jpg" alt=""></figure>
+          <figure class="a2"><img src="/assets/work/cards/tonic-eye-care.jpg" alt=""></figure>
+        </div>
+        <div class="col b">
+          <figure class="b1"><img src="/assets/work/e11ement/social-model.jpg" alt=""></figure>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HOME & PROPERTY -->
-  <section class="sec">
-    <div class="sec-head"><div class="section-lbl">Category 01 · Home &amp; Property</div><h2 class="sec-title">Lead-generation engines for <span class="sem">home</span> businesses.</h2></div>
-    <div class="ind-grid">
-      <div class="ind-card" onclick="window.location.href='/home-services-marketing/'" style="cursor:pointer"><div><div class="ind-num">01</div><h3 class="ind-title">Home Services</h3><p class="ind-desc">HVAC, windows, roofing, plumbing, and trades businesses competing for homeowners actively searching for help.</p></div><span class="ind-link">Explore →</span></div>
-      <div class="ind-card" onclick="window.location.href='/home-improvement-marketing/'" style="cursor:pointer"><div><div class="ind-num">02</div><h3 class="ind-title">Home Improvement</h3><p class="ind-desc">Closets, kitchens, bathrooms, and renovation brands selling considered purchases with longer sales cycles.</p></div><span class="ind-link">Explore →</span></div>
-      <div class="ind-card" onclick="window.location.href='/self-storage-marketing-toronto/'" style="cursor:pointer"><div><div class="ind-num">03</div><h3 class="ind-title">Self-Storage</h3><p class="ind-desc">Multi-location storage facilities that need local SEO dominance and per-location lead generation at scale.</p></div><span class="ind-link">Explore →</span></div>
-      <div class="ind-card" onclick="window.location.href='/real-estate-marketing/'" style="cursor:pointer"><div><div class="ind-num">04</div><h3 class="ind-title">Real Estate</h3><p class="ind-desc">Developers, brokerages, and property management firms building pipeline through paid and organic digital channels.</p></div><span class="ind-link">Explore →</span></div>
+  <!-- ===== PROOF BAR ===== -->
+  <div class="ix-proofbar">
+    <div class="ix-proofbar-row">
+      <div class="p"><div class="lbl">Since</div><div class="val">Toronto, 2020</div></div>
+      <div class="p"><div class="lbl">Critics say</div><div class="val">4.9 <span class="star">&#9733;</span> &middot; 47 reviews</div></div>
+      <div class="p"><div class="lbl">Serving</div><div class="val">North America</div></div>
+    </div>
+  </div>
+
+  <!-- ===== INDUSTRY GRID ===== -->
+  <section class="ix-sec">
+    <div class="ix-head">
+      <span class="ix-lbl">Who we serve</span>
+      <h2 class="ix-sec-title">Marketing built around your <span class="sem">vertical</span>.</h2>
+    </div>
+    <div class="ix-grid">
+
+      <a class="ix-card" href="/ecommerce-marketing-toronto/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/ecommerce-dtc-v3.png" alt="E-commerce & DTC">
+        </div>
+        <div class="ix-card-body">
+          <h3>E-commerce &amp; DTC</h3>
+          <p>Shopify and DTC brands scaling revenue through paid media, SEO, CRO, and performance creative.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a class="ix-card" href="/healthcare-marketing/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/healthcare-medical-v2.png" alt="Healthcare & Medical">
+        </div>
+        <div class="ix-card-body">
+          <h3>Healthcare &amp; Medical</h3>
+          <p>Clinics, dental, med spas, and specialists winning local patients in saturated, high-intent markets.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a class="ix-card" href="/legal-practice-search-engine-optimization-for-law-firms-toronto/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/legal-v3.png" alt="Legal">
+        </div>
+        <div class="ix-card-body">
+          <h3>Legal</h3>
+          <p>Law firms turning search demand into signed files, not just clicks, with intake built to close.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a class="ix-card" href="/home-services-marketing/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/home-services-v3.png" alt="Home Services">
+        </div>
+        <div class="ix-card-body">
+          <h3>Home Services</h3>
+          <p>HVAC, windows, roofing, paving, and trades capturing homeowners at the exact moment of need.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a class="ix-card" href="/professional-services-marketing/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/professional-services-v3.png" alt="Professional Services">
+        </div>
+        <div class="ix-card-body">
+          <h3>Professional Services</h3>
+          <p>Accountants, advisors, and consultancies turning credibility and expertise into consistent pipeline.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a class="ix-card" href="/retail-consumer-marketing/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/retail-consumer-v2.png" alt="Retail & Consumer">
+        </div>
+        <div class="ix-card-body">
+          <h3>Retail &amp; Consumer</h3>
+          <p>Multi-location and consumer brands balancing store traffic, ecommerce revenue, and marketplaces.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a class="ix-card" href="/b2b-saas-marketing/">
+        <div class="ix-card-media">
+          <img src="/assets/work/verticals/b2b-saas-v3.png" alt="B2B & SaaS">
+        </div>
+        <div class="ix-card-body">
+          <h3>B2B &amp; SaaS</h3>
+          <p>Software and tech companies with long sales cycles, demo funnels, and pipeline attribution needs.</p>
+          <span class="ix-card-link">Explore <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- PROFESSIONAL -->
-  <section class="sec bone-full">
-    <div class="sec-inner">
-      <div class="sec-head"><div class="section-lbl">Category 02 · Professional</div><h2 class="sec-title">Expertise-driven firms turning authority into <span class="sem">pipeline</span>.</h2></div>
-      <div class="ind-grid">
-        <div class="ind-card" onclick="window.location.href='/healthcare/'" style="cursor:pointer" style="background:#FAF8F3"><div><div class="ind-num">05</div><h3 class="ind-title">Healthcare &amp; Medical</h3><p class="ind-desc">Clinics, dental, med spas, plastic surgery, and preventative health competing for local patients in saturated markets.</p></div><span class="ind-link">Explore →</span></div>
-        <div class="ind-card" onclick="window.location.href='/professional-services-marketing/'" style="cursor:pointer" style="background:#FAF8F3"><div><div class="ind-num">06</div><h3 class="ind-title">Professional Services</h3><p class="ind-desc">Law firms, financial advisors, and consulting practices turning expertise and credibility into consistent pipeline.</p></div><span class="ind-link">Explore →</span></div>
-        <div class="ind-card" onclick="window.location.href='/b2b-saas-marketing/'" style="cursor:pointer" style="background:#FAF8F3"><div><div class="ind-num">07</div><h3 class="ind-title">B2B / SaaS</h3><p class="ind-desc">Software and technology companies with long sales cycles, demo funnels, and pipeline attribution needs.</p></div><span class="ind-link">Explore →</span></div>
+  <!-- ===== PROOF SCOREBOARD ===== -->
+  <section class="ix-score-full">
+    <div class="ix-score">
+      <div class="ix-head" style="margin-bottom:0">
+        <span class="ix-lbl">Success stories</span>
+        <h2 class="ix-score-title"><span class="sem">Outcomes</span> across industries.</h2>
+      </div>
+      <div class="ix-score-grid">
+        <div class="ix-cs">
+          <span class="ix-cs-pill">Healthcare</span>
+          <div class="ix-cs-num">410</div>
+          <div class="ix-cs-desc">Patient leads in month one, from a UGC-led Meta ads program.</div>
+          <div class="ix-cs-client">Tonic Eye Care</div>
+          <a class="ix-cs-btn" href="/case-studies/tonic-eye-care/">View case study <span class="arw">&rarr;</span></a>
+        </div>
+        <div class="ix-cs">
+          <span class="ix-cs-pill">E-commerce</span>
+          <div class="ix-cs-num">8.10&times;</div>
+          <div class="ix-cs-desc">Return on Ad Spend, with a net new Meta ad campaign launch.</div>
+          <div class="ix-cs-client">BookSeats</div>
+          <a class="ix-cs-btn" href="/case-studies/bookseats/">View case study <span class="arw">&rarr;</span></a>
+        </div>
+        <div class="ix-cs">
+          <span class="ix-cs-pill">B2B</span>
+          <div class="ix-cs-num">40%</div>
+          <div class="ix-cs-desc">Productivity gain after rebuilding spreadsheet operations into a custom CRM.</div>
+          <div class="ix-cs-client">eCycle Solutions</div>
+          <a class="ix-cs-btn" href="/case-studies/ecycle/">View case study <span class="arw">&rarr;</span></a>
+        </div>
+        <div class="ix-cs">
+          <span class="ix-cs-pill">Legal</span>
+          <div class="ix-cs-num">$72.70</div>
+          <div class="ix-cs-desc">Cost per lead on Meta, against a $200 to $250 category benchmark.</div>
+          <div class="ix-cs-client">Zayouna Law</div>
+          <a class="ix-cs-btn" href="/case-studies/zayouna-law-firm/">View case study <span class="arw">&rarr;</span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- COMMERCE -->
-  <section class="sec">
-    <div class="sec-head"><div class="section-lbl">Category 03 · Commerce</div><h2 class="sec-title">Scaling brands through <span class="sem">full-funnel</span> commerce.</h2></div>
-    <div class="ind-grid">
-      <div class="ind-card" onclick="window.location.href='/ecommerce-marketing-toronto/'" style="cursor:pointer"><div><div class="ind-num">08</div><h3 class="ind-title">E-commerce &amp; DTC</h3><p class="ind-desc">Shopify and WooCommerce brands scaling revenue through paid media, SEO, CRO, and lifecycle marketing.</p></div><span class="ind-link">Explore →</span></div>
-      <div class="ind-card" onclick="window.location.href='/retail-consumer-marketing/'" style="cursor:pointer"><div><div class="ind-num">09</div><h3 class="ind-title">Retail &amp; Consumer</h3><p class="ind-desc">Multi-channel retail brands balancing in-store traffic, e-commerce revenue, and marketplace presence.</p></div><span class="ind-link">Explore →</span></div>
-      <div class="ind-card" style="background:linear-gradient(180deg,#141414 0%,#1f1f28 100%);color:#FAF8F3">
+  <!-- ===== CLIENT LOGO WALL ===== -->
+  <section class="ix-wall-full">
+    <div class="ix-wall">
+      <div class="ix-wall-head">
         <div>
-          <div class="ind-num" style="color:#9A989C">–</div>
-          <h3 class="ind-title" style="color:#FAF8F3">Don't see your industry?</h3>
-          <p class="ind-desc" style="color:#9A989C">We've scaled businesses across dozens of verticals. Let's talk about yours.</p>
+          <span class="ix-lbl">The client roster</span>
+          <h2>Brands we've scaled across every vertical.</h2>
         </div>
-        <a class="ind-link" href="/contact/" style="color:#FFEC00;text-decoration:none">Book an audit →</a>
+        <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See the case studies &rarr;</a>
+      </div>
+      <div class="ix-cm">
+        <div class="ix-cm-track">
+          <img src="/assets/work/logos/la-vie.png" alt="La Vie"><img src="/assets/work/logos/dragonscale.png" alt="Dragonscale"><img src="/assets/work/logos/e11ement.webp" alt="e11ement"><img src="/assets/work/logos/bookseats.png" alt="BookSeats"><img src="/assets/work/logos/zayouna.png" alt="Zayouna Law"><img src="/assets/work/logos/spieth.png" alt="Spieth America"><img src="/assets/work/logos/gordons.webp" alt="Gordon's"><img src="/assets/work/logos/tonic.png" alt="Tonic Eye Care"><img src="/assets/work/logos/comwave.png" alt="Comwave"><img src="/assets/work/logos/obc.png" alt="Ontario Business Central"><img src="/assets/work/logos/hardy.png" alt="Hardy Carts"><img src="/assets/work/logos/ignite.png" alt="Ignite"><img src="/assets/work/logos/office-shop.png" alt="The Office Shop"><img src="/assets/work/logos/discover.png" alt="Discover"><img src="/assets/work/logos/healthy-back.png" alt="Healthy Back"><img src="/assets/work/logos/robichaud.png" alt="Robichaud"><img src="/assets/work/logos/orr.png" alt="Orr"><img src="/assets/work/logos/oegema.webp" alt="Oegema"><img src="/assets/work/logos/mikeys.png" alt="Mikey's"><img src="/assets/work/logos/harmony.png" alt="Harmony"><img src="/assets/work/logos/chrysalis.webp" alt="Chrysalis"><img src="/assets/work/logos/hometown.png" alt="Hometown"><img src="/assets/work/logos/malcolm.webp" alt="Malcolm">
+          <img src="/assets/work/logos/la-vie.png" alt="La Vie"><img src="/assets/work/logos/dragonscale.png" alt="Dragonscale"><img src="/assets/work/logos/e11ement.webp" alt="e11ement"><img src="/assets/work/logos/bookseats.png" alt="BookSeats"><img src="/assets/work/logos/zayouna.png" alt="Zayouna Law"><img src="/assets/work/logos/spieth.png" alt="Spieth America"><img src="/assets/work/logos/gordons.webp" alt="Gordon's"><img src="/assets/work/logos/tonic.png" alt="Tonic Eye Care"><img src="/assets/work/logos/comwave.png" alt="Comwave"><img src="/assets/work/logos/obc.png" alt="Ontario Business Central"><img src="/assets/work/logos/hardy.png" alt="Hardy Carts"><img src="/assets/work/logos/ignite.png" alt="Ignite"><img src="/assets/work/logos/office-shop.png" alt="The Office Shop"><img src="/assets/work/logos/discover.png" alt="Discover"><img src="/assets/work/logos/healthy-back.png" alt="Healthy Back"><img src="/assets/work/logos/robichaud.png" alt="Robichaud"><img src="/assets/work/logos/orr.png" alt="Orr"><img src="/assets/work/logos/oegema.webp" alt="Oegema"><img src="/assets/work/logos/mikeys.png" alt="Mikey's"><img src="/assets/work/logos/harmony.png" alt="Harmony"><img src="/assets/work/logos/chrysalis.webp" alt="Chrysalis"><img src="/assets/work/logos/hometown.png" alt="Hometown"><img src="/assets/work/logos/malcolm.webp" alt="Malcolm">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- INTERSECTION MATRIX - THE WEBFX MOVE -->
-  <section class="sec bone-full">
-    <div class="sec-inner">
-      <div class="sec-head">
-        <div class="section-lbl">Industry × Service · Purpose-built playbooks</div>
-        <h2 class="sec-title">Where your industry meets the <span class="sem">right</span> service.</h2>
-        <p style="font-size:18px;color:#5A585C;max-width:720px;margin-top:24px;line-height:1.6">Our most effective engagements happen at the intersection of a specific industry and a specific service. Every cell is a discipline we run. The yellow highlights the combinations where we have the deepest playbook depth.</p>
-      </div>
-      <div class="matrix-wrap" style="background:#141414;border-radius:16px;padding:40px;margin-top:48px;overflow-x:auto">
-        <table class="matrix-table" style="width:100%;border-collapse:collapse;color:#FAF8F3;font-family:var(--sans);min-width:720px">
-          <thead>
-            <tr>
-              <th style="text-align:left;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">Industry ↓ / Service →</th>
-              <th style="text-align:center;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">Google Ads</th>
-              <th style="text-align:center;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">SEO</th>
-              <th style="text-align:center;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">Local SEO</th>
-              <th style="text-align:center;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">CRO</th>
-              <th style="text-align:center;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">Creative</th>
-              <th style="text-align:center;padding:14px 12px;font-size:11px;letter-spacing:0.1em;color:#9A989C;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.1)">CRM</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">Home Services</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">Home Improvement</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">Self-Storage</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">Healthcare &amp; Medical</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">Professional Services</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">B2B / SaaS</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06)">E-commerce &amp; DTC</td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-            <tr>
-              <td style="padding:14px 12px;font-size:15px;font-weight:500">Retail &amp; Consumer</td>
-              <td style="text-align:center;padding:14px 12px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-              <td style="text-align:center;padding:14px 12px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span></td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="display:flex;gap:32px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap">
-          <div style="display:flex;align-items:center;gap:10px;color:#FAF8F3;font-size:13px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span> Primary engagement · Proprietary playbook</div>
-          <div style="display:flex;align-items:center;gap:10px;color:#9A989C;font-size:13px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFEC00"></span> Supporting capability</div>
-        </div>
-      </div>
-
-      <!-- MOBILE-NATIVE VIEW: shown on small screens, hidden on desktop -->
-      <div class="matrix-mobile" style="display:none;margin-top:40px">
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">Home Services</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">Google Ads</span>
-            <span class="matrix-chip primary">SEO</span>
-            <span class="matrix-chip primary">Local SEO</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">Home Improvement</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">Google Ads</span>
-            <span class="matrix-chip primary">CRO</span>
-            <span class="matrix-chip primary">Creative</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">Self-Storage</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">Google Ads</span>
-            <span class="matrix-chip primary">Local SEO</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">Healthcare &amp; Medical</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">Google Ads</span>
-            <span class="matrix-chip primary">SEO</span>
-            <span class="matrix-chip primary">Local SEO</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">Professional Services</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">SEO</span>
-            <span class="matrix-chip primary">CRM</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">B2B / SaaS</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">CRO</span>
-            <span class="matrix-chip primary">CRM</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">E-commerce &amp; DTC</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">Google Ads</span>
-            <span class="matrix-chip primary">SEO</span>
-            <span class="matrix-chip primary">CRO</span>
-            <span class="matrix-chip primary">Creative</span>
-          </div>
-        </div>
-        <div class="matrix-card">
-          <h4 class="matrix-card-title">Retail &amp; Consumer</h4>
-          <div class="matrix-services">
-            <span class="matrix-chip primary">Local SEO</span>
-            <span class="matrix-chip primary">Creative</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
-        <p style="color:#5A585C;font-size:15px;max-width:560px;line-height:1.5">Each highlighted intersection represents a dedicated landing page with industry-specific proof points, real client outcomes, and a purpose-built go-to-market motion.</p>
-        <a class="btn primary" href="/results/">See the proof →</a>
+  <!-- ===== CTA ===== -->
+  <section class="cta-sec">
+    <div class="cta-inner">
+      <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Don't see your industry?</span></div>
+      <h2 class="cta-title">Let's build your <span class="sem">playbook</span>.</h2>
+      <div class="hero-ctas" style="gap:16px;justify-content:flex-start;margin-top:40px">
+        <a class="btn primary on-dark" href="/contact/">Book a Strategy Call &rarr;</a>
+        <a class="btn secondary on-dark" href="/results/">See Results &rarr;</a>
       </div>
     </div>
   </section>
 
-  <section class="cta-sec"><div class="cta-inner"><div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Not sure?</span></div><h2 class="cta-title">Let's find your <span class="sem">fit</span>.</h2><a class="btn primary on-dark" href="/contact/">Book a Strategy Call →</a></div></section>
+</div>
+
   
 
 <footer>
