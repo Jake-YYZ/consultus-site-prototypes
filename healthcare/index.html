@@ -6,11 +6,11 @@
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
 <title>Healthcare Marketing | Consultus Digital</title>
-  <meta name="description" content="Healthcare marketing that fills the schedule: high-intent search, UGC-led social, landing pages, CRO, and intake automation for clinics, dental, med spas, and specialists.">
-  <meta name="keywords" content="healthcare marketing, medical marketing agency, patient acquisition, clinic marketing">
+  <meta name="description" content="Home services marketing that fills the booking calendar: Local SEO, Local Service Ads, paid search, web development, CRO, and speed-to-lead automation for trades and home service operators.">
+  <meta name="keywords" content="home services marketing, HVAC marketing, contractor marketing agency, local service ads">
   <link rel="canonical" href="https://consultusdigital.com/healthcare/">
   <meta property="og:title" content="Healthcare Marketing | Consultus Digital">
-  <meta property="og:description" content="Healthcare marketing that fills the schedule: high-intent search, UGC-led social, landing pages, CRO, and intake automation for clinics, dental, med spas, and specialists.">
+  <meta property="og:description" content="Home services marketing that fills the booking calendar: Local SEO, Local Service Ads, paid search, web development, CRO, and speed-to-lead automation for trades and home service operators.">
   <meta property="og:url" content="https://consultusdigital.com/healthcare/">
   <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
   <meta property="og:image:width" content="1600">
@@ -3697,8 +3697,18 @@ section.hero-cover .hero-bg {
 #indt .indt-cta .btn.primary:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow);transform:translateY(-1px)}
 #indt .indt-cta .btn.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
 #indt .indt-cta .btn.secondary:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-/* clients band tweak */
-#indt .clients-band{border-top:none}
+/* 3. clients band (scrolling marquee, from About) */
+#indt .clients-band{background:#FAF8F3;padding:60px 32px;overflow:hidden;border-top:1px solid #E1DCD1;border-bottom:1px solid #E1DCD1}
+#indt .clients-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:48px}
+#indt .clients-lbl{font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:#141414;flex:0 0 auto;white-space:nowrap}
+#indt .clients-marquee{position:relative;overflow:hidden;flex:1 1 auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+#indt .clients-track{display:flex;align-items:center;gap:64px;width:max-content;animation:clients-scroll 45s linear infinite}
+#indt .clients-marquee:hover .clients-track{animation-play-state:paused}
+#indt .clients-logo{height:34px;width:auto;flex:0 0 auto;object-fit:contain;filter:grayscale(1) brightness(0.4);opacity:0.72;transition:opacity .3s ease,filter .3s ease}
+#indt .clients-logo:hover{opacity:1}
+@keyframes clients-scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){#indt .clients-track{animation:none}}
+@media(max-width:700px){#indt .clients-inner{flex-direction:column;align-items:flex-start;gap:26px}#indt .clients-lbl{font-size:22px}#indt .clients-marquee{width:100%}}
 /* certified (partner wall) */
 #indt .pw-band .pw-head{margin-bottom:44px}
 #indt .pw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
