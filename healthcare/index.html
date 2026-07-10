@@ -3775,7 +3775,7 @@ section.hero-cover .hero-bg {
       <div class="ix-hero-copy">
         <span class="ix-eyebrow">Healthcare Marketing</span>
         <h1>Marketing that fills your <span class="sem">waiting room</span>.</h1>
-        <p class="ix-lede">We build patient-growth systems for clinics, dental practices, med spas, and specialists: high-intent search, UGC-led social, landing pages, and intake built to book.</p>
+        <p class="ix-lede">HIPAA-aware strategies, multi-location SEO, and full-funnel performance built to grow your practice.</p>
         <div class="ix-hero-ctas">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
@@ -3784,10 +3784,10 @@ section.hero-cover .hero-bg {
       <div class="ix-fan" aria-hidden="true">
         <div class="col a">
           <figure class="a1"><img src="/assets/work/cards/tonic-eye-care.jpg" alt=""></figure>
-          <figure class="a2"><img src="/assets/work/la-vie/comparison-assessment.jpg" alt=""></figure>
+          <figure class="a2"><img src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt=""></figure>
         </div>
         <div class="col b">
-          <figure class="b1"><img src="/assets/work/la-vie/feature-hihglight.jpg" alt=""></figure>
+          <figure class="b1"><video src="/assets/work/la-vie/loop-diagnostic.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video></figure>
         </div>
       </div>
     </div>
@@ -4251,6 +4251,16 @@ if (typeof setMegaTab !== 'function') {
     menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; });
   };
 }
+</script>
+<script>
+/* keep the hero video playing (muted autoplay can be deferred by the browser) */
+(function(){
+  function kick(){document.querySelectorAll('#indt .ix-fan video').forEach(function(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});});}
+  document.addEventListener('DOMContentLoaded',kick);
+  window.addEventListener('load',kick);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)kick();});
+  window.addEventListener('scroll',kick,{once:true});
+})();
 </script>
 <script src="/assets/case-study-banner.js" defer></script>
 </body>
