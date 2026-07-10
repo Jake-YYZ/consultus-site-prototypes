@@ -3608,6 +3608,7 @@ section.hero-cover .hero-bg {
 <style id="indt-styles">
 /* ===== Industry template ===== */
 #indt .sem{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--deep-blue)}
+#indt .dark-full .sem,#indt .cta-sec .sem{color:var(--yellow)}
 /* HERO (industries-hub design) */
 #indt .ix-hero{background:var(--paper);padding:74px 32px 44px;overflow:hidden}
 #indt .ix-hero-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
@@ -3649,21 +3650,29 @@ section.hero-cover .hero-bg {
 #indt .indt-sol-link{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--deep-blue)}
 #indt .indt-sol-link .arw{transition:transform .25s ease}
 #indt .indt-sol:hover .indt-sol-link .arw{transform:translateX(5px)}
-/* 2. method (dark) */
-#indt .indt-method-full{background:var(--ink)}
+/* 2. method (light, Acquire / Convert / Scale rows) */
+#indt .indt-method-full{background:var(--bone)}
 #indt .indt-method{max-width:1200px;margin:0 auto;padding:96px 32px}
-#indt .indt-method .indt-lbl{color:var(--grey)}
-#indt .indt-method .indt-lbl::before{background:var(--yellow)}
-#indt .indt-method .indt-title{color:var(--paper)}
-#indt .indt-method .indt-title .sem{color:var(--yellow)}
-#indt .indt-method .indt-head p{color:var(--grey)}
-#indt .indt-steps{border-top:1px solid var(--onyx-border)}
-#indt .indt-step{display:grid;grid-template-columns:60px 1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--onyx-border);align-items:start}
-#indt .indt-step-n{font-family:var(--mono);font-size:13px;color:var(--yellow);letter-spacing:0.08em;padding-top:5px}
-#indt .indt-step-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;align-items:start}
-#indt .indt-step h3{font-family:var(--wide);font-weight:600;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.01em;color:var(--paper);margin:0}
-#indt .indt-step-sub{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--paper-dim);margin-top:12px}
-#indt .indt-step p{font-size:16px;line-height:1.6;color:var(--grey);margin:0}
+#indt .em-rows{display:flex;flex-direction:column;gap:22px}
+#indt .em-row{display:grid;grid-template-columns:290px 1fr;gap:50px;background:var(--pure);border:1px solid var(--bone-border);border-radius:18px;padding:46px 46px;transition:box-shadow .3s ease,border-color .3s ease}
+#indt .em-row:hover{box-shadow:0 26px 50px -30px rgba(20,20,20,.22);border-color:#d3cdbf}
+#indt .em-row-n{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;color:var(--deep-blue)}
+#indt .em-row h3{font-family:var(--wide);font-weight:600;font-size:clamp(28px,3.4vw,42px);letter-spacing:-0.015em;color:var(--ink);margin:12px 0 0;line-height:1}
+#indt .em-row-role{display:block;font-family:var(--mono);font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:var(--charcoal);margin-top:13px}
+#indt .em-stack{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:28px}
+#indt .em-stack:has(.em-tag){gap:8px}
+#indt .em-logo{display:inline-flex;align-items:center;transition:transform .25s ease}
+#indt .em-logo:hover{transform:translateY(-2px)}
+#indt .em-logo svg{height:26px;width:auto;display:block}
+#indt .em-logo img{height:34px;width:auto;display:block}
+#indt .em-tag{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--charcoal);padding:8px 13px;background:var(--bone);border:1px solid var(--bone-border);border-radius:100px}
+#indt .em-row-body>p{font-size:16.5px;line-height:1.62;color:var(--charcoal);margin:0;max-width:680px}
+#indt .em-do{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 36px}
+#indt .em-do li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.5;color:var(--charcoal)}
+#indt .em-do li::before{content:"";position:absolute;left:1px;top:5px;width:11px;height:11px;border-radius:50%;border:2px solid var(--deep-blue)}
+#indt .em-do li b{color:var(--ink);font-weight:600}
+@media(max-width:860px){#indt .em-row{grid-template-columns:1fr;gap:26px;padding:34px 28px}#indt .em-do{grid-template-columns:1fr}}
+
 /* 4. case previews (bone) */
 #indt .indt-cases-full{background:var(--bone)}
 #indt .indt-cases{max-width:1200px;margin:0 auto;padding:96px 32px}
@@ -3711,7 +3720,7 @@ section.hero-cover .hero-bg {
 @media(max-width:700px){#indt .clients-inner{flex-direction:column;align-items:flex-start;gap:26px}#indt .clients-lbl{font-size:22px}#indt .clients-marquee{width:100%}}
 /* certified (partner wall) */
 #indt .pw-band .pw-head{margin-bottom:44px}
-#indt .pw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#indt .pw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 #indt .pw-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px 20px 34px;background:#131313;border:1px solid #242424;border-radius:16px;overflow:hidden;transition:border-color .3s ease,transform .3s ease,background .3s ease}
 #indt .pw-card::before{content:'';position:absolute;left:50%;top:-50px;transform:translateX(-50%);width:180px;height:110px;background:radial-gradient(ellipse,rgba(255,236,0,0.10),transparent 70%);opacity:0;transition:opacity .35s ease;pointer-events:none}
 #indt .pw-card:hover{border-color:#3a3a3a;background:#161616;transform:translateY(-3px)}
@@ -3822,66 +3831,66 @@ section.hero-cover .hero-bg {
   </section>
 
   <!-- ===== 2. METHOD ===== -->
-  <section class="indt-method-full">
+  <section class="indt-method-full em-method">
     <div class="indt-method">
       <div class="indt-head">
         <div>
           <span class="indt-lbl">The framework</span>
-          <h2 class="indt-title">Our method for scaling <span class="sem">home service</span> brands.</h2>
+          <h2 class="indt-title">Our method for scaling <span class="sem">home services</span> brands.</h2>
         </div>
-        <p>Home services is a game of being found first and following up fastest. We build a system that wins both.</p>
+        <p>Every home-services brand we scale runs on the same three-part engine: acquire homeowners at the moment of need, convert calls into booked jobs, then scale the profit on every job.</p>
       </div>
-      <div class="indt-steps">
-      <div class="indt-step">
-        <div class="indt-step-n">01</div>
-        <div class="indt-step-grid">
-          <div>
-            <h3>Foundation</h3>
-            <div class="indt-step-sub">Positioning, site &amp; tracking</div>
-          </div>
-          <p>We map your service areas and job types, then rebuild the site and tracking so calls, forms, and bookings are all attributed.</p>
+      <div class="em-rows">
+      <article class="em-row">
+        <div class="em-rail">
+          <span class="em-row-n">01</span>
+          <h3>Acquire</h3>
+          <span class="em-row-role">Get found at the moment of need</span>
+          <div class="em-stack"><span class="em-logo" title="Google Ads"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g></svg></span><span class="em-logo" title="Meta Ads"><svg viewBox="0 0 23 19" xmlns="http://www.w3.org/2000/svg"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg></span></div>
         </div>
-      </div>
-      <div class="indt-step">
-        <div class="indt-step-n">02</div>
-        <div class="indt-step-grid">
-          <div>
-            <h3>Traffic</h3>
-            <div class="indt-step-sub">Demand capture &amp; creation</div>
-          </div>
-          <p>Local SEO, Local Service Ads, and paid search capture homeowners at the exact moment of need, backed by social for bigger-ticket jobs.</p>
+        <div class="em-row-body">
+          <p>When a homeowner needs you, they search. We capture that intent with Local Services Ads and Google Search, then build demand and stay top of mind with paid social and local SEO.</p>
+          <ul class="em-do">
+            <li><b>Local Services Ads &amp; Search</b>, Google, where high-intent demand lives</li>
+            <li><b>Paid social</b>, Meta for demand and retargeting</li>
+            <li><b>Local SEO &amp; Maps</b>, owning your service area</li>
+            <li><b>Seasonal campaigns</b>, timed to demand spikes</li>
+          </ul>
         </div>
-      </div>
-      <div class="indt-step">
-        <div class="indt-step-n">03</div>
-        <div class="indt-step-grid">
-          <div>
-            <h3>Conversion</h3>
-            <div class="indt-step-sub">Turning clicks into action</div>
-          </div>
-          <p>Service and city landing pages built around urgency turn emergency and quote searches into booked jobs.</p>
+      </article>
+      <article class="em-row">
+        <div class="em-rail">
+          <span class="em-row-n">02</span>
+          <h3>Convert</h3>
+          <span class="em-row-role">Turn calls into booked jobs</span>
+          <div class="em-stack"><span class="em-tag">Landing Pages</span><span class="em-tag">Call Tracking</span><span class="em-tag">CRO</span><span class="em-tag">Reviews</span></div>
         </div>
-      </div>
-      <div class="indt-step">
-        <div class="indt-step-n">04</div>
-        <div class="indt-step-grid">
-          <div>
-            <h3>Sell</h3>
-            <div class="indt-step-sub">Intake, CRM &amp; follow-up</div>
-          </div>
-          <p>Speed-to-lead automation, call tracking, and CRM follow-up make sure no quote request slips through.</p>
+        <div class="em-row-body">
+          <p>Speed and clarity win jobs. We build service-specific landing pages, track and route every call, and test the path to a booking so more inquiries turn into scheduled work.</p>
+          <ul class="em-do">
+            <li><b>Service landing pages</b>, one trade, one clear action</li>
+            <li><b>Call tracking &amp; speed-to-lead</b>, never miss an inquiry</li>
+            <li><b>On-site CRO</b>, forms and quotes that convert</li>
+            <li><b>Reviews</b>, proof that wins the call</li>
+          </ul>
         </div>
-      </div>
-      <div class="indt-step">
-        <div class="indt-step-n">05</div>
-        <div class="indt-step-grid">
-          <div>
-            <h3>Modify</h3>
-            <div class="indt-step-sub">Measure, test, compound</div>
-          </div>
-          <p>We track cost per booked job by service and season, then double down on the work that pays best.</p>
+      </article>
+      <article class="em-row">
+        <div class="em-rail">
+          <span class="em-row-n">03</span>
+          <h3>Scale</h3>
+          <span class="em-row-role">More profit from every job</span>
+          <div class="em-stack"><span class="em-tag">Seasonal</span><span class="em-tag">Memberships</span><span class="em-tag">Reviews</span><span class="em-tag">Reporting</span></div>
         </div>
-      </div>
+        <div class="em-row-body">
+          <p>Growth comes from repeat work and efficient spend. Memberships, reactivation, and seasonal offers lift lifetime value while we manage the program to cost per booked job.</p>
+          <ul class="em-do">
+            <li><b>Membership &amp; repeat</b>, recurring revenue from your base</li>
+            <li><b>Reactivation</b>, win-back flows for past customers</li>
+            <li><b>Profit-first reporting</b>, managed to cost per booked job</li>
+          </ul>
+        </div>
+      </article>
       </div>
     </div>
   </section>
@@ -3900,55 +3909,83 @@ section.hero-cover .hero-bg {
   </section>
 
   <!-- ===== 4. CASE STUDIES ===== -->
-  <section class="indt-cases-full">
-    <div class="indt-cases">
-      <div class="indt-head">
-        <div>
-          <span class="indt-lbl">Proof</span>
-          <h2 class="indt-title">Results in your <span class="sem">industry</span>.</h2>
-        </div>
-        <p>A look at the kind of outcomes our programs produce for brands like yours.</p>
+  <section class="sec rcx-section" style="background:#141414;padding-top:84px;padding-bottom:88px;max-width:none;border-top:1px solid rgba(250,248,243,0.08)">
+    <div class="sec-inner" style="max-width:1280px">
+      <div style="text-align:center;margin-bottom:6px">
+        <div class="eyebrow dark" style="justify-content:center;margin-bottom:14px"><span class="eyebrow-dot"></span><span>More Work</span></div>
+        <h2 class="sec-title" style="font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:#FAF8F3">Other <em>stories</em>.</h2>
       </div>
-      <div class="indt-case-grid">
-      <a class="indt-case" href="/case-studies/eco-choice-windows/">
-        <div class="indt-case-media"><img src="/assets/work/eco-choice/ad-1.png" alt="Eco Choice Windows &amp; Doors"></div>
-        <div class="indt-case-body">
-          <span class="indt-case-pill">Home Services</span>
-          <div class="indt-case-stat">Full-funnel<span>windows &amp; doors</span></div>
-          <p>Pages, creative, CRO, and CRM rebuilt into one buyer-reverse-engineered growth engine for a windows and doors brand.</p>
-          <div class="indt-case-client">Eco Choice Windows &amp; Doors</div>
-          <span class="indt-case-link">View case study <span class="arw">&rarr;</span></span>
+      <div class="rcx-stage">
+        <button class="rcx-arrow rcx-prev" type="button" aria-label="Previous case study">&lsaquo;</button>
+        <div class="rcx-viewport">
+          <div class="rcx-track"><a class="rcx-slide rcx-photo" href="/case-studies/e11ement/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/e11ement/social-model.jpg')"><span class="rcx-eye">Case Study &middot; DTC</span><span class="rcx-pbottom"><span class="rcx-ptitle">e11ement.</span><span class="rcx-psub">One hero product to Walmart shelves.</span><span class="rcx-pmetric">89-page DGP</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/zayouna-law-firm/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/zayouna/zl-s01.jpg')"><span class="rcx-eye">Case Study &middot; Legal</span><span class="rcx-pbottom"><span class="rcx-ptitle">Zayouna Law.</span><span class="rcx-psub">Signed files that close.</span><span class="rcx-pmetric">$72.70 CPL</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/dragonscale-supplies/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/dragonscale/static-1a.jpg')"><span class="rcx-eye">Case Study &middot; Collectibles</span><span class="rcx-pbottom"><span class="rcx-ptitle">Dragonscale Supplies.</span><span class="rcx-psub">A niche brand, played at MER 13.</span><span class="rcx-pmetric">13.23 MER</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/western-asphalt/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/cards/western-asphalt.jpg')"><span class="rcx-eye">Case Study &middot; Industrial</span><span class="rcx-pbottom"><span class="rcx-ptitle">Western Asphalt.</span><span class="rcx-psub">An 80-year brand, modernized.</span><span class="rcx-pmetric">80-year rebrand</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/bow-city-storage/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/cards/bow-city-storage.jpg')"><span class="rcx-eye">Case Study &middot; Self-Storage</span><span class="rcx-pbottom"><span class="rcx-ptitle">Bow City Storage.</span><span class="rcx-psub">Google Search Ads rebuilt for a Calgary facility.</span><span class="rcx-pmetric">2,900% ROAS</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/ecycle/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/cards/ecycle.jpg')"><span class="rcx-eye">Case Study &middot; Operations</span><span class="rcx-pbottom"><span class="rcx-ptitle">eCycle.</span><span class="rcx-psub">Spreadsheet ops to a custom CRM.</span><span class="rcx-pmetric">40% productivity</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/office-shop/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/cards/office-shop.jpg')"><span class="rcx-eye">Case Study &middot; Retail</span><span class="rcx-pbottom"><span class="rcx-ptitle">The Office Shop.</span><span class="rcx-psub">Multi-location local SEO.</span><span class="rcx-pmetric">13 cities, page one</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/spieth-america/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/cards/spieth-america.jpg')"><span class="rcx-eye">Case Study &middot; Ecommerce</span><span class="rcx-pbottom"><span class="rcx-ptitle">Spieth America.</span><span class="rcx-psub">Zero to $420K online in 10 months.</span><span class="rcx-pmetric">757% ROAS</span></span></a><a class="rcx-slide rcx-photo" href="/case-studies/tonic-eye-care/" style="background-image:linear-gradient(to top,rgba(10,10,13,0.93) 0%,rgba(10,10,13,0.5) 48%,rgba(10,10,13,0.18) 100%),url('/assets/work/cards/tonic-eye-care.jpg')"><span class="rcx-eye">Case Study &middot; Healthcare</span><span class="rcx-pbottom"><span class="rcx-ptitle">Tonic Eye Care.</span><span class="rcx-psub">UGC-led patient acquisition.</span><span class="rcx-pmetric">+92% performance</span></span></a></div>
         </div>
-      </a>
-      <a class="indt-case" href="/case-studies/western-asphalt/">
-        <div class="indt-case-media"><img src="/assets/work/cards/western-asphalt.jpg" alt="Western Asphalt"></div>
-        <div class="indt-case-body">
-          <span class="indt-case-pill">Home Services</span>
-          <div class="indt-case-stat">80-year<span>brand, rebuilt</span></div>
-          <p>A full digital transformation for a heritage industrial brand: new site, new lead surface, and authority rebuilt for the digital era.</p>
-          <div class="indt-case-client">Western Asphalt</div>
-          <span class="indt-case-link">View case study <span class="arw">&rarr;</span></span>
-        </div>
-      </a>
+        <button class="rcx-arrow rcx-next" type="button" aria-label="Next case study">&rsaquo;</button>
       </div>
+      <div class="rcx-dots" aria-label="Case study navigation"></div>
+      <div style="text-align:center;margin-top:6px"><a href="/results/" style="font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#FAF8F3;text-decoration:none;border-bottom:1px solid rgba(250,248,243,0.5);padding-bottom:4px">View all work &rarr;</a></div>
     </div>
   </section>
 
+  <style>
+    .rcx-stage { position: relative; max-width: 1180px; margin: 0 auto; }
+    .rcx-viewport { overflow: hidden; padding: 38px 0; }
+    .rcx-track { display: flex; gap: 26px; will-change: transform; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
+    .rcx-slide { flex: 0 0 326px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 4/4.5; padding: 22px; border-radius: 12px; overflow: hidden; text-decoration: none; transform: scale(0.84); opacity: 0.4; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.55s, box-shadow 0.55s; }
+    .rcx-slide.is-active { transform: scale(1); opacity: 1; box-shadow: 0 0 0 2px #FFEC00, 0 34px 70px -26px rgba(0,0,0,0.7); }
+    .rcx-photo { background-size: cover; background-position: center top; color: #FAF8F3; }
+    .rcx-stat { background: radial-gradient(135% 115% at 0% 0%, #1E1E1E 0%, #0D0D0D 72%); border: 1px solid #2A2A2A; color: #FAF8F3; }
+    .rcx-eye { display: inline-flex; align-items: center; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(250,248,243,0.82); }
+    .rcx-pbottom { display: flex; flex-direction: column; }
+    .rcx-ptitle { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 1.1; letter-spacing: -0.01em; color: #FAF8F3; }
+    .rcx-psub { font-size: 13px; line-height: 1.45; color: rgba(250,248,243,0.82); margin: 6px 0 13px; }
+    .rcx-pmetric { display: inline-block; width: fit-content; background: #FFEC00; color: #141414; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; }
+    .rcx-statnum { font-family: var(--serif); font-weight: 400; font-size: clamp(40px,4.6vw,58px); line-height: 0.98; letter-spacing: -0.03em; color: #FFEC00; margin-top: auto; }
+    .rcx-statlbl { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 14px; line-height: 1.3; color: rgba(250,248,243,0.82); margin: 8px 0 14px; }
+    .rcx-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: #FAF8F3; color: #141414; border: none; font-size: 24px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5); transition: background 0.2s ease, transform 0.2s ease; }
+    .rcx-arrow:hover { background: #FFEC00; transform: translateY(-50%) scale(1.06); }
+    .rcx-prev { left: -8px; } .rcx-next { right: -8px; }
+    .rcx-dots { display: flex; gap: 9px; justify-content: center; margin-top: 24px; margin-bottom: 22px; }
+    .rcx-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(250,248,243,0.28); border: none; padding: 0; cursor: pointer; transition: background 0.2s ease, width 0.2s ease; }
+    .rcx-dot.is-active { background: #FFEC00; width: 24px; border-radius: 5px; }
+    @media (max-width: 560px) { .rcx-slide { flex-basis: 80vw; } .rcx-arrow { width: 44px; height: 44px; } .rcx-prev { left: 2px; } .rcx-next { right: 2px; } }
+  </style>
+
+  <script>
+  (function(){
+    var stage=document.querySelector('.rcx-stage'); if(!stage) return;
+    var track=stage.querySelector('.rcx-track');
+    var slides=[].slice.call(track.querySelectorAll('.rcx-slide'));
+    var vp=stage.querySelector('.rcx-viewport');
+    var dotsWrap=document.querySelector('.rcx-dots');
+    var n=slides.length, idx=n>2?1:0;
+    var dots=slides.map(function(_,i){ var b=document.createElement('button'); b.className='rcx-dot'; b.type='button'; b.setAttribute('aria-label','Go to case study '+(i+1)); b.addEventListener('click',function(){ go(i); }); dotsWrap.appendChild(b); return b; });
+    function layout(){
+      var w=vp.clientWidth, cardW=slides[0].offsetWidth, gap=parseFloat(getComputedStyle(track).gap)||26;
+      var step=cardW+gap;
+      track.style.transform='translateX('+((w/2)-(idx*step)-(cardW/2))+'px)';
+      slides.forEach(function(s,i){ s.classList.toggle('is-active',i===idx); });
+      dots.forEach(function(d,i){ d.classList.toggle('is-active',i===idx); });
+    }
+    function go(i){ idx=Math.max(0,Math.min(n-1,i)); layout(); }
+    stage.querySelector('.rcx-prev').addEventListener('click',function(){ go(idx-1); });
+    stage.querySelector('.rcx-next').addEventListener('click',function(){ go(idx+1); });
+    window.addEventListener('resize',layout);
+    window.addEventListener('load',layout);
+    layout();
+  })();
+  </script>
+
   <!-- ===== 5. CERTIFIED ===== -->
-  <section class="sec dark-full pw-band"><div class="sec-inner"><div class="pw-head"><div class="section-lbl dark">Partners &amp; Certifications</div><h2 class="sec-title">Certified where it <span class="sem">counts</span>.</h2></div><div class="pw-grid"><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 48" class="pw3"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g><text x="54" y="32" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-0.5" fill="#FAF8F3">Google</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 130 24" class="pw3"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/><text x="34" y="18.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Meta</text></svg></div><div class="pw-tier">Business Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 24" class="pw3"><path fill="#F25022" d="M0 0h11v11H0z"/><path fill="#7FBA00" d="M13 0h11v11H13z"/><path fill="#00A4EF" d="M0 13h11v11H0z"/><path fill="#FFB900" d="M13 13h11v11H13z"/><text x="32" y="18" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" fill="#FAF8F3">Microsoft</text></svg></div><div class="pw-tier">Advertising Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 132 26" class="pw3"><g transform="translate(0,1) scale(1)"><path fill="#95BF47" transform="scale(1)" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></g><text x="30" y="19" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#FAF8F3">Shopify</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 116 34" class="pw3"><text x="0" y="22" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1" fill="#FAF8F3">amazon</text><path d="M4 27 C26 35 80 35 100 26" fill="none" stroke="#FF9900" stroke-width="3.4" stroke-linecap="round"/><path d="M97 23l6 3-5 4z" fill="#FF9900"/></svg></div><div class="pw-tier">Verified Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 158 30" class="pw3"><g fill="none" stroke-width="2.4"><rect x="1.5" y="6.5" width="16" height="16" rx="4.8" stroke="#E42527" transform="rotate(-13 9.5 14.5)"/><rect x="13.5" y="6.5" width="16" height="16" rx="4.8" stroke="#16A94C" transform="rotate(-13 21.5 14.5)"/><rect x="25.5" y="6.5" width="16" height="16" rx="4.8" stroke="#2A66B0" transform="rotate(-13 33.5 14.5)"/><rect x="37.5" y="6.5" width="16" height="16" rx="4.8" stroke="#F6B017" transform="rotate(-13 45.5 14.5)"/></g><text x="61" y="23" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="-0.3" fill="#FAF8F3">Zoho</text></svg></div><div class="pw-tier">Authorized · CRM</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><g transform="translate(0,2)"><path fill="#25F4EE" transform="translate(-1.7,-1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(1.7,1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FAF8F3" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g><text x="31.3" y="19.6" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#25F4EE">TikTok</text><text x="32.7" y="22.4" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FE2C55">TikTok</text><text x="32" y="21" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">TikTok</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><text x="0" y="21.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Linked</text><g transform="translate(62,1)"><rect x="0" y="2" width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" transform="translate(0.6,0)" d="M7.6 10.6v9.2H4.8v-9.2h2.8zM6.2 6.4a1.6 1.6 0 110 3.2 1.6 1.6 0 010-3.2zM9.6 10.6h2.7v1.25h.04c.38-.7 1.3-1.45 2.66-1.45 2.85 0 3.38 1.85 3.38 4.27v4.85h-2.82v-4.3c0-1.02-.02-2.34-1.43-2.34-1.43 0-1.65 1.12-1.65 2.27v4.37H9.6v-7.19z"/></g></svg></div><div class="pw-tier">Marketing Partner</div></div></div></div></section>
+  <section class="sec dark-full pw-band"><div class="sec-inner"><div class="pw-head"><div class="section-lbl dark">Official</div><h2 class="sec-title">Partnerships &amp; <span class="sem">certifications</span>.</h2></div><div class="pw-grid"><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 48" class="pw3"><g transform="translate(0,0)"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></g><text x="54" y="32" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="-0.5" fill="#FAF8F3">Google</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 130 24" class="pw3"><path fill="#0866FF" transform="scale(0.92)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/><text x="34" y="18.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Meta</text></svg></div><div class="pw-tier">Business Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 24" class="pw3"><path fill="#F25022" d="M0 0h11v11H0z"/><path fill="#7FBA00" d="M13 0h11v11H13z"/><path fill="#00A4EF" d="M0 13h11v11H0z"/><path fill="#FFB900" d="M13 13h11v11H13z"/><text x="32" y="18" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" fill="#FAF8F3">Microsoft</text></svg></div><div class="pw-tier">Advertising Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 132 26" class="pw3"><g transform="translate(0,1) scale(1)"><path fill="#95BF47" transform="scale(1)" d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></g><text x="30" y="19" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#FAF8F3">Shopify</text></svg></div><div class="pw-tier">Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 116 34" class="pw3"><text x="0" y="22" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1" fill="#FAF8F3">amazon</text><path d="M4 27 C26 35 80 35 100 26" fill="none" stroke="#FF9900" stroke-width="3.4" stroke-linecap="round"/><path d="M97 23l6 3-5 4z" fill="#FF9900"/></svg></div><div class="pw-tier">Verified Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 158 30" class="pw3"><g fill="none" stroke-width="2.4"><rect x="1.5" y="6.5" width="16" height="16" rx="4.8" stroke="#E42527" transform="rotate(-13 9.5 14.5)"/><rect x="13.5" y="6.5" width="16" height="16" rx="4.8" stroke="#16A94C" transform="rotate(-13 21.5 14.5)"/><rect x="25.5" y="6.5" width="16" height="16" rx="4.8" stroke="#2A66B0" transform="rotate(-13 33.5 14.5)"/><rect x="37.5" y="6.5" width="16" height="16" rx="4.8" stroke="#F6B017" transform="rotate(-13 45.5 14.5)"/></g><text x="61" y="23" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="-0.3" fill="#FAF8F3">Zoho</text></svg></div><div class="pw-tier">Authorized · CRM</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><g transform="translate(0,2)"><path fill="#25F4EE" transform="translate(-1.7,-1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(1.7,1.4)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FAF8F3" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></g><text x="31.3" y="19.6" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#25F4EE">TikTok</text><text x="32.7" y="22.4" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FE2C55">TikTok</text><text x="32" y="21" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">TikTok</text></svg></div><div class="pw-tier">Marketing Partner</div></div><div class="pw-card"><div class="pw-logo"><svg viewBox="0 0 150 28" class="pw3"><text x="0" y="21.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#FAF8F3">Linked</text><g transform="translate(62,1)"><rect x="0" y="2" width="24" height="24" rx="5" fill="#0A66C2"/><path fill="#fff" transform="translate(0.6,0)" d="M7.6 10.6v9.2H4.8v-9.2h2.8zM6.2 6.4a1.6 1.6 0 110 3.2 1.6 1.6 0 010-3.2zM9.6 10.6h2.7v1.25h.04c.38-.7 1.3-1.45 2.66-1.45 2.85 0 3.38 1.85 3.38 4.27v4.85h-2.82v-4.3c0-1.02-.02-2.34-1.43-2.34-1.43 0-1.65 1.12-1.65 2.27v4.37H9.6v-7.19z"/></g></svg></div><div class="pw-tier">Marketing Partner</div></div></div></div></section>
 
   <!-- ===== 6. CTA (blue) ===== -->
-  <section class="indt-cta">
-    <div class="indt-cta-glow"></div>
-    <div class="indt-cta-glow two"></div>
-    <div class="indt-cta-in">
-      <span class="indt-lbl">Work with us</span>
-      <h2>Let&#39;s fill your <span class="sem">calendar</span>.</h2>
-      <p>If you sell to homeowners and live and die by booked jobs, this is your growth system.</p>
-      <div class="indt-cta-ctas">
-        <a class="btn primary" href="/contact/">Book a Strategy Call &rarr;</a>
-        <a class="btn secondary" href="/results/">See Results &rarr;</a>
-      </div>
+  <!-- ===== 6. CTA (global blue) ===== -->
+  <section class="cta-sec">
+    <div class="cta-inner">
+      <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Let's build</span></div>
+      <h2 class="cta-title">Ready to book more <span class="sem">jobs</span>?</h2>
+      <a class="btn primary on-dark" href="/contact/">Book Your Strategy Session &rarr;</a>
     </div>
   </section>
 </div>
