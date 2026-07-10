@@ -3690,6 +3690,27 @@ section.hero-cover .hero-bg {
 #indt .indt-case-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--deep-blue)}
 #indt .indt-case-link .arw{transition:transform .25s ease}
 #indt .indt-case:hover .indt-case-link .arw{transform:translateX(5px)}
+/* 4b. featured single case study (light) */
+#indt .bkc{position:relative;background:var(--pure);border:1px solid var(--bone-border);border-radius:22px;padding:56px 56px 48px;overflow:hidden}
+#indt .bkc-pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--deep-blue);background:var(--deep-blue-pale);padding:7px 14px;border-radius:100px}
+#indt .bkc-logo{height:32px;width:auto;display:block;margin:26px 0 0}
+#indt .bkc h3{font-family:var(--sans);font-weight:400;font-size:clamp(34px,4.6vw,60px);line-height:1.02;letter-spacing:-0.025em;color:var(--ink);margin:22px 0 0;max-width:16ch}
+#indt .bkc h3 .sem{color:var(--deep-blue)}
+#indt .bkc-lede{font-size:17px;line-height:1.6;color:var(--charcoal);margin:22px 0 0;max-width:720px}
+#indt .bkc-cta{margin-top:30px}
+#indt .bkc-rule{height:1px;background:var(--bone-border);margin:44px 0}
+#indt .bkc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+#indt .bkc-stat{display:flex;flex-direction:column}
+#indt .bkc-stat b{font-family:var(--sans);font-weight:500;font-size:clamp(38px,4.4vw,58px);letter-spacing:-0.04em;line-height:1;color:var(--deep-blue)}
+#indt .bkc-stat span{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--charcoal);margin-top:14px;line-height:1.4;max-width:180px}
+#indt .bkc-review{position:relative;margin-top:44px;background:var(--bone);border:1px solid var(--bone-border);border-left:3px solid var(--deep-blue);border-radius:14px;padding:32px 34px 30px}
+#indt .bkc-stars{color:#FDB022;font-size:15px;letter-spacing:3px}
+#indt .bkc-quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(19px,2vw,25px);line-height:1.35;letter-spacing:-0.01em;color:var(--ink);margin:16px 0 0;max-width:860px}
+#indt .bkc-author{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--charcoal);margin-top:22px}
+#indt .bkc-author b{color:var(--ink);font-weight:600}
+#indt .bkc-badge{position:absolute;right:34px;bottom:30px;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.02em;color:var(--charcoal);background:var(--pure);border:1px solid var(--bone-border);padding:8px 14px;border-radius:100px}
+#indt .bkc-badge svg{display:block}
+@media(max-width:860px){#indt .bkc{padding:40px 26px 34px}#indt .bkc-stats{grid-template-columns:1fr 1fr;gap:30px 20px}#indt .bkc-badge{position:static;margin-top:20px}}
 /* 6. blue CTA */
 #indt .indt-cta{background:var(--deep-blue);position:relative;overflow:hidden}
 #indt .indt-cta-glow{position:absolute;top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,236,0,0.18),transparent 62%);pointer-events:none}
@@ -3918,30 +3939,28 @@ section.hero-cover .hero-bg {
           <span class="indt-lbl">Proof</span>
           <h2 class="indt-title">Results in your <span class="sem">industry</span>.</h2>
         </div>
-        <p>A look at the kind of outcomes our programs produce for brands like yours.</p>
+        <p>One program, from creative to funnels to paid media, and the scoreboard it produced.</p>
       </div>
-      <div class="indt-case-grid">
-      <a class="indt-case" href="/case-studies/dragonscale-supplies/">
-        <div class="indt-case-media"><img src="/assets/work/dragonscale/static-1a.jpg" alt="Dragonscale Supplies"></div>
-        <div class="indt-case-body">
-          <span class="indt-case-pill">E-commerce</span>
-          <div class="indt-case-stat">390%<span>sales growth</span></div>
-          <p>A niche brand scaled to a 13 MER in three months on Meta and Google by playing to margin the whole way.</p>
-          <div class="indt-case-client">Dragonscale Supplies</div>
-          <span class="indt-case-link">View case study <span class="arw">&rarr;</span></span>
+      <article class="bkc">
+        <span class="bkc-pill">Case Study &middot; Sports Travel</span>
+        <img class="bkc-logo" src="/assets/work/logos/bookseats.png" alt="BookSeats">
+        <h3>From 1.4x to <span class="sem">8.10x ROAS</span>.</h3>
+        <p class="bkc-lede">BookSeats bundles flights, hotels, and tickets for sports fans. They came to us with paid traffic stuck around a 1.4x return and broker-style creative that never felt native in the feed. We rebuilt the creative engine around real fan UGC, split their funnels by league, and ran a kill-fast testing culture across Meta and Google. In four months the scoreboard settled at 8.10x.</p>
+        <div class="bkc-cta"><a class="btn primary cta-yellow-hover" href="/case-studies/bookseats/">Read the full case study &rarr;</a></div>
+        <div class="bkc-rule"></div>
+        <div class="bkc-stats">
+          <div class="bkc-stat"><b>8.10x</b><span>ROAS, up from 1.4x</span></div>
+          <div class="bkc-stat"><b>+248%</b><span>CTR, UGC vs static</span></div>
+          <div class="bkc-stat"><b>71</b><span>added monthly sales</span></div>
+          <div class="bkc-stat"><b>$43,803</b><span>month-one incremental revenue</span></div>
         </div>
-      </a>
-      <a class="indt-case" href="/case-studies/spieth-america/">
-        <div class="indt-case-media"><img src="/assets/work/cards/spieth-america.jpg" alt="Spieth America"></div>
-        <div class="indt-case-body">
-          <span class="indt-case-pill">E-commerce</span>
-          <div class="indt-case-stat">757%<span>ROAS lift</span></div>
-          <p>A brand-new Shopify store went from zero to $420K in online sales in ten months, with a 757% lift in return on ad spend.</p>
-          <div class="indt-case-client">Spieth America</div>
-          <span class="indt-case-link">View case study <span class="arw">&rarr;</span></span>
+        <div class="bkc-review">
+          <div class="bkc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bkc-quote">&ldquo;Consultus Digital helped us scale our Meta advertising with a well-executed UGC strategy. The results spoke for themselves.&rdquo;</p>
+          <div class="bkc-author"><b>Joseph DeMarinis</b> &middot; Founder, BookSeats.com</div>
+          <span class="bkc-badge"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google review</span>
         </div>
-      </a>
-      </div>
+      </article>
     </div>
   </section>
 
