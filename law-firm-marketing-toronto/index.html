@@ -3627,6 +3627,24 @@ section.hero-cover .hero-bg {
 #indt .ix-fan .a1,#indt .ix-fan .a2{aspect-ratio:4/5}
 #indt .ix-fan .b1{aspect-ratio:5/8}
 #indt .ix-fan:hover figure{transform:translateY(-4px)}
+/* legal hero: Google search mock (far-right card) */
+#indt .lz-serp{box-sizing:border-box;width:clamp(212px,26vw,272px);background:#fff;border:1px solid rgba(20,20,20,0.1);border-radius:15px;padding:18px 16px 16px;box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+#indt .ix-fan:hover .lz-serp{transform:translateY(-4px)}
+#indt .lz-gbar{display:flex;align-items:center;gap:9px;border:1px solid #E1DCD1;border-radius:100px;padding:9px 13px;box-shadow:0 1px 8px rgba(20,20,20,0.06)}
+#indt .lz-q{font-family:var(--sans);font-size:13px;color:#141414;white-space:nowrap;letter-spacing:-0.005em}
+#indt .lz-cursor{width:1.5px;height:15px;background:#1A40C7;margin-left:-4px;animation:lzBlink 1.05s steps(1) infinite}
+@keyframes lzBlink{50%{opacity:0}}
+#indt .lz-results{margin-top:13px}
+#indt .lz-item{position:relative;padding:10px 0;border-bottom:1px dashed rgba(20,20,20,0.08)}
+#indt .lz-item:last-child{border-bottom:none;padding-bottom:2px}
+#indt .lz-badge{position:absolute;right:0;top:10px;background:#FFEC00;color:#141414;font-family:var(--mono);font-size:9px;font-weight:700;padding:3px 9px;border-radius:100px}
+#indt .lz-url{display:flex;align-items:center;gap:7px;font-size:11px;color:#2A2A2A;margin-bottom:3px}
+#indt .lz-fav{width:16px;height:16px;border-radius:50%;background:#141414;color:#FFEC00;font-family:var(--wide);font-size:8.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;flex:none}
+#indt .lz-fav-g{background:#C7C5C8}
+#indt .lz-title{font-size:14px;line-height:1.25;color:#1A40C7;letter-spacing:-0.01em;margin-bottom:3px}
+#indt .lz-snippet{font-size:11px;line-height:1.5;color:#6A686B}
+#indt .lz-dim{opacity:.4}
+#indt .lz-dim .lz-title{color:#2A2A2A;font-size:12.5px}
 /* proof bar */
 #indt .ix-proofbar{max-width:1200px;margin:0 auto;padding:0 32px}
 #indt .ix-proofbar-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--bone-border);text-align:center}
@@ -3774,8 +3792,8 @@ section.hero-cover .hero-bg {
     <div class="ix-hero-in">
       <div class="ix-hero-copy">
         <span class="ix-eyebrow">Law Firm Marketing</span>
-        <h1>Marketing that turns search into <span class="sem">signed files</span>.</h1>
-        <p class="ix-lede">We help law firms turn search demand into signed files, not just clicks, with intake built to close and attribution measured on retained clients.</p>
+        <h1>Marketing that generates <span class="sem">qualified case leads</span>.</h1>
+        <p class="ix-lede">We help law firms turn search demand into signed files, with intake built to close and attribution measured on retained clients.</p>
         <div class="ix-hero-ctas">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
@@ -3784,10 +3802,31 @@ section.hero-cover .hero-bg {
       <div class="ix-fan" aria-hidden="true">
         <div class="col a">
           <figure class="a1"><img src="/assets/work/zayouna/zl-s02-4-5.jpg" alt=""></figure>
-          <figure class="a2"><img src="/assets/work/zayouna/zl-s01.jpg" alt=""></figure>
+          <figure class="a2"><img src="/assets/work/zayouna/zl-s1-rs.png" alt=""></figure>
         </div>
         <div class="col b">
-          <figure class="b1"><img src="/assets/work/zayouna/zl-s03.jpg" alt=""></figure>
+          <div class="lz-serp">
+          <div class="lz-gbar">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#6A686B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+            <span class="lz-q">Law firm near me</span><span class="lz-cursor"></span>
+          </div>
+          <div class="lz-results">
+            <div class="lz-item lz-top">
+              <div class="lz-badge">#1</div>
+              <div class="lz-url"><span class="lz-fav">Y</span><span>yourlawfirm.ca</span></div>
+              <div class="lz-title">Your Law Firm | Personal Injury Lawyers</div>
+              <div class="lz-snippet">Free consultation, no fees unless we win. Serving clients across the GTA.</div>
+            </div>
+            <div class="lz-item lz-dim">
+              <div class="lz-url"><span class="lz-fav lz-fav-g"></span><span>competitor-law.ca</span></div>
+              <div class="lz-title">Injury Lawyers &amp; Legal Services</div>
+            </div>
+            <div class="lz-item lz-dim">
+              <div class="lz-url"><span class="lz-fav lz-fav-g"></span><span>legal-associates.ca</span></div>
+              <div class="lz-title">Accident &amp; Injury Claims</div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -3841,10 +3880,10 @@ section.hero-cover .hero-bg {
         <p>Practice-area pages and intake built to turn searches into consultations.</p>
         <span class="indt-sol-link">Explore <span class="arw">&rarr;</span></span>
       </a>
-      <a class="indt-sol" href="/cro/">
+      <a class="indt-sol" href="/web-development/">
         <span class="indt-sol-num">06</span>
-        <h3>Conversion Rate Optimization</h3>
-        <p>Intake flows and forms optimized to convert more qualified matters.</p>
+        <h3>Web Development</h3>
+        <p>Fast, credible law-firm websites built to turn visitors into consultations.</p>
         <span class="indt-sol-link">Explore <span class="arw">&rarr;</span></span>
       </a>
     </div>
