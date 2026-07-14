@@ -3621,7 +3621,7 @@ section.hero-cover .hero-bg {
 #indt .ix-fan .col{display:flex;flex-direction:column;gap:16px}
 #indt .ix-fan .col.b{margin-top:clamp(30px,4vw,58px)}
 #indt .ix-fan figure{box-sizing:border-box;margin:0;border:5px solid #fff;border-radius:15px;overflow:hidden;background:var(--bone);box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-#indt .ix-fan img{display:block;width:100%;height:100%;object-fit:cover}
+#indt .ix-fan img,#indt .ix-fan video{display:block;width:100%;height:100%;object-fit:cover}
 #indt .ix-fan .col.a figure{width:clamp(146px,19.5vw,206px)}
 #indt .ix-fan .col.b figure{width:clamp(172px,23vw,250px)}
 #indt .ix-fan .a1,#indt .ix-fan .a2{aspect-ratio:4/5}
@@ -3754,8 +3754,8 @@ section.hero-cover .hero-bg {
     <div class="ix-hero-in">
       <div class="ix-hero-copy">
         <span class="ix-eyebrow">Home Services Marketing</span>
-        <h1>Marketing that fills the <span class="sem">booking calendar</span>.</h1>
-        <p class="ix-lede">We help HVAC, windows, roofing, paving, and trades capture homeowners at the exact moment of need, then turn quote requests into booked jobs.</p>
+        <h1>Localized marketing that keeps your <span class="sem">calendar full</span>.</h1>
+        <p class="ix-lede">We help home service providers reach homeowners, then turn quote requests into booked jobs.</p>
         <div class="ix-hero-ctas">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
@@ -3763,11 +3763,11 @@ section.hero-cover .hero-bg {
       </div>
       <div class="ix-fan" aria-hidden="true">
         <div class="col a">
-          <figure class="a1"><img src="/assets/work/cards/western-asphalt.jpg" alt=""></figure>
-          <figure class="a2"><img src="/assets/work/eco-choice/ad-1.png" alt=""></figure>
+          <figure class="a1"><video src="/assets/work/pmc-ugc.mp4" autoplay muted loop playsinline></video></figure>
+          <figure class="a2"><img src="/assets/work/eco-choice/statics-door-v2.jpg" alt=""></figure>
         </div>
         <div class="col b">
-          <figure class="b1"><img src="/assets/work/eco-choice/ad-2.png" alt=""></figure>
+          <figure class="b1"><video src="/assets/work/eco-choice/video-loop-1.mp4" autoplay muted loop playsinline></video></figure>
         </div>
       </div>
     </div>
@@ -3815,10 +3815,10 @@ section.hero-cover .hero-bg {
         <p>Fast, trust-building sites with service and city pages built to convert and rank.</p>
         <span class="indt-sol-link">Explore <span class="arw">&rarr;</span></span>
       </a>
-      <a class="indt-sol" href="/cro/">
+      <a class="indt-sol" href="/zoho-crm/">
         <span class="indt-sol-num">05</span>
-        <h3>Conversion Rate Optimization</h3>
-        <p>Quote forms and booking flows tuned to turn urgent visits into booked jobs.</p>
+        <h3>CRM Implementation</h3>
+        <p>A connected CRM that tracks every lead from first call to invoiced job.</p>
         <span class="indt-sol-link">Explore <span class="arw">&rarr;</span></span>
       </a>
       <a class="indt-sol" href="/marketing-automation/">
@@ -3863,7 +3863,7 @@ section.hero-cover .hero-bg {
           <span class="em-row-n">02</span>
           <h3>Convert</h3>
           <span class="em-row-role">Turn calls into booked jobs</span>
-          <div class="em-stack"><span class="em-tag">Landing Pages</span><span class="em-tag">Call Tracking</span><span class="em-tag">CRO</span><span class="em-tag">Reviews</span></div>
+          <div class="em-stack"><span class="em-tag">Landing Pages</span><span class="em-tag">Call Tracking</span><span class="em-tag">CRO</span></div>
         </div>
         <div class="em-row-body">
           <p>Speed and clarity win jobs. We build service-specific landing pages, track and route every call, and test the path to a booking so more inquiries turn into scheduled work.</p>
@@ -3880,13 +3880,14 @@ section.hero-cover .hero-bg {
           <span class="em-row-n">03</span>
           <h3>Scale</h3>
           <span class="em-row-role">More profit from every job</span>
-          <div class="em-stack"><span class="em-tag">Seasonal</span><span class="em-tag">Memberships</span><span class="em-tag">Reviews</span><span class="em-tag">Reporting</span></div>
+          <div class="em-stack"><span class="em-tag">Analytics &amp; Attribution</span><span class="em-tag">CRM Implementation</span><span class="em-tag">Reporting</span></div>
         </div>
         <div class="em-row-body">
-          <p>Growth comes from repeat work and efficient spend. Memberships, reactivation, and seasonal offers lift lifetime value while we manage the program to cost per booked job.</p>
+          <p>Growth comes from repeat work, efficient spend, and clean data. Reactivation brings past customers back, a connected CRM tracks every job, and analytics tie spend to booked revenue so we manage the program to cost per booked job.</p>
           <ul class="em-do">
-            <li><b>Membership &amp; repeat</b>, recurring revenue from your base</li>
+            <li><b>CRM implementation</b>, every lead tracked from first call to invoiced job</li>
             <li><b>Reactivation</b>, win-back flows for past customers</li>
+            <li><b>Analytics &amp; attribution</b>, spend tied to booked revenue</li>
             <li><b>Profit-first reporting</b>, managed to cost per booked job</li>
           </ul>
         </div>
@@ -3909,11 +3910,11 @@ section.hero-cover .hero-bg {
   </section>
 
   <!-- ===== 4. CASE STUDIES ===== -->
-  <section class="sec rcx-section" style="background:#141414;padding-top:84px;padding-bottom:88px;max-width:none;border-top:1px solid rgba(250,248,243,0.08)">
+  <section class="sec rcx-section" style="background:var(--bone);padding-top:56px;padding-bottom:58px;max-width:none;border-top:1px solid var(--bone-border)">
     <div class="sec-inner" style="max-width:1280px">
       <div style="text-align:center;margin-bottom:6px">
-        <div class="eyebrow dark" style="justify-content:center;margin-bottom:14px"><span class="eyebrow-dot"></span><span>More Work</span></div>
-        <h2 class="sec-title" style="font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:#FAF8F3">Other <em>stories</em>.</h2>
+        <div class="eyebrow" style="justify-content:center;margin-bottom:14px"><span class="eyebrow-dot"></span><span>Results</span></div>
+        <h2 class="sec-title" style="font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--ink)">Success <span class="sem">Stories</span>.</h2>
       </div>
       <div class="rcx-stage">
         <button class="rcx-arrow rcx-prev" type="button" aria-label="Previous case study">&lsaquo;</button>
@@ -3923,7 +3924,7 @@ section.hero-cover .hero-bg {
         <button class="rcx-arrow rcx-next" type="button" aria-label="Next case study">&rsaquo;</button>
       </div>
       <div class="rcx-dots" aria-label="Case study navigation"></div>
-      <div style="text-align:center;margin-top:6px"><a href="/results/" style="font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#FAF8F3;text-decoration:none;border-bottom:1px solid rgba(250,248,243,0.5);padding-bottom:4px">View all work &rarr;</a></div>
+      <div style="text-align:center;margin-top:6px"><a href="/results/" style="font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#141414;text-decoration:none;border-bottom:1px solid rgba(20,20,20,0.4);padding-bottom:4px">View all work &rarr;</a></div>
     </div>
   </section>
 
@@ -3942,12 +3943,12 @@ section.hero-cover .hero-bg {
     .rcx-pmetric { display: inline-block; width: fit-content; background: #FFEC00; color: #141414; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; }
     .rcx-statnum { font-family: var(--serif); font-weight: 400; font-size: clamp(40px,4.6vw,58px); line-height: 0.98; letter-spacing: -0.03em; color: #FFEC00; margin-top: auto; }
     .rcx-statlbl { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 14px; line-height: 1.3; color: rgba(250,248,243,0.82); margin: 8px 0 14px; }
-    .rcx-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: #FAF8F3; color: #141414; border: none; font-size: 24px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5); transition: background 0.2s ease, transform 0.2s ease; }
+    .rcx-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: #141414; color: #FAF8F3; border: none; font-size: 24px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5); transition: background 0.2s ease, transform 0.2s ease; }
     .rcx-arrow:hover { background: #FFEC00; transform: translateY(-50%) scale(1.06); }
     .rcx-prev { left: -8px; } .rcx-next { right: -8px; }
     .rcx-dots { display: flex; gap: 9px; justify-content: center; margin-top: 24px; margin-bottom: 22px; }
-    .rcx-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(250,248,243,0.28); border: none; padding: 0; cursor: pointer; transition: background 0.2s ease, width 0.2s ease; }
-    .rcx-dot.is-active { background: #FFEC00; width: 24px; border-radius: 5px; }
+    .rcx-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(20,20,20,0.22); border: none; padding: 0; cursor: pointer; transition: background 0.2s ease, width 0.2s ease; }
+    .rcx-dot.is-active { background: var(--deep-blue); width: 24px; border-radius: 5px; }
     @media (max-width: 560px) { .rcx-slide { flex-basis: 80vw; } .rcx-arrow { width: 44px; height: 44px; } .rcx-prev { left: 2px; } .rcx-next { right: 2px; } }
   </style>
 
