@@ -847,6 +847,8 @@
   .sec.bone-full { max-width: none; background: #F5F2EC; padding: 0; }
   .sec-inner { max-width: 1200px; margin: 0 auto; padding: 100px 32px; }
   .sec-head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; margin-bottom: 60px; }
+  /* Single-column, left-aligned header when label + title are direct children (prevents the eyebrow/title split across columns) */
+  .sec-head:has(> .section-lbl) { grid-template-columns: 1fr; gap: 16px; }
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
