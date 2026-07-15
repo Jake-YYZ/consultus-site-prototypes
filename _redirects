@@ -16,7 +16,7 @@
 # --- URL restructure + retired pages (64 redirects) ---
 /about-us-online-marketing-agency/                /about/  301
 /ad-creatives/                                    /performance-creatives/  301
-/amazon-ad-management-services/                   /ecommerce-marketing-toronto/  301
+/amazon-ad-management-services/                   /amazon-ads/  301
 /answer-engine-optimization/                      /aeo-ai-search/  301
 /bing-advertising-toronto/                        /microsoft-ads/  301
 /case-studies/comwave/                            /case-studies/  301

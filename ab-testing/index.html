@@ -3586,6 +3586,20 @@
   "areaServed": "North America"
 }
 </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How is this different from CRO?", "acceptedAnswer": {"@type": "Answer", "text": "CRO is the broader discipline. A/B testing is one method inside CRO. We run experimentation as a dedicated program when the account has the traffic, the surfaces, and the organizational appetite to make it a competitive advantage."}},
+    {"@type": "Question", "name": "Do we have enough traffic to A/B test?", "acceptedAnswer": {"@type": "Answer", "text": "Below 10,000 monthly conversions per surface, classical A/B testing struggles. We use bandit-style allocation, qualitative research, and heuristic-driven sequential testing instead. The discipline still applies, the methods adjust."}},
+    {"@type": "Question", "name": "Can you work with our existing testing tool?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Optimizely, VWO, AB Tasty, Convert, GrowthBook, and custom feature flags are all fine. We have opinions but no tooling religion."}},
+    {"@type": "Question", "name": "What is A/B testing, and how does split testing work?", "acceptedAnswer": {"@type": "Answer", "text": "A/B testing, also called split testing, shows two versions of a page or element to comparable groups of visitors at the same time and measures which one drives more of the outcome you care about. Because traffic is split randomly and runs concurrently, the only meaningful difference is the change you made. Done properly, split testing replaces opinion with evidence. Done sloppily, without enough sample or a clear hypothesis, it produces confident-looking numbers that mean nothing."}},
+    {"@type": "Question", "name": "How do you know when a test result is real?", "acceptedAnswer": {"@type": "Answer", "text": "We set the rules before the test launches: one primary metric, a minimum sample size, and a target statistical significance, usually 95 percent confidence, plus a full-week-multiple runtime so day-of-week effects wash out. We do not stop a test the moment it looks like a winner, because peeking at results early is the most common way teams fool themselves. A result counts when it clears significance at the pre-agreed sample, not before."}},
+    {"@type": "Question", "name": "How much do A/B testing services cost?", "acceptedAnswer": {"@type": "Answer", "text": "A dedicated experimentation program is a monthly retainer scaled to how many tests you can realistically run, which depends on your traffic and the number of surfaces worth testing. It sits inside the broader conversion rate optimization discipline, so many clients run it as part of a CRO engagement rather than a standalone line. We scope it to the cadence your traffic can actually support at proper statistical significance."}}
+  ]
+}
+</script>
 
   <section class="hero-cover">
     <div class="ghost-monogram">C</div>
@@ -3593,7 +3607,7 @@
       <div class="cover-main" style="text-align:center">
         <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center"><span>Convert / Experimentation</span></div>
         <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Experimentation programs that <span class="sem">compound</span>.</h1>
-        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">A/B and multivariate testing programs run as a discipline rather than as a tool. Hypothesis backlog, statistical rigor, experiment archive, and cross-functional learnings that compound across quarters rather than dying with the latest test.</p>
+        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">A/B and multivariate testing programs run as a discipline rather than as a tool. Hypothesis backlog, statistical rigor, experiment archive, and cross-functional learnings that compound across quarters rather than dying with the latest test. Split testing held to real statistical significance, not screenshots of a two-day test that happened to look good.</p>
         <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
@@ -3654,10 +3668,10 @@
     <div class="sec-inner">
       <div class="sec-head">
       <div>
-        <div class="section-lbl">Where We Run This</div>
-        <h2 class="sec-title">Active <span class="sem">a/b testing & experimentation</span> engagements.</h2>
+        <div class="section-lbl">Works With</div>
+        <h2 class="sec-title">A/B testing doesn't work <span class="sem">alone</span>.</h2>
       </div>
-      <p class="sec-head-sub">Experimentation programs pair with CRO and analytics work. Browse the convert surfaces.</p>
+      <p class="sec-head-sub">Experimentation compounds when it plugs into the rest of the program. Here is what A/B testing pairs with.</p>
     </div>
       <div><a href="/cro/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">CRO programs</a> <a href="/web-development/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Web development</a> <a href="/landing-pages/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Landing pages</a> <a href="/analytics-attribution/" style="display:inline-block;padding:10px 18px;background:#fff;border:1px solid rgba(20,20,20,0.12);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#141414;text-decoration:none;transition:border-color 0.2s,background 0.2s;margin:0 4px 8px 0" onmouseover="this.style.borderColor='#1A40C7';this.style.background='#FAF8F3'" onmouseout="this.style.borderColor='rgba(20,20,20,0.12)';this.style.background='#fff'">Analytics & Attribution</a></div>
     </div>
@@ -3674,6 +3688,9 @@
       <details class="faq-item"><summary>How is this different from CRO?</summary><div class="faq-a"><p>CRO is the broader discipline. A/B testing is one method inside CRO. We run experimentation as a dedicated program when the account has the traffic, the surfaces, and the organizational appetite to make it a competitive advantage.</p></div></details>
         <details class="faq-item"><summary>Do we have enough traffic to A/B test?</summary><div class="faq-a"><p>Below 10,000 monthly conversions per surface, classical A/B testing struggles. We use bandit-style allocation, qualitative research, and heuristic-driven sequential testing instead. The discipline still applies, the methods adjust.</p></div></details>
         <details class="faq-item"><summary>Can you work with our existing testing tool?</summary><div class="faq-a"><p>Yes. Optimizely, VWO, AB Tasty, Convert, GrowthBook, and custom feature flags are all fine. We have opinions but no tooling religion.</p></div></details>
+        <details class="faq-item"><summary>What is A/B testing, and how does split testing work?</summary><div class="faq-a"><p>A/B testing, also called split testing, shows two versions of a page or element to comparable groups of visitors at the same time and measures which one drives more of the outcome you care about. The key is control: because traffic is split randomly and runs concurrently, the only meaningful difference is the change you made. Done properly, split testing replaces opinion with evidence. Done sloppily, without enough sample or a clear hypothesis, it produces confident-looking numbers that mean nothing.</p></div></details>
+        <details class="faq-item"><summary>How do you know when a test result is real?</summary><div class="faq-a"><p>We set the rules before the test launches: one primary metric, a minimum sample size, and a target statistical significance, usually 95 percent confidence, plus a full-week-multiple runtime so day-of-week effects wash out. We do not stop a test the moment it looks like a winner, because peeking at results early is the most common way teams fool themselves. A result counts when it clears significance at the pre-agreed sample, not before.</p></div></details>
+        <details class="faq-item"><summary>How much do A/B testing services cost?</summary><div class="faq-a"><p>A dedicated experimentation program is a monthly retainer scaled to how many tests you can realistically run, which depends on your traffic and the number of surfaces worth testing. It sits inside the broader <a class="body-link" href="/cro/">conversion rate optimization</a> discipline, so many clients run it as part of a CRO engagement rather than a standalone line. We scope it to the cadence your traffic can actually support at proper statistical significance, and say so plainly if a full program is premature.</p></div></details>
     </div>
   </section>
 
