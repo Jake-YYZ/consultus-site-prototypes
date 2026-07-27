@@ -89,11 +89,11 @@ button:hover{transform:translateY(-1px);}
     <h2>Tell us about you</h2>
     <p class="lead">We reply within one business day with times.</p>
     <form id="scform" onsubmit="event.preventDefault();window.location.href='thank-you.html';">
-      <div><label for="f-name">Full name</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-first">First name</label><input id="f-first" name="first_name" required autocomplete="given-name"></div>
+      <div><label for="f-last">Last name</label><input id="f-last" name="last_name" required autocomplete="family-name"></div>
       <div><label for="f-org">Clinic / organization</label><input id="f-org" name="organization" required autocomplete="organization"></div>
       <div><label for="f-email">Work email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
       <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-      <div><label for="f-type">What are you growing?</label><select id="f-type" name="type"><option>Clinic</option><option>Multi-location group</option><option>Hospital / association</option><option>Health brand</option><option>Other</option></select></div>
       <div><label for="f-web">Website</label><input id="f-web" name="website" placeholder="yourclinic.ca"></div>
       <div class="f-full"><label for="f-msg">What's the goal?</label><textarea id="f-msg" name="message" placeholder="More booked consults? A second location? A launch?"></textarea></div>
       <button type="submit">Book my strategy call</button>
