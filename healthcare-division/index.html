@@ -2219,5 +2219,18 @@ footer.pcta .copy2{color:rgba(250,248,243,.65);opacity:1;font-size:12px;}
 .frow .k{font-family:'NuberNext Wide','NuberNext',sans-serif !important;font-weight:600 !important;color:var(--ink);}
 .frow .d{font-family:'NuberNext','Helvetica Neue',Arial,sans-serif !important;font-weight:500 !important;font-size:15px;line-height:1.65;color:var(--char);}
 </style>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}
+      else{v.pause();}
+    });
+  },{rootMargin:'120px 0px'});
+  [].slice.call(document.querySelectorAll('video')).forEach(function(v){io.observe(v);});
+})();
+</script>
 </body>
 </html>
