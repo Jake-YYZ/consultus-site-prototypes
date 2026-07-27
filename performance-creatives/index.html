@@ -3595,26 +3595,63 @@
 
   
 
-  <section class="hero-cover">
-    <div class="ghost-monogram">C</div>
-    <div class="cover-grid">
-      <div class="cover-main" style="text-align:center">
-        <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center"><span>Acquire / Performance Creatives</span></div>
-        <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Creative, <span class="sem">engineered</span> to perform.</h1>
-        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">In-house creative production built for the feed, not the reel: video production, photography, short-form video, UGC, static ad creatives, and motion, all tested against live campaigns. Iterated weekly. Scored against ROAS.</p>
-        <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
-          <a class="btn primary cta-yellow-hover" href="/contact/">Start a Creative Sprint &rarr;</a>
-          <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See the Reel</a>
+  <style id="svc-fan-hero">
+.svh-hero{background:var(--paper);padding:74px 32px 44px;overflow:hidden}
+.svh-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.svh-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink)}
+.svh-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--deep-blue)}
+.svh-hero h1{font-family:var(--sans);font-weight:400;font-size:clamp(38px,5.4vw,74px);line-height:0.99;letter-spacing:-0.026em;color:var(--ink);margin:20px 0 0}
+.svh-hero h1 .sem{color:var(--deep-blue);font-style:italic}
+.svh-lede{font-size:18px;line-height:1.55;color:var(--charcoal);max-width:560px;margin:24px 0 0}
+.svh-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.svh-fan{display:flex;gap:16px;justify-content:center;align-items:flex-start;transform:rotate(-7deg);transform-origin:center;margin:6px auto}
+.svh-fan .col{display:flex;flex-direction:column;gap:16px}
+.svh-fan .col.b{margin-top:clamp(30px,4vw,58px)}
+.svh-fan figure{box-sizing:border-box;margin:0;border:5px solid #fff;border-radius:15px;overflow:hidden;background:var(--bone);box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.svh-fan img{display:block;width:100%;height:100%;object-fit:cover}
+.svh-fan .col.a figure{width:clamp(146px,19.5vw,206px)}
+.svh-fan .col.b figure{width:clamp(172px,23vw,250px)}
+.svh-fan .a1{aspect-ratio:4/5}
+.svh-fan .a2{aspect-ratio:4/5}
+.svh-fan .b1{aspect-ratio:5/8}
+.svh-fan:hover figure{transform:translateY(-4px)}
+.svh-proof{border-top:1px solid var(--bone-border);border-bottom:1px solid var(--bone-border);background:var(--paper)}
+.svh-proof-row{max-width:1200px;margin:0 auto;padding:22px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.svh-proof .p .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal)}
+.svh-proof .p .val{font-size:15px;font-weight:500;color:var(--ink);margin-top:5px}
+@media(max-width:980px){.svh-in{grid-template-columns:1fr;gap:44px}.svh-fan{justify-content:flex-start}.svh-proof-row{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:600px){.svh-hero{padding:52px 16px 32px}.svh-proof-row{grid-template-columns:1fr;padding:18px 16px}}
+</style>
+  <section class="svh-hero">
+    <div class="svh-in">
+      <div class="svh-copy">
+        <span class="svh-eyebrow">Acquire / Performance Creatives</span>
+        <h1>Creative, <span class="sem">engineered</span> to perform.</h1>
+        <p class="svh-lede">In-house creative production built for the feed, not the reel: video production, photography, short-form video, UGC, static ad creatives, and motion, all tested against live campaigns. Iterated weekly. Scored against ROAS.</p>
+        <div class="svh-ctas">
+          <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
+          <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
         </div>
       </div>
-      <div class="cover-meta">
-        <div class="cell"><span class="mono">Capability</span><strong>UGC &middot; Short-form &middot; Static</strong></div>
-        <div class="cell"><span class="mono">Production</span><strong>In-house, weekly cadence</strong></div>
-        <div class="cell"><span class="mono">Scoring</span><strong>Live ROAS, hook rate, CTR</strong></div>
-        <div class="cell"><span class="mono">Network</span><strong>200+ vetted creators</strong></div>
+      <div class="svh-fan" aria-hidden="true">
+        <div class="col a">
+          <figure class="a1"><img src="/assets/work/e11ement/social-model.jpg" alt="" loading="eager"></figure>
+          <figure class="a2"><img src="/assets/work/e11ement/product-shot.jpg" alt="" loading="eager"></figure>
+        </div>
+        <div class="col b">
+          <figure class="b1"><img src="/assets/work/cards/spieth-america.jpg" alt="" loading="eager"></figure>
+        </div>
       </div>
     </div>
   </section>
+  <div class="svh-proof">
+    <div class="svh-proof-row">
+        <div class="p"><div class="lbl">Capability</div><div class="val">UGC &middot; Short-form &middot; Static</div></div>
+        <div class="p"><div class="lbl">Production</div><div class="val">In-house, weekly cadence</div></div>
+        <div class="p"><div class="lbl">Scoring</div><div class="val">Live ROAS, hook rate, CTR</div></div>
+        <div class="p"><div class="lbl">Network</div><div class="val">200+ vetted creators</div></div>
+    </div>
+  </div>
   <!-- ========== CREATIVE WALL ========== -->
   <section class="sec creative-wall" style="background:var(--bone, #F5F2EC);padding-top:80px;padding-bottom:96px;border-top:1px solid rgba(20,20,20,0.06);border-bottom:1px solid rgba(20,20,20,0.06)">
     <div class="sec-inner">
@@ -4259,7 +4296,7 @@
     </div>
   </footer>
 <script>
-/* Standalone goPage shim — for hash routes still pointing at SPA-only pages */
+/* Standalone goPage shim: for hash routes still pointing at SPA-only pages */
 function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }

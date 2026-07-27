@@ -3592,7 +3592,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "How is local SEO different from regular SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Local SEO optimizes for near-me and city-modified searches that surface the map pack. The ranking factors are different: Google Business Profile signals, reviews, location-page schema, and proximity to the searcher matter more than authority and link equity for these queries."}},
-    {"@type": "Question", "name": "Can you handle 25+ location operators?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The architecture changes above 10 locations and again above 50. We have specific playbooks for 2 to 25 location groups, 25 to 100 location groups, and franchise systems."}},
+    {"@type": "Question", "name": "Can you handle businesses with 25+ locations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The architecture changes above 10 locations and again above 50. We have specific playbooks for 2 to 25 location groups, 25 to 100 location groups, and franchise systems."}},
     {"@type": "Question", "name": "Do you handle review responses?", "acceptedAnswer": {"@type": "Answer", "text": "We can manage the response system or train your in-house team on the playbook. Most clients prefer the in-house option because reviews respond best to authentic team voice rather than agency drafts."}},
     {"@type": "Question", "name": "What does Google Business Profile optimization include?", "acceptedAnswer": {"@type": "Answer", "text": "Google Business Profile optimization (the tool many still call Google My Business) starts with claiming and cleaning every profile, then removing duplicates and fixing inconsistent name, address, and phone data. From there we optimize categories, services, attributes, photos, and posts around the searches that drive real bookings, wire up a review generation system, and keep the profile active. An optimized profile is often the single highest-ROI local SEO asset a business owns."}},
     {"@type": "Question", "name": "How much do local SEO services cost?", "acceptedAnswer": {"@type": "Answer", "text": "Local SEO is a monthly retainer that scales with the number of locations. A single-location business is a modest program; a 25-location operator needs profile management, location-page architecture, and citation work at scale, so the fee is higher. Because a map-pack ranking drives phone calls and directions requests directly, local SEO services tend to show a clearer return than almost any other channel for businesses that serve a physical area."}},
@@ -3602,26 +3602,63 @@
 }
 </script>
 
-  <section class="hero-cover">
-    <div class="ghost-monogram">C</div>
-    <div class="cover-grid">
-      <div class="cover-main" style="text-align:center">
-        <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center"><span>Acquire / Local Organic</span></div>
-        <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Local SEO that fills the <span class="sem">map pack</span>.</h1>
-        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">Google Business Profile optimization, location-page architecture, citation cleanup, review systems, and local schema for businesses where the buyer searches "near me" or by city name. Designed for multi-location operators who keep cannibalizing themselves in search.</p>
-        <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
+  <style id="svc-fan-hero">
+.svh-hero{background:var(--paper);padding:74px 32px 44px;overflow:hidden}
+.svh-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.svh-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink)}
+.svh-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--deep-blue)}
+.svh-hero h1{font-family:var(--sans);font-weight:400;font-size:clamp(38px,5.4vw,74px);line-height:0.99;letter-spacing:-0.026em;color:var(--ink);margin:20px 0 0}
+.svh-hero h1 .sem{color:var(--deep-blue);font-style:italic}
+.svh-lede{font-size:18px;line-height:1.55;color:var(--charcoal);max-width:560px;margin:24px 0 0}
+.svh-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.svh-fan{display:flex;gap:16px;justify-content:center;align-items:flex-start;transform:rotate(-7deg);transform-origin:center;margin:6px auto}
+.svh-fan .col{display:flex;flex-direction:column;gap:16px}
+.svh-fan .col.b{margin-top:clamp(30px,4vw,58px)}
+.svh-fan figure{box-sizing:border-box;margin:0;border:5px solid #fff;border-radius:15px;overflow:hidden;background:var(--bone);box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.svh-fan img{display:block;width:100%;height:100%;object-fit:cover}
+.svh-fan .col.a figure{width:clamp(146px,19.5vw,206px)}
+.svh-fan .col.b figure{width:clamp(172px,23vw,250px)}
+.svh-fan .a1{aspect-ratio:4/5}
+.svh-fan .a2{aspect-ratio:4/5}
+.svh-fan .b1{aspect-ratio:5/8}
+.svh-fan:hover figure{transform:translateY(-4px)}
+.svh-proof{border-top:1px solid var(--bone-border);border-bottom:1px solid var(--bone-border);background:var(--paper)}
+.svh-proof-row{max-width:1200px;margin:0 auto;padding:22px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.svh-proof .p .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal)}
+.svh-proof .p .val{font-size:15px;font-weight:500;color:var(--ink);margin-top:5px}
+@media(max-width:980px){.svh-in{grid-template-columns:1fr;gap:44px}.svh-fan{justify-content:flex-start}.svh-proof-row{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:600px){.svh-hero{padding:52px 16px 32px}.svh-proof-row{grid-template-columns:1fr;padding:18px 16px}}
+</style>
+  <section class="svh-hero">
+    <div class="svh-in">
+      <div class="svh-copy">
+        <span class="svh-eyebrow">Acquire / Local Organic</span>
+        <h1>Local SEO that fills the <span class="sem">map pack</span>.</h1>
+        <p class="svh-lede">Google Business Profile optimization, location-page architecture, citation cleanup, review systems, and local schema for businesses where the buyer searches "near me" or by city name. Designed for multi-location businesses that keep cannibalizing themselves in search.</p>
+        <div class="svh-ctas">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
         </div>
       </div>
-      <div class="cover-meta">
-        <div class="cell"><span class="mono">Capability</span><strong>Local SEO</strong></div>
-        <div class="cell"><span class="mono">Surface</span><strong>Local Organic</strong></div>
-        <div class="cell"><span class="mono">Engagement</span><strong>National &middot; North America</strong></div>
-        <div class="cell"><span class="mono">Rating</span><strong>4.9 &#9733; &middot; 47 reviews</strong></div>
+      <div class="svh-fan" aria-hidden="true">
+        <div class="col a">
+          <figure class="a1"><img src="/assets/work/verticals/home-services-v3.png" alt="" loading="eager"></figure>
+          <figure class="a2"><img src="/assets/work/cards/tonic-eye-care.jpg" alt="" loading="eager"></figure>
+        </div>
+        <div class="col b">
+          <figure class="b1"><img src="/assets/work/cards/bow-city-storage.jpg" alt="" loading="eager"></figure>
+        </div>
       </div>
     </div>
   </section>
+  <div class="svh-proof">
+    <div class="svh-proof-row">
+        <div class="p"><div class="lbl">Capability</div><div class="val">Local SEO</div></div>
+        <div class="p"><div class="lbl">Surface</div><div class="val">Local Organic</div></div>
+        <div class="p"><div class="lbl">Engagement</div><div class="val">National &middot; North America</div></div>
+        <div class="p"><div class="lbl">Rating</div><div class="val">4.9 &#9733; &middot; 47 reviews</div></div>
+    </div>
+  </div>
 
   <section class="sec dark-full">
     <div class="sec-inner">
@@ -3687,7 +3724,7 @@
     </div>
     <div class="faq-list">
       <details class="faq-item"><summary>How is local SEO different from regular SEO?</summary><div class="faq-a"><p>Local SEO optimizes for "near me" and city-modified searches that surface the map pack. The ranking factors are different: GBP signals, reviews, location-page schema, and proximity to searcher matter more than authority and link equity for these queries.</p></div></details>
-        <details class="faq-item"><summary>Can you handle 25+ location operators?</summary><div class="faq-a"><p>Yes. The architecture changes above 10 locations and again above 50. We have specific playbooks for 2-25 location groups, 25-100 location groups, and franchise systems.</p></div></details>
+        <details class="faq-item"><summary>Can you handle businesses with 25+ locations?</summary><div class="faq-a"><p>Yes. The architecture changes above 10 locations and again above 50. We have specific playbooks for 2-25 location groups, 25-100 location groups, and franchise systems.</p></div></details>
         <details class="faq-item"><summary>Do you handle review responses?</summary><div class="faq-a"><p>We can manage the response system or train your in-house team on the playbook. Most clients prefer the in-house option because reviews respond best to authentic team voice rather than agency drafts.</p></div></details>
         <details class="faq-item"><summary>What does Google Business Profile optimization include?</summary><div class="faq-a"><p>Google Business Profile optimization (the tool many still call Google My Business) starts with claiming and cleaning every profile, then removing duplicates and fixing inconsistent name, address, and phone data. From there we optimize categories, services, attributes, photos, and posts around the searches that drive real bookings, wire up a review generation system, and keep the profile active. A neglected profile quietly loses map-pack position; an optimized one is often the single highest-ROI local SEO asset a business owns.</p></div></details>
         <details class="faq-item"><summary>How much do local SEO services cost?</summary><div class="faq-a"><p>Local SEO is a monthly retainer that scales with the number of locations. A single-location business is a modest program; a 25-location operator needs profile management, location-page architecture, and citation work at scale, so the fee is higher. Because a map-pack ranking drives phone calls and directions requests directly, local SEO services tend to show a clearer return than almost any other channel for businesses that serve a physical area.</p></div></details>

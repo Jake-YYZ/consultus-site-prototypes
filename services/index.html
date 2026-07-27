@@ -839,6 +839,9 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  a.body-link { color: #1A40C7; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
+  a.body-link:hover { color: #142f8f; }
+  .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3633,7 +3636,25 @@
       </div>
     </div>
   </section>
-  <section class="cta-sec"><div class="cta-inner"><div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Let's build</span></div><h2 class="cta-title">Ready to <span class="sem">start</span>?</h2><a class="btn primary on-dark" href="/contact/">Book a Strategy Call →</a></div></section>
+    <section class="sec">
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Related</div>
+        <h2 class="sec-title">Where to go <span class="sem">next</span>.</h2>
+      </div>
+    </div>
+    <div class="related-strip">
+        <a class="svc-pill" href="/case-studies/">All Case Studies</a>
+        <a class="svc-pill" href="/google-ads/">Google Ads</a>
+        <a class="svc-pill" href="/seo/">SEO</a>
+        <a class="svc-pill" href="/cro/">Conversion Rate Optimization</a>
+        <a class="svc-pill" href="/web-development/">Web Development</a>
+        <a class="svc-pill" href="/analytics-attribution/">Analytics &amp; Attribution</a>
+        <a class="svc-pill" href="/industries/">Industries We Serve</a>
+    </div>
+  </section>
+
+<section class="cta-sec"><div class="cta-inner"><div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Let's build</span></div><h2 class="cta-title">Ready to <span class="sem">start</span>?</h2><a class="btn primary on-dark" href="/contact/">Book a Strategy Call →</a></div></section>
   
 
 <footer>
@@ -3757,7 +3778,7 @@
     </div>
   </footer>
 <script>
-/* Standalone goPage shim — for hash routes still pointing at SPA-only pages */
+/* Standalone goPage shim: for hash routes still pointing at SPA-only pages */
 function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }

@@ -853,6 +853,9 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  a.body-link { color: #1A40C7; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
+  a.body-link:hover { color: #142f8f; }
+  .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -3473,26 +3476,63 @@
     </div>
   </nav>
 
-  <section class="hero-cover">
-    <div class="ghost-monogram">a</div>
-    <div class="cover-grid">
-      <div class="cover-main">
-        <div class="eyebrow yellow-dot"><span>Amazon Ads</span></div>
-        <h1 class="display">Win the search page, and the <span class="sem">buy box</span>, on Amazon.</h1>
-        <p class="lede" style="max-width:700px">Amazon is the biggest product search engine on earth, and the most unforgiving. We run Sponsored Products, Sponsored Brands, Sponsored Display, and Amazon DSP as one system, managed to a target ACOS and total MER, so every dollar is accountable to profit, not just impressions.</p>
-        <div class="hero-ctas" style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap">
+  <style id="svc-fan-hero">
+.svh-hero{background:var(--paper);padding:74px 32px 44px;overflow:hidden}
+.svh-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.svh-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink)}
+.svh-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--deep-blue)}
+.svh-hero h1{font-family:var(--sans);font-weight:400;font-size:clamp(38px,5.4vw,74px);line-height:0.99;letter-spacing:-0.026em;color:var(--ink);margin:20px 0 0}
+.svh-hero h1 .sem{color:var(--deep-blue);font-style:italic}
+.svh-lede{font-size:18px;line-height:1.55;color:var(--charcoal);max-width:560px;margin:24px 0 0}
+.svh-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.svh-fan{display:flex;gap:16px;justify-content:center;align-items:flex-start;transform:rotate(-7deg);transform-origin:center;margin:6px auto}
+.svh-fan .col{display:flex;flex-direction:column;gap:16px}
+.svh-fan .col.b{margin-top:clamp(30px,4vw,58px)}
+.svh-fan figure{box-sizing:border-box;margin:0;border:5px solid #fff;border-radius:15px;overflow:hidden;background:var(--bone);box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.svh-fan img{display:block;width:100%;height:100%;object-fit:cover}
+.svh-fan .col.a figure{width:clamp(146px,19.5vw,206px)}
+.svh-fan .col.b figure{width:clamp(172px,23vw,250px)}
+.svh-fan .a1{aspect-ratio:4/5}
+.svh-fan .a2{aspect-ratio:4/5}
+.svh-fan .b1{aspect-ratio:5/8}
+.svh-fan:hover figure{transform:translateY(-4px)}
+.svh-proof{border-top:1px solid var(--bone-border);border-bottom:1px solid var(--bone-border);background:var(--paper)}
+.svh-proof-row{max-width:1200px;margin:0 auto;padding:22px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.svh-proof .p .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal)}
+.svh-proof .p .val{font-size:15px;font-weight:500;color:var(--ink);margin-top:5px}
+@media(max-width:980px){.svh-in{grid-template-columns:1fr;gap:44px}.svh-fan{justify-content:flex-start}.svh-proof-row{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:600px){.svh-hero{padding:52px 16px 32px}.svh-proof-row{grid-template-columns:1fr;padding:18px 16px}}
+</style>
+  <section class="svh-hero">
+    <div class="svh-in">
+      <div class="svh-copy">
+        <span class="svh-eyebrow">Amazon Ads</span>
+        <h1>Win the search page, and the <span class="sem">buy box</span>, on Amazon.</h1>
+        <p class="svh-lede">Amazon is the biggest product search engine on earth, and the most unforgiving. We run Sponsored Products, Sponsored Brands, Sponsored Display, and Amazon DSP as one system, managed to a target ACOS and total MER, so every dollar is accountable to profit, not just impressions.</p>
+        <div class="svh-ctas">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
-          <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/case-studies/dragonscale-supplies/">See an ecommerce win</a>
+          <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
         </div>
       </div>
-      <div class="cover-meta">
-        <div class="cell"><span class="mono">Platform</span><strong>Amazon Ads + DSP</strong></div>
-        <div class="cell"><span class="mono">Measured on</span><strong>ACOS / TACOS / MER</strong></div>
-        <div class="cell"><span class="mono">Approach</span><strong>Profit-first</strong></div>
-        <div class="cell"><span class="mono">Rating</span><strong>4.9 &#9733; &middot; 47</strong></div>
+      <div class="svh-fan" aria-hidden="true">
+        <div class="col a">
+          <figure class="a1"><img src="/assets/work/verticals/ecommerce-dtc-v3.png" alt="" loading="eager"></figure>
+          <figure class="a2"><img src="/assets/work/verticals/retail-consumer-v2.png" alt="" loading="eager"></figure>
+        </div>
+        <div class="col b">
+          <figure class="b1"><img src="/assets/work/e11ement/product-shot.jpg" alt="" loading="eager"></figure>
+        </div>
       </div>
     </div>
   </section>
+  <div class="svh-proof">
+    <div class="svh-proof-row">
+        <div class="p"><div class="lbl">Platform</div><div class="val">Amazon Ads + DSP</div></div>
+        <div class="p"><div class="lbl">Measured on</div><div class="val">ACOS / TACOS / MER</div></div>
+        <div class="p"><div class="lbl">Approach</div><div class="val">Profit-first</div></div>
+        <div class="p"><div class="lbl">Rating</div><div class="val">4.9 &#9733; &middot; 47</div></div>
+    </div>
+  </div>
 
   <section class="sec dark-full"><div class="sec-inner" style="text-align:center;max-width:920px">
     <p class="quote" style="color:#FAF8F3;font-style:italic;font-family:var(--serif)">On Amazon, the winner is not the brand that spends the most. It is the brand that turns the most spend into ranked, profitable, repeatable sales.</p>
@@ -3536,7 +3576,24 @@
     </div>
   </section>
 
-  <section class="cta-sec"><div class="cta-inner">
+    <section class="sec">
+    <div class="sec-head solo">
+      <div>
+        <div class="section-lbl">Related</div>
+        <h2 class="sec-title">Where to go <span class="sem">next</span>.</h2>
+      </div>
+    </div>
+    <div class="related-strip">
+        <a class="svc-pill" href="/case-studies/dragonscale-supplies/">Case Study: 13.2 MER</a>
+        <a class="svc-pill" href="/meta-ads/">Meta Ads</a>
+        <a class="svc-pill" href="/google-ads/">Google Ads</a>
+        <a class="svc-pill" href="/performance-creatives/">Performance Creatives</a>
+        <a class="svc-pill" href="/cro/">Conversion Rate Optimization</a>
+        <a class="svc-pill" href="/services/">All Services</a>
+    </div>
+  </section>
+
+<section class="cta-sec"><div class="cta-inner">
     <div class="eyebrow dark" style="margin-bottom:32px;justify-content:center"><span class="eyebrow-dot"></span><span>Work with us</span></div>
     <h2 class="cta-title">Ready to make Amazon <span class="sem">profitable</span>?</h2>
     <a class="btn primary on-dark cta-yellow-hover" href="/contact/" style="background:#FAF8F3 !important;color:#141414 !important">Book Your Strategy Session &rarr;</a>
