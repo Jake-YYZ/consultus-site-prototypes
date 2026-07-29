@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Marketing Division | Consultus Digital</title>
+<meta name="description" content="Digital marketing for healthcare brands. Compliant creative, speed-to-lead systems, and sites built to convert. The Consultus Digital Healthcare Division.">
+<meta name="theme-color" content="#FAF8F3">
+<link rel="icon" href="/assets/brand/consultus-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+/* ===== HEALTHCARE DIVISION · ROVEIA-STYLE LAYOUT · CONSULTUS BRAND SYSTEM ===== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --paper:#FAF8F3; --bone:#F5F2EC; --bone-border:#E1DCD1; --pure:#FFFFFF;
+  --ink:#141414; --onyx:#0D0D0D; --onyx-2:#161616; --onyx-3:#1E1E1E; --onyx-border:#262626;
+  --graphite:#2A2A2A;
+  --blue:#1A40C7; --blue-soft:#5D7BEA; --blue-light:#B4BFEB; --blue-pale:#E9EEFD;
+  --yellow:#FFEC00; --yellow-dark:#FDD200;
+  --charcoal:#6A686B; --char-2:#8A878B; --muted:#8C8A87; --grey:#C7C5C8; --paper-dim:#A8A5A0;
+  --green:#2D8F5F; --red:#D94545;
+  --sans:'NuberNext','Helvetica Neue',Arial,sans-serif;
+  --wide:'NuberNext Wide','NuberNext','Helvetica Neue',Arial,sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --radius:20px;
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:var(--sans); background:var(--paper); color:var(--ink); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+img,video{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--ink); color:var(--yellow); }
+
+/* ===================== MOTION KIT (Roveia-style scroll-ups) ===================== */
+.rv{ opacity:0; transform:translateY(72px); transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); transition-delay:var(--d, 0ms); will-change:opacity, transform; }
+.rv.in{ opacity:1; transform:none; }
+/* hero line-mask reveal */
+.hline{ display:block; overflow:hidden; }
+.hline > span{ display:block; transform:translateY(112%); transition:transform 1.05s cubic-bezier(.22,1,.36,1); transition-delay:var(--d, 0ms); }
+.masks-in .hline > span{ transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .rv{ opacity:1; transform:none; transition:none; }
+  .hline > span{ transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* ===================== TYPE HELPERS ===================== */
+.eyebrow{ font-family:var(--mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; }
+.eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); }
+.eyebrow.on-dark .dot{ background:var(--yellow); }
+.sem{ font-style:italic; color:var(--blue); }
+.on-dark .sem, .dark .sem{ color:var(--yellow); }
+
+/* ===================== NAV ===================== */
+.navwrap{ position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:0 16px; }
+nav.pill{ width:100%; max-width:1240px; background:rgba(251,250,247,0.94); backdrop-filter:blur(20px) saturate(180%); -webkit-backdrop-filter:blur(20px) saturate(180%); border:1px solid rgba(20,20,20,0.06); border-radius:100px; box-shadow:0 6px 30px rgba(20,20,20,0.08); display:flex; align-items:center; justify-content:space-between; padding:10px 10px 10px 26px; }
+.nav-left{ display:flex; align-items:center; gap:14px; }
+.nav-logo img{ height:20px; width:auto; }
+.nav-div{ font-family:var(--mono); font-size:9.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--charcoal); border:1px solid var(--bone-border); border-radius:100px; padding:5px 10px; white-space:nowrap; }
+.nav-links{ display:flex; gap:32px; align-items:center; }
+.nav-links a{ font-size:15px; font-weight:500; color:var(--ink); transition:color .2s; }
+.nav-links a:hover{ color:var(--blue); }
+.btn{ display:inline-flex; align-items:center; gap:10px; border-radius:100px; font-family:var(--sans); font-size:14px; font-weight:500; padding:15px 26px; cursor:pointer; border:none; transition:background .25s ease, color .25s ease, transform .2s ease; }
+.btn .arr{ transition:transform .2s; }
+.btn:hover .arr{ transform:translateX(3px); }
+.btn.primary{ background:var(--ink); color:var(--paper); }
+.btn.primary:hover{ background:var(--yellow); color:var(--ink); transform:translateY(-1px); }
+.btn.primary.on-dark{ background:var(--paper); color:var(--ink); }
+.btn.primary.on-dark:hover{ background:var(--yellow); transform:translateY(-1px); }
+.btn.nav-size{ padding:11px 20px; font-size:13px; }
+@media (max-width:960px){ .nav-links{ display:none; } .nav-div{ display:none; } }
+
+/* ===================== HERO ===================== */
+.hero-frame{ padding:8px; }
+.hero{ position:relative; border-radius:28px; overflow:hidden; text-align:center; padding:172px 32px 88px;
+  background:
+    radial-gradient(circle at 50% 135%, rgba(26,64,199,0.30), rgba(250,248,243,0) 62%),
+    linear-gradient(180deg, #F2F1EC 0%, var(--blue-pale) 58%, #F2F1EC 100%); }
+.hero .eyebrow{ color:var(--charcoal); margin-bottom:30px; }
+.hero h1{ font-size:clamp(42px, 6.4vw, 88px); font-weight:400; line-height:1.02; letter-spacing:-0.025em; max-width:1160px; margin:0 auto; }
+.hero-plus{ color:var(--blue); font-size:32px; font-weight:300; margin:28px auto 12px; line-height:1; }
+.hero-grid{ display:grid; grid-template-columns:1fr minmax(340px, 700px) 1fr; gap:44px; align-items:end; max-width:1240px; margin:6px auto 0; text-align:left; }
+.hero-media{ border-radius:22px; overflow:hidden; aspect-ratio:16/10; background:var(--blue-light); box-shadow:0 30px 60px rgba(20,20,60,0.18); }
+.hero-media video{ width:100%; height:100%; object-fit:cover; }
+.hero-stat{ padding-bottom:6px; }
+.hero-stat .num{ font-size:clamp(44px, 4.4vw, 62px); font-weight:400; letter-spacing:-0.04em; line-height:1; }
+.hero-stat .stars{ color:var(--blue); font-size:17px; letter-spacing:2px; margin-top:10px; }
+.hero-stat .lbl{ font-size:16px; font-weight:500; margin-top:8px; }
+.hero-stat .sub{ font-size:14px; color:var(--charcoal); margin-top:22px; max-width:230px; }
+.hero-side{ padding-bottom:6px; }
+.hero-side p{ font-size:17px; color:var(--graphite); max-width:290px; line-height:1.5; }
+.hero-side .micro{ font-size:13px; color:var(--charcoal); margin-top:14px; max-width:290px; }
+.hero-side .btn{ margin-top:24px; }
+@media (max-width:980px){
+  .hero{ padding-top:132px; }
+  .hero-grid{ grid-template-columns:1fr; text-align:center; }
+  .hero-stat,.hero-side{ margin:0 auto; }
+  .hero-stat .sub,.hero-side p,.hero-side .micro{ max-width:420px; }
+}
+
+/* ===================== PARTNER MARQUEE ===================== */
+.partners{ max-width:1240px; margin:0 auto; padding:44px 32px 6px; display:flex; align-items:center; gap:36px; overflow:hidden; }
+.partners .plbl{ font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--charcoal); white-space:nowrap; flex:0 0 auto; }
+.marquee{ overflow:hidden; flex:1; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track{ display:flex; gap:52px; width:max-content; animation:mq 26s linear infinite; }
+@keyframes mq{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+.pl{ font-size:18px; font-weight:600; color:var(--paper-dim); white-space:nowrap; letter-spacing:-0.01em; }
+.pl small{ font-weight:400; font-size:12px; color:#C4C1BA; margin-left:6px; }
+
+/* ===================== SECTION SHELL ===================== */
+.sec{ max-width:1240px; margin:0 auto; padding:104px 32px 36px; }
+.sec-lbl{ display:flex; align-items:center; gap:12px; font-family:var(--wide); font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:20px; }
+.sec-lbl .plus{ color:var(--blue); font-size:20px; font-weight:300; }
+.sec-title{ font-size:clamp(32px, 4.5vw, 56px); font-weight:400; line-height:1.05; letter-spacing:-0.02em; margin-bottom:18px; }
+.sec-intro{ font-size:17px; color:var(--charcoal); max-width:620px; margin-bottom:52px; }
+
+/* ===================== SECTORS ===================== */
+.ind-row{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding:36px 0; border-top:1px solid var(--bone-border); }
+.ind-row:last-of-type{ border-bottom:1px solid var(--bone-border); }
+.ind-name{ font-size:clamp(40px, 5vw, 68px); font-weight:400; letter-spacing:-0.025em; line-height:1.04; }
+.ind-name a{ transition:color .25s; }
+.ind-name a:hover{ color:var(--blue); }
+.ind-card{ background:var(--ink); color:var(--paper); border-radius:var(--radius); padding:32px 34px; }
+.ind-card .n{ font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
+.ind-card p{ font-size:15.5px; line-height:1.6; color:var(--grey); }
+@media (max-width:880px){ .ind-row{ grid-template-columns:1fr; gap:20px; } }
+.sector-belt{ margin-top:46px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.sector-track{ display:flex; gap:12px; width:max-content; animation:mq 34s linear infinite; }
+.sector-chip{ background:var(--pure); border:1px solid var(--bone-border); border-radius:100px; padding:11px 22px; font-size:14px; font-weight:500; white-space:nowrap; }
+
+/* ===================== FOUNDER NOTE ===================== */
+.founder{ background:var(--bone); border:1px solid var(--bone-border); border-radius:28px; padding:64px 56px; display:grid; grid-template-columns:56px 1fr; gap:28px; }
+.founder .qm{ font-size:76px; line-height:0.7; color:var(--blue); font-weight:400; }
+.founder h3{ font-size:clamp(24px, 2.6vw, 34px); font-weight:400; letter-spacing:-0.015em; margin-bottom:18px; }
+.founder p{ font-size:18px; line-height:1.6; color:var(--graphite); max-width:820px; }
+.founder .who{ margin-top:26px; font-size:14px; color:var(--charcoal); }
+.founder .who b{ display:block; font-weight:600; color:var(--ink); }
+@media (max-width:720px){ .founder{ grid-template-columns:1fr; padding:40px 28px; } }
+
+/* ===================== SERVICES ===================== */
+.svc-row{ display:grid; grid-template-columns:330px 1fr 290px; gap:40px; align-items:start; padding:38px 0; border-top:1px solid var(--bone-border); }
+.svc-row:last-of-type{ border-bottom:1px solid var(--bone-border); }
+.svc-row .stage{ font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue); margin-bottom:10px; }
+.svc-row h3{ font-size:29px; font-weight:400; letter-spacing:-0.02em; }
+.svc-row h3 a:hover{ color:var(--blue); }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip{ background:var(--bone); border:1px solid var(--bone-border); border-radius:100px; padding:9px 18px; font-size:13.5px; font-weight:500; }
+.svc-tag{ font-family:var(--wide); font-size:12.5px; font-weight:600; line-height:1.5; text-transform:uppercase; letter-spacing:0.05em; }
+@media (max-width:980px){ .svc-row{ grid-template-columns:1fr; gap:16px; } }
+
+/* ===================== DIVISION DIFFERENCE ===================== */
+.diff-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.diff-card{ border-radius:var(--radius); padding:38px 36px; }
+.diff-card.us{ background:var(--ink); color:var(--paper); }
+.diff-card.them{ background:var(--bone); border:1px solid var(--bone-border); }
+.diff-card h3{ font-family:var(--wide); font-size:14px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:26px; }
+.diff-card.us h3{ color:var(--yellow); }
+.diff-card.them h3{ color:var(--charcoal); }
+.diff-item{ display:grid; grid-template-columns:26px 1fr; gap:14px; padding:16px 0; border-top:1px solid var(--onyx-border); }
+.diff-card.them .diff-item{ border-top:1px solid var(--bone-border); }
+.diff-item .mark{ font-size:15px; font-weight:600; line-height:1.4; }
+.diff-card.us .mark{ color:var(--yellow); }
+.diff-card.them .mark{ color:var(--red); }
+.diff-item b{ display:block; font-size:15.5px; font-weight:600; margin-bottom:4px; }
+.diff-item p{ font-size:14px; line-height:1.55; color:var(--charcoal); }
+.diff-card.us .diff-item p{ color:var(--grey); }
+.diff-cta{ margin-top:44px; text-align:center; }
+.diff-cta .lead-line{ font-size:19px; margin-bottom:20px; }
+@media (max-width:880px){ .diff-grid{ grid-template-columns:1fr; } }
+
+/* ===================== PROCESS ===================== */
+.steps{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+.step{ background:var(--bone); border:1px solid var(--bone-border); border-radius:var(--radius); padding:34px 30px 40px; position:relative; overflow:hidden; }
+.step .k{ display:inline-block; background:var(--blue); color:#fff; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; border-radius:100px; padding:7px 15px; margin-bottom:56px; }
+.step h3{ font-size:23px; font-weight:400; letter-spacing:-0.01em; margin-bottom:10px; }
+.step p{ font-size:14.5px; color:var(--charcoal); line-height:1.6; }
+.step .ghost{ position:absolute; top:14px; right:20px; font-size:92px; font-weight:400; color:rgba(26,64,199,0.07); line-height:1; }
+.score-legend{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+.score-legend .sl{ font-family:var(--mono); font-size:11.5px; letter-spacing:0.04em; background:var(--pure); border:1px solid var(--bone-border); border-radius:100px; padding:9px 16px; color:var(--graphite); }
+.score-legend .sl b{ color:var(--blue); font-weight:600; margin-right:6px; }
+@media (max-width:880px){ .steps{ grid-template-columns:1fr; } }
+
+/* ===================== CASE STUDY (dark) ===================== */
+.case-frame{ padding:8px; }
+.case-sec{ background:var(--ink); border-radius:28px; padding:96px 0; color:var(--paper); }
+.case-inner{ max-width:1240px; margin:0 auto; padding:0 32px; }
+.case-eyebrow{ color:var(--grey); margin-bottom:26px; }
+.case-sec h2{ font-size:clamp(34px, 4.6vw, 60px); font-weight:400; line-height:1.04; letter-spacing:-0.02em; max-width:820px; }
+.case-sec .lede{ font-size:17px; color:var(--grey); max-width:640px; margin-top:20px; line-height:1.6; }
+.case-grid{ display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; margin-top:56px; }
+.case-stats{ display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--onyx-border); }
+.case-stat{ padding:26px 18px 26px 0; border-bottom:1px solid var(--onyx-border); }
+.case-stat .n{ font-size:clamp(40px, 4vw, 60px); font-weight:400; letter-spacing:-0.04em; color:var(--yellow); line-height:1; }
+.case-stat .l{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+.case-media{ border-radius:22px; overflow:hidden; aspect-ratio:4/5; max-height:520px; background:var(--onyx-3); position:relative; }
+.case-media video{ width:100%; height:100%; object-fit:cover; }
+.case-media .badge{ position:absolute; top:16px; left:16px; background:rgba(13,13,13,0.72); backdrop-filter:blur(6px); color:var(--paper); font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; border-radius:100px; padding:8px 14px; display:flex; align-items:center; gap:8px; }
+.case-media .badge .live{ width:7px; height:7px; border-radius:50%; background:var(--yellow); animation:pulse 1.6s infinite; }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:0.35} }
+.case-cta-row{ margin-top:46px; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.more-cases{ margin-top:64px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.mini-case{ position:relative; border-radius:var(--radius); overflow:hidden; height:300px; display:flex; align-items:flex-end; background:var(--onyx-2); }
+.mini-case img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.mini-case:hover img{ transform:scale(1.04); }
+.mini-case .shade{ position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.8)); }
+.mini-case .mb{ position:relative; padding:22px 24px; }
+.mini-case h3{ font-size:24px; font-weight:400; letter-spacing:-0.015em; color:#fff; }
+.mini-case p{ font-size:13.5px; color:#DDD; margin-top:6px; }
+@media (max-width:880px){ .case-grid{ grid-template-columns:1fr; } .more-cases{ grid-template-columns:1fr; } }
+
+/* ===================== REVIEWS ===================== */
+.quotes{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+.qcard{ background:var(--bone); border:1px solid var(--bone-border); border-radius:var(--radius); padding:32px 30px; display:flex; flex-direction:column; justify-content:space-between; min-height:300px; }
+.qcard.blue{ background:var(--blue); border-color:var(--blue); color:#fff; }
+.qcard .qm{ font-size:44px; line-height:0.6; color:var(--blue); margin-bottom:18px; }
+.qcard.blue .qm{ color:var(--yellow); }
+.qcard p.qt{ font-size:15.5px; line-height:1.6; }
+.qcard.blue p.qt{ color:#F2F5FF; }
+.qcard .who{ margin-top:24px; font-size:13.5px; color:var(--charcoal); }
+.qcard.blue .who{ color:var(--blue-light); }
+.qcard .who b{ display:block; font-weight:600; color:var(--ink); }
+.qcard.blue .who b{ color:#fff; }
+@media (max-width:980px){ .quotes{ grid-template-columns:1fr; } .qcard{ min-height:0; } }
+
+/* ===================== COMPLIANCE ===================== */
+.comp-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
+.comp-card{ background:var(--pure); border:1px solid var(--bone-border); border-radius:var(--radius); padding:28px 26px; }
+.comp-card .t{ font-family:var(--wide); font-size:12px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+.comp-card p{ font-size:14px; color:var(--graphite); line-height:1.6; }
+@media (max-width:980px){ .comp-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:620px){ .comp-grid{ grid-template-columns:1fr; } }
+
+/* ===================== FAQ ===================== */
+.faq{ max-width:900px; margin:0 auto; }
+.faq details{ border-top:1px solid var(--bone-border); }
+.faq details:last-child{ border-bottom:1px solid var(--bone-border); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:25px 4px; font-size:18px; font-weight:600; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq .arrow{ flex:0 0 auto; width:42px; height:42px; border-radius:999px; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; font-weight:400; transition:transform .3s, background .3s, color .3s; }
+.faq details[open] .arrow{ transform:rotate(45deg); background:var(--yellow); color:var(--ink); }
+.faq .a{ padding:0 60px 26px 4px; font-size:15.5px; color:var(--charcoal); line-height:1.6; }
+
+/* ===================== CTA ===================== */
+.cta-frame{ padding:8px; }
+.cta{ border-radius:28px; text-align:center; padding:124px 32px;
+  background:
+    radial-gradient(circle at 50% 145%, rgba(26,64,199,0.36), rgba(250,248,243,0) 66%),
+    linear-gradient(180deg, #F2F1EC 0%, var(--blue-pale) 100%); }
+.cta .plus{ color:var(--blue); font-size:30px; margin-bottom:20px; }
+.cta h2{ font-size:clamp(40px, 6vw, 84px); font-weight:400; letter-spacing:-0.025em; line-height:1.02; max-width:980px; margin:0 auto; }
+.cta p{ font-size:17px; color:var(--graphite); margin-top:20px; }
+.cta .btn{ margin-top:34px; }
+
+/* ===================== FOOTER ===================== */
+.foot-frame{ padding:8px; }
+footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding:76px 32px 38px; }
+.foot-inner{ max-width:1240px; margin:0 auto; }
+.foot-grid{ display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:44px; }
+.foot-brand img{ height:22px; width:auto; margin-bottom:14px; }
+.foot-brand .divtag{ font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:18px; }
+.foot-brand p{ font-size:14px; color:var(--muted); max-width:300px; }
+.foot-col h4{ font-family:var(--wide); font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--paper); margin-bottom:18px; }
+.foot-col a, .foot-col span{ display:block; font-size:14px; color:var(--grey); margin-bottom:11px; transition:color .2s; }
+.foot-col a:hover{ color:var(--yellow); }
+.foot-base{ border-top:1px solid var(--onyx-border); margin-top:52px; padding-top:24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+.foot-base .badge{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; }
+@media (max-width:880px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="navwrap">
+  <nav class="pill">
+    <div class="nav-left">
+      <a class="nav-logo" href="/" aria-label="Consultus Digital home"><img src="/assets/brand/consultus-wordmark-dark.png" alt="Consultus Digital"></a>
+      <span class="nav-div">Healthcare Division</span>
+    </div>
+    <div class="nav-links">
+      <a href="#sectors">Sectors</a>
+      <a href="#services">Services</a>
+      <a href="/healthcare-v2/work/">The Work</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn primary nav-size" href="/contact/">Book a strategy call <span class="arr">→</span></a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div class="hero-frame">
+  <section class="hero" id="hero">
+    <div class="eyebrow rv"><span class="dot"></span><span>Healthcare Division · Proudly Canadian</span></div>
+    <h1 id="heroTitle">
+      <span class="hline"><span style="--d:0ms">Digital marketing for</span></span>
+      <span class="hline"><span style="--d:140ms"><span class="sem">healthcare</span> brands.</span></span>
+    </h1>
+    <div class="hero-plus rv">+</div>
+    <div class="hero-grid">
+      <div class="hero-stat rv" style="--d:100ms">
+        <div class="num" data-count="4.9" data-decimals="1">0.0</div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Google reviews</div>
+        <div class="sub">Hospitals, clinics, healthcare ecommerce. If it's healthcare, it's our domain.</div>
+      </div>
+      <div class="hero-media rv" style="--d:200ms">
+        <video src="/assets/work/medical/loop-tonic-kids.mp4" poster="" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="hero-side rv" style="--d:300ms">
+        <p>Compliant creative. Speed-to-lead systems. Sites built to convert.</p>
+        <a class="btn primary" href="/contact/">Book a strategy call <span class="arr">→</span></a>
+        <div class="micro">30 minutes. No deck. Straight answers on where the growth is.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="plbl">Partnered with</div>
+  <div class="marquee"><div class="marquee-track" id="mtrack">
+    <span class="pl">Google <small>Partner</small></span>
+    <span class="pl">Meta <small>Business Partner</small></span>
+    <span class="pl">Shopify <small>Partner</small></span>
+    <span class="pl">LegitScript <small>Certified-ready</small></span>
+    <span class="pl">Microsoft <small>Advertising</small></span>
+    <span class="pl">Amazon <small>Ads</small></span>
+    <span class="pl">Clutch <small>4.9 ★</small></span>
+  </div></div>
+</div>
+
+<!-- SECTORS -->
+<section class="sec" id="sectors">
+  <div class="sec-lbl rv"><span class="plus">+</span> Who We Work With</div>
+  <h2 class="sec-title rv">We know your <span class="sem">sector</span>.</h2>
+  <p class="sec-intro rv">Clinics and hospitals, healthcare ecommerce and product brands, brick and mortar or online. We work across all of it.</p>
+
+  <div class="ind-row">
+    <div class="ind-name rv">Clinics &amp; Hospitals</div>
+    <div class="ind-card rv" style="--d:120ms">
+      <div class="n">01 · Clinics &amp; Hospitals</div>
+      <p>Patient acquisition with the college rules built in. Persona-led creative that clears provincial advertising standards, landing pages built to book, and speed-to-lead systems so every inquiry is answered in minutes, not days.</p>
+    </div>
+  </div>
+
+  <div class="ind-row">
+    <div class="ind-name rv">Healthcare Ecommerce</div>
+    <div class="ind-card rv" style="--d:120ms">
+      <div class="n">02 · Healthcare Ecommerce</div>
+      <p>Supplements, skincare, devices, and clinic retail lines. High-velocity creative testing measured on ROAS and ACOS, marketplace and DTC together, and cross-border programs for Canadian brands doing most of their volume in the US.</p>
+    </div>
+  </div>
+
+  <div class="ind-row">
+    <div class="ind-name rv">Practices &amp; Specialists</div>
+    <div class="ind-card rv" style="--d:120ms">
+      <div class="n">03 · Practices &amp; Specialists</div>
+      <p>Dental, physio, medspa, optometry, mental health, and more. Local SEO and AI-answer visibility, direct-billing messaging that matches how patients decide, and front-desk coaching that turns booked consults into accepted treatment plans.</p>
+    </div>
+  </div>
+
+  <div class="sector-belt rv">
+    <div class="sector-track" id="sectorTrack">
+      <span class="sector-chip">Primary care</span>
+      <span class="sector-chip">Hospitals</span>
+      <span class="sector-chip">Mental health</span>
+      <span class="sector-chip">Dental</span>
+      <span class="sector-chip">Medspa &amp; aesthetics</span>
+      <span class="sector-chip">Healthcare products</span>
+      <span class="sector-chip">Maternal health</span>
+      <span class="sector-chip">Optometry</span>
+      <span class="sector-chip">Nutrition</span>
+      <span class="sector-chip">Physiotherapy</span>
+      <span class="sector-chip">Senior care</span>
+      <span class="sector-chip">Associations</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER NOTE -->
+<section class="sec">
+  <div class="founder rv">
+    <div class="qm">&ldquo;</div>
+    <div>
+      <h3>Are we the right fit for you?</h3>
+      <p>If you're ambitious about growing a healthcare business, you want a long term partner, and you're done with cookie cutter marketing, we should talk. That's exactly who we built this division for.</p>
+      <div class="who"><b>Jake &amp; Grace Matzanke</b> Co-Founders, Consultus Digital</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sec-lbl rv"><span class="plus">+</span> Services</div>
+  <h2 class="sec-title rv">What we bring to the <span class="sem">table</span>.</h2>
+  <p class="sec-intro rv">Every service here has one job: more revenue for your business. More leads, more booked patients, more sales.</p>
+
+  <div class="svc-row rv">
+    <div><div class="stage">01 · Foundation</div><h3><a href="/web-development/">Websites &amp; CRO</a></h3></div>
+    <div class="chips">
+      <span class="chip">Web development</span><span class="chip">Landing pages</span><span class="chip">CRO</span><span class="chip">A/B testing</span>
+    </div>
+    <div class="svc-tag">Built to convert patients, then tested until it does it better</div>
+  </div>
+
+  <div class="svc-row rv">
+    <div><div class="stage">02 · Drive the right traffic</div><h3><a href="/seo-toronto/">SEO &amp; AEO</a></h3></div>
+    <div class="chips">
+      <span class="chip">Local SEO &amp; GMBs</span><span class="chip">AEO · LLM visibility</span><span class="chip">Technical SEO</span><span class="chip">Content</span>
+    </div>
+    <div class="svc-tag">Found on page one, and inside the AI tools your patients ask</div>
+  </div>
+
+  <div class="svc-row rv">
+    <div><div class="stage">02 · Drive the right traffic</div><h3><a href="/services/">Media buying</a></h3></div>
+    <div class="chips">
+      <span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Microsoft Ads</span><span class="chip">Reddit Ads</span><span class="chip">LinkedIn Ads</span><span class="chip">Amazon Ads</span>
+    </div>
+    <div class="svc-tag">Full-funnel buying managed against CPA and ROAS targets</div>
+  </div>
+
+  <div class="svc-row rv">
+    <div><div class="stage">03 · Convert with intent</div><h3><a href="/performance-creatives/">Ad creatives</a></h3></div>
+    <div class="chips">
+      <span class="chip">UGC video</span><span class="chip">Branded content</span><span class="chip">Influencer content</span><span class="chip">Brand ambassador</span>
+    </div>
+    <div class="svc-tag">Direct-response creative that clears compliance before it goes live</div>
+  </div>
+
+  <div class="svc-row rv">
+    <div><div class="stage">04 · Sell with the system</div><h3><a href="/marketing-automation/">Revenue operations</a></h3></div>
+    <div class="chips">
+      <span class="chip">CRM &amp; pipeline</span><span class="chip">Speed-to-lead</span><span class="chip">Routing</span><span class="chip">Email &amp; retention</span><span class="chip">Sales consulting</span><span class="chip">AI chatbots</span>
+    </div>
+    <div class="svc-tag">Every inquiry worked, every consult coached</div>
+  </div>
+
+  <div class="svc-row rv">
+    <div><div class="stage">05 · Measure and modify</div><h3><a href="/analytics-attribution/">Performance tracking</a></h3></div>
+    <div class="chips">
+      <span class="chip">GA4 &amp; attribution</span><span class="chip">Call tracking</span><span class="chip">Live dashboards</span><span class="chip">Jane App &amp; EMR integrations</span>
+    </div>
+    <div class="svc-tag">One shared dashboard tying spend to booked revenue</div>
+  </div>
+</section>
+
+<!-- DIVISION DIFFERENCE -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> Why The Division</div>
+  <h2 class="sec-title rv">The division <span class="sem">difference</span>.</h2>
+  <p class="sec-intro rv">A team built only for healthcare, side by side with an agency that's still learning it.</p>
+
+  <div class="diff-grid">
+    <div class="diff-card us rv">
+      <h3>Healthcare Division</h3>
+      <div class="diff-item"><span class="mark">✓</span><div><b>College advertising rules</b><p>Creative pre-checked against provincial standards before it reaches you.</p></div></div>
+      <div class="diff-item"><span class="mark">✓</span><div><b>Platform health restrictions</b><p>Measurement rebuilt for restricted health categories, acquisition keeps working.</p></div></div>
+      <div class="diff-item"><span class="mark">✓</span><div><b>Claims and consent</b><p>Substantiated claims, consent designed into every form and flow.</p></div></div>
+      <div class="diff-item"><span class="mark">✓</span><div><b>Healthcare benchmarks</b><p>CPL, booking and show rates by specialty, from day one.</p></div></div>
+      <div class="diff-item"><span class="mark">✓</span><div><b>Insurance billing &amp; patient lifecycle</b><p>We know how coverage drives patient decisions, and we use it in targeting, ad copy, and landing pages.</p></div></div>
+    </div>
+    <div class="diff-card them rv" style="--d:140ms">
+      <h3>Generalist agency</h3>
+      <div class="diff-item"><span class="mark">✕</span><div><b>College advertising rules</b><p>Learning the rules on your dime. Ads disapproved mid-flight.</p></div></div>
+      <div class="diff-item"><span class="mark">✕</span><div><b>Platform health restrictions</b><p>Conversions vanish when health categories get restricted, and nobody knows why.</p></div></div>
+      <div class="diff-item"><span class="mark">✕</span><div><b>Claims and consent</b><p>Flagged claims and endless revision loops, on your dime.</p></div></div>
+      <div class="diff-item"><span class="mark">✕</span><div><b>Healthcare benchmarks</b><p>Your account is their first healthcare experiment.</p></div></div>
+      <div class="diff-item"><span class="mark">✕</span><div><b>Insurance billing &amp; patient lifecycle</b><p>Treats a covered service like any other product, and wonders why the ads underperform.</p></div></div>
+    </div>
+  </div>
+  <div class="diff-cta rv">
+    <div class="lead-line">Want the division on your account?</div>
+    <a class="btn primary" href="/contact/">Book a strategy call <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="sec-lbl rv"><span class="plus">+</span> The Process</div>
+  <h2 class="sec-title rv">The Digital Health <span class="sem">Assessment</span>.</h2>
+  <p class="sec-intro rv">Similar to how a clinic assesses a patient: goals first, then diagnostics, then a treatment plan. Our framework scores your marketing across five funnel stages and shows the path to your target.</p>
+
+  <div class="steps">
+    <div class="step rv"><span class="ghost">1</span><span class="k">Step 1</span><h3>In-depth questionnaire</h3><p>We start with what growth means to you: a revenue number, or net new patients per month. We put it in writing, sign an NDA, and you grant access.</p></div>
+    <div class="step rv" style="--d:90ms"><span class="ghost">2</span><span class="k">Step 2</span><h3>We look under the hood</h3><p>We go through your accounts, Google Ads, GA4, your website, your CRM, and find out what is actually happening in there.</p></div>
+    <div class="step rv" style="--d:180ms"><span class="ghost">3</span><span class="k">Step 3</span><h3>Your Digital Health Score</h3><p>We assess your entire funnel for leaks: where inquiries drop off, where spend is wasted, and what fixing each gap is worth.</p></div>
+    <div class="step rv"><span class="ghost">4</span><span class="k">Step 4</span><h3>Strategy and projections</h3><p>Then the plan: budgets, projections, and targets built on healthcare benchmarks, before you commit a dollar.</p></div>
+    <div class="step rv" style="--d:90ms"><span class="ghost">5</span><span class="k">Step 5</span><h3>The first 90 days</h3><p>Quick fixes go live in the first 30 days. The full build continues through 90. Reporting tracks against the projection from week one.</p></div>
+    <div class="step rv" style="--d:180ms; background:var(--blue-pale); border-color:var(--blue-light)"><span class="ghost">✓</span><span class="k">Your Score</span><h3>Five stages, one number</h3><p>Your composite Digital Health Score, and a clear read on where you stand.</p>
+      <div class="score-legend">
+        <span class="sl"><b>0-39</b>Urgent intervention</span>
+        <span class="sl"><b>40-59</b>Critical gaps</span>
+        <span class="sl"><b>60-74</b>Foundation building</span>
+        <span class="sl"><b>75-89</b>Growth positioned</span>
+        <span class="sl"><b>90-100</b>Scale ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<div class="case-frame" id="work">
+  <section class="case-sec">
+    <div class="case-inner">
+      <div class="eyebrow on-dark case-eyebrow rv"><span class="dot"></span><span>Case Study · Tonic Eye Care</span></div>
+      <h2 class="rv">410 leads from one fall <span class="sem">UGC</span> campaign.</h2>
+      <p class="lede rv">A Midtown Toronto optometry clinic led by Dr. Kelly Lee. Testimonial-style videos from two local mothers, plus static ads on Meta. The UGC won: 4.52 percent click-through vs 2.40 for static.</p>
+
+      <div class="case-grid">
+        <div class="case-stats">
+          <div class="case-stat rv"><div class="n" data-count="410">0</div><div class="l">Leads from the UGC campaign</div></div>
+          <div class="case-stat rv" style="--d:90ms"><div class="n" data-count="4.52" data-decimals="2" data-suffix="%">0</div><div class="l">Click-through rate</div></div>
+          <div class="case-stat rv" style="--d:180ms"><div class="n" data-count="92" data-suffix="%">0</div><div class="l">Performance lift</div></div>
+          <div class="case-stat rv" style="--d:270ms"><div class="n" data-count="74" data-suffix="%">0</div><div class="l">More conversions, winning hook</div></div>
+        </div>
+        <div class="case-media rv" style="--d:150ms">
+          <div class="badge"><span class="live"></span>UGC · Live in market</div>
+          <video src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+      </div>
+
+      <div class="case-cta-row rv">
+        <a class="btn primary on-dark" href="/healthcare-v2/work/tonic-eye-care/">Read the full case study <span class="arr">→</span></a>
+        <a class="btn primary on-dark" style="background:transparent; color:var(--paper); border:1px solid rgba(255,255,255,0.35)" href="/healthcare-v2/work/">See all the work <span class="arr">→</span></a>
+      </div>
+
+      <div class="more-cases">
+        <a class="mini-case rv" href="/healthcare-v2/work/la-vie/">
+          <img src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health creative" loading="lazy">
+          <div class="shade"></div>
+          <div class="mb"><h3>La Vie Executive Health</h3><p>512 leads in month one for a concierge medicine clinic. A growth engine, not an ad account.</p></div>
+        </a>
+        <a class="mini-case rv" style="--d:120ms" href="/case-studies/e11ement/">
+          <img src="/assets/work/e11ement/product-shot.jpg" alt="e11ement clinical skincare" loading="lazy">
+          <div class="shade"></div>
+          <div class="mb"><h3>e11ement</h3><p>Clinical skincare scaled across every channel: site, UGC engine, Amazon relaunch, Walmart launch.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- REVIEWS -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> Reviews</div>
+  <h2 class="sec-title rv">What our clients <span class="sem">say</span>.</h2>
+  <div class="quotes" style="margin-top:40px">
+    <div class="qcard rv">
+      <div><div class="qm">&ldquo;</div>
+      <p class="qt">Would highly recommend Consultus Digital. They've had great communication and have brought creative ideas to the table. We've been using them for SEO and Meta ads management, and have also transferred over Google Ads management as well. We've seen some positive results so far and are excited to continue growing with their support!</p></div>
+      <div class="who"><b>Nick Chan</b> Tonic Eye Care · Operations &amp; Finance</div>
+    </div>
+    <div class="qcard blue rv" style="--d:110ms">
+      <div><div class="qm">&ldquo;</div>
+      <p class="qt">The team rebuilt our site while we kept running classes and births, and it never felt like a second job for us. Families tell us the new site feels like us. And we're getting found in cities we used to be invisible in.</p></div>
+      <div class="who"><b>Stefanie Antunes</b> Founder, Discover Birth</div>
+    </div>
+    <div class="qcard rv" style="--d:220ms">
+      <div><div class="qm">&ldquo;</div>
+      <p class="qt">They took the time to understand what post-menopausal clients need to hear before they book. The campaign and the page match how we talk to patients, and the inquiries coming in are the right fit for our dietitians.</p></div>
+      <div class="who"><b>Andrea Hardy, RD</b> Founder, Ignite Nutrition</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> Compliance</div>
+  <h2 class="sec-title rv">We read the fine <span class="sem">print</span>.</h2>
+  <div class="comp-grid" style="margin-top:40px">
+    <div class="comp-card rv"><div class="t">Privacy</div><p>Patient and customer inquiries are captured, routed, and stored in line with PHIPA and PIPEDA.</p></div>
+    <div class="comp-card rv" style="--d:90ms"><div class="t">College rules</div><p>Every province and profession has its own advertising standards. We check creative against your college's rules before it goes anywhere near your compliance officer.</p></div>
+    <div class="comp-card rv" style="--d:180ms"><div class="t">Platform policy</div><p>Meta and Google restrict health targeting and data. We set up measurement that works within those limits, so campaigns keep performing.</p></div>
+    <div class="comp-card rv" style="--d:270ms"><div class="t">Claims</div><p>If an ad makes a claim, we can back it up. That's why our accounts don't get flagged or suspended.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="sec-lbl rv"><span class="plus">+</span> FAQ</div>
+  <h2 class="sec-title rv">Questions we hear a <span class="sem">lot</span>.</h2>
+  <div class="faq rv" style="margin-top:40px">
+    <details>
+      <summary>Who is this division for? <span class="arrow">+</span></summary>
+      <div class="a">Clinics, multi-location groups, hospitals, associations, and health brands. If a college, a privacy act, or a platform health policy governs how you market, you are who this was built for.</div>
+    </details>
+    <details>
+      <summary>Our products sell into the US. Do you cover that? <span class="arrow">+</span></summary>
+      <div class="a">Yes. Many Canadian health brands do most of their volume in the US. We manage both sides of the border: US ad accounts, marketplace listings, currency and delivery thresholds, and the platform health policies that differ between the two countries.</div>
+    </details>
+    <details>
+      <summary>How big is your team? <span class="arrow">+</span></summary>
+      <div class="a">20+ as of 2026, and just like our clients, we're scaling. A mix of strategists, developers, media buyers, and creatives, all local, all in Toronto. Pop by the office on Geary and say hello.</div>
+    </details>
+    <details>
+      <summary>Do you handle college advertising rules? <span class="arrow">+</span></summary>
+      <div class="a">Yes. Standards differ by province and profession, so creative is checked against your specific college's rules before it ever reaches your compliance officer.</div>
+    </details>
+    <details>
+      <summary>How fast do we see results? <span class="arrow">+</span></summary>
+      <div class="a">Recovered demand shows up in weeks, because the first thing we do is find inquiries you already paid for. Paid media builds over the first quarter, and SEO over the first year.</div>
+    </details>
+    <details>
+      <summary>What does it cost? <span class="arrow">+</span></summary>
+      <div class="a">Engagements are scoped after the strategy call, sized to your locations, channels, and how much demand we find.</div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-frame">
+  <section class="cta">
+    <div class="plus rv">+</div>
+    <h2 class="rv">Ready when you <span class="sem">are</span>.</h2>
+    <p class="rv" style="--d:120ms">30 minutes. No deck. Straight answers on where the growth is.</p>
+    <a class="btn primary rv" style="--d:240ms" href="/contact/">Book a strategy call <span class="arr">→</span></a>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<div class="foot-frame">
+  <footer class="hc">
+    <div class="foot-inner">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital">
+          <div class="divtag">Healthcare Division</div>
+          <p>Marketing, engineered for scaling businesses. Based in Toronto's creative corridor, servicing clients across North America.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Visit</h4>
+          <span>Unit 109, 136 Geary Avenue</span>
+          <span>Toronto ON M6H 4H1</span>
+        </div>
+        <div class="foot-col">
+          <h4>Talk</h4>
+          <a href="tel:+14164601810">(416) 460-1810</a>
+          <a href="/">consultusdigital.com</a>
+          <a href="/contact/">Book a strategy call</a>
+        </div>
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <a href="/case-studies/">Case studies</a>
+          <a href="/healthcare-marketing/">Healthcare marketing</a>
+          <a href="/about/">About us</a>
+        </div>
+      </div>
+      <div class="foot-base">
+        <div>© 2026 Consultus Digital. All rights reserved.</div>
+        <div class="badge">PHIPA &amp; PIPEDA Compliant</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+// ===== Motion kit =====
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero line-mask reveal on load
+  window.addEventListener('load', function(){
+    document.getElementById('heroTitle').classList.add('masks-in');
+  });
+  // fallback if load already fired
+  if (document.readyState === 'complete') document.getElementById('heroTitle').classList.add('masks-in');
+
+  // Scroll-up reveals with automatic stagger for un-delayed siblings
+  var els = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if (!('IntersectionObserver' in window) || reduced){
+    els.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var pending = [];
+    var flush = null;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        pending.push(en.target);
+      });
+      if (pending.length && !flush){
+        flush = requestAnimationFrame(function(){
+          // stagger elements that entered in the same frame
+          pending.forEach(function(el, i){
+            if (!el.style.getPropertyValue('--d')) el.style.setProperty('--d', (i * 90) + 'ms');
+            el.classList.add('in');
+          });
+          pending = [];
+          flush = null;
+        });
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  // Count-ups
+  var nums = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduced){ el.textContent = target.toFixed(dec) + suffix; return; }
+    var dur = 1400, t0 = null;
+    function tick(t){
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick); else el.textContent = target.toFixed(dec) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  if ('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ cio.unobserve(en.target); animateCount(en.target); }
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(function(n){ cio.observe(n); });
+  } else {
+    nums.forEach(animateCount);
+  }
+
+  // Marquees: duplicate tracks for seamless loop
+  ['mtrack','sectorTrack'].forEach(function(id){
+    var t = document.getElementById(id);
+    if (t) t.innerHTML += t.innerHTML;
+  });
+
+  // FAQ: close others
+  var ds = document.querySelectorAll('.faq details');
+  ds.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (d.open) ds.forEach(function(o){ if (o !== d) o.open = false; });
+    });
+  });
+
+  // Video play kick
+  function kick(){ document.querySelectorAll('video').forEach(function(v){ var p = v.play(); if (p) p.catch(function(){}); }); }
+  document.addEventListener('DOMContentLoaded', kick);
+  window.addEventListener('scroll', kick, { once:true, passive:true });
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) kick(); });
+})();
+</script>
+</body>
+</html>

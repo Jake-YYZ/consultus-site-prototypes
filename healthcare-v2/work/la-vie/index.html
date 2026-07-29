@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Vie Executive Health Case Study | Healthcare Division | Consultus Digital</title>
+<meta name="description" content="How Consultus Digital launched La Vie Executive Health in Oakville: 512 leads in month one, ~20:1 projected lifetime ROAS, $89.53 Meta CPL, 23 top-3 keywords.">
+<meta name="theme-color" content="#FAF8F3">
+<link rel="icon" href="/assets/brand/consultus-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --paper:#FAF8F3; --bone:#F5F2EC; --bone-border:#E1DCD1; --pure:#FFFFFF;
+  --ink:#141414; --onyx-border:#262626; --graphite:#2A2A2A;
+  --blue:#1A40C7; --blue-soft:#5D7BEA; --blue-light:#B4BFEB; --blue-pale:#E9EEFD;
+  --yellow:#FFEC00; --charcoal:#6A686B; --muted:#8C8A87; --grey:#C7C5C8; --paper-dim:#A8A5A0;
+  --green:#2D8F5F; --red:#D94545;
+  --sans:'NuberNext','Helvetica Neue',Arial,sans-serif;
+  --wide:'NuberNext Wide','NuberNext','Helvetica Neue',Arial,sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --radius:20px;
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:var(--sans); background:var(--paper); color:var(--ink); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+img,video{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--ink); color:var(--yellow); }
+.rv{ opacity:0; transform:translateY(72px); transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); transition-delay:var(--d, 0ms); will-change:opacity, transform; }
+.rv.in{ opacity:1; transform:none; }
+.hline{ display:block; overflow:hidden; }
+.hline > span{ display:block; transform:translateY(112%); transition:transform 1.05s cubic-bezier(.22,1,.36,1); transition-delay:var(--d, 0ms); }
+.masks-in .hline > span{ transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .rv{ opacity:1; transform:none; transition:none; }
+  .hline > span{ transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+.eyebrow{ font-family:var(--mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; }
+.eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); }
+.sem{ font-style:italic; color:var(--blue); }
+.dark .sem{ color:var(--yellow); }
+.navwrap{ position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:0 16px; }
+nav.pill{ width:100%; max-width:1240px; background:rgba(251,250,247,0.94); backdrop-filter:blur(20px) saturate(180%); -webkit-backdrop-filter:blur(20px) saturate(180%); border:1px solid rgba(20,20,20,0.06); border-radius:100px; box-shadow:0 6px 30px rgba(20,20,20,0.08); display:flex; align-items:center; justify-content:space-between; padding:10px 10px 10px 26px; }
+.nav-left{ display:flex; align-items:center; gap:14px; }
+.nav-logo img{ height:20px; width:auto; }
+.nav-div{ font-family:var(--mono); font-size:9.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--charcoal); border:1px solid var(--bone-border); border-radius:100px; padding:5px 10px; white-space:nowrap; }
+.nav-links{ display:flex; gap:32px; align-items:center; }
+.nav-links a{ font-size:15px; font-weight:500; color:var(--ink); transition:color .2s; }
+.nav-links a:hover{ color:var(--blue); }
+.btn{ display:inline-flex; align-items:center; gap:10px; border-radius:100px; font-family:var(--sans); font-size:14px; font-weight:500; padding:15px 26px; cursor:pointer; border:none; transition:background .25s ease, color .25s ease, transform .2s ease; }
+.btn .arr{ transition:transform .2s; }
+.btn:hover .arr{ transform:translateX(3px); }
+.btn.primary{ background:var(--ink); color:var(--paper); }
+.btn.primary:hover{ background:var(--yellow); color:var(--ink); transform:translateY(-1px); }
+.btn.primary.on-dark{ background:var(--paper); color:var(--ink); }
+.btn.primary.on-dark:hover{ background:var(--yellow); transform:translateY(-1px); }
+.btn.nav-size{ padding:11px 20px; font-size:13px; }
+@media (max-width:960px){ .nav-links{ display:none; } .nav-div{ display:none; } }
+.hero-frame{ padding:8px; }
+.hero{ position:relative; border-radius:28px; overflow:hidden; padding:170px 32px 80px;
+  background:
+    radial-gradient(circle at 50% 140%, rgba(26,64,199,0.28), rgba(250,248,243,0) 62%),
+    linear-gradient(180deg, #F2F1EC 0%, var(--blue-pale) 58%, #F2F1EC 100%); }
+.hero-inner{ max-width:1240px; margin:0 auto; }
+.hero .eyebrow{ color:var(--charcoal); margin-bottom:28px; }
+.hero h1{ font-size:clamp(36px, 4.8vw, 68px); font-weight:400; line-height:1.04; letter-spacing:-0.025em; max-width:1040px; }
+.hero-stats{ display:flex; gap:22px; margin-top:48px; flex-wrap:wrap; }
+.hstat{ background:var(--pure); border:1px solid var(--bone-border); border-radius:var(--radius); padding:26px 30px; min-width:250px; display:flex; align-items:center; gap:20px; }
+.hstat .arrow-up{ color:var(--green); font-size:20px; }
+.hstat .n{ font-size:clamp(38px, 3.6vw, 54px); font-weight:400; letter-spacing:-0.04em; line-height:1; }
+.hstat .l{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--charcoal); margin-top:8px; }
+.hero-media{ margin-top:52px; border-radius:22px; overflow:hidden; aspect-ratio:21/9; background:var(--blue-light); position:relative; }
+.hero-media video{ width:100%; height:100%; object-fit:cover; }
+.hero-media .badge{ position:absolute; top:16px; left:16px; background:rgba(13,13,13,0.72); backdrop-filter:blur(6px); color:var(--paper); font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; border-radius:100px; padding:8px 14px; display:flex; align-items:center; gap:8px; }
+.hero-media .badge .live{ width:7px; height:7px; border-radius:50%; background:var(--yellow); animation:pulse 1.6s infinite; }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:0.35} }
+.sec{ max-width:1240px; margin:0 auto; padding:92px 32px 32px; }
+.sec-lbl{ display:flex; align-items:center; gap:12px; font-family:var(--wide); font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:20px; }
+.sec-lbl .plus{ color:var(--blue); font-size:20px; font-weight:300; }
+.sec-title{ font-size:clamp(30px, 4vw, 50px); font-weight:400; line-height:1.05; letter-spacing:-0.02em; margin-bottom:16px; }
+.client-card{ background:var(--bone); border:1px solid var(--bone-border); border-radius:28px; padding:52px 50px; display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:center; }
+.client-card h3{ font-size:30px; font-weight:400; letter-spacing:-0.02em; margin-bottom:14px; }
+.client-card p{ font-size:16.5px; line-height:1.65; color:var(--graphite); }
+.client-meta{ border-left:1px solid var(--bone-border); padding-left:44px; }
+.client-meta .row{ padding:13px 0; border-bottom:1px solid var(--bone-border); }
+.client-meta .row:last-child{ border-bottom:none; }
+.client-meta .k{ font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--charcoal); margin-bottom:5px; }
+.client-meta .v{ font-size:15.5px; font-weight:500; }
+@media (max-width:880px){ .client-card{ grid-template-columns:1fr; } .client-meta{ border-left:none; padding-left:0; border-top:1px solid var(--bone-border); padding-top:24px; } }
+.proc-wrap{ display:grid; grid-template-columns:1fr 320px; gap:40px; align-items:start; }
+.proc-steps{ display:flex; flex-direction:column; }
+.proc-card{ position:sticky; background:var(--pure); border:1px solid var(--bone-border); border-radius:24px; padding:46px 46px 50px; margin-bottom:26px; box-shadow:0 -12px 40px rgba(20,20,20,0.06); min-height:380px; }
+.proc-card .k{ display:inline-block; background:var(--blue); color:#fff; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; border-radius:100px; padding:7px 15px; margin-bottom:26px; }
+.proc-card h3{ font-size:clamp(24px, 2.6vw, 34px); font-weight:400; letter-spacing:-0.02em; margin-bottom:16px; }
+.proc-card p{ font-size:16px; line-height:1.65; color:var(--graphite); max-width:640px; }
+.proc-card .ghost{ position:absolute; top:26px; right:34px; font-size:110px; font-weight:400; color:rgba(26,64,199,0.08); line-height:1; }
+.proc-card .pchips{ display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
+.proc-card .pchip{ background:var(--bone); border:1px solid var(--bone-border); border-radius:100px; padding:8px 16px; font-size:13px; font-weight:500; }
+.proc-rail{ position:sticky; top:110px; }
+.rail-card{ background:var(--ink); color:var(--paper); border-radius:24px; padding:36px 32px; }
+.rail-card .rl{ font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--yellow); margin-bottom:16px; }
+.rail-card h4{ font-size:24px; font-weight:400; letter-spacing:-0.015em; line-height:1.15; margin-bottom:12px; }
+.rail-card p{ font-size:14px; color:var(--grey); line-height:1.55; margin-bottom:22px; }
+.rail-progress{ margin-top:22px; border-top:1px solid var(--onyx-border); padding-top:18px; }
+.rail-progress .step-dot{ display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); padding:7px 0; transition:color .3s; }
+.rail-progress .step-dot .d{ width:7px; height:7px; border-radius:50%; background:var(--onyx-border); transition:background .3s; }
+.rail-progress .step-dot.active{ color:var(--paper); }
+.rail-progress .step-dot.active .d{ background:var(--yellow); }
+@media (max-width:980px){ .proc-wrap{ grid-template-columns:1fr; } .proc-rail{ position:static; } }
+.band-frame{ padding:8px; margin-top:70px; }
+.band{ background:var(--ink); border-radius:28px; padding:88px 32px; color:var(--paper); }
+.band-inner{ max-width:1240px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+.band .big{ font-size:clamp(56px, 7vw, 110px); font-weight:400; letter-spacing:-0.04em; line-height:0.95; color:var(--yellow); }
+.band .big small{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:18px; }
+.band p{ font-size:17px; line-height:1.65; color:var(--grey); }
+.band .vs{ margin-top:26px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+.band .vs .pillv{ border:1px solid var(--onyx-border); border-radius:100px; padding:10px 18px; font-family:var(--mono); font-size:11.5px; letter-spacing:0.06em; color:var(--grey); }
+.band .vs .pillv.win{ background:var(--yellow); color:var(--ink); border-color:var(--yellow); font-weight:600; }
+@media (max-width:880px){ .band-inner{ grid-template-columns:1fr; } }
+.res-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
+.res-tile{ background:var(--pure); border:1px solid var(--bone-border); border-radius:var(--radius); padding:30px 26px 34px; }
+.res-tile .n{ font-size:clamp(38px, 3.4vw, 56px); font-weight:400; letter-spacing:-0.04em; color:var(--blue); line-height:1; }
+.res-tile .l{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.09em; text-transform:uppercase; color:var(--charcoal); margin-top:12px; line-height:1.5; }
+@media (max-width:980px){ .res-grid{ grid-template-columns:1fr 1fr; } }
+.testi{ background:var(--bone); border:1px solid var(--bone-border); border-radius:28px; padding:60px 56px; display:grid; grid-template-columns:56px 1fr; gap:28px; }
+.testi .qm{ font-size:76px; line-height:0.7; color:var(--blue); }
+.testi p{ font-size:clamp(18px, 2vw, 24px); line-height:1.5; }
+.testi .who{ margin-top:24px; font-size:14px; color:var(--charcoal); }
+.testi .who b{ display:block; font-weight:600; color:var(--ink); }
+@media (max-width:720px){ .testi{ grid-template-columns:1fr; padding:40px 28px; } }
+.other-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+.ow-card{ background:var(--pure); border:1px solid var(--bone-border); border-radius:var(--radius); padding:30px 28px; display:flex; flex-direction:column; gap:16px; transition:transform .3s ease, box-shadow .3s ease; }
+.ow-card:hover{ transform:translateY(-4px); box-shadow:0 18px 44px rgba(20,20,20,0.08); }
+.ow-card h3{ font-size:24px; font-weight:400; letter-spacing:-0.015em; }
+.ow-stats{ display:flex; gap:26px; border-top:1px solid var(--bone-border); border-bottom:1px solid var(--bone-border); padding:14px 0; }
+.ow-stat .n{ font-size:26px; font-weight:400; letter-spacing:-0.03em; color:var(--blue); line-height:1; }
+.ow-stat .l{ font-family:var(--mono); font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--charcoal); margin-top:6px; }
+.ow-card p.d{ font-size:13.5px; color:var(--charcoal); line-height:1.6; flex:1; }
+.ow-card .go{ display:inline-flex; align-items:center; gap:10px; font-size:13.5px; font-weight:500; }
+.ow-card .go .dot{ width:30px; height:30px; border-radius:999px; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; transition:transform .2s, background .25s; }
+.ow-card:hover .go .dot{ transform:translateX(4px); background:var(--ink); }
+@media (max-width:980px){ .other-grid{ grid-template-columns:1fr; } }
+.cta-frame{ padding:8px; margin-top:70px; }
+.cta{ border-radius:28px; text-align:center; padding:110px 32px;
+  background:
+    radial-gradient(circle at 50% 145%, rgba(26,64,199,0.36), rgba(250,248,243,0) 66%),
+    linear-gradient(180deg, #F2F1EC 0%, var(--blue-pale) 100%); }
+.cta .plus{ color:var(--blue); font-size:30px; margin-bottom:20px; }
+.cta h2{ font-size:clamp(38px, 5.6vw, 76px); font-weight:400; letter-spacing:-0.025em; line-height:1.02; max-width:940px; margin:0 auto; }
+.cta p{ font-size:17px; color:var(--graphite); margin-top:20px; }
+.cta .btn{ margin-top:32px; }
+.foot-frame{ padding:8px; }
+footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding:72px 32px 36px; }
+.foot-inner{ max-width:1240px; margin:0 auto; }
+.foot-grid{ display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:44px; }
+.foot-brand img{ height:22px; width:auto; margin-bottom:14px; }
+.foot-brand .divtag{ font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:18px; }
+.foot-brand p{ font-size:14px; color:var(--muted); max-width:300px; }
+.foot-col h4{ font-family:var(--wide); font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--paper); margin-bottom:18px; }
+.foot-col a, .foot-col span{ display:block; font-size:14px; color:var(--grey); margin-bottom:11px; transition:color .2s; }
+.foot-col a:hover{ color:var(--yellow); }
+.foot-base{ border-top:1px solid var(--onyx-border); margin-top:48px; padding-top:24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+.foot-base .badge{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; }
+@media (max-width:880px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="navwrap">
+  <nav class="pill">
+    <div class="nav-left">
+      <a class="nav-logo" href="/" aria-label="Consultus Digital home"><img src="/assets/brand/consultus-wordmark-dark.png" alt="Consultus Digital"></a>
+      <span class="nav-div">Healthcare Division</span>
+    </div>
+    <div class="nav-links">
+      <a href="/healthcare-v2/#sectors">Sectors</a>
+      <a href="/healthcare-v2/#services">Services</a>
+      <a href="/healthcare-v2/work/">The Work</a>
+      <a href="/healthcare-v2/#process">Process</a>
+      <a href="/healthcare-v2/#faq">FAQ</a>
+    </div>
+    <a class="btn primary nav-size" href="/contact/">Book a strategy call <span class="arr">→</span></a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div class="hero-frame">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow rv"><span class="dot"></span><span>Case Study · La Vie Executive Health · Concierge Medicine</span></div>
+      <h1 id="heroTitle">
+        <span class="hline"><span style="--d:0ms">How we launched La Vie in Oakville</span></span>
+        <span class="hline"><span style="--d:140ms">with <span class="sem">512 leads</span> in month one.</span></span>
+      </h1>
+      <div class="hero-stats">
+        <div class="hstat rv" style="--d:200ms">
+          <span class="arrow-up">↗</span>
+          <div><div class="n" data-count="512">0</div><div class="l">Leads · month one</div></div>
+        </div>
+        <div class="hstat rv" style="--d:300ms">
+          <span class="arrow-up">↗</span>
+          <div><div class="n">~20:1</div><div class="l">Projected lifetime ROAS</div></div>
+        </div>
+        <div class="hstat rv" style="--d:400ms">
+          <span class="arrow-up">↗</span>
+          <div><div class="n" data-count="89.53" data-decimals="2" data-prefix="$">0</div><div class="l">Meta CPL · first 10 days</div></div>
+        </div>
+      </div>
+      <div class="hero-media rv" style="--d:250ms">
+        <div class="badge"><span class="live"></span>Creative · Live in market</div>
+        <video src="/assets/work/la-vie/loop-c5.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CLIENT -->
+<section class="sec">
+  <div class="client-card rv">
+    <div>
+      <h3>La Vie Executive Health</h3>
+      <p>Oakville's premier private medical clinic gives patients two hours with a physician instead of fifteen minutes. A beloved Ottawa clinic expanding into one of Canada's most competitive private-health markets, where giants like Medcan and Cleveland Clinic Canada own the category's mindshare. Awareness had to be built, not bought cheaply.</p>
+    </div>
+    <div class="client-meta">
+      <div class="row"><div class="k">Client</div><div class="v">La Vie Executive Health</div></div>
+      <div class="row"><div class="k">Industry</div><div class="v">Concierge Medicine</div></div>
+      <div class="row"><div class="k">Scope</div><div class="v">Creative · Paid · SEO · Web · CRM</div></div>
+      <div class="row"><div class="k">Engagement</div><div class="v">Active · scaling</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="sec-lbl rv"><span class="plus">+</span> Our Process</div>
+  <h2 class="sec-title rv">How we did it, step by <span class="sem">step</span>.</h2>
+  <p class="rv" style="font-size:16px; color:var(--charcoal); max-width:600px; margin-bottom:56px">Nine weeks from signature to launch, then month one. Scroll through the build.</p>
+
+  <div class="proc-wrap">
+    <div class="proc-steps" id="procSteps">
+      <div class="proc-card" data-step="1">
+        <span class="ghost">1</span>
+        <span class="k">Step 1</span>
+        <h3>Discovery and the Digital Growth Plan</h3>
+        <p>Week zero: discovery meetings and an onboarding questionnaire digging into goals, economics, and capacity. By week two we delivered the Digital Readiness and Scaling Report, the Digital Growth Plan: projections, North Star metrics, and the channel roadmap. The clinic's existing digital foundation graded a D+. That report became the contract the whole program was measured against.</p>
+        <div class="pchips"><span class="pchip">Digital Growth Plan</span><span class="pchip">Projections &amp; North Star</span><span class="pchip">Foundation graded D+</span></div>
+      </div>
+      <div class="proc-card" data-step="2">
+        <span class="ghost">2</span>
+        <span class="k">Step 2</span>
+        <h3>The creative engine</h3>
+        <p>One production day at the clinic yielded six video concepts with two hooks each: 36 video masters and statics in five ratio sets, all inside one quarter. Two personas drove everything, united by one promise: time. Premium, calm, authority-driven creative. No fear tactics, no biohacker buzzwords. The kind of creative a physician is proud to have carry their name.</p>
+        <div class="pchips"><span class="pchip">6 concepts · 2 hooks each</span><span class="pchip">36 video masters</span><span class="pchip">2 personas</span></div>
+      </div>
+      <div class="proc-card" data-step="3">
+        <span class="ghost">3</span>
+        <span class="k">Step 3</span>
+        <h3>Channels with distinct jobs</h3>
+        <p>Google captures the intent that exists, Meta builds the awareness that doesn't, and LinkedIn reaches the executives. Google Ads went live in week nine and produced two leads the same day. Search work pushed 23 keywords into the top three positions in Oakville, so the brand showed up for service-led searches where nobody knew its name yet.</p>
+        <div class="pchips"><span class="pchip">Google · intent</span><span class="pchip">Meta · awareness</span><span class="pchip">LinkedIn · executives</span><span class="pchip">23 top-3 keywords</span></div>
+      </div>
+      <div class="proc-card" data-step="4">
+        <span class="ghost">4</span>
+        <span class="k">Step 4</span>
+        <h3>The CRM that closes the loop</h3>
+        <p>Every lead lands in the CRM with its source attached: the campaign, the creative, the landing page. First touch to booked consult in as little as six days, and every booked assessment ties back to the ad that caused it. By week fourteen there were 512 leads on the board, Meta was producing them at $89.53 in the first ten days, and budgets were scaled by client decision.</p>
+        <div class="pchips"><span class="pchip">Source on every lead</span><span class="pchip">6 days to booked</span><span class="pchip">Scaled by decision, not hope</span></div>
+      </div>
+    </div>
+
+    <aside class="proc-rail">
+      <div class="rail-card rv">
+        <div class="rl">Ready to grow faster?</div>
+        <h4>We'll design your patient growth system.</h4>
+        <p>Goals first, then diagnostics, then a treatment plan. The Digital Health Assessment starts with a call.</p>
+        <a class="btn primary on-dark" href="/contact/">Start now <span class="arr">→</span></a>
+        <div class="rail-progress" id="railProgress">
+          <div class="step-dot" data-for="1"><span class="d"></span>Discovery &amp; DGP</div>
+          <div class="step-dot" data-for="2"><span class="d"></span>Creative engine</div>
+          <div class="step-dot" data-for="3"><span class="d"></span>Channel launch</div>
+          <div class="step-dot" data-for="4"><span class="d"></span>CRM &amp; scale</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- HIGHLIGHT BAND -->
+<div class="band-frame">
+  <section class="band dark">
+    <div class="band-inner">
+      <div class="rv"><div class="big">512<small>Leads · first full month of paid media</small></div></div>
+      <div class="rv" style="--d:140ms">
+        <p>From zero brand recognition in Oakville to a full pipeline in one month. The bet was premium, authority-driven creative with every channel doing a distinct job, and every lead attributed to its source. Nine weeks from signature to launch, two leads on day one of Google going live, and budgets scaled because the numbers earned it.</p>
+        <div class="vs">
+          <span class="pillv win">Month one · 512 leads</span>
+          <span class="pillv">9 weeks · signature to launch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- RESULTS -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> The Results</div>
+  <h2 class="sec-title rv">A growth engine, not an ad <span class="sem">account</span>.</h2>
+  <div class="res-grid" style="margin-top:44px">
+    <div class="res-tile rv"><div class="n" data-count="512">0</div><div class="l">Leads in month one</div></div>
+    <div class="res-tile rv" style="--d:90ms"><div class="n">~20:1</div><div class="l">Projected lifetime ROAS</div></div>
+    <div class="res-tile rv" style="--d:180ms"><div class="n" data-count="89.53" data-decimals="2" data-prefix="$">0</div><div class="l">Meta CPL · first 10 days</div></div>
+    <div class="res-tile rv" style="--d:270ms"><div class="n" data-count="23">0</div><div class="l">Keywords top-3 in Oakville</div></div>
+  </div>
+</section>
+
+<!-- WHY IT WORKED -->
+<section class="sec">
+  <div class="testi rv">
+    <div class="qm">&ldquo;</div>
+    <div>
+      <p>In Ottawa, people search for La Vie by name. In Oakville, nobody knew the name. So we built awareness the deliberate way: creative worthy of the clinic, channels with distinct jobs, and a CRM that proves what's working. That's the difference between buying leads and building a market.</p>
+      <div class="who"><b>Why it worked</b> The program thesis, in one paragraph</div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER WORK -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> Our Other Work</div>
+  <div class="other-grid" style="margin-top:36px">
+    <a class="ow-card rv" href="/healthcare-v2/work/tonic-eye-care/">
+      <h3>Tonic Eye Care</h3>
+      <div class="ow-stats">
+        <div class="ow-stat"><div class="n">410</div><div class="l">Leads · UGC campaign</div></div>
+        <div class="ow-stat"><div class="n">4.52%</div><div class="l">UGC CTR</div></div>
+      </div>
+      <p class="d">A community optometry clinic beat the chains with testimonial-style UGC from two local mothers.</p>
+      <span class="go">Read more <span class="dot">→</span></span>
+    </a>
+    <a class="ow-card rv" style="--d:110ms" href="/case-studies/e11ement/">
+      <h3>e11ement</h3>
+      <div class="ow-stats">
+        <div class="ow-stat"><div class="n">12</div><div class="l">Month rebuild</div></div>
+        <div class="ow-stat"><div class="n">89</div><div class="l">Page growth plan</div></div>
+      </div>
+      <p class="d">Clinical skincare scaled across every channel: site, UGC engine, Amazon relaunch, Walmart launch.</p>
+      <span class="go">Read more <span class="dot">→</span></span>
+    </a>
+    <a class="ow-card rv" style="--d:220ms" href="/case-studies/zayouna-law-firm/">
+      <h3>Zayouna Law</h3>
+      <div class="ow-stats">
+        <div class="ow-stat"><div class="n">$72.70</div><div class="l">Meta CPL</div></div>
+        <div class="ow-stat"><div class="n">4</div><div class="l">Signed files</div></div>
+      </div>
+      <p class="d">The KPI is not leads. It is signed files. Dynamic landing pages and attribution from ad to signature.</p>
+      <span class="go">Read more <span class="dot">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-frame">
+  <section class="cta">
+    <div class="plus rv">+</div>
+    <h2 class="rv">Your clinic could be <span class="sem">next</span>.</h2>
+    <p class="rv" style="--d:120ms">30 minutes. No deck. Straight answers on where the growth is.</p>
+    <a class="btn primary rv" style="--d:240ms" href="/contact/">Book a strategy call <span class="arr">→</span></a>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<div class="foot-frame">
+  <footer class="hc">
+    <div class="foot-inner">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital">
+          <div class="divtag">Healthcare Division</div>
+          <p>Marketing, engineered for scaling businesses. Based in Toronto's creative corridor, servicing clients across North America.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Visit</h4>
+          <span>Unit 109, 136 Geary Avenue</span>
+          <span>Toronto ON M6H 4H1</span>
+        </div>
+        <div class="foot-col">
+          <h4>Talk</h4>
+          <a href="tel:+14164601810">(416) 460-1810</a>
+          <a href="/">consultusdigital.com</a>
+          <a href="/contact/">Book a strategy call</a>
+        </div>
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <a href="/healthcare-v2/">Healthcare Division</a>
+          <a href="/healthcare-v2/work/">Our work</a>
+          <a href="/about/">About us</a>
+        </div>
+      </div>
+      <div class="foot-base">
+        <div>© 2026 Consultus Digital. All rights reserved.</div>
+        <div class="badge">PHIPA &amp; PIPEDA Compliant</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cards = document.querySelectorAll('.proc-card');
+  cards.forEach(function(c, i){ c.style.top = (110 + i * 18) + 'px'; c.style.zIndex = i + 1; });
+  function masks(){ var t = document.getElementById('heroTitle'); if (t) t.classList.add('masks-in'); }
+  window.addEventListener('load', masks);
+  if (document.readyState === 'complete') masks();
+  var els = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if (!('IntersectionObserver' in window) || reduced){
+    els.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var pending = [], flush = null;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target); pending.push(en.target);
+      });
+      if (pending.length && !flush){
+        flush = requestAnimationFrame(function(){
+          pending.forEach(function(el, i){
+            if (!el.style.getPropertyValue('--d')) el.style.setProperty('--d', (i * 90) + 'ms');
+            el.classList.add('in');
+          });
+          pending = []; flush = null;
+        });
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(e){ io.observe(e); });
+  }
+  var dots = document.querySelectorAll('#railProgress .step-dot');
+  if ('IntersectionObserver' in window && dots.length){
+    var pio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var step = en.target.getAttribute('data-step');
+        dots.forEach(function(d){ d.classList.toggle('active', d.getAttribute('data-for') <= step); });
+      });
+    }, { threshold: 0.4 });
+    cards.forEach(function(c){ pio.observe(c); });
+  }
+  var nums = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var prefix = el.getAttribute('data-prefix') || '';
+    if (reduced){ el.textContent = prefix + target.toFixed(dec) + suffix; return; }
+    var dur = 1400, t0 = null;
+    function tick(t){
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + (target * eased).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick); else el.textContent = prefix + target.toFixed(dec) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  if ('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ cio.unobserve(en.target); animateCount(en.target); }
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(function(n){ cio.observe(n); });
+  } else {
+    nums.forEach(animateCount);
+  }
+  function kick(){ document.querySelectorAll('video').forEach(function(v){ var p = v.play(); if (p) p.catch(function(){}); }); }
+  document.addEventListener('DOMContentLoaded', kick);
+  window.addEventListener('scroll', kick, { once:true, passive:true });
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) kick(); });
+})();
+</script>
+</body>
+</html>
