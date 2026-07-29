@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultus Digital | Growth Marketing for Scaling Brands</title>
+<meta name="description" content="Where growing brands come to scale faster and smarter. Full-funnel media, conversion-engineered creative, and growth systems built by Consultus Digital.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/assets/brand/consultus-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ ROVEIA-STYLE CONCEPT · CONSULTUS DIGITAL CONTENT ============ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --blue:#218AFF;
+  --blue-soft:rgba(33,138,255,0.12);
+  --ink:#101010;
+  --grey-05:rgba(16,16,16,0.05);
+  --grey-ee:#EEEEEE;
+  --grey-f2:#F2F2F2;
+  --text-mut:#5C5C5C;
+  --text-mut-dark:#9A9A9A;
+  --radius:24px;
+  --font:'Manrope', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+html{ scroll-behavior:smooth; }
+body{ font-family:var(--font); background:#fff; color:var(--ink); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+img,video{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--blue); color:#fff; }
+
+/* ---- reveal on scroll ---- */
+.rv{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.rv.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .rv{ opacity:1; transform:none; transition:none; } html{scroll-behavior:auto;} }
+
+/* ================= NAV ================= */
+.navwrap{ position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:0 16px; }
+nav.pill{ width:100%; max-width:1240px; background:#fff; border-radius:100px; box-shadow:0 6px 30px rgba(16,16,16,0.08); display:flex; align-items:center; justify-content:space-between; padding:10px 10px 10px 28px; }
+.nav-logo img{ height:22px; width:auto; }
+.nav-links{ display:flex; gap:34px; align-items:center; }
+.nav-links a{ font-size:16px; font-weight:500; color:var(--ink); transition:color .2s; }
+.nav-links a:hover{ color:var(--blue); }
+.nav-cta{ background:var(--ink); color:#fff; border-radius:100px; padding:14px 22px; font-size:15px; font-weight:600; display:inline-flex; align-items:center; gap:10px; transition:background .25s, transform .2s; }
+.nav-cta:hover{ background:var(--blue); transform:translateY(-1px); }
+.nav-cta .arr{ transition:transform .2s; }
+.nav-cta:hover .arr{ transform:translateX(3px); }
+@media (max-width:880px){ .nav-links{ display:none; } }
+
+/* ================= HERO ================= */
+.hero-frame{ padding:8px; }
+.hero{ position:relative; border-radius:28px; overflow:hidden; background:
+  radial-gradient(circle at 50% 130%, rgba(33,138,255,0.42), rgba(255,255,255,0) 62%),
+  linear-gradient(180deg, #EDF4FE 0%, #DDEAFD 55%, #EDF4FE 100%);
+  padding:170px 32px 90px; text-align:center; }
+.hero h1{ font-size:clamp(40px, 5.6vw, 70px); font-weight:500; line-height:1.08; letter-spacing:-0.03em; color:var(--ink); max-width:1200px; margin:0 auto; }
+.hero h1 .acc{ color:var(--blue); }
+.hero-plus{ color:var(--blue); font-size:34px; font-weight:300; margin:26px auto 10px; line-height:1; }
+.hero-grid{ display:grid; grid-template-columns:1fr minmax(340px, 720px) 1fr; gap:44px; align-items:end; max-width:1240px; margin:8px auto 0; text-align:left; }
+.hero-media{ border-radius:24px; overflow:hidden; aspect-ratio:16/10; background:#c9dcf7; box-shadow:0 30px 60px rgba(16,60,120,0.18); }
+.hero-media video{ width:100%; height:100%; object-fit:cover; }
+.hero-stat{ padding-bottom:8px; }
+.hero-stat .trend{ color:var(--blue); margin-bottom:14px; }
+.hero-stat .num{ font-size:clamp(44px, 4.6vw, 64px); font-weight:500; letter-spacing:-0.03em; line-height:1; }
+.hero-stat .lbl{ font-size:17px; font-weight:500; margin-top:12px; color:var(--ink); }
+.hero-stat .sub{ font-size:15px; color:var(--text-mut); margin-top:26px; }
+.hero-side{ padding-bottom:8px; }
+.hero-side p{ font-size:17px; color:#3D4A5C; max-width:280px; line-height:1.5; }
+.btn-blue{ background:var(--blue); color:#fff; border-radius:100px; padding:16px 26px; font-size:16px; font-weight:600; display:inline-flex; align-items:center; gap:10px; margin-top:26px; transition:background .25s, transform .2s; }
+.btn-blue:hover{ background:var(--ink); transform:translateY(-1px); }
+.btn-blue .arr{ transition:transform .2s; }
+.btn-blue:hover .arr{ transform:translateX(3px); }
+@media (max-width:980px){
+  .hero{ padding-top:130px; }
+  .hero-grid{ grid-template-columns:1fr; text-align:center; }
+  .hero-stat, .hero-side{ margin:0 auto; }
+  .hero-side p{ max-width:420px; }
+}
+
+/* ================= PARTNER STRIP ================= */
+.partners{ max-width:1240px; margin:0 auto; padding:44px 32px 10px; display:flex; align-items:center; gap:38px; overflow:hidden; }
+.partners .plbl{ font-size:14px; color:var(--text-mut); white-space:nowrap; flex:0 0 auto; }
+.marquee{ overflow:hidden; flex:1; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track{ display:flex; gap:56px; width:max-content; animation:mq 28s linear infinite; }
+@keyframes mq{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+.pl{ font-size:19px; font-weight:700; color:#9BA6B5; white-space:nowrap; letter-spacing:-0.01em; }
+.pl small{ font-weight:500; font-size:13px; color:#B7C0CC; margin-left:6px; }
+
+/* ================= SECTION SHELL ================= */
+.sec{ max-width:1240px; margin:0 auto; padding:110px 32px 40px; }
+.sec-lbl{ display:flex; align-items:center; gap:12px; font-size:28px; font-weight:500; letter-spacing:-0.01em; margin-bottom:56px; }
+.sec-lbl .plus{ color:var(--blue); font-weight:400; }
+
+/* ================= INDUSTRIES ================= */
+.ind-row{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding:38px 0; border-top:1px solid var(--grey-ee); }
+.ind-row:last-child{ border-bottom:1px solid var(--grey-ee); }
+.ind-name{ font-size:clamp(44px, 5.6vw, 76px); font-weight:300; letter-spacing:-0.03em; line-height:1.05; }
+.ind-name a{ transition:color .25s; }
+.ind-name a:hover{ color:var(--blue); }
+.ind-card{ background:var(--ink); color:#fff; border-radius:var(--radius); padding:34px 36px; }
+.ind-card .n{ font-size:14px; font-weight:600; color:var(--blue); letter-spacing:0.02em; margin-bottom:14px; }
+.ind-card p{ font-size:15.5px; line-height:1.6; color:#D6D6D6; }
+@media (max-width:880px){ .ind-row{ grid-template-columns:1fr; gap:20px; } }
+
+/* ================= CASE STUDIES (dark carousel) ================= */
+.cases-frame{ padding:8px; }
+.cases{ background:var(--ink); border-radius:28px; padding:90px 0 90px; }
+.cases-head{ max-width:1240px; margin:0 auto; padding:0 32px; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:48px; }
+.cases-head h2{ font-size:clamp(24px, 2.6vw, 32px); font-weight:400; color:var(--grey-f2); }
+.cases-nav{ display:flex; gap:10px; }
+.cnav{ width:48px; height:48px; border-radius:999px; border:1px solid rgba(255,255,255,0.25); background:transparent; color:#fff; font-size:18px; cursor:pointer; transition:background .2s, border-color .2s; display:flex; align-items:center; justify-content:center; }
+.cnav:hover{ background:var(--blue); border-color:var(--blue); }
+.cases-scroll{ display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; padding:0 max(32px, calc((100vw - 1240px)/2 + 32px)); scrollbar-width:none; }
+.cases-scroll::-webkit-scrollbar{ display:none; }
+.case-card{ position:relative; flex:0 0 400px; max-width:86vw; height:520px; border-radius:var(--radius); overflow:hidden; scroll-snap-align:start; background:#1c1c1c; display:flex; flex-direction:column; justify-content:flex-end; }
+.case-card .bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.case-card:hover .bg{ transform:scale(1.04); }
+.case-card .shade{ position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,0) 34%, rgba(0,0,0,0.78)); }
+.case-card .body{ position:relative; padding:28px; }
+.case-card h3{ font-size:34px; font-weight:400; color:#fff; letter-spacing:-0.02em; margin-bottom:10px; }
+.case-card p{ font-size:14.5px; line-height:1.55; color:#E3E3E3; }
+.case-card .go{ margin-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#fff; }
+.case-card .go .dot{ width:34px; height:34px; border-radius:999px; background:var(--blue); display:flex; align-items:center; justify-content:center; font-size:15px; transition:transform .2s; }
+.case-card:hover .go .dot{ transform:translateX(4px); }
+
+/* ================= SERVICES ================= */
+.svc-row{ display:grid; grid-template-columns:300px 1fr 280px; gap:40px; align-items:start; padding:40px 0; border-top:1px solid var(--grey-ee); }
+.svc-row:last-of-type{ border-bottom:1px solid var(--grey-ee); }
+.svc-row h3{ font-size:30px; font-weight:300; letter-spacing:-0.02em; }
+.svc-row h3 a:hover{ color:var(--blue); }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip{ background:var(--grey-05); border-radius:100px; padding:9px 18px; font-size:14px; font-weight:500; color:var(--ink); }
+.svc-tag{ font-size:15px; font-weight:700; line-height:1.45; text-transform:uppercase; letter-spacing:0.02em; color:var(--ink); }
+@media (max-width:980px){ .svc-row{ grid-template-columns:1fr; gap:18px; } }
+
+/* ================= PROCESS ================= */
+.steps{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+.step{ background:var(--grey-f2); border-radius:var(--radius); padding:36px 32px 44px; position:relative; overflow:hidden; }
+.step .k{ display:inline-block; background:var(--blue); color:#fff; font-size:13px; font-weight:700; border-radius:100px; padding:7px 16px; margin-bottom:70px; }
+.step h3{ font-size:26px; font-weight:500; letter-spacing:-0.01em; margin-bottom:12px; }
+.step p{ font-size:15px; color:var(--text-mut); }
+.step .ghost{ position:absolute; top:18px; right:22px; font-size:96px; font-weight:800; color:rgba(16,16,16,0.05); line-height:1; }
+@media (max-width:880px){ .steps{ grid-template-columns:1fr; } }
+
+/* ================= TESTIMONIALS ================= */
+.quotes{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+.qcard{ background:var(--grey-f2); border-radius:var(--radius); padding:34px 32px; display:flex; flex-direction:column; justify-content:space-between; min-height:280px; }
+.qcard.blue{ background:var(--blue); color:#fff; }
+.qcard p.qt{ font-size:17px; line-height:1.55; font-weight:500; }
+.qcard.blue p.qt{ color:#fff; }
+.qcard .who{ margin-top:26px; font-size:14px; color:var(--text-mut); }
+.qcard.blue .who{ color:rgba(255,255,255,0.85); }
+.qcard .who b{ display:block; color:inherit; font-weight:700; }
+.qcard .bignum{ font-size:52px; font-weight:500; letter-spacing:-0.03em; line-height:1; margin-bottom:14px; }
+@media (max-width:980px){ .quotes{ grid-template-columns:1fr; } .qcard{ min-height:0; } }
+
+/* ================= FAQ ================= */
+.faq{ max-width:900px; margin:0 auto; }
+.faq details{ border-top:1px solid var(--grey-ee); }
+.faq details:last-child{ border-bottom:1px solid var(--grey-ee); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:26px 4px; font-size:19px; font-weight:600; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq .arrow{ flex:0 0 auto; width:44px; height:44px; border-radius:999px; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; transition:transform .3s, background .3s; }
+.faq details[open] .arrow{ transform:rotate(45deg); background:var(--blue); }
+.faq .a{ padding:0 60px 28px 4px; font-size:16px; color:var(--text-mut); line-height:1.6; }
+
+/* ================= CTA ================= */
+.cta-frame{ padding:8px; }
+.cta{ border-radius:28px; text-align:center; padding:130px 32px; background:
+  radial-gradient(circle at 50% 140%, rgba(33,138,255,0.5), rgba(255,255,255,0) 65%),
+  linear-gradient(180deg, #EDF4FE 0%, #D8E7FD 100%); }
+.cta .plus{ color:var(--blue); font-size:30px; margin-bottom:22px; }
+.cta h2{ font-size:clamp(38px, 5.4vw, 68px); font-weight:500; letter-spacing:-0.03em; line-height:1.1; max-width:900px; margin:0 auto; }
+.cta p{ font-size:18px; color:#3D4A5C; margin-top:22px; }
+
+/* ================= FOOTER ================= */
+.foot-frame{ padding:8px; }
+footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80px 32px 40px; }
+.foot-inner{ max-width:1240px; margin:0 auto; }
+.foot-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:44px; }
+.foot-brand img{ height:24px; width:auto; margin-bottom:22px; }
+.foot-brand p{ font-size:14px; color:#8F8F8F; max-width:300px; }
+.foot-col h4{ font-size:14px; font-weight:700; color:#fff; margin-bottom:18px; }
+.foot-col a{ display:block; font-size:14.5px; color:#B5B5B5; margin-bottom:12px; transition:color .2s; }
+.foot-col a:hover{ color:var(--blue); }
+.foot-base{ border-top:1px solid rgba(255,255,255,0.12); margin-top:56px; padding-top:26px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:#8F8F8F; }
+@media (max-width:880px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="navwrap">
+  <nav class="pill">
+    <a class="nav-logo" href="/" aria-label="Consultus Digital home"><img src="/assets/brand/consultus-wordmark-dark.png" alt="Consultus Digital"></a>
+    <div class="nav-links">
+      <a href="#industries">Industries</a>
+      <a href="#work">Our Work</a>
+      <a href="#services">What We Do</a>
+      <a href="/about/">About Us</a>
+    </div>
+    <a class="nav-cta" href="/contact/">Get Started <span class="arr">→</span></a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div class="hero-frame">
+  <section class="hero">
+    <h1 class="rv">Where <span class="acc">Growing Brands</span><br>Come to Scale Faster and Smarter</h1>
+    <div class="hero-plus rv">+</div>
+    <div class="hero-grid">
+      <div class="hero-stat rv">
+        <div class="trend"><svg width="44" height="26" viewBox="0 0 44 26" fill="none"><path d="M2 22L14 10l8 8L40 2" stroke="#218AFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 11V2h-9" stroke="#218AFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="num">$42M+</div>
+        <div class="lbl">Managed ad spend</div>
+        <div class="sub">Driving measurable revenue</div>
+      </div>
+      <div class="hero-media rv">
+        <video src="/assets/video/office-hero.mp4" poster="/assets/video/office-hero-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="hero-side rv">
+        <p>Full-funnel media. Conversion-engineered creative. Growth systems built to scale.</p>
+        <a class="btn-blue" href="/contact/">Get Started <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="plbl">Partnered with:</div>
+  <div class="marquee"><div class="marquee-track" id="mtrack">
+    <span class="pl">Google <small>Partner</small></span>
+    <span class="pl">Meta <small>Business Partner</small></span>
+    <span class="pl">Microsoft <small>Advertising</small></span>
+    <span class="pl">Shopify <small>Partner</small></span>
+    <span class="pl">Amazon <small>Ads</small></span>
+    <span class="pl">TikTok <small>Marketing Partner</small></span>
+    <span class="pl">Zoho <small>Authorized</small></span>
+    <span class="pl">LinkedIn <small>Marketing</small></span>
+    <span class="pl">Clutch <small>4.9 ★ · 47 reviews</small></span>
+  </div></div>
+</div>
+
+<!-- INDUSTRIES -->
+<section class="sec" id="industries">
+  <div class="sec-lbl rv"><span class="plus">+</span> Who We Work With</div>
+
+  <div class="ind-row rv">
+    <div class="ind-name"><a href="/ecommerce-marketing-toronto/">Ecommerce &amp; DTC</a></div>
+    <div class="ind-card">
+      <div class="n">01 · Ecommerce &amp; DTC</div>
+      <p>Ecommerce brands live or die on blended efficiency, not first purchase. We run high-velocity creative testing, turn hero SKUs into repeatable ad-to-cart systems, and protect margin as spend climbs. Strongest on brands where retention pays back the acquisition.</p>
+    </div>
+  </div>
+
+  <div class="ind-row rv">
+    <div class="ind-name"><a href="/home-services-marketing/">Home &amp; Local Services</a></div>
+    <div class="ind-card">
+      <div class="n">02 · Home &amp; Local Services</div>
+      <p>Windows, renovations, storage, real estate. Local service brands win on funnel discipline: persona-led creative, landing pages built to convert, and a CRM that turns clicks into booked appointments. We build the whole pipeline, not just the ads.</p>
+    </div>
+  </div>
+
+  <div class="ind-row rv">
+    <div class="ind-name"><a href="/professional-services-marketing/">Professional Services</a></div>
+    <div class="ind-card">
+      <div class="n">03 · Professional Services</div>
+      <p>Law firms, healthcare, and B2B sell trust before they sell anything else. We translate complex offers into messaging that converts, then track every lead past the form fill, because the KPI is not leads. It is signed clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<div class="cases-frame" id="work">
+  <section class="cases">
+    <div class="cases-head">
+      <h2 class="rv">Real programs. Real numbers.</h2>
+      <div class="cases-nav">
+        <button class="cnav" id="cprev" aria-label="Previous case studies">←</button>
+        <button class="cnav" id="cnext" aria-label="Next case studies">→</button>
+      </div>
+    </div>
+    <div class="cases-scroll" id="cscroll">
+
+      <a class="case-card" href="/case-studies/bookseats/">
+        <img class="bg" src="/assets/work/bookseats/ugc-jessica-frame.jpg" alt="BookSeats UGC creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>BookSeats</h3>
+          <p>A premium sports ticket marketplace scaled Meta prospecting with a UGC-first creative strategy: 8.10x ROAS and 71 added monthly sales in month one at scale.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+      <a class="case-card" href="/case-studies/la-vie/">
+        <img class="bg" src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>La Vie Executive Health</h3>
+          <p>A concierge medicine clinic went from zero to 512 leads in month one, with roughly 20:1 ROAS and 23 top-3 keywords inside 9 weeks.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+      <a class="case-card" href="/case-studies/dragonscale-supplies/">
+        <img class="bg" src="/assets/work/dragonscale/static-1a.jpg" alt="Dragonscale Supplies creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>Dragonscale Supplies</h3>
+          <p>A niche ecommerce brand played at MER 13: blended efficiency climbed from 9.0 to 13.23 while spend scaled into a record month, up 27%.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+      <a class="case-card" href="/case-studies/eco-choice-windows/">
+        <img class="bg" src="/assets/work/eco-choice/static-ad-1.png" alt="Eco Choice Windows creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>Eco Choice Windows</h3>
+          <p>We reverse engineered four buyer personas into a full creative engine: pages, ads, CRO experiments, and CRM, built as one system for a windows and doors brand.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+      <a class="case-card" href="/case-studies/zayouna-law-firm/">
+        <img class="bg" src="/assets/work/zayouna/zl-s01.jpg" alt="Zayouna Law creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>Zayouna Law</h3>
+          <p>The KPI is not leads. It is signed files. Meta CPL landed at $72.70 against a $200 to $250 benchmark, with dynamic landing pages matched to every case type.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+      <a class="case-card" href="/case-studies/gordons-downsizing/">
+        <img class="bg" src="/assets/work/gordons/static-s01.jpg" alt="Gordon's Downsizing creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>Gordon's Downsizing</h3>
+          <p>A 1958 family real estate firm repositioned for a new market: 53 qualified leads at a $164 cost per lead across Meta and Google.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+      <a class="case-card" href="/case-studies/e11ement/">
+        <img class="bg" src="/assets/work/e11ement/product-shot.jpg" alt="e11ement product creative" loading="lazy">
+        <div class="shade"></div>
+        <div class="body">
+          <h3>e11ement</h3>
+          <p>A 12-month full rebuild for a skincare brand: new site, UGC persona engine, SEO conquesting, Amazon relaunch, and a Walmart launch.</p>
+          <span class="go"><span class="dot">→</span> Read the case study</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sec-lbl rv"><span class="plus">+</span> What We Do</div>
+
+  <div class="svc-row rv">
+    <h3><a href="/services/">Paid Acquisition</a></h3>
+    <div class="chips">
+      <span class="chip">Meta</span><span class="chip">Google</span><span class="chip">TikTok</span><span class="chip">Microsoft</span><span class="chip">Amazon</span><span class="chip">LinkedIn</span>
+    </div>
+    <div class="svc-tag">Full-Funnel Media Buying Built To Scale Profitably</div>
+  </div>
+
+  <div class="svc-row rv">
+    <h3><a href="/performance-creatives/">Creative Production</a></h3>
+    <div class="chips">
+      <span class="chip">Static</span><span class="chip">Motion</span><span class="chip">Short-form video</span><span class="chip">UGC production</span>
+    </div>
+    <div class="svc-tag">Platform-Ready Ad Creative Built To Convert</div>
+  </div>
+
+  <div class="svc-row rv">
+    <h3><a href="/seo-toronto/">SEO &amp; AI Search</a></h3>
+    <div class="chips">
+      <span class="chip">Technical SEO</span><span class="chip">Content</span><span class="chip">Local SEO</span><span class="chip">AI search (AEO)</span>
+    </div>
+    <div class="svc-tag">Built To Own The Searches That Matter</div>
+  </div>
+
+  <div class="svc-row rv">
+    <h3><a href="/cro/">Landing Pages &amp; CRO</a></h3>
+    <div class="chips">
+      <span class="chip">Landing page builds</span><span class="chip">A/B testing</span><span class="chip">CRO sprints</span>
+    </div>
+    <div class="svc-tag">Designed To Convert Traffic Into Paying Customers</div>
+  </div>
+
+  <div class="svc-row rv">
+    <h3><a href="/marketing-automation/">CRM &amp; Lifecycle</a></h3>
+    <div class="chips">
+      <span class="chip">CRM implementation</span><span class="chip">Lifecycle flows</span><span class="chip">Lead routing</span><span class="chip">Attribution</span>
+    </div>
+    <div class="svc-tag">Built To Turn Leads Into Revenue You Can Track</div>
+  </div>
+
+  <div class="svc-row rv">
+    <h3><a href="/influencer-marketing/">Influencer Programs</a></h3>
+    <div class="chips">
+      <span class="chip">Creator sourcing</span><span class="chip">UGC &amp; whitelisting</span><span class="chip">Campaign management</span>
+    </div>
+    <div class="svc-tag">Built For Trackable Creator-Led Acquisition</div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> 3 Step Growth Program</div>
+  <div class="steps">
+    <div class="step rv">
+      <span class="ghost">1</span>
+      <span class="k">Step 1</span>
+      <h3>Internal Company Audit</h3>
+      <p>We dig into your goals, KPIs, customer base, product, and every account you already run.</p>
+    </div>
+    <div class="step rv">
+      <span class="ghost">2</span>
+      <span class="k">Step 2</span>
+      <h3>Strategy and Planning</h3>
+      <p>We build the growth plan: channels, creative roadmap, landing pages, and the tracking to prove it.</p>
+    </div>
+    <div class="step rv">
+      <span class="ghost">3</span>
+      <span class="k">Step 3</span>
+      <h3>Let's Scale</h3>
+      <p>We launch, measure, and scale what works. Weekly optimization, honest reporting, no autopilot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> Hear From Founders We've Scaled</div>
+  <div class="quotes">
+    <div class="qcard rv">
+      <p class="qt">"Consultus Digital helped us scale our Meta advertising efforts with a well-executed UGC strategy. The results spoke for themselves."</p>
+      <div class="who"><b>Founder</b> BookSeats.com</div>
+    </div>
+    <div class="qcard blue rv">
+      <div>
+        <div class="bignum">512</div>
+        <p class="qt">Leads in month one. A growth engine, not an ad account.</p>
+      </div>
+      <div class="who"><b>La Vie Executive Health</b> Concierge Medicine · Oakville</div>
+    </div>
+    <div class="qcard rv">
+      <p class="qt">"Working with Consultus Digital over the last year has allowed us to scale our online business significantly."</p>
+      <div class="who"><b>Victoria Buott</b> Director of Marketing, Spieth America</div>
+    </div>
+    <div class="qcard blue rv">
+      <div>
+        <div class="bignum">8.10x</div>
+        <p class="qt">ROAS in month one at scale, powered by a UGC creative engine.</p>
+      </div>
+      <div class="who"><b>BookSeats</b> Sports Ticket Marketplace</div>
+    </div>
+    <div class="qcard rv">
+      <p class="qt">"The most impressive digital agency we've worked with to date. They don't just run campaigns. They build the infrastructure that makes growth actually work."</p>
+      <div class="who"><b>Ben Fishbein</b> Marketing Manager, Comwave</div>
+    </div>
+    <div class="qcard blue rv">
+      <div>
+        <div class="bignum">13.23</div>
+        <p class="qt">Marketing efficiency ratio, up from 9.0, while spend scaled into a record month.</p>
+      </div>
+      <div class="who"><b>Dragonscale Supplies</b> Niche Ecommerce</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> Answers to Popular Questions</div>
+  <div class="faq rv">
+    <details>
+      <summary>What's your pricing structure? <span class="arrow">+</span></summary>
+      <div class="a">Our packages are tailored to each brand. Not every company needs the same level of service, so we build plans around your goals, stage, and marketing maturity. Book a call and we will scope it honestly.</div>
+    </details>
+    <details>
+      <summary>Do you have experience in my industry? <span class="arrow">+</span></summary>
+      <div class="a">We drive growth for ecommerce and DTC brands, law firms, healthcare, home services, real estate, self storage, retail, and B2B. From niche ecommerce to concierge medicine, we have likely worked with a company like yours. And if we haven't, we build from scratch.</div>
+    </details>
+    <details>
+      <summary>Do you handle creative production too? <span class="arrow">+</span></summary>
+      <div class="a">Yes. We don't just run ads, we build them. Our team produces statics, motion graphics, and UGC-style video tailored for Meta, Google, TikTok, and every other channel we manage.</div>
+    </details>
+    <details>
+      <summary>What kind of media budgets do you work with? <span class="arrow">+</span></summary>
+      <div class="a">We manage everything from focused local budgets to large national programs, with more than $42M in ad spend managed to date. Whether you are scaling up or already operating at volume, the systems and team are in place.</div>
+    </details>
+    <details>
+      <summary>When can I expect results? <span class="arrow">+</span></summary>
+      <div class="a">Most brands see meaningful signal inside the first 30 to 60 days. If you already have historical ad data, we can usually move faster. If you are starting from scratch, we focus on building a solid foundation first.</div>
+    </details>
+    <details>
+      <summary>How big is your team? <span class="arrow">+</span></summary>
+      <div class="a">We are a senior-led team of performance marketers, media buyers, creative producers, SEO specialists, and CRM experts based in Toronto, with 6 years spent engineering growth systems and more than 30 CRM implementations shipped end to end.</div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-frame">
+  <section class="cta">
+    <div class="plus rv">+</div>
+    <h2 class="rv">Where the next decade of growth gets built</h2>
+    <p class="rv">Let's build a predictable, scalable growth engine.</p>
+    <a class="btn-blue rv" href="/contact/">Get Started <span class="arr">→</span></a>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<div class="foot-frame">
+  <footer class="rc">
+    <div class="foot-inner">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital">
+          <p>Marketing, engineered for scaling brands. 136 Geary Avenue, Unit 109, Toronto, ON M6H 4H1, Canada.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Industries</h4>
+          <a href="/ecommerce-marketing-toronto/">Ecommerce &amp; DTC</a>
+          <a href="/law-firm-marketing-toronto/">Law Firms</a>
+          <a href="/healthcare-marketing/">Healthcare</a>
+          <a href="/home-services-marketing/">Home Services</a>
+          <a href="/b2b-saas-marketing/">B2B &amp; SaaS</a>
+        </div>
+        <div class="foot-col">
+          <h4>Site Map</h4>
+          <a href="/case-studies/">Our Work</a>
+          <a href="/services/">Services</a>
+          <a href="/about/">About Us</a>
+          <a href="/careers/">Careers</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Connect</h4>
+          <a href="/contact/">Book a Call</a>
+          <a href="/locations/">Service Areas</a>
+          <a href="/insights/">Insights</a>
+        </div>
+      </div>
+      <div class="foot-base">
+        <div>© 2026 Consultus Digital. All Rights Reserved.</div>
+        <div>Toronto · Est. growth systems since day one</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Reveal on scroll
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); }); return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+// Marquee: duplicate track for seamless loop
+(function(){
+  var t = document.getElementById('mtrack');
+  if (t) t.innerHTML += t.innerHTML;
+})();
+
+// Case study carousel arrows
+(function(){
+  var s = document.getElementById('cscroll');
+  var step = 422;
+  document.getElementById('cprev').addEventListener('click', function(){ s.scrollBy({left:-step, behavior:'smooth'}); });
+  document.getElementById('cnext').addEventListener('click', function(){ s.scrollBy({left:step, behavior:'smooth'}); });
+})();
+
+// FAQ: close others when one opens
+(function(){
+  var ds = document.querySelectorAll('.faq details');
+  ds.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (d.open) ds.forEach(function(o){ if (o !== d) o.open = false; });
+    });
+  });
+})();
+
+// Video play kick (background tabs / iOS)
+(function(){
+  function kick(){ document.querySelectorAll('video').forEach(function(v){ var p = v.play(); if (p) p.catch(function(){}); }); }
+  document.addEventListener('DOMContentLoaded', kick);
+  window.addEventListener('scroll', kick, { once:true, passive:true });
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) kick(); });
+})();
+</script>
+</body>
+</html>
