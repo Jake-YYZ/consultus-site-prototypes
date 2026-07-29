@@ -36,6 +36,12 @@ a{ color:inherit; text-decoration:none; }
   .hline > span{ transform:none; transition:none; }
   html{ scroll-behavior:auto; }
 }
+/* scroll-grow: media zooms larger as you scroll through it (Chrome/Edge; static elsewhere) */
+@supports (animation-timeline: view()){
+  .gs{ animation:gsGrow linear both; animation-timeline:view(); animation-range:cover 0% cover 100%; }
+  @keyframes gsGrow{ from{ transform:scale(1); } to{ transform:scale(1.16); } }
+  @media (prefers-reduced-motion: reduce){ .gs{ animation:none; } }
+}
 .eyebrow{ font-family:var(--mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; }
 .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); }
 .eyebrow.on-dark .dot{ background:var(--yellow); }
@@ -227,7 +233,7 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
       </div>
       <div class="hero-media rv" style="--d:250ms">
         <div class="badge"><span class="live"></span>UGC · Live in market</div>
-        <video src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video class="gs" src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video>
       </div>
     </div>
   </section>

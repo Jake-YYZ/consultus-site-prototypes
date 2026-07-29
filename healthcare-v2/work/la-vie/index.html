@@ -36,6 +36,12 @@ a{ color:inherit; text-decoration:none; }
   .hline > span{ transform:none; transition:none; }
   html{ scroll-behavior:auto; }
 }
+/* scroll-grow: media zooms larger as you scroll through it (Chrome/Edge; static elsewhere) */
+@supports (animation-timeline: view()){
+  .gs{ animation:gsGrow linear both; animation-timeline:view(); animation-range:cover 0% cover 100%; }
+  @keyframes gsGrow{ from{ transform:scale(1); } to{ transform:scale(1.16); } }
+  @media (prefers-reduced-motion: reduce){ .gs{ animation:none; } }
+}
 .eyebrow{ font-family:var(--mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; }
 .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); }
 .sem{ font-style:italic; color:var(--blue); }
@@ -209,7 +215,7 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
       </div>
       <div class="hero-media rv" style="--d:250ms">
         <div class="badge"><span class="live"></span>Creative · Live in market</div>
-        <video src="/assets/work/la-vie/loop-c5.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video class="gs" src="/assets/work/la-vie/loop-c5.mp4" autoplay muted loop playsinline preload="metadata"></video>
       </div>
     </div>
   </section>
@@ -265,7 +271,7 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
         <span class="k">Step 4</span>
         <h3>The CRM that closes the loop</h3>
         <p>Every lead lands in the CRM with its source attached: the campaign, the creative, the landing page. First touch to booked consult in as little as six days, and every booked assessment ties back to the ad that caused it. By week fourteen there were 512 leads on the board, Meta was producing them at $89.53 in the first ten days, and budgets were scaled by client decision.</p>
-        <div class="pchips"><span class="pchip">Source on every lead</span><span class="pchip">6 days to booked</span><span class="pchip">Scaled by decision, not hope</span></div>
+        <div class="pchips"><span class="pchip">Source on every lead</span><span class="pchip">6 days to booked</span><span class="pchip">Budgets scaled by client decision</span></div>
       </div>
     </div>
 

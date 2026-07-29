@@ -42,6 +42,12 @@ a{ color:inherit; text-decoration:none; }
   .hline > span{ transform:none; transition:none; }
   html{ scroll-behavior:auto; }
 }
+/* scroll-grow: media zooms larger as you scroll through it (Chrome/Edge; static elsewhere) */
+@supports (animation-timeline: view()){
+  .gs{ animation:gsGrow linear both; animation-timeline:view(); animation-range:cover 0% cover 100%; }
+  @keyframes gsGrow{ from{ transform:scale(1); } to{ transform:scale(1.16); } }
+  @media (prefers-reduced-motion: reduce){ .gs{ animation:none; } }
+}
 
 /* ===================== TYPE HELPERS ===================== */
 .eyebrow{ font-family:var(--mono); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; }
@@ -120,7 +126,10 @@ nav.pill{ width:100%; max-width:1240px; background:rgba(251,250,247,0.94); backd
 .ind-name{ font-size:clamp(40px, 5vw, 68px); font-weight:400; letter-spacing:-0.025em; line-height:1.04; }
 .ind-name a{ transition:color .25s; }
 .ind-name a:hover{ color:var(--blue); }
-.ind-card{ background:var(--ink); color:var(--paper); border-radius:var(--radius); padding:32px 34px; }
+.ind-card{ background:var(--ink); color:var(--paper); border-radius:var(--radius); overflow:hidden; }
+.ind-img{ height:210px; overflow:hidden; }
+.ind-img img, .ind-img video{ width:100%; height:100%; object-fit:cover; }
+.ind-body{ padding:28px 34px 32px; }
 .ind-card .n{ font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--yellow); margin-bottom:14px; }
 .ind-card p{ font-size:15.5px; line-height:1.6; color:var(--grey); }
 @media (max-width:880px){ .ind-row{ grid-template-columns:1fr; gap:20px; } }
@@ -129,7 +138,9 @@ nav.pill{ width:100%; max-width:1240px; background:rgba(251,250,247,0.94); backd
 .sector-chip{ background:var(--pure); border:1px solid var(--bone-border); border-radius:100px; padding:11px 22px; font-size:14px; font-weight:500; white-space:nowrap; }
 
 /* ===================== FOUNDER NOTE ===================== */
-.founder{ background:var(--bone); border:1px solid var(--bone-border); border-radius:28px; padding:64px 56px; display:grid; grid-template-columns:56px 1fr; gap:28px; }
+.founder{ background:var(--bone); border:1px solid var(--bone-border); border-radius:28px; padding:64px 56px; display:grid; grid-template-columns:56px 1fr 300px; gap:36px; align-items:center; }
+.founder-media{ border-radius:18px; overflow:hidden; aspect-ratio:4/3; }
+.founder-media video, .founder-media img{ width:100%; height:100%; object-fit:cover; }
 .founder .qm{ font-size:76px; line-height:0.7; color:var(--blue); font-weight:400; }
 .founder h3{ font-size:clamp(24px, 2.6vw, 34px); font-weight:400; letter-spacing:-0.015em; margin-bottom:18px; }
 .founder p{ font-size:18px; line-height:1.6; color:var(--graphite); max-width:820px; }
@@ -240,6 +251,13 @@ nav.pill{ width:100%; max-width:1240px; background:rgba(251,250,247,0.94); backd
 .faq details[open] .arrow{ transform:rotate(45deg); background:var(--yellow); color:var(--ink); }
 .faq .a{ padding:0 60px 26px 4px; font-size:15.5px; color:var(--charcoal); line-height:1.6; }
 
+/* ===================== TEAM ===================== */
+.team-grid{ display:grid; grid-template-columns:1.35fr 1fr; gap:20px; }
+.team-card{ position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:16/10; margin:0; }
+.team-card video, .team-card img{ width:100%; height:100%; object-fit:cover; }
+.team-card figcaption{ position:absolute; bottom:14px; left:14px; background:rgba(13,13,13,0.72); backdrop-filter:blur(6px); color:var(--paper); font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; border-radius:100px; padding:8px 14px; }
+@media (max-width:880px){ .team-grid{ grid-template-columns:1fr; } }
+
 /* ===================== CTA ===================== */
 .cta-frame{ padding:8px; }
 .cta{ border-radius:28px; text-align:center; padding:124px 32px;
@@ -304,7 +322,7 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
         <div class="sub">Hospitals, clinics, healthcare ecommerce. If it's healthcare, it's our domain.</div>
       </div>
       <div class="hero-media rv" style="--d:200ms">
-        <video src="/assets/work/medical/loop-tonic-kids.mp4" poster="" autoplay muted loop playsinline preload="metadata"></video>
+        <video class="gs" src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video>
       </div>
       <div class="hero-side rv" style="--d:300ms">
         <p>Compliant creative. Speed-to-lead systems. Sites built to convert.</p>
@@ -338,24 +356,33 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
   <div class="ind-row">
     <div class="ind-name rv">Clinics &amp; Hospitals</div>
     <div class="ind-card rv" style="--d:120ms">
-      <div class="n">01 · Clinics &amp; Hospitals</div>
-      <p>Patient acquisition with the college rules built in. Persona-led creative that clears provincial advertising standards, landing pages built to book, and speed-to-lead systems so every inquiry is answered in minutes, not days.</p>
+      <div class="ind-img"><img class="gs" src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health campaign creative" loading="lazy"></div>
+      <div class="ind-body">
+        <div class="n">01 · Clinics &amp; Hospitals</div>
+        <p>Patient acquisition with the college rules built in. Persona-led creative that clears provincial advertising standards, landing pages built to book, and speed-to-lead systems so every inquiry is answered in minutes, not days.</p>
+      </div>
     </div>
   </div>
 
   <div class="ind-row">
     <div class="ind-name rv">Healthcare Ecommerce</div>
     <div class="ind-card rv" style="--d:120ms">
-      <div class="n">02 · Healthcare Ecommerce</div>
-      <p>Supplements, skincare, devices, and clinic retail lines. High-velocity creative testing measured on ROAS and ACOS, marketplace and DTC together, and cross-border programs for Canadian brands doing most of their volume in the US.</p>
+      <div class="ind-img"><img class="gs" src="/assets/work/e11ement/product-shot.jpg" alt="e11ement clinical skincare product creative" loading="lazy"></div>
+      <div class="ind-body">
+        <div class="n">02 · Healthcare Ecommerce</div>
+        <p>Supplements, skincare, devices, and clinic retail lines. High-velocity creative testing measured on ROAS and ACOS, marketplace and DTC together, and cross-border programs for Canadian brands doing most of their volume in the US.</p>
+      </div>
     </div>
   </div>
 
   <div class="ind-row">
     <div class="ind-name rv">Practices &amp; Specialists</div>
     <div class="ind-card rv" style="--d:120ms">
-      <div class="n">03 · Practices &amp; Specialists</div>
-      <p>Dental, physio, medspa, optometry, mental health, and more. Local SEO and AI-answer visibility, direct-billing messaging that matches how patients decide, and front-desk coaching that turns booked consults into accepted treatment plans.</p>
+      <div class="ind-img"><video class="gs" src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video></div>
+      <div class="ind-body">
+        <div class="n">03 · Practices &amp; Specialists</div>
+        <p>Dental, physio, medspa, optometry, mental health, and more. Local SEO and AI-answer visibility, direct-billing messaging that matches how patients decide, and front-desk coaching that turns booked consults into accepted treatment plans.</p>
+      </div>
     </div>
   </div>
 
@@ -386,6 +413,7 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
       <p>If you're ambitious about growing a healthcare business, you want a long term partner, and you're done with cookie cutter marketing, we should talk. That's exactly who we built this division for.</p>
       <div class="who"><b>Jake &amp; Grace Matzanke</b> Co-Founders, Consultus Digital</div>
     </div>
+    <div class="founder-media"><video class="gs" src="/assets/video/office-hero.mp4" poster="/assets/video/office-hero-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
   </div>
 </section>
 
@@ -515,7 +543,7 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
         </div>
         <div class="case-media rv" style="--d:150ms">
           <div class="badge"><span class="live"></span>UGC · Live in market</div>
-          <video src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video class="gs" src="/assets/work/medical/loop-tonic-kids.mp4" autoplay muted loop playsinline preload="metadata"></video>
         </div>
       </div>
 
@@ -526,12 +554,12 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
 
       <div class="more-cases">
         <a class="mini-case rv" href="/healthcare-v2/work/la-vie/">
-          <img src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health creative" loading="lazy">
+          <img class="gs" src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health creative" loading="lazy">
           <div class="shade"></div>
           <div class="mb"><h3>La Vie Executive Health</h3><p>512 leads in month one for a concierge medicine clinic. A growth engine, not an ad account.</p></div>
         </a>
         <a class="mini-case rv" style="--d:120ms" href="/case-studies/e11ement/">
-          <img src="/assets/work/e11ement/product-shot.jpg" alt="e11ement clinical skincare" loading="lazy">
+          <img class="gs" src="/assets/work/e11ement/product-shot.jpg" alt="e11ement clinical skincare" loading="lazy">
           <div class="shade"></div>
           <div class="mb"><h3>e11ement</h3><p>Clinical skincare scaled across every channel: site, UGC engine, Amazon relaunch, Walmart launch.</p></div>
         </a>
@@ -604,6 +632,17 @@ footer.hc{ background:var(--ink); border-radius:28px; color:var(--grey); padding
       <summary>What does it cost? <span class="arrow">+</span></summary>
       <div class="a">Engagements are scoped after the strategy call, sized to your locations, channels, and how much demand we find.</div>
     </details>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec">
+  <div class="sec-lbl rv"><span class="plus">+</span> The People</div>
+  <h2 class="sec-title rv">Your healthcare growth <span class="sem">team</span>.</h2>
+  <p class="sec-intro rv">Based in Toronto's creative corridor, Geary Ave. Unit 109, 136 Geary Avenue, Toronto ON M6H 4H1. Servicing clients across North America.</p>
+  <div class="team-grid">
+    <figure class="team-card rv"><video class="gs" src="/assets/video/team-montage.mp4" poster="/assets/video/team-montage-poster.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>The team · Consultus Digital</figcaption></figure>
+    <figure class="team-card rv" style="--d:120ms"><img class="gs" src="/assets/brand/office-wall.jpg" alt="The Consultus Digital office on Geary Avenue" loading="lazy"><figcaption>The office · Geary Avenue</figcaption></figure>
   </div>
 </section>
 

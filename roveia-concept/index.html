@@ -38,6 +38,12 @@ a{ color:inherit; text-decoration:none; }
 .hline > span{ display:block; transform:translateY(112%); transition:transform 1.05s cubic-bezier(.22,1,.36,1); transition-delay:var(--d, 0ms); }
 .masks-in .hline > span{ transform:none; }
 @media (prefers-reduced-motion: reduce){ .rv{ opacity:1; transform:none; transition:none; } .hline > span{ transform:none; transition:none; } html{scroll-behavior:auto;} }
+/* scroll-grow: media zooms larger as you scroll through it (Chrome/Edge; static elsewhere) */
+@supports (animation-timeline: view()){
+  .gs{ animation:gsGrow linear both; animation-timeline:view(); animation-range:cover 0% cover 100%; }
+  @keyframes gsGrow{ from{ transform:scale(1); } to{ transform:scale(1.16); } }
+  @media (prefers-reduced-motion: reduce){ .gs{ animation:none; } }
+}
 
 /* ================= NAV ================= */
 .navwrap{ position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:0 16px; }
@@ -225,7 +231,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
         <div class="sub">Driving measurable revenue</div>
       </div>
       <div class="hero-media rv">
-        <video src="/assets/video/office-hero.mp4" poster="/assets/video/office-hero-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <video class="gs" src="/assets/video/office-hero.mp4" poster="/assets/video/office-hero-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
       </div>
       <div class="hero-side rv">
         <p>Full-funnel media. Conversion-engineered creative. Growth systems built to scale.</p>
@@ -293,7 +299,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
     <div class="cases-scroll" id="cscroll">
 
       <a class="case-card" href="/case-studies/bookseats/">
-        <img class="bg" src="/assets/work/bookseats/ugc-jessica-frame.jpg" alt="BookSeats UGC creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/bookseats/ugc-jessica-frame.jpg" alt="BookSeats UGC creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>BookSeats</h3>
@@ -303,7 +309,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
       </a>
 
       <a class="case-card" href="/case-studies/la-vie/">
-        <img class="bg" src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/la-vie/lifestyle-early-detection.jpg" alt="La Vie Executive Health creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>La Vie Executive Health</h3>
@@ -313,7 +319,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
       </a>
 
       <a class="case-card" href="/case-studies/dragonscale-supplies/">
-        <img class="bg" src="/assets/work/dragonscale/static-1a.jpg" alt="Dragonscale Supplies creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/dragonscale/static-1a.jpg" alt="Dragonscale Supplies creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>Dragonscale Supplies</h3>
@@ -323,7 +329,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
       </a>
 
       <a class="case-card" href="/case-studies/eco-choice-windows/">
-        <img class="bg" src="/assets/work/eco-choice/static-ad-1.png" alt="Eco Choice Windows creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/eco-choice/static-ad-1.png" alt="Eco Choice Windows creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>Eco Choice Windows</h3>
@@ -333,7 +339,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
       </a>
 
       <a class="case-card" href="/case-studies/zayouna-law-firm/">
-        <img class="bg" src="/assets/work/zayouna/zl-s01.jpg" alt="Zayouna Law creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/zayouna/zl-s01.jpg" alt="Zayouna Law creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>Zayouna Law</h3>
@@ -343,7 +349,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
       </a>
 
       <a class="case-card" href="/case-studies/gordons-downsizing/">
-        <img class="bg" src="/assets/work/gordons/static-s01.jpg" alt="Gordon's Downsizing creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/gordons/static-s01.jpg" alt="Gordon's Downsizing creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>Gordon's Downsizing</h3>
@@ -353,7 +359,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
       </a>
 
       <a class="case-card" href="/case-studies/e11ement/">
-        <img class="bg" src="/assets/work/e11ement/product-shot.jpg" alt="e11ement product creative" loading="lazy">
+        <img class="bg gs" src="/assets/work/e11ement/product-shot.jpg" alt="e11ement product creative" loading="lazy">
         <div class="shade"></div>
         <div class="body">
           <h3>e11ement</h3>
@@ -490,7 +496,7 @@ footer.rc{ background:var(--ink); border-radius:28px; color:#CFCFCF; padding:80p
   <div class="faq rv">
     <details>
       <summary>What's your pricing structure? <span class="arrow">+</span></summary>
-      <div class="a">Our packages are tailored to each brand. Not every company needs the same level of service, so we build plans around your goals, stage, and marketing maturity. Book a call and we will scope it honestly.</div>
+      <div class="a">Engagements are scoped after a strategy call, sized to your channels, goals, and how much demand we find. No two plans cost the same, so we put numbers on yours before you commit.</div>
     </details>
     <details>
       <summary>Do you have experience in my industry? <span class="arrow">+</span></summary>
