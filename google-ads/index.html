@@ -3626,8 +3626,12 @@
 .svh-fan .a2{aspect-ratio:4/5}
 .svh-fan .b1{aspect-ratio:5/8}
 .svh-fan:hover figure{transform:translateY(-4px)}
-@media(max-width:980px){.svh-in{grid-template-columns:1fr;gap:44px}.svh-fan{justify-content:flex-start}}
-@media(max-width:600px){.svh-hero{padding:52px 16px 32px}}
+.svh-proof{border-top:1px solid var(--bone-border);border-bottom:1px solid var(--bone-border);background:var(--paper)}
+.svh-proof-row{max-width:1200px;margin:0 auto;padding:22px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.svh-proof .p .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal)}
+.svh-proof .p .val{font-size:15px;font-weight:500;color:var(--ink);margin-top:5px}
+@media(max-width:980px){.svh-in{grid-template-columns:1fr;gap:44px}.svh-fan{justify-content:flex-start}.svh-proof-row{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:600px){.svh-hero{padding:52px 16px 32px}.svh-proof-row{grid-template-columns:1fr;padding:18px 16px}}
 </style>
 
   <section class="svh-hero">
