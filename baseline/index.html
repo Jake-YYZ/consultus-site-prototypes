@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/baseline/assets/baseline.css?v=2" />
+<link rel="stylesheet" href="/baseline/assets/baseline.css?v=3" />
 <style>
   /* ---- hero ---- */
   .hero{padding:76px 0 92px}
@@ -73,6 +73,15 @@
   .sat-bar{height:9px;background:var(--shell-3);border-radius:100px;overflow:hidden}
   .sat-bar i{display:block;height:100%;background:var(--line);border-radius:100px}
   .sat-bar i.hot{background:var(--brand)}
+
+  /* ---- timing / results / loading three-up ---- */
+  .ic-sm{width:34px;height:34px;color:var(--brand);margin-bottom:14px}
+  .ic-sm svg{width:26px;height:26px}
+  .mech .grid-3 h4{
+    font-family:var(--display);font-size:11px;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .mech .grid-3 p{font-size:13.5px;line-height:1.55;color:var(--slate)}
 
   /* ---- benefits, matched to the four claims on the pack ---- */
   .bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -160,6 +169,17 @@
     <path d="M12 4.6a2.8 2.8 0 0 0-2.8 2.8A2.8 2.8 0 0 0 7 12a2.8 2.8 0 0 0 2.2 4.6 2.8 2.8 0 0 0 5.6 0A2.8 2.8 0 0 0 17 12a2.8 2.8 0 0 0-2.2-4.6A2.8 2.8 0 0 0 12 4.6Z" />
     <path d="M12 4.6v14.8" />
   </symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9" /><path d="M12 7v5.2l3.4 2" />
+  </symbol>
+  <symbol id="ic-results" viewBox="0 0 24 24" fill="currentColor">
+    <rect x="3" y="13" width="4.4" height="8" rx="1.2" />
+    <rect x="9.8" y="8" width="4.4" height="13" rx="1.2" />
+    <rect x="16.6" y="3" width="4.4" height="18" rx="1.2" />
+  </symbol>
+  <symbol id="ic-noload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <circle cx="12" cy="12" r="9" /><path d="M5.6 5.6l12.8 12.8" />
+  </symbol>
 </svg>
 
 <div class="ann">
@@ -172,7 +192,7 @@
 
 <nav class="main">
   <div class="nav-in">
-    <a class="lockup" href="/baseline/"><span class="bmark">b</span><span class="logotype">baseline</span></a>
+    <a class="lockup" href="/baseline/"><span class="logotype">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></a>
     <div class="nav-links">
       <a href="/baseline/creatine-gummies/">Gummies</a>
       <a href="#lineup">Electrolytes</a>
@@ -192,7 +212,7 @@
   <div class="wrap hero-in">
     <div>
       <div class="label label-c">Creatine monohydrate &nbsp;·&nbsp; 5 g per serving</div>
-      <h1 class="display">Creatine is the <span class="em">baseline</span>.</h1>
+      <h1 class="display">Creatine is the <span class="em">Baseline</span>.</h1>
       <p class="lede">It's the most studied supplement in sports nutrition, and most people still skip it, because mixing chalky powder at 6am is a chore nobody keeps up. So we put the full five grams into three sour gummies. No shaker, no excuses.</p>
       <div class="btn-row">
         <a class="btn primary lg" href="/baseline/creatine-gummies/">Shop creatine gummies</a>
@@ -211,8 +231,7 @@
         <div class="tub-lid"></div>
         <div class="tub-body">
           <div class="tub-label">
-            <span class="bmark">b</span>
-            <span class="tub-brand">baseline</span>
+            <span class="tub-mark"><span class="tub-brand">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></span>
             <hr class="tub-rule" />
             <span class="tub-product">Creatine Gummies</span>
             <span class="tub-flavor">Sour Peach</span>
@@ -222,6 +241,7 @@
               <li><svg><use href="#ic-energy" /></svg>supports energy*</li>
               <li><svg><use href="#ic-cognition" /></svg>supports cognition*</li>
             </ul>
+            <div class="tub-certs"><span>Creapure&reg;</span><span>NSF Certified for Sport</span></div>
             <div class="tub-foot">
               <span class="tub-count"><b>90</b><span>gummies</span></span>
               <span class="tub-net">Dietary Supplement<br />Net wt 1 lb (454 g)</span>
@@ -234,8 +254,7 @@
         <div class="tub-lid"></div>
         <div class="tub-body">
           <div class="tub-label">
-            <span class="bmark">b</span>
-            <span class="tub-brand">baseline</span>
+            <span class="tub-mark"><span class="tub-brand">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></span>
             <hr class="tub-rule" />
             <span class="tub-product">Creatine Gummies</span>
             <span class="tub-flavor">Sour Cherry</span>
@@ -245,6 +264,7 @@
               <li><svg><use href="#ic-energy" /></svg>supports energy*</li>
               <li><svg><use href="#ic-cognition" /></svg>supports cognition*</li>
             </ul>
+            <div class="tub-certs"><span>Creapure&reg;</span><span>NSF Certified for Sport</span></div>
             <div class="tub-foot">
               <span class="tub-count"><b>90</b><span>gummies</span></span>
               <span class="tub-net">Dietary Supplement<br />Net wt 1 lb (454 g)</span>
@@ -298,8 +318,7 @@
             <div class="tub-lid"></div>
             <div class="tub-body">
               <div class="tub-label">
-                <span class="bmark">b</span>
-                <span class="tub-brand">baseline</span>
+                <span class="tub-mark"><span class="tub-brand">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></span>
                 <hr class="tub-rule" />
                 <span class="tub-product">Creatine Gummies</span>
                 <span class="tub-flavor">Sour Cherry</span>
@@ -309,6 +328,7 @@
                   <li><svg><use href="#ic-energy" /></svg>supports energy*</li>
                   <li><svg><use href="#ic-cognition" /></svg>supports cognition*</li>
                 </ul>
+                <div class="tub-certs"><span>Creapure&reg;</span><span>NSF Certified for Sport</span></div>
                 <div class="tub-foot">
                   <span class="tub-count"><b>90</b><span>gummies</span></span>
                   <span class="tub-net">Dietary Supplement<br />Net wt 1 lb</span>
@@ -342,8 +362,7 @@
             <div class="tub-lid"></div>
             <div class="tub-body">
               <div class="tub-label">
-                <span class="bmark">b</span>
-                <span class="tub-brand">baseline</span>
+                <span class="tub-mark"><span class="tub-brand">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></span>
                 <hr class="tub-rule" />
                 <span class="tub-product">Creatine + Electrolytes</span>
                 <span class="tub-flavor">Passionfruit</span>
@@ -353,6 +372,7 @@
                   <li><svg><use href="#ic-energy" /></svg>supports energy*</li>
                   <li><svg><use href="#ic-cognition" /></svg>supports cognition*</li>
                 </ul>
+                <div class="tub-certs"><span>Creapure&reg;</span><span>NSF Certified for Sport</span></div>
                 <div class="tub-foot">
                   <span class="tub-count"><b>30</b><span>sticks</span></span>
                   <span class="tub-net">Dietary Supplement<br />Net wt 8.5 oz</span>
@@ -385,8 +405,7 @@
             <div class="tub-lid"></div>
             <div class="tub-body">
               <div class="tub-label">
-                <span class="bmark">b</span>
-                <span class="tub-brand">baseline</span>
+                <span class="tub-mark"><span class="tub-brand">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></span>
                 <hr class="tub-rule" />
                 <span class="tub-product">Creatine Powder</span>
                 <span class="tub-flavor">Unflavored</span>
@@ -396,6 +415,7 @@
                   <li><svg><use href="#ic-energy" /></svg>supports energy*</li>
                   <li><svg><use href="#ic-cognition" /></svg>supports cognition*</li>
                 </ul>
+                <div class="tub-certs"><span>Creapure&reg;</span><span>NSF Certified for Sport</span></div>
                 <div class="tub-foot">
                   <span class="tub-count"><b>60</b><span>servings</span></span>
                   <span class="tub-net">Dietary Supplement<br />Net wt 10.6 oz</span>
@@ -465,10 +485,72 @@
   </div>
 </section>
 
+<!-- ======================= WHAT HAPPENS, WEEK BY WEEK =================== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="marker"><b>03</b> What's happening in your body</div>
+    <div class="mech" style="align-items:start">
+      <div>
+        <h2 class="sec-title">Four weeks from<br />your first gummy<br />to a full tank.</h2>
+        <p class="lede" style="margin-top:22px">Creatine isn't a stimulant, so there's no hit to feel on day one. It's a storage tank filling up. Here's roughly what's going on while you wait, and why the payoff shows up as performance rather than a sensation.</p>
+
+        <div class="grid-3" style="gap:20px;margin-top:38px">
+          <div>
+            <div class="ic-sm"><svg><use href="#ic-clock" /></svg></div>
+            <h4>Timing</h4>
+            <p>Take it at a consistent time. Most of our customers go with the morning, or right before or after training.</p>
+          </div>
+          <div>
+            <div class="ic-sm"><svg><use href="#ic-results" /></svg></div>
+            <h4>Results</h4>
+            <p>Benefits are typically noticeable in two to three weeks, with stores fully topped up around week four.</p>
+          </div>
+          <div>
+            <div class="ic-sm"><svg><use href="#ic-noload" /></svg></div>
+            <h4>Loading</h4>
+            <p>We don't suggest a loading phase. It gets you there about three weeks sooner and causes most stomach complaints.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="weeks">
+        <div class="week">
+          <span class="pip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)" /></svg></span>
+          <div>
+            <h4>Week 1</h4>
+            <p>Muscle creatine levels begin rising, increasing phosphocreatine availability to support faster ATP regeneration.</p>
+          </div>
+        </div>
+        <div class="week">
+          <span class="pip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)" /></svg></span>
+          <div>
+            <h4>Week 2</h4>
+            <p>Stores continue to build, improving energy output and recovery across repeated hard efforts.</p>
+          </div>
+        </div>
+        <div class="week">
+          <span class="pip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)" /></svg></span>
+          <div>
+            <h4>Week 3</h4>
+            <p>Near-full saturation supports higher training capacity and more noticeable strength gains.</p>
+          </div>
+        </div>
+        <div class="week">
+          <span class="pip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)" /><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)" /></svg></span>
+          <div>
+            <h4>Week 4</h4>
+            <p>Levels stabilize, helping sustain consistent energy, performance and recovery for as long as you keep taking it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================== BENEFITS ============================= -->
 <section class="sec">
   <div class="wrap">
-    <div class="marker"><b>03</b> What the research supports</div>
+    <div class="marker"><b>04</b> What the research supports</div>
     <div class="sec-head">
       <h2 class="sec-title">The four claims on<br />the tub, and how<br />solid each one is.</h2>
       <p class="lede">Creatine has a deep evidence base for some outcomes and a thinner, promising one for others. We tag both, because a brand that oversells the early stuff shouldn't be trusted on the settled stuff either.</p>
@@ -508,7 +590,7 @@
 <!-- =========================== THE DOSE (DARK) ========================= -->
 <section class="dark">
   <div class="wrap sec">
-    <div class="marker"><b>04</b> The dose is the product</div>
+    <div class="marker"><b>05</b> The dose is the product</div>
     <div class="sec-head">
       <h2 class="sec-title">Most creatine gummies<br />don't contain much<br />creatine.</h2>
       <p class="lede">It's an awkward ingredient to work with. It's bulky, slightly bitter, and it degrades in the wrong conditions, so the easy move is to cut the dose until the candy tastes good and hope nobody reads the panel. We built the gummy around a full five grams instead.</p>
@@ -546,7 +628,7 @@
 <!-- ============================== QUALITY ============================== -->
 <section class="sec" id="quality">
   <div class="wrap">
-    <div class="marker"><b>05</b> Quality</div>
+    <div class="marker"><b>06</b> Quality</div>
     <div class="sec-head">
       <h2 class="sec-title">Every batch tested.<br />Every result published.</h2>
       <p class="lede">Supplements are lightly regulated, which means the burden of proof sits with the brand. Type the code from the bottom of your tub and you'll get the actual lab report for the batch in your hand, not a generic certificate from two years ago.</p>
@@ -594,7 +676,7 @@
 <!-- ============================== REVIEWS ============================== -->
 <section class="sec band" id="reviews">
   <div class="wrap">
-    <div class="marker"><b>06</b> Reviews</div>
+    <div class="marker"><b>07</b> Reviews</div>
     <div class="sec-head">
       <h2 class="sec-title">The consistency<br />is the point.</h2>
       <div>
@@ -631,7 +713,7 @@
 <!-- ================================ FAQ ================================ -->
 <section class="sec" id="faq">
   <div class="wrap" style="max-width:960px">
-    <div class="marker"><b>07</b> Questions</div>
+    <div class="marker"><b>08</b> Questions</div>
     <h2 class="sec-title" style="margin-bottom:44px">The ones worth<br />answering properly.</h2>
 
     <div class="acc">
@@ -693,6 +775,7 @@
       <li><b>Review counts, star ratings and customer quotes</b> are placeholders. Replace with real verified-purchase data from the review platform.</li>
       <li><b>The certificate of analysis</b> is a sample layout. Batch codes, dates and lab results must come from the actual accredited lab.</li>
       <li><b>Purity, sourcing and testing claims</b> need supplier documentation and a signed quality agreement on file.</li>
+      <li><b>Creapure&reg; and NSF Certified for Sport</b> are real third-party marks shown on the pack art. Creapure requires a supply agreement with AlzChem, and NSF Certified for Sport requires an audited facility and per-batch certification. Neither can appear on live packaging or the site until both are contracted and in place.</li>
       <li><b>Pricing, serving counts and the flavor lineup</b> are illustrative. Sour Peach and Sour Cherry come from the real pack art; the other four are proposed.</li>
       <li><b>Tubs are drawn in CSS</b>, not photographed. Drop the real renders into <code>/baseline/assets/product/</code> and they can be swapped in.</li>
       <li><b>Health claims</b> carry the required disclaimer. Have regulatory counsel review before launch in both the US and Canada, since the rules differ.</li>
@@ -704,7 +787,7 @@
   <div class="wrap">
     <div class="f-top">
       <div class="f-brand">
-        <a class="lockup lg" href="/baseline/"><span class="bmark">b</span><span class="logotype">baseline</span></a>
+        <a class="lockup lg" href="/baseline/"><span class="logotype">Baseline</span><svg class="astk" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(60 12 12)"/><rect x="9.5" y=".8" width="5" height="22.4" rx="2.5" transform="rotate(120 12 12)"/></svg></a>
         <p class="f-blurb">Five grams of pharmaceutical-grade creatine monohydrate, in three formats you'll actually take every day.</p>
       </div>
       <div>

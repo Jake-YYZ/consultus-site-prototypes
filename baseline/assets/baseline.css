@@ -18,11 +18,11 @@
   --ink-3:#2E2E33;
   --ink-border:#38383E;
 
-  /* brand accent — the red that sits between the peach and cherry packs */
-  --brand:#E0342F;
-  --brand-deep:#B3211D;
-  --brand-soft:#F5645A;
-  --brand-pale:#FDECEA;
+  /* brand accent — the coral carried by the wordmark and campaign creative */
+  --brand:#F0653F;
+  --brand-deep:#C9451F;
+  --brand-soft:#F98A6B;
+  --brand-pale:#FDEDE7;
 
   /* text */
   --slate:#65656B;
@@ -189,9 +189,25 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .dark .link-arrow{color:var(--brand-soft)}
 
 /* --------------------------------------------------------------------------
-   Logo lockup — circular b mark + lowercase logotype
+   Logo lockup — "Baseline" plus the six-petal asterisk
    -------------------------------------------------------------------------- */
-.lockup{display:inline-flex;align-items:center;gap:9px}
+.lockup{display:inline-flex;align-items:flex-start;gap:4px}
+.logotype{
+  font-family:var(--display);font-weight:700;font-size:27px;
+  letter-spacing:-.035em;line-height:1;color:var(--brand);
+}
+.astk{
+  width:11px;height:11px;flex:none;color:var(--brand);
+  margin-top:2px;
+}
+.lockup.sm .logotype{font-size:21px}
+.lockup.sm .astk{width:9px;height:9px;margin-top:1px}
+.lockup.lg .logotype{font-size:38px}
+.lockup.lg .astk{width:15px;height:15px;margin-top:3px}
+.dark .logotype,.dark .astk,
+footer.site .logotype,footer.site .astk{color:#fff}
+
+/* circular b mark, still used on the gummy emboss */
 .bmark{
   width:27px;height:27px;border-radius:50%;flex:none;
   background:var(--brand);color:#fff;
@@ -199,16 +215,46 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   font-family:var(--display);font-weight:700;font-size:17px;line-height:1;
   padding-bottom:3px;
 }
-.logotype{
-  font-family:var(--display);font-weight:700;font-size:26px;
-  letter-spacing:-.045em;line-height:1;color:var(--ink);
+
+/* --------------------------------------------------------------------------
+   Certification marks
+   -------------------------------------------------------------------------- */
+.certs{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cert{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid var(--line);border-radius:100px;
+  background:var(--white);padding:7px 14px 7px 10px;
+  font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:-.005em;
+  color:var(--ink);white-space:nowrap;
 }
-.lockup.sm .bmark{width:22px;height:22px;font-size:14px;padding-bottom:2px}
-.lockup.sm .logotype{font-size:21px}
-.lockup.lg .bmark{width:36px;height:36px;font-size:23px;padding-bottom:4px}
-.lockup.lg .logotype{font-size:35px}
-.dark .logotype,footer.site .logotype{color:#fff}
-.dark .bmark,footer.site .bmark{background:#fff;color:var(--ink)}
+.cert .cdot{
+  width:17px;height:17px;border-radius:50%;flex:none;
+  background:var(--brand);color:#fff;
+  display:grid;place-items:center;
+  font-family:var(--display);font-size:8.5px;font-weight:700;line-height:1;
+}
+.dark .cert{background:transparent;border-color:var(--ink-border);color:#fff}
+
+/* --------------------------------------------------------------------------
+   Saturation timeline (weeks 1 to 4)
+   -------------------------------------------------------------------------- */
+.weeks{display:grid;gap:0}
+.week{
+  display:grid;grid-template-columns:26px 1fr;gap:18px;
+  padding:0 0 30px;position:relative;
+}
+.week:last-child{padding-bottom:0}
+.week .pip{
+  width:26px;height:26px;flex:none;color:var(--brand);position:relative;z-index:1;
+  background:var(--shell);
+}
+.band .week .pip{background:var(--shell-2)}
+.week::before{
+  content:'';position:absolute;left:12.5px;top:20px;bottom:-6px;width:1.5px;background:var(--brand);opacity:.45;
+}
+.week:last-child::before{display:none}
+.week h4{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:7px}
+.week p{font-size:14.5px;line-height:1.6;color:var(--slate)}
 
 /* --------------------------------------------------------------------------
    Announcement + nav
@@ -293,23 +339,31 @@ nav.main .nav-in{
     color-mix(in srgb,var(--flavor) 86%,#000) 100%);
   color:#fff;padding:16px 15px 14px;position:relative;
 }
-.tub-label .bmark{background:#fff;color:var(--flavor);width:24px;height:24px;font-size:15px;margin:0 auto 7px}
+.tub-mark{display:flex;align-items:flex-start;gap:3px}
+.tub-mark .astk{color:#fff;width:9px;height:9px;margin-top:2px}
 .tub-brand{
-  display:block;text-align:center;
-  font-family:var(--display);font-weight:700;font-size:38px;
-  letter-spacing:-.05em;line-height:.92;
+  font-family:var(--display);font-weight:700;font-size:32px;
+  letter-spacing:-.04em;line-height:.94;
 }
-.tub-rule{border:0;height:1px;background:rgba(255,255,255,.5);margin:9px 0 8px}
+.tub-rule{border:0;height:1px;background:rgba(255,255,255,.45);margin:9px 0 8px}
 .tub-product{
-  display:block;text-align:center;
-  font-family:var(--display);font-weight:500;font-size:16px;letter-spacing:-.02em;line-height:1.1;
+  display:block;
+  font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:-.025em;line-height:1.12;
 }
 .tub-flavor{
-  display:block;width:max-content;margin:9px auto 0;
+  display:block;width:max-content;margin:8px 0 0;
   border:1px solid rgba(255,255,255,.75);border-radius:100px;
   padding:3.5px 12px;
-  font-family:var(--display);font-weight:500;font-size:9px;
+  font-family:var(--display);font-weight:500;font-size:8.5px;
   letter-spacing:.13em;text-transform:uppercase;
+}
+/* certification lockups printed on the pack */
+.tub-certs{display:flex;align-items:center;gap:5px;margin-top:11px}
+.tub-certs span{
+  border:1px solid rgba(255,255,255,.7);border-radius:3px;
+  padding:2.5px 5px;line-height:1;
+  font-family:var(--display);font-size:5.5px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
 }
 .tub-benefits{list-style:none;margin:12px 0 0;display:grid;gap:5.5px}
 .tub-benefits li{
@@ -340,10 +394,11 @@ nav.main .nav-in{
 /* smaller tub for cards and rails */
 .tub.sm{width:178px}
 .tub.sm .tub-lid{height:38px}
-.tub.sm .tub-brand{font-size:29px}
-.tub.sm .tub-product{font-size:12.5px}
-.tub.sm .tub-label .bmark{width:19px;height:19px;font-size:12px}
-.tub.sm .tub-flavor{font-size:7.5px;padding:3px 10px}
+.tub.sm .tub-brand{font-size:25px}
+.tub.sm .tub-mark .astk{width:7px;height:7px;margin-top:1px}
+.tub.sm .tub-product{font-size:12px}
+.tub.sm .tub-flavor{font-size:7px;padding:3px 10px}
+.tub.sm .tub-certs span{font-size:4.5px;padding:2px 4px}
 .tub.sm .tub-benefits li{font-size:8.5px;gap:5px}
 .tub.sm .tub-benefits svg{width:10px;height:10px}
 .tub.sm .tub-count b{font-size:14px}
