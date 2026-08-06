@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Creatine Monohydrate Gummies · 5 g per serving | Baseline</title>
+<meta name="description" content="Four gummies, five grams of 99.9% pure creatine monohydrate, no shaker. Six flavors, third-party tested every batch. Subscribe from $1.30 a day." />
+<meta name="theme-color" content="#F4F1EA" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/baseline/assets/baseline.css" />
+<style>
+  /* ---------- breadcrumb ---------- */
+  .crumb{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--slate-2);padding:22px 0 0;
+  }
+  .crumb a:hover{color:var(--ink)}
+  .crumb i{font-style:normal;margin:0 8px;opacity:.55}
+
+  /* ---------- product layout ---------- */
+  .pdp{display:grid;grid-template-columns:1.08fr 1fr;gap:64px;align-items:start;padding:34px 0 96px}
+
+  /* gallery */
+  .gal{position:sticky;top:104px}
+  .stage{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+    background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:40px 40px;
+    min-height:520px;display:flex;align-items:center;justify-content:center;gap:16px;
+    padding:56px 40px;position:relative;overflow:hidden;
+    transition:background-color .4s ease;
+  }
+  .stage .pouch{
+    width:250px;height:332px;padding:44px 24px 24px;
+    transition:background .45s ease;
+  }
+  .stage .pk-flavor{font-size:36px;transition:none}
+  .stage .gummies{display:flex;flex-direction:column;gap:12px}
+  .gummy{
+    width:52px;height:52px;border-radius:14px 4px 14px 4px;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--flavor) 82%,#fff) 0%,var(--flavor) 60%,color-mix(in srgb,var(--flavor) 72%,#000) 100%);
+    box-shadow:inset 0 -6px 10px -6px rgba(0,0,0,.5),0 10px 18px -12px rgba(16,16,18,.6);
+    position:relative;transition:background .45s ease;
+  }
+  .gummy::after{
+    content:'';position:absolute;top:9px;left:10px;width:15px;height:9px;border-radius:50%;
+    background:rgba(255,255,255,.42);transform:rotate(-24deg);
+  }
+  .stage-note{
+    position:absolute;bottom:14px;left:18px;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--slate-2);
+  }
+  .thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:12px}
+  .thumb{
+    aspect-ratio:1;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--paper-2);display:grid;place-items:center;cursor:pointer;
+    transition:border-color .2s ease,transform .2s ease;
+  }
+  .thumb:hover{transform:translateY(-2px)}
+  .thumb.is-on{border-color:var(--ink);border-width:1.5px}
+  .thumb i{width:26px;height:26px;border-radius:9px 3px 9px 3px;background:var(--flavor);display:block}
+
+  /* buy box */
+  .buy h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.2vw,54px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 0}
+  .rating-line{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--slate)}
+  .price-line{display:flex;align-items:baseline;gap:12px;margin:26px 0 6px}
+  .price-line .now{font-family:var(--serif);font-size:42px;line-height:1;letter-spacing:-.02em}
+  .price-line .was{font-family:var(--mono);font-size:15px;color:var(--slate-2);text-decoration:line-through}
+  .price-line .save{
+    font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--cobalt);color:#fff;padding:4px 8px;border-radius:2px;
+  }
+  .per-day{font-family:var(--mono);font-size:12px;color:var(--slate);letter-spacing:.05em}
+
+  .opt-group{margin-top:30px}
+  .opt-head{
+    display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--slate-2);
+  }
+  .opt-head b{color:var(--ink);font-weight:500;letter-spacing:.06em}
+
+  /* purchase-type cards */
+  .ptype{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ptype button{
+    text-align:left;border:1px solid var(--line);background:var(--pure);
+    border-radius:var(--radius);padding:16px 16px 15px;position:relative;
+    transition:border-color .2s ease,background .2s ease;
+  }
+  .ptype button:hover{border-color:var(--slate-2)}
+  .ptype button.is-on{border-color:var(--cobalt);border-width:1.5px;background:var(--cobalt-pale)}
+  .ptype .t{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .ptype .p{display:block;font-family:var(--mono);font-size:13px;margin-top:6px}
+  .ptype .n{display:block;font-size:12px;color:var(--slate);margin-top:5px;line-height:1.4}
+  .ptype .flag{
+    position:absolute;top:-9px;right:12px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);padding:3px 7px;border-radius:2px;
+  }
+
+  /* flavor chips */
+  .flavors{display:flex;flex-wrap:wrap;gap:8px}
+  .fchip{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);background:var(--pure);border-radius:100px;
+    padding:8px 14px 8px 9px;font-size:13.5px;
+    transition:border-color .2s ease,background .2s ease;
+  }
+  .fchip:hover{border-color:var(--slate-2)}
+  .fchip.is-on{border-color:var(--ink);border-width:1.5px;background:var(--paper-2)}
+  .fchip i{width:15px;height:15px;border-radius:50%;background:var(--flavor);flex:none}
+
+  /* size */
+  .sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .sizes button{
+    border:1px solid var(--line);background:var(--pure);border-radius:var(--radius);
+    padding:14px 12px;text-align:center;transition:border-color .2s ease,background .2s ease;
+  }
+  .sizes button:hover{border-color:var(--slate-2)}
+  .sizes button.is-on{border-color:var(--cobalt);border-width:1.5px;background:var(--cobalt-pale)}
+  .sizes .s1{display:block;font-size:14px;font-weight:600}
+  .sizes .s2{display:block;font-family:var(--mono);font-size:11px;color:var(--slate);margin-top:4px}
+
+  .atc{margin-top:26px}
+  .assur{
+    margin-top:22px;padding-top:20px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;
+  }
+  .assur li{
+    list-style:none;font-size:13px;color:var(--slate);display:flex;gap:9px;align-items:flex-start;line-height:1.45;
+  }
+  .assur li::before{content:'✓';color:var(--signal);font-size:12px;flex:none;margin-top:1px}
+
+  /* key facts strip inside buy box */
+  .kfacts{
+    margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);
+    display:grid;grid-template-columns:repeat(3,1fr);background:var(--pure);
+  }
+  .kfacts div{padding:16px 14px;border-right:1px solid var(--line);text-align:center}
+  .kfacts div:last-child{border-right:0}
+  .kfacts .kv{font-family:var(--serif);font-size:26px;line-height:1}
+  .kfacts .kl{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--slate-2);margin-top:7px;line-height:1.4}
+
+  /* ---------- sticky buy bar ---------- */
+  .stickybar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    background:rgba(16,16,18,.96);backdrop-filter:blur(14px);
+    color:var(--paper);border-top:1px solid var(--ink-border);
+    transform:translateY(110%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+  }
+  .stickybar.on{transform:none}
+  .stickybar .in{
+    max-width:var(--wrap);margin:0 auto;padding:13px var(--pad);
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .stickybar .who{display:flex;align-items:center;gap:14px;min-width:0}
+  .stickybar .sw-lg{width:30px;height:30px;border-radius:9px 3px 9px 3px;background:var(--flavor);flex:none}
+  .stickybar .nm{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .stickybar .mt{font-family:var(--mono);font-size:11px;color:var(--chalk-2);letter-spacing:.05em}
+  .stickybar .btn{padding:12px 26px}
+
+  /* ---------- content sections ---------- */
+  .icons{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .icons .i{padding:34px 28px 34px 0;border-right:1px solid var(--line)}
+  .icons .i:last-child{border-right:0}
+  .icons .i h4{font-family:var(--serif);font-size:21px;font-weight:400;line-height:1.15;margin-bottom:8px}
+  .icons .i p{font-size:14px;color:var(--slate);line-height:1.55}
+  .icons .i .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--cobalt);display:block;margin-bottom:14px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{background:var(--pure);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .step .no{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--cobalt);
+    padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--line);display:block;
+  }
+  .step h4{font-family:var(--serif);font-size:23px;font-weight:400;line-height:1.15;margin-bottom:10px}
+  .step p{font-size:14.5px;color:var(--slate);line-height:1.6}
+
+  .inout{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .inout ul{list-style:none}
+  .inout li{
+    padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;
+    display:flex;gap:11px;align-items:flex-start;
+  }
+  .inout li:last-child{border-bottom:0}
+  .inout .in li::before{content:'✓';color:var(--signal);flex:none;font-size:13px;margin-top:2px}
+  .inout .out li::before{content:'✕';color:var(--slate-2);flex:none;font-size:12px;margin-top:3px}
+  .inout .out li{color:var(--slate)}
+
+  /* reviews distribution */
+  .rdist{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+  .bars{width:100%}
+  .bar-row{display:flex;align-items:center;gap:14px;margin-bottom:9px;font-family:var(--mono);font-size:11px;color:var(--slate)}
+  .bar-row .track{flex:1;height:7px;background:var(--paper-3);border-radius:2px;overflow:hidden}
+  .bar-row .track i{display:block;height:100%;background:var(--cobalt);border-radius:2px}
+  .bar-row .pc{width:40px;text-align:right}
+
+  @media (max-width:1000px){
+    .pdp{grid-template-columns:1fr;gap:40px;padding-bottom:72px}
+    .gal{position:static}
+    .icons{grid-template-columns:1fr 1fr}
+    .icons .i:nth-child(2){border-right:0}
+    .icons .i:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .steps{grid-template-columns:1fr}
+    .rdist{grid-template-columns:1fr;gap:28px}
+  }
+  @media (max-width:820px){
+    .stage{min-height:400px;padding:40px 20px}
+    .stage .pouch{width:196px;height:262px;padding:36px 18px 18px}
+    .stage .pk-flavor{font-size:27px}
+    .gummy{width:40px;height:40px}
+    .thumbs{grid-template-columns:repeat(6,1fr);gap:7px}
+    .ptype{grid-template-columns:1fr}
+    .icons{grid-template-columns:1fr}
+    .icons .i{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}
+    .icons .i:last-child{border-bottom:0}
+    .inout{grid-template-columns:1fr}
+    .assur{grid-template-columns:1fr}
+    .stickybar .mt,.stickybar .sw-lg{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="ann">
+  <div class="wrap">
+    <span><i class="dot"></i> Free shipping on subscriptions and orders over $75</span>
+    <span class="opt"><i class="dot"></i> Third-party tested, every batch</span>
+    <span class="opt"><i class="dot"></i> Cancel or skip anytime</span>
+  </div>
+</div>
+
+<nav class="main">
+  <div class="nav-in">
+    <a class="wordmark" href="/baseline/">Baseline</a>
+    <div class="nav-links">
+      <a class="is-on" href="/baseline/creatine-gummies/">Gummies</a>
+      <a href="/baseline/#lineup">Electrolytes</a>
+      <a href="/baseline/#lineup">Powder</a>
+      <a href="/baseline/creatine-101/">Creatine 101</a>
+      <a href="/baseline/#quality">Quality</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-util" href="#reviews">Reviews</a>
+      <a class="nav-cart" href="#buy">Cart <span class="qty">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <p class="crumb"><a href="/baseline/">Home</a><i>/</i><a href="/baseline/#lineup">Shop</a><i>/</i>Creatine Gummies</p>
+</div>
+
+<!-- =============================== PDP ================================= -->
+<main class="wrap pdp" id="buy">
+
+  <!-- ---------------- gallery ---------------- -->
+  <div class="gal">
+    <div class="stage" id="stage" style="--flavor:var(--f-berry)">
+      <div class="pack pouch" style="--flavor:var(--f-berry)" id="pouch">
+        <span class="pk-mark">Baseline</span>
+        <span class="pk-flavor" id="pkFlavor">Wild<br />Berry</span>
+        <span class="pk-type">Creatine monohydrate gummies<br />120 gummies · 30 servings</span>
+        <span class="pk-dose"><span>Per serving<br /><b>5 g</b></span><span style="text-align:right">Purity<br /><b>99.9%</b></span></span>
+      </div>
+      <div class="gummies">
+        <i class="gummy" style="--flavor:var(--f-berry)"></i>
+        <i class="gummy" style="--flavor:var(--f-berry)"></i>
+        <i class="gummy" style="--flavor:var(--f-berry)"></i>
+        <i class="gummy" style="--flavor:var(--f-berry)"></i>
+      </div>
+      <span class="stage-note">4 gummies = 1 serving = 5 g creatine monohydrate</span>
+    </div>
+
+    <div class="thumbs" id="thumbs">
+      <button class="thumb is-on" data-i="0" style="--flavor:var(--f-berry)" aria-label="Wild Berry"><i></i></button>
+      <button class="thumb" data-i="1" style="--flavor:var(--f-watermelon)" aria-label="Watermelon"><i></i></button>
+      <button class="thumb" data-i="2" style="--flavor:var(--f-apple)" aria-label="Green Apple"><i></i></button>
+      <button class="thumb" data-i="3" style="--flavor:var(--f-blue)" aria-label="Blue Raspberry"><i></i></button>
+      <button class="thumb" data-i="4" style="--flavor:var(--f-cherry)" aria-label="Sour Cherry"><i></i></button>
+      <button class="thumb" data-i="5" style="--flavor:var(--f-orange)" aria-label="Orange"><i></i></button>
+    </div>
+  </div>
+
+  <!-- ---------------- buy box ---------------- -->
+  <div class="buy">
+    <div class="label label-c">Creatine monohydrate · 5 g per serving</div>
+    <h1>Creatine Gummies</h1>
+
+    <div class="rating-line" style="margin-top:16px">
+      <span class="stars">★★★★★</span>
+      <span class="num">4.8</span>
+      <span style="opacity:.4">|</span>
+      <a href="#reviews" style="border-bottom:1px solid var(--line)"><span class="num">1,486</span> reviews</a>
+    </div>
+
+    <div class="price-line">
+      <span class="now num" id="priceNow">$39</span>
+      <span class="was num" id="priceWas">$49</span>
+      <span class="save" id="priceSave">Save 20%</span>
+    </div>
+    <div class="per-day" id="perDay">$1.30 per day · 30 servings</div>
+
+    <!-- purchase type -->
+    <div class="opt-group">
+      <div class="opt-head"><span>Purchase type</span></div>
+      <div class="ptype" id="ptype">
+        <button class="is-on" data-type="sub">
+          <span class="flag">Save 20%</span>
+          <span class="t">Subscribe</span>
+          <span class="p" id="subPrice">$39 / month</span>
+          <span class="n">Ships every 30 days. Skip or cancel anytime.</span>
+        </button>
+        <button data-type="one">
+          <span class="t">One time</span>
+          <span class="p" id="onePrice">$49</span>
+          <span class="n">No commitment, no account needed.</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- flavor -->
+    <div class="opt-group">
+      <div class="opt-head"><span>Flavor</span><b id="flavorName">Wild Berry</b></div>
+      <div class="flavors" id="flavors">
+        <button class="fchip is-on" data-i="0" style="--flavor:var(--f-berry)"><i></i>Wild Berry</button>
+        <button class="fchip" data-i="1" style="--flavor:var(--f-watermelon)"><i></i>Watermelon</button>
+        <button class="fchip" data-i="2" style="--flavor:var(--f-apple)"><i></i>Green Apple</button>
+        <button class="fchip" data-i="3" style="--flavor:var(--f-blue)"><i></i>Blue Raspberry</button>
+        <button class="fchip" data-i="4" style="--flavor:var(--f-cherry)"><i></i>Sour Cherry</button>
+        <button class="fchip" data-i="5" style="--flavor:var(--f-orange)"><i></i>Orange</button>
+      </div>
+    </div>
+
+    <!-- size -->
+    <div class="opt-group">
+      <div class="opt-head"><span>Supply</span><b id="sizeName">1 pouch</b></div>
+      <div class="sizes" id="sizes">
+        <button class="is-on" data-size="0">
+          <span class="s1">1 pouch</span>
+          <span class="s2 num">30 days</span>
+        </button>
+        <button data-size="1">
+          <span class="s1">2 pouches</span>
+          <span class="s2 num">Save 5% more</span>
+        </button>
+        <button data-size="2">
+          <span class="s1">3 pouches</span>
+          <span class="s2 num">Save 10% more</span>
+        </button>
+      </div>
+    </div>
+
+    <a class="btn primary block lg atc" href="#buy" id="atc">Add to cart · <span id="atcPrice">$39</span></a>
+
+    <ul class="assur">
+      <li>Free shipping on subscriptions</li>
+      <li>60 day money-back guarantee</li>
+      <li>Certificate of analysis per batch</li>
+      <li>Skip or cancel in two clicks</li>
+    </ul>
+
+    <div class="kfacts">
+      <div><div class="kv num">5 g</div><div class="kl">Creatine per serving</div></div>
+      <div><div class="kv num">4</div><div class="kl">Gummies per serving</div></div>
+      <div><div class="kv num">30</div><div class="kl">Servings per pouch</div></div>
+    </div>
+  </div>
+</main>
+
+<!-- ============================ WHY / ICONS ============================ -->
+<section class="wrap" style="padding-bottom:96px">
+  <div class="icons">
+    <div class="i">
+      <span class="n">01</span>
+      <h4>The full dose</h4>
+      <p>Five grams in four gummies, not thirteen. The number on the front is the number in the panel.</p>
+    </div>
+    <div class="i">
+      <span class="n">02</span>
+      <h4>No shaker, no water</h4>
+      <p>Chew them at your desk, in the car, at the trailhead. This is the whole reason people stay consistent.</p>
+    </div>
+    <div class="i">
+      <span class="n">03</span>
+      <h4>99.9% monohydrate</h4>
+      <p>The form used in nearly every published trial. No HCl, no buffering, no reason to reinvent it.</p>
+    </div>
+    <div class="i">
+      <span class="n">04</span>
+      <h4>Tested and published</h4>
+      <p>Independent lab results for every batch, matched to the code printed on your pouch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SUPPLEMENT FACTS ======================== -->
+<section class="sec band">
+  <div class="wrap">
+    <div class="marker"><b>01</b> What's in it</div>
+    <div class="grid-2" style="gap:56px;align-items:start">
+      <div>
+        <h2 class="sec-title">Nothing you need<br />a chemistry degree<br />to read.</h2>
+        <p class="lede" style="margin-top:24px">One active ingredient at a full clinical dose, and a short list of things that turn it into something you'll want to eat. No proprietary blend, because a proprietary blend is just a way to avoid telling you the dose.</p>
+
+        <div class="inout" style="margin-top:40px">
+          <div>
+            <div class="label" style="margin-bottom:8px">In the pouch</div>
+            <ul class="in">
+              <li>Creatine monohydrate, 5 g</li>
+              <li>Pectin, for a clean chew</li>
+              <li>Cane sugar and glucose syrup</li>
+              <li>Citric acid</li>
+              <li>Natural flavor</li>
+              <li>Color from fruit and vegetable juice</li>
+            </ul>
+          </div>
+          <div>
+            <div class="label" style="margin-bottom:8px">Not in the pouch</div>
+            <ul class="out">
+              <li>Proprietary blends</li>
+              <li>Stimulants or caffeine</li>
+              <li>Artificial colors or dyes</li>
+              <li>Gelatin, so they're vegan</li>
+              <li>Sugar alcohols</li>
+              <li>Anything we won't name</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="facts">
+          <h4>Supplement Facts</h4>
+          <div class="hr-thin"></div>
+          <div class="row"><span>Serving Size</span><span><b>4 Gummies</b></span></div>
+          <div class="row"><span>Servings Per Container</span><span><b>30</b></span></div>
+          <div class="hr-thick"></div>
+          <div class="row" style="font-size:10.5px"><span>&nbsp;</span><span><b>Amount Per Serving</b> &nbsp; % DV</span></div>
+          <div class="hr-thin"></div>
+          <div class="row"><span>Calories</span><span><b>30</b></span></div>
+          <div class="hr-thin"></div>
+          <div class="row"><span>Total Carbohydrate</span><span><b>8 g</b> &nbsp; 3%</span></div>
+          <div class="row" style="padding-left:16px"><span>Total Sugars</span><span><b>6 g</b> &nbsp; †</span></div>
+          <div class="row" style="padding-left:28px"><span>Includes Added Sugars</span><span><b>6 g</b> &nbsp; 12%</span></div>
+          <div class="hr-thin"></div>
+          <div class="row"><span><b>Creatine Monohydrate</b></span><span><b>5 g</b> &nbsp; †</span></div>
+          <div class="hr-mid"></div>
+          <p class="fine">† Daily Value not established.<br />% Daily Values are based on a 2,000 calorie diet.</p>
+          <div class="hr-thin"></div>
+          <p class="fine" style="margin-top:8px"><b>Other ingredients:</b> Glucose syrup, cane sugar, water, pectin, citric acid, natural flavor, fruit and vegetable juice (color), sodium citrate.</p>
+          <p class="fine" style="margin-top:8px"><b>Allergens:</b> None. Made in a facility that also processes tree nuts.</p>
+        </div>
+        <p class="body-sm" style="margin-top:16px">Panel shown for Wild Berry. Sugar and calorie counts vary by one gram across flavors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW TO USE =========================== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="marker"><b>02</b> How to take it</div>
+    <div class="sec-head">
+      <h2 class="sec-title">Four gummies.<br />Once a day.<br />That's it.</h2>
+      <p class="lede">There's no protocol to follow, no window to hit and no cycling off. The only variable that matters is whether you actually take it, which is the problem this format exists to solve.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="no">Step 01</span>
+        <h4>Take four, any time of day</h4>
+        <p>Timing barely moves the needle. Saturation is a running total, so attach it to something you already do without thinking. Coffee works for most people.</p>
+      </div>
+      <div class="step">
+        <span class="no">Step 02</span>
+        <h4>Give it three to four weeks</h4>
+        <p>That's how long five grams a day takes to fill your stores. You can load with more up front, but you don't need to, and loading is where the stomach complaints come from.</p>
+      </div>
+      <div class="step">
+        <span class="no">Step 03</span>
+        <h4>Don't stop</h4>
+        <p>Stores drain back down over about a month if you quit. Creatine isn't a cycle, it's a floor, and the whole point is to stay above it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== REVIEWS ============================== -->
+<section class="sec band" id="reviews">
+  <div class="wrap">
+    <div class="marker"><b>03</b> Reviews</div>
+    <div class="rdist" style="margin-bottom:52px">
+      <div>
+        <div style="display:flex;align-items:center;gap:22px">
+          <span style="font-family:var(--serif);font-size:76px;line-height:1;letter-spacing:-.02em" class="num">4.8</span>
+          <div>
+            <div class="stars" style="font-size:16px">★★★★★</div>
+            <p class="body-sm" style="margin-top:8px"><span class="num">1,486</span> reviews<br />Creatine Gummies</p>
+          </div>
+        </div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span>5 ★</span><span class="track"><i style="width:82%"></i></span><span class="pc num">82%</span></div>
+        <div class="bar-row"><span>4 ★</span><span class="track"><i style="width:13%"></i></span><span class="pc num">13%</span></div>
+        <div class="bar-row"><span>3 ★</span><span class="track"><i style="width:3%"></i></span><span class="pc num">3%</span></div>
+        <div class="bar-row"><span>2 ★</span><span class="track"><i style="width:1%"></i></span><span class="pc num">1%</span></div>
+        <div class="bar-row"><span>1 ★</span><span class="track"><i style="width:1%"></i></span><span class="pc num">1%</span></div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <article class="rcard rise">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Four gummies and I'm done thinking about it. I've had a tub of powder in my cupboard for two years that says a lot about why this works for me.</p>
+        <div class="who"><span class="av">DM</span><span>Danielle M. · <span class="verified">✓ Verified</span></span></div>
+      </article>
+      <article class="rcard rise">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Checked the panel against three other gummy brands before buying. This was the only one where five grams meant five grams.</p>
+        <div class="who"><span class="av">AO</span><span>Adaeze O. · <span class="verified">✓ Verified</span></span></div>
+      </article>
+      <article class="rcard rise">
+        <div class="stars">★★★★☆</div>
+        <p class="quote">Sour cherry is genuinely good, which is a problem because I have to stop myself at four. Docking a star for the pouch being hard to reseal.</p>
+        <div class="who"><span class="av">MB</span><span>Marcus B. · <span class="verified">✓ Verified</span></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FAQ ================================ -->
+<section class="sec">
+  <div class="wrap" style="max-width:960px">
+    <div class="marker"><b>04</b> Questions</div>
+    <h2 class="sec-title" style="margin-bottom:44px">About the gummies<br />specifically.</h2>
+    <div class="acc">
+      <details open>
+        <summary>How do you fit five grams into four gummies?<span class="pm"></span></summary>
+        <div class="ans"><p>They're larger than a typical vitamin gummy, and the base is built around the creatine rather than the creatine being sprinkled into a candy recipe. That's the trade. Most brands keep the gummy small and cut the dose, which is how you end up needing to chew thirteen of them.</p></div>
+      </details>
+      <details>
+        <summary>Does the creatine stay stable in a gummy?<span class="pm"></span></summary>
+        <div class="ans"><p>Creatine degrades into creatinine in heat and moisture over time, so the formula is pH controlled and the pouch is a moisture barrier with an oxygen absorber. We test for creatinine on every batch and publish the number. Store them below 25°C and out of direct sun and they'll hold through the printed date.</p></div>
+      </details>
+      <details>
+        <summary>Are they vegan?<span class="pm"></span></summary>
+        <div class="ans"><p>Yes. They're set with pectin rather than gelatin, and the creatine monohydrate is synthesised, not animal derived.</p></div>
+      </details>
+      <details>
+        <summary>How much sugar is in a serving?<span class="pm"></span></summary>
+        <div class="ans"><p>Six grams across four gummies, which is roughly a third of a small apple. We tested sugar-free versions and they needed sugar alcohols to work, which caused more stomach complaints than the sugar was worth.</p></div>
+      </details>
+      <details>
+        <summary>Can I take them alongside the powder or the sticks?<span class="pm"></span></summary>
+        <div class="ans"><p>You can, but there's no benefit past saturation. Once your stores are full, extra creatine is just excreted. Pick one format and stay on it, or use the sticks on training days and gummies on rest days if that's easier to remember.</p></div>
+      </details>
+      <details>
+        <summary>What's the guarantee?<span class="pm"></span></summary>
+        <div class="ans"><p>Sixty days. If you don't like the flavor or you change your mind, email us and we'll refund it, opened pouch included. You don't need to ship anything back.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CROSS SELL ============================ -->
+<section class="sec band-3">
+  <div class="wrap">
+    <div class="marker"><b>05</b> The rest of the lineup</div>
+    <h2 class="sec-title" style="margin-bottom:44px">Same five grams,<br />different delivery.</h2>
+    <div class="grid-2">
+      <article class="pcard">
+        <div class="shot" style="min-height:260px">
+          <div class="pack stick" style="--flavor:var(--f-passion);transform:rotate(-6deg);height:200px"><span class="stick-txt">Baseline · Passionfruit</span></div>
+          <div class="pack stick" style="--flavor:var(--f-lime);transform:rotate(2deg) translateY(-8px);height:200px"><span class="stick-txt">Baseline · Lime</span></div>
+          <div class="pack stick" style="--flavor:var(--f-grapefruit);transform:rotate(8deg);height:200px"><span class="stick-txt">Baseline · Grapefruit</span></div>
+        </div>
+        <div class="body">
+          <h3>Creatine + Electrolytes</h3>
+          <p class="desc">Five grams of creatine plus a full electrolyte load in one stick. For hot rooms and long sessions.</p>
+          <div class="price"><span class="amt num">$44</span><span class="sub num">$1.47 / day · subscribe</span></div>
+          <a class="btn secondary block" href="/baseline/#lineup">View product</a>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="shot" style="min-height:260px">
+          <div class="pack tub" style="--flavor:var(--f-plain)">
+            <span class="pk-mark">Baseline</span>
+            <span class="pk-flavor" style="font-size:24px">Unflavored</span>
+            <span class="pk-type">Micronized creatine monohydrate</span>
+            <span class="pk-dose"><span>Scoop<br /><b>5 g</b></span><span style="text-align:right">Servings<br /><b>60</b></span></span>
+          </div>
+        </div>
+        <div class="body">
+          <h3>Creatine Powder</h3>
+          <p class="desc">Micronized monohydrate, 60 servings, lowest cost per gram in the lineup. Mixes without clumping.</p>
+          <div class="price"><span class="amt num">$28</span><span class="sub num">$0.47 / day · subscribe</span></div>
+          <a class="btn secondary block" href="/baseline/#lineup">View product</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== PROTOTYPE NOTE =========================== -->
+<section class="wrap" style="padding-top:56px;padding-bottom:56px">
+  <div class="proto">
+    <h5>Prototype note · not for publication</h5>
+    <ul>
+      <li><b>Supplement facts panel</b> is a realistic mock. Final values must come from the manufacturer's finished formula and a lab-verified analysis.</li>
+      <li><b>Review counts, ratings and quotes</b> are placeholders pending real verified-purchase data.</li>
+      <li><b>Pricing and pack sizes</b> are illustrative and need to be set against real cost of goods.</li>
+      <li><b>Claims</b> are written as structure and function statements with the required disclaimer. Regulatory review needed before launch in the US and Canada.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <a class="wordmark lg" href="/baseline/">Baseline</a>
+        <p class="f-blurb">Five grams of pharmaceutical-grade creatine monohydrate, in three formats you'll actually take every day.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="/baseline/creatine-gummies/">Creatine Gummies</a></li>
+          <li><a href="/baseline/#lineup">Creatine + Electrolytes</a></li>
+          <li><a href="/baseline/#lineup">Creatine Powder</a></li>
+          <li><a href="/baseline/#lineup">Bundles</a></li>
+          <li><a href="/baseline/#lineup">Subscribe and save</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/baseline/creatine-101/">Creatine 101</a></li>
+          <li><a href="/baseline/creatine-101/#dosing">Dosing guide</a></li>
+          <li><a href="/baseline/creatine-101/#myths">Myths, answered</a></li>
+          <li><a href="/baseline/#quality">Our quality promise</a></li>
+          <li><a href="/baseline/#quality">Verify a batch</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="/baseline/#quality">Shipping and returns</a></li>
+          <li><a href="/baseline/#quality">Manage subscription</a></li>
+          <li><a href="/baseline/#quality">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. Consult your physician before starting any supplement, particularly if you are pregnant or nursing, have a kidney condition, or take prescription medication.</p>
+    <div class="f-bot">
+      <span>© 2026 Baseline Supplement Co.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================== STICKY BUY BAR =========================== -->
+<div class="stickybar" id="sticky">
+  <div class="in">
+    <div class="who">
+      <i class="sw-lg" id="stickySw" style="--flavor:var(--f-berry)"></i>
+      <div>
+        <div class="nm">Creatine Gummies · <span id="stickyFlavor">Wild Berry</span></div>
+        <div class="mt" id="stickyMeta">Subscribe · 1 pouch · 30 servings</div>
+      </div>
+    </div>
+    <a class="btn on-dark primary" href="#buy">Add to cart · <span id="stickyPrice">$39</span></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var FLAVORS = [
+    {name:'Wild Berry',    two:'Wild<br>Berry',        v:'var(--f-berry)'},
+    {name:'Watermelon',    two:'Water<br>melon',       v:'var(--f-watermelon)'},
+    {name:'Green Apple',   two:'Green<br>Apple',       v:'var(--f-apple)'},
+    {name:'Blue Raspberry',two:'Blue<br>Raspberry',    v:'var(--f-blue)'},
+    {name:'Sour Cherry',   two:'Sour<br>Cherry',       v:'var(--f-cherry)'},
+    {name:'Orange',        two:'Orange',               v:'var(--f-orange)'}
+  ];
+  // [one-time, subscribe] by pack size
+  var SIZES = [
+    {label:'1 pouch',  servings:30,  one:49,  sub:39},
+    {label:'2 pouches',servings:60,  one:92,  sub:74},
+    {label:'3 pouches',servings:90,  one:132, sub:105}
+  ];
+
+  var state = {flavor:0, size:0, type:'sub'};
+
+  var $ = function(id){ return document.getElementById(id); };
+  var money = function(n){ return '$' + n; };
+
+  function render(){
+    var f = FLAVORS[state.flavor];
+    var s = SIZES[state.size];
+    var price = state.type === 'sub' ? s.sub : s.one;
+
+    // pack + gummies
+    $('stage').style.setProperty('--flavor', f.v);
+    $('pouch').style.setProperty('--flavor', f.v);
+    $('pkFlavor').innerHTML = f.two;
+    Array.prototype.forEach.call(document.querySelectorAll('.gummy'), function(g){
+      g.style.setProperty('--flavor', f.v);
+    });
+
+    // labels
+    $('flavorName').textContent = f.name;
+    $('sizeName').textContent = s.label;
+
+    // price block
+    $('priceNow').textContent = money(price);
+    if (state.type === 'sub'){
+      $('priceWas').style.display = '';
+      $('priceSave').style.display = '';
+      $('priceWas').textContent = money(s.one);
+      $('priceSave').textContent = 'Save ' + Math.round((1 - s.sub / s.one) * 100) + '%';
+    } else {
+      $('priceWas').style.display = 'none';
+      $('priceSave').style.display = 'none';
+    }
+    $('perDay').textContent = '$' + (price / s.servings).toFixed(2) + ' per day · ' + s.servings + ' servings';
+    $('subPrice').textContent = money(s.sub) + (state.size === 0 ? ' / month' : ' / delivery');
+    $('onePrice').textContent = money(s.one);
+    $('atcPrice').textContent = money(price);
+
+    // sticky bar
+    $('stickySw').style.setProperty('--flavor', f.v);
+    $('stickyFlavor').textContent = f.name;
+    $('stickyMeta').textContent = (state.type === 'sub' ? 'Subscribe' : 'One time') + ' · ' + s.label + ' · ' + s.servings + ' servings';
+    $('stickyPrice').textContent = money(price);
+  }
+
+  function setOn(container, el){
+    Array.prototype.forEach.call(container.children, function(c){ c.classList.remove('is-on'); });
+    el.classList.add('is-on');
+  }
+
+  // flavor chips + thumbnails stay in sync
+  function pickFlavor(i){
+    state.flavor = i;
+    Array.prototype.forEach.call(document.querySelectorAll('#flavors .fchip'), function(b){
+      b.classList.toggle('is-on', +b.dataset.i === i);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('#thumbs .thumb'), function(b){
+      b.classList.toggle('is-on', +b.dataset.i === i);
+    });
+    render();
+  }
+
+  document.getElementById('flavors').addEventListener('click', function(e){
+    var b = e.target.closest('.fchip'); if (b) pickFlavor(+b.dataset.i);
+  });
+  document.getElementById('thumbs').addEventListener('click', function(e){
+    var b = e.target.closest('.thumb'); if (b) pickFlavor(+b.dataset.i);
+  });
+  document.getElementById('sizes').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    state.size = +b.dataset.size; setOn(e.currentTarget, b); render();
+  });
+  document.getElementById('ptype').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    state.type = b.dataset.type; setOn(e.currentTarget, b); render();
+  });
+
+  // sticky bar appears once the buy box scrolls past
+  var buy = document.getElementById('buy');
+  var bar = document.getElementById('sticky');
+  window.addEventListener('scroll', function(){
+    var past = buy.getBoundingClientRect().bottom < 60;
+    var atEnd = (window.innerHeight + window.scrollY) > (document.body.offsetHeight - 260);
+    bar.classList.toggle('on', past && !atEnd);
+  }, {passive:true});
+
+  render();
+})();
+</script>
+
+</body>
+</html>
