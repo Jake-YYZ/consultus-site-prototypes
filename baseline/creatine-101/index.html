@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#F4F1EA" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/baseline/assets/baseline.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/baseline/assets/baseline.css?v=2" />
 <style>
   /* ---------- article hero ---------- */
   .a-hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
@@ -37,15 +37,15 @@
     font-family:var(--mono);font-size:10px;color:var(--slate-2);margin-right:9px;
   }
   .toc a:hover{color:var(--ink)}
-  .toc a.is-on{color:var(--cobalt);border-left-color:var(--cobalt)}
-  .toc a.is-on::before{color:var(--cobalt)}
+  .toc a.is-on{color:var(--brand);border-left-color:var(--brand)}
+  .toc a.is-on::before{color:var(--brand)}
 
   /* ---------- prose ---------- */
   .prose{max-width:70ch}
   .prose section{padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--line)}
   .prose section:last-of-type{border-bottom:0}
   .prose h2{
-    font-family:var(--serif);font-weight:400;
+    font-family:var(--display);font-weight:700;
     font-size:clamp(29px,3.4vw,42px);line-height:1.06;letter-spacing:-.018em;
     margin-bottom:22px;scroll-margin-top:120px;
   }
@@ -62,20 +62,20 @@
   }
   .prose ul li::before{
     content:'';position:absolute;left:0;top:11px;
-    width:6px;height:1px;background:var(--cobalt);
+    width:6px;height:1px;background:var(--brand);
   }
   .prose a.ref{
-    font-family:var(--mono);font-size:11px;color:var(--cobalt);
+    font-family:var(--mono);font-size:11px;color:var(--brand);
     vertical-align:super;text-decoration:none;padding:0 1px;
   }
   .prose a.ref:hover{text-decoration:underline}
 
   .pull{
-    border-left:2px solid var(--cobalt);padding:6px 0 6px 26px;margin:34px 0;
+    border-left:2px solid var(--brand);padding:6px 0 6px 26px;margin:34px 0;
   }
   .pull p{
-    font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);line-height:1.28;
-    letter-spacing:-.012em;color:var(--ink);margin:0;
+    font-family:var(--display);font-size:clamp(22px,2.4vw,28px);line-height:1.28;font-weight:600;
+    letter-spacing:-.028em;color:var(--ink);margin:0;
   }
 
   .kbox{
@@ -102,7 +102,7 @@
     font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
     color:var(--slate-2);display:block;margin-bottom:9px;
   }
-  .myth h3{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.2;margin:0 0 10px;letter-spacing:-.01em}
+  .myth h3{font-family:var(--display);font-size:22px;font-weight:600;line-height:1.2;margin:0 0 10px;letter-spacing:-.028em}
   .myth p{margin-bottom:0;font-size:16px}
 
   /* references */
@@ -113,17 +113,17 @@
   }
   .refs li::before{
     content:counter(r);position:absolute;left:0;top:13px;
-    font-family:var(--mono);font-size:11px;color:var(--cobalt);
+    font-family:var(--mono);font-size:11px;color:var(--brand);
   }
   .refs li i{font-style:italic}
 
   /* inline product nudge */
   .nudge{
-    background:var(--ink);color:var(--paper);border-radius:var(--radius);
+    background:var(--ink);color:#fff;border-radius:var(--radius);
     padding:34px 34px 32px;margin:44px 0;
     display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;
   }
-  .nudge h4{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.15;letter-spacing:-.012em}
+  .nudge h4{font-family:var(--display);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.03em}
   .nudge p{font-size:14.5px;color:var(--chalk-2);margin:8px 0 0;max-width:44ch;line-height:1.55}
 
   @media (max-width:1000px){
@@ -151,7 +151,7 @@
 
 <nav class="main">
   <div class="nav-in">
-    <a class="wordmark" href="/baseline/">Baseline</a>
+    <a class="lockup" href="/baseline/"><span class="bmark">b</span><span class="logotype">baseline</span></a>
     <div class="nav-links">
       <a href="/baseline/creatine-gummies/">Gummies</a>
       <a href="/baseline/#lineup">Electrolytes</a>
@@ -436,7 +436,7 @@
   <div class="wrap">
     <div class="f-top">
       <div class="f-brand">
-        <a class="wordmark lg" href="/baseline/">Baseline</a>
+        <a class="lockup lg" href="/baseline/"><span class="bmark">b</span><span class="logotype">baseline</span></a>
         <p class="f-blurb">Five grams of pharmaceutical-grade creatine monohydrate, in three formats you'll actually take every day.</p>
       </div>
       <div>
