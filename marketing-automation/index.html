@@ -846,6 +846,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1018,8 +1026,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3596,12 +3604,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Klaviyo, HubSpot, or Marketo?", "acceptedAnswer": {"@type": "Answer", "text": "Depends on use case. Klaviyo for ecommerce. HubSpot for B2B. Marketo for enterprise. Postscript for SMS-led DTC. We have opinions but no tooling religion. The discipline matters more than the tool."}},
-    {"@type": "Question", "name": "Can you work with our existing email program?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most engagements start as a rebuild of an existing program rather than a clean-slate setup. We audit, restructure, and improve incrementally."}},
-    {"@type": "Question", "name": "How long until results show up?", "acceptedAnswer": {"@type": "Answer", "text": "Welcome and post-purchase flows show measurable revenue lift within 30 days. Segmentation and behavioral programs take 60 to 90 days. The compounding from the data architecture work takes a quarter or two."}},
-    {"@type": "Question", "name": "Do you offer standalone email marketing services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Not every business needs full lifecycle automation on day one. We offer email marketing services on their own, from list cleanup and segmentation to campaign calendars and the core welcome and post-purchase flows, for clients across Canada and the US. Most start there and expand into SMS and deeper automation once the email program is producing reliable revenue."}},
-    {"@type": "Question", "name": "What is the difference between marketing automation and email marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Email marketing is one channel. Marketing automation is the system that decides which message fires, to whom, and when, across email, SMS, and push, based on what the customer actually does. Email marketing sends a newsletter; automation sends the right follow-up the moment someone abandons a cart, books a call, or lapses. We build the automation layer so your email marketing stops being a weekly blast and starts responding to behavior."}},
-    {"@type": "Question", "name": "How much does marketing automation cost?", "acceptedAnswer": {"@type": "Answer", "text": "Cost depends on platform, list size, and how many flows and integrations the build requires. There is usually a heavier setup phase to fix data flow and build the core automations, then a lighter monthly retainer for optimization and campaign work. Because email and SMS are owned channels with no media cost, a well-built program is typically one of the highest-margin revenue lines a business has."}}
+    {
+      "@type": "Question",
+      "name": "Which platform do you recommend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually the one you already have. Klaviyo suits ecommerce because the product and order model is built in, HubSpot suits longer B2B cycles where marketing and sales share a record, and Postscript or similar handles SMS. The platform is rarely why a programme underperforms. Migrating mid-programme costs you history and momentum for a feature list you will mostly not use, so we push back on it unless there is a concrete reason."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until automation starts producing revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The data and event work takes two to four weeks, which is the part people do not expect. First flows are usually live within month one, and because they run continuously you get a fair read faster than in most channels, typically four to six weeks of steady volume. Businesses with infrequent purchases wait longer, since a replenishment cycle has to actually complete before the numbers mean anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is email still worth it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it remains one of the highest-return channels available, with one caveat: the version that works is small, behavioural, and consent-based. The version that stopped working is a big list receiving the same message. Open rates became unreliable once mail clients started pre-loading images, so we judge it on revenue per recipient and repeat purchase behaviour instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about SMS, and are there rules in Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SMS works well for time-sensitive and transactional messages and badly as a second email channel. Canadian anti-spam law sets a higher bar than many businesses assume, generally requiring express consent for commercial messages with clear identification and a working unsubscribe, and it applies to messages sent to Canadian recipients regardless of where you are. We set consent capture and records up properly rather than retrofitting them. For your specific obligations, take legal advice rather than ours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which flows should we build first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always post-purchase and abandonment, because they reach people who have already shown intent and they need no ongoing labour once built. Onboarding that reduces returns and support tickets, replenishment timed to real consumption, and a review request at the point of satisfaction typically outperform anything aimed at cold audiences. Newsletters and campaigns come after the flows, not before."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix our existing setup rather than rebuilding it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, and it is usually cheaper. Most accounts we inherit have reasonable flows sitting on unreliable data, so the fix is the event model and the customer record rather than the sequences. We start with an audit that tells you which is which, and we would rather repair something your team already understands than replace it with something they do not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we know the automation caused the revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is the honest weak point of the whole discipline, and worth pressing any agency on. A post-purchase flow can take credit for repeat orders that were always coming. Where volume allows we hold back a control group so there is a genuine comparison, and where it does not we say the number is directional. Anyone attributing every repeat order to their emails is not measuring, they are counting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you email our whole list to hit a target?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and we will push back if asked. Broad sends raise this month's revenue and lower engagement, which reduces how many inboxes you reach next month. That is borrowing from future performance, and the bill arrives as a deliverability problem months later, long after the report that looked good. We would rather send to a smaller engaged segment and show you revenue per recipient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the flows if we stop working together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do. The platform account, the list, the data, and the flows are all yours, documented with consistent naming, and we train whoever owns it internally so seasonal changes do not need us. Automation only one agency understands is a lock-in mechanism. It also fails badly, because undocumented flows keep sending after everyone who built them has moved on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need a CRM as well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a human being is involved in closing the sale, yes. Automation can nurture, but it cannot tell you a deal closed, and without that the flows keep treating a customer as a prospect. For ecommerce the platform itself often carries enough of the record. For B2B and services, the CRM is what makes the whole thing honest, which is why we frequently sequence CRM work before automation rather than after."
+      }
+    }
   ]
 }
 </script>
@@ -3677,16 +3759,19 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head solo">
+    <div class="sec-head solo has-lead">
       <div>
         <div class="section-lbl">What We Run</div>
-        <h2 class="sec-title">Marketing Automation, the <span class="sem">disciplined</span> way.</h2>
+        <h2 class="sec-title">Lifecycle automation that <span class="sem">compounds</span>.</h2>
       </div>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Real <span class="sem">segmentation</span>, not list-bombing.</h3><div><p>Most email marketing programs blast the same message to the same list every week. We rebuild segmentation around <a class="body-link" href="/analytics-attribution/">actual buyer behavior</a> so every send is relevant to the person receiving it.</p></div></div>
-      <div class="content-block"><h3>Post-purchase as <span class="sem">acquisition</span>.</h3><div><p>The first purchase is only half the story. Post-purchase flows turn one-time buyers into repeat buyers, lift average order value, and generate the reviews and referrals that feed new growth.</p></div></div>
-      <div class="content-block"><h3>Channels that work <span class="sem">together</span>.</h3><div><p>Email, SMS, and push do not work in isolation. We coordinate them with frequency caps and opt-out logic that respect the recipient, so nobody gets blasted from three directions at once.</p></div></div>
-      <div class="content-block"><h3>Data <span class="sem">architecture</span> first.</h3><div><p>Most automation programs fail because the underlying data is a mess. We fix how customer data flows between your store, <a class="body-link" href="/zoho-crm/">CRM</a>, and email platform before we build a single automation.</p></div></div>
+    
+      <p class="sec-lead">Six parts. The flows are the visible part and the data model underneath decides whether they work.</p><div class="content-block" style="border-top:none;padding-top:0"><h3>Real segmentation, not <span class="sem">list-bombing</span></h3><div><p>Sending the same email to everyone is the fastest way to train people to ignore you.</p><p>Segments get built from behaviour rather than demographics: what someone browsed, what they bought, how long since they last opened anything, and how much they are worth. A first-time buyer of a low-margin item and a repeat customer with a full basket should not receive the same message on the same day.</p><p>Smaller, sharper sends almost always beat bigger ones, and they protect your deliverability while they do it.</p></div></div>
+      <div class="content-block"><h3>Post-purchase as <span class="sem">acquisition</span></h3><div><p>The cheapest customer you will ever get is the one who already bought.</p><p>Most automation budgets go into chasing new leads while the post-purchase sequence is a receipt and silence. Onboarding that reduces returns, replenishment timed to actual consumption, and a review request at the moment of satisfaction usually outperform anything at the top of the funnel.</p><p>This is normally where we find the fastest available return in an account.</p></div></div>
+      <div class="content-block"><h3>Channels that work <span class="sem">together</span></h3><div><p>Email, SMS, and push are different contracts with the customer, not interchangeable pipes.</p><p>SMS is intimate and expensive to abuse, so it earns time-sensitive and transactional messages. Email carries the explanation. Push suits app users only. We set frequency caps across all of them, because three teams each sending twice a week is six messages nobody asked for.</p><p>Consent and regional rules differ per channel, and getting SMS consent wrong in Canada is a legal problem rather than a marketing one.</p></div></div>
+      <div class="content-block"><h3>Data architecture <span class="sem">first</span></h3><div><p>Every automation problem we are called about turns out to be a data problem underneath.</p><p>Events have to be named consistently, the customer record has to survive across web, checkout, and CRM, and a purchase has to look the same whether it came from the site or a phone order. Get this wrong and your abandoned cart flow emails people who already bought.</p><p>It is the least exciting phase and it determines whether anything built on top can be trusted.</p></div></div>
+      <div class="content-block"><h3>Deliverability as a <span class="sem">discipline</span></h3><div><p>You can build perfect flows into an inbox you will never reach.</p><p>Authentication records, a warmed sending domain, sunsetting people who have not opened in months, and watching complaint rates rather than only open rates. Buying a list or emailing dormant contacts to hit a number damages an asset that takes months to repair.</p><p>We would rather send to a smaller engaged list than report a bigger one.</p></div></div>
+      <div class="content-block"><h3>Handover to your <span class="sem">team</span></h3><div><p>Automation you cannot edit is a dependency, not an asset.</p><p>Flows get documented, naming stays consistent, and we train whoever owns it internally so a seasonal change does not require a call to us. The account, the data, and the flows stay yours.</p><p>If we build something only we understand, we have built ourselves a retainer rather than solved your problem.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3698,13 +3783,14 @@
       </div>
     </div>
       <div class="method-grid cols-4">
-        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Data and lifecycle diagnostic.</div><p class="ac-body">How your customer data connects, list health, deliverability, and your current flows. Written report regardless of engagement.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Segmentation and event model.</div><p class="ac-body">Customer data reorganized around the actual buyer journey. Events named consistently. Integrations audited and fixed.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Build</div><div class="ac-value">Flows and campaigns.</div><p class="ac-body">Welcome, post-purchase, abandoned-checkout, win-back, and reactivation flows built and tracked. Campaign rhythm locked in.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Quarterly review and refresh.</div><p class="ac-body">Quarterly review against revenue and engagement health. Flows refined, segmentation adjusted, deliverability monitored.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Data and lifecycle diagnostic.</div><p class="ac-body">We map what is being tracked, what is broken, and where customers currently fall silent. This usually surfaces two or three flows that should exist and do not, and one that is quietly emailing the wrong people.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Segmentation and event model.</div><p class="ac-body">Events named consistently, the customer record stitched across web, checkout, and CRM, and segments defined by behaviour and value. Unglamorous, and everything afterwards depends on it.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Build</div><div class="ac-value">Flows in priority order.</div><p class="ac-body">Highest-return sequences first, which is almost always post-purchase and abandonment rather than a newsletter. Frequency caps set across channels so the flows cannot collide.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Review, prune, and hand over.</div><p class="ac-body">Quarterly we test subject lines, timing, and offers, retire sequences that have stopped earning, and hand editing control to your team with the documentation to use it.</p></div>
       </div>
     </div>
-  </section>
+      <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">The data work takes two to four weeks and it is not optional, which surprises people who expected flows in week one. First sequences usually go live in month one, and because these run continuously you get a fair read faster than in most channels, typically four to six weeks of steady volume. Businesses with low order frequency wait longer, simply because a replenishment cycle has to complete before anyone can judge it.</p>
+    </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -3718,6 +3804,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers we manage <span class="sem">to</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Open rates became unreliable when Apple started pre-loading images, and they were never the point. These are the six we report.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Revenue per recipient</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What one send earns per person on the list.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The metric that keeps sends honest. Emailing everyone raises total revenue and lowers this number, which is the trade-off worth seeing before you make it.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Flow revenue versus campaign revenue</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Automated sequences against one-off sends.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Flows should carry a large share of automation revenue while requiring no ongoing labour. A programme where campaigns dominate is being run manually and will not scale.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Repeat purchase rate and time between orders</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Whether the programme is changing behaviour.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">This is the point of lifecycle work. If customers are not buying again or buying sooner, better subject lines are not the answer.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">List health</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Complaint rate, unsubscribes, and engaged share.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">A leading indicator. Deliverability collapses months after the behaviour that caused it, so this is where you catch a problem while it is still cheap.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Consent coverage by channel</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Who you are actually permitted to contact, per channel.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">In Canada especially, express consent is a compliance question rather than a marketing preference, and we track it as such.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Incremental lift</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What the automation added that would not have happened anyway.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The hardest and most honest number here. A post-purchase flow taking credit for repeat orders that were always coming is the most common way these programmes overstate themselves.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is lifecycle automation worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">It rewards repeat business and disappoints one-off purchases, and that is the main dividing line.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Customers can plausibly buy more than once, or refer, or renew.</li><li>You have a list with real consent and enough size to segment meaningfully.</li><li>Order or enquiry data is clean enough to trigger on, or can be made so.</li><li>Someone internal will own the programme after we hand it over.</li><li>You are willing to email less and better rather than more.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Yours is a genuinely one-off purchase with no aftercare or referral.</li><li>The list is small or the consent is unclear. Fix acquisition and consent first.</li><li>Product and order data is a mess across systems. That is phase one, not a shortcut.</li><li>You want a newsletter. That is content work, and cheaper without an automation platform.</li><li>Nobody can own it internally. Flows nobody maintains break quietly within a year.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If your data is the blocker, we will scope that as its own piece of work before selling you flows, and it often overlaps with <a href="/analytics-attribution/" class="body-link">analytics</a> and <a href="/zoho-crm/" class="body-link">CRM work</a>. Building automation on unreliable data produces confident emails to the wrong people.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How automation programs go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six failures, and the first is the one that quietly costs the most.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Building flows before fixing data</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">An abandoned cart flow that emails people who already bought, or a win-back to someone who ordered yesterday. It happens because the purchase event never made it back to the platform reliably.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Emailing everyone to hit a revenue number</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Total revenue goes up this month and engagement falls, so the next send reaches fewer inboxes. It is borrowing from next quarter, and the bill arrives as a deliverability problem.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Treating SMS like a second email channel</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Higher cost, far lower tolerance, and stricter consent rules. Overusing it burns the most valuable permission you hold and can create a compliance issue in Canada.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No frequency cap across channels</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Each team sends a reasonable amount. Together they send six messages a week. Nobody is responsible for the total, so nobody notices until unsubscribes climb.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Ignoring post-purchase entirely</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Most budgets go to acquisition while the highest-return sequences sit unbuilt, because chasing new customers feels more like marketing than looking after existing ones.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Flows nobody can edit</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Undocumented sequences with inconsistent naming, built by someone who left. They keep sending, gradually drift out of date, and eventually send something embarrassing.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Automation, CRM, and <span class="sem">analytics</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three things that share the same plumbing, which is why buying one without the others tends to disappoint.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Automation is the sending</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Flows, segments, and timing across email, SMS, and push. It is the visible layer and the one that gets bought first, usually before the layer it depends on exists.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">CRM is the record</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Where a person and their history live, and where sales activity is recorded. If the CRM does not know a deal closed, no automation can stop marketing to that person as a prospect.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Analytics is the truth</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Consistent events and clean attribution are what let you tell whether a flow added revenue or took credit for it. Without that, every automation report is optimistic.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We usually sequence these deliberately: get <a href="/analytics-attribution/" class="body-link">tracking</a> trustworthy, get the <a href="/zoho-crm/" class="body-link">CRM</a> reflecting reality, then automate on top. Where the sales team is the bottleneck rather than the messaging, that becomes <a href="/sales-enablement/" class="body-link">sales enablement</a> work instead.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3725,15 +3861,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Klaviyo, HubSpot, or Marketo?</summary><div class="faq-a"><p>Depends on use case. Klaviyo for ecommerce. HubSpot for B2B. Marketo for enterprise. Postscript for SMS-led DTC. We have opinions but no tooling religion. The discipline matters more than the tool.</p></div></details>
-        <details class="faq-item"><summary>Can you work with our existing email program?</summary><div class="faq-a"><p>Yes. Most engagements start as a rebuild of an existing program rather than a clean-slate setup. We audit, restructure, and improve incrementally.</p></div></details>
-        <details class="faq-item"><summary>How long until results show up?</summary><div class="faq-a"><p>Welcome and post-purchase flows show measurable revenue lift within 30 days. Segmentation and behavioral programs take 60-90 days. The compounding from the data architecture work takes a quarter or two.</p></div></details>
-        <details class="faq-item"><summary>Do you offer standalone email marketing services?</summary><div class="faq-a"><p>Yes. Not every business needs full lifecycle automation on day one. We offer email marketing services on their own, from list cleanup and segmentation to campaign calendars and the core welcome and post-purchase flows, for clients across Canada and the US. Most start there and expand into SMS and deeper automation once the email program is producing reliable revenue. The discipline is the same at every scale: relevant messages to the right segment, measured against sales.</p></div></details>
-        <details class="faq-item"><summary>What is the difference between marketing automation and email marketing?</summary><div class="faq-a"><p>Email marketing is one channel. Marketing automation is the system that decides which message fires, to whom, and when, across email, SMS, and push, based on what the customer actually does. Email marketing sends a newsletter; automation sends the right follow-up the moment someone abandons a cart, books a call, or lapses. We build the automation layer so your email marketing stops being a weekly blast and starts responding to behavior.</p></div></details>
-        <details class="faq-item"><summary>How much does marketing automation cost?</summary><div class="faq-a"><p>Cost depends on platform, list size, and how many flows and integrations the build requires. There is usually a heavier setup phase to fix data flow and build the core automations, then a lighter monthly retainer for optimization and campaign work. Because email and SMS are owned channels with no media cost, a well-built program is typically one of the highest-margin revenue lines a business has, which makes the retainer easy to justify.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">Which platform do you recommend?</summary><div class="faq-a">Usually the one you already have. Klaviyo suits ecommerce because the product and order model is built in, HubSpot suits longer B2B cycles where marketing and sales share a record, and Postscript or similar handles SMS. The platform is rarely why a programme underperforms. Migrating mid-programme costs you history and momentum for a feature list you will mostly not use, so we push back on it unless there is a concrete reason.</div></details><details class="faq-item"><summary class="faq-q">How long until automation starts producing revenue?</summary><div class="faq-a">The data and event work takes two to four weeks, which is the part people do not expect. First flows are usually live within month one, and because they run continuously you get a fair read faster than in most channels, typically four to six weeks of steady volume. Businesses with infrequent purchases wait longer, since a replenishment cycle has to actually complete before the numbers mean anything.</div></details><details class="faq-item"><summary class="faq-q">Is email still worth it?</summary><div class="faq-a">Yes, and it remains one of the highest-return channels available, with one caveat: the version that works is small, behavioural, and consent-based. The version that stopped working is a big list receiving the same message. Open rates became unreliable once mail clients started pre-loading images, so we judge it on revenue per recipient and repeat purchase behaviour instead.</div></details><details class="faq-item"><summary class="faq-q">What about SMS, and are there rules in Canada?</summary><div class="faq-a">SMS works well for time-sensitive and transactional messages and badly as a second email channel. Canadian anti-spam law sets a higher bar than many businesses assume, generally requiring express consent for commercial messages with clear identification and a working unsubscribe, and it applies to messages sent to Canadian recipients regardless of where you are. We set consent capture and records up properly rather than retrofitting them. For your specific obligations, take legal advice rather than ours.</div></details><details class="faq-item"><summary class="faq-q">Which flows should we build first?</summary><div class="faq-a">Almost always post-purchase and abandonment, because they reach people who have already shown intent and they need no ongoing labour once built. Onboarding that reduces returns and support tickets, replenishment timed to real consumption, and a review request at the point of satisfaction typically outperform anything aimed at cold audiences. Newsletters and campaigns come after the flows, not before.</div></details><details class="faq-item"><summary class="faq-q">Can you fix our existing setup rather than rebuilding it?</summary><div class="faq-a">Often, and it is usually cheaper. Most accounts we inherit have reasonable flows sitting on unreliable data, so the fix is the event model and the customer record rather than the sequences. We start with an audit that tells you which is which, and we would rather repair something your team already understands than replace it with something they do not.</div></details><details class="faq-item"><summary class="faq-q">How do we know the automation caused the revenue?</summary><div class="faq-a">This is the honest weak point of the whole discipline, and worth pressing any agency on. A post-purchase flow can take credit for repeat orders that were always coming. Where volume allows we hold back a control group so there is a genuine comparison, and where it does not we say the number is directional. Anyone attributing every repeat order to their emails is not measuring, they are counting.</div></details><details class="faq-item"><summary class="faq-q">Will you email our whole list to hit a target?</summary><div class="faq-a">No, and we will push back if asked. Broad sends raise this month's revenue and lower engagement, which reduces how many inboxes you reach next month. That is borrowing from future performance, and the bill arrives as a deliverability problem months later, long after the report that looked good. We would rather send to a smaller engaged segment and show you revenue per recipient.</div></details><details class="faq-item"><summary class="faq-q">Who owns the flows if we stop working together?</summary><div class="faq-a">You do. The platform account, the list, the data, and the flows are all yours, documented with consistent naming, and we train whoever owns it internally so seasonal changes do not need us. Automation only one agency understands is a lock-in mechanism. It also fails badly, because undocumented flows keep sending after everyone who built them has moved on.</div></details><details class="faq-item"><summary class="faq-q">Do we need a CRM as well?</summary><div class="faq-a">If a human being is involved in closing the sale, yes. Automation can nurture, but it cannot tell you a deal closed, and without that the flows keep treating a customer as a prospect. For ecommerce the platform itself often carries enough of the record. For B2B and services, the CRM is what makes the whole thing honest, which is why we frequently sequence <a href="/zoho-crm/" class="body-link">CRM work</a> before automation rather than after.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">

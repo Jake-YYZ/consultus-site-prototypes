@@ -846,6 +846,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1018,8 +1026,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3596,12 +3604,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Is Microsoft Ads worth running if we already have Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always yes for B2B and higher-AOV B2C. The CPC is materially lower, the conversion rate is often higher, and you reach a demographic Google undercounts."}},
-    {"@type": "Question", "name": "Do you import from Google or build native?", "acceptedAnswer": {"@type": "Answer", "text": "Both. We import as a starting point and then restructure around Bing-specific behavior. Pure imports leave significant performance on the table."}},
-    {"@type": "Question", "name": "What is the LinkedIn audience targeting feature?", "acceptedAnswer": {"@type": "Answer", "text": "Microsoft Ads can layer LinkedIn-derived audience signals like company, industry and job function onto search and audience-network campaigns. It is a B2B targeting capability no other paid search platform has."}},
-    {"@type": "Question", "name": "Who is actually searching on Bing?", "acceptedAnswer": {"@type": "Answer", "text": "More people than most marketers assume, and a valuable slice of them. Bing is the default search engine on Windows, Edge, and Office, so the audience skews older, higher-income, and further along in a career. That means less price-sensitive buyers and less competition in the auction. For B2B and higher-value B2C, the Bing search network reaches a demographic Google tends to undercount, at a lower cost per click."}},
-    {"@type": "Question", "name": "How much does Microsoft Ads management cost?", "acceptedAnswer": {"@type": "Answer", "text": "Separate the media from the management. Media spend goes to Microsoft; our fee covers strategy, build, and optimization. Because Bing advertising CPCs are usually well below Google's, the same budget buys more clicks, which often makes Microsoft Ads one of the most efficient lines on a media plan. We scope the management fee to account complexity and spend."}},
-    {"@type": "Question", "name": "Can Microsoft Ads run alongside our Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and that is how most of our clients run it. We import proven Google Ads campaigns as a starting point, then rebuild around Bing-specific behavior so the account is native rather than a copy. Creative and offers stay consistent across both platforms while bidding, structure, and audience targeting are tuned per network. You get incremental volume without doubling your workload."}}
+    {
+      "@type": "Question",
+      "name": "Is Microsoft Ads worth it if Google Ads is already working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually yes, as an addition rather than a replacement. Clicks are often materially cheaper for the same keyword because fewer advertisers compete, and the audience skews older, more desktop, and higher income. Expect it to be a single-digit to low double-digit share of paid spend for most accounts. The mistake is treating it as a cheaper Google, which leads to importing the account and concluding the channel is weak when the setup was."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much cheaper are clicks on Bing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lower, sometimes substantially, though we will not quote you a percentage because it varies by category and it is the wrong number to decide on. A cheap click from a small pool is only valuable if it converts, and the volume is a fraction of Google's, so the honest way to judge is cost per acquisition and blended acquisition cost rather than cost per click. Any agency leading with the cheap-clicks pitch is selling the most flattering metric in the account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is LinkedIn profile targeting and does it actually work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Microsoft owns LinkedIn, you can target or adjust bids by company, industry, and job function on search campaigns, which Google cannot do. It genuinely works for B2B, with a caveat: only a share of traffic is matched to a profile, so in most accounts it is best used to bid up when the searcher is plausibly the buyer rather than as a hard filter that would cut your volume to nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you just import our Google Ads account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can, and we treat it as a first draft. Bing's lower volume means match types behave differently, thin ad groups never gather enough data, and automated bid strategies often have too few conversions to learn from. Search terms differ too, so the negative keyword list has to be rebuilt from Microsoft's own data. The untouched import is the single biggest reason businesses think this channel does not work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who actually uses Bing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A skew rather than a separate species: older, more desktop, higher household income, and a meaningful share on work computers where it is the default browser. That is why it performs for B2B, finance, insurance, healthcare, legal, and considered purchases, and why it tends to disappoint young mobile-first consumer brands. Your category matters more here than in almost any other channel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we run the Microsoft Audience Network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carefully and separately. It is native inventory across MSN, Outlook, and partner sites at attractive prices, and on default settings it behaves like cheap display: plenty of impressions, weak intent, and a slow drain on a search budget. We start it split out from search, limited to retargeting and close audiences, and only widen it once the numbers justify it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What budget do we need to make this worthwhile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Less than Google in absolute terms, because the volume is smaller, but there is a floor. If splitting your budget leaves both channels without enough conversions to optimise, you are better off concentrating it. We would rather look at your category's Bing volume and tell you it is not worth it than take a fee to manage an auction with nobody in it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long before we know if it is working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You will have a restructured account within about three weeks, and a fair read on efficiency after four to six rather than two. The lag is a volume problem rather than a platform problem: fewer conversions means noisier data, and calling it early on a handful of conversions is how good accounts get switched off and bad ones get scaled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Microsoft Ads help with AI search visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indirectly at most, and be sceptical of anyone selling the connection hard. Microsoft's search infrastructure sits behind Copilot, so its index matters for how those answers are assembled, but paid ads do not buy you a place in an organic AI answer. Earning citations is content and structure work, which is what our answer engine optimization covers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge separately to manage this channel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is scoped as part of paid search rather than billed as a whole second discipline, because much of the strategy is shared and duplicating the fee for a channel this size is hard to justify. What does take real time is the restructure away from the Google import and keeping Audience Network honest, and that is where the work actually goes."
+      }
+    }
   ]
 }
 </script>
@@ -3677,16 +3759,19 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head solo">
+    <div class="sec-head solo has-lead">
       <div>
         <div class="section-lbl">What We Run</div>
-        <h2 class="sec-title">Microsoft Advertising, the <span class="sem">disciplined</span> way.</h2>
+        <h2 class="sec-title">Microsoft Ads, run as its own <span class="sem">channel</span>.</h2>
       </div>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Bing search as a <span class="sem">distinct</span> channel.</h3><div><p>Microsoft Ads buyers behave differently from Google Ads buyers. We treat Bing advertising as its own discipline rather than a <a class="body-link" href="/google-ads/">Google Ads</a> import, with native account structure, Bing advertising campaigns built for the Bing search network, and Bing-specific creative.</p></div></div>
-      <div class="content-block"><h3>LinkedIn audience <span class="sem">targeting</span>.</h3><div><p>Microsoft Ads is the only paid search channel with native LinkedIn targeting. We use it for B2B and high-ticket consumer audiences where job title and industry matter as much as what someone typed into the search bar.</p></div></div>
-      <div class="content-block"><h3>Audience Network <span class="sem">retargeting</span>.</h3><div><p>The Microsoft Audience Network spans MSN, Outlook, and partner sites. We use it as a retargeting and prospecting layer for accounts that have outgrown Meta's reach.</p></div></div>
-      <div class="content-block"><h3>Cross-channel <span class="sem">attribution</span>.</h3><div><p>Microsoft Ads gets <a class="body-link" href="/analytics-attribution/">attributed properly</a> when measured against actual revenue, not last-click. Most agencies discount the channel because last-click hides its real contribution. We instrument differently.</p></div></div>
+    
+      <p class="sec-lead">Six parts. The one most agencies skip is the first, and it is the reason the channel underperforms for them.</p><div class="content-block" style="border-top:none;padding-top:0"><h3>Bing search as a distinct <span class="sem">channel</span></h3><div><p>Importing your Google account and walking away is the standard approach, and it is why most businesses conclude Microsoft Ads does not work.</p><p>Search volume is a fraction of Google's, so match types behave differently and thin ad groups never gather enough data to optimise. We consolidate more aggressively, keep bidding manual for longer because automated strategies need conversion volume that often is not there, and rebuild negatives from Microsoft's own search terms.</p><p>The import is a starting point. Treated as the finished job it produces exactly the mediocre result people expect.</p></div></div>
+      <div class="content-block"><h3>LinkedIn audience <span class="sem">targeting</span></h3><div><p>This is the genuine reason to run the channel, and nothing on Google matches it.</p><p>Because Microsoft owns LinkedIn, you can target or adjust bids by company, industry, and job function on search campaigns. For anyone selling to a specific job title, that means bidding up when the searcher is plausibly the buyer rather than a student or a competitor.</p><p>It works as a bid modifier rather than a hard filter in most accounts, since the matched share of traffic is limited.</p></div></div>
+      <div class="content-block"><h3>Audience Network, <span class="sem">carefully</span></h3><div><p>Native placements across MSN, Outlook, and partner sites, priced attractively and easy to waste money on.</p><p>Left on default it behaves like cheap display: high impressions, plausible click-through, very little intent. We start it separated from search, restricted to retargeting and close-variant audiences, and only widen it once the numbers hold.</p><p>Any account where Audience Network quietly outspends search is an account nobody is watching.</p></div></div>
+      <div class="content-block"><h3>Who is actually <span class="sem">there</span></h3><div><p>Bing's audience skews older, more desktop, and higher income, and a meaningful share of it is people using a work computer.</p><p>That default-browser reality is why the channel converts well for B2B, finance, insurance, healthcare, and considered purchases, and poorly for young consumer brands. It also means desktop bid adjustments that look wrong on Google are often correct here.</p><p>We will tell you early if your category is one where this channel does not deserve budget.</p></div></div>
+      <div class="content-block"><h3>Cross-channel <span class="sem">attribution</span></h3><div><p>Microsoft Ads is usually judged on a report that structurally understates it.</p><p>Lower volume means fewer conversions and a noisier cost per acquisition, and a channel serving mostly desktop office traffic often gets under-credited when the eventual conversion happens elsewhere. We measure it against blended acquisition cost rather than in isolation.</p><p>Judged only on its own last-click numbers, a channel this size will always look optional.</p></div></div>
+      <div class="content-block"><h3>Knowing when to <span class="sem">stop</span></h3><div><p>There is a floor below which this channel cannot be optimised, and we would rather name it.</p><p>Some categories simply have too little Bing volume to gather usable data, and no amount of management fixes an auction with nobody in it. In that case the honest recommendation is to put the budget back into Google or Meta.</p><p>We have told clients to switch it off. It is a cheaper answer than a retainer that cannot produce a return.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3698,13 +3783,14 @@
       </div>
     </div>
       <div class="method-grid cols-4">
-        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Microsoft account diagnostic.</div><p class="ac-body">Most Microsoft accounts are imports from Google with no Bing-specific structure. We audit the account, identify the imports versus native builds, and document the cleanup.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/02 Restructure</div><div class="ac-value">Native Bing architecture.</div><p class="ac-body">Campaign and ad-group structure rebuilt around how Bing buyers actually search. LinkedIn audience layers added. Audience Network retargeting set up properly.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Bing-specific creative.</div><p class="ac-body">Microsoft Ads creative is its own discipline. We test <a class="body-link" href="/performance-creatives/">ad copy, extensions, and image creative</a> against the Bing-network buyer rather than reusing Google assets.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Channel-share growth.</div><p class="ac-body">Quarterly review against the revenue the channel actually added. Microsoft Ads typically grows from 10-15% of paid spend to 25-30% as it proves it earns its keep.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">What the import left behind.</div><p class="ac-body">We check whether the account is a Google copy, where the wasted spend sits, whether Audience Network is quietly eating the budget, and whether your category has enough Bing volume to be worth the effort at all.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/02 Restructure</div><div class="ac-value">Built for the volume that exists.</div><p class="ac-body">Campaigns consolidated so ad groups actually gather data, Microsoft-specific negatives rebuilt from its own search terms, Audience Network split out from search, and LinkedIn targeting layered on where the buyer has a job title.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Bing-specific creative and bids.</div><p class="ac-body">Ad copy tested against this audience rather than inherited from Google, with device and demographic adjustments set from Microsoft data. Manual bidding held longer than instinct suggests, because automation needs conversions it may not have.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Grow the share it deserves.</div><p class="ac-body">Scale where efficiency holds, widen Audience Network only once retargeting proves out, and report against blended acquisition cost so the channel is judged fairly rather than in a silo.</p></div>
       </div>
     </div>
-  </section>
+      <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">This channel moves faster than SEO and slower than its volume suggests, because gathering enough conversions to judge anything takes longer. Expect a restructured account inside three weeks and a fair read on efficiency after four to six, not two. If your category turns out to have too little Bing volume, you will hear that from us in the first month rather than in quarter three.</p>
+    </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -3718,6 +3804,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers we manage <span class="sem">to</span>.</h2>
+      </div></div>
+      <p class="sec-lead">A small channel judged with big-channel metrics always looks disappointing. These are the six we report.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Blended acquisition cost</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What all channels together cost you per customer.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The right frame for a channel this size. Microsoft Ads often shows a lower cost per click and a noisier cost per conversion, and only the blended number tells you whether adding it helped.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Cost per click versus Google</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Usually materially cheaper for the same keyword.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">This is the headline appeal and the most misleading number in the account. Cheaper clicks from a smaller pool are only worth having if they convert, so we never report it alone.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Conversion rate by device</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Desktop dominates here in a way it no longer does on Google.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">That single fact drives most of the bid adjustments, and it is why copying Google's device strategy across is usually wrong.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Search versus Audience Network</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Reported separately, always.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Blended together, cheap Audience Network impressions flatter the account while search efficiency hides. Separated, you can see which one is actually buying customers.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">LinkedIn-matched performance</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How traffic performs when the company or job function is known.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The channel's real differentiator. If matched traffic converts materially better, that justifies bidding up rather than treating all clicks the same.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Share of total paid spend</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What proportion of the budget this channel earns.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Kept honest deliberately. For most accounts this is a single-digit to low double-digit share, and an agency implying otherwise is selling you management rather than results.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is Microsoft Ads worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">The answer is genuinely no for a lot of businesses, and the audience skew tells you which.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You sell to businesses, especially where the buyer has a specific job title.</li><li>Your buyers are older, higher income, or making a considered purchase.</li><li>Finance, insurance, healthcare, legal, manufacturing, or enterprise software.</li><li>Google Ads is already working and you want incremental volume at a lower cost per click.</li><li>A meaningful share of your traffic is people on a work computer.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Your customers are young and mobile-first. The audience is not there.</li><li>Google Ads is not working yet. Fix the bigger channel first.</li><li>Budget is small enough that splitting it starves both channels of data.</li><li>Your category has almost no Bing search volume. We will check before you commit.</li><li>You want a set-and-forget import. That is what makes this channel look bad.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We check the available volume in your category before recommending this, and we have told businesses to skip it. If the auction is empty, put the money into <a href="/google-ads/" class="body-link">Google Ads</a> or <a href="/meta-ads/" class="body-link">Meta Ads</a> instead.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How Microsoft Ads accounts go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six patterns, and the first one explains most of the channel's bad reputation.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Running the Google import untouched</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Match types, bid strategies, and ad group structures that suit Google's volume leave Bing ad groups too thin to ever optimise. The import is a shortcut to a starting point, not a strategy.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Audience Network on default</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Cheap native impressions with weak intent will happily consume a search budget while the reported click-through rate looks fine. Separate it or it will quietly become the biggest line item.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Automated bidding without the conversions</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Smart bidding needs volume to learn from. Applied to a low-volume account it chases noise, and manual control usually beats it here for far longer than on Google.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Copying Google's device strategy</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Desktop matters much more on Bing. Inheriting mobile-weighted adjustments from Google systematically bids down the traffic that actually converts.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Judging it on isolated last-click</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A small desktop-heavy channel gets under-credited when the conversion completes elsewhere. Reported alone it looks cuttable, which is often the wrong conclusion.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Keeping it alive out of completeness</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Some categories have too little volume, full stop. Running the channel so the deck has a Bing slide is a fee with no mechanism behind it.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Microsoft, Google, and <span class="sem">LinkedIn</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three ways to reach a searcher or a job title, and they are complements rather than substitutes.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Google is the volume</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Most search demand lives here, so this is where structure, testing, and the majority of budget belong. Microsoft Ads is an addition to a working Google account, not a cheaper replacement for a broken one.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Microsoft is the margin</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Lower competition often means a lower cost per click for the same intent, plus an audience that skews older and more professional. Smaller, but frequently the most efficient slice of a paid mix.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">LinkedIn is the targeting</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Microsoft's ownership of LinkedIn is what makes company and job-function targeting possible on search ads, which is something Google cannot offer at all.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We run this alongside <a href="/google-ads/" class="body-link">Google Ads</a> and judge both against blended acquisition cost, with <a href="/analytics-attribution/" class="body-link">attribution</a> set up so a desktop-heavy channel is not systematically under-credited. For B2B the pairing with <a href="/sales-enablement/" class="body-link">sales enablement</a> matters more than the channel split, because these leads are usually worked by a person.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3725,15 +3861,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Is Microsoft Ads worth running if we already have Google Ads?</summary><div class="faq-a"><p>Almost always yes for B2B and higher-AOV B2C. The CPC is materially lower, the conversion rate is often higher, and you reach a demographic Google undercounts.</p></div></details>
-        <details class="faq-item"><summary>Do you import from Google or build native?</summary><div class="faq-a"><p>Both. We import as a starting point and then restructure around Bing-specific behavior. Pure imports leave significant performance on the table.</p></div></details>
-        <details class="faq-item"><summary>What is the LinkedIn audience targeting feature?</summary><div class="faq-a"><p>Microsoft Ads can layer LinkedIn-derived audience signals like company, industry and job function onto search and audience-network campaigns. It is a B2B targeting capability no other paid search platform has.</p></div></details>
-        <details class="faq-item"><summary>Who is actually searching on Bing?</summary><div class="faq-a"><p>More people than most marketers assume, and a valuable slice of them. Bing is the default search engine on Windows, Edge, and Office, so the audience skews older, higher-income, and further along in a career. In practice that means less price-sensitive buyers and less competition in the auction. For B2B and higher-value B2C, the Bing search network reaches a demographic Google tends to undercount, and it does it at a lower cost per click.</p></div></details>
-        <details class="faq-item"><summary>How much does Microsoft Ads management cost?</summary><div class="faq-a"><p>As with any paid channel, separate the media from the management. Media spend goes to Microsoft; our fee covers strategy, build, and optimization. Because Bing advertising CPCs are usually well below Google's, the same budget buys more clicks, which often makes Microsoft Ads one of the most efficient lines on a media plan. We scope the management fee to account complexity and spend, and we will tell you if the volume is too low to justify a standalone program.</p></div></details>
-        <details class="faq-item"><summary>Can Microsoft Ads run alongside our Google Ads?</summary><div class="faq-a"><p>Yes, and that is how most of our clients run it. We import proven <a class="body-link" href="/google-ads/">Google Ads</a> campaigns as a starting point, then rebuild around Bing-specific behavior so the account is native rather than a copy. Creative and offers stay consistent across both platforms while bidding, structure, and audience targeting are tuned per network. You get incremental volume without doubling your workload.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">Is Microsoft Ads worth it if Google Ads is already working?</summary><div class="faq-a">Usually yes, as an addition rather than a replacement. Clicks are often materially cheaper for the same keyword because fewer advertisers compete, and the audience skews older, more desktop, and higher income. Expect it to be a single-digit to low double-digit share of paid spend for most accounts. The mistake is treating it as a cheaper Google, which leads to importing the account and concluding the channel is weak when the setup was.</div></details><details class="faq-item"><summary class="faq-q">How much cheaper are clicks on Bing?</summary><div class="faq-a">Lower, sometimes substantially, though we will not quote you a percentage because it varies by category and it is the wrong number to decide on. A cheap click from a small pool is only valuable if it converts, and the volume is a fraction of Google's, so the honest way to judge is cost per acquisition and blended acquisition cost rather than cost per click. Any agency leading with the cheap-clicks pitch is selling the most flattering metric in the account.</div></details><details class="faq-item"><summary class="faq-q">What is LinkedIn profile targeting and does it actually work?</summary><div class="faq-a">Because Microsoft owns LinkedIn, you can target or adjust bids by company, industry, and job function on search campaigns, which Google cannot do. It genuinely works for B2B, with a caveat: only a share of traffic is matched to a profile, so in most accounts it is best used to bid up when the searcher is plausibly the buyer rather than as a hard filter that would cut your volume to nothing.</div></details><details class="faq-item"><summary class="faq-q">Can you just import our Google Ads account?</summary><div class="faq-a">We can, and we treat it as a first draft. Bing's lower volume means match types behave differently, thin ad groups never gather enough data, and automated bid strategies often have too few conversions to learn from. Search terms differ too, so the negative keyword list has to be rebuilt from Microsoft's own data. The untouched import is the single biggest reason businesses think this channel does not work.</div></details><details class="faq-item"><summary class="faq-q">Who actually uses Bing?</summary><div class="faq-a">A skew rather than a separate species: older, more desktop, higher household income, and a meaningful share on work computers where it is the default browser. That is why it performs for B2B, finance, insurance, healthcare, legal, and considered purchases, and why it tends to disappoint young mobile-first consumer brands. Your category matters more here than in almost any other channel.</div></details><details class="faq-item"><summary class="faq-q">Should we run the Microsoft Audience Network?</summary><div class="faq-a">Carefully and separately. It is native inventory across MSN, Outlook, and partner sites at attractive prices, and on default settings it behaves like cheap display: plenty of impressions, weak intent, and a slow drain on a search budget. We start it split out from search, limited to retargeting and close audiences, and only widen it once the numbers justify it.</div></details><details class="faq-item"><summary class="faq-q">What budget do we need to make this worthwhile?</summary><div class="faq-a">Less than Google in absolute terms, because the volume is smaller, but there is a floor. If splitting your budget leaves both channels without enough conversions to optimise, you are better off concentrating it. We would rather look at your category's Bing volume and tell you it is not worth it than take a fee to manage an auction with nobody in it.</div></details><details class="faq-item"><summary class="faq-q">How long before we know if it is working?</summary><div class="faq-a">You will have a restructured account within about three weeks, and a fair read on efficiency after four to six rather than two. The lag is a volume problem rather than a platform problem: fewer conversions means noisier data, and calling it early on a handful of conversions is how good accounts get switched off and bad ones get scaled.</div></details><details class="faq-item"><summary class="faq-q">Does Microsoft Ads help with AI search visibility?</summary><div class="faq-a">Indirectly at most, and be sceptical of anyone selling the connection hard. Microsoft's search infrastructure sits behind Copilot, so its index matters for how those answers are assembled, but paid ads do not buy you a place in an organic AI answer. Earning citations is content and structure work, which is what our <a href="/aeo-ai-search/" class="body-link">answer engine optimization</a> covers.</div></details><details class="faq-item"><summary class="faq-q">Do you charge separately to manage this channel?</summary><div class="faq-a">It is scoped as part of paid search rather than billed as a whole second discipline, because much of the strategy is shared and duplicating the fee for a channel this size is hard to justify. What does take real time is the restructure away from the Google import and keeping Audience Network honest, and that is where the work actually goes.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">

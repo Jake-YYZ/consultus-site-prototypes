@@ -846,6 +846,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1018,8 +1026,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3596,12 +3604,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Do you publish under our brand or as guest content?", "acceptedAnswer": {"@type": "Answer", "text": "Both, depending on goal. Authority content lives on your site. Outreach and digital PR earn placements on third-party sites that link back. We split the program by intent rather than treating all content the same."}},
-    {"@type": "Question", "name": "How much content per month?", "acceptedAnswer": {"@type": "Answer", "text": "Quality over volume. A typical program produces 4 to 8 pieces per month, weighted toward longer, more researched work rather than weekly thin pieces. The compounding comes from depth, not cadence."}},
-    {"@type": "Question", "name": "Do you write for B2B and B2C?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The discipline is the same; the voice and the buyer journey differ. Most of our content programs are B2B SaaS, healthcare, financial services, and B2C ecommerce."}},
-    {"@type": "Question", "name": "What does a content marketing agency actually do?", "acceptedAnswer": {"@type": "Answer", "text": "A content marketing agency does more than write blog posts. We map the questions your buyers research, build topic hubs that own those questions, produce work that reads like it came from someone who knows the category, and distribute it so it earns links and reach. A good content agency ties every piece to a search target and a business goal. A weak content marketing company publishes thin posts on a schedule and calls it strategy."}},
-    {"@type": "Question", "name": "How much do content marketing services cost?", "acceptedAnswer": {"@type": "Answer", "text": "Content marketing is a retainer, not a per-post charge, because the value compounds over months rather than landing with one article. Cost scales with volume, research depth, and how much subject-matter interviewing a topic needs. A typical program runs 4 to 8 substantial pieces a month plus refreshes and distribution. We scope to the smallest program that can actually move rankings."}},
-    {"@type": "Question", "name": "How does content marketing support SEO?", "acceptedAnswer": {"@type": "Answer", "text": "They are the same engine. SEO tells you which questions have demand and how hard they are to rank for; content answers them. We build SEO content in clusters, a pillar guide surrounded by supporting articles, so search engines see topical authority rather than scattered posts. The internal-link structure passes authority between them, and schema makes the whole thing legible to Google and to AI search."}}
+    {
+      "@type": "Question",
+      "name": "How long before content marketing produces results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On an established site, individual pages usually take two to four months to settle into position, and a topic hub takes a couple of quarters to mature. New domains take longer, because there is no authority to lend the new pages. The honest expectation is meaningful non-branded traffic somewhere in months four to six, compounding after that. Anyone promising results in six weeks is describing either a page you already almost ranked for, or paid traffic with a content label."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much content do we need to publish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Less than you think, and more consistently. A cluster of one strong hub page and five to eight genuinely useful supporting pieces will outperform thirty scattered posts, and it is cheaper to maintain. Volume strategies stopped working when everyone gained the ability to produce volume. We would rather publish two pieces a month that someone would bookmark than eight nobody finishes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you write the content or do we?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We write it, but not from nothing. Every piece needs input from someone who actually does the work, usually a half-hour interview that we turn into the specifics competitors cannot copy. Some clients prefer to draft internally and have us brief and edit, which works well when you have a genuine writer in house. What does not work is us writing in a vacuum from whatever is already ranking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is AI-written content a problem for rankings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The problem is not the tool, it is that AI-assisted content tends to be an average of everything already published, and an average has no reason to outrank the pages it averaged. Google's stated position is about quality and usefulness rather than authorship. We use AI for research, outlining, and first-pass structure, and we do not ship anything without real subject-matter input and a human edit, because the parts that persuade a buyer are exactly the parts a model cannot know."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure content that does not convert directly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By assisted conversions and by position in the cluster, not by last-click. Most content sits early in a buying journey, so judging an explainer article on direct conversions will tell you to delete your best awareness work. We also track something less technical: which pieces your own sales team forwards to prospects. That is usually the clearest signal that a piece does real work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we update old content or publish new content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a mature programme, more than half the effort should go to updating. A page that already ranks has authority and history, so improving it is faster and more reliable than starting from zero. We audit quarterly for pieces slipping in position or stale on facts and prices. New commissions are for genuine gaps in the cluster, not for hitting a monthly count."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will content marketing help us appear in AI answers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the main lever you have. Assistants tend to cite pages that answer a question directly, are clearly structured, and contain specifics rather than generalities, which is the same writing that serves readers well. Clear headings, direct answers near the top, and real data help. This overlaps heavily with our answer engine work, and we plan the two together rather than selling them twice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if our subject is boring or highly technical?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Those are usually the best programmes. Technical subjects have fewer people willing to explain them properly, so the bar to being the most useful page is lower than in a crowded consumer category. The constraint is access to your experts. Give us the technician who fields the awkward questions and a dull industry becomes an easy programme to win."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need a blog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily, and the word causes trouble. What you need is pages that answer what buyers research, and those often sit better in a resources section, a guides area, or as part of the main site than in a dated blog feed. A blog structure implies recency matters, which is right for news and wrong for evergreen guidance that should be updated in place instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this work alongside our paid campaigns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They inform each other and we plan them together. Paid search shows within weeks which messages and objections actually move people, which is research content would otherwise take months to gather. Content gives your ads better pages to send traffic to, and gives your sales team something to send after the call. Running them in separate silos is how the same lesson gets paid for twice."
+      }
+    }
   ]
 }
 </script>
@@ -3677,16 +3759,19 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head solo">
+    <div class="sec-head solo has-lead">
       <div>
         <div class="section-lbl">What We Run</div>
-        <h2 class="sec-title">Content Marketing, the <span class="sem">disciplined</span> way.</h2>
+        <h2 class="sec-title">Content programs built for <span class="sem">authority</span>.</h2>
       </div>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Topic hubs that build <span class="sem">authority</span>.</h3><div><p>Topic hubs built around the questions your buyer actually researches. Big pillar guides link to detailed supporting articles, <a class="body-link" href="/seo/">internal links</a> compound authority, and schema makes the structure visible to search engines. SEO content ranks because it genuinely answers the query, not because it was stuffed with a keyword.</p></div></div>
-      <div class="content-block"><h3>Editorial discipline, not <span class="sem">keyword stuffing</span>.</h3><div><p>Every piece is researched, outlined, and edited to a brief that prioritizes the reader's actual question. We do not pad word counts, we do not over-optimize anchor text, and we do not run AI spinners.</p></div></div>
-      <div class="content-block"><h3>Subject-matter <span class="sem">input</span>.</h3><div><p>For regulated or technical industries we interview your specialists and pull from primary research. The content reads like it was written by someone who knows the category, because it was.</p></div></div>
-      <div class="content-block"><h3>Distribution beyond <span class="sem">organic</span>.</h3><div><p>Earned media, podcast outreach, LinkedIn posts, and <a class="body-link" href="/marketing-automation/">email sequences</a> extend the reach of every major piece. Content programs work better when distribution is built in, not bolted on.</p></div></div>
+    
+      <p class="sec-lead">Six parts. Publishing is the middle one, and on its own it does very little.</p><div class="content-block" style="border-top:none;padding-top:0"><h3>Topic hubs that build <span class="sem">authority</span></h3><div><p>Search engines judge you on whether you cover a subject, not on whether you wrote about it once.</p><p>So we plan in clusters: one substantial page on the main subject, then the specific questions around it, all linked properly. That internal linking is the part most content programmes skip, and it is what turns twenty unrelated posts into something that ranks.</p><p>A hub takes a few months to mature. Twenty scattered articles never do.</p></div></div>
+      <div class="content-block"><h3>Search intent <span class="sem">before</span> keywords</h3><div><p>The keyword tells you the words. It does not tell you what the reader wants.</p><p>Someone searching a cost question wants a number near the top, not eight paragraphs of context first. Someone comparing two options wants an actual comparison, including where your option is the wrong one. We work out what the page has to answer, then write to that.</p><p>Get this wrong and the page ranks briefly, then slides as people bounce back to the results.</p></div></div>
+      <div class="content-block"><h3>Editorial discipline, not keyword <span class="sem">stuffing</span></h3><div><p>Every piece gets a named owner, a brief, a real edit, and a reason to exist.</p><p>The brief states the reader question, the evidence needed, and what makes the piece different from what already ranks. If we cannot answer that last one, we do not commission it. Repeating the top three results in a slightly different order is how most content budgets get spent.</p><p>Word count is an output, never a target.</p></div></div>
+      <div class="content-block"><h3>Subject-matter <span class="sem">input</span></h3><div><p>The difference between content that ranks and content that converts is usually a specific detail only you know.</p><p>We interview your salespeople, technicians, and the people who actually deliver the work, then write from that. Thirty minutes with the person who handles the complaints produces more usable material than a week of desk research.</p><p>It is also the part clients underestimate. We keep the time commitment small and specific rather than open-ended.</p></div></div>
+      <div class="content-block"><h3>Distribution beyond <span class="sem">organic</span></h3><div><p>Publishing and waiting is not a strategy.</p><p>The same research gets reworked for email, sales enablement, and paid social, and the pieces your sales team actually forwards to prospects get priority. Sometimes the best-performing asset is a one-page comparison nobody would call content marketing.</p><p>A piece that only ever earns organic traffic is working at a fraction of its value.</p></div></div>
+      <div class="content-block"><h3>Refresh over <span class="sem">volume</span></h3><div><p>Updating a page that already ranks beats publishing a new one, most of the time.</p><p>We audit quarterly for pieces slipping in position, and for pages that have gone stale on facts, prices, or regulations. Rankings decay quietly and a page that dropped from third to eleventh loses most of its traffic without anyone noticing.</p><p>In a mature programme, more than half the effort goes into content that already exists.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3698,13 +3783,14 @@
       </div>
     </div>
       <div class="method-grid cols-4">
-        <div class="accent-card"><div class="ac-eyebrow">/01 Map</div><div class="ac-value">Topical authority diagnostic.</div><p class="ac-body">We map every question your buyers ask while they research. Where you have authority, where you have gaps, and where competitors are claiming territory you should own.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/02 Plan</div><div class="ac-value">Editorial calendar tied to clusters.</div><p class="ac-body">12-week editorial calendar with pillar pieces, supporting articles, and a refresh schedule. Each piece has a clear goal and a primary search target.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Produce</div><div class="ac-value">Researched, edited, schema-tagged.</div><p class="ac-body">Pieces produced to the editorial brief, reviewed by subject-matter input, schema-tagged for the right Article or HowTo or FAQPage type, and published with internal-link discipline.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Quarterly refresh and authority audit.</div><p class="ac-body">Quarterly content refresh on top performers, authority audit against competitors, and link earning for the pieces that deserve more reach.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/01 Map</div><div class="ac-value">Where the authority gaps are.</div><p class="ac-body">We map what you already rank for, what the subject genuinely requires, and which of those gaps are winnable at your current authority. Some subjects are not worth attacking for a year, and the map says which ones.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/02 Plan</div><div class="ac-value">A calendar tied to clusters.</div><p class="ac-body">Pieces get sequenced so the hub and its supporting pages arrive close together, because a supporting page with nothing to link to is wasted. The plan is deliberately shorter than an annual calendar, since search results move.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Produce</div><div class="ac-value">Briefed, interviewed, edited.</div><p class="ac-body">Written to the brief with your subject-matter input, edited properly, marked up with schema where it applies, and linked into the existing hub on publication rather than months later.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Refresh, prune, and re-link.</div><p class="ac-body">Quarterly we update what is slipping, consolidate pages competing with each other, and cut anything that never earned attention. This is where a programme stops being a treadmill.</p></div>
       </div>
     </div>
-  </section>
+      <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">Content is the slowest channel we sell and we would rather say so plainly. New pages on an established site typically take two to four months to settle into position, and a new domain can take longer. The first quarter is mostly building the hub, so the honest expectation is meaningful traffic in months four to six, compounding after that. If you need leads next month, run <a href="/google-ads/" class="body-link">paid search</a> and start content alongside it.</p>
+    </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -3718,6 +3804,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers we manage <span class="sem">to</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Traffic is the easiest content metric to grow and the easiest to grow uselessly. These are the six we report.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Non-branded organic traffic</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Visits from people who were not already searching for you.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Total organic traffic flatters every programme, because brand searches rise with any marketing activity. Strip those out and you can see whether the content is actually finding new people.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Rankings for the cluster</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Position across the whole topic, not one flagship keyword.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">A hub is working when the supporting pages start ranking too, often for questions nobody planned for. Watching a single head term hides that entirely.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Assisted conversions</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Content rarely closes. It very often starts.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">We track which pieces appear early in the paths of people who eventually convert. Judging an article on last-click conversions will make you delete your best top-of-funnel work.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Sales usage</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Which pieces your own team sends to prospects.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">An unglamorous but honest signal. If nobody internally finds a piece useful enough to forward, it is unlikely to persuade a stranger.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Decay rate</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How fast published pages lose position.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">This drives the refresh schedule. A programme with high decay needs maintenance more than it needs new commissions, and knowing that changes where the budget goes.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Citations in AI answers</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Whether assistants quote you when they answer your subject.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Increasingly this is where the top of the funnel happens, and it rewards clearly structured, genuinely specific writing. We track it because it is now part of the return, and it overlaps with our <a href="/aeo-ai-search/" class="body-link">AEO work</a>.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is a content program worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">It compounds and it is slow, which makes it right for some businesses and wrong for others.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Your buyers research before they buy, which covers most considered purchases.</li><li>You can commit for at least six to nine months without judging it monthly.</li><li>Someone internal can give us thirty focused minutes a month on subject matter.</li><li>You have a subject with genuine depth rather than a single product page.</li><li>You want an asset that keeps working when you pause spending.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You need leads this quarter. Buy traffic first, start content beside it.</li><li>Nobody internally can be interviewed. Generic content does not rank any more.</li><li>The site has technical problems blocking indexing. Fix those first.</li><li>Your product is a pure impulse purchase with no research step.</li><li>You want thirty articles a month. That is a volume play and it stopped working.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If speed is the constraint we will say so and point you at <a href="/google-ads/" class="body-link">paid search</a> or <a href="/landing-pages/" class="body-link">landing pages</a> first. Content is the channel we are least willing to oversell, because the lag makes it easy to take a year of fees before anyone can tell whether it worked.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How content programs go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six patterns behind most of the content budgets we see wasted. None of them are about writing quality.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Publishing without linking</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">New pieces that never get linked from the hub, or from each other, sit alone with no authority flowing to them. This is the single most common reason good writing does not rank.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Volume as the strategy</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Thirty thin pieces a month used to work. Now they dilute the site and compete with each other, and the strongest programmes we see publish less and maintain more.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Writing for the keyword, not the question</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Matching the phrase while missing what the reader wanted produces a page that ranks for a fortnight then decays as people bounce straight back to the results.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No subject-matter input</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Content assembled from the pages already ranking cannot say anything they do not. It reads fine and it gives a reader no reason to choose you.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Never refreshing</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Rankings decay silently. A page that fell from third to eleventh has lost most of its traffic and nobody notices, because nothing broke and no alert fired.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Judging it on last-click</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Attribute conversions only to the final page and top-of-funnel content looks worthless. That reporting choice is why good content programmes get cut in month five.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Content, SEO, and <span class="sem">ads</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three things sold separately that only really work as one, which is also why they are easy to double-charge for.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Content is the raw material</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Pages are what SEO ranks and what assistants cite. Without something worth ranking, technical SEO is tuning an empty engine.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">SEO decides whether it is found</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Site structure, indexing, internal links, and speed determine whether a page ever gets a fair hearing. Excellent writing on a broken site is invisible.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Ads buy the time content needs</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Paid search delivers leads in week one while the hub matures over months. It also tells you which messages persuade, which shortens the content learning curve considerably.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We usually run these together, because the same research feeds all three. What we learn in <a href="/seo/" class="body-link">SEO</a> tells us what to write, what wins in <a href="/google-ads/" class="body-link">Google Ads</a> tells us which angles persuade, and the content itself feeds <a href="/aeo-ai-search/" class="body-link">AI search visibility</a>. If you are only buying one of the three, content is rarely the one to start with.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3725,15 +3861,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Do you publish under our brand or as guest content?</summary><div class="faq-a"><p>Both, depending on goal. Authority content lives on your site. Outreach and digital PR earn placements on third-party sites that link back. We split the program by intent rather than treating all content the same.</p></div></details>
-        <details class="faq-item"><summary>How much content per month?</summary><div class="faq-a"><p>Quality over volume. A typical program produces 4-8 pieces per month, weighted toward longer, more researched work rather than weekly thin pieces. The compounding comes from depth, not cadence.</p></div></details>
-        <details class="faq-item"><summary>Do you write for B2B and B2C?</summary><div class="faq-a"><p>Yes. The discipline is the same; the voice and the buyer journey differ. Most of our content programs are B2B SaaS, healthcare, financial services, and B2C ecommerce.</p></div></details>
-        <details class="faq-item"><summary>What does a content marketing agency actually do?</summary><div class="faq-a"><p>A content marketing agency does more than write blog posts. We map the questions your buyers research, build topic hubs that own those questions, produce work that reads like it came from someone who knows the category, and distribute it so it earns links and reach. A good content agency ties every piece to a search target and a business goal. A weak content marketing company publishes thin posts on a schedule and calls it strategy.</p></div></details>
-        <details class="faq-item"><summary>How much do content marketing services cost?</summary><div class="faq-a"><p>Content marketing is a retainer, not a per-post charge, because the value compounds over months rather than landing with one article. Cost scales with volume, research depth, and how much subject-matter interviewing a topic needs. A typical program runs 4 to 8 substantial pieces a month plus refreshes and distribution. We would rather produce fewer, deeper pieces than flood a calendar, so we scope to the smallest program that can actually move rankings.</p></div></details>
-        <details class="faq-item"><summary>How does content marketing support SEO?</summary><div class="faq-a"><p>They are the same engine. <a class="body-link" href="/seo/">SEO</a> tells you which questions have demand and how hard they are to rank for; content answers them. We build SEO content in clusters, a pillar guide surrounded by supporting articles, so search engines see topical authority rather than scattered posts. The internal-link structure passes authority between them, and schema makes the whole thing legible to Google and to AI search.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">How long before content marketing produces results?</summary><div class="faq-a">On an established site, individual pages usually take two to four months to settle into position, and a topic hub takes a couple of quarters to mature. New domains take longer, because there is no authority to lend the new pages. The honest expectation is meaningful non-branded traffic somewhere in months four to six, compounding after that. Anyone promising results in six weeks is describing either a page you already almost ranked for, or paid traffic with a content label.</div></details><details class="faq-item"><summary class="faq-q">How much content do we need to publish?</summary><div class="faq-a">Less than you think, and more consistently. A cluster of one strong hub page and five to eight genuinely useful supporting pieces will outperform thirty scattered posts, and it is cheaper to maintain. Volume strategies stopped working when everyone gained the ability to produce volume. We would rather publish two pieces a month that someone would bookmark than eight nobody finishes.</div></details><details class="faq-item"><summary class="faq-q">Do you write the content or do we?</summary><div class="faq-a">We write it, but not from nothing. Every piece needs input from someone who actually does the work, usually a half-hour interview that we turn into the specifics competitors cannot copy. Some clients prefer to draft internally and have us brief and edit, which works well when you have a genuine writer in house. What does not work is us writing in a vacuum from whatever is already ranking.</div></details><details class="faq-item"><summary class="faq-q">Is AI-written content a problem for rankings?</summary><div class="faq-a">The problem is not the tool, it is that AI-assisted content tends to be an average of everything already published, and an average has no reason to outrank the pages it averaged. Google's stated position is about quality and usefulness rather than authorship. We use AI for research, outlining, and first-pass structure, and we do not ship anything without real subject-matter input and a human edit, because the parts that persuade a buyer are exactly the parts a model cannot know.</div></details><details class="faq-item"><summary class="faq-q">How do you measure content that does not convert directly?</summary><div class="faq-a">By assisted conversions and by position in the cluster, not by last-click. Most content sits early in a buying journey, so judging an explainer article on direct conversions will tell you to delete your best awareness work. We also track something less technical: which pieces your own sales team forwards to prospects. That is usually the clearest signal that a piece does real work.</div></details><details class="faq-item"><summary class="faq-q">Should we update old content or publish new content?</summary><div class="faq-a">In a mature programme, more than half the effort should go to updating. A page that already ranks has authority and history, so improving it is faster and more reliable than starting from zero. We audit quarterly for pieces slipping in position or stale on facts and prices. New commissions are for genuine gaps in the cluster, not for hitting a monthly count.</div></details><details class="faq-item"><summary class="faq-q">Will content marketing help us appear in AI answers?</summary><div class="faq-a">It is the main lever you have. Assistants tend to cite pages that answer a question directly, are clearly structured, and contain specifics rather than generalities, which is the same writing that serves readers well. Clear headings, direct answers near the top, and real data help. This overlaps heavily with our answer engine work, and we plan the two together rather than selling them twice.</div></details><details class="faq-item"><summary class="faq-q">What if our subject is boring or highly technical?</summary><div class="faq-a">Those are usually the best programmes. Technical subjects have fewer people willing to explain them properly, so the bar to being the most useful page is lower than in a crowded consumer category. The constraint is access to your experts. Give us the technician who fields the awkward questions and a dull industry becomes an easy programme to win.</div></details><details class="faq-item"><summary class="faq-q">Do we need a blog?</summary><div class="faq-a">Not necessarily, and the word causes trouble. What you need is pages that answer what buyers research, and those often sit better in a resources section, a guides area, or as part of the main site than in a dated blog feed. A blog structure implies recency matters, which is right for news and wrong for evergreen guidance that should be updated in place instead.</div></details><details class="faq-item"><summary class="faq-q">How does this work alongside our paid campaigns?</summary><div class="faq-a">They inform each other and we plan them together. Paid search shows within weeks which messages and objections actually move people, which is research content would otherwise take months to gather. Content gives your ads better pages to send traffic to, and gives your sales team something to send after the call. Running them in separate silos is how the same lesson gets paid for twice.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">
