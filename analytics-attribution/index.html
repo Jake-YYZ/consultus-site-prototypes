@@ -846,6 +846,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1018,8 +1026,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3598,50 +3606,82 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Do we need MMM?",
+      "name": "Why do Google, Meta, and our analytics all report different numbers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Below $1M annual spend, no. Direct-response measurement plus post-purchase survey is enough. Above $1M, MMM starts paying for itself by surfacing contribution last-click cannot see."
+        "text": "Because they are answering different questions with different rules. Each ad platform counts conversions it believes it influenced, using its own attribution window, and includes view-through and modelled conversions. Your analytics is usually stricter and last-click biased. Neither is lying and neither is complete. Add the platform reports together and they will claim more revenue than you made, which is why we reconcile everything against blended acquisition cost."
       }
     },
     {
       "@type": "Question",
-      "name": "Can you work with our existing analytics setup?",
+      "name": "What is server-side tracking and do we need it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Most engagements start as a rebuild of an existing GA4 and pixel deployment. We audit, fix, and extend rather than starting from scratch."
+        "text": "Instead of the browser sending data straight to each platform, events go to a server you control which forwards them on. It recovers some of the data lost to ad blockers and browser privacy defaults, and gives you more control over what is shared. It is worth it when media spend is large enough that a systematic under-count is costing real money. It is not a way around consent, and it has genuine setup and hosting costs, so we will tell you when it does not pay for itself."
       }
     },
     {
       "@type": "Question",
-      "name": "How long until the attribution stack pays for itself?",
+      "name": "Is our consent banner enough to be compliant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Server-side tracking and post-purchase survey typically pay back within the first quarter through better channel allocation. MMM compounds across quarters as the model matures."
+        "text": "A banner that appears but does not change which tags fire provides the appearance of compliance without the substance, and that is the most common setup we find. The mechanics that matter are whether declining actually stops collection and whether consent state reaches the platforms. Canadian and European rules differ, and if you sell into Europe the stricter regime applies. We implement the mechanics properly. For what your specific obligations are, take legal advice rather than ours."
       }
     },
     {
       "@type": "Question",
-      "name": "What is marketing attribution and why does it matter?",
+      "name": "Which attribution model should we use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Marketing attribution is the work of figuring out which channels, campaigns, and creatives actually caused a sale, not just which one got the last click. It matters because the default answer is wrong. Platform-reported numbers overcount their own contribution, and Apple's privacy changes broke the browser-based conversion tracking most reports still rely on. When attribution is off, budget follows bad data: across our managed accounts, roughly 47% of channels get reweighted after the first attribution audit, and the median rebuild recovers over $420K a year in misallocated spend. Better attribution means every dollar you move into Google Ads or Meta is a decision, not a guess."
+        "text": "None of them exclusively. Last click undervalues everything that happens early, first click undervalues everything late, and data-driven models need conversion volume most accounts do not have. We use them as lenses rather than answers and cross-check against blended acquisition cost. Where volume allows, a holdout test measures genuine incremental lift, which is the only approach that answers the question the models are approximating."
       }
     },
     {
       "@type": "Question",
-      "name": "What does an analytics and attribution engagement include?",
+      "name": "How do we prove our marketing is working?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As a marketing analytics agency, we run the same four-step method on every account. First, an audit: GA4 setup, pixel health across platforms, server-side coverage, conversion definitions, and your current attribution model, delivered as a written report regardless of engagement. Second, the rebuild: server-side conversion tracking deployed, a post-purchase survey live, and a media-mix model stood up where the spend supports it. Third, operation: a weekly attribution review with reporting that ties revenue to channel, campaign, and creative, so every dashboard ends in a decision. Fourth, compounding: the model is retrained quarterly, so accuracy improves every quarter the program runs."
+        "text": "Blended acquisition cost over time, alongside revenue, is the version that survives a finance conversation, because it cannot be double-counted. Beyond that, the strongest evidence is a holdout: turn a channel off in a region or for a segment and measure what changes. It costs some volume and it is the only method that answers the incrementality question directly. Everything else is a model with assumptions worth stating out loud."
       }
     },
     {
       "@type": "Question",
-      "name": "How much do analytics and attribution services cost?",
+      "name": "Should we move to GA4, or use something else?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on the size of the stack, not a flat menu. Pricing scales with how many platforms need conversion tracking, whether GA4 needs a fix or a full rebuild, and whether your spend justifies media-mix modeling (below $1M in annual media spend, it usually does not). Every engagement starts with the tracking and attribution audit, which produces a written report either way, so you know exactly what is broken before committing to the rebuild. The economics tend to take care of themselves: server-side tracking and the post-purchase survey typically pay for themselves within the first quarter through better channel allocation. Book a call for a scoped quote."
+        "text": "For most businesses the platform is less important than the tracking plan behind it. GA4's event model is fine once events are named deliberately, and it is where the ecosystem has landed. The failure mode is treating a migration as a technical task and carrying over inconsistent naming, which is how you end up with a modern tool full of unusable data. Alternatives are worth considering for privacy reasons or specific product analytics needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are offline conversions and why do they matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sending closed-won outcomes from your CRM back into the ad platforms, so bidding optimises toward customers rather than enquiries. It matters most where a sales team is involved and lead quality varies, which is most B2B and most high-value services. It routinely reverses which campaigns look best, because the campaigns producing the cheapest leads are frequently producing the worst ones. It does require the CRM to reflect reality first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a measurement rebuild take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One to two weeks for the audit, and usually a month to have the rebuilt setup live. Then you need four to eight weeks of clean data before making decisions on it, because comparisons to your history are not valid until the new definitions have accumulated their own period. That waiting stretch is the part clients find hardest, and skipping it means making decisions on a mixture of old and new definitions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you just build us a dashboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can, and we would rather ask what decision it is meant to support first. A dashboard built on unreliable events is a faster way to be confidently wrong, and most dashboard requests we receive are really requests for trustworthy data. If the tracking is sound, reporting is a small job. If it is not, the dashboard makes the problem harder to see rather than easier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the data and the setup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do. Analytics properties, tag manager containers, server-side infrastructure, and documentation all sit in your accounts, and the tracking plan is a document you keep. This matters more here than in most services, because measurement is the layer everything else depends on. An agency that keeps your tracking configuration in their own accounts has made your entire reporting history contingent on the relationship continuing."
       }
     }
   ]
@@ -3719,16 +3759,19 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head solo">
+    <div class="sec-head solo has-lead">
       <div>
         <div class="section-lbl">What We Run</div>
-        <h2 class="sec-title">Analytics & Attribution, the <span class="sem">disciplined</span> way.</h2>
+        <h2 class="sec-title">Measurement you can take to a <span class="sem">board meeting</span>.</h2>
       </div>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Server-side <span class="sem">tracking</span>.</h3><div><p>Apple's privacy changes and ad blockers have made browser-based tracking unreliable. We move your conversion tracking to the server so the data keeps flowing no matter what the platforms change next, and GA4 finally reports numbers you can defend.</p></div></div>
-      <div class="content-block"><h3>Post-purchase <span class="sem">survey</span>.</h3><div><p>Post-purchase surveys ("How did you hear about us?") capture self-reported attribution that fills the gap server-side cannot reach. We build the survey, deploy the capture, and feed the answers back into your <a class="body-link" href="/google-ads/">paid media</a> decisions.</p></div></div>
-      <div class="content-block"><h3>Marketing-mix <span class="sem">modeling</span>.</h3><div><p>For accounts spending seven figures a year on media, media-mix modeling shows the brand and long-term effects your direct-response numbers miss. We deploy the model and keep it maintained.</p></div></div>
-      <div class="content-block"><h3>Reporting that tells you <span class="sem">what to do</span>.</h3><div><p>Most attribution reporting tells you what happened but not <a class="body-link" href="/cro/">what to change</a>. We build reporting that closes the loop: revenue, channel, campaign, creative, and the next decision.</p></div></div>
+    
+      <p class="sec-lead">Six parts. The dashboard is the last of them and the one everyone asks for first.</p><div class="content-block" style="border-top:none;padding-top:0"><h3>A tracking plan before any <span class="sem">tags</span></h3><div><p>Almost every measurement problem we are called about is a naming problem wearing a technical disguise.</p><p>So we write down what counts as a conversion, what each event is called, and which properties it carries, before touching a tag manager. Then we remove the duplicate tags most accounts have accumulated from three previous agencies.</p><p>Without this, six months of data is unusable and nobody notices until someone asks a question of it.</p></div></div>
+      <div class="content-block"><h3>Server-side <span class="sem">tracking</span></h3><div><p>Browser-based tracking now misses a meaningful share of activity, and the gap is not evenly distributed.</p><p>Ad blockers, browser privacy defaults, and app tracking restrictions cut hardest into some audiences, which quietly biases the data rather than only shrinking it. Server-side collection recovers part of that and makes the numbers steadier.</p><p>It is not a loophole and we would not sell it as one. It improves accuracy where consent has been given, and it has a real setup and hosting cost.</p></div></div>
+      <div class="content-block"><h3>Consent that actually <span class="sem">works</span></h3><div><p>A consent banner that does not change what fires is a legal risk pretending to be compliance.</p><p>We wire consent state through to the tags so declining actually stops collection, and configure consent mode so modelling can fill some of the resulting gap. Canadian and European requirements differ, and if you sell into Europe the stricter rules apply.</p><p>We set the mechanics up properly. For your specific obligations, take legal advice rather than ours.</p></div></div>
+      <div class="content-block"><h3>Offline conversions and the <span class="sem">CRM</span></h3><div><p>If a human closes the sale, website conversions are a proxy and often a misleading one.</p><p>We push closed-won outcomes back into the ad platforms so bidding optimises toward revenue instead of form fills. This routinely reverses which campaigns look best, because the cheapest leads are frequently the worst.</p><p>It needs the <a href="/zoho-crm/" class="body-link">CRM</a> to be reliable first, which is sometimes a separate project.</p></div></div>
+      <div class="content-block"><h3>Attribution, with its limits <span class="sem">stated</span></h3><div><p>Every attribution model is a simplification and anyone selling you certainty is overselling.</p><p>Last click undervalues everything early. First click undervalues everything late. Data-driven models need volume most accounts do not have. We use them as lenses, cross-check against blended acquisition cost, and where volume allows we run holdouts, which is the only method that measures genuine incremental lift.</p><p>The useful question is rarely which channel gets the credit. It is what happens if we spend more or less.</p></div></div>
+      <div class="content-block"><h3>Reporting that says what to <span class="sem">do</span></h3><div><p>A dashboard with forty metrics is a way of avoiding a decision.</p><p>Each report answers a specific question for a specific person: what to change this week, and what the last quarter actually produced. Where a number moved, the report says whether that was us, a competitor, seasonality, or a tracking change.</p><p>If nobody opens it, it is not reporting, it is decoration.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3740,13 +3783,14 @@
       </div>
     </div>
       <div class="method-grid cols-4">
-        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Tracking and attribution diagnostic.</div><p class="ac-body">GA4 setup, pixel health across platforms, server-side coverage, conversion definitions, and current attribution model. Written report regardless of engagement.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/02 Rebuild</div><div class="ac-value">Tracking, surveys, and modeling live.</div><p class="ac-body">Server-side tracking deployed. Post-purchase survey live. Media-mix model stood up where the spend supports it.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Operate</div><div class="ac-value">Weekly attribution review.</div><p class="ac-body">Weekly review against the rebuilt data. Channel reweighting decisions tied to revenue, not platform-reported metrics.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Quarterly model retraining.</div><p class="ac-body">The model is retrained quarterly as data accumulates. Attribution accuracy improves with every quarter the program runs.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">How wrong is it now?</div><p class="ac-body">We check what is firing, what is double-counted, whether consent is honoured, and how far platform-reported numbers sit from your actual revenue. That gap is usually the most useful finding of the engagement.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/02 Rebuild</div><div class="ac-value">Plan, then implement.</div><p class="ac-body">A written tracking plan, consistent event naming, duplicate tags removed, server-side collection where it earns its cost, and consent wired through so it does something.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Operate</div><div class="ac-value">Close the loop.</div><p class="ac-body">Offline conversions fed back from the CRM, reporting built around decisions rather than metrics, and platform numbers reconciled against blended acquisition cost.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Keep it honest.</div><p class="ac-body">Tracking rots as sites change and platforms update. Quarterly we re-validate, and where volume allows we run holdout tests to check what the models are claiming.</p></div>
       </div>
     </div>
-  </section>
+      <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">An audit takes one to two weeks and usually finds something worth fixing immediately. A rebuilt measurement setup is typically live inside a month, and then you need four to eight weeks of clean data before making decisions on it, because the comparison to history is not valid until the new definitions have accumulated a period of their own. That waiting period is the part clients find hardest and it is not skippable.</p>
+    </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -3760,6 +3804,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">What we measure the <span class="sem">measurement</span> against.</h2>
+      </div></div>
+      <p class="sec-lead">This is the one service where the deliverable and the metrics are the same thing, so the standards matter.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Platform reported versus actual</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The gap between what the ad platforms claim and what you banked.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The single most useful number we produce. Once it is quantified, every channel decision improves, and the gap is almost always larger than expected.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Tracked share of real conversions</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What proportion of known sales the analytics actually captured.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Reconciled against your own order or CRM records. If you are only seeing seventy per cent, every downstream calculation carries that error.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Blended acquisition cost</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Total marketing spend divided by customers won.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The figure that cannot be double-counted. When per-channel numbers disagree with each other, this is the arbiter.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Lead to close rate by source</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Which channels produce leads that actually become customers.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">This is where cheap leads get exposed. It regularly inverts the ranking of channels compared to cost per lead.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Incremental lift from holdouts</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What the spend added that would not have happened.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The only method that answers the question attribution models approximate. It costs some volume to run, which is the honest trade-off.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Whether reports get used</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Does anyone open it, and did a decision change because of it.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Unfashionable and it decides whether any of this was worth paying for.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is this worth paying for <span class="sem">separately</span>?</h2>
+      </div></div>
+      <p class="sec-lead">It is foundational rather than glamorous, and the timing question is a fair one.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You are spending enough on media that a measurement error is expensive.</li><li>Multiple channels are each claiming credit for the same revenue.</li><li>A sales team closes the deals, so website conversions are only a proxy.</li><li>You are about to increase budget and want to know where.</li><li>Nobody trusts the current reporting, which is a common and telling answer.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Media spend is small. Fix the campaigns first, measure precisely later.</li><li>You want a dashboard rather than better data. That is a cheaper, smaller job.</li><li>The CRM does not reflect reality. That becomes the first project instead.</li><li>You need a number for a board meeting next week. Rebuilds take a month.</li><li>Nobody will act on what it shows. Then it is an expensive reassurance exercise.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If spend is modest, better campaigns beat better measurement and we will say so. Where the problem is that the CRM does not know what closed, that becomes <a href="/zoho-crm/" class="body-link">CRM work</a> before analytics, because feeding unreliable outcomes back into bidding is worse than feeding it nothing.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How measurement setups go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six problems present in most accounts we inherit. None of them announce themselves.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Everything is a conversion</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Newsletter signups counted alongside sales-qualified enquiries. Smart bidding then buys whichever is cheapest, which is exactly what you told it to do.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Duplicate tags from old agencies</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Two analytics installs and three conversion tags inherited over the years, inflating everything by an unknown amount. Nobody removed the old ones because nobody was sure what depended on them.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">A consent banner that changes nothing</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">The banner appears, the tags fire regardless. It is a compliance exposure with the appearance of diligence, and it is remarkably common.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Trusting platform-reported ROAS</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Each platform counts generously and uses its own attribution window. Add the reports together and they will claim more revenue than the business made.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Optimising to form fills</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Without offline conversion data, bidding optimises toward whoever fills in forms most readily. Those are frequently your least valuable enquiries.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Dashboards nobody opens</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Forty metrics, no recommendation, no owner. It looks like rigour and it substitutes for deciding anything.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Measurement, media, and the <span class="sem">CRM</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three layers that only produce truth together, which is why buying the middle one alone disappoints.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">The CRM holds the outcome</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Whether a deal closed and what it was worth. Without it, everything upstream optimises toward form fills and calls it revenue.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Measurement connects the two</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Consistent events, honoured consent, and outcomes fed back to the platforms. This is the plumbing, and it is invisible until it is wrong.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Media spends against it</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Bidding algorithms optimise toward whatever you told them to value. Fix the definitions and the same budget buys better customers without any change in strategy.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We normally sequence this deliberately: measurement first, then <a href="/google-ads/" class="body-link">Google Ads</a> and <a href="/meta-ads/" class="body-link">Meta Ads</a> managed against blended numbers, with <a href="/zoho-crm/" class="body-link">CRM work</a> where the outcome data is the weak link. Getting this order wrong is why so much media budget optimises confidently toward the wrong thing.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3767,15 +3861,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Do we need MMM?</summary><div class="faq-a"><p>Below $1M annual spend, no. Direct-response measurement plus post-purchase survey is enough. Above $1M, MMM starts paying for itself by surfacing contribution last-click cannot see.</p></div></details>
-        <details class="faq-item"><summary>Can you work with our existing analytics setup?</summary><div class="faq-a"><p>Yes. Most engagements start as a rebuild of an existing GA4 and pixel deployment. We audit, fix, and extend rather than starting from scratch.</p></div></details>
-        <details class="faq-item"><summary>How long until the attribution stack pays for itself?</summary><div class="faq-a"><p>Server-side tracking and post-purchase survey typically pay back within the first quarter through better channel allocation. MMM compounds across quarters as the model matures.</p></div></details>
-        <details class="faq-item"><summary>What is marketing attribution and why does it matter?</summary><div class="faq-a"><p>Marketing attribution is the work of figuring out which channels, campaigns, and creatives actually caused a sale, not just which one got the last click. It matters because the default answer is wrong. Platform-reported numbers overcount their own contribution, and Apple's privacy changes broke the browser-based conversion tracking most reports still rely on. When attribution is off, budget follows bad data: across our managed accounts, roughly 47% of channels get reweighted after the first attribution audit, and the median rebuild recovers over $420K a year in misallocated spend. Better attribution means every dollar you move into <a class="body-link" href="/google-ads/">Google Ads</a> or <a class="body-link" href="/meta-ads/">Meta</a> is a decision, not a guess.</p></div></details>
-        <details class="faq-item"><summary>What does an analytics and attribution engagement include?</summary><div class="faq-a"><p>As a marketing analytics agency, we run the same four-step method on every account. First, an audit: GA4 setup, pixel health across platforms, server-side coverage, conversion definitions, and your current attribution model, delivered as a written report regardless of engagement. Second, the rebuild: server-side conversion tracking deployed, a post-purchase survey live, and a media-mix model stood up where the spend supports it. Third, operation: a weekly attribution review with reporting that ties revenue to channel, campaign, and creative, so every dashboard ends in a decision. Fourth, compounding: the model is retrained quarterly, so accuracy improves every quarter the program runs.</p></div></details>
-        <details class="faq-item"><summary>How much do analytics and attribution services cost?</summary><div class="faq-a"><p>It depends on the size of the stack, not a flat menu. Pricing scales with how many platforms need conversion tracking, whether GA4 needs a fix or a full rebuild, and whether your spend justifies media-mix modeling (below $1M in annual media spend, it usually does not). Every engagement starts with the tracking and attribution audit, which produces a written report either way, so you know exactly what is broken before committing to the rebuild. The economics tend to take care of themselves: server-side tracking and the post-purchase survey typically pay for themselves within the first quarter through better channel allocation. <a class="body-link" href="/contact/">Book a call</a> for a scoped quote.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">Why do Google, Meta, and our analytics all report different numbers?</summary><div class="faq-a">Because they are answering different questions with different rules. Each ad platform counts conversions it believes it influenced, using its own attribution window, and includes view-through and modelled conversions. Your analytics is usually stricter and last-click biased. Neither is lying and neither is complete. Add the platform reports together and they will claim more revenue than you made, which is why we reconcile everything against blended acquisition cost.</div></details><details class="faq-item"><summary class="faq-q">What is server-side tracking and do we need it?</summary><div class="faq-a">Instead of the browser sending data straight to each platform, events go to a server you control which forwards them on. It recovers some of the data lost to ad blockers and browser privacy defaults, and gives you more control over what is shared. It is worth it when media spend is large enough that a systematic under-count is costing real money. It is not a way around consent, and it has genuine setup and hosting costs, so we will tell you when it does not pay for itself.</div></details><details class="faq-item"><summary class="faq-q">Is our consent banner enough to be compliant?</summary><div class="faq-a">A banner that appears but does not change which tags fire provides the appearance of compliance without the substance, and that is the most common setup we find. The mechanics that matter are whether declining actually stops collection and whether consent state reaches the platforms. Canadian and European rules differ, and if you sell into Europe the stricter regime applies. We implement the mechanics properly. For what your specific obligations are, take legal advice rather than ours.</div></details><details class="faq-item"><summary class="faq-q">Which attribution model should we use?</summary><div class="faq-a">None of them exclusively. Last click undervalues everything that happens early, first click undervalues everything late, and data-driven models need conversion volume most accounts do not have. We use them as lenses rather than answers and cross-check against blended acquisition cost. Where volume allows, a holdout test measures genuine incremental lift, which is the only approach that answers the question the models are approximating.</div></details><details class="faq-item"><summary class="faq-q">How do we prove our marketing is working?</summary><div class="faq-a">Blended acquisition cost over time, alongside revenue, is the version that survives a finance conversation, because it cannot be double-counted. Beyond that, the strongest evidence is a holdout: turn a channel off in a region or for a segment and measure what changes. It costs some volume and it is the only method that answers the incrementality question directly. Everything else is a model with assumptions worth stating out loud.</div></details><details class="faq-item"><summary class="faq-q">Should we move to GA4, or use something else?</summary><div class="faq-a">For most businesses the platform is less important than the tracking plan behind it. GA4's event model is fine once events are named deliberately, and it is where the ecosystem has landed. The failure mode is treating a migration as a technical task and carrying over inconsistent naming, which is how you end up with a modern tool full of unusable data. Alternatives are worth considering for privacy reasons or specific product analytics needs.</div></details><details class="faq-item"><summary class="faq-q">What are offline conversions and why do they matter?</summary><div class="faq-a">Sending closed-won outcomes from your CRM back into the ad platforms, so bidding optimises toward customers rather than enquiries. It matters most where a sales team is involved and lead quality varies, which is most B2B and most high-value services. It routinely reverses which campaigns look best, because the campaigns producing the cheapest leads are frequently producing the worst ones. It does require the CRM to reflect reality first.</div></details><details class="faq-item"><summary class="faq-q">How long does a measurement rebuild take?</summary><div class="faq-a">One to two weeks for the audit, and usually a month to have the rebuilt setup live. Then you need four to eight weeks of clean data before making decisions on it, because comparisons to your history are not valid until the new definitions have accumulated their own period. That waiting stretch is the part clients find hardest, and skipping it means making decisions on a mixture of old and new definitions.</div></details><details class="faq-item"><summary class="faq-q">Can you just build us a dashboard?</summary><div class="faq-a">We can, and we would rather ask what decision it is meant to support first. A dashboard built on unreliable events is a faster way to be confidently wrong, and most dashboard requests we receive are really requests for trustworthy data. If the tracking is sound, reporting is a small job. If it is not, the dashboard makes the problem harder to see rather than easier.</div></details><details class="faq-item"><summary class="faq-q">Who owns the data and the setup?</summary><div class="faq-a">You do. Analytics properties, tag manager containers, server-side infrastructure, and documentation all sit in your accounts, and the tracking plan is a document you keep. This matters more here than in most services, because measurement is the layer everything else depends on. An agency that keeps your tracking configuration in their own accounts has made your entire reporting history contingent on the relationship continuing.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">

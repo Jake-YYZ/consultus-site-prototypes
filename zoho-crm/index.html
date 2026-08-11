@@ -847,6 +847,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
   .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
@@ -1017,8 +1025,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3571,10 +3579,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What does a Zoho CRM implementation include?", "acceptedAnswer": {"@type": "Answer", "text": "A real Zoho CRM implementation is more than turning the software on. We map your sales process first, then configure pipelines, stages, fields, and automations to match it, integrate your ad channels and website so leads flow in with source data attached, wire up closed-loop attribution, and migrate your existing records cleanly. Then we train your team and document the playbook. The goal is a CRM your reps actually use, with every lead traceable back to the campaign that created it."}},
-    {"@type": "Question", "name": "How much does a CRM implementation cost?", "acceptedAnswer": {"@type": "Answer", "text": "Cost depends on how many Zoho modules you deploy, how complex your sales process is, and how much data needs migrating and cleaning. A focused CRM implementation for one team is a defined project; a multi-module rollout across CRM, Marketing Automation, Books, and Desk is larger. We scope it as a fixed implementation phase followed by an optional monthly operating partnership, so you are not paying a big retainer before the system is live."}},
-    {"@type": "Question", "name": "How long does a Zoho CRM implementation take?", "acceptedAnswer": {"@type": "Answer", "text": "A single-team CRM implementation typically goes live in four to eight weeks. Larger, multi-module deployments run longer because process mapping, integrations, and data migration take real time when done properly. We would rather sequence a rollout in phases, get the core CRM working and adopted first, then layer on marketing automation and support modules, than switch everything on at once."}},
-    {"@type": "Question", "name": "Can you migrate us from another CRM?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most of our clients come from something else: spreadsheets, HubSpot, Salesforce, Pipedrive, or a neglected CRM nobody trusts. As experienced CRM consultants we handle the data audit, de-duplication, field mapping, and migration, then rebuild the automations and reporting in Zoho. We keep a clean record of what moved and validate it with your team before we retire the old system."}}
+    {
+      "@type": "Question",
+      "name": "How long does a Zoho CRM implementation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A straightforward setup with clean data is usually four to six weeks. What extends it is almost never the software: it is data cleanup, deciding what your pipeline stages actually mean, and getting sign-off on who owns which record. We would rather spend two extra weeks agreeing stage definitions than launch quickly into a system that produces a forecast nobody trusts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we migrate from HubSpot or Salesforce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if there is a concrete reason, and licence cost is a legitimate one. If your team is using the current system well and the data is reliable, a migration costs you history, adoption, and several months for a lower monthly bill. If nobody uses the current CRM, moving it will not fix that, because the problem is process and ownership rather than software. We have talked clients out of migrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will our sales team actually use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That depends on decisions made during setup more than on the platform. Adoption fails when there are too many mandatory fields, when the stages do not match how deals really progress, and when nobody senior insists. We keep required fields to the few that are genuinely used, define stages by buyer behaviour rather than rep sentiment, and automate data entry wherever possible so the system asks less of people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you clean up our existing data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it is usually the first phase rather than an optional extra. Duplicate merging, standardising fields, closing out deals that have been open for two years, and deciding what history is worth keeping. Migrating a mess produces the same mess in a new interface at a higher licence cost, so we would rather do this before the move than promise to tidy it later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can Zoho automate for us?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lead assignment and routing, follow-up reminders, stage-change notifications, quote and document generation, and syncing between marketing and sales records. The genuine return is usually hours per week of copying data between systems rather than anything that looks impressive in a demo. We build automation after the data is reliable, because a workflow firing on bad fields sends confident emails to the wrong people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the CRM connect to our advertising?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through offline conversion tracking. When a deal closes, that outcome is sent back to Google or Meta so bidding optimises toward customers instead of form fills. This is the highest-value connection we build and it regularly reverses which campaigns look best, because the campaigns producing the cheapest leads often produce the worst customers. It requires the CRM to be accurate first, which is why the order matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need Zoho One or just the CRM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with what you will actually use. Zoho One is good value if you genuinely adopt several apps, and expensive shelfware if you buy a suite to use one component. We would rather begin with CRM and add pieces as real needs appear than deploy fifteen applications nobody has been trained on, which is a common and avoidable way for these projects to lose credibility internally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the system after go-live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do, and somebody internal needs to be named. Systems without an owner drift within months: fields multiply, nobody prunes stale deals, and the reporting quietly stops matching reality. We document the configuration and train your team rather than leaving you dependent on us for routine changes. If nobody can own it, that is worth resolving before implementing anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if our process is unusual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Then the honest conversation is whether it is genuinely unusual or just undocumented, because most processes described as unique turn out to be standard with local vocabulary. Where it really is bespoke, Zoho can be customised heavily, and at some point that build cost outweighs the licence saving. We will tell you when you are approaching that line rather than quoting for endless customisation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you just fix our reporting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes, and it depends what is underneath. If the data is reliable and the reports are simply badly built, that is a small job. If the pipeline is full of stale deals and stages that mean whatever each rep decided, better reporting will present unreliable data more attractively. We audit first and tell you which situation you are in, because those are very different pieces of work."
+      }
+    }
   ]
 }
 </script>
@@ -3785,6 +3869,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers tell you the CRM is <span class="sem">working</span>.</h2>
+      </div></div>
+      <p class="sec-lead">A CRM is easy to implement and hard to get adopted, and only one of those shows up in a demo.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Adoption rate</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What share of deals are actually being worked in the system.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The number that decides whether any of the rest is real. A CRM half the team ignores produces a forecast built on the half that complies.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Stage accuracy</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Whether a deal's stage reflects what the buyer has done.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Stages defined by rep sentiment rather than buyer behaviour make every forecast a mood reading. This is the most common thing we rebuild.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Pipeline hygiene</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Open deals with a real next step and a date.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Stale open deals inflate the pipeline and hide the fact that nothing is moving. Cleaning this usually shrinks the reported pipeline, which is uncomfortable and correct.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Speed to first response</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Minutes from enquiry to human contact.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The CRM should be measuring this automatically. It is the strongest controllable factor in inbound conversion and most businesses have never seen the number.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Cost per closed customer by source</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What the CRM makes possible that analytics alone cannot.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Once outcomes flow back to campaigns, the ranking of your channels usually changes, because cheap leads are frequently expensive customers.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Manual work removed</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Hours per week no longer spent copying data between systems.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The return clients feel first. It is also the honest justification for automation, ahead of any dashboard.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is Zoho the right <span class="sem">choice</span> for you?</h2>
+      </div></div>
+      <p class="sec-lead">We implement it and we are not going to pretend it is right for everyone.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You want a broad suite at a lower licence cost than the market leaders.</li><li>You already use other Zoho apps and want them connected.</li><li>Your process is fairly standard and does not need heavy custom development.</li><li>Cost per seat matters because the team is large or growing.</li><li>You want CRM, forms, and campaigns in one place rather than stitched together.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Your team already lives in HubSpot or Salesforce and adoption is good. Leave it.</li><li>You need a deep ecosystem of third-party integrations. Check yours specifically first.</li><li>Nobody internally will own the system. The tool is not the problem in that case.</li><li>You want a migration to fix a process problem. It will move the problem, not solve it.</li><li>The requirement is genuinely complex development. Weigh that build cost honestly.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If your CRM is fine and the problem is that nobody uses it, a migration is the most expensive possible response. That is usually <a href="/sales-enablement/" class="body-link">sales enablement</a> work instead, and we would rather tell you that than sell an implementation.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How CRM projects go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six failures. Only one of them is about the software.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Migrating the mess</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Importing years of duplicates, dead deals, and inconsistent fields into a new system produces the same mess with a new interface and a higher licence cost.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Too many mandatory fields</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Every required field is a reason for a rep to skip the record or fake it. Adoption collapses quietly and the data gets worse, not better.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Stages that mean nothing</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">If a stage advances when a rep feels optimistic rather than when the buyer does something, the pipeline is sentiment with a number attached.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Automation built on bad data</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Workflows firing on unreliable fields send the wrong email to the wrong person confidently, which erodes trust in the whole system fast.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No internal owner</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Systems without someone responsible drift within months: fields multiply, nobody prunes, and the reporting slowly stops matching reality.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Dashboards instead of process</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Reporting layered over a process nobody follows produces attractive charts of unreliable data, which is worse than no charts at all.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">The CRM, the marketing, and the <span class="sem">handoff</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three layers that have to agree, and the CRM is the one that decides whether the other two can be measured.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Marketing produces the enquiry</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Channels and pages create interest, and their bidding optimises toward whatever they are told to value. Without outcome data they optimise toward form fills.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">The CRM holds the outcome</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">What happened, what it was worth, and how long it took. It is the only place the truth lives, which is why unreliable CRM data corrupts everything downstream.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">The handoff decides the result</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Response speed, ownership, and follow-up convert or waste what marketing produced. Usually the cheapest improvement available in the whole system.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We normally sequence this deliberately: CRM reflecting reality first, then <a href="/sales-enablement/" class="body-link">handoff and routing</a>, then feeding outcomes back through <a href="/analytics-attribution/" class="body-link">attribution</a> so <a href="/google-ads/" class="body-link">paid campaigns</a> optimise toward customers rather than enquiries. Nurture for the not-yet-ready sits in <a href="/marketing-automation/" class="body-link">lifecycle automation</a>. On the Zayouna Law programme the rebuild covered 11 pipeline statuses and ad to landing page to CRM attribution.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3792,13 +3926,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>What does a Zoho CRM implementation include?</summary><div class="faq-a"><p>A real Zoho CRM implementation is more than turning the software on. We map your sales process first, then configure pipelines, stages, fields, and automations to match it, integrate your ad channels and website so leads flow in with source data attached, wire up closed-loop attribution, and migrate your existing records cleanly. Then we train your team and document the playbook. The goal is a CRM your reps actually use, with every lead traceable back to the campaign that created it.</p></div></details>
-        <details class="faq-item"><summary>How much does a CRM implementation cost?</summary><div class="faq-a"><p>Cost depends on how many Zoho modules you deploy, how complex your sales process is, and how much data needs migrating and cleaning. A focused CRM implementation for one team is a defined project; a multi-module rollout across CRM, Marketing Automation, Books, and Desk is larger. We scope it as a fixed implementation phase followed by an optional monthly operating partnership, so you are not paying a big retainer before the system is live and earning its keep.</p></div></details>
-        <details class="faq-item"><summary>How long does a Zoho CRM implementation take?</summary><div class="faq-a"><p>A single-team CRM implementation typically goes live in four to eight weeks. Larger, multi-module deployments run longer because process mapping, integrations, and data migration take real time when done properly. We would rather sequence a rollout in phases, get the core CRM working and adopted first, then layer on marketing automation and support modules, than switch everything on at once and overwhelm your team.</p></div></details>
-        <details class="faq-item"><summary>Can you migrate us from another CRM?</summary><div class="faq-a"><p>Yes. Most of our clients come from something else: spreadsheets, HubSpot, Salesforce, Pipedrive, or a neglected CRM nobody trusts. As experienced CRM consultants we handle the data audit, de-duplication, field mapping, and migration, then rebuild the automations and reporting in Zoho. We keep a clean record of what moved and validate it with your team before we retire the old system, so nothing important gets lost in the switch.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">How long does a Zoho CRM implementation take?</summary><div class="faq-a">A straightforward setup with clean data is usually four to six weeks. What extends it is almost never the software: it is data cleanup, deciding what your pipeline stages actually mean, and getting sign-off on who owns which record. We would rather spend two extra weeks agreeing stage definitions than launch quickly into a system that produces a forecast nobody trusts.</div></details><details class="faq-item"><summary class="faq-q">Should we migrate from HubSpot or Salesforce?</summary><div class="faq-a">Only if there is a concrete reason, and licence cost is a legitimate one. If your team is using the current system well and the data is reliable, a migration costs you history, adoption, and several months for a lower monthly bill. If nobody uses the current CRM, moving it will not fix that, because the problem is process and ownership rather than software. We have talked clients out of migrations.</div></details><details class="faq-item"><summary class="faq-q">Will our sales team actually use it?</summary><div class="faq-a">That depends on decisions made during setup more than on the platform. Adoption fails when there are too many mandatory fields, when the stages do not match how deals really progress, and when nobody senior insists. We keep required fields to the few that are genuinely used, define stages by buyer behaviour rather than rep sentiment, and automate data entry wherever possible so the system asks less of people.</div></details><details class="faq-item"><summary class="faq-q">Can you clean up our existing data?</summary><div class="faq-a">Yes, and it is usually the first phase rather than an optional extra. Duplicate merging, standardising fields, closing out deals that have been open for two years, and deciding what history is worth keeping. Migrating a mess produces the same mess in a new interface at a higher licence cost, so we would rather do this before the move than promise to tidy it later.</div></details><details class="faq-item"><summary class="faq-q">What can Zoho automate for us?</summary><div class="faq-a">Lead assignment and routing, follow-up reminders, stage-change notifications, quote and document generation, and syncing between marketing and sales records. The genuine return is usually hours per week of copying data between systems rather than anything that looks impressive in a demo. We build automation after the data is reliable, because a workflow firing on bad fields sends confident emails to the wrong people.</div></details><details class="faq-item"><summary class="faq-q">How does the CRM connect to our advertising?</summary><div class="faq-a">Through offline conversion tracking. When a deal closes, that outcome is sent back to Google or Meta so bidding optimises toward customers instead of form fills. This is the highest-value connection we build and it regularly reverses which campaigns look best, because the campaigns producing the cheapest leads often produce the worst customers. It requires the CRM to be accurate first, which is why the order matters.</div></details><details class="faq-item"><summary class="faq-q">Do we need Zoho One or just the CRM?</summary><div class="faq-a">Start with what you will actually use. Zoho One is good value if you genuinely adopt several apps, and expensive shelfware if you buy a suite to use one component. We would rather begin with CRM and add pieces as real needs appear than deploy fifteen applications nobody has been trained on, which is a common and avoidable way for these projects to lose credibility internally.</div></details><details class="faq-item"><summary class="faq-q">Who owns the system after go-live?</summary><div class="faq-a">You do, and somebody internal needs to be named. Systems without an owner drift within months: fields multiply, nobody prunes stale deals, and the reporting quietly stops matching reality. We document the configuration and train your team rather than leaving you dependent on us for routine changes. If nobody can own it, that is worth resolving before implementing anything.</div></details><details class="faq-item"><summary class="faq-q">What if our process is unusual?</summary><div class="faq-a">Then the honest conversation is whether it is genuinely unusual or just undocumented, because most processes described as unique turn out to be standard with local vocabulary. Where it really is bespoke, Zoho can be customised heavily, and at some point that build cost outweighs the licence saving. We will tell you when you are approaching that line rather than quoting for endless customisation.</div></details><details class="faq-item"><summary class="faq-q">Can you just fix our reporting?</summary><div class="faq-a">Sometimes, and it depends what is underneath. If the data is reliable and the reports are simply badly built, that is a small job. If the pipeline is full of stale deals and stages that mean whatever each rep decided, better reporting will present unreliable data more attractively. We audit first and tell you which situation you are in, because those are very different pieces of work.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">

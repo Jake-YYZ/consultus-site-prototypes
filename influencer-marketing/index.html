@@ -847,6 +847,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
   .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
@@ -1017,8 +1025,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3571,10 +3579,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What is UGC and why does it outperform studio creative?", "acceptedAnswer": {"@type": "Answer", "text": "UGC, or user generated content, is ad creative that looks and sounds like a real person recommending something, not a polished brand film. It outperforms studio work because it matches what people actually watch in their feeds, so it stops the scroll and earns trust before it sells. The gap is measurable. On one client account, UGC drove a 248 percent higher click-through rate than static ads."}},
-    {"@type": "Question", "name": "What is the difference between influencer marketing and UGC?", "acceptedAnswer": {"@type": "Answer", "text": "They overlap but solve different jobs. Influencer marketing borrows a creator's audience: they post to their followers, and you pay for that reach and endorsement. User generated content is about the asset, not the audience. A creator films authentic-feeling content that you own and run as paid ads on your own channels. Most of our programs blend both, using influencer partnerships for reach and UGC for a steady supply of ad creative."}},
-    {"@type": "Question", "name": "How do you source and vet creators?", "acceptedAnswer": {"@type": "Answer", "text": "We run a vetted UGC creator network of more than 200 people across beauty, fitness, home, tech, and lifestyle. As a UGC agency we match creators to your category and buyer, brief them against hook ideas drawn from real ad performance, and manage licensing, revisions, and usage rights. Creators are chosen on how well their content converts, not on follower count, because for paid UGC the asset matters more than the audience."}},
-    {"@type": "Question", "name": "How much does UGC and influencer marketing cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how much creative you need per month and whether a campaign is paid-usage UGC, an influencer partnership for reach, or both. UGC is usually priced per batch of deliverables, while influencer work factors in the creator's audience. We scope programs to produce enough fresh creative to keep your paid social from fatiguing, because a slow trickle of assets is where most UGC programs quietly fail."}}
+    {
+      "@type": "Question",
+      "name": "How do you choose creators?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By audience composition rather than follower count. We look at who actually follows them, in which countries, and in what age range, then at their recent performance baseline rather than the numbers in a media kit. A creator with 8,000 genuinely relevant followers routinely outperforms one with 200,000 loosely relevant ones, and costs a fraction. We also check whether their last several posts performed anywhere near what they claim."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does influencer marketing cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies enormously and the fee is only part of it. Budget for the creator fee, paid usage rights if you want to run the content as advertising, and product or service costs. Usage rights are frequently the best value line item and the one most often skipped. We would rather negotiate a longer licence at the start than discover a winning asset expires in thirty days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we get usage rights to run the content as ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always yes, and this is where most of the return lives. A creator's organic post reaches part of their audience once. The same asset licensed and run as paid media can reach far more of the right people for months. On the BookSeats programme, creator content lifted click-through 248.35% against the static control, 3.17% versus 0.91%. Negotiate this in the original agreement, because retrofitting it later is expensive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we measure whether it worked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cost per acquisition per creator, not engagement. Discount codes and affiliate links are useful but they systematically over-credit people who were already going to buy and miss everyone who saw the post and searched later. We look at branded search lift, paid usage performance, and where volume allows a holdout. This channel resists precise attribution, and any agency claiming otherwise is showing you code redemptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do micro-influencers work better than large ones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Frequently, on cost per acquisition. Smaller creators tend to have tighter audience relationships, cost far less, and are more willing to produce multiple pieces. The trade-off is that you need several to reach meaningful volume, which means more coordination. For most businesses we would rather run five well-matched smaller creators than one expensive name, because the first approach is a test and the second is a bet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much control do we get over the content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enough to protect the brand and not enough to ruin the ad. We brief the message, the claims that must and must not be made, and any legal requirements, then let the creator write it in their own voice. Handing over copy to be read verbatim removes the only quality you were paying for. Where a category has regulated claims, that constraint goes in the brief explicitly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about disclosure rules in Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paid partnerships have to be clearly disclosed, and Canada's Competition Bureau has been increasingly active on undisclosed endorsements and testimonials that do not reflect genuine experience. Practically that means clear labelling in the post itself rather than buried in a comment, and creators who have actually used the product. We build disclosure into the brief as a requirement. For your specific obligations, take legal advice rather than ours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we do one-off posts or ongoing partnerships?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ongoing, where the creator is working. Repeated appearances build the familiarity that actually drives purchase, whereas a single post reaches an audience once and disappears. It also produces more assets you can license. Our usual approach is a small paid test across several creators, then deeper repeat work with the two or three that produced customers rather than comments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same as performance creative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, though they overlap. Performance creative is producing ads you own, including creator-style content shot for that purpose, with no audience attached. Influencer marketing is paying for someone's existing audience and credibility as well as the content. If what you actually need is a supply of native-feeling ads, production is usually cheaper. If you need the endorsement, that is what the fee buys."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a realistic expectation for a first campaign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That most partnerships underperform and a small number pay for the rest. Treat the first round as a paid test across several well-matched creators rather than a launch, expect to learn which audience and which angle works, and keep the usage rights so the winners keep earning. Businesses that expect every creator to deliver tend to conclude the channel does not work after one disappointing partnership."
+      }
+    }
   ]
 }
 </script>
@@ -3950,6 +4034,56 @@
     .lw-card:hover { border-color: #1A40C7 !important; transform: translateY(-2px); }
   </style>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers we manage <span class="sem">to</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Follower counts and engagement rates are the two easiest numbers to buy. These are the six we use instead.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Cost per acquisition, per creator</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What each partnership actually costs to produce a customer.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The number that matters and the one most influencer reporting avoids. A creator with a tenth of the audience frequently wins on this.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Audience overlap with your buyer</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How much of a creator's following resembles your customer.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Checked before signing rather than after. Large audiences in the wrong country or age band are the most common way budget disappears here.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Paid usage performance</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How the creator's asset performs when you run it as an ad.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Often the real return. For BookSeats, creator content lifted click-through 248.35% against the static control, at 3.17% versus 0.91%, which is why usage rights matter more than reach.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Organic reach against expectation</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Whether posts reached the audience the fee implied.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Compared to the creator's own recent baseline rather than their pitch deck, because a quiet month is normal and a pattern is not.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Content produced per dollar</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How many usable assets the partnership generated.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">A creator producing five assets you can run for a year is a different proposition from one post that disappears in a day.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Incremental lift</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What the campaign added that would not have happened.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The honest and hardest number. Where volume allows we look at branded search and holdouts, because a discount code proves nothing about people who would have bought anyway.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is creator marketing worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">It works well in some categories and burns budget spectacularly in others.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Your product is visual, demonstrable, or benefits from being vouched for.</li><li>You can license the content and run it as paid, which is usually the main return.</li><li>Consumer, lifestyle, food, beauty, fitness, retail, or local hospitality.</li><li>You accept that most partnerships will underperform and a few will pay for the rest.</li><li>You can move quickly on approvals, because creator schedules do not wait.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You sell complex B2B to a narrow job title. LinkedIn or search fits better.</li><li>You need precise attribution for every sale. This channel resists that.</li><li>Budget only covers one partnership. One creator is a coin toss, not a test.</li><li>You want the creator to read your script verbatim. That is what makes it fail.</li><li>Your offer is weak. A trusted voice will expose it faster and to more people.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If your buyers are searching rather than scrolling, capture that first with <a href="/google-ads/" class="body-link">paid search</a>. Where the real goal is a supply of native-feeling ads you own, that is often cheaper as <a href="/performance-creatives/" class="body-link">creator-style production</a> without paying for someone else's audience.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How creator campaigns go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six failures. The first two account for most of the wasted budget in this channel.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Buying reach instead of fit</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A large audience that does not resemble your buyer costs more and converts worse than a small one that does. Audience composition matters far more than size and it is checkable before signing.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No paid usage rights</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">The most common expensive mistake. A creator's asset outperforms your studio work, and you discover you cannot legally run it as an ad or the licence expires in thirty days.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Scripting the creator</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Handing over ad copy to be read verbatim destroys the only thing you were buying, which is that it does not sound like an advertisement. Brief the message and the constraints, not the sentences.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Engagement rate as the metric</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Comments and likes are the easiest numbers to inflate and the least connected to revenue. Pods, bought engagement, and a following that likes everything all look identical in a media kit.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">One-off posts</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A single post reaches an audience once and disappears. Repeated appearances build the familiarity that actually drives purchase, which is why we would rather do three posts with one creator than one each with three.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Discount codes as proof</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A code measures who found the code, not who was persuaded. It systematically over-credits people who were already buying and under-credits everyone who saw the post and searched later.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Creators, paid social, and <span class="sem">production</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three overlapping ways to get native-feeling content in front of people, at very different costs.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Creators bring an audience</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">You are buying distribution plus borrowed credibility. That is the premium, and it is only worth paying when their audience genuinely resembles your buyer.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Paid social brings the scale</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Licensing a creator's asset and running it as an ad usually reaches far more of the right people than their organic post did. This is where most of the return actually sits.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Production brings the volume</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Creator-style content shot for you, without an audience attached, is cheaper per asset and easier to iterate. Often the better answer when what you needed was ads that do not look like ads.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We usually run this with <a href="/meta-ads/" class="body-link">Meta Ads</a> so the best creator assets get paid distribution, alongside <a href="/performance-creatives/" class="body-link">creative production</a> for volume. Where trust rather than reach is the constraint, <a href="/reputation-advertising-toronto/" class="body-link">reviews and reputation</a> are usually a cheaper lever than a creator fee.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3957,13 +4091,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>What is UGC and why does it outperform studio creative?</summary><div class="faq-a"><p>UGC, or user generated content, is ad creative that looks and sounds like a real person recommending something, not a polished brand film. It outperforms studio work because it matches what people actually watch in their feeds, so it stops the scroll and earns trust before it sells. The gap is measurable. On one client account, UGC drove a 248 percent higher click-through rate than static ads. See the <a class="body-link" href="/case-studies/bookseats/">BookSeats case study</a> for the numbers.</p></div></details>
-        <details class="faq-item"><summary>What is the difference between influencer marketing and UGC?</summary><div class="faq-a"><p>They overlap but solve different jobs. Influencer marketing borrows a creator's audience: they post to their followers, and you pay for that reach and endorsement. User generated content is about the asset, not the audience. A creator films authentic-feeling content that you own and run as paid ads on your own channels. Most of our programs blend both, using influencer partnerships for reach and UGC for a steady supply of ad creative that keeps performance from fatiguing.</p></div></details>
-        <details class="faq-item"><summary>How do you source and vet creators?</summary><div class="faq-a"><p>We run a vetted UGC creator network of more than 200 people across beauty, fitness, home, tech, and lifestyle. As a UGC agency we match creators to your category and buyer, brief them against hook ideas drawn from real ad performance, and manage licensing, revisions, and usage rights. Creators are chosen on how well their content converts, not on follower count, because for paid UGC the asset matters more than the audience.</p></div></details>
-        <details class="faq-item"><summary>How much does UGC and influencer marketing cost?</summary><div class="faq-a"><p>It depends on how much creative you need per month and whether a campaign is paid-usage UGC, an influencer partnership for reach, or both. UGC is usually priced per batch of deliverables, while influencer work factors in the creator's audience. We scope programs to produce enough fresh creative to keep your <a class="body-link" href="/meta-ads/">paid social</a> from fatiguing, because a slow trickle of assets is where most UGC programs quietly fail.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">How do you choose creators?</summary><div class="faq-a">By audience composition rather than follower count. We look at who actually follows them, in which countries, and in what age range, then at their recent performance baseline rather than the numbers in a media kit. A creator with 8,000 genuinely relevant followers routinely outperforms one with 200,000 loosely relevant ones, and costs a fraction. We also check whether their last several posts performed anywhere near what they claim.</div></details><details class="faq-item"><summary class="faq-q">What does influencer marketing cost?</summary><div class="faq-a">It varies enormously and the fee is only part of it. Budget for the creator fee, paid usage rights if you want to run the content as advertising, and product or service costs. Usage rights are frequently the best value line item and the one most often skipped. We would rather negotiate a longer licence at the start than discover a winning asset expires in thirty days.</div></details><details class="faq-item"><summary class="faq-q">Should we get usage rights to run the content as ads?</summary><div class="faq-a">Almost always yes, and this is where most of the return lives. A creator's organic post reaches part of their audience once. The same asset licensed and run as paid media can reach far more of the right people for months. On the BookSeats programme, creator content lifted click-through 248.35% against the static control, 3.17% versus 0.91%. Negotiate this in the original agreement, because retrofitting it later is expensive.</div></details><details class="faq-item"><summary class="faq-q">How do we measure whether it worked?</summary><div class="faq-a">Cost per acquisition per creator, not engagement. Discount codes and affiliate links are useful but they systematically over-credit people who were already going to buy and miss everyone who saw the post and searched later. We look at branded search lift, paid usage performance, and where volume allows a holdout. This channel resists precise attribution, and any agency claiming otherwise is showing you code redemptions.</div></details><details class="faq-item"><summary class="faq-q">Do micro-influencers work better than large ones?</summary><div class="faq-a">Frequently, on cost per acquisition. Smaller creators tend to have tighter audience relationships, cost far less, and are more willing to produce multiple pieces. The trade-off is that you need several to reach meaningful volume, which means more coordination. For most businesses we would rather run five well-matched smaller creators than one expensive name, because the first approach is a test and the second is a bet.</div></details><details class="faq-item"><summary class="faq-q">How much control do we get over the content?</summary><div class="faq-a">Enough to protect the brand and not enough to ruin the ad. We brief the message, the claims that must and must not be made, and any legal requirements, then let the creator write it in their own voice. Handing over copy to be read verbatim removes the only quality you were paying for. Where a category has regulated claims, that constraint goes in the brief explicitly.</div></details><details class="faq-item"><summary class="faq-q">What about disclosure rules in Canada?</summary><div class="faq-a">Paid partnerships have to be clearly disclosed, and Canada's Competition Bureau has been increasingly active on undisclosed endorsements and testimonials that do not reflect genuine experience. Practically that means clear labelling in the post itself rather than buried in a comment, and creators who have actually used the product. We build disclosure into the brief as a requirement. For your specific obligations, take legal advice rather than ours.</div></details><details class="faq-item"><summary class="faq-q">Should we do one-off posts or ongoing partnerships?</summary><div class="faq-a">Ongoing, where the creator is working. Repeated appearances build the familiarity that actually drives purchase, whereas a single post reaches an audience once and disappears. It also produces more assets you can license. Our usual approach is a small paid test across several creators, then deeper repeat work with the two or three that produced customers rather than comments.</div></details><details class="faq-item"><summary class="faq-q">Is this the same as performance creative?</summary><div class="faq-a">No, though they overlap. <a href="/performance-creatives/" class="body-link">Performance creative</a> is producing ads you own, including creator-style content shot for that purpose, with no audience attached. Influencer marketing is paying for someone's existing audience and credibility as well as the content. If what you actually need is a supply of native-feeling ads, production is usually cheaper. If you need the endorsement, that is what the fee buys.</div></details><details class="faq-item"><summary class="faq-q">What is a realistic expectation for a first campaign?</summary><div class="faq-a">That most partnerships underperform and a small number pay for the rest. Treat the first round as a paid test across several well-matched creators rather than a launch, expect to learn which audience and which angle works, and keep the usage rights so the winners keep earning. Businesses that expect every creator to deliver tend to conclude the channel does not work after one disappointing partnership.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">

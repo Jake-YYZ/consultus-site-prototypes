@@ -847,6 +847,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1019,8 +1027,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3573,10 +3581,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What does performance creative production include?", "acceptedAnswer": {"@type": "Answer", "text": "Everything that goes into an ad that has to sell, not just look good. That means video production, short-form and UGC-style video, photography, static ad creatives, motion graphics, and video testimonials, all briefed against what is actually working in your account. We do not hand off a folder of assets and walk away. Every concept is built as a hypothesis, run against live campaigns, and scored on ROAS, so the creative that survives is the creative that performs."}},
-    {"@type": "Question", "name": "How is creative billed, and how much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Performance creative is usually a monthly production retainer sized to how many fresh assets your campaigns need to avoid fatigue, rather than a per-video charge. A brand running aggressive paid social burns through creative fast, so the volume, not a single shoot, drives the cost. We scope the smallest sprint cadence that keeps a steady flow of new ad creatives in market, because creative volume is one of the biggest levers on paid performance."}},
-    {"@type": "Question", "name": "How fast is turnaround from brief to live ads?", "acceptedAnswer": {"@type": "Answer", "text": "Because production runs in-house and against a standing brief, a typical sprint moves from concept to live ad creatives in one to two weeks, faster for UGC and static work, a little longer when a full video production shoot is involved. The point of keeping it in-house is speed: we can react to what a campaign is telling us this week instead of waiting on an outside studio's schedule."}},
-    {"@type": "Question", "name": "Do you shoot on location in Toronto?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our videographers and photographers shoot in-studio and on location in Toronto, and we coordinate UGC creators remotely for brands anywhere in Canada and the US. Whether it is a founder video, product photography, or a batch of creator content, we handle the production end to end so the footage is built for the feed from the first frame."}}
+    {
+      "@type": "Question",
+      "name": "How much creative do we need per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enough to stay ahead of fatigue, which means a steady cadence rather than a quarterly batch. New angles weekly is a reasonable working assumption at meaningful spend. Volume alone is not the point though: five genuinely different arguments outperform twenty variations of one idea. The right number comes from your fatigue curve, which we measure rather than guess."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is user-generated content better than produced ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often on Meta and almost always on TikTok, because creator-style content reads as content rather than advertising and does not trigger the instinct to skip. On the BookSeats programme, creator content lifted click-through 248.35% against the static control, at 3.17% versus 0.91%. It is not universal though, and higher-consideration or premium products sometimes need production value, which is why we test it as a hypothesis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good hook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Specificity and immediacy. Naming the exact situation the viewer is in, showing the problem rather than describing it, or opening on the outcome. What fails is starting with your logo, a slow establishing shot, or a general statement about the category. Most of the decision happens in the first few seconds, before your offer is mentioned, which is why we test hooks separately from the rest of the ad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need video, or do statics still work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both work and they do different jobs. Statics are cheap to produce and iterate, which makes them excellent for testing offers and messages quickly. Video carries demonstration and story, and tends to be necessary where a product needs showing in use. The efficient pattern is usually testing an argument as a static first, then producing video around the ones that prove out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the creative you produce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do, including the raw files and the edits, and that is worth confirming with any agency. Where creators are involved, usage rights are negotiated up front and stated explicitly, including duration and paid usage, because the common failure is discovering a winning ad cannot legally run past a certain date. We would rather set a longer licence at the outset than lose a proven asset."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you decide what to test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From objections rather than features. We take what your sales and support teams hear, what shows up in reviews, and what the winning search terms imply about intent, then write hooks against those. Each creative is an argument with a prediction attached, so a loss narrows the field. The angle that wins is regularly the one nobody in the room expected, which is exactly why it gets tested rather than debated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a creative last before it fatigues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies by audience size and spend, and it is measurable rather than theoretical. Small audiences at high spend fatigue in a couple of weeks, broader ones last longer. Rather than quote you a number, we track frequency and the decay curve and set your production cadence from that. An account with fast fatigue and slow production will plateau no matter how well the media is bought."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with our brand guidelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and there is a tension worth naming up front. Performance creative that looks like a polished brand asset often underperforms in feed, because it reads as advertising. We usually agree a set of guardrails, on logo, colour, and claims, with more latitude on format and tone than a brand campaign would allow. That conversation is easier before production than during approvals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to the winning angles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They leave the channel. A hook that wins in feed usually becomes search ad copy, a landing page headline, an email subject line, and sometimes a sales talking point. The insight is more portable than the asset, and programmes that keep their learnings inside the paid social account leave most of the value on the table. This is why we report by angle rather than by ad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same as influencer marketing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Related and not the same. This is production of ads you own and run as paid media, including creator-style content shot for that purpose. Influencer marketing is working with creators who have their own audience, where part of the value is their distribution and credibility. They overlap when a creator's asset becomes a paid ad, which is a licensing question worth settling in the original agreement."
+      }
+    }
   ]
 }
 </script>
@@ -4155,6 +4239,56 @@
     .lw-card:hover { border-color: #1A40C7 !important; transform: translateY(-2px); }
   </style>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers decide whether a creative <span class="sem">works</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Brand teams judge creative on how it looks. Performance creative gets judged on six numbers instead.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Hook rate</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How many people are still there after the first few seconds.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The earliest reliable read on a concept, and it lets us kill weak ideas before they spend meaningfully. Nearly everything downstream follows from it.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Hold rate</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Whether the people who stayed keep watching.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Separates a good hook from a good ad. A strong opening with nothing behind it produces views and no customers.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Click-through by angle</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Performance grouped by the argument, not the format.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The angle is the meaningful unit, since creative now does the targeting. For BookSeats, creator-style content reached 3.17% against 0.91% on the static control, a 248.35% lift.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Cost per acquisition by concept</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What each creative idea actually costs to convert.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The number that settles internal debate about which ad is best. It regularly disagrees with the room's favourite.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Fatigue curve</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How quickly frequency climbs and performance decays.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">It sets the production cadence you need. High fatigue means the constraint is the studio, not the media buying.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Iteration win rate</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How often a variation of a winner beats the original.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Where efficient creative programmes actually live. Mining a proven angle is cheaper and more reliable than hunting for a new one every week.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is a creative program worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">This depends on whether you are buying paid social at a volume that fatigues creative.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You run Meta or TikTok at a spend level where ads wear out.</li><li>Your product benefits from being demonstrated rather than described.</li><li>You can approve new work continuously rather than in quarterly batches.</li><li>You have a real offer to communicate, not just a brand to express.</li><li>You want to test arguments rather than settle them by opinion.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Your spend is mostly search. Creative matters far less there than the account structure.</li><li>Approvals take six weeks. The cadence will not survive that.</li><li>You need brand campaign work. This is direct response and a different craft.</li><li>The offer itself is the problem. Better creative sells a weak offer to more people once.</li><li>You want one hero video. That is a production job, not a programme.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If most of your budget is in <a href="/google-ads/" class="body-link">paid search</a>, creative volume is not your constraint and we will say so. This earns its place alongside <a href="/meta-ads/" class="body-link">Meta Ads</a>, where the asset decides who sees it and production capacity sets the ceiling on the channel.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How creative programs go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six failures. Most of them are process problems dressed up as taste disagreements.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">One idea in fifteen versions</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Recolouring and recaptioning the same concept is not testing, it is decoration. Genuinely different arguments are what move cost per acquisition.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Repurposing brand film</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A polished thirty-second spot cut down for feed reads as an advertisement immediately and gets skipped. Native execution outperforms production value here more often than anyone expects.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Judging by committee</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">The ad the room likes least frequently wins. Once opinion decides what ships, the programme is optimising for internal comfort rather than acquisition cost.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Ignoring the first three seconds</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Most of the decision happens before the offer is mentioned. Creative that saves the hook for the middle has already lost most of its audience.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Stopping production after launch</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Every creative fatigues. Accounts that plateau have almost always stopped feeding the pipeline, and no media buying skill compensates for an empty library.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No handoff to the ad account</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Winning angles that never reach the search ads, landing pages, or emails leave most of the value in one channel. The insight is more portable than the asset.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Creative, media, and the <span class="sem">offer</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three levers, and they are not interchangeable no matter how the results are reported.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Creative is the targeting</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">On Meta and TikTok the asset decides who the algorithm shows you to, which makes production capacity the real ceiling on the channel rather than media buying skill.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Media buying is now smaller</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Automation absorbed most of the audience craft. What remains is structure, budget discipline, and measurement, which matters but no longer decides the outcome alone.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">The offer beats both</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">No creative programme rescues a weak offer for long. Better ads simply expose it to more people faster, which is worth knowing before commissioning a quarter of production.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">This runs alongside <a href="/meta-ads/" class="body-link">Meta Ads</a> and <a href="/influencer-marketing/" class="body-link">creator work</a>, with winning angles fed into <a href="/google-ads/" class="body-link">search ads</a> and <a href="/landing-pages/" class="body-link">landing pages</a>, since an argument that wins in feed usually wins on the page too. Where the offer is the real constraint, that conversation comes first.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -4162,13 +4296,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>What does performance creative production include?</summary><div class="faq-a"><p>Everything that goes into an ad that has to sell, not just look good. That means video production, short-form and UGC-style video, photography, static ad creatives, motion graphics, and video testimonials, all briefed against what is actually working in your account. We do not hand off a folder of assets and walk away. Every concept is built as a hypothesis, run against live campaigns, and scored on ROAS, so the creative that survives is the creative that performs.</p></div></details>
-        <details class="faq-item"><summary>How is creative billed, and how much does it cost?</summary><div class="faq-a"><p>Performance creative is usually a monthly production retainer sized to how many fresh assets your campaigns need to avoid fatigue, rather than a per-video charge. A brand running aggressive paid social burns through creative fast, so the volume, not a single shoot, drives the cost. We scope the smallest sprint cadence that keeps a steady flow of new ad creatives in market, because creative volume is one of the biggest levers on paid performance.</p></div></details>
-        <details class="faq-item"><summary>How fast is turnaround from brief to live ads?</summary><div class="faq-a"><p>Because production runs in-house and against a standing brief, a typical sprint moves from concept to live ad creatives in one to two weeks, faster for UGC and static work, a little longer when a full video production shoot is involved. The point of keeping it in-house is speed: we can react to what a campaign is telling us this week instead of waiting on an outside studio's schedule.</p></div></details>
-        <details class="faq-item"><summary>Do you shoot on location in Toronto?</summary><div class="faq-a"><p>Yes. Our videographers and photographers shoot in-studio and on location in Toronto, and we coordinate UGC creators remotely for brands anywhere in Canada and the US. Whether it is a founder video, product photography, or a batch of creator content, we handle the production end to end so the footage is built for the feed from the first frame.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">How much creative do we need per month?</summary><div class="faq-a">Enough to stay ahead of fatigue, which means a steady cadence rather than a quarterly batch. New angles weekly is a reasonable working assumption at meaningful spend. Volume alone is not the point though: five genuinely different arguments outperform twenty variations of one idea. The right number comes from your fatigue curve, which we measure rather than guess.</div></details><details class="faq-item"><summary class="faq-q">Is user-generated content better than produced ads?</summary><div class="faq-a">Often on Meta and almost always on TikTok, because creator-style content reads as content rather than advertising and does not trigger the instinct to skip. On the BookSeats programme, creator content lifted click-through 248.35% against the static control, at 3.17% versus 0.91%. It is not universal though, and higher-consideration or premium products sometimes need production value, which is why we test it as a hypothesis.</div></details><details class="faq-item"><summary class="faq-q">What makes a good hook?</summary><div class="faq-a">Specificity and immediacy. Naming the exact situation the viewer is in, showing the problem rather than describing it, or opening on the outcome. What fails is starting with your logo, a slow establishing shot, or a general statement about the category. Most of the decision happens in the first few seconds, before your offer is mentioned, which is why we test hooks separately from the rest of the ad.</div></details><details class="faq-item"><summary class="faq-q">Do we need video, or do statics still work?</summary><div class="faq-a">Both work and they do different jobs. Statics are cheap to produce and iterate, which makes them excellent for testing offers and messages quickly. Video carries demonstration and story, and tends to be necessary where a product needs showing in use. The efficient pattern is usually testing an argument as a static first, then producing video around the ones that prove out.</div></details><details class="faq-item"><summary class="faq-q">Who owns the creative you produce?</summary><div class="faq-a">You do, including the raw files and the edits, and that is worth confirming with any agency. Where creators are involved, usage rights are negotiated up front and stated explicitly, including duration and paid usage, because the common failure is discovering a winning ad cannot legally run past a certain date. We would rather set a longer licence at the outset than lose a proven asset.</div></details><details class="faq-item"><summary class="faq-q">How do you decide what to test?</summary><div class="faq-a">From objections rather than features. We take what your sales and support teams hear, what shows up in reviews, and what the winning search terms imply about intent, then write hooks against those. Each creative is an argument with a prediction attached, so a loss narrows the field. The angle that wins is regularly the one nobody in the room expected, which is exactly why it gets tested rather than debated.</div></details><details class="faq-item"><summary class="faq-q">How long does a creative last before it fatigues?</summary><div class="faq-a">It varies by audience size and spend, and it is measurable rather than theoretical. Small audiences at high spend fatigue in a couple of weeks, broader ones last longer. Rather than quote you a number, we track frequency and the decay curve and set your production cadence from that. An account with fast fatigue and slow production will plateau no matter how well the media is bought.</div></details><details class="faq-item"><summary class="faq-q">Can you work with our brand guidelines?</summary><div class="faq-a">Yes, and there is a tension worth naming up front. Performance creative that looks like a polished brand asset often underperforms in feed, because it reads as advertising. We usually agree a set of guardrails, on logo, colour, and claims, with more latitude on format and tone than a brand campaign would allow. That conversation is easier before production than during approvals.</div></details><details class="faq-item"><summary class="faq-q">What happens to the winning angles?</summary><div class="faq-a">They leave the channel. A hook that wins in feed usually becomes search ad copy, a landing page headline, an email subject line, and sometimes a sales talking point. The insight is more portable than the asset, and programmes that keep their learnings inside the paid social account leave most of the value on the table. This is why we report by angle rather than by ad.</div></details><details class="faq-item"><summary class="faq-q">Is this the same as influencer marketing?</summary><div class="faq-a">Related and not the same. This is production of ads you own and run as paid media, including creator-style content shot for that purpose. <a href="/influencer-marketing/" class="body-link">Influencer marketing</a> is working with creators who have their own audience, where part of the value is their distribution and credibility. They overlap when a creator's asset becomes a paid ad, which is a licensing question worth settling in the original agreement.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">
