@@ -846,6 +846,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1017,8 +1025,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3595,14 +3603,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Do you require a long-term contract?", "acceptedAnswer": {"@type": "Answer", "text": "Standard engagements are month-to-month after an initial 90-day diagnostic and rebuild window. We have no interest in keeping accounts that are not getting a result."}},
-    {"@type": "Question", "name": "Can you work with our existing in-house Google Ads manager?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Some of our best engagements are co-managed with an in-house performance lead. We bring senior-tier strategy, attribution work, and creative production while your in-house team owns the daily levers."}},
-    {"@type": "Question", "name": "What size accounts do you typically work with?", "acceptedAnswer": {"@type": "Answer", "text": "We run accounts spending $10K to $500K+ per month on Google Ads alone. Below $10K the agency model is hard to justify, and above $500K we move into custom retainer structures."}},
-    {"@type": "Question", "name": "How much does Google Ads management cost?", "acceptedAnswer": {"@type": "Answer", "text": "Two numbers matter: what you pay Google, and what you pay the agency. Media spend is yours and goes straight to the auction. Our Google Ads management fee is a function of account complexity and spend, not a flat percentage that punishes you for scaling. Most engagements sit between $10K and $500K per month in media. Below roughly $10K in monthly spend, a full retainer is hard to justify, and we will say so on the first call rather than take the account."}},
-    {"@type": "Question", "name": "What does a Google Ads agency actually do?", "acceptedAnswer": {"@type": "Answer", "text": "A good Google Ads agency does four things: it audits and rebuilds account structure so budget follows intent, it writes and tests ads against real buyer language, it manages bids against profit rather than clicks, and it reports on revenue instead of vanity metrics. We run PPC as a system, with search, Shopping, Performance Max, and remarketing all feeding one revenue picture that we review every week."}},
-    {"@type": "Question", "name": "Do you run YouTube, Display and programmatic campaigns too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Search is usually where we start because intent is highest, but a mature account rarely lives on search alone. We build YouTube advertising for demand generation, Display and remarketing to stay in front of people who did not convert the first time, and programmatic advertising when reach and audience targeting justify it. Each channel earns its budget against the same scoreboard."}},
-    {"@type": "Question", "name": "Do you work with businesses across Canada?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We are a Toronto-based Google Ads agency in Canada working with clients coast to coast and into the United States. Google Ads is not a local-only channel. Campaign geography is set by where your customers are, not where we sit. Clients in Vancouver, Calgary, Montreal, and across the GTA run the same playbook."}},
-    {"@type": "Question", "name": "How long until Google Ads shows results?", "acceptedAnswer": {"@type": "Answer", "text": "Search campaigns can produce leads in the first week because you are bidding on people already looking for you. The first 90 days are about signal: cleaning up conversion tracking, cutting wasted spend, and letting the account gather enough data for smart bidding to work. Stable, repeatable efficiency usually shows by month two or three."}}
+    {
+      "@type": "Question",
+      "name": "How much should we spend on Google Ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enough that the account can gather data, which in most categories means a budget where your best campaigns are not capped within hours. Below that you are buying a handful of clicks a day and neither you nor the bidding algorithm can learn anything. The more useful question is what a customer is worth to you, because that sets what a click can cost. We would rather start narrow with real budget on a few high-intent terms than spread a small budget across everything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Performance Max worth running?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with guardrails, and it is the campaign type we argue about most. Left alone it will absorb your brand searches and existing customers and report a superb return for demand you already had. Run properly it needs brand traffic separated out, deliberately chosen creative assets, real audience signals rather than guesses, and regular checks on where the spend went. It should never be the only campaign in an account, because then nobody can tell what it actually did."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is our cost per click so high?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually competition and quality together. Some categories are simply expensive because a customer is worth a lot, and legal, insurance, and trades are the obvious examples. What you can control is relevance: tighter keyword to ad to landing page alignment lowers what you pay for the same position. If clicks are expensive and the landing page is generic, you are paying a premium for a page that does not convert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should we bid on our own brand name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually yes, for defence, and report it separately from everything else. Competitors bidding on your name will take clicks cheaply if you leave the space empty. The catch is that brand campaigns convert brilliantly, because those people were already looking for you, so blending them into your overall reporting makes the whole account look better than it is. Split them or you will never know whether you are reaching anyone new."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long before Google Ads works?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Faster than anything else we run. Wasted spend can be cut in week one, a restructured account is usually live in two to three weeks, and smart bidding needs another two to four weeks to stabilise before the numbers are meaningful. A fair read arrives in month two. Longer sales cycles take longer to judge, not because the ads are slower but because the closed revenue shows up later than the click."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need separate landing pages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, and it is frequently the highest-return thing to fix. Sending paid traffic to your homepage means paying for a specific search and answering it with a page built for everyone. Where the ad promises something particular, the page should repeat that promise in the same words with one clear action. That is a landing page build, and it usually beats another round of bid changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we manage this ourselves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plenty of businesses do, and the work that decides the outcome is unglamorous: weekly search term review, negative keywords, conversion setup, and creative testing. Google's own recommendations are worth treating carefully, since they optimise for spend as well as for your results. The honest test is whether someone internally has a few hours a week for it. Monthly attention is where accounts quietly drift into waste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good ROAS or cost per lead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends entirely on your margin and what a customer is worth over their lifetime, which is why we ask for those numbers before quoting a target. A 3x return can lose money on a thin-margin product while a 2x return is excellent on a strong one. Cost per lead is similarly meaningless without a close rate. Any agency quoting a target before understanding your economics is guessing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you use our existing account or start fresh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always yours, because it carries conversion history that smart bidding depends on and starting fresh throws that away. We rebuild campaign structure inside the existing account rather than replacing it. A genuinely new account is only right in unusual cases, such as an unresolvable policy history, and we would explain the trade-off before doing it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the account and the data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do. We work in your Google Ads account with our own access, so campaign history, conversion data, and audiences stay with you if we part ways. Be wary of any agency that runs your campaigns through their own MCC in a way that means you cannot take the account with you, because that history is the most valuable asset the account holds."
+      }
+    }
   ]
 }
 </script>
@@ -3683,14 +3763,16 @@
     <div class="sec-head solo has-lead">
       <div>
         <div class="section-lbl">What We Run</div>
-        <h2 class="sec-title">Google Ads management, the <span class="sem">disciplined</span> way.</h2>
+        <h2 class="sec-title">Google Ads, engineered for <span class="sem">pipeline</span>.</h2>
       </div>
     </div>
-    <p class="sec-lead">Consultus Digital is a Google Ads agency built on one idea: paid search spend should answer to revenue. Every engagement covers the full scope of Google Ads management, strategy, build, optimization, and reporting, run by senior specialists. No junior pods, no set-and-forget, no hiding behind platform metrics.</p>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Search campaigns, <span class="sem">rebuilt</span> around your buyers.</h3><div><p>We restructure your account around the way your customers actually search, instead of the tangle of overlapping campaigns most accounts collect over the years. Performance Max only gets budget when it brings in sales you would not have gotten anyway.</p><p>This is the unglamorous core of Google Ads management: keyword research mapped to buying intent, tight ad groups, clean match types, and a negative keyword list that works like a wall. Most PPC management stops at the platform dashboard. Ours starts at your pipeline, because a cheap click that never becomes revenue is not cheap.</p></div></div>
-      <div class="content-block"><h3>Shopping ads that <span class="sem">show up</span> more often.</h3><div><p>We clean up your product feed so Google understands what you sell and shows it to more shoppers. Then we bid more on the products that make you real money, and less on the ones that do not.</p><p>Feed quality compounds across every auction you enter, which is why Shopping is usually where disciplined Google Ads management services pay for themselves fastest. Titles, attributes, GTINs, custom labels: boring work, real money.</p></div></div>
-      <div class="content-block"><h3>YouTube ads that <span class="sem">create</span> demand.</h3><div><p>Video campaigns that put your brand in front of people before they even start searching. We measure whether they actually added sales, not how many people half-watched a video, and we test fresh ad creative every week.</p><p>We build full-funnel video programs for Toronto and Canadian brands: awareness cuts, consideration proof, remarketing closers. Video warms the market, Search closes it, and we plan both on one calendar.</p></div></div>
-      <div class="content-block"><h3>Tracking you can <span class="sem">trust</span>.</h3><div><p>We set up <a class="body-link" href="/analytics-attribution/">conversion tracking</a> properly so you know exactly which campaigns drove revenue. Your numbers come from real sales, not from the ad platform grading its own homework.</p><p>Offline conversion imports, call tracking, CRM-stage syncing, server-side tagging where it earns its keep. That discipline is what separates a Google advertising agency accountable to revenue from a vendor reporting platform ROAS.</p></div></div>
+    <p class="sec-lead">Six parts. The bidding gets the attention and the account structure does the work.</p>
+    <div class="content-block" style="border-top:none;padding-top:0"><h3>Search, rebuilt around your <span class="sem">buyers</span></h3><div><p>Most inherited accounts are organised around how the platform is built rather than how people buy.</p><p>We rebuild by intent: someone comparing suppliers, someone ready to book, and someone researching a problem all need different ads, budgets, and landing pages. Then the negative keyword wall goes up, because a broad match campaign without one is a subscription to irrelevant clicks.</p><p>This restructure is usually where the first efficiency gain comes from, before any budget is added.</p></div></div>
+      <div class="content-block"><h3>Performance Max, on a <span class="sem">leash</span></h3><div><p>PMax will spend whatever you give it and report a flattering number, and it is the least transparent product Google has shipped.</p><p>Run carelessly it harvests your brand searches and existing customers, then claims credit for sales that were already coming. We separate brand traffic out, feed it deliberately chosen assets and audience signals rather than letting it guess, and use the reporting available to see where the spend actually went.</p><p>It can work very well. It should never be the only campaign in an account.</p></div></div>
+      <div class="content-block"><h3>Shopping and feed <span class="sem">quality</span></h3><div><p>For retail, the product feed is the campaign. Bids barely matter by comparison.</p><p>Titles rewritten to match how people search rather than how your catalogue is structured, attributes filled in properly, and a clean split between products worth defending and products worth discovering. Feed errors silently suppress whole categories.</p><p>This is unglamorous data work and it moves retail accounts further than any bid strategy.</p></div></div>
+      <div class="content-block"><h3>YouTube and demand <span class="sem">creation</span></h3><div><p>Search captures demand that exists. YouTube is where you can create some, and it is judged wrongly almost every time.</p><p>Last-click reporting will make video look like a failure, because nobody buys straight from an ad break. We measure it on assisted conversions and on whether branded search volume rises, and we treat the creative as the variable rather than the targeting.</p><p>If your search campaigns are still inefficient, this is not the place to start.</p></div></div>
+      <div class="content-block"><h3>Tracking you can <span class="sem">trust</span></h3><div><p>Smart bidding optimises toward whatever you told it a conversion is, so a sloppy setup teaches the machine to buy the wrong thing.</p><p>Every form fill counted as a conversion means bidding toward form fills, including the junk ones. We set primary conversions to what the business actually values, feed offline outcomes back where a CRM allows, and remove the duplicate tags most accounts have accumulated.</p><p>Fix this before touching bids. Everything downstream inherits it.</p></div></div>
+      <div class="content-block"><h3>Judged on booked <span class="sem">outcomes</span></h3><div><p>Platform-reported ROAS is the number the platform grades its own homework with.</p><p>We report against blended acquisition cost and, where the sales cycle allows, against closed revenue rather than form fills. That usually means connecting the ad account to the <a href="/zoho-crm/" class="body-link">CRM</a> so a lead can be traced to a campaign and a keyword.</p><p>The gap between platform-reported and actual performance is where most wasted budget hides.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3702,13 +3784,14 @@
       </div>
     </div>
       <div class="method-grid cols-4">
-        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Account-structure diagnostic.</div><p class="ac-body">We audit the existing account architecture, conversion definitions, attribution stack, and feed quality before we touch a single bid. The audit comes back as a written report you keep regardless of engagement. It covers Search, Shopping, Performance Max, YouTube, Display, and remarketing in one pass, so nothing gets graded on a curve.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Rebuild around buyer journey.</div><p class="ac-body">Search and PMax restructured around segments that match the way your buyers actually search. Naming conventions, conversion goals, and audience signals tied to one shared spec. One structure, no overlapping spend, every dollar traceable to a decision.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Operate</div><div class="ac-value">Weekly creative + bid sprints.</div><p class="ac-body">Weekly <a class="body-link" href="/ab-testing/">creative variant testing</a>, bid-strategy adjustments tied to live data, and an instrumented experiment log so every change has a measurable thesis. You see the log. Nothing changes in your account without a reason attached to it.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Quarterly P&L review.</div><p class="ac-body">Quarterly closed-loop review against revenue, not platform metrics. The campaigns that are doing real work get more spend; the ones that flatter the dashboard get killed. That is what professional Google Ads management should feel like: compounding, not maintenance.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Where the money actually goes.</div><p class="ac-body">Search terms, wasted spend, conversion setup, and whether PMax is quietly harvesting brand traffic. You get the findings whether or not you continue, and most accounts have a same-week fix in there.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/02 Architect</div><div class="ac-value">Structure before bidding.</div><p class="ac-body">Campaigns rebuilt by intent, budgets set from margin rather than a blanket target, negatives built out, and conversion tracking corrected so smart bidding has something honest to learn from.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Operate</div><div class="ac-value">Weekly, not monthly.</div><p class="ac-body">Search term mining, negative additions, bid and budget shifts, and creative testing on a weekly cadence. Accounts drift quickly, and monthly management is how the drift becomes expensive.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Expand what works.</div><p class="ac-body">Scale the intent clusters that convert, add Shopping or YouTube once search is efficient, and keep pushing reporting toward closed revenue rather than platform-reported conversions.</p></div>
       </div>
     </div>
-  </section>
+      <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">This is the fastest channel we run. Wasted spend can be cut in the first week, a restructured account is usually live within two to three weeks, and smart bidding needs roughly two to four weeks after that to stabilise before the numbers mean anything. Expect a fair read in month two. Longer sales cycles take longer, not because the ads are slow but because closed revenue arrives later than the click.</p>
+    </section>
 
   <section class="sec">
     <div class="sec-head solo has-lead">
@@ -3740,6 +3823,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers we manage <span class="sem">to</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Google will happily report a return that your bank account does not recognise. These are the six we use instead.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Blended acquisition cost</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Total marketing spend divided by customers won.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The only figure that survives contact with a finance team. It also stops two channels claiming the same sale, which is how per-platform reporting adds up to more revenue than you made.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Cost per qualified lead</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Not cost per form fill.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Requires the CRM to tell us which leads were real. Without it we are optimising toward whoever fills in forms most readily, and those are rarely your best customers.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Search term relevance</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What proportion of spend went to queries you would have chosen.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The most honest diagnostic in a paid account and the first thing we check in any audit. It is usually worse than the client expects.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Brand versus non-brand</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Reported separately, always.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Brand campaigns look spectacular because those people were already looking for you. Blended in, they hide whether the account is actually finding anyone new.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Impression share lost to budget</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Demand you are turning away.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The number that tells you whether to spend more. High lost share on your best-converting campaigns is the clearest scaling signal there is.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Closed revenue per campaign</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">What the campaign produced after sales did their part.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The hardest to wire up and the most valuable, because it routinely reverses the ranking of your campaigns compared to platform-reported conversions.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is Google Ads worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">Almost always yes if people search for what you sell, with a few genuine exceptions.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>People actively search for your product or service by name or problem.</li><li>Your margin can absorb a click cost that may be high in competitive categories.</li><li>You can handle the enquiries this produces, quickly.</li><li>There is a page worth sending traffic to, or we can build one.</li><li>You want volume this quarter rather than next year.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Nobody searches for what you do yet. That is a demand creation problem, not a search one.</li><li>Budget is too small to gather data. A few clicks a day never optimises.</li><li>Your margin cannot survive the category's click prices. We will check first.</li><li>Nobody answers the phone or the enquiries. Speed to lead decides most of the outcome.</li><li>You want it managed monthly. Accounts drift weekly and the drift is expensive.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If search demand does not exist yet, paid search is the wrong first channel and we will say so, usually pointing at <a href="/meta-ads/" class="body-link">Meta</a> to create demand first. If the landing experience is the constraint, that becomes <a href="/landing-pages/" class="body-link">landing page work</a> before we increase spend.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How Google Ads accounts leak <span class="sem">money</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six patterns we find in nearly every audit. You can check all six yourself before speaking to anyone.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No negative keyword discipline</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Broad and phrase campaigns without a maintained negative list quietly fund clicks for jobs you do not do and places you do not serve. It is the most common finding and the fastest fix.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">PMax harvesting your own brand</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Left unseparated, Performance Max absorbs brand searches and existing customers, then reports an excellent return for demand you already had. The account looks healthy while new customer acquisition stalls.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Everything counted as a conversion</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">When newsletter signups and contact forms carry equal weight, smart bidding buys whichever is cheapest. The machine did what it was told, which was the wrong thing.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Brand and non-brand blended</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A single report combining both flatters the account permanently, because brand traffic converts at a rate non-brand never will. Splitting them frequently changes the entire strategy.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Automated bidding on thin data</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Smart bidding needs conversion volume to learn from. Applied to a handful of conversions a month it chases noise, and manual control often outperforms it far longer than people expect.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Monthly management</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Search terms shift, competitors change bids, budgets exhaust unevenly. An account reviewed once a month has three weeks of unattended drift baked into every report.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Google, Meta, and <span class="sem">organic</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three jobs that get compared on the same ROAS figure, which is why the comparison misleads.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Google captures intent</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Someone already looking. Returns look strong because the demand existed before the ad did, which also means search alone will not grow a category that nobody knows about.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Meta creates intent</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Nobody scrolling was looking for you. Reported returns are lower and the channel is often what makes branded search volume rise a few weeks later.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Organic keeps the ground</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">SEO and content hold positions that keep producing when spend pauses. Slower to build, and the only part of the mix you are not renting.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">We manage these against one blended number rather than three platform reports, because per-channel ROAS reliably adds up to more revenue than the business made. In practice that means <a href="/analytics-attribution/" class="body-link">attribution</a> comes first, then paid, with <a href="/seo/" class="body-link">SEO</a> and <a href="/content-marketing/" class="body-link">content</a> reducing what you have to rent over time.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3747,17 +3880,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Do you require a long-term contract?</summary><div class="faq-a"><p>Standard engagements are month-to-month after an initial 90-day diagnostic and rebuild window. We have no interest in keeping accounts that are not getting a result.</p></div></details>
-        <details class="faq-item"><summary>Can you work with our existing in-house Google Ads manager?</summary><div class="faq-a"><p>Yes. Some of our best engagements are co-managed with an in-house performance lead. We bring senior-tier strategy, <a class="body-link" href="/analytics-attribution/">attribution work</a>, and <a class="body-link" href="/performance-creatives/">creative production</a> while your in-house team owns the daily levers.</p></div></details>
-        <details class="faq-item"><summary>What size accounts do you typically work with?</summary><div class="faq-a"><p>We run accounts spending $10K to $500K+ per month on Google Ads alone. Below $10K the agency model is hard to justify; above $500K we move into custom retainer structures.</p></div></details>
-        <details class="faq-item"><summary>How much does Google Ads management cost?</summary><div class="faq-a"><p>Two numbers matter: what you pay Google, and what you pay the agency. Media spend is yours and goes straight to the auction. Our Google Ads management fee is a function of account complexity and spend, not a flat percentage that punishes you for scaling. Most engagements sit between $10K and $500K per month in media. Below roughly $10K in monthly spend, a full retainer is hard to justify, and we will say so on the first call rather than take the account.</p></div></details>
-        <details class="faq-item"><summary>What does a Google Ads agency actually do?</summary><div class="faq-a"><p>A good Google Ads agency does four things: it audits and rebuilds account structure so budget follows intent, it writes and tests ads against real buyer language, it manages bids against profit rather than clicks, and it reports on revenue instead of vanity metrics. A weak Google ad agency logs in once a month and swaps a headline. We run PPC as a system, with search, Shopping, Performance Max, and remarketing all feeding one revenue picture that we review every week.</p></div></details>
-        <details class="faq-item"><summary>Do you run YouTube, Display and programmatic campaigns too?</summary><div class="faq-a"><p>Yes. Search is usually where we start because intent is highest, but a mature account rarely lives on search alone. We build YouTube advertising for demand generation, Display and remarketing to stay in front of people who did not convert the first time, and programmatic advertising when reach and audience targeting justify it. Each channel earns its budget against the same scoreboard. We do not run Display just to spend the budget.</p></div></details>
-        <details class="faq-item"><summary>Do you work with businesses across Canada?</summary><div class="faq-a"><p>Yes. We are a Toronto-based Google Ads agency in Canada working with clients coast to coast and into the United States. Google Ads is not a local-only channel, and neither are we. Campaign geography is set by where your customers are, not where we sit. Clients in Vancouver, Calgary, Montreal, and across the GTA run the same playbook.</p></div></details>
-        <details class="faq-item"><summary>How long until Google Ads shows results?</summary><div class="faq-a"><p>Search campaigns can produce leads in the first week because you are bidding on people already looking for you. The honest answer is that the first 90 days are about signal: cleaning up conversion tracking, cutting wasted spend, and letting the account gather enough data for smart bidding to work. Stable, repeatable efficiency usually shows by month two or three. Anyone promising a fixed return in week one is guessing.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">How much should we spend on Google Ads?</summary><div class="faq-a">Enough that the account can gather data, which in most categories means a budget where your best campaigns are not capped within hours. Below that you are buying a handful of clicks a day and neither you nor the bidding algorithm can learn anything. The more useful question is what a customer is worth to you, because that sets what a click can cost. We would rather start narrow with real budget on a few high-intent terms than spread a small budget across everything.</div></details><details class="faq-item"><summary class="faq-q">Is Performance Max worth running?</summary><div class="faq-a">Yes, with guardrails, and it is the campaign type we argue about most. Left alone it will absorb your brand searches and existing customers and report a superb return for demand you already had. Run properly it needs brand traffic separated out, deliberately chosen creative assets, real audience signals rather than guesses, and regular checks on where the spend went. It should never be the only campaign in an account, because then nobody can tell what it actually did.</div></details><details class="faq-item"><summary class="faq-q">Why is our cost per click so high?</summary><div class="faq-a">Usually competition and quality together. Some categories are simply expensive because a customer is worth a lot, and legal, insurance, and trades are the obvious examples. What you can control is relevance: tighter keyword to ad to landing page alignment lowers what you pay for the same position. If clicks are expensive and the landing page is generic, you are paying a premium for a page that does not convert.</div></details><details class="faq-item"><summary class="faq-q">Should we bid on our own brand name?</summary><div class="faq-a">Usually yes, for defence, and report it separately from everything else. Competitors bidding on your name will take clicks cheaply if you leave the space empty. The catch is that brand campaigns convert brilliantly, because those people were already looking for you, so blending them into your overall reporting makes the whole account look better than it is. Split them or you will never know whether you are reaching anyone new.</div></details><details class="faq-item"><summary class="faq-q">How long before Google Ads works?</summary><div class="faq-a">Faster than anything else we run. Wasted spend can be cut in week one, a restructured account is usually live in two to three weeks, and smart bidding needs another two to four weeks to stabilise before the numbers are meaningful. A fair read arrives in month two. Longer sales cycles take longer to judge, not because the ads are slower but because the closed revenue shows up later than the click.</div></details><details class="faq-item"><summary class="faq-q">Do we need separate landing pages?</summary><div class="faq-a">Often, and it is frequently the highest-return thing to fix. Sending paid traffic to your homepage means paying for a specific search and answering it with a page built for everyone. Where the ad promises something particular, the page should repeat that promise in the same words with one clear action. That is a <a href="/landing-pages/" class="body-link">landing page build</a>, and it usually beats another round of bid changes.</div></details><details class="faq-item"><summary class="faq-q">Can we manage this ourselves?</summary><div class="faq-a">Plenty of businesses do, and the work that decides the outcome is unglamorous: weekly search term review, negative keywords, conversion setup, and creative testing. Google's own recommendations are worth treating carefully, since they optimise for spend as well as for your results. The honest test is whether someone internally has a few hours a week for it. Monthly attention is where accounts quietly drift into waste.</div></details><details class="faq-item"><summary class="faq-q">What is a good ROAS or cost per lead?</summary><div class="faq-a">It depends entirely on your margin and what a customer is worth over their lifetime, which is why we ask for those numbers before quoting a target. A 3x return can lose money on a thin-margin product while a 2x return is excellent on a strong one. Cost per lead is similarly meaningless without a close rate. Any agency quoting a target before understanding your economics is guessing.</div></details><details class="faq-item"><summary class="faq-q">Will you use our existing account or start fresh?</summary><div class="faq-a">Almost always yours, because it carries conversion history that smart bidding depends on and starting fresh throws that away. We rebuild campaign structure inside the existing account rather than replacing it. A genuinely new account is only right in unusual cases, such as an unresolvable policy history, and we would explain the trade-off before doing it.</div></details><details class="faq-item"><summary class="faq-q">Who owns the account and the data?</summary><div class="faq-a">You do. We work in your Google Ads account with our own access, so campaign history, conversion data, and audiences stay with you if we part ways. Be wary of any agency that runs your campaigns through their own MCC in a way that means you cannot take the account with you, because that history is the most valuable asset the account holds.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">
