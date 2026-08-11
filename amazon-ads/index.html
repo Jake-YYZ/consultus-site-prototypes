@@ -853,6 +853,11 @@
   .sec.bone-full { max-width: none; background: #F5F2EC; padding: 0; }
   .sec-inner { max-width: 1200px; margin: 0 auto; padding: 100px 32px; }
   .sec-head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; margin-bottom: 60px; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  .sec-head.has-lead { margin-bottom: 26px; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #6A686B; align-self: end; max-width: 480px; margin: 0; }
+  .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
@@ -3554,16 +3559,23 @@
   </div></section>
 
   <section class="sec">
-    <div class="sec-head rv"><div class="section-lbl">What we run</div>
-      <h2 class="sec-title">The full Amazon ad <span class="sem">stack</span>.</h2>
-      <p style="font-size:17px;line-height:1.6;color:#6A686B">Sponsored ads win the search page. DSP and retargeting compound it. Listings and Stores convert it. We run all of it against one scoreboard.</p>
+    <div class="sec-head rv">
+      <div>
+        <div class="section-lbl">What we run</div>
+        <h2 class="sec-title">The full Amazon ad <span class="sem">stack</span>.</h2>
+      </div>
+      <p class="sec-head-sub">Sponsored ads win the search page. DSP and retargeting compound it. Listings and Stores convert it. We run all of it against one scoreboard.</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 56px"><a class="content-block" style="text-decoration:none;display:block;border-top:1px solid rgba(20,20,20,0.1);padding:26px 0" href="/contact/"><h3 style="color:#141414">Sponsored Products</h3><div><p style="color:#6A686B">Capture high-intent shoppers at the moment of purchase. We structure campaigns by intent, mine search-term reports weekly, and build a negative-keyword wall so budget only chases queries that convert.</p></div></a><a class="content-block" style="text-decoration:none;display:block;border-top:1px solid rgba(20,20,20,0.1);padding:26px 0" href="/contact/"><h3 style="color:#141414">Sponsored Brands</h3><div><p style="color:#6A686B">Own the top of the search page with brand headlines and product collections. We test creative, headlines, and landing experiences (Store vs product list) to lift new-to-brand sales.</p></div></a><a class="content-block" style="text-decoration:none;display:block;border-top:1px solid rgba(20,20,20,0.1);padding:26px 0" href="/contact/"><h3 style="color:#141414">Sponsored Display</h3><div><p style="color:#6A686B">Retarget shoppers who viewed but did not buy, and defend your listings from competitor conquesting, on and off Amazon.</p></div></a><a class="content-block" style="text-decoration:none;display:block;border-top:1px solid rgba(20,20,20,0.1);padding:26px 0" href="/contact/"><h3 style="color:#141414">Amazon DSP</h3><div><p style="color:#6A686B">Programmatic display and video that reaches shoppers across Amazon, Twitch, and the open web, sequenced with your sponsored ads for full-funnel coverage.</p></div></a><a class="content-block" style="text-decoration:none;display:block;border-top:1px solid rgba(20,20,20,0.1);padding:26px 0" href="/contact/"><h3 style="color:#141414">Storefront &amp; A+ Content</h3><div><p style="color:#6A686B">A branded Store and rich A+ detail pages that turn ad clicks into conversions and raise the ceiling on every campaign.</p></div></a><a class="content-block" style="text-decoration:none;display:block;border-top:1px solid rgba(20,20,20,0.1);padding:26px 0" href="/contact/"><h3 style="color:#141414">Listing &amp; Catalog Optimization</h3><div><p style="color:#6A686B">Titles, bullets, imagery, and backend keywords aligned to how shoppers actually search, so your spend lands on listings built to convert.</p></div></a></div>
   </section>
 
   <section class="sec bone-full"><div class="sec-inner">
-    <div class="sec-head rv"><div class="section-lbl">How we work</div>
-      <h2 class="sec-title">From <span class="sem">ACOS</span> chaos to a clean scoreboard.</h2></div>
+    <div class="sec-head rv solo">
+      <div>
+        <div class="section-lbl">How we work</div>
+        <h2 class="sec-title">From <span class="sem">ACOS</span> chaos to a clean scoreboard.</h2>
+      </div>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px">
       <div style="padding-top:18px;border-top:2px solid #141414"><div style="font-family:var(--mono);font-size:11px;color:#1A40C7;letter-spacing:0.1em">01</div><h4 style="font-family:var(--wide);font-size:17px;margin:10px 0 8px;color:#141414">Audit</h4><p style="font-size:14px;line-height:1.55;color:#5a585b;margin:0">Account, catalog, and competitor teardown. We find wasted spend and the listings worth scaling.</p></div>
       <div style="padding-top:18px;border-top:2px solid #141414"><div style="font-family:var(--mono);font-size:11px;color:#1A40C7;letter-spacing:0.1em">02</div><h4 style="font-family:var(--wide);font-size:17px;margin:10px 0 8px;color:#141414">Structure</h4><p style="font-size:14px;line-height:1.55;color:#5a585b;margin:0">Rebuild campaigns by intent and product, with clean budgets, bids, and a negative-keyword wall.</p></div>
@@ -3573,15 +3585,21 @@
   </div></section>
 
   <section class="sec">
-    <div class="sec-head rv"><div class="section-lbl">It connects</div>
-      <h2 class="sec-title">Amazon is one channel, not the <span class="sem">whole</span> story.</h2>
-      <p style="font-size:17px;line-height:1.6;color:#6A686B">Marketplace demand is fed by everything else you run. We connect Amazon to your <a href="/meta-ads/" style="color:#1A40C7">Meta Ads</a>, <a href="/google-ads/" style="color:#1A40C7">Google Ads</a>, and <a href="/cro/" style="color:#1A40C7">conversion</a> work so the whole funnel compounds. See how we played MER for a niche brand in the <a href="/case-studies/dragonscale-supplies/" style="color:#1A40C7">Dragonscale Supplies case study</a>.</p>
+    <div class="sec-head rv solo has-lead">
+      <div>
+        <div class="section-lbl">It connects</div>
+        <h2 class="sec-title">Amazon is one channel, not the <span class="sem">whole</span> story.</h2>
+      </div>
     </div>
+    <p class="sec-lead">Marketplace demand is fed by everything else you run. We connect Amazon to your <a href="/meta-ads/" style="color:#1A40C7">Meta Ads</a>, <a href="/google-ads/" style="color:#1A40C7">Google Ads</a>, and <a href="/cro/" style="color:#1A40C7">conversion</a> work so the whole funnel compounds. See how we played MER for a niche brand in the <a href="/case-studies/dragonscale-supplies/" style="color:#1A40C7">Dragonscale Supplies case study</a>.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head rv"><div class="section-lbl">FAQ</div>
-      <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+    <div class="sec-head rv solo">
+      <div>
+        <div class="section-lbl">FAQ</div>
+        <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
+      </div>
     </div>
     <div class="faq-list">
       <details class="faq-item"><summary class="faq-q">What does Amazon ads management include?</summary><div class="faq-a">As an Amazon advertising agency we run the full Amazon PPC stack, Sponsored Products, Sponsored Brands, and Sponsored Display, plus Amazon DSP for retargeting and audience reach. Management covers keyword and ASIN targeting, bid and budget strategy, negative-keyword discipline, and creative for Sponsored Brands. We also work upstream on your listings and storefront, because ad efficiency on Amazon is capped by how well the product page converts once the click lands.</div></details>
