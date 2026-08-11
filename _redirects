@@ -82,7 +82,7 @@
 # --- Rebuild at same URL (3): build these, do NOT redirect ---
 #   /insurance-industry/  (rebuild)
 #   /privacy-policy/  (rebuild)
-#   /reputation-advertising-toronto/  (rebuild)
+#   /reputation-advertising-toronto/  BUILT (keeps slug: ranks #1 "reputation management firms")
 
 # --- Prune (3): serve 410 Gone, UNLESS the URL has backlinks (then 301) ---
 #   /landing/andromeda-unpacked-webinar/  410
