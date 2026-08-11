@@ -846,6 +846,14 @@
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
   .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
   .sec-head.has-lead { margin-bottom: 26px; }
   .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
   .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
@@ -1018,8 +1026,8 @@
 
   /* Content blocks */
   .content-block { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; padding: 60px 0; border-top: 1px solid rgba(20,20,20,0.12); }
-  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; max-width: 280px; }
-  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; max-width: 680px; }
+  .content-block h3 { font-weight: 500; font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .content-block p { font-size: 16px; line-height: 1.6; color: #2A2A2A; margin-bottom: 14px; }
   .content-block .link-text { color: #1A40C7; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Service metrics */
@@ -3596,13 +3604,86 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Do we need a lot of traffic for CRO to work?", "acceptedAnswer": {"@type": "Answer", "text": "For statistically valid A/B testing, yes. Below 10,000 monthly sessions per surface, we focus on heuristic improvements, qualitative research, and bandit-style multi-arm testing rather than classical A/B tests."}},
-    {"@type": "Question", "name": "Do you redesign whole pages or just test elements?", "acceptedAnswer": {"@type": "Answer", "text": "Both, depending on hypothesis. Element-level tests like button color or headline copy move conversion rate by single digits. Surface-level rebuilds move it by double digits when the data supports the rebuild."}},
-    {"@type": "Question", "name": "Do you work with our existing site or rebuild?", "acceptedAnswer": {"@type": "Answer", "text": "We work with whatever you have. We have run programs on Webflow, Shopify, WordPress, custom builds, and headless stacks. The principles are the same; the implementation differs by platform."}},
-    {"@type": "Question", "name": "What do conversion rate optimization services actually include?", "acceptedAnswer": {"@type": "Answer", "text": "A real conversion rate optimization program is a loop, not a redesign. It includes analytics and heatmap review to find where users drop off, qualitative research to understand why, a prioritized testing roadmap, hypothesis-driven experiments, and clean measurement so a winner is a winner. As a conversion optimization agency and full-service conversion rate optimization company, we also handle the build and QA of each variant, so your dev team is not the bottleneck."}},
-    {"@type": "Question", "name": "How much does conversion rate optimization cost?", "acceptedAnswer": {"@type": "Answer", "text": "CRO is a monthly retainer scaled to how many surfaces you want tested and how much traffic they get. If a program lifts conversion rate on a page already driving meaningful revenue, it usually pays for itself well before the quarter closes. We scope the smallest program that can run statistically valid tests, rather than selling a bigger retainer than your traffic can support."}},
-    {"@type": "Question", "name": "How long until CRO shows results?", "acceptedAnswer": {"@type": "Answer", "text": "The first weeks are research and instrumentation. The first tests usually launch inside the first month, and a test needs to run long enough to reach significance, typically two to four weeks depending on traffic and effect size. Expect the first confirmed wins by month two, with the compounding value showing across a quarter as winners stack."}},
-    {"@type": "Question", "name": "What testing tools and methodology do you use?", "acceptedAnswer": {"@type": "Answer", "text": "We are tool-agnostic and work with whatever is already in your stack, from PageSense to VWO to Optimizely, plus GA4 and heatmap tools for the research layer. The methodology matters more than the tool: one clear hypothesis per test, a single primary metric, enough sample to reach significance, and a decision rule set before the test launches."}}
+    {
+      "@type": "Question",
+      "name": "What conversion rate should we be aiming for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Benchmarks are less useful than they look, because the number depends on your traffic mix, your price, and how considered the purchase is. A high-ticket B2B enquiry form converting at 2% can be excellent while an ecommerce checkout at 2% is a problem. The number worth chasing is your own rate this quarter against last, segmented by device and source. Anyone quoting you an industry average without asking about your traffic is guessing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much traffic do we need before testing is worth it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a rough floor, around a thousand conversions a month gives you tests that resolve in a sensible timeframe. Below that, tests either run for months or need effects so large they are rare. It is still possible to work at lower volume, but the approach shifts from A/B testing toward research, sequential redesigns, and qualitative work. We would rather set that expectation up front than bill you for tests that can never reach significance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a test need to run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Long enough to hit the sample size calculated before it started, and never less than one full business cycle so that a weekday pattern does not decide it. In practice that is usually two to four weeks. Two things matter more than the duration: fixing the sample size in advance, and not peeking at partial results and stopping when they look favourable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if a test loses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roughly two thirds do, and that is a normal healthy programme rather than a failure. A loss tells you something true about your buyers that you would otherwise have shipped as a redesign. What matters is that we predicted an outcome in writing, so a loss narrows the field instead of just costing you a month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you redesign pages or just test small changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both, and the choice depends on the evidence. When research says the page is aimed at the wrong buyer or the offer is unclear, a small change cannot fix it and we test a purpose-built alternative. When the page is broadly right, we go after the specific friction. What we avoid is the untested full redesign, where you change forty things at once and learn nothing about which of them mattered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which testing tools do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whatever you already have, in most cases. The tool matters far less than the discipline around it, and switching platforms mid-programme costs you continuity for little gain. We care more that conversion data connects to your CRM, because otherwise we are optimising form fills rather than revenue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will testing slow our site down?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Badly implemented, yes, and that can cost you more than the tests win. Client-side tools add a script that can cause a visible flicker before the variant loads. We keep the number of concurrent tests sane, remove finished ones, and move winners into the codebase instead of leaving them running in the tool indefinitely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you decide what to test first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Expected impact, available traffic, and build effort, in that order. A high-impact idea on a page with no traffic gets sequenced later, because it cannot be proven. That ranking is deliberately boring, and it is the main reason programmes produce compounding results rather than a scattering of tests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you improve lead quality rather than lead volume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it is often the better goal. Sometimes that means adding a qualifying question rather than removing one, which lowers conversion rate on purpose and raises revenue. It only works when we can see what happens to leads after the form, so it needs CRM access and an agreed definition of a good lead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do we get at the end?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The shipped winners, and a log of every test with its hypothesis, result, and implication. The log is the part clients underrate. It is what stops the next agency or the next hire from re-running the same experiments, and it usually reshapes ad copy and sales conversations too."
+      }
+    }
   ]
 }
 </script>
@@ -3678,16 +3759,19 @@
   </section>
 
   <section class="sec">
-    <div class="sec-head solo">
+    <div class="sec-head solo has-lead">
       <div>
         <div class="section-lbl">What We Run</div>
-        <h2 class="sec-title">Conversion Rate Optimization, the <span class="sem">disciplined</span> way.</h2>
+        <h2 class="sec-title">Conversion Rate Optimization, the disciplined <span class="sem">way</span>.</h2>
       </div>
     </div>
-    <div class="content-block" style="border-top:none;padding-top:0"><h3>Hypothesis-driven, not <span class="sem">opinion-driven</span>.</h3><div><p>Every test starts with a written hypothesis tied to something we observed in <a class="body-link" href="/analytics-attribution/">your data</a>. We do not rebuild pages because they look dated; we rebuild them because the data says where they leak.</p></div></div>
-      <div class="content-block"><h3>Form, flow, and <span class="sem">microcopy</span>.</h3><div><p>Most CRO is form work, flow work, and word choice. Field-by-field analysis of your forms, trimming what you ask for, better error messages, and <a class="body-link" href="/landing-pages/">page copy</a> that respects the buyer's decision moment.</p></div></div>
-      <div class="content-block"><h3>Mobile-first, <span class="sem">always</span>.</h3><div><p>Mobile traffic is where the leakage usually lives. Our test designs go mobile-first, and we instrument session replay so we can watch where the drop-off actually happens rather than guessing from funnel charts.</p></div></div>
-      <div class="content-block"><h3>Statistical <span class="sem">discipline</span>.</h3><div><p>Tests run long enough to be trusted, with <a class="body-link" href="/ab-testing/">proper statistical analysis</a>. We do not call winners early, we do not drag tests out, and we document the misses alongside the wins.</p></div></div>
+    
+      <p class="sec-lead">Six parts. The testing is the visible bit and usually the smallest bit.</p><div class="content-block" style="border-top:none;padding-top:0"><h3>Hypothesis-driven, not <span class="sem">opinion-driven</span></h3><div><p>Every test starts as a written sentence: what we think is wrong, why we think that, and what we expect to happen.</p><p>That sentence has to point at something observed, whether that is a drop-off in the funnel, a pattern in session replay, or a question that keeps coming up on sales calls. Redesigns based on taste are unfalsifiable, so when they win nobody learns anything and when they lose nobody knows why.</p><p>It also keeps us honest. A hypothesis written down in advance cannot be quietly reinterpreted after the result comes in.</p></div></div>
+      <div class="content-block"><h3>Research <span class="sem">before</span> testing</h3><div><p>The first few weeks are mostly reading, not building.</p><p>Analytics tells you where people leave. Session replay and heatmaps show what they did just before. Your own sales and support teams already know the objections. We pull those together, because a test built on a real objection beats twenty built on best practice.</p><p>Most engagements find two or three problems worth more than everything else on the backlog combined.</p></div></div>
+      <div class="content-block"><h3>Form, flow, and <span class="sem">microcopy</span></h3><div><p>Most conversion work is form work, flow work, and word choice.</p><p>We go field by field and ask what each one costs you. Phone number as a required field on a first enquiry is often the single most expensive question on the page. Error messages get rewritten, multi-step flows get resequenced so the easy questions come first, and labels stop being clever.</p><p>None of it photographs well. It is where the money is.</p></div></div>
+      <div class="content-block"><h3>Mobile <span class="sem">before</span> desktop</h3><div><p>Mobile is usually where the leak is, and usually where testing attention is not.</p><p>Thumb reach, tap target sizes, sticky calls to action, keyboard type on numeric fields, and how much of the offer survives above the fold on a mid-range Android. We instrument replay on mobile specifically so we can watch the rage taps rather than guess.</p><p>Desktop conversion often looks fine while mobile quietly carries most of the traffic and half the rate.</p></div></div>
+      <div class="content-block"><h3>Statistical <span class="sem">discipline</span></h3><div><p>Tests run to a pre-agreed sample size, not until they look good.</p><p>We set the duration and the threshold before starting, run through at least one full business cycle so a Tuesday pattern does not decide it, and record the losers and the flat results alongside the wins.</p><p>Calling a winner at 200 sessions because it is up 40% is the most common way agencies manufacture results that vanish next quarter.</p></div></div>
+      <div class="content-block"><h3>Handing back what we <span class="sem">learn</span></h3><div><p>The tests end. What you learned about your buyer should not.</p><p>Every result goes into a log with the hypothesis, the outcome, and what it implies. That log is more valuable than any single uplift, because it stops the next team relitigating settled questions and it feeds your ads and your landing pages.</p><p>If we finish and you cannot say what your buyers care about, we have not done the job.</p></div></div>
   </section>
 
   <section class="sec bone-full">
@@ -3699,13 +3783,14 @@
       </div>
     </div>
       <div class="method-grid cols-4">
-        <div class="accent-card"><div class="ac-eyebrow">/01 Audit</div><div class="ac-value">Funnel and surface diagnostic.</div><p class="ac-body">We analyze your funnel data, watch real session recordings, and review heatmaps on the pages where conversion actually happens. Written report regardless of engagement.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/02 Hypothesize</div><div class="ac-value">Test backlog tied to data.</div><p class="ac-body">Backlog of 20-40 hypotheses, scored by impact, confidence, and ease. The top of the backlog drives the first quarter of testing.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">Experiments running concurrently.</div><p class="ac-body">Multiple tests running at once where traffic supports it. Each test designed to reach a trustworthy sample size, tracked end-to-end, and documented in the experiment log.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/04 Compound</div><div class="ac-value">Quarterly review and reset.</div><p class="ac-body">Quarterly review against revenue. Winners scaled into the baseline. Losers retired with notes. New backlog seeded from the next round of behavioral observations.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/01 Research</div><div class="ac-value">Where the funnel actually leaks.</div><p class="ac-body">Analytics, funnels, session replay, form analytics, and interviews with whoever talks to customers. We come out with a ranked list of problems and the evidence behind each one, not a list of ideas.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/02 Prioritise</div><div class="ac-value">A backlog scored, not brainstormed.</div><p class="ac-body">Every hypothesis is scored on expected impact, the traffic available to prove it, and the effort to build it. Low-traffic pages get sequenced last, because you cannot test what you cannot measure.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Test</div><div class="ac-value">One clean change at a time.</div><p class="ac-body">One clean change at a time where traffic is thin, multivariate where it is plentiful. Tests run to their pre-agreed sample size, and we write up the losers with the same care as the winners.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/04 Ship and log</div><div class="ac-value">Winners into the codebase.</div><p class="ac-body">Winners ship into the codebase properly rather than living in a testing tool forever. The result goes into the learning log, and the next round starts from what we now know.</p></div>
       </div>
     </div>
-  </section>
+      <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">Expect two to three weeks of research before the first test goes live, and a single test to need two to four weeks to reach a trustworthy sample. That means a realistic first quarter is three or four completed tests, not thirty. Sites under roughly a thousand conversions a month should expect fewer, longer tests, and we will say so before you sign rather than after.</p>
+    </section>
 
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -3719,6 +3804,56 @@
     </div>
   </section>
 
+  <section class="sec bone-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">The scoreboard</div>
+        <h2 class="sec-title">Which numbers we manage <span class="sem">to</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Conversion rate on its own can be improved by attracting less traffic. These are the six we report instead.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Conversion rate by segment</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The overall rate hides almost everything worth knowing.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">We split it by device, source, and new against returning, because a mobile paid visitor and a returning organic one behave nothing alike. A flat overall rate often hides mobile improving while desktop slips.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Revenue per visitor</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">The number that stops a test from winning while the business loses.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Push a discount hard enough and conversion rate climbs while revenue falls. Revenue per visitor catches that immediately, which is why it outranks conversion rate on our reports.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Lead quality, not lead count</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">For anyone selling through a sales team, volume is the easy half.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Cut a qualifying field and enquiries jump while the sales team quietly drowns in unqualified ones. We track what happens after the form, which means the CRM has to be part of the setup.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Form completion and abandonment</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">Field-level data on where people stop typing and leave.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">This is the most actionable diagnostic in the whole discipline. It usually names the exact question costing you the most, and it is nearly always one you could ask later.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Test win rate and learning rate</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How many tests win, and how many teach you something either way.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">A win rate near 100% means the tests are trivial. Around a third is healthy. A well-designed loss is still a good outcome, and we report it as one.</p></div><div style="padding-top:20px;border-top:1px solid rgba(20,20,20,0.12)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Time to a trustworthy result</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">How long a decision actually takes at your traffic level.</p><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0 0 10px">It sets the realistic pace of the whole programme. Knowing it in advance is what stops people calling winners early out of impatience.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Fit</div>
+        <h2 class="sec-title">Is conversion work worth it for <span class="sem">you</span>?</h2>
+      </div></div>
+      <p class="sec-lead">It depends almost entirely on traffic volume, and that is a maths question rather than an opinion.</p>
+    <div class="amzg-2" style="gap:48px">
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">This usually works when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>You have enough traffic and conversions that a test can reach significance in weeks.</li><li>There is a clear conversion action, whether that is a form, a booking, or a checkout.</li><li>Someone can ship a winning variant into the site without a three-month release cycle.</li><li>You can connect what happens after the form, so we optimise for revenue and not just volume.</li><li>You are willing to run tests that lose, because roughly two thirds will.</li></ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--wide);font-size:17px;margin:0 0 14px;color:#141414">You should wait when</h3>
+        <ul style="margin:0;padding-left:20px;color:#6A686B;font-size:15.5px;line-height:1.7"><li>Traffic is thin. Below roughly a thousand conversions a month, buy more traffic first.</li><li>The page has obvious problems nobody has fixed. Fix those, then test the arguable ones.</li><li>You want a redesign. That is a design project, and testing it as one change teaches you nothing.</li><li>You need a result this month. The maths does not care about the deadline.</li><li>Nobody can deploy the winners. A test you cannot ship is an expensive opinion.</li></ul>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">If your traffic is too thin for reliable testing we will tell you, and usually point you at <a href="/landing-pages/" class="body-link">landing pages</a> or <a href="/google-ads/" class="body-link">paid search</a> instead, where the same budget does more at your stage.</p>
+  </section>
+
+  <section class="sec dark-full"><div class="sec-inner">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">Diagnostics</div>
+        <h2 class="sec-title">How conversion programmes go <span class="sem">wrong</span>.</h2>
+      </div></div>
+      <p class="sec-lead" style="color:#C7C5C8">Six failures we see repeatedly. All six produce reports full of wins and a business that grows no faster.</p>
+    <div class="amzg-2" style="gap:32px 56px"><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Calling winners early</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A variant up 40% after 200 sessions is noise. Stopping there feels decisive and produces uplifts that never appear in revenue. Set the sample size first, then honour it.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Testing trivia</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Button colours and headline tweaks are easy to ship and almost always flat. If the hypothesis could not plausibly move the number by a few points, it is not worth a month of traffic.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">One rate for the whole site</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">A single sitewide conversion rate lets mobile rot while desktop carries the average. Segment it or you will optimise for whoever is already converting.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Optimising volume over quality</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Removing qualifying questions reliably raises form fills and often lowers revenue. If nobody is watching what the sales team does with those leads, the test looks like a win.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">Never shipping the winners</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Variants left running in the testing tool slow the site and eventually break. If engineering cannot absorb winners into the codebase, the programme has an expiry date.</p></div><div style="padding-top:20px;border-top:1px solid rgba(255,255,255,0.14)"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#FAF8F3">No record of what was learned</h3><p style="font-size:15px;line-height:1.65;color:#C7C5C8;margin:0">Without a log, the same debate about the same field comes back every year, and each new team re-tests questions that were settled two years ago.</p></div></div>
+  </div></section>
+
+  <section class="sec">
+    <div class="sec-head solo has-lead">
+      <div>
+        <div class="section-lbl">In context</div>
+        <h2 class="sec-title">Conversion work, traffic, and <span class="sem">pages</span>.</h2>
+      </div></div>
+      <p class="sec-lead">Three levers that get confused with each other constantly, and the right one depends on where your bottleneck is.</p>
+    <div class="amzg-3" style="gap:40px"><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Conversion work multiplies</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">It improves the rate on traffic you already pay for, so the gain applies to every channel at once and keeps paying after the engagement ends. It also needs volume before it can prove anything.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">Paid traffic adds</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Ads buy volume immediately and stop the day you stop paying. When traffic is the bottleneck rather than the rate, this is the faster answer and we will say so.</p></div><div style="padding-top:20px;border-top:2px solid #141414"><h3 style="font-family:var(--wide);font-size:16px;margin:0 0 10px;color:#141414">New pages replace</h3><p style="font-size:15px;line-height:1.65;color:#6A686B;margin:0">Building a purpose-built page is a bigger swing than testing an existing one, and the right move when the current page is fundamentally aimed at the wrong buyer.</p></div></div>
+    <p style="font-size:15px;line-height:1.65;color:#6A686B;margin:34px 0 0">In practice these run together. We usually pair conversion work with <a href="/ab-testing/" class="body-link">structured testing</a> and <a href="/landing-pages/" class="body-link">landing page builds</a>, and feed the findings back into <a href="/google-ads/" class="body-link">Google Ads</a> and <a href="/meta-ads/" class="body-link">Meta Ads</a>, because a message that wins on the page usually wins in the ad too.</p>
+  </section>
   <section class="sec">
     <div class="sec-head solo">
       <div>
@@ -3726,16 +3861,8 @@
         <h2 class="sec-title">Common <span class="sem">questions</span>.</h2>
       </div>
     </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Do we need a lot of traffic for CRO to work?</summary><div class="faq-a"><p>For statistically valid A/B testing, yes. Below 10,000 monthly sessions per surface, we focus on heuristic improvements, qualitative research, and bandit-style multi-arm testing rather than classical A/B tests.</p></div></details>
-        <details class="faq-item"><summary>Do you redesign whole pages or just test elements?</summary><div class="faq-a"><p>Both, depending on hypothesis. Element-level tests (button color, headline copy) move conversion rate by single digits. Surface-level rebuilds move it by double digits when the data supports the rebuild.</p></div></details>
-        <details class="faq-item"><summary>Do you work with our existing site or rebuild?</summary><div class="faq-a"><p>We work with whatever you have. We have run programs on Webflow, Shopify, WordPress, custom builds, and headless stacks. The principles are the same; the implementation differs by platform.</p></div></details>
-        <details class="faq-item"><summary>What do conversion rate optimization services actually include?</summary><div class="faq-a"><p>A real conversion rate optimization program is a loop, not a redesign. It includes analytics and heatmap review to find where users drop off, qualitative research to understand why, a prioritized testing roadmap, hypothesis-driven experiments, and clean measurement so a winner is a winner. As a conversion optimization agency and full-service conversion rate optimization company, we also handle the build and QA of each variant, so your dev team is not the bottleneck. You get a documented record of what moved revenue and what did not.</p></div></details>
-        <details class="faq-item"><summary>How much does conversion rate optimization cost?</summary><div class="faq-a"><p>CRO is a monthly retainer scaled to how many surfaces you want tested and how much traffic they get. The math is straightforward: if a program lifts conversion rate on a page already driving meaningful revenue, it usually pays for itself well before the quarter closes. We scope the smallest program that can run statistically valid tests, rather than selling a bigger retainer than your traffic can support.</p></div></details>
-        <details class="faq-item"><summary>How long until CRO shows results?</summary><div class="faq-a"><p>The first weeks are research and instrumentation. The first tests usually launch inside the first month, and a test needs to run long enough to reach significance, typically two to four weeks depending on traffic and effect size. Expect the first confirmed wins by month two, with the compounding value showing across a quarter as winners stack. Anyone promising a guaranteed lift in week one does not understand the statistics.</p></div></details>
-        <details class="faq-item"><summary>What testing tools and methodology do you use?</summary><div class="faq-a"><p>We are tool-agnostic and work with whatever is already in your stack, from PageSense to VWO to Optimizely, plus GA4 and heatmap tools for the research layer. The methodology matters more than the tool: one clear hypothesis per test, a single primary metric, enough sample to reach significance, and a decision rule set before the test launches. See our <a class="body-link" href="/ab-testing/">A/B testing</a> approach for how we keep experiments honest.</p></div></details>
-    </div>
-  </section>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q">What conversion rate should we be aiming for?</summary><div class="faq-a">Benchmarks are less useful than they look, because the number depends on your traffic mix, your price, and how considered the purchase is. A high-ticket B2B enquiry form converting at 2% can be excellent while an ecommerce checkout at 2% is a problem. The number worth chasing is your own rate this quarter against last, segmented by device and source. Anyone quoting you an industry average without asking about your traffic is guessing.</div></details><details class="faq-item"><summary class="faq-q">How much traffic do we need before testing is worth it?</summary><div class="faq-a">As a rough floor, around a thousand conversions a month gives you tests that resolve in a sensible timeframe. Below that, tests either run for months or need effects so large they are rare. It is still possible to work at lower volume, but the approach shifts from A/B testing toward research, sequential redesigns, and qualitative work. We would rather set that expectation up front than bill you for tests that can never reach significance.</div></details><details class="faq-item"><summary class="faq-q">How long does a test need to run?</summary><div class="faq-a">Long enough to hit the sample size calculated before it started, and never less than one full business cycle so that a weekday pattern does not decide it. In practice that is usually two to four weeks. Two things matter more than the duration: fixing the sample size in advance, and not peeking at partial results and stopping when they look favourable.</div></details><details class="faq-item"><summary class="faq-q">What if a test loses?</summary><div class="faq-a">Roughly two thirds do, and that is a normal healthy programme rather than a failure. A loss tells you something true about your buyers that you would otherwise have shipped as a redesign. What matters is that we predicted an outcome in writing, so a loss narrows the field instead of just costing you a month.</div></details><details class="faq-item"><summary class="faq-q">Do you redesign pages or just test small changes?</summary><div class="faq-a">Both, and the choice depends on the evidence. When research says the page is aimed at the wrong buyer or the offer is unclear, a small change cannot fix it and we test a purpose-built alternative. When the page is broadly right, we go after the specific friction. What we avoid is the untested full redesign, where you change forty things at once and learn nothing about which of them mattered.</div></details><details class="faq-item"><summary class="faq-q">Which testing tools do you use?</summary><div class="faq-a">Whatever you already have, in most cases. The tool matters far less than the discipline around it, and switching platforms mid-programme costs you continuity for little gain. We care more that conversion data connects to your CRM, because otherwise we are optimising form fills rather than revenue.</div></details><details class="faq-item"><summary class="faq-q">Will testing slow our site down?</summary><div class="faq-a">Badly implemented, yes, and that can cost you more than the tests win. Client-side tools add a script that can cause a visible flicker before the variant loads. We keep the number of concurrent tests sane, remove finished ones, and move winners into the codebase instead of leaving them running in the tool indefinitely.</div></details><details class="faq-item"><summary class="faq-q">How do you decide what to test first?</summary><div class="faq-a">Expected impact, available traffic, and build effort, in that order. A high-impact idea on a page with no traffic gets sequenced later, because it cannot be proven. That ranking is deliberately boring, and it is the main reason programmes produce compounding results rather than a scattering of tests.</div></details><details class="faq-item"><summary class="faq-q">Can you improve lead quality rather than lead volume?</summary><div class="faq-a">Yes, and it is often the better goal. Sometimes that means adding a qualifying question rather than removing one, which lowers conversion rate on purpose and raises revenue. It only works when we can see what happens to leads after the form, so it needs CRM access and an agreed definition of a good lead.</div></details><details class="faq-item"><summary class="faq-q">What do we get at the end?</summary><div class="faq-a">The shipped winners, and a log of every test with its hypothesis, result, and implication. The log is the part clients underrate. It is what stops the next agency or the next hire from re-running the same experiments, and it usually reshapes ad copy and sales conversations too.</div></details></div>
+    </section>
 
     <section class="sec">
     <div class="sec-head solo">
