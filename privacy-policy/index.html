@@ -8,8 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
-<title>Full-Stack Digital Marketing Services | Consultus Digital</title>
-<meta name="description" content="Every Consultus Digital service, one engine: paid media, SEO, AEO, creative, web development, CRO, CRM and automation, with specialists at every step.">
+<title>Privacy Policy | Consultus Digital</title>
 <link rel="stylesheet" href="/assets/fonts.css">
 
 <style>
@@ -842,9 +841,23 @@
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
+  .sec-head > div:first-child .sec-title { margin-top: 18px; }
   a.body-link { color: #1A40C7; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
   a.body-link:hover { color: #142f8f; }
   .related-strip { display: flex; flex-wrap: wrap; gap: 10px; }
+  .sec-head.solo { grid-template-columns: 1fr; }
+  /* Content grids: columns live in CSS so the media queries below can win.
+     Inline grid-template-columns cannot be overridden by a media query. */
+  .amzg-2, .amzg-3, .amzg-4 { display: grid; }
+  .amzg-2 { grid-template-columns: 1fr 1fr; }
+  .amzg-3 { grid-template-columns: repeat(3, 1fr); }
+  .amzg-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .amzg-3, .amzg-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .amzg-2, .amzg-3, .amzg-4 { grid-template-columns: 1fr; } }
+  .sec-head.has-lead { margin-bottom: 26px; }
+  .sec-lead { font-size: 18px; line-height: 1.65; color: #6A686B; max-width: none; margin: 0 0 54px; }
+  .sec-head-sub { font-size: 17px; line-height: 1.65; color: #2A2A2A; align-self: end; max-width: 480px; margin: 0; }
+  .dark-full .sec-head-sub { color: #C7C5C8; }
   .dark-full .sec-title .sem { color: #FFEC00; }
 
   /* Logo strip */
@@ -923,11 +936,6 @@
   .service-item:hover { color: #141414; border-bottom-color: rgba(26,64,199,0.5); padding-left: 8px; }
   .service-item:hover span:first-child { transform: translateX(4px); }
   .service-item:hover .plus { color: #1A40C7; transform: translateX(4px); }
-  .service-block-desc { font-size: 15px; line-height: 1.55; color: #6A686B; margin-top: 18px; max-width: 360px; }
-  .service-item { align-items: flex-start; }
-  .service-item .plus { margin-top: 2px; }
-  .service-item-name { display: block; font-weight: 500; color: #141414; }
-  .service-item-desc { display: block; font-size: 13px; line-height: 1.5; color: #6A686B; margin-top: 4px; max-width: 300px; }
 
   /* Industries */
   .ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(20,20,20,0.1); border: 1px solid rgba(20,20,20,0.1); }
@@ -2107,6 +2115,14 @@
 
 /* Methodology grid */
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1025px) {
+    .method-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .method-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .method-grid.cols-4, .method-grid.cols-5 { grid-template-columns: 1fr; }
+  }
 @media (max-width: 900px) { .method-grid { grid-template-columns: 1fr; } }
 
 /* Section Divider (Onyx + giant Fraunces numeral, per style guide) */
@@ -3479,8 +3495,6 @@
 
 
 
-
-
 /* === Service-pills marquee (auto-injected) === */
 .svc-marquee-bar{
   background:var(--paper);
@@ -3541,32 +3555,20 @@
 .footer-service-areas .svc-area.is-hq .svc-area-sky svg{stroke:#141414}
 .footer-service-areas .svc-area-hq{order:3;position:relative;z-index:2;background:#141414;color:#FFEC00;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 6px;border-radius:100px;line-height:1.3}
 /* end service-areas clean */</style>
-  <link rel="canonical" href="https://consultusdigital.com/services/" />
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Consultus Digital">
-  <meta property="og:title" content="Full-Stack Digital Marketing Services | Consultus Digital">
-  <meta property="og:description" content="Every Consultus Digital service, one engine: paid media, SEO, AEO, creative, web development, CRO, CRM and automation, with specialists at every step.">
-  <meta property="og:url" content="https://consultusdigital.com/services/">
-  <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
-  <meta property="og:image:width" content="1600">
-  <meta property="og:image:height" content="900">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Full-Stack Digital Marketing Services | Consultus Digital">
-  <meta name="twitter:description" content="Every Consultus Digital service, one engine: paid media, SEO, AEO, creative, web development, CRO, CRM and automation, with specialists at every step.">
-  <meta name="twitter:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Full-Stack Digital Marketing Services | Consultus Digital",
-  "url": "https://consultusdigital.com/services/",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Consultus Digital",
-    "url": "https://consultusdigital.com"
-  }
-}
-</script>
+  <meta name="description" content="How Consultus Digital collects, uses, and protects personal information, including cookies, analytics, advertising technologies, and your privacy rights." />
+  <link rel="canonical" href="https://consultusdigital.com/privacy-policy/" />
+  <meta property="og:title" content="Privacy Policy | Consultus Digital" />
+  <meta property="og:description" content="How Consultus Digital collects, uses, and protects personal information, including cookies, analytics, advertising technologies, and your privacy rights." />
+  <meta property="og:url" content="https://consultusdigital.com/privacy-policy/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Consultus Digital" />
+  <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg" />
+  <meta name="twitter:title" content="Privacy Policy | Consultus Digital" />
+  <meta name="twitter:description" content="How Consultus Digital collects, uses, and protects personal information, including cookies, analytics, advertising technologies, and your privacy rights." />
 </head>
 <body>
 
@@ -3582,83 +3584,20 @@
       <a class="nav-cta" href="/contact/">Book a Call</a>
     </div>
   </nav>
-<div class="svc-marquee-bar" aria-label="Services"><div class="svc-marquee"><div class="svc-marquee-track"><a class="svc-pill" href="/google-ads/">Google Ads</a><a class="svc-pill" href="/meta-ads/">Meta Ads</a><a class="svc-pill" href="/microsoft-ads/">Microsoft Ads</a><a class="svc-pill" href="/amazon-ads/">Amazon Ads</a><a class="svc-pill" href="/seo/">SEO</a><a class="svc-pill" href="/local-seo/">Local SEO</a><a class="svc-pill" href="/content-marketing/">Content Marketing</a><a class="svc-pill" href="/aeo-ai-search/">AEO / AI Search</a><a class="svc-pill" href="/influencer-marketing/">Influencer Marketing</a><a class="svc-pill" href="/performance-creatives/">Performance Creatives</a><a class="svc-pill" href="/web-development/">Web Development</a><a class="svc-pill" href="/landing-pages/">Landing Pages</a><a class="svc-pill" href="/cro/">Conversion Rate Optimization</a><a class="svc-pill" href="/ab-testing/">A/B Testing</a><a class="svc-pill" href="/zoho-crm/">Zoho CRM</a><a class="svc-pill" href="/marketing-automation/">Marketing Automation</a><a class="svc-pill" href="/analytics-attribution/">Analytics & Attribution</a><a class="svc-pill" href="/sales-enablement/">Sales Enablement</a><a class="svc-pill" href="/google-ads/">Google Ads</a><a class="svc-pill" href="/meta-ads/">Meta Ads</a><a class="svc-pill" href="/microsoft-ads/">Microsoft Ads</a><a class="svc-pill" href="/amazon-ads/">Amazon Ads</a><a class="svc-pill" href="/seo/">SEO</a><a class="svc-pill" href="/local-seo/">Local SEO</a><a class="svc-pill" href="/content-marketing/">Content Marketing</a><a class="svc-pill" href="/aeo-ai-search/">AEO / AI Search</a><a class="svc-pill" href="/influencer-marketing/">Influencer Marketing</a><a class="svc-pill" href="/performance-creatives/">Performance Creatives</a><a class="svc-pill" href="/web-development/">Web Development</a><a class="svc-pill" href="/landing-pages/">Landing Pages</a><a class="svc-pill" href="/cro/">Conversion Rate Optimization</a><a class="svc-pill" href="/ab-testing/">A/B Testing</a><a class="svc-pill" href="/zoho-crm/">Zoho CRM</a><a class="svc-pill" href="/marketing-automation/">Marketing Automation</a><a class="svc-pill" href="/analytics-attribution/">Analytics & Attribution</a><a class="svc-pill" href="/sales-enablement/">Sales Enablement</a></div></div></div>
+<!-- NOTE FOR THE TEAM: this is a general-purpose privacy policy written to be true of
+     a normal digital marketing agency. Before this is relied on it needs (1) a review by
+     a Canadian privacy lawyer, and (2) reconciliation against the tracking that actually
+     runs in production, so the cookie and third-party sections name the real tools.
+     Contact details and address are taken from /contact/. -->
 
-
-  
-  <section class="hero short">
-    <div class="hero-bg"><video src="/assets/video/team-montage.mp4" poster="/assets/video/team-montage-poster.jpg" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="eyebrow"><span class="eyebrow-dot"></span><span>Services</span></div>
-      <h1>Specialists at every <span class="sem">step</span>.</h1>
-      <p class="hero-sub">A full-stack specialist team across paid media, SEO, CRO, analytics, creative, CRM, and influencer marketing. One methodology. One scoreboard.</p>
-    </div>
-  </section>
-  <section class="services-home">
-    <div class="service-block">
-      <div class="service-block-head">
-        <div class="service-block-title"><span class="service-num">/01</span>Acquire</div>
-        <p class="service-block-desc">Fill the pipeline. Paid media, search, and creator channels that put your offer in front of buyers who are ready to act.</p>
-      </div>
-      <div class="service-items">
-        <a class="service-item" href="/google-ads/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Google Ads</span><span class="service-item-desc">Capture high-intent search demand the moment buyers are ready.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/meta-ads/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Meta Ads</span><span class="service-item-desc">Full-funnel Facebook and Instagram campaigns built on creative testing.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/microsoft-ads/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Microsoft Ads</span><span class="service-item-desc">Reach untapped, lower-cost buyers across Bing and the Microsoft network.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/amazon-ads/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Amazon Ads</span><span class="service-item-desc">Sponsored Products, Brands, and DSP that grow profitable marketplace sales.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/seo/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">SEO</span><span class="service-item-desc">Rank for the searches that drive revenue, not just traffic.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/local-seo/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Local SEO</span><span class="service-item-desc">Own the map pack and turn nearby searches into calls and walk-ins.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/content-marketing/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Content Marketing</span><span class="service-item-desc">Content that builds authority and compounds organic growth.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/aeo-ai-search/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">AEO / AI Search</span><span class="service-item-desc">Get your brand cited by ChatGPT, Perplexity, and Google AI Overviews.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/influencer-marketing/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Influencer Marketing</span><span class="service-item-desc">Creator partnerships that deliver reach you can measure.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/performance-creatives/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Performance Creatives</span><span class="service-item-desc">Ad creative engineered to stop the scroll and tested to prove it.</span></span><span class="plus">+</span></a>
-      </div>
-    </div>
-    <div class="service-block">
-      <div class="service-block-head">
-        <div class="service-block-title"><span class="service-num">/02</span>Convert</div>
-        <p class="service-block-desc">Turn traffic into revenue. Websites, landing pages, and experimentation engineered to move visitors to action.</p>
-      </div>
-      <div class="service-items">
-        <a class="service-item" href="/web-development/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Web Development</span><span class="service-item-desc">Fast, conversion-first websites built to sell, not just look good.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/landing-pages/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Landing Pages</span><span class="service-item-desc">Dedicated pages that match ad intent and convert paid traffic.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/cro/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Conversion Rate Optimization</span><span class="service-item-desc">Systematic testing that lifts conversion rates month after month.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/ab-testing/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">A/B Testing &amp; Experimentation</span><span class="service-item-desc">Evidence over opinions. Every change validated by data.</span></span><span class="plus">+</span></a>
-      </div>
-    </div>
-    <div class="service-block">
-      <div class="service-block-head">
-        <div class="service-block-title"><span class="service-num">/03</span>Scale</div>
-        <p class="service-block-desc">Make growth compound. CRM, automation, and attribution that turn wins into repeatable systems.</p>
-      </div>
-      <div class="service-items">
-        <a class="service-item" href="/zoho-crm/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Zoho CRM Implementation</span><span class="service-item-desc">A CRM built around your pipeline so no lead falls through.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/marketing-automation/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Marketing Automation</span><span class="service-item-desc">Follow-up that runs itself, from first touch to closed deal.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/analytics-attribution/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Analytics &amp; Attribution</span><span class="service-item-desc">Know exactly which dollar drove which result.</span></span><span class="plus">+</span></a>
-        <a class="service-item" href="/sales-enablement/" style="text-decoration:none;cursor:pointer"><span><span class="service-item-name">Sales Enablement</span><span class="service-item-desc">Give your sales team the assets and insights to close faster.</span></span><span class="plus">+</span></a>
-      </div>
-    </div>
-  </section>
-    <section class="sec">
-    <div class="sec-head solo">
-      <div>
-        <div class="section-lbl">Related</div>
-        <h2 class="sec-title">Where to go <span class="sem">next</span>.</h2>
-      </div>
-    </div>
-    <div class="related-strip">
-        <a class="svc-pill" href="/case-studies/">All Case Studies</a>
-        <a class="svc-pill" href="/google-ads/">Google Ads</a>
-        <a class="svc-pill" href="/seo/">SEO</a>
-        <a class="svc-pill" href="/cro/">Conversion Rate Optimization</a>
-        <a class="svc-pill" href="/web-development/">Web Development</a>
-        <a class="svc-pill" href="/analytics-attribution/">Analytics &amp; Attribution</a>
-        <a class="svc-pill" href="/industries/">Industries We Serve</a>
-    </div>
-  </section>
-
-<section class="cta-sec"><div class="cta-inner"><div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Let's build</span></div><h2 class="cta-title">Ready to <span class="sem">start</span>?</h2><a class="btn primary on-dark" href="/contact/">Book a Strategy Call →</a></div></section>
-  
+  <div class="article">
+    <h1>Privacy <span class="sem">Policy</span></h1>
+    <p class="lede">How we collect, use, and protect personal information, and what you can ask us
+      to do with it.</p>
+    <p style="font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;
+      color:#6A686B;margin-bottom:40px">Last updated 12 August 2026</p>
+    <h2>Who we are</h2><p>Consultus Digital is a digital marketing agency based in Toronto, Canada, at 136 Geary Ave, Unit 109, Toronto, ON M6H 4H1, Canada. This policy explains what personal information we collect through this website and in the course of providing our services, why we collect it, and what you can ask us to do with it.</p><p>It covers this website and our direct dealings with clients and prospective clients. It does not cover the separate privacy practices of platforms such as Google, Meta, Microsoft, or LinkedIn, whose own policies apply when you use their services.</p><h2>What we collect</h2><p>We collect two broad categories of information.</p><h3 style="font-family:var(--wide);font-size:17px;margin:28px 0 10px;color:#141414">Information you give us</h3><ul style="margin:0 0 20px;padding-left:22px;color:#2A2A2A;font-size:17px;line-height:1.7"><li style="margin-bottom:8px">Contact details such as your name, email address, phone number, and company, when you submit a form, book a call, or email us.</li><li style="margin-bottom:8px">Anything you tell us in the course of an enquiry or engagement, including details about your business, your goals, and your current marketing.</li><li style="margin-bottom:8px">Recruitment information, if you apply to work with us.</li></ul><h3 style="font-family:var(--wide);font-size:17px;margin:28px 0 10px;color:#141414">Information collected automatically</h3><ul style="margin:0 0 20px;padding-left:22px;color:#2A2A2A;font-size:17px;line-height:1.7"><li style="margin-bottom:8px">Your IP address, approximate location derived from it, browser and device type, and operating system.</li><li style="margin-bottom:8px">Pages you visit, how you arrived, how long you stay, and which links you follow.</li><li style="margin-bottom:8px">Identifiers set by cookies and similar technologies, described below.</li></ul><p>We do not seek to collect sensitive personal information through this website, and we ask that you do not send it to us. We do not knowingly collect information from children.</p><h2>How we use it</h2><ul style="margin:0 0 20px;padding-left:22px;color:#2A2A2A;font-size:17px;line-height:1.7"><li style="margin-bottom:8px">To respond to your enquiry and to provide, manage, and improve our services.</li><li style="margin-bottom:8px">To send you marketing communications where you have consented or where we are otherwise permitted to do so, and always with a working way to unsubscribe.</li><li style="margin-bottom:8px">To measure how this website performs so we can improve it.</li><li style="margin-bottom:8px">To measure and improve the advertising campaigns we run, for ourselves and for our clients.</li><li style="margin-bottom:8px">To meet our legal, accounting, and contractual obligations.</li></ul><p>Where we rely on your consent, you can withdraw it at any time. Withdrawing consent does not affect anything we did lawfully beforehand, and it may mean we can no longer provide part of a service.</p><h2>Cookies and similar technologies</h2><p>Cookies are small files placed on your device. We use them, along with comparable technologies such as pixels, tags, and local storage, for a few distinct purposes.</p><ul style="margin:0 0 20px;padding-left:22px;color:#2A2A2A;font-size:17px;line-height:1.7"><li style="margin-bottom:8px"><strong>Necessary.</strong> Making the site work, remembering your preferences, and keeping it secure. These cannot be switched off without breaking the site.</li><li style="margin-bottom:8px"><strong>Analytics.</strong> Understanding which pages are used and where visitors struggle, so we can improve the site.</li><li style="margin-bottom:8px"><strong>Advertising.</strong> Measuring the performance of our campaigns and, in some cases, showing you our advertising on other platforms.</li><li style="margin-bottom:8px"><strong>Embedded media.</strong> Some pages embed third-party video, which may set its own cookies when you play it.</li></ul><p>You can control cookies through your browser settings and, where we provide one, through the consent choice presented on this site. Blocking some cookies will affect how parts of the site behave.</p><h2>Third parties we use</h2><p>We use established service providers to run this website and our marketing. Depending on the page and your choices, these may include website and email hosting, analytics, advertising and measurement platforms, video hosting, customer relationship management, and scheduling tools.</p><p>These providers process information on our behalf under their own terms and privacy policies. We do not sell your personal information.</p><h2>Sharing your information</h2><p>We share personal information only where there is a reason to.</p><ul style="margin:0 0 20px;padding-left:22px;color:#2A2A2A;font-size:17px;line-height:1.7"><li style="margin-bottom:8px">With service providers who help us operate, as described above.</li><li style="margin-bottom:8px">With a client, where you have contacted us about work we are doing for them.</li><li style="margin-bottom:8px">Where we are required to by law, or to protect our rights, our people, or our systems.</li><li style="margin-bottom:8px">With a buyer or successor, if our business is sold or reorganised, in which case this policy continues to apply to information transferred.</li></ul><h2>International transfers</h2><p>We are based in Canada and some of our providers operate outside Canada, including in the United States and Europe. Where information is transferred across borders, it may be subject to the laws of that country. We take reasonable steps to ensure it remains protected to a comparable standard.</p><h2>How long we keep it</h2><p>We keep personal information only as long as we need it for the purpose we collected it, or as long as we are required to keep it for legal, tax, and accounting reasons. Enquiries that do not become engagements are kept for a limited period and then deleted. Client records are kept for the duration of the engagement and a reasonable period afterwards.</p><h2>Security</h2><p>We use reasonable administrative and technical measures to protect personal information, including access controls, encryption in transit, and limiting access to those who need it. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p><h2>Your rights</h2><p>Depending on where you live, you have rights over your personal information. In Canada, under the federal Personal Information Protection and Electronic Documents Act and comparable provincial legislation, you can generally ask us to:</p><ul style="margin:0 0 20px;padding-left:22px;color:#2A2A2A;font-size:17px;line-height:1.7"><li style="margin-bottom:8px">Confirm what personal information we hold about you and give you access to it.</li><li style="margin-bottom:8px">Correct information that is inaccurate or incomplete.</li><li style="margin-bottom:8px">Withdraw your consent to a particular use, subject to legal and contractual limits.</li><li style="margin-bottom:8px">Stop sending you marketing communications.</li></ul><p>If you are in the European Economic Area or the United Kingdom, you may also have rights to erasure, restriction, portability, and objection. To exercise any of these, email us at <a class="body-link" href="mailto:hello@consultusdigital.com">hello@consultusdigital.com</a>. We will ask you to verify your identity and will respond within the timeframe the applicable law requires.</p><h2>Marketing emails</h2><p>If we send you marketing email, we identify ourselves, tell you how to contact us, and include a working unsubscribe link in every message. We honour unsubscribe requests promptly. Canadian anti-spam legislation sets the standard we work to for recipients in Canada.</p><h2>Changes to this policy</h2><p>We update this policy when our practices change. The version above is dated 12 August 2026. Where a change materially affects how we handle your information, we will take reasonable steps to bring it to your attention rather than relying on the date alone.</p><h2>Contact us</h2><p>For any question about this policy, or to exercise your rights, contact:</p><p style="margin-bottom:8px"><strong>Consultus Digital</strong><br>136 Geary Ave, Unit 109, Toronto, ON M6H 4H1, Canada<br><a class="body-link" href="mailto:hello@consultusdigital.com">hello@consultusdigital.com</a><br>(416) 460-1810</p><p>If you are not satisfied with our response, you can contact the Office of the Privacy Commissioner of Canada, or your local supervisory authority if you are outside Canada.</p>
+  </div>
 
 <footer>
     <div class="footer-inner">
@@ -3776,16 +3715,16 @@
 
       <div class="footer-bottom">
         <div>© 2026 Consultus Digital Inc.</div>
-        <div><a href="/contact/" style="margin-left:16px;cursor:pointer">Privacy</a><a href="/contact/" style="margin-left:16px;cursor:pointer">Terms</a><a href="/contact/" style="margin-left:16px;cursor:pointer">Accessibility</a></div>
+        <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a><a style="margin-left:16px;cursor:pointer">Terms</a><a style="margin-left:16px;cursor:pointer">Accessibility</a></div>
       </div>
     </div>
   </footer>
 <script>
-/* Standalone goPage shim: for hash routes still pointing at SPA-only pages */
 function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }
 </script>
+
 <script>
 /* file:// LINK REWRITER v3 (2026-04-27) */
 (function(){
