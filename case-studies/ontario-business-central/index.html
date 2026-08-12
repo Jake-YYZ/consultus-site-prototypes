@@ -838,6 +838,7 @@
   .sec.bone-full { max-width: none; background: #F5F2EC; padding: 0; }
   .sec-inner { max-width: 1200px; margin: 0 auto; padding: 100px 32px; }
   .sec-head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; margin-bottom: 60px; }
+  .sec-head:has(> .section-lbl) { grid-template-columns: 1fr; gap: 16px; }
   .sec-title { font-weight: 400; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #141414; }
   .dark-full .sec-title { color: #FAF8F3; }
   .sec-title .sem { color: #1A40C7; }
@@ -1154,7 +1155,7 @@
   .footer-social a:hover { background: rgba(255,255,255,0.15); }
   .footer-social svg { width: 15px; height: 15px; fill: #FAF8F3; }
 
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; font-size: 11px; color: #6A686B; font-family: var(--mono); }
+  .footer-bottom { display: flex; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding-top: 28px; font-size: 11px; color: #6A686B; font-family: var(--mono); }
 
   /* Article body */
   .article { max-width: 760px; margin: 0 auto; padding: 60px 32px; }
@@ -3878,7 +3879,7 @@ section.hero-cover .hero-bg {
         <div>© 2026 Consultus Digital Inc.</div>
         <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a><a style="margin-left:16px;cursor:pointer">Terms</a><a style="margin-left:16px;cursor:pointer">Accessibility</a></div>
       </div>
-    </div>
+    
   </footer>
 <script>
 function goPage(which) {
