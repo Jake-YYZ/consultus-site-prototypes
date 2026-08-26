@@ -3500,18 +3500,18 @@
 .cfh-hero .cfh-display .sem{color:var(--deep-blue);font-style:italic}
 .cfh-lede{font-size:18px;line-height:1.55;color:var(--charcoal);max-width:560px;margin:26px 0 0}
 .cfh-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
-.cfh-fan{display:flex;gap:16px;justify-content:center;align-items:flex-start;transform:rotate(-7deg);transform-origin:center;margin:6px auto}
-.cfh-fan .col{display:flex;flex-direction:column;gap:16px}
-.cfh-fan .col.b{margin-top:clamp(30px,4vw,58px)}
-.cfh-fan figure{box-sizing:border-box;margin:0;border:5px solid #fff;border-radius:15px;overflow:hidden;background:var(--bone);box-shadow:0 26px 48px -22px rgba(20,20,20,.42),0 6px 14px -8px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.cfh-fan img{display:block;width:100%;height:100%;object-fit:cover}
-.cfh-fan .col.a figure{width:clamp(146px,19.5vw,206px)}
-.cfh-fan .col.b figure{width:clamp(172px,23vw,250px)}
-.cfh-fan .a1{aspect-ratio:4/5}
-.cfh-fan .a2{aspect-ratio:4/5}
-.cfh-fan .b1{aspect-ratio:5/8}
-.cfh-fan:hover figure{transform:translateY(-4px)}
-@media(max-width:980px){.cfh-in{grid-template-columns:1fr;gap:44px}.cfh-fan{justify-content:flex-start}}
+.cfh-fan{display:flex;justify-content:center;align-items:flex-start;margin:6px auto;transform:rotate(-3deg);transform-origin:center}.cfh-fan figure{box-sizing:border-box;margin:0;width:min(100%,clamp(260px,33vw,420px));aspect-ratio:4/5;border:6px solid #fff;border-radius:18px;overflow:hidden;background:var(--bone);box-shadow:0 34px 60px -26px rgba(20,20,20,.45),0 8px 18px -10px rgba(20,20,20,.28);transition:transform .5s cubic-bezier(.2,.7,.2,1)}.cfh-fan img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.cfh-fan:hover figure{transform:translateY(-4px) rotate(.5deg)}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:980px){.cfh-in{grid-template-columns:1fr;gap:44px}}
 @media(max-width:600px){.cfh-hero{padding:52px 16px 32px}}
 </style>
 
@@ -3526,14 +3526,8 @@
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
         </div>
       </div>
-      <div class="cfh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/city-photos/toronto/skyline-day.jpg" alt=""></figure>
-          <figure class="a2"><img src="/assets/city-photos/toronto/cn-tower.jpg" alt=""></figure>
-        </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/city-photos/toronto/skyline-night.jpg" alt=""></figure>
-        </div>
+      <div class="cfh-fan">
+        <figure><img src="/assets/city-photos/toronto/skyline-night.jpg" alt="Toronto, the city skyline at night" loading="eager"></figure>
       </div>
     </div>
   </section>
