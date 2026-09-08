@@ -3966,22 +3966,242 @@
     .seox-complement-grid { grid-template-columns: 1fr; }
   }
 
+/* ============================================================
+     HERO BANNER, REDESIGNED
+     Light paper ground, photo feathered into the background,
+     capability row and CTAs. Overrides the earlier dark .seox-hero
+     rules above; delete this block to fall back to the old hero.
+     ============================================================ */
+  .seox-hero { padding: 100px 0 88px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  .seox-hero::before {
+    opacity: 1;
+    background-image:
+      radial-gradient(56% 72% at 79% 28%, rgba(26,64,199,.11), transparent 68%),
+      radial-gradient(42% 54% at 4% 92%, rgba(255,236,0,.20), transparent 72%);
+    background-size: auto;
+  }
+  .seox-hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 56px; align-items: center; }
+  .seox-source-hero-copy { max-width: 590px; }
+
+  .seox-source-eyebrow { color: var(--deep-blue); letter-spacing: .17em; }
+  .seox-source-eyebrow::before { background: var(--deep-blue); }
+
+  .seox-source-title { margin-top: 24px; color: var(--ink); font-size: clamp(44px, 5.1vw, 72px); line-height: .98; }
+  .seox-source-title .sem { color: var(--deep-blue); font-style: italic; }
+  .seox-hero-dot { color: var(--yellow-dark); }
+
+  .seox-hero-rule { display: block; width: 54px; height: 3px; margin-top: 32px; border-radius: 2px; background: var(--yellow-dark); }
+
+  .seox-source-hero-lede { max-width: 30em; margin-top: 26px; color: var(--charcoal); font-size: 18px; line-height: 1.6; }
+
+  /* Capability row */
+  .seox-caps { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0 0; padding: 0; list-style: none; }
+  .seox-cap { padding: 0 16px; border-left: 1px solid var(--bone-border); }
+  .seox-cap:first-child { padding-left: 0; border-left: 0; }
+  .seox-cap svg { display: block; width: 22px; height: 22px; margin-bottom: 13px; fill: none; stroke: var(--deep-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .seox-cap span { display: block; color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; line-height: 1.55; text-transform: uppercase; }
+
+  /* CTAs */
+  .seox-hero .seox-actions { gap: 14px; margin-top: 42px; align-items: center; }
+  .seox-hero .btn { text-decoration: none; }
+  .seox-hero .btn.primary { background: var(--ink) !important; color: var(--paper) !important; transition: background .25s ease, color .25s ease, transform .2s ease; }
+  .seox-hero .btn.primary:hover { background: var(--yellow) !important; color: var(--ink) !important; transform: translateY(-1px); }
+  .seox-hero .btn.secondary { border: 1px solid rgba(20,20,20,.26); color: var(--ink); transition: border-color .25s ease, background .25s ease, transform .2s ease; }
+  .seox-hero .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  .seox-arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+  .seox-hero .btn:hover .seox-arw { transform: translateX(3px); }
+
+  /* ---- The visual: a designed "page under test" mockup ----
+     Built in markup rather than photographed so the screen stays crisp and
+     legible. Bleeds off the right edge and dissolves into the paper below. */
+  .seox-hero-visual { position: relative; }
+  .seox-hero-visual::before {
+    content: ""; position: absolute; inset: -22% -14% -26% -10%; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(46% 46% at 52% 42%, rgba(26,64,199,.16), transparent 70%),
+      radial-gradient(38% 40% at 78% 76%, rgba(255,236,0,.20), transparent 72%);
+  }
+  /* Push the mockup past the right edge of the content column and off canvas. */
+  .seox-stage {
+    position: relative; z-index: 1;
+    margin-right: -74px; margin-left: -34px;
+    perspective: 1800px;
+  }
+  .seox-mock {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(20,20,20,.09); border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 48px 90px -40px rgba(20,20,20,.42), 0 18px 38px -26px rgba(20,20,20,.26);
+    transform: rotateY(-7deg) rotateX(1.5deg) rotateZ(-.5deg);
+    transform-origin: left center;
+  }
+  .seox-mock-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 13px 16px; border-bottom: 1px solid #EDEAE4; background: #F7F5F0;
+  }
+  .seox-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D5D1C9; }
+  .seox-mock-bar i:first-child { background: #E0DCD3; }
+  .seox-mock-url {
+    flex: 1; margin-left: 10px; padding: 6px 14px;
+    border: 1px solid #E7E3DB; border-radius: 999px; background: #fff;
+    color: #8C8A87; font-family: var(--mono); font-size: 10px; letter-spacing: .04em;
+  }
+  .seox-mock-variant {
+    padding: 5px 11px; border-radius: 999px; background: var(--deep-blue);
+    color: #fff; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .seox-mock-body { padding: 20px 24px 30px; }
+  .seox-mock-nav { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #F0EDE7; }
+  .seox-mock-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); }
+  .seox-mock-navcta { width: 62px; height: 22px; border-radius: 999px; background: var(--ink); }
+  .seox-bar { display: block; border-radius: 3px; background: #E4E0D8; }
+  .seox-bar.n { width: 38px; height: 7px; }
+  .seox-bar.n:nth-of-type(3) { margin-right: auto; }
+  .seox-mock-main { display: grid; grid-template-columns: 1.25fr .95fr; gap: 26px; margin-top: 26px; }
+  .seox-mock-copy { position: relative; }
+  .seox-bar.h1 { width: 100%; height: 17px; border-radius: 4px; background: var(--ink); }
+  .seox-bar.h2 { width: 62%; height: 17px; margin-top: 9px; border-radius: 4px; background: var(--deep-blue); }
+  .seox-bar.p { width: 92%; height: 7px; margin-top: 16px; }
+  .seox-bar.p.short { width: 68%; margin-top: 8px; }
+  .seox-mock-cta {
+    display: inline-block; margin-top: 22px; padding: 11px 20px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 500;
+  }
+  /* Heat bloom over the tested CTA */
+  .seox-heat {
+    position: absolute; left: -18px; bottom: -26px; width: 190px; height: 130px; pointer-events: none;
+    background:
+      radial-gradient(circle at 32% 62%, rgba(255,80,0,.34), transparent 58%),
+      radial-gradient(circle at 32% 62%, rgba(255,236,0,.30), transparent 74%);
+    filter: blur(5px);
+  }
+  .seox-mock-form { padding: 18px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .seox-bar.lbl { width: 54%; height: 8px; background: #D9D5CC; }
+  .seox-field { display: block; height: 26px; margin-top: 11px; border: 1px solid #E7E3DB; border-radius: 6px; background: #fff; }
+  .seox-mock-submit { display: block; height: 28px; margin-top: 14px; border-radius: 999px; background: var(--deep-blue); }
+
+  /* Annotation chips */
+  .seox-note {
+    position: absolute; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid var(--bone-border); border-radius: 999px;
+    background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 16px 34px -18px rgba(20,20,20,.42);
+    color: var(--ink); font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .seox-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); animation: seox-chip-pulse 2.4s ease-in-out infinite; }
+  .seox-note.b i { background: var(--yellow-dark); animation-delay: .5s; }
+  .seox-note.c i { background: #FF5000; animation-delay: 1s; }
+  .seox-note.a { top: 11%; left: -30px; }
+  .seox-note.b { top: 46%; right: 6%; }
+  .seox-note.c { bottom: 4%; left: -14px; }
+  @keyframes seox-chip-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+  /* Dissolve the bottom of the whole assembly into the paper */
+  .seox-hero-visual::after {
+    content: ""; position: absolute; z-index: 4; left: -12%; right: -20%; bottom: -12%; height: 34%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(250,248,243,0) 0%, rgba(250,248,243,.86) 62%, var(--paper) 100%);
+  }
+
+  @media (max-width: 1040px) {
+    /* Must restate the collapse: this block sits after the base rules above. */
+    .seox-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .seox-hero { padding: 84px 0 78px; }
+    .seox-source-hero-copy { max-width: 640px; }
+    .seox-stage { margin: 0 -34px 0 0; }
+    .seox-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
+    .seox-hero-visual::after { left: -6%; right: -8%; }
+  }
+  @media (max-width: 720px) {
+    .seox-hero { padding: 66px 0 62px; }
+    .seox-hero-grid { gap: 40px; }
+    .seox-source-hero-lede { font-size: 16.5px; }
+    .seox-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    .seox-cap:nth-child(3) { padding-left: 0; border-left: 0; }
+    .seox-stage { margin: 0 -16px 0 0; }
+    .seox-mock { transform: none; }
+    .seox-mock-body { padding: 16px 16px 22px; }
+    .seox-mock-main { grid-template-columns: 1fr; gap: 18px; }
+    .seox-mock-url { font-size: 9px; }
+    .seox-note { font-size: 8.5px; padding: 7px 11px; }
+    .seox-note.a { top: 9%; left: -8px; }
+    .seox-note.b { top: 42%; right: 4px; }
+    .seox-note.c { left: -8px; bottom: 3%; }
+  }
+  @media (max-width: 480px) {
+    .seox-source-title { font-size: 38px; }
+    .seox-hero .seox-actions { gap: 10px; }
+    .seox-hero .btn { justify-content: center; width: 100%; }
+    .seox-caps { row-gap: 24px; }
+    .seox-cap span { font-size: 9.5px; letter-spacing: .08em; }
+    .seox-note.b { font-size: 8px; right: 4px; }
+  }
+
 </style>
 <main class="seox-page">
   <section class="seox-hero">
     <div class="seox-wrap seox-hero-grid">
       <div class="seox-source-hero-copy">
         <h1 class="seox-source-eyebrow">SEO Agency Toronto</h1>
-        <h2 class="seox-source-title">Rank on Google. Get cited by <span class="sem">AI</span>.</h2>
+        <h2 class="seox-source-title">Rank on Google. Get cited by <span class="sem">AI</span><span class="seox-hero-dot">.</span></h2>
+        <span class="seox-hero-rule" aria-hidden="true"></span>
         <p class="seox-source-hero-lede">We help businesses rank higher on Google and get cited by popular LLMs such as ChatGPT, Claude, and Gemini.</p>
-      </div>
-      <div class="svh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/service-photos/seo-keyword-notes.jpg" alt="Keyword research notes beside a laptop"></figure>
-          <figure class="a2"><img src="/assets/service-photos/ranking-graph.jpg" alt="Search ranking growth chart on a screen"></figure>
+        <ul class="seox-caps">
+        <li class="seox-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7 4 12l4 5"/><path d="m16 7 4 5-4 5"/><path d="M14 4 10 20"/></svg><span>Technical<br>SEO</span></li>
+        <li class="seox-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Content &amp;<br>on-page</span></li>
+        <li class="seox-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 1 0-5.7l2.3-2.3a4 4 0 0 1 5.7 5.7l-1 1"/><path d="M14 10a4 4 0 0 1 0 5.7l-2.3 2.3a4 4 0 0 1-5.7-5.7l1-1"/></svg><span>Link<br>building</span></li>
+        <li class="seox-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4.5"/></svg><span>AI search<br>(GEO)</span></li>
+        </ul>
+        <div class="seox-actions">
+          <a class="btn primary" href="/contact/">Book a Strategy Session <svg class="seox-arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5"/></svg></a>
+          <a class="btn secondary" href="#seox-results">See client results</a>
         </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/service-photos/charts-desk.jpg" alt="Analytics charts spread across a desk"></figure>
+      </div>
+      <div class="seox-hero-visual" aria-hidden="true">
+        <div class="seox-stage">
+          <div class="seox-mock">
+            <div class="seox-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="seox-mock-url">google.com/search?q=…</span>
+              <span class="seox-mock-variant">Rank 1</span>
+            </div>
+            <div class="seox-mock-body">
+              <div class="seox-mock-nav">
+                <span class="seox-mock-logo"></span>
+                <span class="seox-bar n" style="width:44%"></span>
+                <span class="seox-mock-navcta" style="margin-left:auto;width:74px;background:var(--deep-blue)"></span>
+              </div>
+              <div class="seox-mock-main">
+                <div class="seox-mock-copy">
+                  <div style="padding:12px 14px;border:1px solid #D9DEF5;border-radius:10px;background:#F4F6FE">
+                    <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#1A40C7,#5D7BEA)"></span><span style="color:#1A40C7;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em">AI OVERVIEW</span></div>
+                    <span class="seox-bar p" style="margin-top:0;width:96%"></span>
+                    <span class="seox-bar p" style="width:88%"></span>
+                    <span class="seox-bar p short" style="width:60%"></span>
+                    <span style="display:inline-block;margin-top:10px;padding:3px 9px;border-radius:999px;background:#fff;border:1px solid #B4BFEB;color:#1A40C7;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.08em">yoursite.com</span>
+                  </div>
+                  <div style="position:relative;margin-top:16px;padding:10px 12px;border-radius:8px;background:rgba(255,236,0,.18)">
+                    <span style="display:inline-block;margin-bottom:6px;color:#8C8A87;font-family:var(--mono);font-size:8px;letter-spacing:.06em">yoursite.com &rsaquo; services</span>
+                    <span class="seox-bar h2" style="width:74%;margin-top:0;height:13px"></span>
+                    <span class="seox-bar p" style="margin-top:9px;width:92%"></span>
+                    <span class="seox-heat" style="left:-10px;bottom:-18px;width:150px;height:90px"></span>
+                  </div>
+                  <span class="seox-bar p" style="margin-top:16px;width:64%;background:#EFECE6"></span>
+                  <span class="seox-bar p short" style="background:#EFECE6"></span>
+                </div>
+                <div class="seox-mock-form">
+                  <span class="seox-bar lbl" style="width:58%"></span>
+                  <svg viewBox="0 0 120 60" style="display:block;width:100%;height:60px;margin-top:10px" aria-hidden="true"><polyline fill="none" stroke="#1A40C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="2,46 20,44 38,40 56,38 74,26 92,16 118,6"/><circle cx="118" cy="6" r="3.5" fill="#1A40C7"/></svg>
+                  <div style="display:flex;justify-content:space-between;margin-top:6px;color:#8C8A87;font-family:var(--mono);font-size:7.5px;letter-spacing:.06em"><span>#7</span><span>#1</span></div>
+                  <span class="seox-bar lbl" style="width:44%;margin-top:14px"></span>
+                  <span class="seox-mock-submit" style="height:22px;margin-top:8px;background:var(--ink)"></span>
+                </div>
+              </div></div>
+          </div>
+          <span class="seox-note a"><i></i>Cited in AI Overview</span>
+          <span class="seox-note b"><i></i>Position 7 to 1</span>
+          <span class="seox-note c"><i></i>Backlinks +38</span>
         </div>
       </div>
     </div>
