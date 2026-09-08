@@ -3721,7 +3721,7 @@
   .cmk-kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); flex: 0 0 auto; }
   .cmk-kicker.on-dark { color: var(--paper); }
   .cmk-kicker.on-dark::before { background: var(--yellow); }
-  .cmk-title { margin: 18px 0 0; max-width: 900px; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
+  .cmk-title { margin: 18px 0 0; max-width: none; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
   .cmk-title .sem { color: var(--deep-blue); font-style: italic; }
   .cmk-dark .cmk-title { color: var(--paper); }
   .cmk-dark .cmk-title .sem { color: var(--yellow); }
@@ -3730,7 +3730,8 @@
   .cmk-section { padding: 108px 0; }
   .cmk-section.bone { background: var(--bone); }
   .cmk-section.cmk-dark { background: var(--onyx); color: var(--paper); }
-  .cmk-section-head { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); gap: 70px; align-items: end; margin-bottom: 56px; }
+  .cmk-section-head { display: grid; grid-template-columns: 1fr; gap: 70px; align-items: end; margin-bottom: 56px; }
+  .cmk-section-head:has(> :nth-child(2)) { grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); }
   .cmk-section-head .cmk-lede { margin: 0; font-size: 17px; }
   .cmk-copy p { margin: 0 0 18px; color: var(--charcoal); font-size: 17px; line-height: 1.68; }
   .cmk-copy p:last-child { margin-bottom: 0; }

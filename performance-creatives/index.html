@@ -3680,7 +3680,7 @@
   .pcr-kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); flex: 0 0 auto; }
   .pcr-kicker.on-dark { color: var(--paper); }
   .pcr-kicker.on-dark::before { background: var(--yellow); }
-  .pcr-title { margin: 18px 0 0; max-width: 900px; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
+  .pcr-title { margin: 18px 0 0; max-width: none; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
   .pcr-title .sem { color: var(--deep-blue); font-style: italic; }
   .pcr-dark .pcr-title { color: var(--paper); }
   .pcr-dark .pcr-title .sem { color: var(--yellow); }
@@ -3689,7 +3689,8 @@
   .pcr-section { padding: 108px 0; }
   .pcr-section.bone { background: var(--bone); }
   .pcr-section.pcr-dark { background: var(--onyx); color: var(--paper); }
-  .pcr-section-head { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); gap: 70px; align-items: end; margin-bottom: 56px; }
+  .pcr-section-head { display: grid; grid-template-columns: 1fr; gap: 70px; align-items: end; margin-bottom: 56px; }
+  .pcr-section-head:has(> :nth-child(2)) { grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); }
   .pcr-section-head .pcr-lede { margin: 0; font-size: 17px; }
   .pcr-copy p { margin: 0 0 18px; color: var(--charcoal); font-size: 17px; line-height: 1.68; }
   .pcr-copy p:last-child { margin-bottom: 0; }

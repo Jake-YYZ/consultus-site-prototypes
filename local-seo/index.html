@@ -3705,7 +3705,7 @@
   .lseo-kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); flex: 0 0 auto; }
   .lseo-kicker.on-dark { color: var(--paper); }
   .lseo-kicker.on-dark::before { background: var(--yellow); }
-  .lseo-title { margin: 18px 0 0; max-width: 900px; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
+  .lseo-title { margin: 18px 0 0; max-width: none; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
   .lseo-title .sem { color: var(--deep-blue); font-style: italic; }
   .lseo-dark .lseo-title { color: var(--paper); }
   .lseo-dark .lseo-title .sem { color: var(--yellow); }
@@ -3714,7 +3714,8 @@
   .lseo-section { padding: 108px 0; }
   .lseo-section.bone { background: var(--bone); }
   .lseo-section.lseo-dark { background: var(--onyx); color: var(--paper); }
-  .lseo-section-head { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); gap: 70px; align-items: end; margin-bottom: 56px; }
+  .lseo-section-head { display: grid; grid-template-columns: 1fr; gap: 70px; align-items: end; margin-bottom: 56px; }
+  .lseo-section-head:has(> :nth-child(2)) { grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); }
   .lseo-section-head .lseo-lede { margin: 0; font-size: 17px; }
   .lseo-copy p { margin: 0 0 18px; color: var(--charcoal); font-size: 17px; line-height: 1.68; }
   .lseo-copy p:last-child { margin-bottom: 0; }

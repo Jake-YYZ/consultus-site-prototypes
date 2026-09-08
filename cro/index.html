@@ -3721,7 +3721,7 @@
   .crx-kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); flex: 0 0 auto; }
   .crx-kicker.on-dark { color: var(--paper); }
   .crx-kicker.on-dark::before { background: var(--yellow); }
-  .crx-title { margin: 18px 0 0; max-width: 900px; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
+  .crx-title { margin: 18px 0 0; max-width: none; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
   .crx-title .sem { color: var(--deep-blue); font-style: italic; }
   .crx-dark .crx-title { color: var(--paper); }
   .crx-dark .crx-title .sem { color: var(--yellow); }
@@ -3730,7 +3730,8 @@
   .crx-section { padding: 108px 0; }
   .crx-section.bone { background: var(--bone); }
   .crx-section.crx-dark { background: var(--onyx); color: var(--paper); }
-  .crx-section-head { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); gap: 70px; align-items: end; margin-bottom: 56px; }
+  .crx-section-head { display: grid; grid-template-columns: 1fr; gap: 70px; align-items: end; margin-bottom: 56px; }
+  .crx-section-head:has(> :nth-child(2)) { grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); }
   .crx-section-head .crx-lede { margin: 0; font-size: 17px; }
   .crx-copy p { margin: 0 0 18px; color: var(--charcoal); font-size: 17px; line-height: 1.68; }
   .crx-copy p:last-child { margin-bottom: 0; }
