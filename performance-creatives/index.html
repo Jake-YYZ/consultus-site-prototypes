@@ -3932,22 +3932,211 @@
     .pcr-complement-grid { grid-template-columns: 1fr; }
   }
 
+/* ============================================================
+     HERO BANNER, REDESIGNED
+     Light paper ground, photo feathered into the background,
+     capability row and CTAs. Overrides the earlier dark .pcr-hero
+     rules above; delete this block to fall back to the old hero.
+     ============================================================ */
+  .pcr-hero { padding: 100px 0 88px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  .pcr-hero::before {
+    opacity: 1;
+    background-image:
+      radial-gradient(56% 72% at 79% 28%, rgba(26,64,199,.11), transparent 68%),
+      radial-gradient(42% 54% at 4% 92%, rgba(255,236,0,.20), transparent 72%);
+    background-size: auto;
+  }
+  .pcr-hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 56px; align-items: center; }
+  .pcr-source-hero-copy { max-width: 590px; }
+
+  .pcr-source-eyebrow { color: var(--deep-blue); letter-spacing: .17em; }
+  .pcr-source-eyebrow::before { background: var(--deep-blue); }
+
+  .pcr-source-title { margin-top: 24px; color: var(--ink); font-size: clamp(44px, 5.1vw, 72px); line-height: .98; }
+  .pcr-source-title .sem { color: var(--deep-blue); font-style: italic; }
+  .pcr-hero-dot { color: var(--yellow-dark); }
+
+  .pcr-hero-rule { display: block; width: 54px; height: 3px; margin-top: 32px; border-radius: 2px; background: var(--yellow-dark); }
+
+  .pcr-source-hero-lede { max-width: 30em; margin-top: 26px; color: var(--charcoal); font-size: 18px; line-height: 1.6; }
+
+  /* Capability row */
+  .pcr-caps { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0 0; padding: 0; list-style: none; }
+  .pcr-cap { padding: 0 16px; border-left: 1px solid var(--bone-border); }
+  .pcr-cap:first-child { padding-left: 0; border-left: 0; }
+  .pcr-cap svg { display: block; width: 22px; height: 22px; margin-bottom: 13px; fill: none; stroke: var(--deep-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .pcr-cap span { display: block; color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; line-height: 1.55; text-transform: uppercase; }
+
+  /* CTAs */
+  .pcr-hero .pcr-actions { gap: 14px; margin-top: 42px; align-items: center; }
+  .pcr-hero .btn { text-decoration: none; }
+  .pcr-hero .btn.primary { background: var(--ink) !important; color: var(--paper) !important; transition: background .25s ease, color .25s ease, transform .2s ease; }
+  .pcr-hero .btn.primary:hover { background: var(--yellow) !important; color: var(--ink) !important; transform: translateY(-1px); }
+  .pcr-hero .btn.secondary { border: 1px solid rgba(20,20,20,.26); color: var(--ink); transition: border-color .25s ease, background .25s ease, transform .2s ease; }
+  .pcr-hero .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  .pcr-arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+  .pcr-hero .btn:hover .pcr-arw { transform: translateX(3px); }
+
+  /* ---- The visual: a designed "page under test" mockup ----
+     Built in markup rather than photographed so the screen stays crisp and
+     legible. Bleeds off the right edge and dissolves into the paper below. */
+  .pcr-hero-visual { position: relative; }
+  .pcr-hero-visual::before {
+    content: ""; position: absolute; inset: -22% -14% -26% -10%; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(46% 46% at 52% 42%, rgba(26,64,199,.16), transparent 70%),
+      radial-gradient(38% 40% at 78% 76%, rgba(255,236,0,.20), transparent 72%);
+  }
+  /* Push the mockup past the right edge of the content column and off canvas. */
+  .pcr-stage {
+    position: relative; z-index: 1;
+    margin-right: -74px; margin-left: -34px;
+    perspective: 1800px;
+  }
+  .pcr-mock {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(20,20,20,.09); border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 48px 90px -40px rgba(20,20,20,.42), 0 18px 38px -26px rgba(20,20,20,.26);
+    transform: rotateY(-7deg) rotateX(1.5deg) rotateZ(-.5deg);
+    transform-origin: left center;
+  }
+  .pcr-mock-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 13px 16px; border-bottom: 1px solid #EDEAE4; background: #F7F5F0;
+  }
+  .pcr-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D5D1C9; }
+  .pcr-mock-bar i:first-child { background: #E0DCD3; }
+  .pcr-mock-url {
+    flex: 1; margin-left: 10px; padding: 6px 14px;
+    border: 1px solid #E7E3DB; border-radius: 999px; background: #fff;
+    color: #8C8A87; font-family: var(--mono); font-size: 10px; letter-spacing: .04em;
+  }
+  .pcr-mock-variant {
+    padding: 5px 11px; border-radius: 999px; background: var(--deep-blue);
+    color: #fff; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .pcr-mock-body { padding: 20px 24px 30px; }
+  .pcr-mock-nav { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #F0EDE7; }
+  .pcr-mock-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); }
+  .pcr-mock-navcta { width: 62px; height: 22px; border-radius: 999px; background: var(--ink); }
+  .pcr-bar { display: block; border-radius: 3px; background: #E4E0D8; }
+  .pcr-bar.n { width: 38px; height: 7px; }
+  .pcr-bar.n:nth-of-type(3) { margin-right: auto; }
+  .pcr-mock-main { display: grid; grid-template-columns: 1.25fr .95fr; gap: 26px; margin-top: 26px; }
+  .pcr-mock-copy { position: relative; }
+  .pcr-bar.h1 { width: 100%; height: 17px; border-radius: 4px; background: var(--ink); }
+  .pcr-bar.h2 { width: 62%; height: 17px; margin-top: 9px; border-radius: 4px; background: var(--deep-blue); }
+  .pcr-bar.p { width: 92%; height: 7px; margin-top: 16px; }
+  .pcr-bar.p.short { width: 68%; margin-top: 8px; }
+  .pcr-mock-cta {
+    display: inline-block; margin-top: 22px; padding: 11px 20px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 500;
+  }
+  /* Heat bloom over the tested CTA */
+  .pcr-heat {
+    position: absolute; left: -18px; bottom: -26px; width: 190px; height: 130px; pointer-events: none;
+    background:
+      radial-gradient(circle at 32% 62%, rgba(255,80,0,.34), transparent 58%),
+      radial-gradient(circle at 32% 62%, rgba(255,236,0,.30), transparent 74%);
+    filter: blur(5px);
+  }
+  .pcr-mock-form { padding: 18px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .pcr-bar.lbl { width: 54%; height: 8px; background: #D9D5CC; }
+  .pcr-field { display: block; height: 26px; margin-top: 11px; border: 1px solid #E7E3DB; border-radius: 6px; background: #fff; }
+  .pcr-mock-submit { display: block; height: 28px; margin-top: 14px; border-radius: 999px; background: var(--deep-blue); }
+
+  /* Annotation chips */
+  .pcr-note {
+    position: absolute; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid var(--bone-border); border-radius: 999px;
+    background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 16px 34px -18px rgba(20,20,20,.42);
+    color: var(--ink); font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .pcr-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); animation: pcr-chip-pulse 2.4s ease-in-out infinite; }
+  .pcr-note.b i { background: var(--yellow-dark); animation-delay: .5s; }
+  .pcr-note.c i { background: #FF5000; animation-delay: 1s; }
+  .pcr-note.a { top: 11%; left: -30px; }
+  .pcr-note.b { top: 46%; right: 6%; }
+  .pcr-note.c { bottom: 4%; left: -14px; }
+  @keyframes pcr-chip-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+  /* Dissolve the bottom of the whole assembly into the paper */
+  .pcr-hero-visual::after {
+    content: ""; position: absolute; z-index: 4; left: -12%; right: -20%; bottom: -12%; height: 34%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(250,248,243,0) 0%, rgba(250,248,243,.86) 62%, var(--paper) 100%);
+  }
+
+  @media (max-width: 1040px) {
+    /* Must restate the collapse: this block sits after the base rules above. */
+    .pcr-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .pcr-hero { padding: 84px 0 78px; }
+    .pcr-source-hero-copy { max-width: 640px; }
+    .pcr-stage { margin: 0 -34px 0 0; }
+    .pcr-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
+    .pcr-hero-visual::after { left: -6%; right: -8%; }
+  }
+  @media (max-width: 720px) {
+    .pcr-hero { padding: 66px 0 62px; }
+    .pcr-hero-grid { gap: 40px; }
+    .pcr-source-hero-lede { font-size: 16.5px; }
+    .pcr-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    .pcr-cap:nth-child(3) { padding-left: 0; border-left: 0; }
+    .pcr-stage { margin: 0 -16px 0 0; }
+    .pcr-mock { transform: none; }
+    .pcr-mock-body { padding: 16px 16px 22px; }
+    .pcr-mock-main { grid-template-columns: 1fr; gap: 18px; }
+    .pcr-mock-url { font-size: 9px; }
+    .pcr-note { font-size: 8.5px; padding: 7px 11px; }
+    .pcr-note.a { top: 9%; left: -8px; }
+    .pcr-note.b { top: 42%; right: 4px; }
+    .pcr-note.c { left: -8px; bottom: 3%; }
+  }
+  @media (max-width: 480px) {
+    .pcr-source-title { font-size: 38px; }
+    .pcr-hero .pcr-actions { gap: 10px; }
+    .pcr-hero .btn { justify-content: center; width: 100%; }
+    .pcr-caps { row-gap: 24px; }
+    .pcr-cap span { font-size: 9.5px; letter-spacing: .08em; }
+    .pcr-note.b { font-size: 8px; right: 4px; }
+  }
+
 </style>
 <main class="pcr-page">
   <section class="pcr-hero">
     <div class="pcr-wrap pcr-hero-grid">
       <div class="pcr-source-hero-copy">
         <h1 class="pcr-source-eyebrow">Performance Creative Agency Toronto</h1>
-        <h2 class="pcr-source-title">Creative that earns the <span class="sem">click</span></h2>
+        <h2 class="pcr-source-title">Creative that earns the <span class="sem">click</span><span class="pcr-hero-dot">.</span></h2>
+        <span class="pcr-hero-rule" aria-hidden="true"></span>
         <p class="pcr-source-hero-lede">Video, photography, and UGC produced in-house, built to sell rather than to sit in a brand book. If a picture is worth a thousand words, a video is worth a great deal more.</p>
-      </div>
-      <div class="svh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/service-photos/video-camera.jpg" alt="Video camera on a shoot"></figure>
-          <figure class="a2"><img src="/assets/service-photos/photoshoot-model.jpg" alt="Product photoshoot in progress"></figure>
+        <ul class="pcr-caps">
+        <li class="pcr-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg><span>Video &amp;<br>UGC</span></li>
+        <li class="pcr-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5-8 8"/></svg><span>Static<br>ads</span></li>
+        <li class="pcr-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 21l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span>Weekly<br>testing</span></li>
+        <li class="pcr-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 20V9l5-5 5 5v11"/><path d="M10 20v-5h4v5"/></svg><span>In-house<br>production</span></li>
+        </ul>
+        <div class="pcr-actions">
+          <a class="btn primary" href="/contact/">Book a Strategy Session <svg class="pcr-arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5"/></svg></a>
+          <a class="btn secondary" href="#pcr-results">See client results</a>
         </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/service-photos/video-editing.jpg" alt="Editing footage on a workstation"></figure>
+      </div>
+      <div class="pcr-hero-visual" aria-hidden="true">
+        <div class="pcr-stage">
+          <div class="pcr-mock">
+            <div class="pcr-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="pcr-mock-url">ads.meta.com/creative-tests</span>
+              <span class="pcr-mock-variant">Batch 14</span>
+            </div>
+            <div class="pcr-mock-body"><div class="pcr-mock-nav"><span class="pcr-mock-logo"></span><span class="pcr-bar n" style="width:44%"></span><span class="pcr-mock-navcta" style="margin-left:auto;width:74px;background:var(--deep-blue)"></span></div><div class="pcr-mock-main"><div class="pcr-mock-copy"><span style="display:block;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;margin-bottom:8px">HOOK TEST &middot; 3 VARIANTS</span><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px"><div style="position:relative;border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#141414,#1A40C7);outline:2px solid #FFEC00;outline-offset:2px"><span style="display:block;height:70px"></span><span style="position:absolute;left:6px;bottom:6px;color:#fff;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7px">A · 38%</span></div><div style="position:relative;border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#2A2A2A,#6A686B);outline:none;outline-offset:2px"><span style="display:block;height:70px"></span><span style="position:absolute;left:6px;bottom:6px;color:#fff;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7px">B · 22%</span></div><div style="position:relative;border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#3a3a3a,#8C8A87);outline:none;outline-offset:2px"><span style="display:block;height:70px"></span><span style="position:absolute;left:6px;bottom:6px;color:#fff;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7px">C · 15%</span></div></div><div style="display:flex;gap:4px;align-items:flex-end;height:56px"><span style="flex:1;height:38px;border-radius:3px;background:#1A40C7"></span><span style="flex:1;height:22px;border-radius:3px;background:#E4E0D8"></span><span style="flex:1;height:15px;border-radius:3px;background:#E4E0D8"></span></div><span class="pcr-heat" style="left:-14px;top:14px;width:120px;height:110px"></span></div><div class="pcr-mock-form"><span style="display:block;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;margin-bottom:8px">PRODUCTION QUEUE</span><div style="display:flex;align-items:center;gap:7px;margin-top:8px"><span style="width:8px;height:8px;border-radius:50%;background:#2D8F5F;flex:none"></span><span class="pcr-bar n" style="width:52%;height:7px"></span><span style="margin-left:auto;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:6.5px">LIVE</span></div><div style="display:flex;align-items:center;gap:7px;margin-top:8px"><span style="width:8px;height:8px;border-radius:50%;background:#1A40C7;flex:none"></span><span class="pcr-bar n" style="width:44%;height:7px"></span><span style="margin-left:auto;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:6.5px">EDIT</span></div><div style="display:flex;align-items:center;gap:7px;margin-top:8px"><span style="width:8px;height:8px;border-radius:50%;background:#FDD200;flex:none"></span><span class="pcr-bar n" style="width:60%;height:7px"></span><span style="margin-left:auto;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:6.5px">SHOOT</span></div><div style="display:flex;align-items:center;gap:7px;margin-top:8px"><span style="width:8px;height:8px;border-radius:50%;background:#D5D1C9;flex:none"></span><span class="pcr-bar n" style="width:38%;height:7px"></span><span style="margin-left:auto;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:6.5px">BRIEF</span></div><span class="pcr-mock-submit" style="height:22px;margin-top:8px;background:var(--ink)"></span></div></div></div>
+          </div>
+          <span class="pcr-note a"><i></i>Hook A: 38% hold</span>
+          <span class="pcr-note b"><i></i>Statics cut from winner</span>
+          <span class="pcr-note c"><i></i>New batch every week</span>
         </div>
       </div>
     </div>

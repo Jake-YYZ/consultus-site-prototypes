@@ -3959,22 +3959,211 @@
     .inf-complement-grid { grid-template-columns: 1fr; }
   }
 
+/* ============================================================
+     HERO BANNER, REDESIGNED
+     Light paper ground, photo feathered into the background,
+     capability row and CTAs. Overrides the earlier dark .inf-hero
+     rules above; delete this block to fall back to the old hero.
+     ============================================================ */
+  .inf-hero { padding: 100px 0 88px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  .inf-hero::before {
+    opacity: 1;
+    background-image:
+      radial-gradient(56% 72% at 79% 28%, rgba(26,64,199,.11), transparent 68%),
+      radial-gradient(42% 54% at 4% 92%, rgba(255,236,0,.20), transparent 72%);
+    background-size: auto;
+  }
+  .inf-hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 56px; align-items: center; }
+  .inf-source-hero-copy { max-width: 590px; }
+
+  .inf-source-eyebrow { color: var(--deep-blue); letter-spacing: .17em; }
+  .inf-source-eyebrow::before { background: var(--deep-blue); }
+
+  .inf-source-title { margin-top: 24px; color: var(--ink); font-size: clamp(44px, 5.1vw, 72px); line-height: .98; }
+  .inf-source-title .sem { color: var(--deep-blue); font-style: italic; }
+  .inf-hero-dot { color: var(--yellow-dark); }
+
+  .inf-hero-rule { display: block; width: 54px; height: 3px; margin-top: 32px; border-radius: 2px; background: var(--yellow-dark); }
+
+  .inf-source-hero-lede { max-width: 30em; margin-top: 26px; color: var(--charcoal); font-size: 18px; line-height: 1.6; }
+
+  /* Capability row */
+  .inf-caps { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0 0; padding: 0; list-style: none; }
+  .inf-cap { padding: 0 16px; border-left: 1px solid var(--bone-border); }
+  .inf-cap:first-child { padding-left: 0; border-left: 0; }
+  .inf-cap svg { display: block; width: 22px; height: 22px; margin-bottom: 13px; fill: none; stroke: var(--deep-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .inf-cap span { display: block; color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; line-height: 1.55; text-transform: uppercase; }
+
+  /* CTAs */
+  .inf-hero .inf-actions { gap: 14px; margin-top: 42px; align-items: center; }
+  .inf-hero .btn { text-decoration: none; }
+  .inf-hero .btn.primary { background: var(--ink) !important; color: var(--paper) !important; transition: background .25s ease, color .25s ease, transform .2s ease; }
+  .inf-hero .btn.primary:hover { background: var(--yellow) !important; color: var(--ink) !important; transform: translateY(-1px); }
+  .inf-hero .btn.secondary { border: 1px solid rgba(20,20,20,.26); color: var(--ink); transition: border-color .25s ease, background .25s ease, transform .2s ease; }
+  .inf-hero .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  .inf-arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+  .inf-hero .btn:hover .inf-arw { transform: translateX(3px); }
+
+  /* ---- The visual: a designed "page under test" mockup ----
+     Built in markup rather than photographed so the screen stays crisp and
+     legible. Bleeds off the right edge and dissolves into the paper below. */
+  .inf-hero-visual { position: relative; }
+  .inf-hero-visual::before {
+    content: ""; position: absolute; inset: -22% -14% -26% -10%; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(46% 46% at 52% 42%, rgba(26,64,199,.16), transparent 70%),
+      radial-gradient(38% 40% at 78% 76%, rgba(255,236,0,.20), transparent 72%);
+  }
+  /* Push the mockup past the right edge of the content column and off canvas. */
+  .inf-stage {
+    position: relative; z-index: 1;
+    margin-right: -74px; margin-left: -34px;
+    perspective: 1800px;
+  }
+  .inf-mock {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(20,20,20,.09); border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 48px 90px -40px rgba(20,20,20,.42), 0 18px 38px -26px rgba(20,20,20,.26);
+    transform: rotateY(-7deg) rotateX(1.5deg) rotateZ(-.5deg);
+    transform-origin: left center;
+  }
+  .inf-mock-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 13px 16px; border-bottom: 1px solid #EDEAE4; background: #F7F5F0;
+  }
+  .inf-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D5D1C9; }
+  .inf-mock-bar i:first-child { background: #E0DCD3; }
+  .inf-mock-url {
+    flex: 1; margin-left: 10px; padding: 6px 14px;
+    border: 1px solid #E7E3DB; border-radius: 999px; background: #fff;
+    color: #8C8A87; font-family: var(--mono); font-size: 10px; letter-spacing: .04em;
+  }
+  .inf-mock-variant {
+    padding: 5px 11px; border-radius: 999px; background: var(--deep-blue);
+    color: #fff; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .inf-mock-body { padding: 20px 24px 30px; }
+  .inf-mock-nav { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #F0EDE7; }
+  .inf-mock-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); }
+  .inf-mock-navcta { width: 62px; height: 22px; border-radius: 999px; background: var(--ink); }
+  .inf-bar { display: block; border-radius: 3px; background: #E4E0D8; }
+  .inf-bar.n { width: 38px; height: 7px; }
+  .inf-bar.n:nth-of-type(3) { margin-right: auto; }
+  .inf-mock-main { display: grid; grid-template-columns: 1.25fr .95fr; gap: 26px; margin-top: 26px; }
+  .inf-mock-copy { position: relative; }
+  .inf-bar.h1 { width: 100%; height: 17px; border-radius: 4px; background: var(--ink); }
+  .inf-bar.h2 { width: 62%; height: 17px; margin-top: 9px; border-radius: 4px; background: var(--deep-blue); }
+  .inf-bar.p { width: 92%; height: 7px; margin-top: 16px; }
+  .inf-bar.p.short { width: 68%; margin-top: 8px; }
+  .inf-mock-cta {
+    display: inline-block; margin-top: 22px; padding: 11px 20px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 500;
+  }
+  /* Heat bloom over the tested CTA */
+  .inf-heat {
+    position: absolute; left: -18px; bottom: -26px; width: 190px; height: 130px; pointer-events: none;
+    background:
+      radial-gradient(circle at 32% 62%, rgba(255,80,0,.34), transparent 58%),
+      radial-gradient(circle at 32% 62%, rgba(255,236,0,.30), transparent 74%);
+    filter: blur(5px);
+  }
+  .inf-mock-form { padding: 18px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .inf-bar.lbl { width: 54%; height: 8px; background: #D9D5CC; }
+  .inf-field { display: block; height: 26px; margin-top: 11px; border: 1px solid #E7E3DB; border-radius: 6px; background: #fff; }
+  .inf-mock-submit { display: block; height: 28px; margin-top: 14px; border-radius: 999px; background: var(--deep-blue); }
+
+  /* Annotation chips */
+  .inf-note {
+    position: absolute; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid var(--bone-border); border-radius: 999px;
+    background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 16px 34px -18px rgba(20,20,20,.42);
+    color: var(--ink); font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .inf-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); animation: inf-chip-pulse 2.4s ease-in-out infinite; }
+  .inf-note.b i { background: var(--yellow-dark); animation-delay: .5s; }
+  .inf-note.c i { background: #FF5000; animation-delay: 1s; }
+  .inf-note.a { top: 11%; left: -30px; }
+  .inf-note.b { top: 46%; right: 6%; }
+  .inf-note.c { bottom: 4%; left: -14px; }
+  @keyframes inf-chip-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+  /* Dissolve the bottom of the whole assembly into the paper */
+  .inf-hero-visual::after {
+    content: ""; position: absolute; z-index: 4; left: -12%; right: -20%; bottom: -12%; height: 34%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(250,248,243,0) 0%, rgba(250,248,243,.86) 62%, var(--paper) 100%);
+  }
+
+  @media (max-width: 1040px) {
+    /* Must restate the collapse: this block sits after the base rules above. */
+    .inf-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .inf-hero { padding: 84px 0 78px; }
+    .inf-source-hero-copy { max-width: 640px; }
+    .inf-stage { margin: 0 -34px 0 0; }
+    .inf-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
+    .inf-hero-visual::after { left: -6%; right: -8%; }
+  }
+  @media (max-width: 720px) {
+    .inf-hero { padding: 66px 0 62px; }
+    .inf-hero-grid { gap: 40px; }
+    .inf-source-hero-lede { font-size: 16.5px; }
+    .inf-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    .inf-cap:nth-child(3) { padding-left: 0; border-left: 0; }
+    .inf-stage { margin: 0 -16px 0 0; }
+    .inf-mock { transform: none; }
+    .inf-mock-body { padding: 16px 16px 22px; }
+    .inf-mock-main { grid-template-columns: 1fr; gap: 18px; }
+    .inf-mock-url { font-size: 9px; }
+    .inf-note { font-size: 8.5px; padding: 7px 11px; }
+    .inf-note.a { top: 9%; left: -8px; }
+    .inf-note.b { top: 42%; right: 4px; }
+    .inf-note.c { left: -8px; bottom: 3%; }
+  }
+  @media (max-width: 480px) {
+    .inf-source-title { font-size: 38px; }
+    .inf-hero .inf-actions { gap: 10px; }
+    .inf-hero .btn { justify-content: center; width: 100%; }
+    .inf-caps { row-gap: 24px; }
+    .inf-cap span { font-size: 9.5px; letter-spacing: .08em; }
+    .inf-note.b { font-size: 8px; right: 4px; }
+  }
+
 </style>
 <main class="inf-page">
   <section class="inf-hero">
     <div class="inf-wrap inf-hero-grid">
       <div class="inf-source-hero-copy">
         <h1 class="inf-source-eyebrow">Influencer Marketing Agency</h1>
-        <h2 class="inf-source-title">Influencer marketing that feels authentic and <span class="sem">performs</span></h2>
+        <h2 class="inf-source-title">Influencer marketing that feels authentic and <span class="sem">performs</span><span class="inf-hero-dot">.</span></h2>
+        <span class="inf-hero-rule" aria-hidden="true"></span>
         <p class="inf-source-hero-lede">We connect your brand with the right creators to build credibility, reach new audiences, and drive conversions through partnerships that actually make sense.</p>
-      </div>
-      <div class="svh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/service-photos/creator-ringlight.jpg" alt="Creator filming with a ring light"></figure>
-          <figure class="a2"><img src="/assets/service-photos/creator-gimbal.jpg" alt="Creator filming handheld with a gimbal"></figure>
+        <ul class="inf-caps">
+        <li class="inf-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Creator<br>search</span></li>
+        <li class="inf-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Audience<br>vetting</span></li>
+        <li class="inf-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4v3h6V4M9 12h6M9 16h4"/></svg><span>Briefs &amp;<br>approvals</span></li>
+        <li class="inf-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 10 11l4 4 6-8"/><path d="M15 7h5v5"/></svg><span>Paid<br>amplification</span></li>
+        </ul>
+        <div class="inf-actions">
+          <a class="btn primary" href="/contact/">Book a Strategy Session <svg class="inf-arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5"/></svg></a>
+          <a class="btn secondary" href="#inf-results">See client results</a>
         </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/service-photos/creator-beauty.jpg" alt="Beauty creator recording a product review"></figure>
+      </div>
+      <div class="inf-hero-visual" aria-hidden="true">
+        <div class="inf-stage">
+          <div class="inf-mock">
+            <div class="inf-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="inf-mock-url">instagram.com/p/…</span>
+              <span class="inf-mock-variant">Paid partnership</span>
+            </div>
+            <div class="inf-mock-body"><div class="inf-mock-nav"><span class="inf-mock-logo"></span><span class="inf-bar n" style="width:44%"></span><span class="inf-mock-navcta" style="margin-left:auto;width:74px;background:var(--deep-blue)"></span></div><div class="inf-mock-main"><div class="inf-mock-copy"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FDD200,#FF5000)"></span><div><span class="inf-bar n" style="width:70px;height:7px"></span><span style="display:block;margin-top:4px;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:6.5px">PAID PARTNERSHIP</span></div></div><div style="position:relative;height:112px;border-radius:9px;background:linear-gradient(160deg,#2A2A2A,#141414 60%,#5D7BEA 140%);overflow:hidden"><span style="position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="position:absolute;left:14px;top:10px;color:#fff;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:8px;letter-spacing:.06em">&#9654; 0:08</span></div><span class="inf-bar p" style="width:86%;margin-top:10px"></span><span class="inf-bar p" style="width:58%;margin-top:7px"></span><div style="display:flex;gap:10px;margin-top:10px;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:8px"><span>&#9829; 12.4k</span><span>&#9998; 318</span><span>&#8618; 2.1k</span></div><span class="inf-heat" style="left:-10px;bottom:-20px;width:160px;height:100px"></span></div><div class="inf-mock-form"><span style="display:block;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;margin-bottom:10px">CREATOR VETTING</span><div style="display:flex;justify-content:space-between;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px"><span>REAL FOLLOWERS</span><span>96%</span></div><div style="height:6px;margin-top:4px;border-radius:3px;background:#EDEAE4"><span style="display:block;width:96%;height:100%;border-radius:3px;background:#2D8F5F"></span></div><div style="display:flex;justify-content:space-between;margin-top:10px;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px"><span>AUDIENCE MATCH</span><span>88%</span></div><div style="height:6px;margin-top:4px;border-radius:3px;background:#EDEAE4"><span style="display:block;width:88%;height:100%;border-radius:3px;background:#1A40C7"></span></div><div style="display:flex;gap:5px;margin-top:12px;flex-wrap:wrap"><span style="display:inline-block;padding:3px 8px;border-radius:6px;background:#F1EDE4;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;letter-spacing:.06em">25 TO 44</span><span style="display:inline-block;padding:3px 8px;border-radius:6px;background:#E9EEFD;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;letter-spacing:.06em">TORONTO</span><span style="display:inline-block;padding:3px 8px;border-radius:6px;background:#F1EDE4;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;letter-spacing:.06em">HOME OWNERS</span></div><span class="inf-mock-submit" style="height:22px;margin-top:8px;background:var(--ink)"></span></div></div></div>
+          </div>
+          <span class="inf-note a"><i></i>Audience verified</span>
+          <span class="inf-note b"><i></i>20% to paid amplification</span>
+          <span class="inf-note c"><i></i>CPA vs cold: 0.6x</span>
         </div>
       </div>
     </div>

@@ -3844,22 +3844,211 @@
     .amz-complement-grid { grid-template-columns: 1fr; }
   }
 
+/* ============================================================
+     HERO BANNER, REDESIGNED
+     Light paper ground, photo feathered into the background,
+     capability row and CTAs. Overrides the earlier dark .amz-hero
+     rules above; delete this block to fall back to the old hero.
+     ============================================================ */
+  .amz-hero { padding: 100px 0 88px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  .amz-hero::before {
+    opacity: 1;
+    background-image:
+      radial-gradient(56% 72% at 79% 28%, rgba(26,64,199,.11), transparent 68%),
+      radial-gradient(42% 54% at 4% 92%, rgba(255,236,0,.20), transparent 72%);
+    background-size: auto;
+  }
+  .amz-hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 56px; align-items: center; }
+  .amz-source-hero-copy { max-width: 590px; }
+
+  .amz-source-eyebrow { color: var(--deep-blue); letter-spacing: .17em; }
+  .amz-source-eyebrow::before { background: var(--deep-blue); }
+
+  .amz-source-title { margin-top: 24px; color: var(--ink); font-size: clamp(44px, 5.1vw, 72px); line-height: .98; }
+  .amz-source-title .sem { color: var(--deep-blue); font-style: italic; }
+  .amz-hero-dot { color: var(--yellow-dark); }
+
+  .amz-hero-rule { display: block; width: 54px; height: 3px; margin-top: 32px; border-radius: 2px; background: var(--yellow-dark); }
+
+  .amz-source-hero-lede { max-width: 30em; margin-top: 26px; color: var(--charcoal); font-size: 18px; line-height: 1.6; }
+
+  /* Capability row */
+  .amz-caps { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0 0; padding: 0; list-style: none; }
+  .amz-cap { padding: 0 16px; border-left: 1px solid var(--bone-border); }
+  .amz-cap:first-child { padding-left: 0; border-left: 0; }
+  .amz-cap svg { display: block; width: 22px; height: 22px; margin-bottom: 13px; fill: none; stroke: var(--deep-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .amz-cap span { display: block; color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; line-height: 1.55; text-transform: uppercase; }
+
+  /* CTAs */
+  .amz-hero .amz-actions { gap: 14px; margin-top: 42px; align-items: center; }
+  .amz-hero .btn { text-decoration: none; }
+  .amz-hero .btn.primary { background: var(--ink) !important; color: var(--paper) !important; transition: background .25s ease, color .25s ease, transform .2s ease; }
+  .amz-hero .btn.primary:hover { background: var(--yellow) !important; color: var(--ink) !important; transform: translateY(-1px); }
+  .amz-hero .btn.secondary { border: 1px solid rgba(20,20,20,.26); color: var(--ink); transition: border-color .25s ease, background .25s ease, transform .2s ease; }
+  .amz-hero .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  .amz-arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+  .amz-hero .btn:hover .amz-arw { transform: translateX(3px); }
+
+  /* ---- The visual: a designed "page under test" mockup ----
+     Built in markup rather than photographed so the screen stays crisp and
+     legible. Bleeds off the right edge and dissolves into the paper below. */
+  .amz-hero-visual { position: relative; }
+  .amz-hero-visual::before {
+    content: ""; position: absolute; inset: -22% -14% -26% -10%; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(46% 46% at 52% 42%, rgba(26,64,199,.16), transparent 70%),
+      radial-gradient(38% 40% at 78% 76%, rgba(255,236,0,.20), transparent 72%);
+  }
+  /* Push the mockup past the right edge of the content column and off canvas. */
+  .amz-stage {
+    position: relative; z-index: 1;
+    margin-right: -74px; margin-left: -34px;
+    perspective: 1800px;
+  }
+  .amz-mock {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(20,20,20,.09); border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 48px 90px -40px rgba(20,20,20,.42), 0 18px 38px -26px rgba(20,20,20,.26);
+    transform: rotateY(-7deg) rotateX(1.5deg) rotateZ(-.5deg);
+    transform-origin: left center;
+  }
+  .amz-mock-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 13px 16px; border-bottom: 1px solid #EDEAE4; background: #F7F5F0;
+  }
+  .amz-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D5D1C9; }
+  .amz-mock-bar i:first-child { background: #E0DCD3; }
+  .amz-mock-url {
+    flex: 1; margin-left: 10px; padding: 6px 14px;
+    border: 1px solid #E7E3DB; border-radius: 999px; background: #fff;
+    color: #8C8A87; font-family: var(--mono); font-size: 10px; letter-spacing: .04em;
+  }
+  .amz-mock-variant {
+    padding: 5px 11px; border-radius: 999px; background: var(--deep-blue);
+    color: #fff; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .amz-mock-body { padding: 20px 24px 30px; }
+  .amz-mock-nav { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #F0EDE7; }
+  .amz-mock-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); }
+  .amz-mock-navcta { width: 62px; height: 22px; border-radius: 999px; background: var(--ink); }
+  .amz-bar { display: block; border-radius: 3px; background: #E4E0D8; }
+  .amz-bar.n { width: 38px; height: 7px; }
+  .amz-bar.n:nth-of-type(3) { margin-right: auto; }
+  .amz-mock-main { display: grid; grid-template-columns: 1.25fr .95fr; gap: 26px; margin-top: 26px; }
+  .amz-mock-copy { position: relative; }
+  .amz-bar.h1 { width: 100%; height: 17px; border-radius: 4px; background: var(--ink); }
+  .amz-bar.h2 { width: 62%; height: 17px; margin-top: 9px; border-radius: 4px; background: var(--deep-blue); }
+  .amz-bar.p { width: 92%; height: 7px; margin-top: 16px; }
+  .amz-bar.p.short { width: 68%; margin-top: 8px; }
+  .amz-mock-cta {
+    display: inline-block; margin-top: 22px; padding: 11px 20px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 500;
+  }
+  /* Heat bloom over the tested CTA */
+  .amz-heat {
+    position: absolute; left: -18px; bottom: -26px; width: 190px; height: 130px; pointer-events: none;
+    background:
+      radial-gradient(circle at 32% 62%, rgba(255,80,0,.34), transparent 58%),
+      radial-gradient(circle at 32% 62%, rgba(255,236,0,.30), transparent 74%);
+    filter: blur(5px);
+  }
+  .amz-mock-form { padding: 18px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .amz-bar.lbl { width: 54%; height: 8px; background: #D9D5CC; }
+  .amz-field { display: block; height: 26px; margin-top: 11px; border: 1px solid #E7E3DB; border-radius: 6px; background: #fff; }
+  .amz-mock-submit { display: block; height: 28px; margin-top: 14px; border-radius: 999px; background: var(--deep-blue); }
+
+  /* Annotation chips */
+  .amz-note {
+    position: absolute; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid var(--bone-border); border-radius: 999px;
+    background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 16px 34px -18px rgba(20,20,20,.42);
+    color: var(--ink); font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .amz-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); animation: amz-chip-pulse 2.4s ease-in-out infinite; }
+  .amz-note.b i { background: var(--yellow-dark); animation-delay: .5s; }
+  .amz-note.c i { background: #FF5000; animation-delay: 1s; }
+  .amz-note.a { top: 11%; left: -30px; }
+  .amz-note.b { top: 46%; right: 6%; }
+  .amz-note.c { bottom: 4%; left: -14px; }
+  @keyframes amz-chip-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+  /* Dissolve the bottom of the whole assembly into the paper */
+  .amz-hero-visual::after {
+    content: ""; position: absolute; z-index: 4; left: -12%; right: -20%; bottom: -12%; height: 34%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(250,248,243,0) 0%, rgba(250,248,243,.86) 62%, var(--paper) 100%);
+  }
+
+  @media (max-width: 1040px) {
+    /* Must restate the collapse: this block sits after the base rules above. */
+    .amz-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .amz-hero { padding: 84px 0 78px; }
+    .amz-source-hero-copy { max-width: 640px; }
+    .amz-stage { margin: 0 -34px 0 0; }
+    .amz-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
+    .amz-hero-visual::after { left: -6%; right: -8%; }
+  }
+  @media (max-width: 720px) {
+    .amz-hero { padding: 66px 0 62px; }
+    .amz-hero-grid { gap: 40px; }
+    .amz-source-hero-lede { font-size: 16.5px; }
+    .amz-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    .amz-cap:nth-child(3) { padding-left: 0; border-left: 0; }
+    .amz-stage { margin: 0 -16px 0 0; }
+    .amz-mock { transform: none; }
+    .amz-mock-body { padding: 16px 16px 22px; }
+    .amz-mock-main { grid-template-columns: 1fr; gap: 18px; }
+    .amz-mock-url { font-size: 9px; }
+    .amz-note { font-size: 8.5px; padding: 7px 11px; }
+    .amz-note.a { top: 9%; left: -8px; }
+    .amz-note.b { top: 42%; right: 4px; }
+    .amz-note.c { left: -8px; bottom: 3%; }
+  }
+  @media (max-width: 480px) {
+    .amz-source-title { font-size: 38px; }
+    .amz-hero .amz-actions { gap: 10px; }
+    .amz-hero .btn { justify-content: center; width: 100%; }
+    .amz-caps { row-gap: 24px; }
+    .amz-cap span { font-size: 9.5px; letter-spacing: .08em; }
+    .amz-note.b { font-size: 8px; right: 4px; }
+  }
+
 </style>
 <main class="amz-page">
   <section class="amz-hero">
     <div class="amz-wrap amz-hero-grid">
       <div class="amz-source-hero-copy">
         <h1 class="amz-source-eyebrow">Amazon Ad Management Agency</h1>
-        <h2 class="amz-source-title">Win e-Commerce with Smarter Amazon Ads <span class="sem">Management</span></h2>
+        <h2 class="amz-source-title">Win e-Commerce with Smarter Amazon Ads <span class="sem">Management</span><span class="amz-hero-dot">.</span></h2>
+        <span class="amz-hero-rule" aria-hidden="true"></span>
         <p class="amz-source-hero-lede">From product listing optimization to ad strategy and analytics, we help you stand out in a crowded marketplace and scale sales on Amazon.</p>
-      </div>
-      <div class="svh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/service-photos/amz-prime-courier.jpg" alt="Amazon Prime courier delivering a parcel"></figure>
-          <figure class="a2"><img src="/assets/service-photos/amz-app-icon.jpg" alt="Amazon app icon on a smartphone screen"></figure>
+        <ul class="amz-caps">
+        <li class="amz-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4z"/><path d="M3 8v8l9 4 9-4V8"/><path d="M12 12v8"/></svg><span>Sponsored<br>Products</span></li>
+        <li class="amz-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/></svg><span>Sponsored<br>Brands</span></li>
+        <li class="amz-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15l3-4 3 3 4-6"/></svg><span>Amazon<br>DSP</span></li>
+        <li class="amz-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 11 15.7 7M8.3 13l7.4 4"/></svg><span>Amazon<br>Attribution</span></li>
+        </ul>
+        <div class="amz-actions">
+          <a class="btn primary" href="/contact/">Book a Strategy Session <svg class="amz-arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5"/></svg></a>
+          <a class="btn secondary" href="#amz-results">See client results</a>
         </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/service-photos/amz-prime-porch.jpg" alt="Amazon Prime parcels left on a doorstep"></figure>
+      </div>
+      <div class="amz-hero-visual" aria-hidden="true">
+        <div class="amz-stage">
+          <div class="amz-mock">
+            <div class="amz-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="amz-mock-url">amazon.ca/s?k=…</span>
+              <span class="amz-mock-variant">Sponsored</span>
+            </div>
+            <div class="amz-mock-body"><div class="amz-mock-nav"><span class="amz-mock-logo"></span><span class="amz-bar n" style="width:44%"></span><span class="amz-mock-navcta" style="margin-left:auto;width:74px;background:var(--deep-blue)"></span></div><div class="amz-mock-main"><div class="amz-mock-copy"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><div style="position:relative;padding:8px;border:1.5px solid var(--deep-blue);border-radius:8px;background:#fff"><span style="display:block;height:48px;border-radius:5px;background:linear-gradient(160deg,#F1EDE4,#D5D1C9)"></span><span style="display:block;margin-top:6px;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:6.5px">SPONSORED</span><span class="amz-bar n" style="width:90%;height:6px;margin-top:5px"></span><span style="display:block;margin-top:5px;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:9px">$49.99</span><span style="display:block;color:#FDD200;font-size:8px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div style="padding:8px;border:1px solid #EDEAE4;border-radius:8px;background:#FBFAF7"><span style="display:block;height:48px;border-radius:5px;background:#E4E0D8"></span><span class="amz-bar n" style="width:80%;height:6px;margin-top:11px"></span><span style="display:block;margin-top:5px;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:9px">$54.00</span></div><div style="padding:8px;border:1px solid #EDEAE4;border-radius:8px;background:#FBFAF7"><span style="display:block;height:48px;border-radius:5px;background:#E4E0D8"></span><span class="amz-bar n" style="width:80%;height:6px;margin-top:11px"></span><span style="display:block;margin-top:5px;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:9px">$61.50</span></div></div><span class="amz-heat" style="left:-14px;bottom:-4px;width:150px;height:100px"></span></div><div class="amz-mock-form"><span style="display:block;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px">ACOS</span><svg viewBox="0 0 64 64" style="display:block;width:64px;height:64px;margin:6px auto 0" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#EDEAE4" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#1A40C7" stroke-width="7" stroke-linecap="round" stroke-dasharray="29 163" transform="rotate(-90 32 32)"/><text x="32" y="37" text-anchor="middle" font-family="var(--mono)" font-size="13" font-weight="700" fill="#141414">18%</text></svg><span class="amz-bar lbl" style="width:54%;margin-top:12px"></span><div style="display:flex;gap:4px;align-items:flex-end;height:56px"><span style="flex:1;height:40px;border-radius:3px;background:#E4E0D8"></span><span style="flex:1;height:34px;border-radius:3px;background:#E4E0D8"></span><span style="flex:1;height:30px;border-radius:3px;background:#E4E0D8"></span><span style="flex:1;height:24px;border-radius:3px;background:#B4BFEB"></span><span style="flex:1;height:20px;border-radius:3px;background:#5D7BEA"></span><span style="flex:1;height:18px;border-radius:3px;background:#1A40C7"></span></div></div></div></div>
+          </div>
+          <span class="amz-note a"><i></i>Sponsored Products live</span>
+          <span class="amz-note b"><i></i>ACOS 18%</span>
+          <span class="amz-note c"><i></i>Organic rank lifted</span>
         </div>
       </div>
     </div>

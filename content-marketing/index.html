@@ -3974,22 +3974,211 @@
     .cmk-complement-grid { grid-template-columns: 1fr; }
   }
 
+/* ============================================================
+     HERO BANNER, REDESIGNED
+     Light paper ground, photo feathered into the background,
+     capability row and CTAs. Overrides the earlier dark .cmk-hero
+     rules above; delete this block to fall back to the old hero.
+     ============================================================ */
+  .cmk-hero { padding: 100px 0 88px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  .cmk-hero::before {
+    opacity: 1;
+    background-image:
+      radial-gradient(56% 72% at 79% 28%, rgba(26,64,199,.11), transparent 68%),
+      radial-gradient(42% 54% at 4% 92%, rgba(255,236,0,.20), transparent 72%);
+    background-size: auto;
+  }
+  .cmk-hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 56px; align-items: center; }
+  .cmk-source-hero-copy { max-width: 590px; }
+
+  .cmk-source-eyebrow { color: var(--deep-blue); letter-spacing: .17em; }
+  .cmk-source-eyebrow::before { background: var(--deep-blue); }
+
+  .cmk-source-title { margin-top: 24px; color: var(--ink); font-size: clamp(44px, 5.1vw, 72px); line-height: .98; }
+  .cmk-source-title .sem { color: var(--deep-blue); font-style: italic; }
+  .cmk-hero-dot { color: var(--yellow-dark); }
+
+  .cmk-hero-rule { display: block; width: 54px; height: 3px; margin-top: 32px; border-radius: 2px; background: var(--yellow-dark); }
+
+  .cmk-source-hero-lede { max-width: 30em; margin-top: 26px; color: var(--charcoal); font-size: 18px; line-height: 1.6; }
+
+  /* Capability row */
+  .cmk-caps { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0 0; padding: 0; list-style: none; }
+  .cmk-cap { padding: 0 16px; border-left: 1px solid var(--bone-border); }
+  .cmk-cap:first-child { padding-left: 0; border-left: 0; }
+  .cmk-cap svg { display: block; width: 22px; height: 22px; margin-bottom: 13px; fill: none; stroke: var(--deep-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .cmk-cap span { display: block; color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; line-height: 1.55; text-transform: uppercase; }
+
+  /* CTAs */
+  .cmk-hero .cmk-actions { gap: 14px; margin-top: 42px; align-items: center; }
+  .cmk-hero .btn { text-decoration: none; }
+  .cmk-hero .btn.primary { background: var(--ink) !important; color: var(--paper) !important; transition: background .25s ease, color .25s ease, transform .2s ease; }
+  .cmk-hero .btn.primary:hover { background: var(--yellow) !important; color: var(--ink) !important; transform: translateY(-1px); }
+  .cmk-hero .btn.secondary { border: 1px solid rgba(20,20,20,.26); color: var(--ink); transition: border-color .25s ease, background .25s ease, transform .2s ease; }
+  .cmk-hero .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  .cmk-arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+  .cmk-hero .btn:hover .cmk-arw { transform: translateX(3px); }
+
+  /* ---- The visual: a designed "page under test" mockup ----
+     Built in markup rather than photographed so the screen stays crisp and
+     legible. Bleeds off the right edge and dissolves into the paper below. */
+  .cmk-hero-visual { position: relative; }
+  .cmk-hero-visual::before {
+    content: ""; position: absolute; inset: -22% -14% -26% -10%; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(46% 46% at 52% 42%, rgba(26,64,199,.16), transparent 70%),
+      radial-gradient(38% 40% at 78% 76%, rgba(255,236,0,.20), transparent 72%);
+  }
+  /* Push the mockup past the right edge of the content column and off canvas. */
+  .cmk-stage {
+    position: relative; z-index: 1;
+    margin-right: -74px; margin-left: -34px;
+    perspective: 1800px;
+  }
+  .cmk-mock {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(20,20,20,.09); border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 48px 90px -40px rgba(20,20,20,.42), 0 18px 38px -26px rgba(20,20,20,.26);
+    transform: rotateY(-7deg) rotateX(1.5deg) rotateZ(-.5deg);
+    transform-origin: left center;
+  }
+  .cmk-mock-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 13px 16px; border-bottom: 1px solid #EDEAE4; background: #F7F5F0;
+  }
+  .cmk-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D5D1C9; }
+  .cmk-mock-bar i:first-child { background: #E0DCD3; }
+  .cmk-mock-url {
+    flex: 1; margin-left: 10px; padding: 6px 14px;
+    border: 1px solid #E7E3DB; border-radius: 999px; background: #fff;
+    color: #8C8A87; font-family: var(--mono); font-size: 10px; letter-spacing: .04em;
+  }
+  .cmk-mock-variant {
+    padding: 5px 11px; border-radius: 999px; background: var(--deep-blue);
+    color: #fff; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .cmk-mock-body { padding: 20px 24px 30px; }
+  .cmk-mock-nav { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #F0EDE7; }
+  .cmk-mock-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); }
+  .cmk-mock-navcta { width: 62px; height: 22px; border-radius: 999px; background: var(--ink); }
+  .cmk-bar { display: block; border-radius: 3px; background: #E4E0D8; }
+  .cmk-bar.n { width: 38px; height: 7px; }
+  .cmk-bar.n:nth-of-type(3) { margin-right: auto; }
+  .cmk-mock-main { display: grid; grid-template-columns: 1.25fr .95fr; gap: 26px; margin-top: 26px; }
+  .cmk-mock-copy { position: relative; }
+  .cmk-bar.h1 { width: 100%; height: 17px; border-radius: 4px; background: var(--ink); }
+  .cmk-bar.h2 { width: 62%; height: 17px; margin-top: 9px; border-radius: 4px; background: var(--deep-blue); }
+  .cmk-bar.p { width: 92%; height: 7px; margin-top: 16px; }
+  .cmk-bar.p.short { width: 68%; margin-top: 8px; }
+  .cmk-mock-cta {
+    display: inline-block; margin-top: 22px; padding: 11px 20px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 500;
+  }
+  /* Heat bloom over the tested CTA */
+  .cmk-heat {
+    position: absolute; left: -18px; bottom: -26px; width: 190px; height: 130px; pointer-events: none;
+    background:
+      radial-gradient(circle at 32% 62%, rgba(255,80,0,.34), transparent 58%),
+      radial-gradient(circle at 32% 62%, rgba(255,236,0,.30), transparent 74%);
+    filter: blur(5px);
+  }
+  .cmk-mock-form { padding: 18px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .cmk-bar.lbl { width: 54%; height: 8px; background: #D9D5CC; }
+  .cmk-field { display: block; height: 26px; margin-top: 11px; border: 1px solid #E7E3DB; border-radius: 6px; background: #fff; }
+  .cmk-mock-submit { display: block; height: 28px; margin-top: 14px; border-radius: 999px; background: var(--deep-blue); }
+
+  /* Annotation chips */
+  .cmk-note {
+    position: absolute; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid var(--bone-border); border-radius: 999px;
+    background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 16px 34px -18px rgba(20,20,20,.42);
+    color: var(--ink); font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .cmk-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); animation: cmk-chip-pulse 2.4s ease-in-out infinite; }
+  .cmk-note.b i { background: var(--yellow-dark); animation-delay: .5s; }
+  .cmk-note.c i { background: #FF5000; animation-delay: 1s; }
+  .cmk-note.a { top: 11%; left: -30px; }
+  .cmk-note.b { top: 46%; right: 6%; }
+  .cmk-note.c { bottom: 4%; left: -14px; }
+  @keyframes cmk-chip-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+  /* Dissolve the bottom of the whole assembly into the paper */
+  .cmk-hero-visual::after {
+    content: ""; position: absolute; z-index: 4; left: -12%; right: -20%; bottom: -12%; height: 34%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(250,248,243,0) 0%, rgba(250,248,243,.86) 62%, var(--paper) 100%);
+  }
+
+  @media (max-width: 1040px) {
+    /* Must restate the collapse: this block sits after the base rules above. */
+    .cmk-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .cmk-hero { padding: 84px 0 78px; }
+    .cmk-source-hero-copy { max-width: 640px; }
+    .cmk-stage { margin: 0 -34px 0 0; }
+    .cmk-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
+    .cmk-hero-visual::after { left: -6%; right: -8%; }
+  }
+  @media (max-width: 720px) {
+    .cmk-hero { padding: 66px 0 62px; }
+    .cmk-hero-grid { gap: 40px; }
+    .cmk-source-hero-lede { font-size: 16.5px; }
+    .cmk-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    .cmk-cap:nth-child(3) { padding-left: 0; border-left: 0; }
+    .cmk-stage { margin: 0 -16px 0 0; }
+    .cmk-mock { transform: none; }
+    .cmk-mock-body { padding: 16px 16px 22px; }
+    .cmk-mock-main { grid-template-columns: 1fr; gap: 18px; }
+    .cmk-mock-url { font-size: 9px; }
+    .cmk-note { font-size: 8.5px; padding: 7px 11px; }
+    .cmk-note.a { top: 9%; left: -8px; }
+    .cmk-note.b { top: 42%; right: 4px; }
+    .cmk-note.c { left: -8px; bottom: 3%; }
+  }
+  @media (max-width: 480px) {
+    .cmk-source-title { font-size: 38px; }
+    .cmk-hero .cmk-actions { gap: 10px; }
+    .cmk-hero .btn { justify-content: center; width: 100%; }
+    .cmk-caps { row-gap: 24px; }
+    .cmk-cap span { font-size: 9.5px; letter-spacing: .08em; }
+    .cmk-note.b { font-size: 8px; right: 4px; }
+  }
+
 </style>
 <main class="cmk-page">
   <section class="cmk-hero">
     <div class="cmk-wrap cmk-hero-grid">
       <div class="cmk-source-hero-copy">
         <h1 class="cmk-source-eyebrow">Content Marketing Agency Toronto</h1>
-        <h2 class="cmk-source-title">Content marketing that connects and <span class="sem">converts</span></h2>
+        <h2 class="cmk-source-title">Content marketing that connects and <span class="sem">converts</span><span class="cmk-hero-dot">.</span></h2>
+        <span class="cmk-hero-rule" aria-hidden="true"></span>
         <p class="cmk-source-hero-lede">Our team creates strategic, SEO-optimized content that educates, engages, and drives action, giving you a stronger voice in your market and a bigger impact on your bottom line.</p>
-      </div>
-      <div class="svh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/service-photos/article-screen.jpg" alt="An article laid out on a screen"></figure>
-          <figure class="a2"><img src="/assets/service-photos/writer-cafe.jpg" alt="Writer working at a laptop in a cafe"></figure>
+        <ul class="cmk-caps">
+        <li class="cmk-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><span>Topic<br>research</span></li>
+        <li class="cmk-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M13 7l3 3"/></svg><span>In-house<br>writing</span></li>
+        <li class="cmk-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7 4 12l4 5"/><path d="m16 7 4 5-4 5"/><path d="M14 4 10 20"/></svg><span>SEO<br>optimization</span></li>
+        <li class="cmk-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7h16v-7"/><path d="M12 3v12M8 7l4-4 4 4"/></svg><span>Distribution</span></li>
+        </ul>
+        <div class="cmk-actions">
+          <a class="btn primary" href="/contact/">Book a Strategy Session <svg class="cmk-arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5"/></svg></a>
+          <a class="btn secondary" href="#cmk-results">See client results</a>
         </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/service-photos/content-plan.jpg" alt="Content calendar planning on paper"></figure>
+      </div>
+      <div class="cmk-hero-visual" aria-hidden="true">
+        <div class="cmk-stage">
+          <div class="cmk-mock">
+            <div class="cmk-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="cmk-mock-url">yoursite.com/blog/…</span>
+              <span class="cmk-mock-variant">Ranking</span>
+            </div>
+            <div class="cmk-mock-body"><div class="cmk-mock-nav"><span class="cmk-mock-logo"></span><span class="cmk-bar n" style="width:44%"></span><span class="cmk-mock-navcta" style="margin-left:auto;width:74px;background:var(--deep-blue)"></span></div><div class="cmk-mock-main"><div class="cmk-mock-copy"><span style="display:inline-block;margin-bottom:8px;color:var(--deep-blue);font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px">GUIDE &middot; 9 MIN READ</span><span class="cmk-bar h1" style="width:100%;height:14px"></span><span class="cmk-bar h2" style="width:70%;height:14px;margin-top:6px"></span><div style="display:flex;align-items:center;gap:7px;margin-top:12px"><span style="width:16px;height:16px;border-radius:50%;background:#D5D1C9"></span><span class="cmk-bar n" style="width:30%;height:6px"></span></div><span class="cmk-bar p" style="width:96%;margin-top:14px"></span><span class="cmk-bar p" style="width:90%;margin-top:7px"></span><span class="cmk-bar p" style="width:84%;margin-top:7px"></span><div style="position:relative;margin-top:14px;padding:10px 12px;border-radius:8px;background:rgba(255,236,0,.18)"><span class="cmk-bar p" style="width:70%;margin-top:0"></span><span class="cmk-mock-cta" style="margin-top:9px;padding:7px 14px;font-size:9.5px">Download the guide</span><span class="cmk-heat" style="left:-10px;bottom:-14px;width:140px;height:80px"></span></div></div><div class="cmk-mock-form"><span style="display:block;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;margin-bottom:8px">EDITORIAL CALENDAR</span><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px"><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#1A40C7"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#B4BFEB"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#1A40C7"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#FFEC00"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#1A40C7"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span><span style="height:14px;border-radius:3px;background:#EDEAE4"></span></div><span class="cmk-bar lbl" style="width:52%;margin-top:14px"></span><span class="cmk-mock-submit" style="height:22px;margin-top:8px;background:var(--deep-blue)"></span></div></div></div>
+          </div>
+          <span class="cmk-note a"><i></i>Ranking for 14 terms</span>
+          <span class="cmk-note b"><i></i>Cited in AI Overview</span>
+          <span class="cmk-note c"><i></i>Calendar on track</span>
         </div>
       </div>
     </div>

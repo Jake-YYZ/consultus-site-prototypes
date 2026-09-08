@@ -3958,22 +3958,211 @@
     .lseo-complement-grid { grid-template-columns: 1fr; }
   }
 
+/* ============================================================
+     HERO BANNER, REDESIGNED
+     Light paper ground, photo feathered into the background,
+     capability row and CTAs. Overrides the earlier dark .lseo-hero
+     rules above; delete this block to fall back to the old hero.
+     ============================================================ */
+  .lseo-hero { padding: 100px 0 88px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  .lseo-hero::before {
+    opacity: 1;
+    background-image:
+      radial-gradient(56% 72% at 79% 28%, rgba(26,64,199,.11), transparent 68%),
+      radial-gradient(42% 54% at 4% 92%, rgba(255,236,0,.20), transparent 72%);
+    background-size: auto;
+  }
+  .lseo-hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 56px; align-items: center; }
+  .lseo-source-hero-copy { max-width: 590px; }
+
+  .lseo-source-eyebrow { color: var(--deep-blue); letter-spacing: .17em; }
+  .lseo-source-eyebrow::before { background: var(--deep-blue); }
+
+  .lseo-source-title { margin-top: 24px; color: var(--ink); font-size: clamp(44px, 5.1vw, 72px); line-height: .98; }
+  .lseo-source-title .sem { color: var(--deep-blue); font-style: italic; }
+  .lseo-hero-dot { color: var(--yellow-dark); }
+
+  .lseo-hero-rule { display: block; width: 54px; height: 3px; margin-top: 32px; border-radius: 2px; background: var(--yellow-dark); }
+
+  .lseo-source-hero-lede { max-width: 30em; margin-top: 26px; color: var(--charcoal); font-size: 18px; line-height: 1.6; }
+
+  /* Capability row */
+  .lseo-caps { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0 0; padding: 0; list-style: none; }
+  .lseo-cap { padding: 0 16px; border-left: 1px solid var(--bone-border); }
+  .lseo-cap:first-child { padding-left: 0; border-left: 0; }
+  .lseo-cap svg { display: block; width: 22px; height: 22px; margin-bottom: 13px; fill: none; stroke: var(--deep-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .lseo-cap span { display: block; color: var(--ink); font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; line-height: 1.55; text-transform: uppercase; }
+
+  /* CTAs */
+  .lseo-hero .lseo-actions { gap: 14px; margin-top: 42px; align-items: center; }
+  .lseo-hero .btn { text-decoration: none; }
+  .lseo-hero .btn.primary { background: var(--ink) !important; color: var(--paper) !important; transition: background .25s ease, color .25s ease, transform .2s ease; }
+  .lseo-hero .btn.primary:hover { background: var(--yellow) !important; color: var(--ink) !important; transform: translateY(-1px); }
+  .lseo-hero .btn.secondary { border: 1px solid rgba(20,20,20,.26); color: var(--ink); transition: border-color .25s ease, background .25s ease, transform .2s ease; }
+  .lseo-hero .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  .lseo-arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s ease; }
+  .lseo-hero .btn:hover .lseo-arw { transform: translateX(3px); }
+
+  /* ---- The visual: a designed "page under test" mockup ----
+     Built in markup rather than photographed so the screen stays crisp and
+     legible. Bleeds off the right edge and dissolves into the paper below. */
+  .lseo-hero-visual { position: relative; }
+  .lseo-hero-visual::before {
+    content: ""; position: absolute; inset: -22% -14% -26% -10%; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(46% 46% at 52% 42%, rgba(26,64,199,.16), transparent 70%),
+      radial-gradient(38% 40% at 78% 76%, rgba(255,236,0,.20), transparent 72%);
+  }
+  /* Push the mockup past the right edge of the content column and off canvas. */
+  .lseo-stage {
+    position: relative; z-index: 1;
+    margin-right: -74px; margin-left: -34px;
+    perspective: 1800px;
+  }
+  .lseo-mock {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(20,20,20,.09); border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 48px 90px -40px rgba(20,20,20,.42), 0 18px 38px -26px rgba(20,20,20,.26);
+    transform: rotateY(-7deg) rotateX(1.5deg) rotateZ(-.5deg);
+    transform-origin: left center;
+  }
+  .lseo-mock-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 13px 16px; border-bottom: 1px solid #EDEAE4; background: #F7F5F0;
+  }
+  .lseo-mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D5D1C9; }
+  .lseo-mock-bar i:first-child { background: #E0DCD3; }
+  .lseo-mock-url {
+    flex: 1; margin-left: 10px; padding: 6px 14px;
+    border: 1px solid #E7E3DB; border-radius: 999px; background: #fff;
+    color: #8C8A87; font-family: var(--mono); font-size: 10px; letter-spacing: .04em;
+  }
+  .lseo-mock-variant {
+    padding: 5px 11px; border-radius: 999px; background: var(--deep-blue);
+    color: #fff; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .lseo-mock-body { padding: 20px 24px 30px; }
+  .lseo-mock-nav { display: flex; align-items: center; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #F0EDE7; }
+  .lseo-mock-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); }
+  .lseo-mock-navcta { width: 62px; height: 22px; border-radius: 999px; background: var(--ink); }
+  .lseo-bar { display: block; border-radius: 3px; background: #E4E0D8; }
+  .lseo-bar.n { width: 38px; height: 7px; }
+  .lseo-bar.n:nth-of-type(3) { margin-right: auto; }
+  .lseo-mock-main { display: grid; grid-template-columns: 1.25fr .95fr; gap: 26px; margin-top: 26px; }
+  .lseo-mock-copy { position: relative; }
+  .lseo-bar.h1 { width: 100%; height: 17px; border-radius: 4px; background: var(--ink); }
+  .lseo-bar.h2 { width: 62%; height: 17px; margin-top: 9px; border-radius: 4px; background: var(--deep-blue); }
+  .lseo-bar.p { width: 92%; height: 7px; margin-top: 16px; }
+  .lseo-bar.p.short { width: 68%; margin-top: 8px; }
+  .lseo-mock-cta {
+    display: inline-block; margin-top: 22px; padding: 11px 20px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 500;
+  }
+  /* Heat bloom over the tested CTA */
+  .lseo-heat {
+    position: absolute; left: -18px; bottom: -26px; width: 190px; height: 130px; pointer-events: none;
+    background:
+      radial-gradient(circle at 32% 62%, rgba(255,80,0,.34), transparent 58%),
+      radial-gradient(circle at 32% 62%, rgba(255,236,0,.30), transparent 74%);
+    filter: blur(5px);
+  }
+  .lseo-mock-form { padding: 18px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .lseo-bar.lbl { width: 54%; height: 8px; background: #D9D5CC; }
+  .lseo-field { display: block; height: 26px; margin-top: 11px; border: 1px solid #E7E3DB; border-radius: 6px; background: #fff; }
+  .lseo-mock-submit { display: block; height: 28px; margin-top: 14px; border-radius: 999px; background: var(--deep-blue); }
+
+  /* Annotation chips */
+  .lseo-note {
+    position: absolute; z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid var(--bone-border); border-radius: 999px;
+    background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    box-shadow: 0 16px 34px -18px rgba(20,20,20,.42);
+    color: var(--ink); font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .lseo-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); animation: lseo-chip-pulse 2.4s ease-in-out infinite; }
+  .lseo-note.b i { background: var(--yellow-dark); animation-delay: .5s; }
+  .lseo-note.c i { background: #FF5000; animation-delay: 1s; }
+  .lseo-note.a { top: 11%; left: -30px; }
+  .lseo-note.b { top: 46%; right: 6%; }
+  .lseo-note.c { bottom: 4%; left: -14px; }
+  @keyframes lseo-chip-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+  /* Dissolve the bottom of the whole assembly into the paper */
+  .lseo-hero-visual::after {
+    content: ""; position: absolute; z-index: 4; left: -12%; right: -20%; bottom: -12%; height: 34%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(250,248,243,0) 0%, rgba(250,248,243,.86) 62%, var(--paper) 100%);
+  }
+
+  @media (max-width: 1040px) {
+    /* Must restate the collapse: this block sits after the base rules above. */
+    .lseo-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .lseo-hero { padding: 84px 0 78px; }
+    .lseo-source-hero-copy { max-width: 640px; }
+    .lseo-stage { margin: 0 -34px 0 0; }
+    .lseo-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
+    .lseo-hero-visual::after { left: -6%; right: -8%; }
+  }
+  @media (max-width: 720px) {
+    .lseo-hero { padding: 66px 0 62px; }
+    .lseo-hero-grid { gap: 40px; }
+    .lseo-source-hero-lede { font-size: 16.5px; }
+    .lseo-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    .lseo-cap:nth-child(3) { padding-left: 0; border-left: 0; }
+    .lseo-stage { margin: 0 -16px 0 0; }
+    .lseo-mock { transform: none; }
+    .lseo-mock-body { padding: 16px 16px 22px; }
+    .lseo-mock-main { grid-template-columns: 1fr; gap: 18px; }
+    .lseo-mock-url { font-size: 9px; }
+    .lseo-note { font-size: 8.5px; padding: 7px 11px; }
+    .lseo-note.a { top: 9%; left: -8px; }
+    .lseo-note.b { top: 42%; right: 4px; }
+    .lseo-note.c { left: -8px; bottom: 3%; }
+  }
+  @media (max-width: 480px) {
+    .lseo-source-title { font-size: 38px; }
+    .lseo-hero .lseo-actions { gap: 10px; }
+    .lseo-hero .btn { justify-content: center; width: 100%; }
+    .lseo-caps { row-gap: 24px; }
+    .lseo-cap span { font-size: 9.5px; letter-spacing: .08em; }
+    .lseo-note.b { font-size: 8px; right: 4px; }
+  }
+
 </style>
 <main class="lseo-page">
   <section class="lseo-hero">
     <div class="lseo-wrap lseo-hero-grid">
       <div class="lseo-source-hero-copy">
         <h1 class="lseo-source-eyebrow">Local SEO Agency Toronto</h1>
-        <h2 class="lseo-source-title">Dominate local search with a better <span class="sem">profile</span></h2>
+        <h2 class="lseo-source-title">Dominate local search with a better <span class="sem">profile</span><span class="lseo-hero-dot">.</span></h2>
+        <span class="lseo-hero-rule" aria-hidden="true"></span>
         <p class="lseo-source-hero-lede">We optimize your Google profile to boost visibility, drive local traffic, and turn searchers into customers, all while improving your map rankings and reputation.</p>
-      </div>
-      <div class="svh-fan" aria-hidden="true">
-        <div class="col a">
-          <figure class="a1"><img src="/assets/service-photos/maps-phone.jpg" alt="Google Maps open on a smartphone"></figure>
-          <figure class="a2"><img src="/assets/service-photos/open-sign.jpg" alt="Open sign in a shop window"></figure>
+        <ul class="lseo-caps">
+        <li class="lseo-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg><span>Google Business<br>Profile</span></li>
+        <li class="lseo-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 16.9l-5.3 2.8 1.1-5.9-4.3-4.1 5.9-.8z"/></svg><span>Reviews &amp;<br>reputation</span></li>
+        <li class="lseo-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1.2"/><circle cx="4" cy="12" r="1.2"/><circle cx="4" cy="18" r="1.2"/></svg><span>Citations &amp;<br>N.A.P.</span></li>
+        <li class="lseo-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>Local<br>content</span></li>
+        </ul>
+        <div class="lseo-actions">
+          <a class="btn primary" href="/contact/">Book a Strategy Session <svg class="lseo-arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5"/></svg></a>
+          <a class="btn secondary" href="#lseo-results">See client results</a>
         </div>
-        <div class="col b">
-          <figure class="b1"><img src="/assets/service-photos/cafe-owners.jpg" alt="Local cafe owners behind the counter"></figure>
+      </div>
+      <div class="lseo-hero-visual" aria-hidden="true">
+        <div class="lseo-stage">
+          <div class="lseo-mock">
+            <div class="lseo-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="lseo-mock-url">google.com/maps/search/…</span>
+              <span class="lseo-mock-variant">Map pack #1</span>
+            </div>
+            <div class="lseo-mock-body"><div class="lseo-mock-nav"><span class="lseo-mock-logo"></span><span class="lseo-bar n" style="width:44%"></span><span class="lseo-mock-navcta" style="margin-left:auto;width:74px;background:var(--deep-blue)"></span></div><div class="lseo-mock-main"><div class="lseo-mock-copy"><div style="position:relative;height:72px;border-radius:9px;background:linear-gradient(135deg,#EEF1F6,#DDE3EE);overflow:hidden"><span style="position:absolute;left:40%;top:30%;width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--deep-blue)"></span><span style="position:absolute;left:22%;top:55%;width:9px;height:9px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#B4BFEB"></span><span style="position:absolute;left:68%;top:48%;width:9px;height:9px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#B4BFEB"></span></div><div style="position:relative;margin-top:10px;padding:9px 10px;border-radius:8px;background:rgba(255,236,0,.18);border-left:3px solid var(--deep-blue)"><span class="lseo-bar h2" style="width:58%;margin-top:0;height:11px"></span><span style="display:block;margin-top:5px;color:#141414;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:8px">4.9 &#9733;&#9733;&#9733;&#9733;&#9733; (47) &middot; Open</span><span class="lseo-heat" style="left:-10px;bottom:-16px;width:140px;height:80px"></span></div><div style="margin-top:7px;padding:8px 10px;border-radius:8px;background:#FBFAF7;border:1px solid #EDEAE4"><span class="lseo-bar n" style="width:48%;height:9px"></span><span style="display:block;margin-top:5px;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px">4.3 &#9733; (12)</span></div></div><div class="lseo-mock-form"><span style="display:block;color:#8C8A87;font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.1em;font-size:7.5px;margin-bottom:8px">LATEST REVIEWS</span><div style="display:flex;gap:7px;margin-top:7px"><span style="width:16px;height:16px;border-radius:50%;background:#D5D1C9;flex:none"></span><div style="flex:1"><span style="display:block;color:#FDD200;font-size:7px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lseo-bar p" style="width:92%;margin-top:4px;height:5px"></span></div></div><div style="display:flex;gap:7px;margin-top:7px"><span style="width:16px;height:16px;border-radius:50%;background:#D5D1C9;flex:none"></span><div style="flex:1"><span style="display:block;color:#FDD200;font-size:7px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lseo-bar p" style="width:76%;margin-top:4px;height:5px"></span></div></div><div style="display:flex;gap:7px;margin-top:7px"><span style="width:16px;height:16px;border-radius:50%;background:#D5D1C9;flex:none"></span><div style="flex:1"><span style="display:block;color:#FDD200;font-size:7px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lseo-bar p" style="width:84%;margin-top:4px;height:5px"></span></div></div><span class="lseo-bar lbl" style="width:44%;margin-top:12px"></span><span class="lseo-mock-submit" style="height:22px;margin-top:8px;background:var(--ink)"></span></div></div></div>
+          </div>
+          <span class="lseo-note a"><i></i>Map pack #1</span>
+          <span class="lseo-note b"><i></i>4.9 rating, 47 reviews</span>
+          <span class="lseo-note c"><i></i>N.A.P. consistent</span>
         </div>
       </div>
     </div>
