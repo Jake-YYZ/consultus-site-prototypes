@@ -4027,7 +4027,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .aeo-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .aeo-mock {
@@ -4112,7 +4112,7 @@
     .aeo-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .aeo-hero { padding: 84px 0 78px; }
     .aeo-source-hero-copy { max-width: 640px; }
-    .aeo-stage { margin: 0 -34px 0 0; }
+    .aeo-stage { margin: 0 0 0 0; }
     .aeo-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .aeo-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4122,7 +4122,7 @@
     .aeo-source-hero-lede { font-size: 16.5px; }
     .aeo-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .aeo-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .aeo-stage { margin: 0 -16px 0 0; }
+    .aeo-stage { margin: 0 0 0 0; }
     .aeo-mock { transform: none; }
     .aeo-mock-body { padding: 16px 16px 22px; }
     .aeo-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4181,7 +4181,7 @@
 
   <div class="aeo-trust"><div class="aeo-wrap aeo-trust-grid">
     <div class="aeo-trust-item"><div class="aeo-trust-label">Platforms</div><div class="aeo-trust-value">ChatGPT, Gemini, Copilot, Claude, Perplexity</div></div>
-    <div class="aeo-trust-item"><div class="aeo-trust-label">Client rating</div><div class="aeo-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="aeo-trust-item"><div class="aeo-trust-label">Client rating</div><div class="aeo-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="aeo-trust-item"><div class="aeo-trust-label">Typical window</div><div class="aeo-trust-value">Measurable in 60 to 90 days</div></div>
     <div class="aeo-trust-item"><div class="aeo-trust-label">Strategy session</div><div class="aeo-trust-value">Free 30-minute strategy session</div></div>
   </div></div>

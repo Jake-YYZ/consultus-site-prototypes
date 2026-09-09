@@ -4022,7 +4022,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .lseo-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .lseo-mock {
@@ -4107,7 +4107,7 @@
     .lseo-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .lseo-hero { padding: 84px 0 78px; }
     .lseo-source-hero-copy { max-width: 640px; }
-    .lseo-stage { margin: 0 -34px 0 0; }
+    .lseo-stage { margin: 0 0 0 0; }
     .lseo-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .lseo-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4117,7 +4117,7 @@
     .lseo-source-hero-lede { font-size: 16.5px; }
     .lseo-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .lseo-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .lseo-stage { margin: 0 -16px 0 0; }
+    .lseo-stage { margin: 0 0 0 0; }
     .lseo-mock { transform: none; }
     .lseo-mock-body { padding: 16px 16px 22px; }
     .lseo-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4176,7 +4176,7 @@
 
   <div class="lseo-trust"><div class="lseo-wrap lseo-trust-grid">
     <div class="lseo-trust-item"><div class="lseo-trust-label">Expertise</div><div class="lseo-trust-value">Certified Google Partner</div></div>
-    <div class="lseo-trust-item"><div class="lseo-trust-label">Client rating</div><div class="lseo-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="lseo-trust-item"><div class="lseo-trust-label">Client rating</div><div class="lseo-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="lseo-trust-item"><div class="lseo-trust-label">Ranking factors</div><div class="lseo-trust-value">Relevance, distance, prominence</div></div>
     <div class="lseo-trust-item"><div class="lseo-trust-label">Strategy session</div><div class="lseo-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4236,7 +4236,7 @@
       <article class="lseo-text-panel"><h3>Businesses that thrive on local search</h3><ul class="lseo-list"><li>Home services, including plumbers, electricians, and HVAC providers</li><li>Healthcare, such as urgent care and walk-in clinics, dentists, doctors, and wellness providers</li><li>Restaurants, coffee shops, bars, and other food and drink places</li><li>Personal care services</li><li>Retail brands</li><li>Law firms and legal service providers</li><li>Pet care services</li><li>Real estate</li><li>Community services, and plenty more</li></ul></article>
       <article class="lseo-text-panel"><h3>Why it pays off</h3><ul class="lseo-list"><li>Earn new business through local SEO that places your brand at the top of local searches.</li><li>Lean into the growing preference for buying local, and customers&rsquo; positive sentiment toward supporting nearby businesses.</li><li>Compete with similar-sized businesses in your area for the same customers.</li><li>Increase rankings on mobile, where customers use location services and want to navigate to the closest option that meets their needs.</li><li>Build a local online presence cost-effectively, since the profile itself is free and only the ongoing optimization carries a cost.</li></ul><p>70% of consumers visit a business based on information they find online, while 62% will disregard a brand they can&rsquo;t find at all. 24.2% of clicks go to the first result of a local business search, and 78% of mobile searches result in an offline purchase.</p></article>
     </div>
-    <div class="lseo-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="lseo-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="lseo-section" id="lseo-cost"><div class="lseo-wrap">

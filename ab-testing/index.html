@@ -4045,7 +4045,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .abt-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .abt-mock {
@@ -4130,7 +4130,7 @@
     .abt-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .abt-hero { padding: 84px 0 78px; }
     .abt-source-hero-copy { max-width: 640px; }
-    .abt-stage { margin: 0 -34px 0 0; }
+    .abt-stage { margin: 0 0 0 0; }
     .abt-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .abt-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4140,7 +4140,7 @@
     .abt-source-hero-lede { font-size: 16.5px; }
     .abt-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .abt-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .abt-stage { margin: 0 -16px 0 0; }
+    .abt-stage { margin: 0 0 0 0; }
     .abt-mock { transform: none; }
     .abt-mock-body { padding: 16px 16px 22px; }
     .abt-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4199,7 +4199,7 @@
 
   <div class="abt-trust"><div class="abt-wrap abt-trust-grid">
     <div class="abt-trust-item"><div class="abt-trust-label">Healthy win rate</div><div class="abt-trust-value">Around one test in three</div></div>
-    <div class="abt-trust-item"><div class="abt-trust-label">Client rating</div><div class="abt-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="abt-trust-item"><div class="abt-trust-label">Client rating</div><div class="abt-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="abt-trust-item"><div class="abt-trust-label">Working floor</div><div class="abt-trust-value">~1,000 conversions a month</div></div>
     <div class="abt-trust-item"><div class="abt-trust-label">Strategy session</div><div class="abt-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4282,7 +4282,7 @@
       <article class="abt-scope"><div class="abt-scope-num">03 / Scale</div><h3>New pages swing bigger</h3><p>When the current page is aimed at the wrong buyer, testing tweaks to it wastes months. Building a purpose-built alternative is the larger and faster move.</p></article>
     </div>
     <div class="abt-source-copy" style="margin-top:40px"><p>These usually run as one programme. Conversion work generates the hypotheses, testing settles the expensive ones, and landing pages give us somewhere to test offers without touching the main site. Findings feed back into <a class="abt-link" href="/google-ads/">Google Ads</a> and <a class="abt-link" href="/meta-ads/">Meta Ads</a>, because a winning argument on a page is usually a winning argument in an ad.</p></div>
-    <div class="abt-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="abt-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="abt-section abt-dark" id="abt-faq"><div class="abt-wrap">

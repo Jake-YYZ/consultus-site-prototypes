@@ -4006,7 +4006,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .mau-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .mau-mock {
@@ -4091,7 +4091,7 @@
     .mau-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .mau-hero { padding: 84px 0 78px; }
     .mau-source-hero-copy { max-width: 640px; }
-    .mau-stage { margin: 0 -34px 0 0; }
+    .mau-stage { margin: 0 0 0 0; }
     .mau-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .mau-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4101,7 +4101,7 @@
     .mau-source-hero-lede { font-size: 16.5px; }
     .mau-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .mau-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .mau-stage { margin: 0 -16px 0 0; }
+    .mau-stage { margin: 0 0 0 0; }
     .mau-mock { transform: none; }
     .mau-mock-body { padding: 16px 16px 22px; }
     .mau-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4160,7 +4160,7 @@
 
   <div class="mau-trust"><div class="mau-wrap mau-trust-grid">
     <div class="mau-trust-item"><div class="mau-trust-label">Covers</div><div class="mau-trust-value">Email, nurture, scoring, lifecycle</div></div>
-    <div class="mau-trust-item"><div class="mau-trust-label">Client rating</div><div class="mau-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="mau-trust-item"><div class="mau-trust-label">Client rating</div><div class="mau-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="mau-trust-item"><div class="mau-trust-label">Open rate lift</div><div class="mau-trust-value">Up to 173% on automated sends</div></div>
     <div class="mau-trust-item"><div class="mau-trust-label">Strategy session</div><div class="mau-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4235,7 +4235,7 @@
       <article class="mau-complement"><span>02 / Content</span><h3><a class="mau-inline-link" href="/content-marketing/">Content Marketing</a></h3><p>Nurture sequences need something worth sending. Content is what fills the flows with material that earns the open rather than just occupying the slot.</p></article>
       <article class="mau-complement"><span>03 / Measurement</span><h3><a class="mau-inline-link" href="/analytics-attribution/">Analytics and Attribution</a></h3><p>Knowing which automated touch actually contributed to a closed sale is what lets you invest in the flows that work and retire the ones that only look busy.</p></article>
     </div>
-    <div class="mau-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="mau-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="mau-section bone" id="mau-testimonials"><div class="mau-wrap">

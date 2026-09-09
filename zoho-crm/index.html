@@ -4003,7 +4003,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .zcr-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .zcr-mock {
@@ -4088,7 +4088,7 @@
     .zcr-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .zcr-hero { padding: 84px 0 78px; }
     .zcr-source-hero-copy { max-width: 640px; }
-    .zcr-stage { margin: 0 -34px 0 0; }
+    .zcr-stage { margin: 0 0 0 0; }
     .zcr-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .zcr-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4098,7 +4098,7 @@
     .zcr-source-hero-lede { font-size: 16.5px; }
     .zcr-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .zcr-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .zcr-stage { margin: 0 -16px 0 0; }
+    .zcr-stage { margin: 0 0 0 0; }
     .zcr-mock { transform: none; }
     .zcr-mock-body { padding: 16px 16px 22px; }
     .zcr-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4157,7 +4157,7 @@
 
   <div class="zcr-trust"><div class="zcr-wrap zcr-trust-grid">
     <div class="zcr-trust-item"><div class="zcr-trust-label">Platforms</div><div class="zcr-trust-value">Zoho, HubSpot, Salesforce</div></div>
-    <div class="zcr-trust-item"><div class="zcr-trust-label">Client rating</div><div class="zcr-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="zcr-trust-item"><div class="zcr-trust-label">Client rating</div><div class="zcr-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="zcr-trust-item"><div class="zcr-trust-label">Engagement</div><div class="zcr-trust-value">Discovery to training to optimization</div></div>
     <div class="zcr-trust-item"><div class="zcr-trust-label">Strategy session</div><div class="zcr-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4211,7 +4211,7 @@
       <article class="zcr-scope"><div class="zcr-scope-num">03 / Teamwork</div><h3>Marketing and sales alignment</h3><p>The whole team can reach the same customer data, track progress, and collaborate on reporting. That cohesion through the sales process is usually worth more than any individual feature.</p></article>
       <article class="zcr-scope"><div class="zcr-scope-num">04 / Growth</div><h3>Scalability</h3><p>CRMs scale with you. Add new metrics and channels as the business grows to inform forecasting, future strategy, and retention work, without rebuilding the system every time something changes.</p></article>
     </div>
-    <div class="zcr-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="zcr-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="zcr-section bone" id="zcr-importance"><div class="zcr-wrap">

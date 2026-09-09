@@ -4038,7 +4038,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .cmk-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .cmk-mock {
@@ -4123,7 +4123,7 @@
     .cmk-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .cmk-hero { padding: 84px 0 78px; }
     .cmk-source-hero-copy { max-width: 640px; }
-    .cmk-stage { margin: 0 -34px 0 0; }
+    .cmk-stage { margin: 0 0 0 0; }
     .cmk-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .cmk-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4133,7 +4133,7 @@
     .cmk-source-hero-lede { font-size: 16.5px; }
     .cmk-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .cmk-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .cmk-stage { margin: 0 -16px 0 0; }
+    .cmk-stage { margin: 0 0 0 0; }
     .cmk-mock { transform: none; }
     .cmk-mock-body { padding: 16px 16px 22px; }
     .cmk-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4192,7 +4192,7 @@
 
   <div class="cmk-trust"><div class="cmk-wrap cmk-trust-grid">
     <div class="cmk-trust-item"><div class="cmk-trust-label">Team</div><div class="cmk-trust-value">In-house writers and editors</div></div>
-    <div class="cmk-trust-item"><div class="cmk-trust-label">Client rating</div><div class="cmk-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="cmk-trust-item"><div class="cmk-trust-label">Client rating</div><div class="cmk-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="cmk-trust-item"><div class="cmk-trust-label">Formats</div><div class="cmk-trust-value">Blogs, guides, video, infographics</div></div>
     <div class="cmk-trust-item"><div class="cmk-trust-label">Strategy session</div><div class="cmk-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4254,7 +4254,7 @@
       <article class="cmk-scope"><div class="cmk-scope-num">02 / Expertise</div><h3>Industry expertise</h3><p>Showcase years of expertise through strategically curated pieces. Build trust and authority with regularly published content highlighting industry trends and best practices, and demonstrate knowledge your competitors are not putting on the page.</p></article>
       <article class="cmk-scope"><div class="cmk-scope-num">03 / Value</div><h3>Value-added product information</h3><p>Increase lifetime customer value with relevant, helpful material. Blogs, how-to guides, and extended product information generate and nurture inbound leads, and drive repeat purchases from customers who already trust you.</p></article>
     </div>
-    <div class="cmk-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="cmk-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="cmk-section cmk-dark" id="cmk-quality"><div class="cmk-wrap">

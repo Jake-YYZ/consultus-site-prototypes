@@ -4033,7 +4033,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .msa-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .msa-mock {
@@ -4118,7 +4118,7 @@
     .msa-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .msa-hero { padding: 84px 0 78px; }
     .msa-source-hero-copy { max-width: 640px; }
-    .msa-stage { margin: 0 -34px 0 0; }
+    .msa-stage { margin: 0 0 0 0; }
     .msa-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .msa-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4128,7 +4128,7 @@
     .msa-source-hero-lede { font-size: 16.5px; }
     .msa-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .msa-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .msa-stage { margin: 0 -16px 0 0; }
+    .msa-stage { margin: 0 0 0 0; }
     .msa-mock { transform: none; }
     .msa-mock-body { padding: 16px 16px 22px; }
     .msa-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4187,7 +4187,7 @@
 
   <div class="msa-trust"><div class="msa-wrap msa-trust-grid">
     <div class="msa-trust-item"><div class="msa-trust-label">Expertise</div><div class="msa-trust-value">Microsoft Advertising Partner</div></div>
-    <div class="msa-trust-item"><div class="msa-trust-label">Client rating</div><div class="msa-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="msa-trust-item"><div class="msa-trust-label">Client rating</div><div class="msa-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="msa-trust-item"><div class="msa-trust-label">Network reach</div><div class="msa-trust-value">Bing, Yahoo, AOL, Audience Network</div></div>
     <div class="msa-trust-item"><div class="msa-trust-label">Strategy session</div><div class="msa-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4277,7 +4277,7 @@
       <article class="msa-scope"><div class="msa-scope-num">05 / Insight</div><h3>Insights</h3><p>Microsoft covers the basics of performance tracking and then some. Beyond campaign insights, the platform recommends locations worth targeting, complete with search volumes that point to where your reach can grow.</p></article>
       <article class="msa-scope"><div class="msa-scope-num">06 / Targeting</div><h3>LinkedIn targeting</h3><p>Most of all, only Microsoft has a direct line to LinkedIn, since both belong to the same ecosystem. You can target audiences based on their LinkedIn profile, including industry, company, and job function, which is a level of B2B precision no other search platform offers.</p></article>
     </div>
-    <div class="msa-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="msa-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="msa-section bone" id="msa-cost"><div class="msa-wrap">

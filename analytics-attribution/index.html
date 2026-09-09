@@ -4037,7 +4037,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .ana-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .ana-mock {
@@ -4122,7 +4122,7 @@
     .ana-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .ana-hero { padding: 84px 0 78px; }
     .ana-source-hero-copy { max-width: 640px; }
-    .ana-stage { margin: 0 -34px 0 0; }
+    .ana-stage { margin: 0 0 0 0; }
     .ana-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .ana-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4132,7 +4132,7 @@
     .ana-source-hero-lede { font-size: 16.5px; }
     .ana-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .ana-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .ana-stage { margin: 0 -16px 0 0; }
+    .ana-stage { margin: 0 0 0 0; }
     .ana-mock { transform: none; }
     .ana-mock-body { padding: 16px 16px 22px; }
     .ana-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4191,7 +4191,7 @@
 
   <div class="ana-trust"><div class="ana-wrap ana-trust-grid">
     <div class="ana-trust-item"><div class="ana-trust-label">Covers</div><div class="ana-trust-value">GA4, server-side, consent, CRM</div></div>
-    <div class="ana-trust-item"><div class="ana-trust-label">Client rating</div><div class="ana-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="ana-trust-item"><div class="ana-trust-label">Client rating</div><div class="ana-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="ana-trust-item"><div class="ana-trust-label">Audit window</div><div class="ana-trust-value">One to two weeks</div></div>
     <div class="ana-trust-item"><div class="ana-trust-label">Strategy session</div><div class="ana-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4274,7 +4274,7 @@
       <article class="ana-scope"><div class="ana-scope-num">03 / Spend</div><h3>Media spends against it</h3><p>Bidding algorithms optimize toward whatever you told them to value. Fix the definitions and the same budget buys better customers without any change in strategy.</p></article>
     </div>
     <div class="ana-source-copy" style="margin-top:40px"><p>We normally sequence this deliberately: measurement first, then <a class="ana-link" href="/google-ads/">Google Ads</a> and <a class="ana-link" href="/meta-ads/">Meta Ads</a> managed against blended numbers, with CRM work where the outcome data is the weak link. Getting this order wrong is why so much media budget optimizes confidently toward the wrong thing.</p></div>
-    <div class="ana-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="ana-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="ana-section ana-dark" id="ana-faq"><div class="ana-wrap">

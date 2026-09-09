@@ -4039,7 +4039,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .crx-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .crx-mock {
@@ -4124,7 +4124,7 @@
     .crx-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .crx-hero { padding: 84px 0 78px; }
     .crx-source-hero-copy { max-width: 640px; }
-    .crx-stage { margin: 0 -34px 0 0; }
+    .crx-stage { margin: 0 0 0 0; }
     .crx-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .crx-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4134,7 +4134,7 @@
     .crx-source-hero-lede { font-size: 16.5px; }
     .crx-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .crx-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .crx-stage { margin: 0 -16px 0 0; }
+    .crx-stage { margin: 0 0 0 0; }
     .crx-mock { transform: none; }
     .crx-mock-body { padding: 16px 16px 22px; }
     .crx-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4216,7 +4216,7 @@
 
   <div class="crx-trust"><div class="crx-wrap crx-trust-grid">
     <div class="crx-trust-item"><div class="crx-trust-label">The baseline</div><div class="crx-trust-value">Average site converts at 2.35%</div></div>
-    <div class="crx-trust-item"><div class="crx-trust-label">Client rating</div><div class="crx-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="crx-trust-item"><div class="crx-trust-label">Client rating</div><div class="crx-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="crx-trust-item"><div class="crx-trust-label">Method</div><div class="crx-trust-value">Analytics, user testing, A/B tests</div></div>
     <div class="crx-trust-item"><div class="crx-trust-label">Strategy session</div><div class="crx-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4295,7 +4295,7 @@
   <section class="crx-section" id="crx-who"><div class="crx-wrap">
     <div class="crx-section-head"><div><div class="crx-kicker">Who needs it?</div><h2 class="crx-title">Does my business need <span class="sem">CRO</span>?</h2></div><p class="crx-lede">Straight to the point: yes. Every business does, and it belongs in ongoing optimization and every new campaign cycle. With more ads, more design changes, and new channels, CRO is what tells you where the value actually is.</p></div>
     <article class="crx-text-panel"><h3>Telltale signs you need it now</h3><ul class="crx-list"><li><strong>Your conversion rates are low.</strong> The average website converts at 2.35%, and even a one-second delay in page load speed can reduce that by 7%.</li><li><strong>Campaigns are underperforming</strong> against industry leaders and your own competitor benchmarks.</li><li><strong>You have few or no landing pages.</strong> 44% of B2B clicks go to a homepage rather than a campaign-focused page matched to intent, and only 48% of marketers build new pages for campaigns.</li><li><strong>You have landing pages but never test them,</strong> which puts you among the 20% of brands that don&rsquo;t.</li><li><strong>Your page load speed</strong> falls outside the zero to four second range where conversion rates hold up.</li><li><strong>Your calls to action aren&rsquo;t working.</strong> They aren&rsquo;t well placed, well written, or personalized, and personalized ones convert dramatically better.</li><li><strong>Your site isn&rsquo;t genuinely mobile-friendly,</strong> which 57% of marketers consider one of the most crucial aspects of CRO.</li></ul></article>
-    <div class="crx-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="crx-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="crx-section bone" id="crx-cost"><div class="crx-wrap">

@@ -4023,7 +4023,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .inf-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .inf-mock {
@@ -4108,7 +4108,7 @@
     .inf-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .inf-hero { padding: 84px 0 78px; }
     .inf-source-hero-copy { max-width: 640px; }
-    .inf-stage { margin: 0 -34px 0 0; }
+    .inf-stage { margin: 0 0 0 0; }
     .inf-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .inf-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4118,7 +4118,7 @@
     .inf-source-hero-lede { font-size: 16.5px; }
     .inf-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .inf-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .inf-stage { margin: 0 -16px 0 0; }
+    .inf-stage { margin: 0 0 0 0; }
     .inf-mock { transform: none; }
     .inf-mock-body { padding: 16px 16px 22px; }
     .inf-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4177,7 +4177,7 @@
 
   <div class="inf-trust"><div class="inf-wrap inf-trust-grid">
     <div class="inf-trust-item"><div class="inf-trust-label">Network</div><div class="inf-trust-value">Vetted creators and UGC talent</div></div>
-    <div class="inf-trust-item"><div class="inf-trust-label">Client rating</div><div class="inf-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="inf-trust-item"><div class="inf-trust-label">Client rating</div><div class="inf-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="inf-trust-item"><div class="inf-trust-label">Return</div><div class="inf-trust-value">$5.20 back per dollar spent</div></div>
     <div class="inf-trust-item"><div class="inf-trust-label">Strategy session</div><div class="inf-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4221,7 +4221,7 @@
       <article class="inf-scope"><div class="inf-scope-num">03 / Commerce</div><h3>E-commerce and consumer tech</h3><p><a class="inf-inline-link" href="/ecommerce-marketing-toronto/">Online retailers</a> use creators to show real people using their products, which provides social proof, lifts conversions, reduces returns, and builds a community around the brand rather than just a customer list.</p></article>
     </div>
     <div class="inf-source-copy" style="margin-top:40px"><p>Not on the list? Influencers are everywhere and emerging across every industry. Entertainment, media, technology, and professional services all now have credible creators with engaged followings, which means the question is rarely whether the voices exist and usually whether you can find and vet them.</p></div>
-    <div class="inf-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="inf-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="inf-section bone" id="inf-process"><div class="inf-wrap">

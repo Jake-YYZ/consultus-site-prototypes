@@ -4063,7 +4063,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .wdv-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .wdv-mock {
@@ -4148,7 +4148,7 @@
     .wdv-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .wdv-hero { padding: 84px 0 78px; }
     .wdv-source-hero-copy { max-width: 640px; }
-    .wdv-stage { margin: 0 -34px 0 0; }
+    .wdv-stage { margin: 0 0 0 0; }
     .wdv-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .wdv-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4158,7 +4158,7 @@
     .wdv-source-hero-lede { font-size: 16.5px; }
     .wdv-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .wdv-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .wdv-stage { margin: 0 -16px 0 0; }
+    .wdv-stage { margin: 0 0 0 0; }
     .wdv-mock { transform: none; }
     .wdv-mock-body { padding: 16px 16px 22px; }
     .wdv-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4217,7 +4217,7 @@
 
   <div class="wdv-trust"><div class="wdv-wrap wdv-trust-grid">
     <div class="wdv-trust-item"><div class="wdv-trust-label">Build</div><div class="wdv-trust-value">Custom code and CMS platforms</div></div>
-    <div class="wdv-trust-item"><div class="wdv-trust-label">Client rating</div><div class="wdv-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="wdv-trust-item"><div class="wdv-trust-label">Client rating</div><div class="wdv-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="wdv-trust-item"><div class="wdv-trust-label">Includes</div><div class="wdv-trust-value">Design, development, maintenance</div></div>
     <div class="wdv-trust-item"><div class="wdv-trust-label">Strategy session</div><div class="wdv-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4278,7 +4278,7 @@
       <article class="wdv-scope"><div class="wdv-scope-num">02 / Traffic</div><h3>Relevant traffic and leads</h3><p>Your site is the backbone of the marketing strategy. It&rsquo;s how you capture relevant traffic, generate leads, and drive conversions, connecting with customers right at the beginning of their shopping journey when they search.</p></article>
       <article class="wdv-scope"><div class="wdv-scope-num">03 / Commerce</div><h3>E-commerce, service, and updates</h3><p>Browsing is much like in-store shopping now, and brands keep pivoting to <a class="wdv-inline-link" href="/ecommerce-marketing-toronto/">e-commerce</a>. A modern, secure site lets you sell, support customers, and publish updates, new products, offers, and hours, without waiting on anyone.</p></article>
     </div>
-    <div class="wdv-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="wdv-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="wdv-section" id="wdv-fit"><div class="wdv-wrap">

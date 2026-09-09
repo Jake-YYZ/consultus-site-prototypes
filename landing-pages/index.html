@@ -4011,7 +4011,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .lpg-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .lpg-mock {
@@ -4096,7 +4096,7 @@
     .lpg-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .lpg-hero { padding: 84px 0 78px; }
     .lpg-source-hero-copy { max-width: 640px; }
-    .lpg-stage { margin: 0 -34px 0 0; }
+    .lpg-stage { margin: 0 0 0 0; }
     .lpg-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .lpg-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4106,7 +4106,7 @@
     .lpg-source-hero-lede { font-size: 16.5px; }
     .lpg-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .lpg-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .lpg-stage { margin: 0 -16px 0 0; }
+    .lpg-stage { margin: 0 0 0 0; }
     .lpg-mock { transform: none; }
     .lpg-mock-body { padding: 16px 16px 22px; }
     .lpg-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4165,7 +4165,7 @@
 
   <div class="lpg-trust"><div class="lpg-wrap lpg-trust-grid">
     <div class="lpg-trust-item"><div class="lpg-trust-label">Built in-house</div><div class="lpg-trust-value">Design, copy, and development</div></div>
-    <div class="lpg-trust-item"><div class="lpg-trust-label">Client rating</div><div class="lpg-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="lpg-trust-item"><div class="lpg-trust-label">Client rating</div><div class="lpg-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="lpg-trust-item"><div class="lpg-trust-label">Typical range</div><div class="lpg-trust-value">$2,000 to $5,000 per page</div></div>
     <div class="lpg-trust-item"><div class="lpg-trust-label">Strategy session</div><div class="lpg-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4230,7 +4230,7 @@
       <article class="lpg-scope"><div class="lpg-scope-num">02 / Tooling</div><h3>The latest tools</h3><p>We use current platforms for landing page design, delivering modern features and clean integration with your website back end, ad platforms, and analytics. On the customer side, that means a seamless run from click to completed conversion.</p></article>
       <article class="lpg-scope"><div class="lpg-scope-num">03 / Collaboration</div><h3>Collaborative client service</h3><p>Most of all we value working with you directly. Every stage of designing, testing, launching, and optimizing stays in step with your calendar and your goals, so tracking is reliable and milestones land when they should.</p></article>
     </div>
-    <div class="lpg-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="lpg-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="lpg-section" id="lpg-complement"><div class="lpg-wrap">

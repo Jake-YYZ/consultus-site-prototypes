@@ -3996,7 +3996,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .pcr-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .pcr-mock {
@@ -4081,7 +4081,7 @@
     .pcr-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .pcr-hero { padding: 84px 0 78px; }
     .pcr-source-hero-copy { max-width: 640px; }
-    .pcr-stage { margin: 0 -34px 0 0; }
+    .pcr-stage { margin: 0 0 0 0; }
     .pcr-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .pcr-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4091,7 +4091,7 @@
     .pcr-source-hero-lede { font-size: 16.5px; }
     .pcr-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .pcr-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .pcr-stage { margin: 0 -16px 0 0; }
+    .pcr-stage { margin: 0 0 0 0; }
     .pcr-mock { transform: none; }
     .pcr-mock-body { padding: 16px 16px 22px; }
     .pcr-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4150,7 +4150,7 @@
 
   <div class="pcr-trust"><div class="pcr-wrap pcr-trust-grid">
     <div class="pcr-trust-item"><div class="pcr-trust-label">Production</div><div class="pcr-trust-value">In-house studio and crew</div></div>
-    <div class="pcr-trust-item"><div class="pcr-trust-label">Client rating</div><div class="pcr-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="pcr-trust-item"><div class="pcr-trust-label">Client rating</div><div class="pcr-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="pcr-trust-item"><div class="pcr-trust-label">Formats</div><div class="pcr-trust-value">Video, photography, UGC, static</div></div>
     <div class="pcr-trust-item"><div class="pcr-trust-label">Strategy session</div><div class="pcr-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4218,7 +4218,7 @@
       <article class="pcr-text-panel"><h3>The formats</h3><ul class="pcr-list"><li><strong>Customer or client testimonials.</strong> The core format: a real buyer describing the problem they had and what changed.</li><li><strong>Employee testimonials.</strong> Powerful for recruitment and for professional services, where the team is the product.</li><li><strong>Remote testimonials.</strong> Captured wherever the customer is, which makes it practical to feature clients outside your city.</li><li><strong>On-site testimonials.</strong> Filmed at the customer&rsquo;s premises, which grounds the story in a real place and usually makes it more specific.</li></ul></article>
       <article class="pcr-text-panel"><h3>Why they work</h3><ul class="pcr-list"><li><strong>Credibility and trust.</strong> Customer testimonials carry proof your own marketing cannot manufacture, which is exactly why buyers seek them out.</li><li><strong>Increased referrals.</strong> A customer who has articulated why they like you on camera tends to keep saying it off camera too.</li><li><strong>Instant shares and engagement.</strong> Testimonial video travels, because the person featured has their own reason to share it.</li><li><strong>Repurpose the content.</strong> One good testimonial shoot yields ad cuts, landing page embeds, social posts, and sales collateral.</li></ul></article>
     </div>
-    <div class="pcr-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="pcr-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="pcr-section pcr-dark" id="pcr-distribution"><div class="pcr-wrap">

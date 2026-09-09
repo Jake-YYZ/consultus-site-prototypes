@@ -4006,7 +4006,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .sen-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .sen-mock {
@@ -4091,7 +4091,7 @@
     .sen-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .sen-hero { padding: 84px 0 78px; }
     .sen-source-hero-copy { max-width: 640px; }
-    .sen-stage { margin: 0 -34px 0 0; }
+    .sen-stage { margin: 0 0 0 0; }
     .sen-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .sen-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4101,7 +4101,7 @@
     .sen-source-hero-lede { font-size: 16.5px; }
     .sen-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .sen-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .sen-stage { margin: 0 -16px 0 0; }
+    .sen-stage { margin: 0 0 0 0; }
     .sen-mock { transform: none; }
     .sen-mock-body { padding: 16px 16px 22px; }
     .sen-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4160,7 +4160,7 @@
 
   <div class="sen-trust"><div class="sen-wrap sen-trust-grid">
     <div class="sen-trust-item"><div class="sen-trust-label">Win rate</div><div class="sen-trust-value">49% with enablement vs 42.5% without</div></div>
-    <div class="sen-trust-item"><div class="sen-trust-label">Client rating</div><div class="sen-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="sen-trust-item"><div class="sen-trust-label">Client rating</div><div class="sen-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="sen-trust-item"><div class="sen-trust-label">Covers</div><div class="sen-trust-value">Playbooks, tech stack, coaching</div></div>
     <div class="sen-trust-item"><div class="sen-trust-label">Strategy session</div><div class="sen-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4213,7 +4213,7 @@
       <article class="sen-scope"><div class="sen-scope-num">03 / Diagnosis</div><h3>Due diligence and strategy</h3><p>An honest assessment of your current processes and performance, then the development of a strategy tailored to your goals and to the specific needs of your team rather than to a generic maturity model.</p></article>
       <article class="sen-scope"><div class="sen-scope-num">04 / Rollout</div><h3>Technology, training, and learning</h3><p>Implementing the technology, training the team, and running the continuous learning that keeps refining content development and customer touchpoints after the initial rollout.</p></article>
     </div>
-    <div class="sen-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="sen-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="sen-section bone" id="sen-agency"><div class="sen-wrap">

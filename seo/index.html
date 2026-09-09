@@ -4030,7 +4030,7 @@
   /* Push the mockup past the right edge of the content column and off canvas. */
   .seox-stage {
     position: relative; z-index: 1;
-    margin-right: -74px; margin-left: -34px;
+    margin-right: calc(-1 * min(74px, max(0px, (100vw - 1200px) / 2 - 16px))); margin-left: -34px;
     perspective: 1800px;
   }
   .seox-mock {
@@ -4115,7 +4115,7 @@
     .seox-hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .seox-hero { padding: 84px 0 78px; }
     .seox-source-hero-copy { max-width: 640px; }
-    .seox-stage { margin: 0 -34px 0 0; }
+    .seox-stage { margin: 0 0 0 0; }
     .seox-mock { transform: rotateY(-4deg) rotateZ(-.3deg); }
     .seox-hero-visual::after { left: -6%; right: -8%; }
   }
@@ -4125,7 +4125,7 @@
     .seox-source-hero-lede { font-size: 16.5px; }
     .seox-caps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .seox-cap:nth-child(3) { padding-left: 0; border-left: 0; }
-    .seox-stage { margin: 0 -16px 0 0; }
+    .seox-stage { margin: 0 0 0 0; }
     .seox-mock { transform: none; }
     .seox-mock-body { padding: 16px 16px 22px; }
     .seox-mock-main { grid-template-columns: 1fr; gap: 18px; }
@@ -4215,7 +4215,7 @@
 
   <div class="seox-trust"><div class="seox-wrap seox-trust-grid">
     <div class="seox-trust-item"><div class="seox-trust-label">Disciplines</div><div class="seox-trust-value">SEO and GEO, run as one program</div></div>
-    <div class="seox-trust-item"><div class="seox-trust-label">Client rating</div><div class="seox-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="seox-trust-item"><div class="seox-trust-label">Client rating</div><div class="seox-trust-value">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div></div>
     <div class="seox-trust-item"><div class="seox-trust-label">Coverage</div><div class="seox-trust-value">Google, ChatGPT, Perplexity, Gemini</div></div>
     <div class="seox-trust-item"><div class="seox-trust-label">Strategy session</div><div class="seox-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
@@ -4293,7 +4293,7 @@
       <article class="seox-scope"><div class="seox-scope-num">03 / Coverage</div><h3>Win local and national searches</h3><p>Location-based searches are among the highest-converting queries in every category. Combining local SEO with GEO-optimized content means you appear whether a customer types the query into Google or asks an AI assistant.</p></article>
     </div>
     <div class="seox-source-copy" style="margin-top:40px"><p>These are long-term investments. If you&rsquo;re promoting a one-time event or selling a product with no search demand, other channels will serve you better. But for businesses with ongoing offerings and real competition, no channel has a higher long-term ROI.</p></div>
-    <div class="seox-inline-proof">4.9 stars from 43 entrepreneurs</div>
+    <div class="seox-inline-proof">Google 4.9 &#9733; &middot; Clutch 4.4 &#9733;</div>
   </div></section>
 
   <section class="seox-section bone" id="seox-cost"><div class="seox-wrap">
