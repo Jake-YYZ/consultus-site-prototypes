@@ -1197,7 +1197,9 @@
     .method { grid-template-columns: 1fr; }
     .method-step { border-right: none; border-bottom: 1px solid rgba(20,20,20,0.12); }
     .dark-full .method-step { border-bottom-color: rgba(255,255,255,0.15); }
-    .stat-row { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+    .stat-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 0; }
+    .stat { min-width: 0; }
+    @media (max-width: 480px) { .stat-row { grid-template-columns: 1fr; gap: 28px 0; } .stat { padding: 0 0 0 20px; } .stat-num { font-size: 44px; } }
     .stat-row .stat:nth-child(3) { border-left: none; padding-left: 0; }
     .case-grid, .ind-grid, .insights-grid, .team-grid, .contact-grid, .svc-metrics, .video-testimonials, .subind-grid, .campaign-showcase, .zoho-modules { grid-template-columns: 1fr; }
     .zoho-modules { border-radius: 8px; }
@@ -1210,7 +1212,9 @@
     .service-items { grid-template-columns: 1fr; }
     .content-block { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .footer-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+    .footer-col { min-width: 0; overflow-wrap: anywhere; }
+    @media (max-width: 480px) { .footer-cols { grid-template-columns: 1fr; gap: 28px; } }
     .footer-locations { flex-direction: column; align-items: flex-start; gap: 40px; }
     .footer-proof { flex-direction: column; align-items: flex-start; }
     .loc-icons { gap: 28px; }
@@ -3642,8 +3646,6 @@
         <div class="eyebrow" style="margin-bottom:22px"><span class="eyebrow-dot"></span><span>Let's Build</span></div>
         <h1 style="font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-0.025em;margin-bottom:22px;color:#141414">Start with a <span class="sem">Strategy Call</span>.</h1>
         <p class="ct-lede">Schedule a 30-minute consultation to discuss how we can help grow your business. Book a time in our calendar, give us a call, or send us the details about your business and we'll be in touch to schedule a call.</p>
-
-        <a class="btn primary cta-yellow-hover ct-book-btn" href="#book">Schedule a 30 Minute Consultation →</a>
 
         <div class="ct-callnow"><span class="ct-callnow-lbl">Give us a call:</span> <a href="tel:+14164601810">(416) 460-1810</a></div>
 

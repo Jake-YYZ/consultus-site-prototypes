@@ -1212,7 +1212,9 @@
     .method { grid-template-columns: 1fr; }
     .method-step { border-right: none; border-bottom: 1px solid rgba(20,20,20,0.12); }
     .dark-full .method-step { border-bottom-color: rgba(255,255,255,0.15); }
-    .stat-row { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+    .stat-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 0; }
+    .stat { min-width: 0; }
+    @media (max-width: 480px) { .stat-row { grid-template-columns: 1fr; gap: 28px 0; } .stat { padding: 0 0 0 20px; } .stat-num { font-size: 44px; } }
     .stat-row .stat:nth-child(3) { border-left: none; padding-left: 0; }
     .case-grid, .ind-grid, .insights-grid, .team-grid, .contact-grid, .svc-metrics, .video-testimonials, .subind-grid, .campaign-showcase, .zoho-modules { grid-template-columns: 1fr; }
     .zoho-modules { border-radius: 8px; }
@@ -1225,7 +1227,9 @@
     .service-items { grid-template-columns: 1fr; }
     .content-block { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .footer-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+    .footer-col { min-width: 0; overflow-wrap: anywhere; }
+    @media (max-width: 480px) { .footer-cols { grid-template-columns: 1fr; gap: 28px; } }
     .footer-locations { flex-direction: column; align-items: flex-start; gap: 40px; }
     .footer-proof { flex-direction: column; align-items: flex-start; }
     .loc-icons { gap: 28px; }
