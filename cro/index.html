@@ -3716,23 +3716,23 @@
 
   .crx-page { background: var(--paper); color: var(--ink); overflow: clip; }
   .crx-page *, .crx-page *::before, .crx-page *::after { box-sizing: border-box; }
-  .crx-wrap { width: min(1200px, calc(100% - 64px)); margin: 0 auto; }
-  .crx-kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
+  .crx-wrap { width: min(1280px, calc(100% - 96px)); margin: 0 auto; }
+  .crx-kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .15em; line-height: 1.4; text-transform: uppercase; }
   .crx-kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--deep-blue); flex: 0 0 auto; }
   .crx-kicker.on-dark { color: var(--paper); }
   .crx-kicker.on-dark::before { background: var(--yellow); }
-  .crx-title { margin: 18px 0 0; max-width: 900px; font-size: clamp(36px, 5vw, 68px); font-weight: 400; line-height: 1.02; letter-spacing: -.025em; }
+  .crx-title { margin: 18px 0 0; max-width: 20ch; font-size: clamp(30px, 3.4vw, 44px); font-weight: 400; line-height: 1.12; letter-spacing: -.02em; }
   .crx-title .sem { color: var(--deep-blue); font-style: italic; }
   .crx-dark .crx-title { color: var(--paper); }
   .crx-dark .crx-title .sem { color: var(--yellow); }
-  .crx-lede { max-width: 720px; margin: 24px 0 0; color: var(--charcoal); font-size: 18px; line-height: 1.62; }
+  .crx-lede { max-width: 62ch; margin: 24px 0 0; color: var(--charcoal); font-size: 17px; line-height: 1.68; }
   .crx-dark .crx-lede { color: #D5D2CD; }
-  .crx-section { padding: 108px 0; }
+  .crx-section { padding: 92px 0; }
   .crx-section.bone { background: var(--bone); }
   .crx-section.crx-dark { background: var(--onyx); color: var(--paper); }
   .crx-section-head { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, .65fr); gap: 70px; align-items: end; margin-bottom: 56px; }
   .crx-section-head .crx-lede { margin: 0; font-size: 17px; }
-  .crx-copy p { margin: 0 0 18px; color: var(--charcoal); font-size: 17px; line-height: 1.68; }
+  .crx-copy p { margin: 0 0 18px; max-width: 62ch; color: var(--charcoal); font-size: 16.5px; line-height: 1.7; }
   .crx-copy p:last-child { margin-bottom: 0; }
   .crx-dark .crx-copy p { color: #C7C5C8; }
   .crx-link { color: inherit; text-decoration: underline; text-decoration-color: var(--deep-blue); text-underline-offset: 4px; }
@@ -3935,8 +3935,8 @@
     .crx-hero { padding: 88px 0; }
   }
   @media (max-width: 720px) {
-    .crx-wrap { width: min(100% - 32px, 1200px); }
-    .crx-section { padding: 78px 0; }
+    .crx-wrap { width: min(100% - 44px, 1280px); }
+    .crx-section { padding: 66px 0; }
     .crx-hero { padding: 70px 0; }
     .crx-source-title { font-size: clamp(42px, 12vw, 58px); }
     .crx-source-hero-lede { font-size: 16.5px; }
@@ -4147,6 +4147,340 @@
     .crx-note.b { font-size: 8px; right: 4px; }
   }
 
+
+  /* ============================================================
+     STYLE GUIDE LAYER (Sep 2026 test, CRO page only)
+     Foundations: grain texture, button system, shared art stage.
+     ============================================================ */
+
+  /* Restrained grain over charcoal and blue surfaces, 4-8% opacity.
+     Text sits above it: the overlay is inert and never intercepts clicks. */
+  .crx-grain { position: relative; isolation: isolate; }
+  /* Only lift children above the grain; never override their own positioning
+     (absolutely positioned annotations broke when this forced relative). */
+  .crx-grain > * { z-index: 1; }
+  .crx-grain::after {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); background-size: 180px 180px;
+    opacity: .06; mix-blend-mode: overlay;
+  }
+  @media (prefers-reduced-motion: no-preference) { .crx-grain::after { will-change: auto; } }
+
+  /* Buttons: yellow is the primary action, 44-52px tall, 20-28px padding */
+  .crx-page .btn { min-height: 48px; padding: 14px 26px; font-size: 14.5px; border-radius: 999px; }
+  .crx-page .btn.primary,
+  .crx-hero .btn.primary {
+    background: var(--yellow) !important; color: var(--ink) !important;
+    border: 1px solid var(--yellow);
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+  }
+  .crx-page .btn.primary:hover,
+  .crx-hero .btn.primary:hover {
+    background: var(--yellow-dark) !important; border-color: var(--yellow-dark); color: var(--ink) !important;
+    transform: translateY(-1px);
+  }
+  .crx-page .btn.secondary {
+    background: transparent; border: 1px solid rgba(20,20,20,.28); color: var(--ink);
+    transition: border-color .25s ease, background .25s ease, transform .2s ease;
+  }
+  .crx-page .btn.secondary:hover { border-color: var(--ink); background: rgba(20,20,20,.045); transform: translateY(-1px); }
+  /* On dark modules: yellow fill or white outline, never blue on black */
+  .crx-dark .btn.secondary, .crx-stage-dark .btn.secondary { border-color: rgba(255,255,255,.42); color: var(--paper); }
+  .crx-dark .btn.secondary:hover, .crx-stage-dark .btn.secondary:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+  /* Shared rounded art stage */
+  .crx-artstage {
+    position: relative; overflow: hidden; border-radius: 24px;
+    background: radial-gradient(70% 80% at 62% 30%, #16264F 0%, #101010 62%, var(--onyx) 100%);
+  }
+
+  /* Every image module: rounded, never stretched */
+  .crx-page img { border-radius: 14px; }
+  .crx-page figure img, .crx-page .crx-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+
+  /* ---------------- HERO (guide section 4) ---------------- */
+  /* The mockup now sits inside a contained dark art stage rather than
+     bleeding off canvas, per the guide's hero pattern. */
+  .crx-hero { padding: 84px 0 76px; }
+  .crx-hero-grid { grid-template-columns: .95fr 1.05fr; gap: 58px; align-items: center; }
+  .crx-source-title { font-size: clamp(42px, 4.6vw, 68px); line-height: 1.04; }
+  .crx-source-hero-lede { max-width: 52ch; font-size: 17px; line-height: 1.7; }
+
+  .crx-hero-visual::before, .crx-hero-visual::after { content: none; }
+  .crx-hero .crx-stage {
+    margin: 0; padding: 40px 0 44px 44px; perspective: 1700px;
+    box-shadow: 0 46px 90px -44px rgba(13,13,13,.55);
+  }
+  .crx-hero .crx-stage::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(52% 54% at 66% 30%, rgba(26,64,199,.55), transparent 70%);
+  }
+  .crx-hero .crx-mock {
+    transform: rotateY(-8deg) rotateX(1.5deg); transform-origin: left center;
+    border: 0; border-radius: 16px 0 0 16px;
+    box-shadow: 0 34px 60px -26px rgba(0,0,0,.65);
+  }
+  .crx-hero .crx-note { box-shadow: 0 18px 38px -16px rgba(0,0,0,.6); }
+  /* Kept fully inside the stage: it clips (overflow:hidden), so no negative offsets. */
+  .crx-hero .crx-note.a { top: 17%; left: 12px; }
+  .crx-hero .crx-note.b { top: 46%; right: 14px; }
+  .crx-hero .crx-note.c { bottom: 8%; left: 34px; }
+
+  /* ---------------- PROOF STRIP (guide section A) ---------------- */
+  .crx-trust { background: var(--paper); border-top: 1px solid var(--bone-border); }
+  .crx-trust-grid { border: 0; }
+  .crx-trust-item { min-height: 104px; padding: 26px 30px; border-left: 1px solid var(--bone-border); }
+  .crx-trust-label { font-size: 10px; letter-spacing: .16em; color: var(--charcoal); }
+  .crx-trust-value { margin-top: 10px; font-size: 16px; font-weight: 500; line-height: 1.4; }
+  .crx-stars { display: block; margin-bottom: 6px; color: var(--deep-blue); font-size: 13px; letter-spacing: .12em; }
+
+  @media (max-width: 1040px) {
+    .crx-hero .crx-stage { padding: 34px 0 36px 32px; }
+    .crx-hero .crx-mock { transform: rotateY(-5deg); }
+  }
+  @media (max-width: 900px) {
+    /* Guide 8: stack hero columns below 900px */
+    .crx-hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  }
+  @media (max-width: 720px) {
+    .crx-hero .crx-stage { padding: 24px 0 26px 20px; border-radius: 20px; }
+    .crx-hero .crx-mock { transform: none; border-radius: 12px 0 0 12px; }
+    .crx-hero .crx-note.a { top: 15%; left: 8px; }
+    .crx-hero .crx-note.b { right: 8px; }
+    .crx-hero .crx-note.c { left: 16px; }
+  }
+
+  /* ---------------- BLACK METHOD MODULE (guide section B) ---------------- */
+  /* NOTE: the guide's "Charcoal #1E1E1E" is this codebase's --onyx-3.
+     The existing --charcoal var is the muted TEXT grey (#6A686B), not a surface. */
+  .crx-method {
+    padding: 64px 56px 60px; border-radius: 24px;
+    background: var(--onyx-3); color: var(--paper);
+  }
+  .crx-method-head { max-width: 62ch; margin-bottom: 52px; }
+  .crx-method-head .crx-title { color: var(--paper); }
+  .crx-method-head .crx-title .sem { color: var(--yellow); }
+  .crx-method-head .crx-lede { color: #C7C5C8; margin-top: 20px; }
+  .crx-mgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px 32px; }
+  .crx-mstep { display: flex; flex-direction: column; }
+  .crx-mnum {
+    margin-bottom: 18px; color: var(--yellow);
+    font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .18em;
+  }
+  .crx-mstep h3 { margin: 22px 0 0; color: var(--paper); font-family: var(--wide); font-size: 17px; font-weight: 600; }
+  .crx-mcopy p { margin: 12px 0 0; max-width: 56ch; color: #B9B7B4; font-size: 14.5px; line-height: 1.7; }
+  .crx-mcopy a { color: var(--paper); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 3px; }
+
+  /* White art boards */
+  .crx-art {
+    padding: 20px 22px; border-radius: 16px; background: #fff; color: var(--ink);
+    min-height: 186px; display: flex; flex-direction: column;
+  }
+  .crx-art-cap { font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--charcoal); }
+  .crx-art-note { margin-top: auto; padding-top: 14px; color: var(--charcoal); font-size: 11.5px; line-height: 1.5; }
+
+  /* 1. baseline bars */
+  .crx-brow { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 10px; margin-top: 16px; }
+  .crx-blab { font-size: 11.5px; color: var(--charcoal); }
+  .crx-btrack { height: 9px; border-radius: 99px; background: #EFEDE7; overflow: hidden; }
+  .crx-btrack i { display: block; height: 100%; border-radius: 99px; background: var(--deep-blue); }
+  .crx-btrack i.pend { background: repeating-linear-gradient(90deg, var(--yellow) 0 7px, #F4E9A8 7px 14px); }
+  .crx-brow b { font-size: 12px; font-weight: 600; }
+  .crx-brow.is-you b { color: var(--charcoal); font-weight: 500; }
+
+  /* 2. event path */
+  .crx-path { display: flex; align-items: flex-start; gap: 0; margin: 20px 0 0; padding: 0; list-style: none; }
+  .crx-path li { position: relative; flex: 1; padding-top: 20px; font-size: 10.5px; line-height: 1.35; color: var(--charcoal); text-align: center; }
+  .crx-path li span { position: absolute; top: 0; left: 50%; width: 11px; height: 11px; margin-left: -5.5px; border-radius: 50%; background: var(--deep-blue); }
+  .crx-path li::before { content: ""; position: absolute; top: 5px; left: -50%; width: 100%; height: 1px; background: var(--bone-border); }
+  .crx-path li:first-child::before { content: none; }
+  .crx-path li.drop span { background: var(--yellow); box-shadow: 0 0 0 4px rgba(255,236,0,.28); }
+  .crx-path li.drop { color: var(--ink); font-weight: 600; }
+  .crx-art-flag { margin-top: auto; padding-top: 14px; color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+  .crx-art-flag::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--yellow); }
+
+  /* 3. prioritization list */
+  .crx-prio { margin: 14px 0 0; padding: 0; list-style: none; }
+  .crx-prio li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid #F0EDE7; }
+  .crx-prio li:last-child { border-bottom: 0; }
+  .crx-prio em { font-style: normal; font-size: 12.5px; }
+  .crx-prio b { padding: 3px 9px; border-radius: 99px; font-family: var(--mono); font-size: 8.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .crx-prio .p1 { background: var(--yellow); color: var(--ink); }
+  .crx-prio .p2 { background: var(--deep-blue-pale); color: var(--deep-blue); }
+  .crx-prio .p3 { background: #F0EDE7; color: var(--charcoal); }
+
+  /* 4. A/B comparison */
+  .crx-abpair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .crx-abcard { position: relative; padding: 12px; border: 1px solid #EDEAE4; border-radius: 11px; background: #FBFAF7; }
+  .crx-abcard.is-win { border-color: var(--ink); background: #fff; }
+  .crx-abtag { display: block; margin-bottom: 10px; font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; color: var(--charcoal); }
+  .crx-abcard i.l { display: block; height: 7px; border-radius: 3px; background: #E4E0D8; margin-bottom: 6px; }
+  .crx-abcard i.w1 { width: 84%; } .crx-abcard i.w2 { width: 56%; } .crx-abcard i.w3 { width: 70%; }
+  .crx-abcard i.cta { display: block; width: 52%; height: 15px; margin-top: 12px; border-radius: 99px; background: var(--ink); }
+  .crx-abcard i.cta.y { background: var(--yellow); }
+  .crx-abwin {
+    position: absolute; right: 10px; bottom: 10px; padding: 4px 9px; border-radius: 99px;
+    background: var(--yellow); color: var(--ink); font-family: var(--mono); font-size: 8px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  }
+
+  @media (max-width: 1040px) { .crx-method { padding: 48px 34px 44px; } }
+  @media (max-width: 600px) {
+    /* Guide 8: collapse process grid to one column below 600px */
+    .crx-mgrid { grid-template-columns: 1fr; gap: 30px; }
+    .crx-method { padding: 38px 22px 34px; border-radius: 20px; }
+  }
+
+  /* ---------------- CASE STUDY CARDS (guide section D) ---------------- */
+  .crx-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .crx-case {
+    position: relative; overflow: hidden; border-radius: 22px;
+    aspect-ratio: 4 / 5; isolation: isolate; background: var(--onyx);
+  }
+  .crx-case-shot { position: absolute; inset: 0; z-index: 0; }
+  .crx-case-shot img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 0;
+    transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .crx-case:hover .crx-case-shot img { transform: scale(1.04); }
+  /* Black filter over the image so type stays legible */
+  .crx-case::after {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(to bottom, rgba(13,13,13,.46) 0%, rgba(13,13,13,.10) 34%, rgba(13,13,13,.78) 74%, rgba(13,13,13,.94) 100%);
+  }
+  .crx-case-logo {
+    position: absolute; z-index: 2; top: 18px; left: 18px;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 64px; height: 42px; padding: 0 14px;
+    border-radius: 11px; background: #fff;
+    box-shadow: 0 10px 24px -12px rgba(0,0,0,.5);
+  }
+  .crx-case-logo img { width: auto; max-width: 92px; max-height: 22px; object-fit: contain; border-radius: 0; }
+  .crx-case-body { position: absolute; z-index: 2; inset: auto 22px 22px 22px; color: var(--paper); }
+  .crx-case-metric {
+    display: block; margin-bottom: 8px; color: var(--yellow);
+    font-size: clamp(34px, 3.2vw, 44px); font-weight: 500; line-height: 1; letter-spacing: -.03em;
+  }
+  .crx-case-body h3 { margin: 0; font-family: var(--wide); font-size: 15px; font-weight: 600; color: var(--paper); }
+  .crx-case-body p { margin: 8px 0 0; color: #CFCCC7; font-size: 13px; line-height: 1.55; }
+  .crx-case-source { margin: 26px 0 0; max-width: 72ch; color: var(--grey); font-size: 12.5px; line-height: 1.6; }
+
+  /* Restrained grain on the dark and blue full-bleed sections */
+  .crx-section.crx-dark, .crx-final { position: relative; isolation: isolate; }
+  .crx-section.crx-dark > *, .crx-final > * { position: relative; z-index: 1; }
+  .crx-section.crx-dark::before, .crx-final::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 180px 180px; opacity: .05; mix-blend-mode: overlay;
+  }
+
+  @media (max-width: 1040px) { .crx-case-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) {
+    /* Guide 8: collapse case-study grid to one column below 600px */
+    .crx-case-grid { grid-template-columns: 1fr; gap: 18px; }
+    .crx-case { aspect-ratio: 5 / 4; }
+  }
+
+  /* ---------------- EXPLAINER PANEL (guide section C) ---------------- */
+  .crx-explain {
+    padding: 52px 52px 54px; border-radius: 24px;
+    background: var(--onyx-3); color: var(--paper);
+    align-items: center;
+  }
+  .crx-explain .crx-title { color: var(--paper); }
+  .crx-explain .crx-title .sem { color: var(--yellow); }
+  .crx-explain .crx-kicker { color: var(--paper); }
+  .crx-explain .crx-kicker::before { background: var(--yellow); }
+  .crx-explain .crx-copy p { color: #B9B7B4; font-size: 15.5px; }
+  .crx-explain .crx-link { color: var(--paper); text-decoration-color: var(--yellow); }
+  .crx-art-cap.on-dark { color: var(--grey); }
+  .crx-funnel { padding: 26px 26px 24px; border-radius: 18px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); }
+  .crx-fn { margin: 18px 0 0; padding: 0; list-style: none; }
+  .crx-fn li { position: relative; margin-bottom: 10px; }
+  .crx-fn li::before {
+    content: ""; display: block; width: var(--w); height: 38px; border-radius: 8px;
+    background: linear-gradient(90deg, var(--deep-blue), var(--blue-soft));
+  }
+  .crx-fn li.end::before { background: linear-gradient(90deg, var(--yellow-dark), var(--yellow)); }
+  .crx-fn li span {
+    position: absolute; top: 0; left: 14px; height: 38px; display: flex; align-items: center;
+    color: #fff; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .crx-fn li.end span { color: var(--ink); }
+  .crx-fn-note { margin: 16px 0 20px; color: var(--grey); font-size: 13px; line-height: 1.6; }
+
+  /* ---------------- TEAM MODULE (guide section F) ---------------- */
+  .crx-team { padding: 54px 52px 52px; border-radius: 24px; background: var(--onyx-3); color: var(--paper); }
+  .crx-team-top { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; }
+  .crx-team .crx-title { color: var(--paper); }
+  .crx-team .crx-title .sem { color: var(--yellow); }
+  .crx-team .crx-lede { color: #B9B7B4; font-size: 16px; }
+  .crx-team figure { margin: 0; overflow: hidden; border-radius: 18px; }
+  .crx-team-shot { aspect-ratio: 3 / 2; }
+  .crx-team-bottom { display: grid; grid-template-columns: 1.15fr .85fr; gap: 26px; margin-top: 34px; align-items: stretch; }
+  .crx-team-office { aspect-ratio: 16 / 7; }
+  .crx-team-cta {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 30px 32px; border-radius: 18px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.1);
+  }
+  .crx-team-cta h3 { margin: 0; font-family: var(--wide); font-size: 16px; font-weight: 600; color: var(--paper); }
+  .crx-team-cta p { margin: 10px 0 20px; color: #B9B7B4; font-size: 14.5px; line-height: 1.6; }
+  .crx-team-cta .btn { align-self: flex-start; }
+
+  @media (max-width: 1040px) {
+    .crx-explain, .crx-team { padding: 40px 30px; }
+    .crx-team-top, .crx-team-bottom { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 600px) {
+    .crx-explain, .crx-team { padding: 30px 20px; border-radius: 20px; }
+    .crx-team-cta { padding: 24px 20px; }
+  }
+
+  /* ---------------- TESTIMONIALS (guide section E) ----------------
+     The guide asks for a large real headshot in the circle. No client
+     headshots exist in this repo, so the circle carries the brand ring
+     and a monogram; drop a photo into .crx-avatar and it slots straight in.
+     Kase Insurance has no logo file, so that card runs without one. */
+  .crx-testimonial-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+  .crx-testimonial {
+    grid-column: span 2; display: flex; flex-direction: column;
+    min-height: 0; padding: 30px; border: 1px solid var(--bone-border); border-radius: 20px; background: var(--pure);
+  }
+  .crx-testimonial:nth-child(4), .crx-testimonial:nth-child(5) { grid-column: span 3; }
+  .crx-testimonial blockquote { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.75; }
+  .crx-rating { margin-bottom: 16px; color: var(--deep-blue); font-size: 13px; letter-spacing: .16em; }
+  .crx-testimonial footer {
+    display: flex; align-items: center; gap: 14px;
+    margin-top: auto; padding: 24px 0 0; border: 0; background: none;
+  }
+  .crx-avatar {
+    flex: 0 0 auto; display: grid; place-items: center;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: linear-gradient(145deg, var(--deep-blue), var(--blue-soft));
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 1px var(--bone-border);
+    overflow: hidden;
+  }
+  .crx-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .crx-avatar i {
+    font-style: normal; color: #fff; font-family: var(--wide);
+    font-size: 16px; font-weight: 600; letter-spacing: .04em;
+  }
+  .crx-tmeta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .crx-tmeta strong { font-family: var(--wide); font-size: 14px; font-weight: 600; color: var(--ink); }
+  .crx-tmeta em { font-style: normal; color: var(--charcoal); font-size: 12.5px; }
+  .crx-tlogo { display: block; margin-top: 9px; }
+  .crx-tlogo img { width: auto; max-width: 104px; max-height: 20px; object-fit: contain; border-radius: 0; }
+
+  @media (max-width: 1040px) {
+    .crx-testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+    .crx-testimonial, .crx-testimonial:nth-child(4), .crx-testimonial:nth-child(5) { grid-column: span 1; }
+  }
+  @media (max-width: 600px) {
+    .crx-testimonial-grid { grid-template-columns: 1fr; }
+    .crx-testimonial { padding: 24px; }
+  }
+
 </style>
 <main class="crx-page">
   <section class="crx-hero">
@@ -4168,7 +4502,7 @@
         </div>
       </div>
       <div class="crx-hero-visual" aria-hidden="true">
-        <div class="crx-stage">
+        <div class="crx-stage crx-artstage crx-grain">
           <div class="crx-mock">
             <div class="crx-mock-bar">
               <i></i><i></i><i></i>
@@ -4210,30 +4544,64 @@
 
   <div class="crx-trust"><div class="crx-wrap crx-trust-grid">
     <div class="crx-trust-item"><div class="crx-trust-label">The baseline</div><div class="crx-trust-value">Average site converts at 2.35%</div></div>
-    <div class="crx-trust-item"><div class="crx-trust-label">Client rating</div><div class="crx-trust-value">4.9 stars from 43 entrepreneurs</div></div>
+    <div class="crx-trust-item"><div class="crx-trust-label">Client rating</div><div class="crx-trust-value"><span class="crx-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.9 from 43 reviews</div></div>
     <div class="crx-trust-item"><div class="crx-trust-label">Method</div><div class="crx-trust-value">Analytics, user testing, A/B tests</div></div>
     <div class="crx-trust-item"><div class="crx-trust-label">Strategy session</div><div class="crx-trust-value">Free 30-minute strategy session</div></div>
   </div></div>
 
   <section class="crx-section crx-dark" id="crx-results"><div class="crx-wrap">
     <div class="crx-section-head"><div><div class="crx-kicker on-dark">Real results</div><h2 class="crx-title">Real performance. Measurable <span class="sem">growth</span>.</h2></div></div>
-    <div class="crx-results-grid">
-      <article class="crx-result-card"><strong>+2900%</strong><h3>Bow City Storage</h3><p>ROAS increase of 2900% in addition to a 33% CTR increase.</p></article>
-      <article class="crx-result-card"><strong>6%</strong><h3>Harmony Resorts</h3><p>Harmony Resorts reported a 6% conversion rate and an increase in ROAS of 74%.</p></article>
-      <article class="crx-result-card"><strong>+41%</strong><h3>Ontario Business Central Inc.</h3><p>A 41% increase in revenue along with an efficient 16% increase in ROAS.</p></article>
-      <article class="crx-result-card"><strong>$420K</strong><h3>Spieth America</h3><p>From zero to $420K in online sales within 10 months.</p></article>
+    <div class="crx-case-grid">
+      <article class="crx-case">
+        <div class="crx-case-shot"><img src="/assets/work/cards/bow-city-storage.jpg" alt="Bow City Storage" width="1200" height="1350" loading="lazy" decoding="async"></div>
+        <span class="crx-case-logo"><img src="/assets/work/logos/bowcity.png" alt="Bow City Storage logo" loading="lazy" decoding="async"></span>
+        <div class="crx-case-body">
+          <b class="crx-case-metric">+2900%</b>
+          <h3>Bow City Storage</h3>
+          <p>ROAS increase of 2900% in addition to a 33% CTR increase.</p>
+        </div>
+      </article>
+      <article class="crx-case">
+        <div class="crx-case-shot"><img src="/assets/work/cards/spieth-america.jpg" alt="Spieth America" width="1200" height="1350" loading="lazy" decoding="async"></div>
+        <span class="crx-case-logo"><img src="/assets/work/logos/spieth.png" alt="Spieth America logo" loading="lazy" decoding="async"></span>
+        <div class="crx-case-body">
+          <b class="crx-case-metric">$420K</b>
+          <h3>Spieth America</h3>
+          <p>From zero to $420K in online sales within 10 months.</p>
+        </div>
+      </article>
+      <article class="crx-case">
+        <div class="crx-case-shot"><img src="/assets/work/cards/harmony-resorts.jpg" alt="Harmony Resorts" width="1200" height="1350" loading="lazy" decoding="async"></div>
+        <span class="crx-case-logo"><img src="/assets/work/logos/harmony.png" alt="Harmony Resorts logo" loading="lazy" decoding="async"></span>
+        <div class="crx-case-body">
+          <b class="crx-case-metric">6%</b>
+          <h3>Harmony Resorts</h3>
+          <p>Harmony Resorts reported a 6% conversion rate and an increase in ROAS of 74%.</p>
+        </div>
+      </article>
     </div>
-  </div></section>
+    <p class="crx-case-source">Figures are drawn from Consultus Digital client reporting for each engagement and reflect that program&rsquo;s measurement window. Results vary by category, spend, and starting baseline.</p>
+    </div></section>
 
   <section class="crx-section" id="crx-context"><div class="crx-wrap">
     <div class="crx-section-head"><div><div class="crx-kicker">Marketing service</div><h2 class="crx-title">Conversion Rate <span class="sem">Optimization</span>.</h2></div></div>
     <div class="crx-source-copy"><p>There&rsquo;s more to effective digital marketing than the typical metrics: views, interactions, organic traffic. What matters is conversions. But are you generating enough of them for all the impressions and leads you bring in?</p><p>Driving traffic and clicks to your website is only half the battle. Getting more out of your existing traffic can move a business toward long-term, sustainable growth. That&rsquo;s where conversion rate optimization comes in. Don&rsquo;t settle for being one of the 22% of businesses satisfied with a conversion rate sitting at 1 to 3%.</p><p><a class="crx-link" href="/">Consultus Digital</a> is a leading CRO agency in Toronto, dedicated to testing and optimizing the conversion rate of your website, implementing conversion goals, and building a strategy with a proven track record behind it. The point is to convert more clicks into sales and create lasting customer relationships from traffic you are already paying for.</p></div>
   </div></section>
 
-  <section class="crx-section bone" id="crx-overview"><div class="crx-wrap crx-intro-grid">
+  <section class="crx-section" id="crx-overview"><div class="crx-wrap"><div class="crx-explain crx-grain crx-intro-grid">
     <div class="crx-intro-copy"><div class="crx-kicker">CRO, explained</div><h2 class="crx-title">What is conversion rate <span class="sem">optimization</span>?</h2><div class="crx-copy" style="margin-top:28px"><p>CRO is often overlooked. Most marketers focus on search rankings, cost per acquisition, click-through rate, and return on investment. Those are essential metrics, but if you stop there you miss a crucial piece: how many leads are actually turning into customers?</p><p>A conversion rate is the number of purchases against the total number of sessions. For every 10,000 views, how many materialized in revenue? It is the one percentage that indicates how effective the whole strategy is.</p><p>CRO programmes are a long-term approach to understanding the customer journey, from impressions and clicks through to conversion actions and purchases. Whether that action is filling out a form, watching a video, signing up for a newsletter, installing an app, or responding to a call to action, you need to know what your audience does and how it moves them along the funnel.</p><p>Fundamentally it&rsquo;s about the customer experience: what gets people to click, why they bounce or what compels them to stay, and what makes them convert. It&rsquo;s a holistic way of looking at customers in order to meet needs that keep changing.</p></div></div>
-    <div class="crx-intro-visual" aria-label="Conversion analysis"><figure class="crx-photo"><img src="/assets/service-photos/data-viz-laptop.jpg" alt="Conversion analytics on a laptop"><figcaption class="crx-photo-tag">Analytics &middot; the quantitative half</figcaption></figure><figure class="crx-photo small"><img src="/assets/service-photos/contact-form.jpg" alt="Form on a landing page"><figcaption class="crx-photo-tag">Conversion elements &middot; tested</figcaption></figure></div>
-  </div></section>
+    <div class="crx-funnel" aria-hidden="true">
+      <div class="crx-art-cap on-dark">The conversion path</div>
+      <ul class="crx-fn">
+        <li style="--w:100%"><span>Sessions</span></li>
+        <li style="--w:74%"><span>Engaged</span></li>
+        <li style="--w:46%"><span>Form start</span></li>
+        <li style="--w:26%" class="end"><span>Converted</span></li>
+      </ul>
+      <p class="crx-fn-note">CRO works on the gaps between these stages, not on the traffic above them.</p>
+      <a class="btn primary" href="/contact/">Book a Strategy Session</a>
+    </div>
+    </div></div></section>
 
   <section class="crx-section crx-dark" id="crx-benefits"><div class="crx-wrap">
     <div class="crx-section-head"><div><div class="crx-kicker on-dark">The advantages</div><h2 class="crx-title">What are the benefits of <span class="sem">CRO</span>?</h2></div><p class="crx-lede">Emails with a single call to action increase sales substantially, marketing automation drives qualified leads sharply upward, and a personalized follow-up call within two days can more than double conversions. All of that is conversion rate optimization at work.</p></div>
@@ -4264,13 +4632,69 @@
     </div>
   </div></section>
 
-  <section class="crx-section" id="crx-process"><div class="crx-wrap">
-    <div class="crx-section-head"><div><div class="crx-kicker">The Consultus Digital method</div><h2 class="crx-title">The Consultus Digital <span class="sem">Method</span>.</h2></div><p class="crx-lede">We take ownership of the whole customer journey, from click to conversion to lasting trust. Our CRO experts are focused on maximizing the potential of every click and generating multiple effective conversion pathways.</p></div>
-    <div class="crx-process">
-      <article class="crx-step"><h3>Baseline and benchmark</h3><p>We start with baseline analytics and benchmarking, talking through the challenges you are experiencing, your existing strategy, and your goals.</p><p>We also look at your performance against industry and direct competitor benchmarks, which is what uncovers the actual gap in your conversion rate.</p></article>
-      <article class="crx-step"><h3>Analytics audit</h3><p>With a clear picture of the current state, we dig into your analytics and customer journey.</p><p>That means overall site analytics plus landing pages, session time, bounce rate, referral channel, current design, the presence of social proof and trust icons, and calls to action, all to identify the roadblocks.</p></article>
-      <article class="crx-step"><h3>Roadmap to convert</h3><p>Next we develop your custom strategy.</p><p>Our team brings together experts across web design, <a class="crx-inline-link" href="/content-marketing/">content marketing</a>, SEO and paid, and user experience, to build a foundation the implementation can actually stand on.</p></article>
-      <article class="crx-step"><h3>Implement, evaluate, optimize</h3><p>The work begins: optimizations for design, <a class="crx-inline-link" href="/landing-pages/">landing page development</a>, content, call to action format, page speed, and more, with A/B testing behind every adoption decision.</p><p>We don&rsquo;t stop once the improved pages are live. We keep testing and refining as customer behaviour shifts, because CRO is an ongoing process rather than a project.</p></article>
+    <section class="crx-section" id="crx-process"><div class="crx-wrap">
+    <div class="crx-method crx-grain">
+      <div class="crx-method-head">
+        <div class="crx-kicker on-dark">The Consultus Digital method</div>
+        <h2 class="crx-title">The Consultus Digital <span class="sem">Method</span>.</h2>
+        <p class="crx-lede">We take ownership of the whole customer journey, from click to conversion to lasting trust. Our CRO experts are focused on maximizing the potential of every click and generating multiple effective conversion pathways.</p>
+      </div>
+      <div class="crx-mgrid">
+      <article class="crx-mstep">
+        <div class="crx-mnum">01</div>
+        <div class="crx-art crx-art-base">
+  <div class="crx-art-cap">Conversion rate</div>
+  <div class="crx-brow"><span class="crx-blab">Category average</span><span class="crx-btrack"><i style="width:44%"></i></span><b>2.35%</b></div>
+  <div class="crx-brow is-you"><span class="crx-blab">Your site</span><span class="crx-btrack"><i class="pend" style="width:66%"></i></span><b>Measuring</b></div>
+  <div class="crx-art-note">Benchmarked against category and direct competitors</div>
+</div>
+        <h3>Baseline and benchmark</h3>
+        <div class="crx-mcopy"><p>We start with baseline analytics and benchmarking, talking through the challenges you are experiencing, your existing strategy, and your goals.</p><p>We also look at your performance against industry and direct competitor benchmarks, which is what uncovers the actual gap in your conversion rate.</p></div>
+      </article>
+      <article class="crx-mstep">
+        <div class="crx-mnum">02</div>
+        <div class="crx-art crx-art-path">
+  <div class="crx-art-cap">Event path</div>
+  <ol class="crx-path">
+    <li><span></span>Landing</li>
+    <li><span></span>Scroll depth</li>
+    <li class="drop"><span></span>Form start</li>
+    <li><span></span>Submit</li>
+  </ol>
+  <div class="crx-art-flag">Drop-off isolated</div>
+</div>
+        <h3>Analytics audit</h3>
+        <div class="crx-mcopy"><p>With a clear picture of the current state, we dig into your analytics and customer journey.</p><p>That means overall site analytics plus landing pages, session time, bounce rate, referral channel, current design, the presence of social proof and trust icons, and calls to action, all to identify the roadblocks.</p></div>
+      </article>
+      <article class="crx-mstep">
+        <div class="crx-mnum">03</div>
+        <div class="crx-art crx-art-road">
+  <div class="crx-art-cap">Test backlog</div>
+  <ul class="crx-prio">
+    <li><em>Form length</em><b class="p1">High</b></li>
+    <li><em>Call to action copy</em><b class="p1">High</b></li>
+    <li><em>Page speed</em><b class="p2">Medium</b></li>
+    <li><em>Social proof</em><b class="p3">Low</b></li>
+  </ul>
+  <div class="crx-art-note">Sequenced by impact against effort</div>
+</div>
+        <h3>Roadmap to convert</h3>
+        <div class="crx-mcopy"><p>Next we develop your custom strategy.</p><p>Our team brings together experts across web design, <a class="crx-inline-link" href="/content-marketing/">content marketing</a>, SEO and paid, and user experience, to build a foundation the implementation can actually stand on.</p></div>
+      </article>
+      <article class="crx-mstep">
+        <div class="crx-mnum">04</div>
+        <div class="crx-art crx-art-ab">
+  <div class="crx-art-cap">Split test</div>
+  <div class="crx-abpair">
+    <div class="crx-abcard"><span class="crx-abtag">A</span><i class="l w1"></i><i class="l w2"></i><i class="cta"></i></div>
+    <div class="crx-abcard is-win"><span class="crx-abtag">B</span><i class="l w1"></i><i class="l w3"></i><i class="cta y"></i><b class="crx-abwin">Winner</b></div>
+  </div>
+  <div class="crx-art-note">Every change is tested before it ships</div>
+</div>
+        <h3>Implement, evaluate, optimize</h3>
+        <div class="crx-mcopy"><p>The work begins: optimizations for design, <a class="crx-inline-link" href="/landing-pages/">landing page development</a>, content, call to action format, page speed, and more, with A/B testing behind every adoption decision.</p><p>We don&rsquo;t stop once the improved pages are live. We keep testing and refining as customer behaviour shifts, because CRO is an ongoing process rather than a project.</p></div>
+      </article>
+      </div>
     </div>
   </div></section>
 
@@ -4321,16 +4745,76 @@
     </div>
   </div></section>
 
+
+  <section class="crx-section" id="crx-team"><div class="crx-wrap">
+    <div class="crx-team crx-grain">
+      <div class="crx-team-top">
+        <div class="crx-team-copy">
+          <div class="crx-kicker on-dark">The team</div>
+          <h2 class="crx-title">The people behind the <span class="sem">testing</span>.</h2>
+          <p class="crx-lede">Conversion work at Consultus Digital is not one specialist working alone. Web design, analytics, content, SEO and paid, and user experience work the same programme, so a finding in the data becomes a tested change on the page.</p>
+        </div>
+        <figure class="crx-team-shot">
+          <img src="/assets/team/team-studio.jpg" alt="The Consultus Digital team" width="1360" height="907" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <div class="crx-team-bottom">
+        <figure class="crx-team-office">
+          <img src="/assets/team/office-meeting.jpg" alt="The Consultus Digital team working together in the Toronto office" width="1600" height="1066" loading="lazy" decoding="async">
+        </figure>
+        <div class="crx-team-cta">
+          <h3>Working together</h3>
+          <p>Bring us your analytics and we will show you where the conversions are leaking.</p>
+          <a class="btn primary" href="/contact/">Book a Strategy Session</a>
+        </div>
+      </div>
+    </div>
+  </div></section>
   <section class="crx-section bone" id="crx-testimonials"><div class="crx-wrap">
     <div class="crx-section-head"><div><div class="crx-kicker">Client Testimonials</div><h2 class="crx-title">What clients had to <span class="sem">say</span>.</h2></div><p class="crx-lede">There&rsquo;s a reason Consultus Digital is considered one of Toronto&rsquo;s leading digital marketing agencies.</p></div>
     <div class="crx-testimonial-grid">
-      <article class="crx-testimonial"><div class="crx-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;My firm, KASE Insurance Inc. partnered with Consultus Digital two years ago. At that time we had no online strategy. Michael and his team have helped us rebuild our website and created an SEO strategy that has provided us with 150% ROI! Consultus Digital has an amazing customer service team and they truly care about their clients and deliver on their promises. I strongly recommend Michael and the Consultus Digital team to all my friends and clients.&rdquo;</blockquote><footer><strong>Stanislav Kojokin</strong>Kase Insurance</footer></article>
-      <article class="crx-testimonial"><div class="crx-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;The team at Consultus Digital won our business due to their thorough assessment and realignment of our digital sales and marketing strategy. Within only a few weeks of partnering with them, we increased our inbound leads significantly by reconfiguring the user experience of our website.&rdquo;</blockquote><footer><strong>Helen Stergiou</strong>Partner, The Office Shop</footer></article>
-      <article class="crx-testimonial"><div class="crx-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;I began using Consultus Digital in January of 2022 after being with a competitor for many years. The team at Consultus Digital has helped us to increase revenues over the last number of months and has brought new engaging ideas to increase our exposure within our market. They are a great team who do amazing SEO, Google ads and CRO. Highly recommend.&rdquo;</blockquote><footer><strong>Laura Harvey</strong>CEO, Ontario Business Central Inc.</footer></article>
-      <article class="crx-testimonial"><div class="crx-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Such a great team to work with! Created an amazing new website for us along with managing all our paid digital ads each month.&rdquo;</blockquote><footer><strong>Melissa Graham</strong>Manager, Orr Insurance</footer></article>
-      <article class="crx-testimonial"><div class="crx-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;As the VP of both Sales and Marketing for one of Canada&rsquo;s largest electronic recycling companies, I wear many hats. I rely on the team at Consultus Digital to act as my outsourced, internal marketing team. Over the past 3 years, they&rsquo;ve provided our company everything from website development to social media management. I would highly recommend the team at Consultus Digital to any business looking for a partner in navigating the complex world of digital.&rdquo;</blockquote><footer><strong>Tricia Oldfield</strong>Vice President, eCycle Solutions</footer></article>
+      <article class="crx-testimonial">
+        <div class="crx-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;My firm, KASE Insurance Inc. partnered with Consultus Digital two years ago. At that time we had no online strategy. Michael and his team have helped us rebuild our website and created an SEO strategy that has provided us with 150% ROI! Consultus Digital has an amazing customer service team and they truly care about their clients and deliver on their promises. I strongly recommend Michael and the Consultus Digital team to all my friends and clients.&rdquo;</blockquote>
+        <footer>
+          <span class="crx-avatar" aria-hidden="true"><i>SK</i></span>
+          <span class="crx-tmeta"><strong>Stanislav Kojokin</strong><em>Kase Insurance</em></span>
+        </footer>
+      </article>
+      <article class="crx-testimonial">
+        <div class="crx-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;The team at Consultus Digital won our business due to their thorough assessment and realignment of our digital sales and marketing strategy. Within only a few weeks of partnering with them, we increased our inbound leads significantly by reconfiguring the user experience of our website.&rdquo;</blockquote>
+        <footer>
+          <span class="crx-avatar" aria-hidden="true"><i>HS</i></span>
+          <span class="crx-tmeta"><strong>Helen Stergiou</strong><em>Partner, The Office Shop</em><span class="crx-tlogo"><img src="/assets/work/logos/office-shop.png" alt="The Office Shop logo" loading="lazy" decoding="async"></span></span>
+        </footer>
+      </article>
+      <article class="crx-testimonial">
+        <div class="crx-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;I began using Consultus Digital in January of 2022 after being with a competitor for many years. The team at Consultus Digital has helped us to increase revenues over the last number of months and has brought new engaging ideas to increase our exposure within our market. They are a great team who do amazing SEO, Google ads and CRO. Highly recommend.&rdquo;</blockquote>
+        <footer>
+          <span class="crx-avatar" aria-hidden="true"><i>LH</i></span>
+          <span class="crx-tmeta"><strong>Laura Harvey</strong><em>CEO, Ontario Business Central Inc.</em><span class="crx-tlogo"><img src="/assets/work/logos/obc.png" alt="Ontario Business Central logo" loading="lazy" decoding="async"></span></span>
+        </footer>
+      </article>
+      <article class="crx-testimonial">
+        <div class="crx-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Such a great team to work with! Created an amazing new website for us along with managing all our paid digital ads each month.&rdquo;</blockquote>
+        <footer>
+          <span class="crx-avatar" aria-hidden="true"><i>MG</i></span>
+          <span class="crx-tmeta"><strong>Melissa Graham</strong><em>Manager, Orr Insurance</em><span class="crx-tlogo"><img src="/assets/work/logos/orr.png" alt="Orr Insurance logo" loading="lazy" decoding="async"></span></span>
+        </footer>
+      </article>
+      <article class="crx-testimonial">
+        <div class="crx-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;As the VP of both Sales and Marketing for one of Canada&rsquo;s largest electronic recycling companies, I wear many hats. I rely on the team at Consultus Digital to act as my outsourced, internal marketing team. Over the past 3 years, they&rsquo;ve provided our company everything from website development to social media management. I would highly recommend the team at Consultus Digital to any business looking for a partner in navigating the complex world of digital.&rdquo;</blockquote>
+        <footer>
+          <span class="crx-avatar" aria-hidden="true"><i>TO</i></span>
+          <span class="crx-tmeta"><strong>Tricia Oldfield</strong><em>Vice President, eCycle Solutions</em><span class="crx-tlogo"><img src="/assets/work/logos/ecycle.webp" alt="eCycle Solutions logo" loading="lazy" decoding="async"></span></span>
+        </footer>
+      </article>
     </div>
-  </div></section>
+    </div></section>
 
   <section class="crx-final" id="schedule-a-free-discovery-call"><div class="crx-wrap crx-final-grid"><div><div class="crx-kicker">Claim your free 30-minute strategy session</div><h2>You already paid for the <span class="sem">traffic</span>.</h2><p style="max-width:760px;margin:26px 0 0;color:#DCE4FF;font-size:17px;line-height:1.65">Let&rsquo;s find out why it isn&rsquo;t converting, and fix the parts that are costing you the most. <a class="crx-inline-link" href="/contact/">Contact us today</a> and find out how we can help your business grow.</p></div><a class="btn" href="/contact/">Schedule a Discovery Call &rarr;</a></div></section>
 </main>
