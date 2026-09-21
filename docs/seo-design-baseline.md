@@ -13,11 +13,12 @@ The SEO page applies the visual system established by the Google Ads redesign wh
 
 ## SEO-specific adaptations
 
-- The hero visualization combines organic ranking movement, AI Overview citation visibility, and backlink growth.
+- The hero uses the same split composition as Google Ads, with a detailed reporting dashboard that visualizes organic clicks, keyword movement, visibility trends, and AI citation coverage.
+- The dark proof section includes a large growth chart, an AI share-of-voice donut, keyword-position bars, and KPI tiles. The example data is visibly identified as illustrative.
 - The five-step method uses the same rising-card treatment as the Google Ads process, with copy tailored to SEO and GEO.
 - SEO scope is organized around on-page, off-page, technical, and local work.
 - Pricing and practical questions use the alternating purple, yellow, and neutral panel treatment.
-- Client testimonials use real client portraits from the existing public Consultus Digital page.
+- Client testimonials use the same alternating portrait-and-quote carousel treatment as Google Ads, with real client portraits from the existing public Consultus Digital page.
 - Eight visible FAQ disclosures match the page's FAQ structured data topics.
 
 ## Imagery
