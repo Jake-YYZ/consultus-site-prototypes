@@ -630,38 +630,6 @@ a.body-link:hover {
 </script>
 
   <style id="lpg-page-styles">
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-video-player,
-.gads-video-player iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #111;
-}
-.gads-context-visual {
-  position: relative;
-  min-height: 630px;
-  padding-bottom: 35px;
-  width: 602px;
-}
-.gads-context-photo {
-  display: block;
-  width: 100%;
-  height: 620px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-.gads-stat-chips {
-  position: absolute;
-  left: -45px;
-  right: 30px;
-  bottom: 220px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
 .gads-stat-chips > div:nth-child(2) {
   background: #5b60ca;
 }
@@ -685,320 +653,22 @@ a.body-link:hover {
 .gads-stat-chips > div:nth-child(n + 4) span {
   color: #0D0D0D;
 }
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-signal-panel {
-  position: absolute;
-  left: -45px;
-  right: 30px;
-  bottom: 62px;
-  box-shadow: 0 12px 25px #0002;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #F5F2EC;
-}
-.gads-step,
-.gads-choice {
-  padding: 32px 27px 38px;
-  background: var(--gads-blue);
-  color: white;
-  position: relative;
-  counter-increment: steps;
-  margin: 0;
-  border: 0;
-}
 .gads-stairs > :nth-child(2) {
   background: #5D7BEA;
 }
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-callout {
-  position: relative;
-  border-left: 2px solid var(--yellow);
-  border-bottom: 2px solid var(--yellow);
-  margin-top: 64px;
-  padding: 24px 24px 32px 50px;
-}
-.gads-carousel-count {
-  font-size: 16px;
-  min-width: 32px;
-  text-align: center;
-}
-.gads-benefit,
-.gads-metric,
-.gads-complement {
-  border: 1px solid #0D0D0D;
-  padding: 34px 30px;
-  background: transparent;
-  min-height: 348px;
-}
-.gads-metric {
-  min-height: 360px;
-}
-.gads-who-card {
-  background: var(--gads-blue);
-  color: white;
-  padding: 30px;
-  min-height: 300px;
-  align-self: stretch;
-}
 .gads-who-card:nth-child(2) {
   background: #5D7BEA;
-}
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-scope {
-  background: #F5F2EC;
-  border: 1px solid transparent;
-  transition: border-color 0.2s;
-  min-height: 650px;
-  display: flex;
-  flex-direction: column;
-}
-.gads-testimonial-slide {
-  flex: 0 0 100%;
-  min-width: 0;
-  scroll-snap-align: start;
-  display: grid;
-  gap: 30px;
-}
-.gads-testimonial {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 50px;
-  align-items: center;
-  min-width: 0;
-}
-.gads-portrait-wrap {
-  position: relative;
-  padding: 20px 20px 0;
-}
-.gads-portrait {
-  display: block;
-  width: 100%;
-}
-.gads-quote-mark {
-  font-size: 70px;
-  font-family: Georgia, serif;
-  color: var(--gads-blue);
-  display: block;
-  margin-bottom: 24px;
-}
-.gads-testimonial-logo {
-  display: block;
-  max-width: 210px;
-  max-height: 80px;
-  width: auto;
-  height: auto;
-  margin-top: 28px;
-  object-fit: contain;
-  object-position: left center;
-}
-.gads-final {
-  padding: 100px 0 110px;
-  background: var(--gads-blue);
-  color: #fff;
 }
 .gads-revamp .svc-marquee-track a[href="/landing-pages/"] {
   background: #141414;
   color: #fff;
 }
-@media (min-width: 1600px) {
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-title {
-    font-size: 60px;
-  }
-  .gads-source-title {
-    font-size: 80px;
-  }
-}
-@media (max-width: 1100px) {
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-step,
-  .gads-choice {
-    padding: 28px 20px;
-  }
-  .gads-stat-chips {
-    left: -25px;
-    right: 20px;
-  }
-  .gads-signal-panel {
-    left: -25px;
-    right: 20px;
-  }
-  .gads-testimonial {
-    gap: 45px;
-  }
-  .gads-client-logo {
-    max-width: 145px;
-  }
-}
-@media (max-width: 900px) {
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-title {
-    font-size: 42px;
-  }
-  .gads-context-visual {
-    width: calc(100% - 24px);
-    max-width: 600px;
-    margin-left: auto;
-    min-height: 550px;
-  }
-  .gads-context-photo {
-    height: 550px;
-  }
-  .gads-stat-chips {
-    bottom: 210px;
-  }
-  .gads-signal-panel {
-    bottom: 52px;
-  }
-  .gads-step,
-  .gads-choice {
-    padding: 32px;
-  }
-  .gads-result-row {
-    grid-template-columns: 29% 44%;
-    min-height: 130px;
-  }
-  .gads-funnel {
-    width: 35%;
-    opacity: 0.9;
-  }
-  .gads-client-logo {
-    max-width: 155px;
-  }
-  .gads-result-number {
-    font-size: 54px;
-  }
-  .gads-who-card {
-    min-height: 0;
-    padding: 30px;
-  }
-  .gads-scope {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-  }
-  .gads-testimonial,
-  .gads-testimonial:nth-child(even) {
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 32px;
-  }
-  .gads-testimonial:nth-child(even) {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-  .gads-portrait-wrap {
-    padding: 10px;
-  }
-  .gads-portrait {
-    height: 320px;
-  }
-}
 @media (max-width: 600px) {
 /* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-title {
-    font-size: 35px;
-    line-height: 1.12;
-    margin-top: 18px;
-  }
-  .gads-funnel {
-    width: 35%;
-    opacity: 0.24;
-    z-index: 0;
-  }
-  .gads-result-row {
-    grid-template-columns: 42% 58%;
-    min-height: 138px;
-  }
-  .gads-result-number {
-    font-size: 49px;
-  }
-  .gads-client-logo {
-    height: 27px;
-    max-width: 135px;
-    margin-bottom: 8px;
-  }
-  .gads-context-visual {
-    width: calc(100% - 14px);
-    min-height: 510px;
-    padding-bottom: 25px;
-  }
-  .gads-context-photo {
-    height: 470px;
-  }
-  .gads-stat-chips {
-    left: -14px;
-    right: 10px;
-    bottom: 183px;
-    gap: 5px;
-  }
   .gads-stat-chips span {
     font-size: 6px;
     margin-top: 0;
   }
-  .gads-signal-panel {
-    left: -14px;
-    right: 10px;
-    bottom: 35px;
-  }
-  .gads-step,
-  .gads-choice {
-    padding: 30px 26px;
-  }
-  .gads-callout {
-    padding: 20px 16px 25px 25px;
-    margin-top: 45px;
-  }
-  .gads-benefit,
-  .gads-metric,
-  .gads-complement {
-    padding: 28px 24px;
-    min-height: 0;
-  }
-  .gads-scope {
-    display: block;
-  }
-  .gads-testimonial,
-  .gads-testimonial:nth-child(even) {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-  .gads-portrait-wrap {
-    width: 250px;
-    max-width: 85%;
-    margin: auto;
-    padding: 10px 16px 0;
-  }
-  .gads-portrait {
-    height: 305px;
-  }
-  .gads-testimonial-slide {
-    gap: 60px;
-  }
-  .gads-quote-mark {
-    font-size: 60px;
-    margin-bottom: 15px;
-  }
-  .gads-testimonial-logo {
-    max-height: 60px;
-    max-width: 180px;
-    margin-top: 20px;
-  }
-  .gads-final {
-    padding: 70px 0;
-  }
-}
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-stat-chips {
-  bottom: 245px;
-}
-@media (max-width: 600px) {
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-stat-chips {
-    bottom: 205px;
-  }
-}
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-source-title {
-  font-family: 'NuberNext-DemiBold';
-  font-weight: 600;
 }
 .gads-stat-chips > div:nth-child(n + 4) span {
   color: #0D0D0D;
@@ -1015,10 +685,6 @@ a.body-link:hover {
 #gads-process,
 #gads-benefits {
   padding-top: 0;
-}
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.gads-leftcontent {
-  width: 87%;
 }
 #gads-who .gads-section-head {
   max-width: 1095px;
@@ -1047,66 +713,7 @@ a.body-link:hover {
 .scroll-content .gads-stack-card:last-child {
   margin-bottom: 170px;
 }
-@media (max-width: 900px) {
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-scope {
-    min-height: auto;
-  }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 20px;
-    background: rgba(251, 250, 247, 1);
-    box-shadow: 0 8px 5px rgba(0,0,0,0.03);
-  }
-}
 @media (max-width: 600px) {
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .gads-trust-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    padding-left: 12.5% !important;
-    padding-right: 12.5% !important;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    margin: 0;
-    width: 100%;
-  }
-  .gads-trust {
-    overflow: hidden;
-    position: relative;
-  }
-  .gads-result-row {
-    grid-template-columns: 1fr;
-    width: 52%;
-  }
-  .gads-result-number {
-    font-size: 30px;
-    margin-bottom: 0;
-  }
-  .gads-funnel {
-    width: 50%;
-    opacity: 1;
-  }
-  .gads-leftcontent {
-    width: 100%;
-  }
-  .gads-context-visual {
-    width: 100%;
-  }
-  .gads-stat-chips {
-    left: 5px;
-    right: 5px;
-  }
-  .gads-signal-panel {
-    left: 5px;
-    right: 5px;
-  }
   #gads-why .gads-callout p {
     font-size: 16px;
   }
@@ -2142,54 +1749,7 @@ Paid social sends warm but impatient traffic. A page that continues the promise 
         </div>
       </div>
 
-      <style id="svc-areas-styles">
-/* re-asserted from the shared CSS so this page keeps its original cascade order */
-.footer-service-areas {
-  max-width: 1280px;
-  margin: 8px auto 0;
-  padding-top: 36px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.sa-eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #FFEC00;
-}
-.sa-sub {
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.5;
-  color: #8C8A87;
-  max-width: 520px;
-}
-.svc-area {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 11px;
-  overflow: hidden;
-  text-decoration: none;
-  background: linear-gradient(165deg,rgba(26,64,199,0.13),rgba(20,20,20,0));
-  transition: transform .2s ease,border-color .2s ease,background .2s ease;
-}
-.svc-area-sky {
-  height: 48px;
-  padding: 13px 13px 0;
-}
-.svc-area-name {
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 600;
-  color: #FAF8F3;
-  padding: 9px 13px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-</style>
+      
       <div class="footer-service-areas">
         <div class="sa-head">
           <div class="sa-eyebrow">Service Areas</div>

@@ -1025,7 +1025,51 @@ section.hero-cover .hero-bg {
         </div>
       </div>
 
-      
+      <style id="svc-areas-styles">
+/* re-asserted from the shared CSS so this page keeps its original cascade order */
+.footer-service-areas {
+  max-width: 1280px;
+  margin: 8px auto 0;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.sa-sub {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #8C8A87;
+  max-width: 520px;
+}
+.svc-area {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 11px;
+  overflow: hidden;
+  text-decoration: none;
+  background: linear-gradient(165deg,rgba(26,64,199,0.13),rgba(20,20,20,0));
+  transition: transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.svc-area:hover {
+  border-color: rgba(255,236,0,0.55);
+  transform: translateY(-2px);
+  background: linear-gradient(165deg,rgba(26,64,199,0.24),rgba(20,20,20,0));
+}
+.svc-area-sky {
+  height: 48px;
+  padding: 13px 13px 0;
+}
+.svc-area-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FAF8F3;
+  padding: 9px 13px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>
       <div class="footer-service-areas">
         <div class="sa-head">
           <div class="sa-eyebrow">Service Areas</div>
