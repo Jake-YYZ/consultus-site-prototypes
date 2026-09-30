@@ -3562,7 +3562,7 @@
   <meta name="description" content="Google Ads management in Toronto from a certified Google Partner. Strategy, setup, Search, Display, Shopping, YouTube, conversion tracking, reporting, and ongoing optimization." />
   <link rel="canonical" href="https://consultusdigital.com/google-ads/" />
   <meta property="og:title" content="Google Ads Management Toronto | Consultus Digital" />
-  <meta property="og:description" content="Google Ads management in Toronto from a certified Google Partner. Strategy, setup, campaign management, reporting, and ongoing optimization." />
+  <meta property="og:description" content="Google Ads management in Toronto from a certified Google Partner. Strategy, setup, Search, Display, Shopping, YouTube, conversion tracking, reporting, and ongoing optimization." />
   <meta property="og:url" content="https://consultusdigital.com/google-ads/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Consultus Digital" />
@@ -3572,7 +3572,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg" />
   <meta name="twitter:title" content="Google Ads Management Toronto | Consultus Digital" />
-  <meta name="twitter:description" content="Google Ads management in Toronto from a certified Google Partner. Strategy, setup, campaign management, reporting, and ongoing optimization." />
+  <meta name="twitter:description" content="Google Ads management in Toronto from a certified Google Partner. Strategy, setup, Search, Display, Shopping, YouTube, conversion tracking, reporting, and ongoing optimization." />
 </head>
 <body class="gads-revamp">
 <a class="gads-skip" href="#main-content">Skip to content</a>
@@ -3603,10 +3603,11 @@
     "name": "Consultus Digital",
     "url": "https://consultusdigital.com/"
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Toronto"
-  },
+  "areaServed": [
+    {"@type": "City", "name": "Toronto"},
+    {"@type": "Country", "name": "Canada"},
+    {"@type": "Country", "name": "United States"}
+  ],
   "url": "https://consultusdigital.com/google-ads/"
 }
 </script>
@@ -3700,13 +3701,9 @@
 
 <style id="gads-page-styles">
 /* WP theme base, scoped to page content */
-@font-face{font-family:'NuberNext-Bold';src:url('/assets/fonts/NuberNext-Bold.woff2') format('woff2'),url('/assets/fonts/NuberNext-Bold.woff') format('woff');font-weight:bold;font-style:normal;font-display:swap}
-@font-face{font-family:'NuberNext-DemiBold';src:url('/assets/fonts/NuberNext-DemiBold.woff2') format('woff2'),url('/assets/fonts/NuberNext-DemiBold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:'NuberNext-DemiBoldItalic';src:url('/assets/fonts/NuberNext-DemiBoldItalic.woff2') format('woff2'),url('/assets/fonts/NuberNext-DemiBoldItalic.woff') format('woff');font-weight:600;font-style:italic;font-display:swap}
-@font-face{font-family:'NuberNext-RegularItalic';src:url('/assets/fonts/NuberNext-RegularItalic.woff2') format('woff2'),url('/assets/fonts/NuberNext-RegularItalic.woff') format('woff');font-weight:normal;font-style:italic;font-display:swap}
-@font-face{font-family:'NuberNext-Wide';src:url('/assets/fonts/NuberNext-RegularWide.woff2') format('woff2'),url('/assets/fonts/NuberNext-RegularWide.woff') format('woff');font-weight:normal;font-style:normal;font-display:swap}
-@font-face{font-family:'NuberNext-WideItalic';src:url('/assets/fonts/NuberNext-RegularWideItalic.woff2') format('woff2'),url('/assets/fonts/NuberNext-RegularWideItalic.woff') format('woff');font-weight:normal;font-style:italic;font-display:swap}
-:where(.gads-page){--wide:'NuberNext-Wide','NuberNext','Helvetica Neue',Arial,sans-serif}
+@font-face{font-family:'NuberNext-DemiBold';src:url('/assets/fonts/nubernext-demibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'NuberNext-DemiBoldItalic';src:url('/assets/fonts/nubernext-demibolditalic.otf') format('opentype');font-weight:600;font-style:italic;font-display:swap}
+@font-face{font-family:'NuberNext-RegularItalic';src:url('/assets/fonts/nubernext-regularitalic.otf') format('opentype');font-weight:normal;font-style:italic;font-display:swap}
 :where(.gads-page),:where(.gads-page) :where(div,span,iframe,h1,h2,h3,p,blockquote,a,em,img,small,strong,b,i,ol,ul,li,article,details,figure,figcaption,section,summary,video){margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;-webkit-text-size-adjust:100%}
 :where(.gads-page),:where(.gads-page) *{box-sizing:border-box}
 :where(.gads-page) :where(article,details,figcaption,figure,section){display:block}
@@ -4524,7 +4521,7 @@ font-family: var(--sans);
   text-transform: uppercase;
   color: #fff;
   margin-top: 16px;
-	font-family: "Inter", sans-serif;
+	font-family: var(--sans);
 }
 .gads-stat-chips > div:nth-child(n + 4) span {
   color: #0D0D0D;
@@ -4545,7 +4542,7 @@ font-family: var(--sans);
   color: rgba(255,255,255,0.8);
   text-transform: uppercase;
   font-size: 8px;
-	font-family: "Inter", sans-serif;
+	font-family: var(--sans);
 	font-weight: 600;
 }
 .gads-signal-panel > div span {
@@ -4564,7 +4561,7 @@ font-family: var(--sans);
   font-size: 8px;
   text-transform: uppercase;
 	color: #68676B;
-	font-family: "Inter", sans-serif;
+	font-family: var(--sans);
 	font-weight: 600;
 	opacity: 1;
 }
@@ -6509,17 +6506,17 @@ color: #141414;
 	height: auto;
 }
 .gads-stat-chips strong {
-	font-family: "Inter", sans-serif;
+	font-family: var(--sans);
 	letter-spacing: 0;
 }
 .gads-signal-panel p strong {
-	font-family: "Inter", sans-serif;
+	font-family: var(--sans);
 }
 .gads-stat-chips p {
 	color: #FFFFFFB8;
 	font-size: 7px;
   	letter-spacing: 0;
-	font-family: "Inter", sans-serif;
+	font-family: var(--sans);
 	margin-top: 0;
 	line-height: 1.2;
 }
@@ -7386,6 +7383,74 @@ p.faq-desc {
 
 /* local override: no bottom fade on scrolling card lists */
 .gads-page .scroll-content{-webkit-mask-image:none!important;mask-image:none!important}
+/* QA fixes: card lists run full height (no hidden-scrollbar boxes); testimonials show on phones */
+.gads-page .scroll-content{height:auto!important;max-height:none!important;overflow:visible!important}
+@media (max-width:600px){#gads-testimonials{display:block!important}}
+/* QA fix pass (google-ads, Sep 2026) */
+/* F3: card lists run full height on desktop too; no spacer under the last card */
+.gads-page .scroll-content .gads-stack-card:last-child{margin-bottom:0}
+@media (min-width:901px){#gads-importance.gads-section{padding-bottom:150px}}
+@media (min-width:601px) and (max-width:900px){#gads-importance.gads-section{padding-bottom:80px}}
+@media (min-width:601px){#gads-importance .gads-tall-photo{max-height:none}}
+/* F23: click-to-load video poster */
+.gads-video-poster[hidden]{display:none}
+#gads-results .gads-video-copy .gads-kicker{font-size:11px;letter-spacing:.08em}
+#gads-results .gads-video-caption{font-size:14px}
+/* F17 + F20: stat chips and signal panel, readable sizes and AA contrast */
+#gads-context .gads-stat-chips span{font-size:11px;line-height:1.3;letter-spacing:.02em;margin-top:12px}
+#gads-context .gads-stat-chips > div:nth-child(3) strong,#gads-context .gads-stat-chips > div:nth-child(3) span{color:#0D0D0D}
+#gads-context .gads-signal-panel > div{font-size:11px;color:#FFFFFF}
+#gads-context .gads-signal-panel > div span{font-size:11px;color:#C7C5C8}
+#gads-context .gads-signal-panel p{font-size:11px;color:#5A585B}
+#gads-context .gads-signal-panel small{font-size:11px;color:#5A585B}
+#gads-context .gads-signal-panel strong{font-size:20px}
+.gads-bow-stats > div:nth-child(2){background:#575dca}
+#gads-bow-case .gads-bow-stats span{font-size:11px;color:#FFFFFF;line-height:1.35}
+#gads-bow-case .gads-bow-stats > div:nth-child(3) span{color:#141414}
+#gads-bow-case .gads-bow-stats > div:nth-child(3) strong{color:#1A40C7}
+/* F4: static trust icons keep their square shape */
+.gads-trust-item > .gads-icon img,.gads-small-rating > .gads-icon img{height:auto;aspect-ratio:1/1}
+/* F18: body copy on the blue step and who cards meets AA */
+.gads-stairs p,.gads-who-card p{opacity:1}
+.gads-stairs > :nth-child(2),.gads-who-card:nth-child(2){background:#3F5FD9}
+/* F19: plain rating chip, no empty quote frame */
+.gads-callout.compact{border-left:0;border-bottom:0;padding:0;margin-top:48px}
+/* F20: map pin labels */
+.gads-search-window .gads-address-url{font-size:11px}
+.gads-map-pin > span{font-size:11px}
+/* F24: Bow City chips sit lower now that the duplicate panel is gone */
+#gads-bow-case .gads-bow-stats{bottom:25%}
+@media (max-width:900px){#gads-bow-case .gads-bow-stats{bottom:24px}}
+/* Complement grid: 5 cards as 3 + 2 full-width rows, no orphan */
+.gads-complement-grid > .gads-complement:nth-child(n+4){min-height:0}
+.gads-complement-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.gads-complement-grid > .gads-complement{width:auto;grid-column:span 2}
+.gads-complement-grid > .gads-complement:nth-child(n+4){grid-column:span 3}
+@media (max-width:900px){
+  .gads-complement-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gads-complement-grid > .gads-complement,.gads-complement-grid > .gads-complement:nth-child(n+4){grid-column:span 1}
+  .gads-complement-grid > .gads-complement:last-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  .gads-complement-grid{grid-template-columns:1fr}
+  .gads-complement-grid > .gads-complement:last-child{grid-column:auto}
+  /* F20: hero eyebrow, capability row, trust labels, captions */
+  .gads-hero .gads-source-eyebrow{font-size:11px;letter-spacing:.1em}
+  .gads-caps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  .gads-caps li{font-size:11px;letter-spacing:.08em}
+  .gads-caps li:nth-child(3){padding-left:0;border-left:0}
+  .gads-trust-label{font-size:11px;letter-spacing:.08em}
+  #gads-results .gads-video-copy .gads-kicker{font-size:11px;letter-spacing:.04em}
+  #gads-results .gads-video-caption{font-size:11px;max-width:120px}
+  .gads-device-collage figcaption{font-size:11px;letter-spacing:.04em}
+  #gads-bow-case .gads-bow-stats span{font-size:11px;letter-spacing:.02em}
+  .gads-map-pin > span{display:none}
+  /* F39: chips and signal panel sit below the photo on phones */
+  #gads-context .gads-context-visual{min-height:0;padding-bottom:0}
+  #gads-context .gads-stat-chips{position:static;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+  #gads-context .gads-stat-chips > div{min-height:88px;padding:14px 12px;border-radius:8px}
+  #gads-context .gads-signal-panel{position:static;margin-top:8px}
+}
 
 </style>
 
@@ -7393,7 +7458,7 @@ p.faq-desc {
 	<section class="gads-hero" aria-labelledby="gads-hero-title">
 		<div class="gads-wrap gads-hero-grid">
 			<div class="gads-source-hero-copy">
-				<h1 class="gads-source-eyebrow">Google Ads Management Agency</h1>
+				<h1 class="gads-source-eyebrow">Google Ads Management Agency Toronto</h1>
 				<h2 class="gads-source-title" id="gads-hero-title">
 					Google Ads Built<br class="gads-desktop-break" />
 					for
@@ -7447,8 +7512,8 @@ p.faq-desc {
 		<div class="gads-trustinner">
 		<div class="gads-wrap gads-trust-grid">
 			<div class="gads-trust-item">
-				<span class="gads-icon">
-					<img src="/assets/services/expertise.gif" alt="Expertise">
+				<span class="gads-icon" aria-hidden="true">
+					<img src="/assets/services/google-ads--icon-expertise.webp" alt="" width="112" height="112" decoding="async">
 				</span>
 				<div>
 					<div class="gads-trust-label">Expertise</div>
@@ -7456,8 +7521,8 @@ p.faq-desc {
 				</div>
 			</div>
 			<div class="gads-trust-item">
-				<span class="gads-icon">
-					<img src="/assets/services/thumb-up.gif" alt="Client rating">
+				<span class="gads-icon" aria-hidden="true">
+					<img src="/assets/services/google-ads--icon-rating.webp" alt="" width="112" height="112" decoding="async">
 				</span>
 				<div>
 					<div class="gads-trust-label">Client rating</div>
@@ -7465,8 +7530,8 @@ p.faq-desc {
 				</div>
 			</div>
 			<div class="gads-trust-item">
-				<span class="gads-icon">
-					<img src="/assets/services/marketing.gif" alt="Campaign reach">
+				<span class="gads-icon" aria-hidden="true">
+					<img src="/assets/services/google-ads--icon-reach.webp" alt="" width="112" height="112" decoding="async">
 				</span>
 				<div>
 					<div class="gads-trust-label">Campaign reach</div>
@@ -7474,8 +7539,8 @@ p.faq-desc {
 				</div>
 			</div>
 			<div class="gads-trust-item">
-				<span class="gads-icon">
-					<img src="/assets/services/discuss.gif" alt="Strategy session">
+				<span class="gads-icon" aria-hidden="true">
+					<img src="/assets/services/google-ads--icon-session.webp" alt="" width="112" height="112" decoding="async">
 				</span>
 				<div>
 					<div class="gads-trust-label">Strategy session</div>
@@ -7490,14 +7555,14 @@ p.faq-desc {
 		<div class="gads-wrap">
 			<div class="gads-section-head">
 				<div class="gads-kicker">Real results</div>
-				<h2 class="gads-title">Real Performance. Measurable <span class="sem">Growth</span>.</h2>
+				<h2 class="gads-title">Real performance. Measurable <span class="sem">growth</span>.</h2>
 			</div>
 			<div class="gads-results-layout">
 				<article class="gads-result-row">
-					<div class="gads-result-number">+2900<span>%</span></div>
+					<div class="gads-result-number">+2,900<span>%</span></div>
 					<div class="gads-result-story">
 						<img class="gads-client-logo" src="/assets/services/new_logo1.svg" alt="Bow City Storage" width="1000" height="750" loading="lazy" decoding="async"/>
-						<p>ROAS increase of 2900% in addition to a 33% CTR increase.</p>
+						<p>ROAS increase of 2,900% in addition to a 33% CTR increase.</p>
 					</div>
 				</article>
 				<article class="gads-result-row">
@@ -7524,20 +7589,16 @@ p.faq-desc {
 				<div class="gads-funnel" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 			</div>
 			<div class="gads-video-feature">
-<!-- 				<button type="button" class="gads-video-poster" data-video-launch="" aria-label="Play the e11ement case study video">
+<button type="button" class="gads-video-poster" data-video-launch="" aria-label="Play the e11ement case study video">
 					<span class="gads-video-copy">
 						<span class="gads-kicker">The team behind your growth</span>
 						<strong>11 SMEs.<br />One <em>growth team.</em></strong>
 						<span class="gads-video-caption">Watch the e11ement case study</span>
 					</span>
-					<span class="gads-video-photo">
-						<img src="/assets/video/team-montage-poster.jpg" 
-							alt="The Consultus Digital team at work" width="960" height="540"loading="lazy" /></span>
-					<span class="gads-play" aria-hidden="true">▶</span>
-				</button> -->
-				<div class="gads-video-player">
-					<iframe src="https://fast.wistia.net/embed/iframe/3fl1o2nq2n?autoPlay=false&amp;playerColor=3033BB" title="e11ement case study | Consultus Digital" allow="fullscreen; picture-in-picture" allowfullscreen=""></iframe>
-				</div>
+					<span class="gads-video-photo"><img src="/assets/video/team-montage-poster.jpg" alt="Exterior of a brick office building" width="960" height="540" loading="lazy" decoding="async" /></span>
+					<span class="gads-play" aria-hidden="true">&#9654;</span>
+				</button>
+				<div class="gads-video-player" hidden></div>
 			</div>
 		</div>
 	</section>
@@ -7552,24 +7613,24 @@ p.faq-desc {
 						<h2 class="gads-title">Google Ads <span class="sem">Management</span>.</h2>
 					</div>
 					<div class="gads-copy">
-						<p>The only place for your business should be at the top and Google Ads Management takes you there. <a class="gads-link" href="/">Consultus Digital</a>, Toronto&rsquo;s top choice among Google Ads agencies, makes it all happen.</p>
-						<p>Utilizing a smart keyword strategy, the right Google Ads campaign places your business at the top of search results, where you can enjoy an average CTR of 7.94%, as customers are four times, or 63%, more likely to click on ads on Google than any other advertising network. This drives more website visits and conversions, customer queries, and sales, providing an <a class="gads-link" href="https://www.websiterating.com/blog/" target="_blank" rel="noreferrer noopener">ROI of 8:1</a>.</p>
-						<p>And it&rsquo;s not just you racing to the top. With <a class="gads-link" href="https://techjury.net/industry-analysis/ppc-stats/" target="_blank" rel="noreferrer noopener">Google owning 92% of the global search market share</a>, more and more brands require the latest and most effective search engine marketing to beat the climb up organic search results through SEO and rank at the top right away. That&rsquo;s why among hundreds of Google Ad agencies in Toronto, you need the right partner that provides cutting-edge ads management, from campaign development, all through constant optimization.</p>
+						<p>The only place for your business is at the top, and Google Ads management takes you there. <a class="gads-link" href="/">Consultus Digital</a>, a certified Google Partner rated 4.9 on Google, makes it happen.</p>
+						<p>With a smart keyword strategy, the right Google Ads campaign places your business at the top of search results, in front of customers at the moment they search for what you offer. That drives more website visits, conversions, customer queries, and sales.</p>
+						<p>And it&rsquo;s not just you racing to the top. With <a class="gads-link" href="https://gs.statcounter.com/search-engine-market-share" target="_blank" rel="noreferrer noopener">Google handling over 90% of global searches</a>, more and more brands require the latest and most effective search engine marketing to beat the climb up organic search results through SEO and rank at the top right away. That&rsquo;s why, among hundreds of Google Ads agencies in Toronto, you need the right partner for cutting-edge ads management, from campaign development through constant optimization.</p>
 					</div>
 				</div>
 				<div class="gads-context-visual">
 					<img class="gads-context-photo" src="/assets/services/campaign-planning.webp" alt="A marketing professional reviewing a campaign plan" width="1000" height="750" loading="lazy" decoding="async">
 					<div class="gads-stat-chips">
-						<div><strong>7.94%</strong><span>Average CTR</span><p>Search campaign benchmark</p></div>
-						<div><strong>4× / 63%</strong><span>More likely to click</span><p>Google vs. other networks</p></div>
-						<div><strong>8:1</strong><span>Return on investment</span><p>$8 returned per $1 invested</p></div>
-						<div><strong>92%</strong><span>Global search share</span><p>Owned by Google</p></div>
+						<div><strong>8:1</strong><span>Blended return on managed spend</span></div>
+						<div><strong>42%</strong><span>Average CPA reduction</span></div>
+						<div><strong>$22M+</strong><span>Media managed</span></div>
+						<div><strong>97%</strong><span>Account retention</span></div>
 					</div>
 					<div class="gads-signal-panel">
-						<div>Campaign optimization signals <span>Always on ↗</span></div>
-						<p><span>Click-through rate<small>Average engagement</small></span><strong>7.94%</strong></p>
-						<p><span>Click preference<small>Across advertising networks</small></span><strong>4×</strong></p>
-						<p><span>Campaign ROI<small>Campaign performance</small></span><strong>8:1</strong></p>
+						<div>Campaign optimization signals <span>Always on</span></div>
+						<p><span>Search terms<small>Negative keywords added</small></span><strong>Pruned</strong></p>
+						<p><span>Ads and assets<small>Headlines, descriptions, assets</small></span><strong>Tested</strong></p>
+						<p><span>Bids and budgets<small>Shifted to converting terms</small></span><strong>Refined</strong></p>
 					</div>
 				</div>
 			</div>
@@ -7579,11 +7640,10 @@ p.faq-desc {
 	<section class="gads-section" id="gads-process">
 		<div class="gads-wrap">
 			<div class="gads-section-head">
-				<div class="gads-kicker">The Consultus Digital process</div>
+				<div class="gads-kicker">How we work</div>
 				<h2 class="gads-title">The Consultus Digital <span class="sem">Process</span>.</h2>
 				<p class="gads-lede">
-					At <a class="gads-link" href="/">Consultus Digital</a>, we understand the value of a sale to our clients. That’s why we pride ourselves on our best-in-class
-					Google Ads Management strategies, which have increased our clients’ returns on investment every time.
+					At <a class="gads-link" href="/">Consultus Digital</a>, we understand the value of a sale to our clients. That’s why we build every Google Ads management strategy to lift your return on ad spend.
 					Your dedicated Account Manager will help your business reach new heights using our Consultus Digital
 					Method.
 				</p>
@@ -7599,10 +7659,7 @@ p.faq-desc {
 				<article class="gads-step">
 					<h3>Optimized <br><em>Ads</em></h3>
 					<p>
-						Once the keywords have been identified, your Google Ads will be properly optimized. This includes
-						writing compelling ad copy, optimizing your schema markup and coding to provide users with more
-						options when viewing your ad, and tweaking ad structure to help improve the chances of generating a
-						click.
+						Once the keywords have been identified, your Google Ads will be properly optimized. This includes writing compelling ad copy, adding ad assets such as sitelinks, callouts, structured snippets, and call assets to give searchers more ways to act, and refining ad structure to lift click-through rate.
 					</p>
 				</article>
 				<article class="gads-step">
@@ -7611,19 +7668,18 @@ p.faq-desc {
 						As your Google Ads campaign goes live, your Account Manager will begin compiling data on how it
 						performs. As time goes on and your ads are served to more users, your Account Manager will be able
 						to identify trends in how much money is being spent and on which keywords, and adjust your bidding
-						strategy accordingly. This will prevent money being spent on keywords that aren’t gaining any
-						traction and push more money towards those sending you higher quality leads.
+						strategy accordingly. This will prevent money from being spent on keywords that aren’t gaining any traction and push more money toward those sending you higher-quality leads.
 					</p>
 				</article>
 				<article class="gads-step">
 					<h3>Comprehensive <em>Reporting</em></h3>
 					<p>
-						We provide every client with a detailed report on the results generated from a Google Ads Management campaign. This includes the number of leads, the average CPC, the number of times your ads were served, and how much money was spent compared to how much was generated for your business. These figures can be used to inform strategies for future Google Ads campaigns. If you are looking for the best Google Ads Management Toronto has to offer, Consultus Digital is the place to go.
+						We provide every client with a detailed report on the results generated from a Google Ads Management campaign. This includes the number of leads, the average CPC, the number of times your ads were served, and how much money was spent compared to how much was generated for your business. These figures can be used to inform strategies for future Google Ads campaigns. If you want Google Ads management in Toronto that reports on revenue, not just clicks, Consultus Digital is the place to go.
 					</p>
 				</article>
 			</div>
 			<div class="gads-callout">
-				<span aria-hidden="true" class="quotes-icon"><img src="/assets/services/quotes-icon.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
+				<span aria-hidden="true" class="quotes-icon"><img src="/assets/services/quotes-icon.svg" alt="" loading="lazy" decoding="async"></span>
 				<p>
 					Our in-house experts have the tools and knowledge you need to start appearing at the top of Google when
 					your customers are ready to make a purchase.
@@ -7633,7 +7689,7 @@ p.faq-desc {
 				<div class="gads-callout-actions">
 					<a class="gads-btn" href="/contact/">Claim Your Free 30-minute Strategy Session</a>
 					<div class="gads-small-rating">
-						<span class="gads-icon"><img src="/assets/services/thumb-up.gif" alt="Client rating"></span
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/google-ads--icon-rating.webp" alt="" width="112" height="112" decoding="async"></span
 						><span><small>Client rating</small>Google 4.9 ★ · Clutch 4.4 ★</span>
 					</div>
 				</div>
@@ -7666,11 +7722,7 @@ p.faq-desc {
 						</p>
 						<p>
 							But it’s more than Search and Maps. Today, Google Ads supports various ad formats for different
-							types of content. From
-							<a class="gads-inline-link" href="https://consultusdigital.com/youtube-advertising-toronto/"
-								>YouTube videos</a
-							>
-							to shopping recommendations, and app downloads, Google Ads offers the widest range of
+							types of content. From YouTube videos to shopping recommendations and app downloads, Google Ads offers the widest range of
 							advertising capabilities designed to convert.
 						</p>
 					</div>
@@ -7678,11 +7730,11 @@ p.faq-desc {
 				<div class="gads-device-collage">
 					<img class="gads-collage-main" src="/assets/services/strategy-team.webp" alt="Colleagues discussing their digital strategy" loading="lazy" decoding="async">
 					<figure>
-						<img src="/assets/services/google-serp-laptop.webp" alt="Google Search open on a laptop" width="1000" height="750" loading="lazy" decoding="async">
+						<img src="/assets/service-photos/google-serp-laptop.jpg" alt="Google Search open on a laptop" width="900" height="1200" loading="lazy" decoding="async">
 						<figcaption>Search intent · desktop</figcaption>
 					</figure>
 					<figure>
-						<img src="/assets/services/google-search-phone.webp" alt="Google Search on a smartphone" width="1000" height="750" loading="lazy" decoding="async">
+						<img src="/assets/services/google-ads--search-phone.webp" alt="Google Search on a smartphone" width="482" height="643" loading="lazy" decoding="async">
 						<figcaption>Always on · mobile</figcaption>
 					</figure>
 				</div>
@@ -7695,7 +7747,7 @@ p.faq-desc {
 		<div class="gads-wrap">
 			<div class="gads-section-head">
 				<div class="gads-kicker">Explore the possibilities</div>
-				<h2 class="gads-title">Various Google Ads <span class="sem">Formats</span>.</h2>
+				<h2 class="gads-title">Various Google Ads <span class="sem">formats</span>.</h2>
 				<p class="gads-lede">
 					Google Ads supports different types of content across Search, Display, Shopping, Video, and App
 					campaigns.
@@ -7704,7 +7756,7 @@ p.faq-desc {
 			<div class="gads-format-viewport">
 				<div class="gads-format-track" id="gads-format-track" tabindex="0" role="region" aria-label="Google Ads formats carousel">
 					<article class="gads-format" aria-label="1 of 5">
-						<img src="/assets/services/google-search-laptop.webp" alt="Google search on a laptop" loading="lazy" decoding="async">
+						<img src="/assets/services/google-ads--search-tablet.webp" alt="A businessman holding a tablet under a floating Google search bar" width="704" height="364" loading="lazy" decoding="async">
 						<div class="gads-format-body">
 							<div class="gads-format-num">01 / Search</div>
 							<h3>Search</h3>
@@ -7716,7 +7768,7 @@ p.faq-desc {
 						</div>
 					</article>
 					<article class="gads-format" aria-label="2 of 5">
-						<img src="/assets/services/webdesign-screen.webp" alt="Digital advertising displayed on a screen" loading="lazy" decoding="async">
+						<img src="/assets/service-photos/webdesign-screen.jpg" alt="A desktop monitor showing a grid of website layouts" width="900" height="600" loading="lazy" decoding="async">
 						<div class="gads-format-body">
 							<div class="gads-format-num">02 / Display</div>
 							<h3>Display</h3>
@@ -7730,7 +7782,7 @@ p.faq-desc {
 						</div>
 					</article>
 					<article class="gads-format" aria-label="3 of 5">
-						<img src="/assets/services/shop-card-laptop.webp" alt="A customer shopping online" loading="lazy" decoding="async">
+						<img src="/assets/service-photos/shop-card-laptop.jpg" alt="A shopper holding a credit card at a laptop" width="900" height="507" loading="lazy" decoding="async">
 						<div class="gads-format-body">
 							<div class="gads-format-num">03 / Shopping</div>
 							<h3>Shopping</h3>
@@ -7744,27 +7796,22 @@ p.faq-desc {
 						</div>
 					</article>
 					<article class="gads-format" aria-label="4 of 5">
-						<img src="/assets/services/video-camera.webp" alt="A camera ready for a video production" loading="lazy" decoding="async">
+						<img src="/assets/services/video-camera.webp" alt="A laptop playing a YouTube video beside a camera" width="708" height="366" loading="lazy" decoding="async">
 						<div class="gads-format-body">
 							<div class="gads-format-num">04 / Video</div>
 							<h3>Video</h3>
 							<p>
-								Run a quick video pre-roll on YouTube search, or overlaying banners. Capture customers’
-								attention right before they watch, utilizing screen time for targeted product
-								recommendations.
+								Run short pre-roll ads before YouTube videos, or banner overlays while they play. Catch viewers right before they watch and put targeted product recommendations on screen.
 							</p>
 							<a class="gads-btn outline" href="/contact/">Book a Call</a>
 						</div>
 					</article>
 					<article class="gads-format" aria-label="5 of 5">
-						<img src="/assets/services/meta-apps-screen.webp" alt="Mobile applications on a phone" loading="lazy" decoding="async">
+						<img src="/assets/services/app_install.webp" alt="A hand holding a smartphone while an app installs" width="472" height="244" loading="lazy" decoding="async">
 						<div class="gads-format-body">
 							<div class="gads-format-num">05 / App</div>
 							<h3>App</h3>
-							<p>
-								With
-								<a href="https://techjury.net/industry-analysis/ppc-stats/" target="_blank" rel="noopener">53% of PPC ad clicks coming from mobile</a>, app campaigns allow you to reach customers more quickly across Search, YouTube, Google Play, AdMob, the <a href="https://consultusdigital.com/google-display-network-advertising-toronto/"
-									>Google Display Network</a>, and Google Discover.</p>
+							<p>App campaigns promote your app across Search, YouTube, Google Play, AdMob, the Google Display Network, and Discover.</p>
 							<a class="gads-btn outline" href="/contact/">Book a Call</a>
 						</div>
 					</article>
@@ -7772,7 +7819,7 @@ p.faq-desc {
 			</div>
 			<div class="gads-carousel-controls" data-controls="gads-format-track">
 				<button type="button" class="left-btn" data-dir="-1" aria-label="Previous ad format" aria-controls="gads-format-track" disabled="disabled" ></button>
-				<span class="gads-carousel-count" aria-live="polite">1/5</span>
+				<span class="gads-carousel-count" aria-live="polite">1 / 5</span>
 				<button type="button" class="right-btn" data-dir="1" aria-label="Next ad format" aria-controls="gads-format-track"></button>
 			</div>
 		</div>
@@ -7784,27 +7831,27 @@ p.faq-desc {
 			<div class="gads-section-head">
 				<div class="gads-kicker">Is Google Ads management right for your business?</div>
 				<h2 class="gads-title">Build a steady pipeline of traffic, calls, purchases, and lasting <span class="sem">trust</span>.</h2>
-				<p class="gads-lede">With <a class="gads-link" href="https://techjury.net/industry-analysis/ppc-stats/" target="_blank" rel="noopener">92% of the global search market share</a> on Google and three out of four marketers, 78%, advertising on both Google Ads and <a class="gads-link" href="https://consultusdigital.com/social-media-marketing-toronto/">social media</a>, it takes more than just the basics of PPC campaigns to earn maximum conversions and revenue. In this ultra-competitive advertising landscape, you need expert Google Ads management to craft best-performing campaigns and a long-term <a class="gads-link" href="https://consultusdigital.com/digital-marketing-toronto-strategy-development/">digital ad strategy</a>.</p>
+				<p class="gads-lede">With your competitors bidding on the same searches and pairing Google Ads with <a class="gads-link" href="/meta-ads/">social media</a> advertising, it takes more than the basics of PPC campaigns to earn maximum conversions and revenue. In this ultra-competitive advertising landscape, you need expert Google Ads management to craft best-performing campaigns and a long-term <a class="gads-link" href="/services/">digital ad strategy</a>.</p>
 				<p>See how expert Google Ads management builds a steady pipeline of increased traffic, customer calls, purchases, and lasting trust, from first impression and click, to long-term revenue and market advantage:</p>
 			</div>
 			<div class="gads-benefit-grid">
 				<article class="gads-benefit">
-					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/acquisition_icon.svg" alt="Acquisition Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/acquisition_icon.svg" alt=""></span>
 					<h3>Lead and customer <em>acquisition</em></h3>
 					<p>Google Ads management revitalizes lead generation, with a renewed focus on hyper-targeting and personalization. With smart bidding and keyword optimization, our Google Ads experts can drive more impressions and clicks, capturing relevant traffic that generates qualified leads and purchases among ready-to-buy audiences searching for the exact products and services you offer.</p>
 				</article>
 				<article class="gads-benefit">
-					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/ad_icon.svg" alt="Ad Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/ad_icon.svg" alt=""></span>
 					<h3>Multiple ad <em>formats</em></h3>
 					<p>Enrich your campaigns with multiple ad formats across mobile and desktop. Capture customers’ interest at every stage of the buyer’s journey, from text-based ads on search, to images, YouTube video pre-rolls, and app campaigns, with constant optimization of the customer experience.</p>
 				</article>
 				<article class="gads-benefit">
-					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/browser_icon.svg" alt="ROI Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/browser_icon.svg" alt=""></span>
 					<h3>Maximize <em>ROI</em></h3>
-					<p>With one of the <a class="gads-inline-link" href="https://www.websiterating.com/blog/" target="_blank" rel="noopener">highest ROI rates at 8:1</a>, Google Ads help you reach target audiences instantly and generate conversions. Expert Google Ads management ensures you achieve this ROI rate through data-driven keyword optimization, bidding, ad format, and audience targeting strategies.</p>
+					<p>Google Ads help you reach target audiences instantly and generate conversions. Expert Google Ads management works toward a stronger return through data-driven keyword optimization, bidding, ad format, and audience targeting strategies.</p>
 				</article>
 				<article class="gads-benefit">
-					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/insight_icon.svg" alt="Insight Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/insight_icon.svg" alt=""></span>
 					<h3>Customer <em>insight</em></h3>
 					<p>Learn more about your market with in-depth audience insights. Expert Google Ads management provides in-depth insight into customers’ shopping habits, location, devices used, demographics, keywords used, and more to optimize your campaigns and marketing spend.</p>
 				</article>
@@ -7816,29 +7863,29 @@ p.faq-desc {
 		<div class="gads-wrap">
 			<div class="gads-section-head">
 				<div class="gads-kicker">Why Google Ads matter</div>
-				<h2 class="gads-title">Why are Google Ads <span class="sem">Important</span>?</h2>
-				<p>It’s no secret that with <a class="gads-link" href="https://techjury.net/industry-analysis/ppc-stats/" target="_blank" rel="noopener">92% of the global search market share</a>, Google is the search platform for just about anything, most importantly, the buyer’s journey. Simply, your customers are on Google, utilizing its ecosystem of apps and services to browse and buy. It’s also why <a class="gads-link" href="https://www.websiterating.com/blog/" target="_blank" rel="noopener">over 80%</a> of global businesses trust Google Ads for <a class="gads-link" href="/google-ads/">PPC campaigns</a>, and are doing the same to meet customers at every step of their journey.</p>
-				<p>But are you among the <a class="gads-link" href="https://www.websiterating.com/blog/" target="_blank" rel="noopener">over 1.2 million businesses</a> that leverage Google Ads to promote products and services yet? Here’s why you should be:</p>
+				<h2 class="gads-title">Why are Google Ads <span class="sem">important</span>?</h2>
+				<p>It’s no secret that Google is the search platform for just about anything, most importantly, the buyer’s journey. Simply, your customers are on Google, using its ecosystem of apps and services to browse and buy. It’s also why so many businesses trust Google Ads for PPC campaigns to meet customers at every step of their journey.</p>
+				<p>Is your business one of them yet? Here’s why it should be:</p>
 			</div>
 			<div class="gads-feature-split">
 				<div class="gads-stack scroll-content">
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Get more leads and <em>customers</em></h3>
-						<p>An effective Google Ads campaign does more than help you reach more leads and customers, it helps you target the best ones: searching exactly what your business offers and ready to buy.</p>
+						<p>An effective Google Ads campaign does more than help you reach more leads and customers; it helps you target the best ones: searching for exactly what your business offers and ready to buy.</p>
 					</article>
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Unbeatable <em>ROI</em></h3>
-						<p>With Google Ads, you only pay for results, highly targeted and personalized for each customer segment, resulting in more quality clicks. Google Ads delivers <a class="gads-inline-link" href="https://www.websiterating.com/blog/" target="_blank" rel="noopener">one of the highest ROIs at 8:1</a>.</p>
+						<p>With Google Ads, you only pay for results, highly targeted and personalized for each customer segment, resulting in more quality clicks.</p>
 					</article>
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Campaign <em>flexibility</em></h3>
 						<p>Google Ads offers the widest range of ad formats and capabilities for every budget. Discover virtually endless possibilities for reaching new and existing customers across the Google ecosystem, locations, devices used, types of content, and more.</p>
 					</article>
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Fast <em>results</em></h3>
 						<p>No more climbing up organic search results. Not only does Google Ads place your website at the top of search results, it also delivers direct results based on targeted campaigns. Get detailed campaign metrics like CTR, CPC, and best-performing keywords to drive continuous optimization.</p>
 					</article>
@@ -7857,27 +7904,27 @@ p.faq-desc {
 					<p>We manage Google Ads for clients across Canada and the US, so campaigns follow your customers, not a postal code. Want local market context? Jump to your city.</p>
 					<div class="gads-city-links">
 						<a href="/locations/toronto/google-ads-agency-in-toronto/">
-							<span class="gads-icon"></span>Toronto</a>
+							<span class="gads-icon" aria-hidden="true"></span>Toronto</a>
 						<a href="/locations/calgary/google-ads-agency-in-calgary/">
-							<span class="gads-icon"></span>Calgary</a>
+							<span class="gads-icon" aria-hidden="true"></span>Calgary</a>
 						<a href="/locations/vancouver/google-ads-agency-in-vancouver/">
-							<span class="gads-icon"></span>Vancouver</a>
+							<span class="gads-icon" aria-hidden="true"></span>Vancouver</a>
 						<a href="/locations/montreal/google-ads-agency-in-montreal/">
-							<span class="gads-icon"></span>Montreal</a>				
-						<a href="/digital-marketing-agency-in-los-angeles/">
-							<span class="gads-icon"></span>Los Angeles</a>
-						<a href="/digital-marketing-agency-in-new-york/">
-							<span class="gads-icon"></span>New York</a>
+							<span class="gads-icon" aria-hidden="true"></span>Montreal</a>				
+						<a href="/locations/la/google-ads-agency-in-los-angeles/">
+							<span class="gads-icon" aria-hidden="true"></span>Los Angeles</a>
+						<a href="/locations/nyc/google-ads-agency-in-new-york-city/">
+							<span class="gads-icon" aria-hidden="true"></span>New York</a>
 					</div>
 				</div>
 				<div class="gads-map" aria-hidden="true">
-					<img class="" src="/assets/services/north-america-map.webp" alt="Map" width="1000" height="660" loading="lazy" decoding="async">
-<!-- 					<span class="gads-map-pin pin-toronto" style="--x:69.58%;--y:67.25%"><i></i><span>Toronto</span>
+					<img src="/assets/google-ads/north-america-dots.png" alt="" width="1000" height="660" loading="lazy" decoding="async">
+					<span class="gads-map-pin pin-toronto" style="--x:69.58%;--y:67.25%"><i></i><span>Toronto</span>
 					</span><span class="gads-map-pin pin-calgary" style="--x:31.03%;--y:54.92%"><i></i><span>Calgary</span></span>
 					<span class="gads-map-pin pin-vancouver" style="--x:20.98%;--y:57.87%"><i></i><span>Vancouver</span></span>
 					<span class="gads-map-pin pin-montreal" style="--x:76.03%;--y:64.17%"><i></i><span>Montreal</span></span>
 					<span class="gads-map-pin pin-los-angeles" style="--x:26.40%;--y:83.25%"><i></i><span>Los Angeles</span></span>
-					<span class="gads-map-pin pin-new-york" style="--x:75.54%;--y:72.15%"><i></i><span>New York</span></span> -->
+					<span class="gads-map-pin pin-new-york" style="--x:75.54%;--y:72.15%"><i></i><span>New York</span></span>
 				</div>
 			</div>
 		</div>
@@ -7896,13 +7943,13 @@ p.faq-desc {
 					<a class="gads-inline-link" href="https://consultusdigital.com/blog/improve-lead-generation/"
 						>lead generation</a
 					>, and conversions. But is your campaign delivering the results you need? See how expert
-					<a class="gads-inline-link" href="/">Google Ads management in Toronto</a>
+					<a class="gads-inline-link" href="/locations/toronto/google-ads-agency-in-toronto/">Google Ads management in Toronto</a>
 					offers the best results across campaigns:
 				</p>
 			</div>
 			<div class="gads-metric-grid">
 				<article class="gads-metric">
-					<span class="gads-icon"><img src="/assets/services/icon_1.svg" alt="Conversion Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_1.svg" alt=""></span>
 					<h3>Cost per <em>conversion</em></h3>
 					<p>
 						Maximize your budget when you spend less on each click and conversion and engage more leads
@@ -7910,15 +7957,15 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-metric">
-					<span class="gads-icon"><img src="/assets/services/icon_2.svg" alt="Score Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_2.svg" alt=""></span>
 					<h3>Quality <em>score</em></h3>
 					<p>
 						Secure your spot at the top of search results and across prime ad spots, like video pre-rolls across
-						Google’s ad partners. Earn leading quality scores with relevant ads and optimal user experience.
+						Google’s ad partners. Earn higher Quality Scores with relevant ads and optimal user experience.
 					</p>
 				</article>
 				<article class="gads-metric">
-					<span class="gads-icon"><img src="/assets/services/icon_3.svg" alt="Click Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_3.svg" alt=""></span>
 					<h3>Cost per <em>click</em></h3>
 					<p>
 						With a smart bidding strategy, like striking a balance between the most and least competitive
@@ -7927,15 +7974,15 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-metric">
-					<span class="gads-icon"><img src="/assets/services/icon_4.svg" alt="Rate Icon"></span>
-					<h3>Click-Through <em>Rate</em></h3>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_4.svg" alt=""></span>
+					<h3>Click-through <em>rate</em></h3>
 					<p>
 						Measure the number of clicks against impressions. The most optimized ads are highly relevant to
-						customers’ searches, resulting in higher clicks and conversions across ad groups and campaigns.
+						customers’ searches, resulting in more clicks and conversions across ad groups and campaigns.
 					</p>
 				</article>
 				<article class="gads-metric">
-					<span class="gads-icon"><img src="/assets/services/icon_5.svg" alt="Compare Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_5.svg" alt=""></span>
 					<h3>Top vs. <em>Others</em></h3>
 					<p>
 						Find out how well you’re doing against the competition. Compare ad performance across placements,
@@ -7943,7 +7990,7 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-metric">
-					<span class="gads-icon"><img src="/assets/services/icon_6.svg" alt="Search Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_6.svg" alt=""></span>
 					<h3>Negative <em>keywords</em></h3>
 					<p>
 						A strong Google Ads campaign is two-pronged, targeting relevant keywords and keeping out unqualified
@@ -7958,7 +8005,7 @@ p.faq-desc {
 				</article>
 				<article class="gads-metric">
 					<div>
-						<span class="gads-icon"><img src="/assets/services/icon_7.svg" alt="Impressions Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_7.svg" alt=""></span>
 						<h3>Total <em>impressions</em></h3>
 					</div>
 					<p>
@@ -7980,12 +8027,12 @@ p.faq-desc {
 				<p>
 					Manage your campaigns, all in one place, with expert recommendations for maximizing visibility and
 					conversions. Google Ads management is exactly that: designed to take the hard work out of creating,
-					launching, tracking, and continuously refining each best performing ad:
+					launching, tracking, and continuously refining each best-performing ad:
 				</p>
 			</div>
 			<div class="gads-three-grid">
 				<article class="gads-who-card">
-					<span class="gads-icon"><img src="/assets/services/knowledge-icon.svg" alt="Knowledge Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/knowledge-icon.svg" alt=""></span>
 					<div class="gads-scope-num">01 / Expertise</div>
 					<h3>Platform <em>knowledge</em></h3>
 					<p>
@@ -7994,7 +8041,7 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-who-card">
-					<span class="gads-icon"><img src="/assets/services/optimise-icon.svg" alt="Optimization Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/optimise-icon.svg" alt=""></span>
 					<div class="gads-scope-num">02 / Optimization</div>
 					<h3>Data-driven <em>improvement</em></h3>
 					<p>
@@ -8003,7 +8050,7 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-who-card">
-					<span class="gads-icon"><img src="/assets/services/time-money.svg" alt="Time Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/time-money.svg" alt=""></span>
 					<div class="gads-scope-num">03 / Focus</div>
 					<h3>Earn valuable time <em>back</em></h3>
 					<p>
@@ -8013,9 +8060,8 @@ p.faq-desc {
 				</article>
 			</div>
 			<div class="gads-callout compact">
-				<span class="quotes-icon"><img src="/assets/services/quotes-icon.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
 				<div class="gads-small-rating">
-					<span class="gads-icon"><img src="/assets/services/thumb-up.gif" alt="Client rating"></span
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/google-ads--icon-rating.webp" alt="" width="112" height="112" decoding="async"></span
 					><span><small>Client rating</small>Google 4.9 ★ · Clutch 4.4 ★</span>
 				</div>
 			</div>
@@ -8059,9 +8105,7 @@ p.faq-desc {
 					<div>
 						<p>
 							Are you looking to move to a better
-							<a class="gads-inline-link" href="/"
-								>Google Ads management agency</a
-							>? Launch your most successful PPC campaign yet with a smooth and easy transition to a new
+							Google Ads management agency? Launch your most successful PPC campaign yet with a smooth and easy transition to a new
 							Google Ads agency in Toronto. Here’s how:
 						</p>
 						<ol class="gads-switch">
@@ -8098,7 +8142,7 @@ p.faq-desc {
 								resulting in increased conversions and purchases among ready-to-buy audiences.
 							</li>
 							<li>
-								Timely reporting on campaign metrics, data-driven insights and expert recommendations for
+								Timely reporting on campaign metrics, data-driven insights, and expert recommendations for
 								constant optimization to improve performance.
 							</li>
 						</ul>
@@ -8140,24 +8184,11 @@ p.faq-desc {
 				</div>
 				<div class="gads-bow-visual animate-parent">
 					<img class="gads-bow-photo" src="/assets/services/bow-city-storage.webp" alt="Bow City Storage facility in Calgary" loading="lazy" decoding="async">
-					<img class="gads-bow-logo" src="/assets/services/bow-city-logo.webp" alt="Bow City Storage" loading="lazy" decoding="async">
+					<img class="gads-bow-logo" src="/assets/services/bow-city-logo.webp" alt="Bow City Storage logo" loading="lazy" decoding="async">
 					<div class="gads-bow-stats">
 						<div class="stats-card animate-card"><strong>24×</strong><span>Return on ad spend</span></div>
 						<div class="stats-card animate-card"><strong>+33%</strong><span>Click-through rate increase</span></div>
-						<div class="stats-card animate-card"><strong>Record</strong><span>Monthly Sales Performance</span></div>
-					</div>
-					<div class="gads-bow-panel">
-						<div class="gads-signal-panel animate-card">
-							<div>Performance • YOY <span>2022 vs 2021</span></div>
-							<p><span>Return on ad spend</span><strong>24x <small>↑ 2,900%</small></strong></p>
-							<p><span>Click-through rate</span><strong>+33% <small>↑ year over year</small></strong></p>
-							<p><span>Monthly sales</span><strong>Record <small>↑ all-time high</small></strong></p>
-						</div>
-						<div class="gads-signal-panel right-block animate-card">
-							<div>Monthly Revenue Trend</div>
-							<p><img src="/assets/services/bar_chart.webp" alt="Arrow Icon" loading="lazy" decoding="async"></p>
-							<p><span>Record Sales Month <img src="/assets/services/arrow-blue.svg" alt="Arrow Icon" loading="lazy" decoding="async"></span></p>
-						</div>
+						<div class="stats-card animate-card"><strong>Record</strong><span>Monthly sales performance</span></div>
 					</div>
 				</div>
 			</div>
@@ -8182,29 +8213,23 @@ p.faq-desc {
 			</div>
 			<div class="gads-three-grid">
 				<article class="gads-scope">
-					<img
-						src="/assets/services/content-img1.webp"
-						alt="Team reviewing a campaign strategy"
-						loading="lazy"
-						decoding="async"
-					/>
+					<img src="/assets/services/google-ads--campaign-dashboard.webp" alt="Two colleagues reviewing a campaign dashboard on a large screen" width="578" height="364" loading="lazy" decoding="async" />
 					<div class="gads-scope-body">
 						<div class="gads-scope-num">01 / Foundation</div>
 						<h3>Google Ads Account <br>and Campaign <em>Setup</em></h3>
 						<ul class="gads-list">
 							<li>
-								Keyword research for determining the most competitive and best-performing search terms and
-								phrases to target, based on volume, competition, budget, and campaign goals, with attention
+								Keyword research to find the highest-intent, best-value search terms and phrases to target, based on volume, competition, budget, and campaign goals, with attention
 								to negative keywords to avoid unqualified leads.
 							</li>
 						</ul>
 						<details class="gads-scope-more">
 							<summary>
 								<span class="closed-label">See More</span><span class="open-label">See Less</span>
-								<span><img src="/assets/services/arrow-down.svg" alt="Arrow Icon" loading="lazy" decoding="async"></span>
+								<span aria-hidden="true"><img src="/assets/services/arrow-down.svg" alt="" loading="lazy" decoding="async"></span>
 							</summary>
 							<ul class="gads-list">
-								<li>Optimal budget and bidding strategies to maximize cost per customer acquisition.</li>
+								<li>Budget and bidding strategies that lower your cost per customer acquisition.</li>
 								<li>
 									Refined audience targeting across geographic, demographic, and psychographic
 									characteristics to ensure maximum reach and conversions.
@@ -8214,12 +8239,7 @@ p.faq-desc {
 					</div>
 				</article>
 				<article class="gads-scope">
-					<img
-						src="/assets/services/content-img2.webp"
-						alt="A team discussing campaign reporting"
-						loading="lazy"
-						decoding="async"
-					/>
+					<img src="/assets/services/google-ads--team-reporting.webp" alt="A presenter walking a team through campaign reporting on a screen" width="582" height="366" loading="lazy" decoding="async" />
 					<div class="gads-scope-body">
 						<div class="gads-scope-num">02 / Build</div>
 						<h3>Campaign <br><em>Management</em></h3>
@@ -8233,38 +8253,25 @@ p.faq-desc {
 								>
 								and creative direction.
 							</li>
-							<li>
-								Conversion optimization of
-								<a
-								   class="gads-inline-link"
-								   href="/landing-pages/"
-								   >landing pages</a
-									>
-								for maximum lead generation and conversions.
-							</li>
 						</ul>
 						<details class="gads-scope-more">
 							<summary>
 								<span class="closed-label">See More</span><span class="open-label">See Less</span>
-								<span><img src="/assets/services/arrow-down.svg" alt="Arrow Icon" loading="lazy" decoding="async"></span>
+								<span aria-hidden="true"><img src="/assets/services/arrow-down.svg" alt="" loading="lazy" decoding="async"></span>
 							</summary>
 							<ul class="gads-list">
+								<li>Conversion optimization of <a class="gads-inline-link" href="/landing-pages/">landing pages</a> for maximum lead generation and conversions.</li>
 								<li>
 									Conversion tracking in line with performance goals, using contact form submissions,
 									call-tracking, and website analytics.
 								</li>
-								<li>Ensure compliance with Google Ads standards to increase Quality Score.</li>
+								<li>Keep ads policy-compliant and tightly matched to keywords and landing pages to raise Quality Score.</li>
 							</ul>
 						</details>
 					</div>
 				</article>
 				<article class="gads-scope">
-					<img
-						src="/assets/services/content-img3.webp"
-						alt="Campaign performance charts on a tablet"
-						loading="lazy"
-						decoding="async"
-					/>
+					<img src="/assets/services/google-ads--tablet-charts.webp" alt="Campaign performance charts on a tablet and laptop" width="582" height="366" loading="lazy" decoding="async" />
 					<div class="gads-scope-body">
 						<div class="gads-scope-num">03 / Improve</div>
 						<h3>Tracking and <em>Optimization</em></h3>
@@ -8277,7 +8284,7 @@ p.faq-desc {
 						<details class="gads-scope-more">
 							<summary>
 								<span class="closed-label">See More</span><span class="open-label">See Less</span>
-								<span><img src="/assets/services/arrow-down.svg" alt="Arrow Icon" loading="lazy" decoding="async"></span>
+								<span aria-hidden="true"><img src="/assets/services/arrow-down.svg" alt="" loading="lazy" decoding="async"></span>
 							</summary>
 							<ul class="gads-list">
 								<li>
@@ -8318,14 +8325,14 @@ p.faq-desc {
 				<article class="gads-choice">
 					<strong>02 / Evidence</strong>
 					<h3>Proven track <em>record</em></h3>
-					<p>Your Google Ads management agency has a long roster of happy and satisfied clients who are now doing better business with increased revenue, and they have more than enough clients to meet Google&rsquo;s spending requirements. They&rsquo;ll have a portfolio of past successful campaigns, verifiable data on campaign metrics, and a five-star rating.</p></article>
+					<p>Your Google Ads management agency should have enough managed spend to qualify as a Google Partner and a long roster of satisfied clients who are now doing better business with increased revenue. Look for a portfolio of successful campaigns, verifiable performance data, and strong independent reviews.</p></article>
 				<article class="gads-choice">
 					<strong>03 / Management</strong>
 					<h3>Expert account <em>management</em></h3>
 					<p>Choose a Google Ads management agency in Toronto that&rsquo;s transparent with its processes and reporting structure. You can count on them to provide expert recommendations, implement industry best practices for campaign development and optimization, and present relevant reports based on consistent tracking of crucial campaign metrics.</p>
 				</article>
 				<article class="gads-choice">
-					<strong>04 / Commercials</strong>
+					<strong>04 / Pricing</strong>
 					<h3>Transparent <em>pricing</em></h3>
 					<p>Every brand and Google Ads campaign is unique, but your Google Ads Management agency should be transparent with its pricing and fees. The best agencies allocate your budget efficiently, from ad spend to a competitive management fee.</p>
 				</article>
@@ -8336,33 +8343,33 @@ p.faq-desc {
 	<section class="gads-section gads-dark " id="gads-why">
 		<div class="gads-wrap">
 			<div class="gads-section-head">
-				<div class="gads-kicker">Why choose</div>
+				<div class="gads-kicker">Why Consultus Digital</div>
 				<h2 class="gads-title">Why choose Consultus Digital as your Google Ads management <span class="sem">agency?</span></h2>
 			</div>
 			<div class="gads-feature-split">
 				<div class="gads-stack scroll-content">
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Certified <em>Expertise</em></h3>
-						<p>Consultus Digital is a certified Google Partner, a distinction we earned because of our proven expertise in leveraging the Google Ads platform to develop leading campaigns, and generate clicks and conversions. As a Google Partner, you can trust us to ensure that your ads are always in line with Google’s latest advertising standards and industry trends.</p>
+						<p>Consultus Digital is a certified Google Partner, a distinction we earned because of our proven expertise in leveraging the Google Ads platform to develop high-performing campaigns and generate clicks and conversions. As a Google Partner, we keep your ads in line with Google’s latest advertising standards and industry trends.</p>
 					</article>
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Shared <em>Goals</em></h3>
-						<p>At Consultus Digital, we share your business goals. We know how much each click means and what it takes to get one at the best value for maximum ROI. With us as your Google Ads management partner, you can trust that your campaigns are always fully optimized and running smoothly, delivering results that directly impact customer acquisition, lead generation, and actual revenue.</p>
+						<p>At Consultus Digital, we share your business goals. We know how much each click means and what it takes to get one at the best value for maximum ROI. With us as your Google Ads management partner, your campaigns are monitored and refined as the data comes in, delivering results that directly impact customer acquisition, lead generation, and actual revenue.</p>
 					</article>
 					<article class="gads-stack-card">
-						<span class="gads-icon"><img src="/assets/services/tick-icon.svg" alt="Tick Icon"></span>
+						<span class="gads-icon" aria-hidden="true"><img src="/assets/services/tick-icon.svg" alt=""></span>
 						<h3>Personalized Client <em>Service</em></h3>
-						<p>Our secret to becoming one of Toronto’s top-rated Google Ads management agencies? It’s simple: we don’t believe in cookie-cutter solutions. With your <a class="gads-inline-link" href="/about/">dedicated account manager</a>, you can count on us to deliver personalized client service at every turn, from account setup to monthly reporting and regular updates, all geared to provide expertly tailored recommendations to your industry, the size of your company, and business goals.</p>
+						<p>Our secret? It’s simple: we don’t believe in cookie-cutter solutions. With your <a class="gads-inline-link" href="/about/">dedicated account manager</a>, you can count on us to deliver personalized client service at every turn, from account setup to monthly reporting and regular updates, all geared to provide expertly tailored recommendations to your industry, the size of your company, and business goals.</p>
 					</article>
 				</div>
-				<img class="gads-tall-photo" src="/assets/services/planning-office.webp" alt="Professionals collaborating on a marketing plan" width="1000" height="750" loading="lazy" decoding="async">
+				<img class="gads-tall-photo" src="/assets/services/planning-office.webp" alt="A consultant working on a laptop in a bright office" width="1000" height="750" loading="lazy" decoding="async">
 			</div>
 			<div class="gads-callout">
-				<span class="quotes-icon"><img src="/assets/services/quotes-icon.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
-				<p>At <a class="gads-inline-link" href="/">Consultus Digital</a>, we know good Google Ads, designed for optimal clicks, conversions, and customer value. As Toronto’s leading Google Ads management agency and certified Google Partner, we’re committed to delivering results that matter: fully optimized PPC campaigns with a measurable impact on your broader digital marketing strategy and revenue streams.</p>
-				<p>See how we deliver, from campaign development to customer satisfaction.</p>
+				<span class="quotes-icon" aria-hidden="true"><img src="/assets/services/quotes-icon.svg" alt="" loading="lazy" decoding="async"></span>
+				<p>At <a class="gads-inline-link" href="/">Consultus Digital</a>, we know good Google Ads, designed for optimal clicks, conversions, and customer value. As a certified Google Partner, we’re committed to delivering results that matter: fully optimized PPC campaigns with a measurable impact on your broader digital marketing strategy and revenue streams.</p>
+				<p><a class="gads-inline-link" href="/case-studies/">See how we deliver</a>, from campaign development to customer satisfaction.</p>
 			</div>
 		</div>
 	</section>
@@ -8375,29 +8382,26 @@ p.faq-desc {
 				<p class="gads-lede">
 					Expert Google Ads management brings more clicks, leads, and conversions, but it’s only one component of
 					a complete and long-term
-					<a class="gads-link" href="https://consultusdigital.com/digital-marketing-toronto-strategy-development/"
-						>digital marketing strategy</a
-					>. Build a comprehensive, custom-crafted advertising strategy with the right combination of services
+					<a class="gads-link" href="/services/">digital marketing strategy</a>. Build a comprehensive, custom-crafted advertising strategy with the right combination of services
 					that enhance ad performance and the overall customer experience.
 				</p>
 			</div>
 			<div class="gads-complement-grid">
 				<article class="gads-complement">
-					<span class="gads-icon"><img src="/assets/services/icon_8.svg" alt="Organic Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_8.svg" alt=""></span>
 					<span>01 / Organic</span>
 					<h3>
-						<a class="gads-inline-link" href="/seo/">Search Engine <em>Optimization</em></a
+						<a class="gads-inline-link" href="/seo-toronto/">Search Engine <em>Optimization</em></a
 						>
 					</h3>
 					<p>
-						Google Ads bring instant clicks and immediate results for your most crucial campaigns, pushing you
-						at the top of the most competitive searches. But this needs to be supported with a long-term
+						Google Ads bring instant clicks and immediate results for your most crucial campaigns, pushing you to the top of the most competitive searches. But this needs to be supported with a long-term
 						strategy. This is where SEO comes in, constant reinforcement of organic rankings, allowing you to
 						dominate all the prime spots.
 					</p>
 				</article>
 				<article class="gads-complement">
-					<span class="gads-icon"><img src="/assets/services/icon_9.svg" alt="Conversion Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_9.svg" alt=""></span>
 					<span>02 / Conversion</span>
 					<h3>
 						<a
@@ -8413,7 +8417,7 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-complement">
-					<span class="gads-icon"><img src="/assets/services/icon_10.svg" alt="Social Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_10.svg" alt=""></span>
 					<span>03 / Social</span>
 					<h3>Social Media <em>Ads</em></h3>
 					<p>
@@ -8424,25 +8428,15 @@ p.faq-desc {
 							href="/facebook-advertising-agency-in-toronto/"
 							>Facebook</a
 						>,
-						<a class="gads-inline-link" href="https://consultusdigital.com/linkedin-advertising-toronto/"
-							>LinkedIn</a
-						>,
-						<a class="gads-inline-link" href="https://consultusdigital.com/instagram-marketing-toronto/"
-							>Instagram</a
-						>,
-						<a class="gads-inline-link" href="https://consultusdigital.com/tik-tok-advertising-agency-toronto/"
-							>TikTok</a
-						>, and more.
+						LinkedIn,
+						<a class="gads-inline-link" href="/meta-ads/">Instagram</a>,
+						TikTok, and more.
 					</p>
 				</article>
 				<article class="gads-complement">
-					<span class="gads-icon"><img src="/assets/services/icon_11.svg" alt="Return Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_11.svg" alt=""></span>
 					<span>04 / Return</span>
-					<h3>
-						<a class="gads-inline-link" href="https://consultusdigital.com/remarketing-marketing-toronto/"
-							>Remarketing <em>Services</em></a
-						>
-					</h3>
+					<h3>Remarketing <em>Services</em></h3>
 					<p>
 						Track customers who clicked on your ads across the web. Combine Google Ads management in Toronto
 						with remarketing to bring customers back to your latest offers and complete conversion actions,
@@ -8455,21 +8449,13 @@ p.faq-desc {
 					</p>
 				</article>
 				<article class="gads-complement">
-					<span class="gads-icon"><img src="/assets/services/icon_12.svg" alt="Reach Icon"></span>
+					<span class="gads-icon" aria-hidden="true"><img src="/assets/services/icon_12.svg" alt=""></span>
 					<span>05 / Reach</span>
-					<h3>
-						<a class="gads-inline-link" href="https://consultusdigital.com/programmatic-advertising-toronto/"
-						   >Programmatic <em>Advertising</em></a
-						>
-					</h3>
+					<h3>Programmatic <em>Advertising</em></h3>
 					<p>
 						Level up your standard Google Ads with an all-new type of display advertising across affiliate
 						websites. Display targeted ads on
-						<a
-							class="gads-inline-link"
-							href="https://consultusdigital.com/blog/increase-website-traffic-by-using-these-4-seo-blogging-tips/"
-							>high-traffic websites</a
-						>
+						high-traffic websites
 						with relevant audiences and maximize conversions.
 					</p>
 				</article>
@@ -8503,7 +8489,7 @@ p.faq-desc {
 							/>
 						</div>
 						<div class="gads-testimonial-copy">
-							<span class="gads-quote-mark"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
+							<span class="gads-quote-mark" aria-hidden="true"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="" loading="lazy" decoding="async"></span>
 </span>
 							<blockquote>
 								“My firm, KASE Insurance Inc. partnered with Consultus Digital two years ago. At that time
@@ -8516,7 +8502,7 @@ p.faq-desc {
 							<img
 								class="gads-testimonial-logo"
 								src="/assets/services/kase-logo.webp"
-								alt=" Stanislav Kojokin Kase Insurance"
+								alt="Kase Insurance logo"
 								width="220"
 								height="90"
 								loading="lazy"
@@ -8535,7 +8521,7 @@ p.faq-desc {
 							/>
 						</div>
 						<div class="gads-testimonial-copy">
-							<span class="gads-quote-mark"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
+							<span class="gads-quote-mark" aria-hidden="true"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="" loading="lazy" decoding="async"></span>
 </span>
 							<blockquote>
 								“The team at Consultus Digital won our business due to their thorough assessment and
@@ -8549,7 +8535,7 @@ p.faq-desc {
 							<img
 								class="gads-testimonial-logo"
 								src="/assets/services/officeshop-logo.webp"
-								alt=" Helen Stergiou Partner, The Office Shop"
+								alt="The Office Shop logo"
 								width="220"
 								height="90"
 								loading="lazy"
@@ -8570,7 +8556,7 @@ p.faq-desc {
 							/>
 						</div>
 						<div class="gads-testimonial-copy">
-							<span class="gads-quote-mark"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
+							<span class="gads-quote-mark" aria-hidden="true"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="" loading="lazy" decoding="async"></span>
 </span>
 							<blockquote>
 								“I began using Consultus Digital in January of 2022 after being with a competitor for many
@@ -8584,7 +8570,7 @@ p.faq-desc {
 							<img
 								class="gads-testimonial-logo"
 								src="/assets/services/obc-logo.webp"
-								alt=" Laura Harvey CEO, Ontario Business Central Inc."
+								alt="Ontario Business Central logo"
 								width="220"
 								height="90"
 								loading="lazy"
@@ -8603,7 +8589,7 @@ p.faq-desc {
 							/>
 						</div>
 						<div class="gads-testimonial-copy">
-							<span class="gads-quote-mark"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
+							<span class="gads-quote-mark" aria-hidden="true"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="" loading="lazy" decoding="async"></span>
 </span>
 							<blockquote>
 								“Such a great team to work with! Created an amazing new website for us along with managing
@@ -8613,7 +8599,7 @@ p.faq-desc {
 							<img
 								class="gads-testimonial-logo"
 								src="/assets/services/orr-logo.webp"
-								alt=" Melissa Graham Manager, Orr Insurance"
+								alt="Orr Insurance logo"
 								width="220"
 								height="90"
 								loading="lazy"
@@ -8634,7 +8620,7 @@ p.faq-desc {
 							/>
 						</div>
 						<div class="gads-testimonial-copy">
-							<span class="gads-quote-mark"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="Quotes Icon" loading="lazy" decoding="async"></span>
+							<span class="gads-quote-mark" aria-hidden="true"><span class="quotes-icon"><img src="/assets/services/quotes-img1.svg" alt="" loading="lazy" decoding="async"></span>
 </span>
 							<blockquote>
 								“As the VP of both Sales and Marketing for one of Canada’s largest electronic recycling
@@ -8650,7 +8636,7 @@ p.faq-desc {
 							<img
 								class="gads-testimonial-logo"
 								src="/assets/services/ecycle-logo.webp"
-								alt=" Tricia Oldfield Vice President, eCycle Solutions"
+								alt="eCycle Solutions logo"
 								width="220"
 								height="90"
 								loading="lazy"
@@ -8746,9 +8732,9 @@ p.faq-desc {
 		<div class="gads-wrap gads-final-grid"><div>
 			<div class="gads-kicker">Claim your free 30-minute strategy session</div>
 			<h2>Let our Google Ads experts take your business to the <span class="sem">top</span>.</h2>
-			<p style="max-width:760px;margin:26px 0 0;color:#DCE4FF;font-size:17px;line-height:1.65">Our in-house experts have the tools and knowledge you need to start appearing at the top of Google when your customers are ready to make a purchase. <a class="gads-inline-link" href="/contact/">Contact us today</a> and find out how we can help your business grow.</p>
+			<p style="max-width:760px;margin:26px 0 0;color:#DCE4FF;font-size:17px;line-height:1.65">Bring your account and your goals to our certified Google Partner team, and we&rsquo;ll show you where we would start.</p>
 			</div>
-			<a class="btn" href="/contact/">Schedule a Discovery Call &rarr;</a>
+			<a class="btn" href="/contact/">Claim Your Free Strategy Session &rarr;</a>
 		</div>
 	</section>
 </main>
@@ -9093,7 +9079,7 @@ if (typeof setMegaTab !== 'function') {
 		  previous.disabled = track.scrollLeft <= 2;
 		  next.disabled = track.scrollLeft >= max - 2;
 		  // At the end of the format rail, several cards may be visible together.
-		  counter.textContent = (next.disabled ? cards.length : index + 1) + ' / ' + cards.length;
+		  if (counter) counter.textContent = (next.disabled ? cards.length : index + 1) + ' / ' + cards.length;
 		}
 		function move(direction) {
 		  var max = Math.max(0, track.scrollWidth - track.clientWidth);
