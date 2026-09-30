@@ -6,7 +6,7 @@ Reference: https://www.figma.com/proto/mbaW5wYYR0HC3Ka41DNwTr/Consultus-Digital-
 
 ## Reuse on the next service page
 
-Copy the page shell and retain its self-contained styles, shared navigation, footer, metadata structure, and responsive rules. The page-specific design is scoped to `body.gads-revamp` and `.gads-page`. Replace the service content, metadata, FAQ structured data, evidence, and imagery together. Do not copy Google Ads claims into another service.
+Copy the page shell and retain its stylesheet links (`/assets/css/site.css`, `/assets/css/service.css`) and page-specific inline styles, shared navigation, footer, metadata structure, and responsive rules. The page-specific design is scoped to `body.gads-revamp` and `.gads-page`. Replace the service content, metadata, FAQ structured data, evidence, and imagery together. Do not copy Google Ads claims into another service.
 
 - NuberNext regular display headlines with blue italic emphasis on light sections, yellow on dark.
 - Page accent `#3033BB`, warm background `#FAF8F3`, dark section background `#101010`.

@@ -36,6 +36,10 @@ Easy to avoid: we divide up the pages.
 We'll agree on a rough split (for example, one of us on case study pages, the other on
 city pages). It doesn't have to be rigid, just clear enough that we're not colliding.
 
+**Shared stylesheets are the exception.** `assets/css/site.css` (all pages), `service.css`, `case-study-shell.css`
+and `industry-template.css` affect every page that links them. Tell the other person before editing one, and
+always commit `assets/css/` together with the pages that use it.
+
 ---
 
 ## If you ever see a "conflict" message

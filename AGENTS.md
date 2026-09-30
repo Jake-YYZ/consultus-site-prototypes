@@ -9,8 +9,8 @@ A complete static export of consultusdigital.com (downloaded from Netlify). Jake
 ## How the site is structured
 
 - Every page is a folder containing a single `index.html` (e.g. `about/index.html`, `seo-toronto/index.html`). URLs map 1:1 to folders.
-- Each `index.html` is **self-contained**: the full CSS design system is inlined in a `<style>` block in the `<head>`. There is no shared stylesheet except `/assets/fonts.css` (font declarations only).
-- **To create a new page that matches the brand:** copy an existing page (the homepage `index.html` or a service page like `cro/index.html`), keep the `<style>` block, nav, and footer, and replace the body sections. This guarantees brand consistency.
+- Each `index.html` links the shared stylesheets in `assets/css/` (`site.css` on 156 pages; `service.css`, `case-study-shell.css`, `industry-template.css` on their page types) and keeps only its own page-specific rules in an inline `<style>` block. `/assets/fonts.css` holds the font declarations. Editing a shared file changes every page that links it. See `CLAUDE.md` > Shared CSS.
+- **To create a new page that matches the brand:** copy an existing page (the homepage `index.html` or a service page like `cro/index.html`), keep its `<link rel="stylesheet">` tags, nav, and footer, keep or replace the page-specific inline `<style>`, and replace the body sections. This guarantees brand consistency.
 - Shared assets live in `assets/`: fonts (`assets/fonts/`), brand mark (`assets/brand/consultus-mark.svg`), hero/team videos (`assets/video/`).
 - The logo is embedded as a base64 PNG inside each page (large but works offline).
 - Ignore: `consultus - website inspo - final.backup.html` (old single-file prototype), `zi4edkzp`, `zirh7zqj`, `zivb9k9s` (leftover zip bundles from the Netlify download), `launch-qa-report.txt`, `link_audit.md`, `redirects.csv`, `_redirects`.
