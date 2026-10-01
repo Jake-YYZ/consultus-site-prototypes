@@ -30,15 +30,6 @@ h2.section,
   font-family: var(--serif) !important;
   font-weight: 400 !important;
 }
-/* ========== COVER HERO (per Style Guide) ========== */
-.hero-cover {
-  background: #FAF8F3;
-  padding: 120px 32px 96px;
-  border-bottom: 1px solid #E1DCD1;
-  position: relative;
-  overflow: hidden;
-  max-width: none;
-}
 .hero-cover .cover-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,18 +43,6 @@ h2.section,
 .hero-cover .cover-meta {
   grid-column: 1 / -1;
 }
-.hero-cover .eyebrow.yellow-dot {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #6A686B;
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  margin-bottom: 32px;
-}
 .hero-cover h1.display {
   font-family: var(--serif) !important;
   font-weight: 400 !important;
@@ -75,23 +54,7 @@ h2.section,
   margin-bottom: 32px;
   max-width: 1100px;
 }
-.hero-cover h1.display .sem {
-  font-family: var(--serif) !important;
-  font-style: italic;
-  font-weight: 400;
-  color: #1A40C7 !important;
-  -webkit-text-fill-color: #1A40C7 !important;
-}
-.hero-cover p.lede {
-  font-family: var(--serif) !important;
-  font-weight: 300 !important;
-  font-size: 22px;
-  line-height: 1.45;
-  color: #2A2A2A;
-  max-width: 56ch;
-  letter-spacing: -0.005em;
-  margin-top: 28px;
-}
+/* re-asserted from the shared CSS so this page keeps its original cascade order */
 .hero-cover .cover-meta {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -100,41 +63,16 @@ h2.section,
   padding-top: 32px;
   border-top: 1px solid #E1DCD1;
 }
-.hero-cover .cover-meta .cell {
-  display: flex;
-  flex-direction: column;
-}
-.hero-cover .cover-meta .cell .mono {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: #6A686B;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.hero-cover .cover-meta .cell strong {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 15px;
-  color: #141414;
-}
 @media (max-width: 900px) {
 /* re-asserted from the shared CSS so this page keeps its original cascade order */
-  .hero-cover {
-    padding: 80px 28px 60px;
-  }
   .hero-cover .cover-meta {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-top: 56px;
   }
-  .hero-cover .ghost-monogram {
-    font-size: 360px;
-    right: -60px;
-    bottom: -120px;
-  }
 }
 @media (max-width: 560px) {
+/* re-asserted from the shared CSS so this page keeps its original cascade order */
   .hero-cover .cover-meta {
     grid-template-columns: 1fr;
   }
@@ -142,12 +80,6 @@ h2.section,
 a {
   color: inherit;
   text-decoration: none;
-}
-.eyebrow.dark {
-  color: #C7C5C8;
-}
-.section-lbl.dark {
-  color: #C7C5C8;
 }
 .sec-head {
   display: grid;
@@ -158,51 +90,6 @@ a {
 .sec-head:has(> .section-lbl) {
   grid-template-columns: 1fr;
   gap: 16px;
-}
-.client-logo.zayouna {
-  font-family: var(--sans);
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #141414;
-}
-.stat-lbl {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: #C7C5C8;
-  line-height: 1.4;
-  max-width: 200px;
-}
-.dark-full .method-num {
-  color: #C7C5C8;
-}
-.dark-full .method-desc {
-  color: #C7C5C8;
-}
-.case-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(20,20,20,0.85) 100%);
-  z-index: 1;
-}
-.case-content {
-  position: absolute;
-  inset: 0;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #FAF8F3;
-  z-index: 2;
-}
-.case-cat {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #FFEC00;
 }
 .case-bottom {
   display: flex;
@@ -230,11 +117,6 @@ a {
     gap: 24px;
     margin-bottom: 40px;
   }
-}
-.lv-site-links span:after {
-  content: ' \u02c5';
-  margin-left: 3px;
-  opacity: 0.6;
 }
 .if-right {
   background: linear-gradient(135deg, #1a1a28 0%, #0a0a13 100%);
@@ -265,26 +147,6 @@ a {
   margin-bottom: 14px !important;
   border-bottom: 1px solid rgba(20,20,20,0.08);
   padding-bottom: 12px !important;
-}
-.subind-card-header .subind-num {
-  font-family: var(--serif) !important;
-  font-style: italic !important;
-  font-weight: 300 !important;
-  font-size: clamp(36px, 4vw, 48px) !important;
-  line-height: 0.95 !important;
-  letter-spacing: -0.02em !important;
-  color: #1A40C7 !important;
-  background: none !important;
-  padding: 0 !important;
-  border: 0 !important;
-}
-.subind-card-header::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  margin-left: 16px;
-  margin-bottom: 8px;
-  background: rgba(20,20,20,0.08);
 }
 /* Fade-in keyframe for staggered cards */
 .subind-card {
@@ -358,12 +220,6 @@ a {
   max-width: 78ch;
   animation: faq-slide-in 0.25s ease;
 }
-.faq-list .faq-item .faq-a p {
-  margin: 0 0 10px;
-}
-.faq-list .faq-item .faq-a p:last-child {
-  margin: 0;
-}
 @keyframes faq-slide-in {
   from {
     opacity: 0;
@@ -397,19 +253,6 @@ section.hero-cover .hero-bg {
   position: absolute !important;
   inset: 0 !important;
   z-index: 0 !important;
-}
-.hero-bg[data-media-slug] svg,
-.hero .hero-bg svg {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-}
-/* Audit teaser thumbnails should also fill, not collapse */
-.audit-bg[data-media-slug] {
-  position: absolute !important;
-  inset: 0 !important;
 }
 </style>
   <meta name="description" content="How Consultus Digital rebuilt eCycle Solutions on Zoho CRM: 19,000+ records migrated, automated sales workflows, integrated telephony and AI notes, and custom dashboards, driving a 40% productivity boost, 75% faster lead response, and 100% call tracking." />

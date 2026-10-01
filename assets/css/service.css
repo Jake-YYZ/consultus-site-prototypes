@@ -7,6 +7,27 @@
  * Page-specific rules stay in each page's own <style> block, after the <link> tags.
  */
 
+.sec-head.has-lead {
+  margin-bottom: 26px;
+}
+.sec-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #6A686B;
+  max-width: none;
+  margin: 0 0 54px;
+}
+.sec-head-sub {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #2A2A2A;
+  align-self: end;
+  max-width: 480px;
+  margin: 0;
+}
+.dark-full .sec-head-sub {
+  color: #C7C5C8;
+}
 /* WP theme base, scoped to page content */
 @font-face {
   font-family: 'NuberNext-DemiBold';
@@ -869,6 +890,15 @@ body.gads-revamp {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.gads-stat-chips > div:nth-child(2) {
+  background: #5b60ca;
+}
+.gads-stat-chips > div:nth-child(3) {
+  background: #8389d5;
+}
+.gads-stat-chips > div:nth-child(4) {
+  background: #b0b7e0;
 }
 .gads-stat-chips strong {
   color: var(--yellow);
@@ -2840,6 +2870,9 @@ body.gads-revamp {
   margin-top: 0;
   line-height: 1.2;
 }
+.gads-stat-chips > div:nth-child(n + 4) p {
+  color: #68676B;
+}
 .gads-small-rating > .gads-icon img {
   width: 42px;
 }
@@ -2940,6 +2973,9 @@ body.gads-revamp {
 .gads-scope-body .gads-scope-more {
   margin-top: auto;
 }
+#gads-why .gads-callout p {
+  font-size: 18px;
+}
 .gads-bow-stats > div:nth-child(3) {
   background: #B4BFEB;
 }
@@ -3029,6 +3065,9 @@ body.gads-revamp {
   height: 2px;
   border-bottom: 1px solid #2a2a2a;
   z-index: 1;
+}
+#gads-why .gads-stack-card {
+  min-height: 297px;
 }
 #gads-importance .gads-tall-photo {
   max-height: 810px;
@@ -3406,6 +3445,9 @@ body #csb-dock .csb-dock-explore .csb-x-svc:after {
   }
   .gads-bow-panel .gads-signal-panel {
     left: 0;
+  }
+  #gads-why .gads-callout p {
+    font-size: 16px;
   }
   #gads-testimonials {
     display: none;
