@@ -94,6 +94,7 @@
 /healthcare-v2/work/                              /results/  301
 /healthcare-v2/work/la-vie/                       /case-studies/la-vie/  301
 /healthcare-v2/work/tonic-eye-care/               /case-studies/tonic-eye-care/  301
+/medical/                                         /healthcare/  301
 
 # --- Rebuild at same URL (3): build these, do NOT redirect ---
 #   /insurance-industry/  (rebuild)
