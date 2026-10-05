@@ -528,17 +528,41 @@ a {
           <div class="ct-card-ey">Request your call</div>
           <div class="ct-card-t">Tell us about your business.</div>
         </div>
+        <form id="contact-zoho-form" data-zoho-form action="https://crm.zoho.com/crm/WebToLeadForm" method="POST" accept-charset="UTF-8">
+        <!-- Zoho CRM Web Form "Website Contact - Book a Call" (Leads). Do not edit these keys. -->
+        <input type="hidden" name="xnQsjsdp" value="fb680fec85f3cc8be16d2ca57b4c0faf926ca3ed46b7b2970256c24468961c5a">
+        <input type="hidden" name="xmIwtLD" value="832ab0c9e368357b5da52c99fc353d6522d4f86153cc1566795c60473b8f0083782942a0f1dafd8d98448d8f610bc0b9">
+        <input type="hidden" name="actionType" value="TGVhZHM=">
+        <input type="hidden" name="returnURL" value="https://www.consultusdigital.com/contact/?submitted=1">
+        <input type="hidden" name="zc_gad" value="">
+        <input type="hidden" name="Lead Source" value="Contact Us Form">
+        <input type="hidden" name="LEADCF16" value="">
+        <input type="hidden" name="LEADCF23" value="">
+        <input type="hidden" name="LEADCF26" value="">
+        <input type="hidden" name="LEADCF27" value="">
+        <input type="hidden" name="LEADCF28" value="">
+        <input type="hidden" name="LEADCF29" value="">
+        <input type="hidden" name="LEADCF31" value="">
+        <!-- Spam trap: people never see this, bots fill it in -->
+        <input type="text" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="ct-form-grid">
-          <div class="form-row"><label>First Name</label><input placeholder="Your first name"></div>
-          <div class="form-row"><label>Last Name</label><input placeholder="Your last name"></div>
-          <div class="form-row"><label>Work Email</label><input placeholder="you@company.com"></div>
-          <div class="form-row"><label>Phone Number</label><input placeholder="(416) 555-0100"></div>
-          <div class="form-row"><label>Company</label><input placeholder="Acme Co"></div>
-          <div class="form-row"><label>Website</label><input placeholder="acme.com"></div>
+          <div class="form-row"><label for="ct-first">First Name</label><input id="ct-first" name="First Name" placeholder="Your first name" autocomplete="given-name" maxlength="40"></div>
+          <div class="form-row"><label for="ct-last">Last Name</label><input id="ct-last" name="Last Name" placeholder="Your last name" autocomplete="family-name" maxlength="80" required></div>
+          <div class="form-row"><label for="ct-email">Work Email</label><input id="ct-email" name="Email" type="email" placeholder="you@company.com" autocomplete="email" maxlength="100" required></div>
+          <div class="form-row"><label for="ct-phone">Phone Number</label><input id="ct-phone" name="Phone" type="tel" placeholder="(416) 555-0100" autocomplete="tel" maxlength="30"></div>
+          <div class="form-row"><label for="ct-company">Company</label><input id="ct-company" name="Company" placeholder="Acme Co" autocomplete="organization" maxlength="200" required></div>
+          <div class="form-row"><label for="ct-website">Website</label><input id="ct-website" name="Website" placeholder="acme.com" autocomplete="url" maxlength="120"></div>
         </div>
-        <div class="form-row"><label>Approximate Revenue</label><select class="is-empty" onchange="this.classList.toggle('is-empty', !this.value)"><option value="" disabled selected>Select a range</option><option>Under $500K</option><option>$500K - $1M</option><option>Over $1M</option></select></div>
-        <div class="form-row"><label>What are you trying to solve?</label><textarea rows="4" placeholder="Give us a sense of the goal..."></textarea></div>
-        <a class="btn primary cta-yellow-hover" style="justify-content:center;width:100%">Book My Strategy Call →</a>
+        <div class="form-row"><label for="ct-revenue">Approximate Revenue</label><select id="ct-revenue" name="LEADCF32" class="is-empty" onchange="this.classList.toggle('is-empty', !this.value)"><option value="" selected>Select a range</option><option value="Under $500K">Under $500K</option><option value="$500K to $1M">$500K to $1M</option><option value="$1M to $3M">$1M to $3M</option><option value="$3M to $10M">$3M to $10M</option><option value="$10M to $25M">$10M to $25M</option><option value="$25M+">$25M+</option></select></div>
+        <div class="form-row"><label for="ct-goal">What are you trying to solve?</label><textarea id="ct-goal" name="Description" rows="4" maxlength="2000" placeholder="Give us a sense of the goal..."></textarea></div>
+        <button type="submit" class="btn primary cta-yellow-hover" style="justify-content:center;width:100%">Book My Strategy Call →</button>
+        <p data-zoho-status role="alert" style="margin:12px 0 0;font-size:14px;color:#D94545;text-align:center"></p>
+      </form>
+      <div data-zoho-done hidden style="text-align:center;padding:28px 8px">
+        <div class="ct-card-ey">Request received</div>
+        <div class="ct-card-t" style="margin-bottom:10px">Thanks, we have it.</div>
+        <p style="margin:0;color:#6A686B;font-size:15px;line-height:1.55">A strategist will reach out within one business day. Need us sooner? Call 416-460-1810.</p>
+      </div>
       </div>
     </div>
   </section>
@@ -832,6 +856,7 @@ if (typeof setMegaTab !== 'function') {
   };
 }
 </script>
+<script src="/assets/zoho-form.js" defer></script>
 <script src="/assets/case-study-banner.js" defer></script>
 </body>
 </html>
