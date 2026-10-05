@@ -267,8 +267,8 @@
 
   /* ---------- boot ---------- */
   function boot() {
-    if (state === 'pill') buildDock();
-    else buildCard();
+    // The pop-up card no longer opens on its own; the slim dock is always shown.
+    buildDock();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
