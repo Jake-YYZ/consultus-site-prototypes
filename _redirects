@@ -79,6 +79,22 @@
 /web-development-toronto/                         /web-development/  301
 /youtube-advertising-toronto/                     /google-ads/  301
 
+# --- Healthcare consolidation (Oct 2026): the Healthcare Division content now lives at /healthcare/ ---
+/healthcare-marketing/                            /healthcare/  301
+/healthcare-marketing/dental-practices/           /healthcare/  301
+/healthcare-marketing/med-spas/                   /healthcare/  301
+/healthcare-marketing/medical-clinics/            /healthcare/  301
+/healthcare-marketing/plastic-surgery/            /healthcare/  301
+/healthcare-marketing/preventative-health/        /healthcare/  301
+/healthcare-marketing/specialty-allied-health/    /healthcare/  301
+/healthcare-division/                             /healthcare/  301
+/healthcare-division/strategy-call/               /contact/  301
+/healthcare-division/strategy-call/thank-you.html /contact/  301
+/healthcare-v2/                                   /healthcare/  301
+/healthcare-v2/work/                              /results/  301
+/healthcare-v2/work/la-vie/                       /case-studies/la-vie/  301
+/healthcare-v2/work/tonic-eye-care/               /case-studies/tonic-eye-care/  301
+
 # --- Rebuild at same URL (3): build these, do NOT redirect ---
 #   /insurance-industry/  (rebuild)
 #   /privacy-policy/  (rebuild)
