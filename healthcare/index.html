@@ -25,6 +25,7 @@
 
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/industry-template.css">
+<link rel="stylesheet" href="/assets/css/division.css">
 <style>
 /* ========== CANONICAL HEADLINE SYSTEM (per Style Guide) ========== */
 /* Fraunces serif for all display + section headlines. Inter sans for body. */
@@ -407,152 +408,6 @@ section.hero-cover .hero-bg {
   }
 }
 </style>
-<style id="hc-styles">
-/* Healthcare Division components. Built from the industry-template vocabulary:
-   white cards on bone, mono labels, NuberNext Wide card titles, blue accents on light, yellow on dark. */
-#indt .hc-micro { font-size: 13.5px; line-height: 1.5; color: var(--charcoal); margin: 16px 0 0; }
-
-/* who we work with */
-#indt .hc-sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-#indt .hc-sector { display: flex; flex-direction: column; background: var(--pure); border: 1px solid var(--bone-border); border-radius: 16px; overflow: hidden; }
-#indt .hc-sector-media { aspect-ratio: 16/11; overflow: hidden; background: var(--bone); }
-#indt .hc-sector-media img, #indt .hc-sector-media video { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
-#indt .hc-sector-body { padding: 26px 26px 30px; }
-#indt .hc-num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--deep-blue); }
-#indt .hc-sector h3 { font-family: var(--wide); font-weight: 600; font-size: 20px; letter-spacing: -0.005em; color: var(--ink); margin: 14px 0 0; }
-#indt .hc-sector p { font-size: 15px; line-height: 1.6; color: var(--charcoal); margin: 12px 0 0; }
-#indt .hc-specialties { margin-top: 44px; display: flex; align-items: flex-start; gap: 28px; }
-#indt .hc-spec-lbl { flex: 0 0 auto; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); padding-top: 11px; }
-#indt .hc-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-#indt .hc-chips li { background: var(--pure); border: 1px solid var(--bone-border); border-radius: 100px; padding: 9px 18px; font-size: 14px; font-weight: 500; color: var(--ink); }
-
-/* founders' note */
-#indt .hc-bone { background: var(--bone); }
-#indt .hc-fit { max-width: 1200px; margin: 0 auto; padding: 96px 32px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; }
-#indt .hc-fit-quote { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(21px, 2.3vw, 28px); line-height: 1.4; letter-spacing: -0.01em; color: var(--ink); margin: 26px 0 0; }
-#indt .hc-fit-who { margin-top: 26px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); line-height: 1.6; }
-#indt .hc-fit-who b { display: block; color: var(--ink); font-weight: 600; }
-#indt .hc-fit-media { border-radius: 18px; overflow: hidden; aspect-ratio: 4/3; background: var(--onyx-2); box-shadow: 0 26px 48px -26px rgba(20,20,20,.35); }
-#indt .hc-fit-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* services */
-#indt .hc-svcs { border-top: 1px solid var(--bone-border); }
-#indt .hc-svc { display: grid; grid-template-columns: 300px 1fr 260px; gap: 40px; align-items: start; padding: 34px 0; border-bottom: 1px solid var(--bone-border); }
-#indt .hc-stage { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep-blue); }
-#indt .hc-svc h3 { font-family: var(--wide); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; color: var(--ink); margin: 10px 0 0; }
-#indt .hc-svc h3 a { color: inherit; text-decoration: none; transition: color .2s ease; }
-#indt .hc-svc h3 a:hover { color: var(--deep-blue); }
-#indt .hc-svc h3 .arw { display: inline-block; color: var(--deep-blue); transition: transform .25s ease; }
-#indt .hc-svc h3 a:hover .arw { transform: translateX(4px); }
-#indt .hc-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-#indt .hc-tags a, #indt .hc-tags span { display: inline-flex; align-items: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); padding: 8px 13px; background: var(--bone); border: 1px solid var(--bone-border); border-radius: 100px; text-decoration: none; transition: color .2s ease, border-color .2s ease, background .2s ease; }
-#indt .hc-tags a:hover { color: var(--deep-blue); border-color: var(--blue-light); background: var(--deep-blue-pale); }
-#indt .hc-svc-tag { font-size: 15px; line-height: 1.55; color: var(--charcoal); margin: 0; }
-
-/* the division difference (dark band) */
-#indt .hc-diff-head { display: grid; grid-template-columns: 1fr 1.12fr; gap: 48px; align-items: end; margin-bottom: 52px; }
-#indt .hc-diff-head .sec-title { margin: 18px 0 0; }
-#indt .hc-diff-head p { font-size: 16.5px; line-height: 1.6; color: var(--grey); margin: 0; padding-bottom: 6px; }
-#indt .hc-diff { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-#indt .hc-diff-card { border-radius: 18px; padding: 34px 34px 28px; }
-#indt .hc-diff-card.us { background: var(--onyx-2); border: 1px solid rgba(255,236,0,.32); }
-#indt .hc-diff-card.them { background: transparent; border: 1px solid var(--onyx-border); }
-#indt .hc-diff-card h3 { margin: 0 0 22px; min-height: 44px; display: flex; align-items: center; font-family: var(--wide); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-#indt .hc-diff-card.us h3 { color: var(--yellow); }
-#indt .hc-diff-row { display: grid; grid-template-columns: 24px 1fr; gap: 14px; padding: 16px 0; border-top: 1px solid var(--onyx-border); }
-#indt .hc-mark { font-size: 15px; font-weight: 600; line-height: 1.45; }
-#indt .us .hc-mark { color: var(--yellow); }
-#indt .them .hc-mark { color: var(--red); }
-#indt .hc-diff-row b { display: block; font-size: 15.5px; font-weight: 600; color: var(--paper); margin-bottom: 4px; }
-#indt .them .hc-diff-row b { color: #D8D6D2; }
-#indt .hc-diff-row p { font-size: 14.5px; line-height: 1.55; color: var(--grey); margin: 0; }
-#indt .them .hc-diff-row p { color: var(--muted); }
-#indt .hc-diff-cta { margin-top: 44px; display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap; }
-#indt .hc-diff-cta span { font-size: 19px; color: var(--paper); }
-
-/* the Digital Health Assessment */
-#indt .hc-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-#indt .hc-step { position: relative; overflow: hidden; background: var(--pure); border: 1px solid var(--bone-border); border-radius: 18px; padding: 30px 28px 34px; }
-#indt .hc-step-k { position: relative; display: inline-flex; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--deep-blue); background: var(--deep-blue-pale); padding: 7px 14px; border-radius: 100px; }
-#indt .hc-step h3 { position: relative; font-family: var(--wide); font-weight: 600; font-size: 19px; letter-spacing: -0.005em; color: var(--ink); margin: 48px 0 0; }
-#indt .hc-step p { position: relative; font-size: 14.5px; line-height: 1.6; color: var(--charcoal); margin: 10px 0 0; }
-#indt .hc-ghost { position: absolute; top: 8px; right: 20px; font-size: 88px; line-height: 1; font-weight: 400; color: rgba(26,64,199,.07); pointer-events: none; }
-#indt .hc-step.is-score { background: var(--deep-blue); border-color: var(--deep-blue); }
-#indt .hc-step.is-score .hc-step-k { background: rgba(255,255,255,.14); color: #fff; }
-#indt .hc-step.is-score h3 { color: #fff; }
-#indt .hc-step.is-score p { color: rgba(255,255,255,.86); }
-#indt .hc-step.is-score .hc-ghost { color: rgba(255,236,0,.2); }
-#indt .hc-legend { position: relative; list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-#indt .hc-legend li { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 100px; padding: 7px 12px; }
-#indt .hc-legend b { color: var(--yellow); font-weight: 600; margin-right: 6px; }
-
-/* client logos */
-#indt .clients-logo.hc-logo-tall { height: 48px; }
-
-/* featured case study with its video */
-#indt .hc-bkc-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center; }
-#indt .hc-bkc .bkc-stats { grid-template-columns: repeat(2, 1fr); gap: 30px 28px; }
-#indt .hc-bkc-media { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 9/14; max-height: 560px; background: var(--onyx-2); }
-#indt .hc-bkc-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
-#indt .hc-live { position: absolute; top: 14px; left: 14px; z-index: 1; display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--paper); background: rgba(13,13,13,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border-radius: 100px; padding: 8px 13px; }
-#indt .hc-live i { width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); animation: hc-pulse 1.6s infinite; }
-@keyframes hc-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
-#indt .hc-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-#indt .hc-more { margin-top: 24px; }
-#indt .hc-more .indt-case-media img { object-position: center 30%; }
-
-/* client quotes */
-#indt .hc-quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-#indt .hc-q { margin: 0; display: flex; flex-direction: column; background: var(--pure); border: 1px solid var(--bone-border); border-radius: 18px; padding: 30px 28px 28px; }
-#indt .hc-qm { font-family: var(--serif); font-size: 56px; line-height: 1; height: 30px; color: var(--deep-blue); }
-#indt .hc-q blockquote { margin: 14px 0 0; font-size: 16px; line-height: 1.6; color: var(--graphite); flex: 1; }
-#indt .hc-q figcaption { margin-top: 24px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); line-height: 1.6; }
-#indt .hc-q figcaption b { display: block; color: var(--ink); font-weight: 600; }
-#indt .hc-q.is-blue { background: var(--deep-blue); border-color: var(--deep-blue); }
-#indt .hc-q.is-blue .hc-qm { color: var(--yellow); }
-#indt .hc-q.is-blue blockquote { color: #F2F5FF; }
-#indt .hc-q.is-blue figcaption { color: var(--blue-light); }
-#indt .hc-q.is-blue figcaption b { color: #fff; }
-
-/* compliance */
-#indt .hc-comp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-#indt .hc-comp-card { background: var(--pure); border: 1px solid var(--bone-border); border-radius: 16px; padding: 28px 24px 30px; }
-#indt .hc-comp-card h3 { font-family: var(--wide); font-weight: 600; font-size: 13px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--deep-blue); margin: 0; }
-#indt .hc-comp-card p { font-size: 14.5px; line-height: 1.6; color: var(--graphite); margin: 12px 0 0; }
-
-/* team */
-#indt .hc-team { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; }
-#indt .hc-team figure { position: relative; margin: 0; border-radius: 18px; overflow: hidden; aspect-ratio: 16/10; background: var(--onyx-2); }
-#indt .hc-team video, #indt .hc-team img { width: 100%; height: 100%; object-fit: cover; display: block; }
-#indt .hc-team figcaption { position: absolute; left: 14px; bottom: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--paper); background: rgba(13,13,13,.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border-radius: 100px; padding: 8px 14px; }
-
-/* closing CTA line */
-#indt .hc-cta-sub { font-size: 18px; line-height: 1.55; color: rgba(250,248,243,.86); margin: -14px 0 36px; max-width: 560px; }
-
-@media (max-width: 980px) {
-  #indt .hc-svc { grid-template-columns: 1fr; gap: 16px; }
-  #indt .hc-quotes { grid-template-columns: 1fr; }
-  #indt .hc-comp { grid-template-columns: repeat(2, 1fr); }
-  #indt .hc-steps { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 860px) {
-  #indt .hc-sectors { grid-template-columns: 1fr; }
-  #indt .hc-specialties { flex-direction: column; gap: 14px; }
-  #indt .hc-spec-lbl { padding-top: 0; }
-  #indt .hc-fit { grid-template-columns: 1fr; gap: 36px; padding: 72px 32px; }
-  #indt .hc-diff, #indt .hc-diff-head { grid-template-columns: 1fr; }
-  #indt .hc-diff-head { gap: 14px; }
-  #indt .hc-bkc-grid { grid-template-columns: 1fr; gap: 36px; }
-  #indt .hc-bkc-media { aspect-ratio: 4/5; max-height: none; max-width: 420px; }
-  #indt .hc-team { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) {
-  #indt .hc-fit { padding: 64px 16px; }
-  #indt .hc-steps, #indt .hc-comp { grid-template-columns: 1fr; }
-  #indt .hc-diff-card { padding: 28px 22px 22px; }
-  #indt .hc-diff-cta { flex-direction: column; gap: 16px; text-align: center; }
-}
-</style>
 
   <!-- ===== HERO ===== -->
   <section class="ix-hero">
@@ -565,7 +420,7 @@ section.hero-cover .hero-bg {
           <a class="btn primary cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="#work">See the Work</a>
         </div>
-        <p class="hc-micro">30 minutes. No deck. Straight answers on where the growth is.</p>
+        <p class="dp-micro">30 minutes. No deck. Straight answers on where the growth is.</p>
       </div>
       <div class="ix-fan" aria-hidden="true">
         <div class="col a">
@@ -596,48 +451,48 @@ section.hero-cover .hero-bg {
       </div>
       <p>Clinics and hospitals, healthcare ecommerce and product brands, brick and mortar or online. We work across all of it.</p>
     </div>
-    <div class="hc-sectors">
-      <article class="hc-sector">
-        <div class="hc-sector-media"><img src="/assets/work/la-vie/lifestyle-rundown.jpg" alt="La Vie Executive Health ad creative" loading="lazy"></div>
-        <div class="hc-sector-body">
-          <span class="hc-num">01</span>
+    <div class="dp-sectors">
+      <article class="dp-sector">
+        <div class="dp-sector-media"><img src="/assets/work/la-vie/lifestyle-rundown.jpg" alt="La Vie Executive Health ad creative" loading="lazy"></div>
+        <div class="dp-sector-body">
+          <span class="dp-num">01</span>
           <h3>Clinics &amp; Hospitals</h3>
           <p>Patient acquisition with the college rules built in. Persona-led creative that clears provincial advertising standards, landing pages built to book, and speed-to-lead systems so every inquiry is answered in minutes, not days.</p>
         </div>
       </article>
-      <article class="hc-sector">
-        <div class="hc-sector-media"><img src="/assets/work/e11ement/social-model.jpg" alt="e11ement skincare social creative" loading="lazy"></div>
-        <div class="hc-sector-body">
-          <span class="hc-num">02</span>
+      <article class="dp-sector">
+        <div class="dp-sector-media"><img src="/assets/work/e11ement/social-model.jpg" alt="e11ement skincare social creative" loading="lazy"></div>
+        <div class="dp-sector-body">
+          <span class="dp-num">02</span>
           <h3>Healthcare Ecommerce</h3>
           <p>Supplements, skincare, devices, and clinic retail lines. High-velocity creative testing measured on ROAS and ACOS, marketplace and DTC together, and cross-border programs for Canadian brands doing most of their volume in the US.</p>
         </div>
       </article>
-      <article class="hc-sector">
-        <div class="hc-sector-media"><video data-lazy src="/assets/work/medical/loop-tonic-kids.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
-        <div class="hc-sector-body">
-          <span class="hc-num">03</span>
+      <article class="dp-sector">
+        <div class="dp-sector-media"><video data-lazy src="/assets/work/medical/loop-tonic-kids.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+        <div class="dp-sector-body">
+          <span class="dp-num">03</span>
           <h3>Practices &amp; Specialists</h3>
           <p>Dental, physio, medspa, optometry, mental health, and more. Local SEO and AI-answer visibility, direct-billing messaging that matches how patients decide, and front-desk coaching that turns booked consults into accepted treatment plans.</p>
         </div>
       </article>
     </div>
-    <div class="hc-specialties">
-      <span class="hc-spec-lbl">Specialties we serve</span>
-      <ul class="hc-chips"><li>Primary care</li><li>Hospitals</li><li>Mental health</li><li>Dental</li><li>Medspa &amp; aesthetics</li><li>Healthcare products</li><li>Maternal health</li><li>Optometry</li><li>Nutrition</li><li>Physiotherapy</li><li>Senior care</li><li>Associations</li></ul>
+    <div class="dp-specialties">
+      <span class="dp-spec-lbl">Specialties we serve</span>
+      <ul class="dp-chips"><li>Primary care</li><li>Hospitals</li><li>Mental health</li><li>Dental</li><li>Medspa &amp; aesthetics</li><li>Healthcare products</li><li>Maternal health</li><li>Optometry</li><li>Nutrition</li><li>Physiotherapy</li><li>Senior care</li><li>Associations</li></ul>
     </div>
   </section>
 
   <!-- ===== 2. FOUNDERS' NOTE ===== -->
-  <section class="hc-bone">
-    <div class="hc-fit">
+  <section class="dp-bone">
+    <div class="dp-fit">
       <div>
         <span class="indt-lbl">From the founders</span>
         <h2 class="indt-title">Are we the right <span class="sem">fit</span> for you?</h2>
-        <p class="hc-fit-quote">&ldquo;If you're ambitious about growing a healthcare business, you want a long-term partner, and you're done with cookie-cutter marketing, we should talk. That's exactly who we built this division for.&rdquo;</p>
-        <div class="hc-fit-who"><b>Jake &amp; Grace Matzanke</b>Co-Founders, Consultus Digital</div>
+        <p class="dp-fit-quote">&ldquo;If you're ambitious about growing a healthcare business, you want a long-term partner, and you're done with cookie-cutter marketing, we should talk. That's exactly who we built this division for.&rdquo;</p>
+        <div class="dp-fit-who"><b>Jake &amp; Grace Matzanke</b>Co-Founders, Consultus Digital</div>
       </div>
-      <div class="hc-fit-media"><video data-lazy src="/assets/video/office-hero.mp4" poster="/assets/video/office-hero-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
+      <div class="dp-fit-media"><video data-lazy src="/assets/video/office-hero.mp4" poster="/assets/video/office-hero-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
     </div>
   </section>
 
@@ -650,36 +505,36 @@ section.hero-cover .hero-bg {
       </div>
       <p>Every service here has one job: more revenue for your business. More leads, more booked patients, more sales.</p>
     </div>
-    <div class="hc-svcs">
-      <div class="hc-svc">
-        <div><span class="hc-stage">01 &middot; Foundation</span><h3><a href="/web-development/">Websites &amp; CRO <span class="arw">&rarr;</span></a></h3></div>
-        <ul class="hc-tags"><li><span>Web development</span></li><li><a href="/landing-pages/">Landing pages</a></li><li><a href="/cro/">CRO</a></li><li><a href="/ab-testing/">A/B testing</a></li></ul>
-        <p class="hc-svc-tag">Built to convert patients, then tested until it does it better.</p>
+    <div class="dp-svcs">
+      <div class="dp-svc">
+        <div><span class="dp-stage">01 &middot; Foundation</span><h3><a href="/web-development/">Websites &amp; CRO <span class="arw">&rarr;</span></a></h3></div>
+        <ul class="dp-tags"><li><span>Web development</span></li><li><a href="/landing-pages/">Landing pages</a></li><li><a href="/cro/">CRO</a></li><li><a href="/ab-testing/">A/B testing</a></li></ul>
+        <p class="dp-svc-tag">Built to convert patients, then tested until it does it better.</p>
       </div>
-      <div class="hc-svc">
-        <div><span class="hc-stage">02 &middot; Drive the right traffic</span><h3><a href="/seo/">SEO &amp; AEO <span class="arw">&rarr;</span></a></h3></div>
-        <ul class="hc-tags"><li><a href="/local-seo/">Local SEO &amp; GMBs</a></li><li><a href="/aeo-ai-search/">AEO &middot; LLM visibility</a></li><li><span>Technical SEO</span></li><li><a href="/content-marketing/">Content</a></li></ul>
-        <p class="hc-svc-tag">Found on page one, and inside the AI tools your patients ask.</p>
+      <div class="dp-svc">
+        <div><span class="dp-stage">02 &middot; Drive the right traffic</span><h3><a href="/seo/">SEO &amp; AEO <span class="arw">&rarr;</span></a></h3></div>
+        <ul class="dp-tags"><li><a href="/local-seo/">Local SEO &amp; GMBs</a></li><li><a href="/aeo-ai-search/">AEO &middot; LLM visibility</a></li><li><span>Technical SEO</span></li><li><a href="/content-marketing/">Content</a></li></ul>
+        <p class="dp-svc-tag">Found on page one, and inside the AI tools your patients ask.</p>
       </div>
-      <div class="hc-svc">
-        <div><span class="hc-stage">02 &middot; Drive the right traffic</span><h3><a href="/services/">Media buying <span class="arw">&rarr;</span></a></h3></div>
-        <ul class="hc-tags"><li><a href="/google-ads/">Google Ads</a></li><li><a href="/meta-ads/">Meta Ads</a></li><li><a href="/microsoft-ads/">Microsoft Ads</a></li><li><span>Reddit Ads</span></li><li><span>LinkedIn Ads</span></li><li><a href="/amazon-ads/">Amazon Ads</a></li></ul>
-        <p class="hc-svc-tag">Full-funnel buying managed against CPA and ROAS targets.</p>
+      <div class="dp-svc">
+        <div><span class="dp-stage">02 &middot; Drive the right traffic</span><h3><a href="/services/">Media buying <span class="arw">&rarr;</span></a></h3></div>
+        <ul class="dp-tags"><li><a href="/google-ads/">Google Ads</a></li><li><a href="/meta-ads/">Meta Ads</a></li><li><a href="/microsoft-ads/">Microsoft Ads</a></li><li><span>Reddit Ads</span></li><li><span>LinkedIn Ads</span></li><li><a href="/amazon-ads/">Amazon Ads</a></li></ul>
+        <p class="dp-svc-tag">Full-funnel buying managed against CPA and ROAS targets.</p>
       </div>
-      <div class="hc-svc">
-        <div><span class="hc-stage">03 &middot; Convert with intent</span><h3><a href="/performance-creatives/">Ad creatives <span class="arw">&rarr;</span></a></h3></div>
-        <ul class="hc-tags"><li><span>UGC video</span></li><li><span>Branded content</span></li><li><a href="/influencer-marketing/">Influencer content</a></li><li><span>Brand ambassador</span></li></ul>
-        <p class="hc-svc-tag">Direct-response creative that clears compliance before it goes live.</p>
+      <div class="dp-svc">
+        <div><span class="dp-stage">03 &middot; Convert with intent</span><h3><a href="/performance-creatives/">Ad creatives <span class="arw">&rarr;</span></a></h3></div>
+        <ul class="dp-tags"><li><span>UGC video</span></li><li><span>Branded content</span></li><li><a href="/influencer-marketing/">Influencer content</a></li><li><span>Brand ambassador</span></li></ul>
+        <p class="dp-svc-tag">Direct-response creative that clears compliance before it goes live.</p>
       </div>
-      <div class="hc-svc">
-        <div><span class="hc-stage">04 &middot; Sell with the system</span><h3><a href="/marketing-automation/">Revenue operations <span class="arw">&rarr;</span></a></h3></div>
-        <ul class="hc-tags"><li><a href="/zoho-crm/">CRM &amp; pipeline</a></li><li><span>Speed-to-lead</span></li><li><span>Routing</span></li><li><span>Email &amp; retention</span></li><li><a href="/sales-enablement/">Sales consulting</a></li><li><span>AI chatbots</span></li></ul>
-        <p class="hc-svc-tag">Every inquiry worked, every consult coached.</p>
+      <div class="dp-svc">
+        <div><span class="dp-stage">04 &middot; Sell with the system</span><h3><a href="/marketing-automation/">Revenue operations <span class="arw">&rarr;</span></a></h3></div>
+        <ul class="dp-tags"><li><a href="/zoho-crm/">CRM &amp; pipeline</a></li><li><span>Speed-to-lead</span></li><li><span>Routing</span></li><li><span>Email &amp; retention</span></li><li><a href="/sales-enablement/">Sales consulting</a></li><li><span>AI chatbots</span></li></ul>
+        <p class="dp-svc-tag">Every inquiry worked, every consult coached.</p>
       </div>
-      <div class="hc-svc">
-        <div><span class="hc-stage">05 &middot; Measure and modify</span><h3><a href="/analytics-attribution/">Performance tracking <span class="arw">&rarr;</span></a></h3></div>
-        <ul class="hc-tags"><li><span>GA4 &amp; attribution</span></li><li><span>Call tracking</span></li><li><span>Live dashboards</span></li><li><span>Jane App &amp; EMR integrations</span></li></ul>
-        <p class="hc-svc-tag">One shared dashboard tying spend to booked revenue.</p>
+      <div class="dp-svc">
+        <div><span class="dp-stage">05 &middot; Measure and modify</span><h3><a href="/analytics-attribution/">Performance tracking <span class="arw">&rarr;</span></a></h3></div>
+        <ul class="dp-tags"><li><span>GA4 &amp; attribution</span></li><li><span>Call tracking</span></li><li><span>Live dashboards</span></li><li><span>Jane App &amp; EMR integrations</span></li></ul>
+        <p class="dp-svc-tag">One shared dashboard tying spend to booked revenue.</p>
       </div>
     </div>
   </section>
@@ -687,56 +542,56 @@ section.hero-cover .hero-bg {
   <!-- ===== 4. THE DIVISION DIFFERENCE ===== -->
   <section class="sec dark-full">
     <div class="sec-inner">
-      <div class="hc-diff-head">
+      <div class="dp-diff-head">
         <div>
           <div class="section-lbl dark">Why the division</div>
           <h2 class="sec-title">The division <span class="sem">difference</span>.</h2>
         </div>
         <p>A team built only for healthcare, side by side with an agency that's still learning it.</p>
       </div>
-      <div class="hc-diff">
-        <div class="hc-diff-card us">
+      <div class="dp-diff">
+        <div class="dp-diff-card us">
           <h3>Healthcare Division</h3>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10003;</span><div><b>College advertising rules</b><p>Creative pre-checked against provincial standards before it reaches you.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10003;</span><div><b>Platform health restrictions</b><p>Measurement rebuilt for restricted health categories, so acquisition keeps working.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10003;</span><div><b>Claims and consent</b><p>Substantiated claims, consent designed into every form and flow.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10003;</span><div><b>Healthcare benchmarks</b><p>CPL, booking and show rates by specialty, from day one.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10003;</span><div><b>Insurance billing &amp; patient lifecycle</b><p>We know how coverage drives patient decisions, and we use it in targeting, ad copy, and landing pages.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10003;</span><div><b>College advertising rules</b><p>Creative pre-checked against provincial standards before it reaches you.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10003;</span><div><b>Platform health restrictions</b><p>Measurement rebuilt for restricted health categories, so acquisition keeps working.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10003;</span><div><b>Claims and consent</b><p>Substantiated claims, consent designed into every form and flow.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10003;</span><div><b>Healthcare benchmarks</b><p>CPL, booking and show rates by specialty, from day one.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10003;</span><div><b>Insurance billing &amp; patient lifecycle</b><p>We know how coverage drives patient decisions, and we use it in targeting, ad copy, and landing pages.</p></div></div>
         </div>
-        <div class="hc-diff-card them">
+        <div class="dp-diff-card them">
           <h3>Generalist agency</h3>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10005;</span><div><b>College advertising rules</b><p>Learning the rules on your dime. Ads disapproved mid-flight.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10005;</span><div><b>Platform health restrictions</b><p>Conversions vanish when health categories get restricted, and nobody knows why.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10005;</span><div><b>Claims and consent</b><p>Flagged claims and endless revision loops, on your dime.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10005;</span><div><b>Healthcare benchmarks</b><p>Your account is their first healthcare experiment.</p></div></div>
-          <div class="hc-diff-row"><span class="hc-mark" aria-hidden="true">&#10005;</span><div><b>Insurance billing &amp; patient lifecycle</b><p>Treats a covered service like any other product, and wonders why the ads underperform.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10005;</span><div><b>College advertising rules</b><p>Learning the rules on your dime. Ads disapproved mid-flight.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10005;</span><div><b>Platform health restrictions</b><p>Conversions vanish when health categories get restricted, and nobody knows why.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10005;</span><div><b>Claims and consent</b><p>Flagged claims and endless revision loops, on your dime.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10005;</span><div><b>Healthcare benchmarks</b><p>Your account is their first healthcare experiment.</p></div></div>
+          <div class="dp-diff-row"><span class="dp-mark" aria-hidden="true">&#10005;</span><div><b>Insurance billing &amp; patient lifecycle</b><p>Treats a covered service like any other product, and wonders why the ads underperform.</p></div></div>
         </div>
       </div>
-      <div class="hc-diff-cta">
+      <div class="dp-diff-cta">
         <span>Want the division on your account?</span>
         <a class="btn primary on-dark cta-yellow-hover" href="/contact/">Book a Strategy Call &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== 5. THE DIGITAL HEALTH ASSESSMENT ===== -->
+  <!-- ===== 5. PROCESS ===== -->
   <section class="indt-method-full" id="process">
     <div class="indt-method">
-      <div class="indt-head">
-        <div>
-          <span class="indt-lbl">The process</span>
-          <h2 class="indt-title">The Digital Health <span class="sem">Assessment</span>.</h2>
-        </div>
-        <p>Similar to how a clinic assesses a patient: goals first, then diagnostics, then a treatment plan. Our framework scores your marketing across five funnel stages and shows the path to your target.</p>
+    <div class="indt-head">
+      <div>
+        <span class="indt-lbl">The process</span>
+        <h2 class="indt-title">The Digital Health <span class="sem">Assessment</span>.</h2>
       </div>
-      <ol class="hc-steps">
-        <li class="hc-step"><span class="hc-ghost" aria-hidden="true">1</span><span class="hc-step-k">Step 1</span><h3>In-depth questionnaire</h3><p>We start with what growth means to you: a revenue number, or net new patients per month. We put it in writing, sign an NDA, and you grant access.</p></li>
-        <li class="hc-step"><span class="hc-ghost" aria-hidden="true">2</span><span class="hc-step-k">Step 2</span><h3>We look under the hood</h3><p>We go through your accounts, Google Ads, GA4, your website, your CRM, and find out what is actually happening in there.</p></li>
-        <li class="hc-step"><span class="hc-ghost" aria-hidden="true">3</span><span class="hc-step-k">Step 3</span><h3>Your Digital Health Score</h3><p>We assess your entire funnel for leaks: where inquiries drop off, where spend is wasted, and what fixing each gap is worth.</p></li>
-        <li class="hc-step"><span class="hc-ghost" aria-hidden="true">4</span><span class="hc-step-k">Step 4</span><h3>Strategy and projections</h3><p>Then the plan: budgets, projections, and targets built on healthcare benchmarks, before you commit a dollar.</p></li>
-        <li class="hc-step"><span class="hc-ghost" aria-hidden="true">5</span><span class="hc-step-k">Step 5</span><h3>The first 90 days</h3><p>Quick fixes go live in the first 30 days. The full build continues through 90. Reporting tracks against the projection from week one.</p></li>
-        <li class="hc-step is-score"><span class="hc-ghost" aria-hidden="true">&#10003;</span><span class="hc-step-k">Your score</span><h3>Five stages, one number</h3><p>Your composite Digital Health Score, and a clear read on where you stand.</p>
-          <ul class="hc-legend"><li><b>0-39</b>Urgent intervention</li><li><b>40-59</b>Critical gaps</li><li><b>60-74</b>Foundation building</li><li><b>75-89</b>Growth positioned</li><li><b>90-100</b>Scale ready</li></ul>
+      <p>Similar to how a clinic assesses a patient: goals first, then diagnostics, then a treatment plan. Our framework scores your marketing across five funnel stages and shows the path to your target.</p>
+    </div>
+      <ol class="dp-steps">
+        <li class="dp-step"><span class="dp-ghost" aria-hidden="true">1</span><span class="dp-step-k">Step 1</span><h3>In-depth questionnaire</h3><p>We start with what growth means to you: a revenue number, or net new patients per month. We put it in writing, sign an NDA, and you grant access.</p></li>
+        <li class="dp-step"><span class="dp-ghost" aria-hidden="true">2</span><span class="dp-step-k">Step 2</span><h3>We look under the hood</h3><p>We go through your accounts, Google Ads, GA4, your website, your CRM, and find out what is actually happening in there.</p></li>
+        <li class="dp-step"><span class="dp-ghost" aria-hidden="true">3</span><span class="dp-step-k">Step 3</span><h3>Your Digital Health Score</h3><p>We assess your entire funnel for leaks: where inquiries drop off, where spend is wasted, and what fixing each gap is worth.</p></li>
+        <li class="dp-step"><span class="dp-ghost" aria-hidden="true">4</span><span class="dp-step-k">Step 4</span><h3>Strategy and projections</h3><p>Then the plan: budgets, projections, and targets built on healthcare benchmarks, before you commit a dollar.</p></li>
+        <li class="dp-step"><span class="dp-ghost" aria-hidden="true">5</span><span class="dp-step-k">Step 5</span><h3>The first 90 days</h3><p>Quick fixes go live in the first 30 days. The full build continues through 90. Reporting tracks against the projection from week one.</p></li>
+        <li class="dp-step is-key"><span class="dp-ghost" aria-hidden="true">&#10003;</span><span class="dp-step-k">Your score</span><h3>Five stages, one number</h3><p>Your composite Digital Health Score, and a clear read on where you stand.</p>
+          <ul class="dp-legend"><li><b>0-39</b>Urgent intervention</li><li><b>40-59</b>Critical gaps</li><li><b>60-74</b>Foundation building</li><li><b>75-89</b>Growth positioned</li><li><b>90-100</b>Scale ready</li></ul>
         </li>
       </ol>
     </div>
@@ -748,8 +603,8 @@ section.hero-cover .hero-bg {
       <div class="clients-lbl">Healthcare clients</div>
       <div class="clients-marquee">
         <div class="clients-track">
-          <img class="clients-logo" src="/assets/work/logos/tonic.png" alt="Tonic Eye Care" loading="lazy"><img class="clients-logo" src="/assets/work/logos/la-vie.png" alt="La Vie Executive Health" loading="lazy"><img class="clients-logo" src="/assets/work/logos/e11ement.webp" alt="e11ement" loading="lazy"><img class="clients-logo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition" loading="lazy"><img class="clients-logo hc-logo-tall" src="/assets/work/logos/discover.png" alt="Discover Birth" loading="lazy"><img class="clients-logo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas" loading="lazy"><img class="clients-logo" src="/assets/work/logos/nuvista.svg" alt="NuVista" loading="lazy"><img class="clients-logo" src="/assets/work/logos/healthy-back.png" alt="Healthy Back" loading="lazy">
-          <img class="clients-logo" src="/assets/work/logos/tonic.png" alt="Tonic Eye Care" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/la-vie.png" alt="La Vie Executive Health" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/e11ement.webp" alt="e11ement" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition" loading="lazy" aria-hidden="true"><img class="clients-logo hc-logo-tall" src="/assets/work/logos/discover.png" alt="Discover Birth" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/nuvista.svg" alt="NuVista" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/healthy-back.png" alt="Healthy Back" loading="lazy" aria-hidden="true">
+          <img class="clients-logo" src="/assets/work/logos/tonic.png" alt="Tonic Eye Care" loading="lazy"><img class="clients-logo" src="/assets/work/logos/la-vie.png" alt="La Vie Executive Health" loading="lazy"><img class="clients-logo" src="/assets/work/logos/e11ement.webp" alt="e11ement" loading="lazy"><img class="clients-logo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition" loading="lazy"><img class="clients-logo dp-logo-tall" src="/assets/work/logos/discover.png" alt="Discover Birth" loading="lazy"><img class="clients-logo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas" loading="lazy"><img class="clients-logo" src="/assets/work/logos/nuvista.svg" alt="NuVista" loading="lazy"><img class="clients-logo" src="/assets/work/logos/healthy-back.png" alt="Healthy Back" loading="lazy">
+          <img class="clients-logo" src="/assets/work/logos/tonic.png" alt="Tonic Eye Care" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/la-vie.png" alt="La Vie Executive Health" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/e11ement.webp" alt="e11ement" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/ignite.png" alt="Ignite Nutrition" loading="lazy" aria-hidden="true"><img class="clients-logo dp-logo-tall" src="/assets/work/logos/discover.png" alt="Discover Birth" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/aod.svg" alt="Association of Ontario Doulas" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/nuvista.svg" alt="NuVista" loading="lazy" aria-hidden="true"><img class="clients-logo" src="/assets/work/logos/healthy-back.png" alt="Healthy Back" loading="lazy" aria-hidden="true">
         </div>
       </div>
     </div>
@@ -758,14 +613,14 @@ section.hero-cover .hero-bg {
   <!-- ===== 7. PROOF ===== -->
   <section class="indt-cases-full" id="work">
     <div class="indt-cases">
-      <div class="indt-head">
-        <div>
-          <span class="indt-lbl">Proof</span>
-          <h2 class="indt-title">Results in <span class="sem">healthcare</span>.</h2>
-        </div>
+    <div class="indt-head">
+      <div>
+        <span class="indt-lbl">Proof</span>
+        <h2 class="indt-title">Results in <span class="sem">healthcare</span>.</h2>
       </div>
-      <article class="bkc hc-bkc">
-        <div class="hc-bkc-grid">
+    </div>
+      <article class="bkc dp-bkc">
+        <div class="dp-bkc-grid">
           <div>
             <span class="bkc-pill">Case Study &middot; Tonic Eye Care</span>
             <h3>410 leads from one fall <span class="sem">UGC</span> campaign.</h3>
@@ -777,15 +632,15 @@ section.hero-cover .hero-bg {
               <div class="bkc-stat"><b>+92%</b><span>performance lift</span></div>
               <div class="bkc-stat"><b>+74%</b><span>more conversions, winning hook</span></div>
             </div>
-            <div class="bkc-cta hc-ctas">
+            <div class="bkc-cta dp-ctas">
               <a class="btn primary cta-yellow-hover" href="/case-studies/tonic-eye-care/">Read the full case study &rarr;</a>
               <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See all the work &rarr;</a>
             </div>
           </div>
-          <div class="hc-bkc-media"><span class="hc-live"><i></i>UGC &middot; Live in market</span><video data-lazy src="/assets/work/tonic/ugc.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+          <div class="dp-bkc-media"><span class="dp-live"><i></i>UGC &middot; Live in market</span><video data-lazy src="/assets/work/tonic/ugc.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
         </div>
       </article>
-      <div class="indt-case-grid hc-more">
+      <div class="indt-case-grid dp-more">
         <a class="indt-case" href="/case-studies/la-vie/">
           <div class="indt-case-media"><img src="/assets/work/la-vie/statement-oakville.jpg" alt="La Vie Executive Health ad creative" loading="lazy"></div>
           <div class="indt-case-body">
@@ -818,19 +673,19 @@ section.hero-cover .hero-bg {
         <h2 class="indt-title">What our clients <span class="sem">say</span>.</h2>
       </div>
     </div>
-    <div class="hc-quotes">
-      <figure class="hc-q">
-        <span class="hc-qm" aria-hidden="true">&ldquo;</span>
+    <div class="dp-quotes">
+      <figure class="dp-q">
+        <span class="dp-qm" aria-hidden="true">&ldquo;</span>
         <blockquote>Would highly recommend Consultus Digital. Great communication, and they bring creative ideas to the table. We use them for SEO and Meta ads, and moved our Google Ads management over to them too. Positive results so far, and we&rsquo;re excited to keep growing with their support.</blockquote>
         <figcaption><b>Nick Chan</b>Tonic Eye Care &middot; Operations &amp; Finance</figcaption>
       </figure>
-      <figure class="hc-q is-blue">
-        <span class="hc-qm" aria-hidden="true">&ldquo;</span>
+      <figure class="dp-q is-blue">
+        <span class="dp-qm" aria-hidden="true">&ldquo;</span>
         <blockquote>The team rebuilt our site while we kept running classes and births, and it never felt like a second job for us. Families tell us the new site feels like us. And we&rsquo;re getting found in cities we used to be invisible in.</blockquote>
         <figcaption><b>Stefanie Antunes</b>Founder, Discover Birth</figcaption>
       </figure>
-      <figure class="hc-q">
-        <span class="hc-qm" aria-hidden="true">&ldquo;</span>
+      <figure class="dp-q">
+        <span class="dp-qm" aria-hidden="true">&ldquo;</span>
         <blockquote>They took the time to understand what post-menopausal clients need to hear before they book. The campaign and the page match how we talk to patients, and the inquiries coming in are the right fit for our dietitians.</blockquote>
         <figcaption><b>Andrea Hardy, RD</b>Founder, Ignite Nutrition</figcaption>
       </figure>
@@ -840,17 +695,17 @@ section.hero-cover .hero-bg {
   <!-- ===== 9. COMPLIANCE ===== -->
   <section class="indt-method-full">
     <div class="indt-method">
-      <div class="indt-head">
-        <div>
-          <span class="indt-lbl">Compliance</span>
-          <h2 class="indt-title">We read the fine <span class="sem">print</span>.</h2>
-        </div>
+    <div class="indt-head">
+      <div>
+        <span class="indt-lbl">Compliance</span>
+        <h2 class="indt-title">We read the fine <span class="sem">print</span>.</h2>
       </div>
-      <div class="hc-comp">
-        <div class="hc-comp-card"><h3>Privacy</h3><p>Patient and customer inquiries are captured, routed, and stored in line with PHIPA and PIPEDA.</p></div>
-        <div class="hc-comp-card"><h3>College rules</h3><p>Every province and profession has its own advertising standards. We check creative against your college's rules before it goes anywhere near your compliance officer.</p></div>
-        <div class="hc-comp-card"><h3>Platform policy</h3><p>Meta and Google restrict health targeting and data. We set up measurement that works within those limits, so campaigns keep performing.</p></div>
-        <div class="hc-comp-card"><h3>Claims</h3><p>If an ad makes a claim, we can back it up. That's why our accounts don't get flagged or suspended.</p></div>
+    </div>
+      <div class="dp-comp">
+        <div class="dp-comp-card"><h3>Privacy</h3><p>Patient and customer inquiries are captured, routed, and stored in line with PHIPA and PIPEDA.</p></div>
+        <div class="dp-comp-card"><h3>College rules</h3><p>Every province and profession has its own advertising standards. We check creative against your college's rules before it goes anywhere near your compliance officer.</p></div>
+        <div class="dp-comp-card"><h3>Platform policy</h3><p>Meta and Google restrict health targeting and data. We set up measurement that works within those limits, so campaigns keep performing.</p></div>
+        <div class="dp-comp-card"><h3>Claims</h3><p>If an ad makes a claim, we can back it up. That's why our accounts don't get flagged or suspended.</p></div>
       </div>
     </div>
   </section>
@@ -879,14 +734,14 @@ section.hero-cover .hero-bg {
   <!-- ===== 12. TEAM ===== -->
   <section class="indt-method-full">
     <div class="indt-method">
-      <div class="indt-head">
-        <div>
-          <span class="indt-lbl">The people</span>
-          <h2 class="indt-title">Your healthcare growth <span class="sem">team</span>.</h2>
-        </div>
-        <p>Based in Toronto's creative corridor: Unit 109, 136 Geary Avenue, Toronto ON M6H 4H1. Servicing clients across North America.</p>
+    <div class="indt-head">
+      <div>
+        <span class="indt-lbl">The people</span>
+        <h2 class="indt-title">Your healthcare growth <span class="sem">team</span>.</h2>
       </div>
-      <div class="hc-team">
+      <p>Based in Toronto's creative corridor: Unit 109, 136 Geary Avenue, Toronto ON M6H 4H1. Servicing clients across North America.</p>
+    </div>
+      <div class="dp-team">
         <figure><video data-lazy src="/assets/video/team-montage.mp4" poster="/assets/video/team-montage-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>The team &middot; Consultus Digital</figcaption></figure>
         <figure><img src="/assets/brand/office-wall.jpg" alt="The Consultus Digital office on Geary Avenue" loading="lazy"><figcaption>The office &middot; Geary Avenue</figcaption></figure>
       </div>
@@ -898,7 +753,7 @@ section.hero-cover .hero-bg {
     <div class="cta-inner">
       <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Healthcare Division</span></div>
       <h2 class="cta-title">Ready when you <span class="sem">are</span>.</h2>
-      <p class="hc-cta-sub">30 minutes. No deck. Straight answers on where the growth is.</p>
+      <p class="dp-cta-sub">30 minutes. No deck. Straight answers on where the growth is.</p>
       <a class="btn primary on-dark" href="/contact/">Book a Strategy Call &rarr;</a>
     </div>
   </section>
@@ -1180,29 +1035,7 @@ if (typeof setMegaTab !== 'function') {
   };
 }
 </script>
-<script>
-/* Videos: the hero loop plays at once; every [data-lazy] video loads and plays only near the
-   viewport and pauses when it leaves, so the page does not pull every loop on first paint. */
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function play(v){ v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-  function kickHero(){ document.querySelectorAll('#indt .ix-fan video').forEach(play); }
-  document.addEventListener('DOMContentLoaded', kickHero);
-  window.addEventListener('load', kickHero);
-  document.addEventListener('visibilitychange', function(){ if (!document.hidden) kickHero(); });
-  window.addEventListener('scroll', kickHero, {once: true});
-  var lazy = [].slice.call(document.querySelectorAll('#indt video[data-lazy]'));
-  if (!('IntersectionObserver' in window)) { lazy.forEach(function(v){ v.preload = 'auto'; if (!reduce) play(v); }); return; }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      var v = e.target;
-      if (e.isIntersecting) { if (v.preload !== 'auto') v.preload = 'auto'; if (!reduce) play(v); }
-      else if (!v.paused) v.pause();
-    });
-  }, {rootMargin: '300px 0px'});
-  lazy.forEach(function(v){ io.observe(v); });
-})();
-</script>
+<script src="/assets/division.js" defer></script>
 <script src="/assets/case-study-banner.js" defer></script>
 </body>
 </html>

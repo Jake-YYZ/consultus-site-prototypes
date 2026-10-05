@@ -668,9 +668,12 @@ a {
 }
 .ix-score-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(4,1fr);
   gap: 20px;
   margin-top: 56px;
+}
+@media (max-width: 1100px) {
+  .ix-score-grid { grid-template-columns: repeat(2,1fr); }
 }
 .ix-cs {
   display: flex;
@@ -1023,6 +1026,13 @@ a {
           <div class="ix-cs-desc">Patient leads in month one, from a UGC-led Meta ads program.</div>
           <div class="ix-cs-client"><img src="/assets/work/logos/white/tonic.webp" alt="Tonic Eye Care" width="400" height="103" loading="lazy"></div>
           <a class="ix-cs-btn" href="/case-studies/tonic-eye-care/">View case study <span class="arw">&rarr;</span></a>
+        </div>
+        <div class="ix-cs">
+          <span class="ix-cs-pill">Trades &amp; Construction</span>
+          <div class="ix-cs-num">38&times;</div>
+          <div class="ix-cs-desc">Return on ad spend, tracked from a $230 lead to the closed install.</div>
+          <div class="ix-cs-client"><img src="/assets/work/logos/white/eco-choice.webp" alt="Eco Choice Windows &amp; Doors" width="660" height="144" loading="lazy"></div>
+          <a class="ix-cs-btn" href="/case-studies/eco-choice-windows/">View case study <span class="arw">&rarr;</span></a>
         </div>
         <div class="ix-cs">
           <span class="ix-cs-pill">DTC &amp; eCommerce</span>
