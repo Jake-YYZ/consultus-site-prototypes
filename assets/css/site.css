@@ -2187,6 +2187,11 @@ nav.main {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+/* A content block with no heading: the copy spans the row at a readable width instead of sitting in the narrow heading column */
+.content-block > :only-child {
+  grid-column: 1 / -1;
+  max-width: 720px;
+}
 /* Service metrics */
 .svc-metrics {
   display: grid;
