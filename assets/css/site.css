@@ -5719,6 +5719,10 @@ footer {
     gap: 32px !important;
   }
 }
+/* the teaser has one button now: line it up with the text above it instead of centering it in the column */
+.audit-teaser-grid .hero-ctas {
+  justify-content: flex-start;
+}
 /* ========== END AUDIT TEASER COMPACT LIST ========== */
 /* ========== CALGARY FAQ ========== */
 .faq-list {

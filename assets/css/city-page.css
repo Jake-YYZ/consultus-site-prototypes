@@ -30,6 +30,9 @@ body.cs-page .sec.dark-full .sec-inner { padding-top: 52px; padding-bottom: 56px
 body.cs-page .sec.dark-full .section-lbl { margin-bottom: 32px; }
 body.cs-page .sec.dark-full .stat-num { font-size: clamp(36px, 4.2vw, 64px); margin-bottom: 10px; }
 
+/* three stats (the band lost its fourth figure): three equal columns instead of four with a gap */
+body.cs-page .stat-row:has(> .stat:nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
 /* ===== copy ===== */
 body.cs-page .cs-prose p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: #2A2A2A; }
 body.cs-page .cs-prose > :last-child { margin-bottom: 0; }
@@ -86,6 +89,8 @@ body.cs-page .cs-prose p.cs-roles { margin: 24px 0 28px; padding-top: 20px; max-
 
 /* ===== tablet and phone ===== */
 @media (max-width: 900px) {
+  body.cs-page .stat-row:has(> .stat:nth-child(3):last-child) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  body.cs-page .stat-row:has(> .stat:nth-child(3):last-child) .stat:nth-child(3) { grid-column: 1 / -1; padding-left: 0; border-left: none; }
   body.cs-page .cs-sec { padding: 56px 20px; }
   body.cs-page .cs-head { margin-bottom: 28px; }
   body.cs-page .cs-head-2 { grid-template-columns: 1fr; gap: 14px; }
