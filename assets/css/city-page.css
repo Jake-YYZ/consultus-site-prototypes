@@ -1,0 +1,121 @@
+/*
+ * Consultus Digital, city-page.css
+ * Layout for the city service pages: /cro-agency-in-<city>/, /facebook-advertising-agency-in-<city>/,
+ * /the-best-microsoft-advertising-agency-in-<city>/ and the Instagram, Google Ads and SEO pages under /locations/.
+ * Load after site.css. Every rule is scoped to body.cs-page, so no other page is affected.
+ *
+ * Why this file exists: those pages used the generic .sec / .accent-card / .method-grid blocks, which gave
+ * 100px of padding top and bottom on every section, five 200px-wide columns for the process, and story cards
+ * with a 340px minimum height holding a label, a number and a link. One rhythm, used everywhere here:
+ * 80px between sections (56px on phones), 40px under a section header, and content that fills its row.
+ */
+
+/* ===== section rhythm ===== */
+body.cs-page .cs-sec { padding: 80px 32px; }
+body.cs-page .cs-bone { background: var(--bone); }
+body.cs-page .cs-in { max-width: 1200px; margin: 0 auto; }
+body.cs-page .cs-head { margin-bottom: 40px; }
+body.cs-page .cs-sec .section-lbl { margin-bottom: 16px; }
+body.cs-page .cs-sec .sec-title { font-size: clamp(30px, 3.8vw, 46px); line-height: 1.07; letter-spacing: -0.02em; margin: 0; }
+body.cs-page .cs-head-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: end; }
+body.cs-page .cs-head-2 > p { margin: 0; padding-bottom: 4px; max-width: 520px; font-size: 16.5px; line-height: 1.6; color: var(--charcoal); }
+
+/* sections that were not rebuilt (audit teaser, team block) get the same rhythm */
+body.cs-page .sec:not(.dark-full):not(.bone-full) { padding-top: 72px; padding-bottom: 72px; }
+body.cs-page .sec-inner { padding-top: 72px; padding-bottom: 72px; }
+body.cs-page .sec-head { margin-bottom: 40px; }
+
+/* stats band: keep the numbers, drop the empty space around them */
+body.cs-page .sec.dark-full .sec-inner { padding-top: 52px; padding-bottom: 56px; }
+body.cs-page .sec.dark-full .section-lbl { margin-bottom: 32px; }
+body.cs-page .sec.dark-full .stat-num { font-size: clamp(36px, 4.2vw, 64px); margin-bottom: 10px; }
+
+/* ===== copy ===== */
+body.cs-page .cs-prose p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: #2A2A2A; }
+body.cs-page .cs-prose > :last-child { margin-bottom: 0; }
+body.cs-page .cs-prose a:not(.btn) { color: var(--deep-blue); text-decoration: underline; text-underline-offset: 3px; }
+body.cs-page .cs-prose h3 { margin: 32px 0 12px; font-family: var(--wide); font-weight: 600; font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+body.cs-page .cs-prose h3:first-child { margin-top: 0; }
+body.cs-page .cs-prose .btn { margin-top: 8px; }
+
+/* long list items read as a checklist; short ones become tags */
+body.cs-page .cs-prose ul:not(.cs-chips) { list-style: none; margin: 4px 0 18px; padding: 0; display: grid; gap: 10px; }
+body.cs-page .cs-prose ul:not(.cs-chips) li { position: relative; padding-left: 26px; font-size: 16px; line-height: 1.5; color: #2A2A2A; }
+body.cs-page .cs-prose ul:not(.cs-chips) li::before { content: ""; position: absolute; left: 1px; top: 0.42em; width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--deep-blue); }
+body.cs-page .cs-prose ul.cs-chips { list-style: none; margin: 6px 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+body.cs-page .cs-prose ul.cs-chips li { padding: 8px 13px; font-family: var(--mono); font-size: 10.5px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); background: var(--pure); border: 1px solid var(--bone-border); border-radius: 100px; transition: color .2s ease, border-color .2s ease, background .2s ease; }
+body.cs-page .cs-prose ul.cs-chips li a { color: inherit; text-decoration: none; }
+body.cs-page .cs-prose ul.cs-chips li:has(a) { color: var(--deep-blue); border-color: var(--blue-light); }
+body.cs-page .cs-prose ul.cs-chips li:has(a):hover { color: var(--deep-blue); border-color: var(--blue-light); background: var(--deep-blue-pale); }
+
+/* ===== why us in <city>: sticky title beside the copy ===== */
+body.cs-page .cs-why,
+body.cs-page .cs-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start; }
+body.cs-page .cs-why-head,
+body.cs-page .cs-split-head { position: sticky; top: 104px; }
+body.cs-page .cs-why-body { max-width: 700px; }
+body.cs-page .cs-callout { margin-top: 36px; padding: 28px 30px 26px; background: var(--pure); border: 1px solid var(--bone-border); border-radius: 16px; }
+body.cs-page .cs-callout-lbl { margin-bottom: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--deep-blue); }
+body.cs-page .cs-callout h3 { margin: 0 0 12px; }
+body.cs-page .cs-callout p { font-size: 16px; }
+
+/* ===== process steps and services: one row per item ===== */
+body.cs-page .cs-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(20, 20, 20, 0.14); }
+body.cs-page .cs-row { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 56px; align-items: start; padding: 34px 0; border-bottom: 1px solid rgba(20, 20, 20, 0.14); }
+body.cs-page .cs-row-h { display: flex; flex-direction: column; gap: 10px; }
+body.cs-page .cs-n { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--deep-blue); }
+body.cs-page .cs-row h3 { margin: 0; font-family: var(--wide); font-weight: 600; font-size: 21px; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+body.cs-page .cs-row-b { max-width: 720px; }
+body.cs-page .cs-row-b p { font-size: 16.5px; }
+body.cs-page .cs-row-b .cs-row-lead { font-weight: 500; color: var(--ink); }
+
+/* ===== success stories: compact cards, whole card is the link, client named ===== */
+body.cs-page .cs-stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+body.cs-page .cs-story { display: flex; flex-direction: column; gap: 14px; padding: 24px 24px 18px; background: var(--pure); border: 1px solid var(--bone-border); border-radius: 16px; color: inherit; text-decoration: none; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+body.cs-page .cs-story:hover { transform: translateY(-4px); box-shadow: 0 24px 44px -26px rgba(20, 20, 20, 0.3); border-color: #d3cdbf; }
+body.cs-page .cs-story-lbl { min-height: 3em; font-family: var(--mono); font-size: 10.5px; line-height: 1.5; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); }
+body.cs-page .cs-story-num { font-size: clamp(40px, 4.4vw, 58px); font-weight: 500; line-height: 1; letter-spacing: -0.04em; color: var(--deep-blue); }
+body.cs-page .cs-story-num.is-text { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; letter-spacing: -0.02em; }
+body.cs-page .cs-story-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 62px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--bone-border); }
+body.cs-page .cs-story-foot img { display: block; width: auto; max-width: 150px; height: 34px; object-fit: contain; object-position: left center; }
+body.cs-page .cs-story-cta { margin-left: auto; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--deep-blue); white-space: nowrap; }
+body.cs-page .cs-after { margin-top: 32px; }
+
+/* ===== team block that was left in place on two Facebook pages ===== */
+body.cs-page .cs-prose p.cs-roles { margin: 24px 0 28px; padding-top: 20px; max-width: 520px; border-top: 1px solid rgba(20, 20, 20, 0.12); font-family: var(--mono); font-size: 11px; line-height: 1.7; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); }
+
+/* ===== tablet and phone ===== */
+@media (max-width: 900px) {
+  body.cs-page .cs-sec { padding: 56px 20px; }
+  body.cs-page .cs-head { margin-bottom: 28px; }
+  body.cs-page .cs-head-2 { grid-template-columns: 1fr; gap: 14px; }
+  body.cs-page .cs-why,
+  body.cs-page .cs-split { grid-template-columns: 1fr; gap: 28px; }
+  body.cs-page .cs-why-head,
+  body.cs-page .cs-split-head { position: static; }
+  body.cs-page .cs-row { grid-template-columns: 1fr; gap: 14px; padding: 28px 0; }
+  body.cs-page .cs-stories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.cs-page .sec:not(.dark-full):not(.bone-full) { padding-top: 56px; padding-bottom: 56px; }
+  body.cs-page .sec-inner { padding-top: 56px; padding-bottom: 56px; }
+  body.cs-page .sec-head { margin-bottom: 28px; }
+  body.cs-page .sec.dark-full .sec-inner { padding-top: 40px; padding-bottom: 44px; }
+}
+@media (max-width: 560px) {
+  /* hero proof bar as a 2 x 2 */
+  body.cs-page .cfh-proof-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px 16px; }
+  /* six results as a compact 2-column grid */
+  body.cs-page .cs-stories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  body.cs-page .cs-story { gap: 8px; padding: 16px 14px 12px; border-radius: 14px; }
+  body.cs-page .cs-story-lbl { min-height: 4.5em; font-size: 9.5px; letter-spacing: 0.1em; }
+  body.cs-page .cs-story-num { font-size: clamp(24px, 7.4vw, 30px); }
+  body.cs-page .cs-story-num.is-text { font-size: 17px; line-height: 1.2; }
+  body.cs-page .cs-story-foot { min-height: 0; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 10px; }
+  body.cs-page .cs-story-foot img { height: 24px; max-width: 100px; }
+  body.cs-page .cs-story-cta { margin-left: 0; font-size: 9.5px; letter-spacing: 0.08em; white-space: normal; }
+  body.cs-page .cs-callout { padding: 22px 20px; }
+  /* four stats as a 2 x 2 instead of four full-width rows */
+  body.cs-page .stat-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 16px; }
+  body.cs-page .stat-row .stat { padding: 0; border-left: none; }
+  body.cs-page .sec.dark-full .stat-num { font-size: 30px; }
+  body.cs-page .sec.dark-full .stat-lbl { font-size: 11px; }
+}
