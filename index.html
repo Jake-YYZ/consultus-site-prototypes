@@ -33,6 +33,7 @@
 .article h1,
 .article h2,
 h1.display,
+h2.display,
 h2.section,
 .display-title {
   font-family: var(--serif) !important;
@@ -83,7 +84,8 @@ h2.section,
   gap: 0;
   margin-bottom: 32px;
 }
-.hero-cover h1.display {
+.hero-cover h1.display,
+.hero-cover h2.display {
   font-family: var(--serif) !important;
   font-weight: 400 !important;
   font-size: clamp(48px, 6.2vw, 88px);
@@ -94,7 +96,8 @@ h2.section,
   margin-bottom: 32px;
   max-width: 1100px;
 }
-.hero-cover h1.display .sem {
+.hero-cover h1.display .sem,
+.hero-cover h2.display .sem {
   font-family: var(--serif) !important;
   font-style: italic;
   font-weight: 400;
@@ -963,8 +966,8 @@ a {
     <div class="hero-cover-overlay"></div>
     <div class="cover-grid">
       <div class="cover-main" style="text-align:center">
-        <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center">Digital marketing &amp; CRM agency</div>
-        <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Marketing, <span class="sem">engineered</span> for scaling brands.</h1>
+        <h1 class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center">Digital marketing &amp; CRM agency</h1>
+        <h2 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Marketing, <span class="sem">engineered</span> for scaling brands.</h2>
         <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">We build the marketing and sales systems designed to grow businesses, combining performance marketing with strategy and execution as one connected operation.</p>
         <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
           <a class="btn primary on-dark cta-yellow-hover" href="/contact/">Book a Strategy Call →</a>
