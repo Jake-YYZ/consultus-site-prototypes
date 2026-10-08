@@ -388,6 +388,12 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* 16px fields on phones: iPhone Safari zooms the page in when a field under 16px is tapped */
+@media (max-width: 900px) {
+  .form-row input, .form-row textarea, .form-row select {
+    font-size: 16px;
+  }
+}
 .form-card .btn.primary {
   margin-top: 8px;
 }
@@ -558,10 +564,10 @@ a {
         <input type="text" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="ct-form-grid">
           <div class="form-row"><label for="ct-first">First Name</label><input id="ct-first" name="First Name" placeholder="Your first name" autocomplete="given-name" maxlength="40"></div>
-          <div class="form-row"><label for="ct-last">Last Name</label><input id="ct-last" name="Last Name" placeholder="Your last name" autocomplete="family-name" maxlength="80" required></div>
-          <div class="form-row"><label for="ct-email">Work Email</label><input id="ct-email" name="Email" type="email" placeholder="you@company.com" autocomplete="email" maxlength="100" required></div>
+          <div class="form-row"><label for="ct-last">Last Name <span aria-hidden="true">*</span></label><input id="ct-last" name="Last Name" placeholder="Your last name" autocomplete="family-name" maxlength="80" required></div>
+          <div class="form-row"><label for="ct-email">Work Email <span aria-hidden="true">*</span></label><input id="ct-email" name="Email" type="email" placeholder="you@company.com" autocomplete="email" maxlength="100" required></div>
           <div class="form-row"><label for="ct-phone">Phone Number</label><input id="ct-phone" name="Phone" type="tel" placeholder="(416) 555-0100" autocomplete="tel" maxlength="30"></div>
-          <div class="form-row"><label for="ct-company">Company</label><input id="ct-company" name="Company" placeholder="Acme Co" autocomplete="organization" maxlength="200" required></div>
+          <div class="form-row"><label for="ct-company">Company <span aria-hidden="true">*</span></label><input id="ct-company" name="Company" placeholder="Acme Co" autocomplete="organization" maxlength="200" required></div>
           <div class="form-row"><label for="ct-website">Website</label><input id="ct-website" name="Website" placeholder="acme.com" autocomplete="url" maxlength="120"></div>
         </div>
         <div class="form-row"><label for="ct-revenue">Approximate Revenue</label><select id="ct-revenue" name="LEADCF32" class="is-empty" onchange="this.classList.toggle('is-empty', !this.value)"><option value="" selected>Select a range</option><option value="Under $500K">Under $500K</option><option value="$500K to $1M">$500K to $1M</option><option value="$1M to $3M">$1M to $3M</option><option value="$3M to $10M">$3M to $10M</option><option value="$10M to $25M">$10M to $25M</option><option value="$25M+">$25M+</option></select></div>
@@ -569,7 +575,7 @@ a {
         <button type="submit" class="btn primary cta-yellow-hover" style="justify-content:center;width:100%">Book My Strategy Call →</button>
         <p data-zoho-status role="alert" style="margin:12px 0 0;font-size:14px;color:#D94545;text-align:center"></p>
       </form>
-      <div data-zoho-done hidden style="text-align:center;padding:28px 8px">
+      <div data-zoho-done hidden role="status" tabindex="-1" style="text-align:center;padding:28px 8px;outline:none">
         <div class="ct-card-ey">Request received</div>
         <div class="ct-card-t" style="margin-bottom:10px">Thanks, we have it.</div>
         <p style="margin:0;color:#6A686B;font-size:15px;line-height:1.55">A strategist will reach out within one business day. Need us sooner? Call 416-460-1810.</p>

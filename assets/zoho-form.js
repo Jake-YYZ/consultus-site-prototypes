@@ -52,10 +52,24 @@
     var status = form.querySelector('[data-zoho-status]');
     var btn = form.querySelector('button[type="submit"]');
     var done = form.parentNode.querySelector('[data-zoho-done]');
+    var loadedAt = Date.now();
+
+    function showDone() {
+      form.hidden = true;
+      if (done) {
+        done.hidden = false;
+        done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (done.focus) done.focus({ preventScroll: true });
+      }
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      // Spam traps: bots fill the hidden field, and they submit within milliseconds of loading the page.
+      var trap = form.elements['aG9uZXlwb3Q'];
+      if (trap && trap.value) { showDone(); return; }   // look successful, send nothing, count nothing
+      if (Date.now() - loadedAt < 2000) { if (status) status.textContent = 'One moment, then press send again.'; return; }
       fillTracking(form);
       var data = new URLSearchParams(new FormData(form));
       var label = btn ? btn.innerHTML : '';
@@ -66,8 +80,7 @@
       fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
         .then(function () {
           if (window.dataLayer) window.dataLayer.push({ event: 'zoho_form_submit', form_id: form.id || 'zoho-form' });
-          form.hidden = true;
-          if (done) { done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          showDone();
         })
         .catch(function () {
           if (btn) { btn.disabled = false; btn.innerHTML = label; }
