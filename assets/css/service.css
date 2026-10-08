@@ -3075,37 +3075,7 @@ body.gads-revamp {
 .gads-practical-panel li strong {
   font-family: 'NuberNext-DemiBold';
 }
-.mobile-menu-toggle {
-  display: none;
-  width: 42px;
-  height: 42px;
-  padding: 8px;
-  border: 0;
-  background: #F5F2EC;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  position: absolute;
-  right: 15px;
-  border-radius: 100px;
-}
-.mobile-menu-toggle:before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 24px;
-  height: 24px;
-  background: url(/assets/services/menu-icon.svg) no-repeat center center;
-  background-size: 100%;
-}
-.nav-cta.mobile-view {
-  display: none;
-}
+/* The old WordPress .mobile-menu-toggle / .mobile-view rules were removed: the burger is .nav-toggle in site.css. */
 body #csb-dock {
   border: 1px solid #F5F2EC40;
   border-radius: 10px;
@@ -3209,51 +3179,8 @@ body #csb-dock .csb-dock-explore .csb-x-svc:after {
   .gads-scope {
     min-height: auto;
   }
-  .nav-links {
-    margin-right: 50px;
-  }
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 20px;
-    background: rgba(251, 250, 247, 1);
-    box-shadow: 0 8px 5px rgba(0,0,0,0.03);
-  }
-  .nav-cta.mobile-view {
-    display: flex;
-    margin-right: 50px;
-    gap: 7px;
-    justify-content: center;
-    align-items: center;
-  }
-  .nav-cta.mobile-view:after {
-    margin-top: 0;
-  }
-  .nav-links.is-open {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .nav-links > a {
-    width: 100%;
-    padding: 10px 0 3px;
-    border-top: 1px solid;
-  }
-  .nav-links > a:first-child {
-    padding-top: 0;
-    border-top: 0;
-  }
-  .nav-links .nav-cta {
-    display: none;
-  }
+  /* The old WordPress phone-menu rules that sat here hid the whole header link block below 900px.
+     The phone menu is now shared: see "MOBILE MENU" in site.css and assets/mobile-nav.js. */
   #csb-dock {
     min-width: 530px;
   }

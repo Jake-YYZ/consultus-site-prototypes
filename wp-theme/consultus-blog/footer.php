@@ -1,0 +1,173 @@
+<footer>
+    <div class="footer-inner">
+      <div class="footer-logo-row"><img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital"/></div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="/about/">About Us</a>
+          <a href="/contact/">Book a Call</a>
+          <a href="/careers/" style="cursor:pointer">Careers</a>
+          <a href="/results/">Case Studies</a>
+          <a href="/blog/">Insights</a>
+          <a href="/about/">Methodology</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services · Acquire</h4>
+          <a href="/google-ads/">Google Ads</a>
+          <a href="/meta-ads/" style="cursor:pointer">Meta Ads</a>
+          <a href="/seo/" style="cursor:pointer">SEO</a>
+          <a href="/local-seo/" style="cursor:pointer">Local SEO</a>
+          <a href="/aeo-ai-search/" style="cursor:pointer">AEO / AI Search</a>
+          <h4 class="spaced">Services · Convert</h4>
+          <a href="/cro/" style="cursor:pointer">CRO</a>
+          <a href="/performance-creatives/">Performance Creative</a>
+          <a href="/influencer-marketing/">Influencer</a>
+          <h4 class="spaced">Services · Scale</h4>
+          <a href="/zoho-crm/">Zoho CRM</a>
+          <a href="/marketing-automation/" style="cursor:pointer">Marketing Automation</a>
+          <a href="/analytics-attribution/" style="cursor:pointer">Analytics &amp; Attribution</a>
+        </div>
+        <div class="footer-col">
+          <h4>Healthcare</h4>
+          <a href="/healthcare/">Healthcare &amp; Medical</a>
+          <h4 class="spaced">Trades &amp; Construction</h4>
+          <a href="/home-services-marketing/">Home Services</a>
+          <a href="/home-improvement-marketing/" style="cursor:pointer">Home Improvement</a>
+          <h4 class="spaced">DTC &amp; eCommerce</h4>
+          <a href="/ecommerce-marketing-toronto/" style="cursor:pointer">E-commerce &amp; DTC</a>
+          <a href="/retail-consumer-marketing/" style="cursor:pointer">Retail &amp; Consumer</a>
+          <h4 class="spaced">Professional Services</h4>
+          <a href="/professional-services-marketing/" style="cursor:pointer">Professional Services</a>
+          <a href="/law-firm-marketing-toronto/" style="cursor:pointer">Legal</a>
+          <a href="/insurance-industry/" style="cursor:pointer">Insurance</a>
+          <h4 class="spaced">Other Industries</h4>
+          <a href="/real-estate-marketing/" style="cursor:pointer">Real Estate</a>
+          <a href="/self-storage-marketing-toronto/" style="cursor:pointer">Self-Storage</a>
+          <a href="/b2b-saas-marketing/" style="cursor:pointer">B2B / SaaS</a>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-line">hello@consultusdigital.com</div>
+          <div class="footer-contact-sub">(416) 460-1810</div>
+          <h4>Want to join the team?</h4>
+          <div class="footer-contact-line">careers@consultusdigital.com</div>
+        </div>
+        <div class="footer-col">
+          <h4>New Business</h4>
+          <div class="footer-contact-line">rfp@consultusdigital.com</div>
+          <div class="footer-contact-sub" style="margin-bottom:32px">For RFP submissions and new engagements.</div>
+          <h4>Digital &amp; CRM</h4>
+          <div class="footer-contact-sub">Engineered for ambitious teams. Toronto, Canada.</div>
+        </div>
+      </div>
+
+      <div class="footer-proof">
+          <div class="footer-badges">
+          <div class="clutch-badge">
+            <div class="clutch-left">Reviewed on<div class="clutch-logo">Google</div></div>
+            <div class="clutch-rating">
+              <div class="clutch-stars">★★★★★</div>
+              <div class="clutch-reviews">4.8 rating</div>
+            </div>
+          </div>
+          <div class="clutch-badge">
+            <div class="clutch-left">Reviewed on<div class="clutch-logo">Clutch</div></div>
+            <div class="clutch-rating">
+              <div class="clutch-stars">★★★★☆</div>
+              <div class="clutch-reviews">4.4 rating</div>
+            </div>
+          </div>
+          </div>
+          <div class="footer-social">
+            <a href="https://ca.linkedin.com/company/consultus-digital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+            <a href="https://www.instagram.com/consultusdigi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.facebook.com/ConsultusDigi/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+            <a href="https://www.youtube.com/channel/UCNbbbaKtyKHBbatPiVnffAQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://x.com/Consultusdigi" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="footer-service-areas">
+        <div class="sa-head">
+          <div class="sa-eyebrow">Service Areas</div>
+          <div class="sa-sub">Consultus Digital head office: 136 Geary Avenue, Unit 109, Toronto, ON M6H 4H1, Canada. Active campaigns and local teams across North America, wherever you are, you get the same team.</div>
+        </div>
+        <div class="svc-area-grid"><a class="svc-area is-hq" href="/digital-marketing-agency-in-toronto/"><span class="svc-area-hq">HQ</span><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M6 40 V31 H13 V40 M16 40 V27 H22 V40"/><line x1="44" y1="40" x2="44" y2="7"/><line x1="44" y1="7" x2="44" y2="2"/><path d="M39 15 Q44 10 49 15 Q44 21 39 15 Z"/><path d="M60 40 V29 H67 V40 M70 40 V25 H77 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Toronto</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-vancouver/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><polyline points="3,30 15,13 25,27 35,15 47,29"/><path d="M50 38 V26 L57 38 M57 38 V24 L64 38 M64 38 V27 L71 38"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Vancouver</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-calgary/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M3 40 V30 H11 V40 M15 40 V26 H23 V40"/><line x1="44" y1="40" x2="44" y2="15"/><ellipse cx="44" cy="12" rx="5" ry="3.5"/><line x1="44" y1="9" x2="44" y2="5"/><path d="M60 40 V24 H68 V40 M72 40 V28 H82 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Calgary</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-montreal/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M3 40 V24 H10 V40 M14 40 V18 H22 V40 M26 40 V28 H33 V40"/><path d="M48 40 Q64 27 82 40"/><line x1="65" y1="31" x2="65" y2="20"/><line x1="61" y1="24" x2="69" y2="24"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Montreal</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-london/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M3 40 V30 H12 V40 M16 40 V26 H25 V40"/><rect x="40" y="12" width="13" height="28"/><rect x="44" y="17" width="5" height="5"/><line x1="46.5" y1="12" x2="46.5" y2="7"/><path d="M63 40 V27 H72 V40 M76 40 V31 H84 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">London</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-new-york/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M3 40 V26 H10 V40 M13 40 V30 H19 V40"/><path d="M38 40 V16 H42 V11 H48 V16 H52 V40"/><line x1="45" y1="11" x2="45" y2="4"/><path d="M58 40 V22 H66 V40 M70 40 V18 H80 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">New York</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-los-angeles/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M16 40 C16 30 15 22 13 15"/><path d="M13 15 C9 11 5 12 3 14 M13 15 C12 10 13 6 15 4 M13 15 C17 11 21 12 23 14"/><path d="M30 40 C30 31 29 24 28 18"/><path d="M28 18 C25 15 22 16 20 18 M28 18 C27 13 28 10 30 8 M28 18 C31 15 34 16 36 18"/><path d="M48 40 V30 H58 V40 M62 40 V33 H72 V40"/><path d="M70 14 a8 8 0 0 1 15 0"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Los Angeles</span></a>
+          <a class="svc-area" href="/digital-marketing-agency-in-chicago/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M3 40 V24 H11 V40 M15 40 V29 H21 V40"/><rect x="36" y="9" width="13" height="31"/><line x1="40" y1="9" x2="40" y2="2"/><line x1="45" y1="9" x2="45" y2="2"/><path d="M57 40 V20 H65 V40 M69 40 V26 H80 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Chicago</span></a>
+          
+          
+          <a class="svc-area" href="/digital-marketing-agency-in-austin/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M3 40 V27 H11 V40 M15 40 V22 H23 V40"/><path d="M37 40 V21 H49 V40"/><path d="M37 21 a6 6 0 0 1 12 0"/><line x1="43" y1="13" x2="43" y2="7"/><path d="M58 40 V25 H66 V40 M70 40 V18 H79 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Austin</span></a><a class="svc-area" href="/digital-marketing-agency-in-tampa/"><span class="svc-area-sky"><svg viewBox="0 0 88 44"><path d="M14 40 C14 31 13 23 11 17"/><path d="M11 17 C7 14 4 15 2 17 M11 17 C10 12 11 9 13 7 M11 17 C15 14 18 15 20 17"/><path d="M38 40 V20 a4.5 4.5 0 0 1 9 0 V40"/><line x1="42.5" y1="15.5" x2="42.5" y2="10"/><path d="M54 40 V24 a4 4 0 0 1 8 0 V40"/><path d="M70 40 V26 a3.5 3.5 0 0 1 7 0 V40"/><line x1="3" y1="40" x2="85" y2="40"/></svg></span><span class="svc-area-name">Tampa</span></a>
+        </div>
+      </div>
+
+
+      <div class="footer-bottom">
+        <div>© 2026 Consultus Digital Inc.</div>
+        <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a></div>
+      </div>
+    
+  </footer>
+
+<!-- ===== Services mega-menu DOM (ported from SPA) ===== -->
+<div class="mega-overlay-bg" id="megaOverlay" onclick="closeMega()"></div>
+<div class="mega" id="services-mega-menu">
+  <div class="mega-side">
+    <div class="mega-side-lbl">Capabilities</div>
+    <div class="mega-div active" data-tab="acquire" onclick="setMegaTab('acquire', event)"><span class="mega-div-num">01</span><span class="mega-div-name">Acquire</span><span class="mega-div-arrow">→</span></div>
+    <div class="mega-div" data-tab="convert" onclick="setMegaTab('convert', event)"><span class="mega-div-num">02</span><span class="mega-div-name">Convert</span><span class="mega-div-arrow">→</span></div>
+    <div class="mega-div" data-tab="scale" onclick="setMegaTab('scale', event)"><span class="mega-div-num">03</span><span class="mega-div-name">Scale</span><span class="mega-div-arrow">→</span></div>
+  </div>
+
+  <div class="mega-grid" data-panel="acquire">
+    <a class="mega-card" href="/google-ads/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/></svg></div><div class="mega-text"><div class="mega-title">Google Ads</div><div class="mega-sub">Search, Shopping, PMax for pipeline.</div></div></a>
+    <a class="mega-card" href="/meta-ads/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M3 12l4-4 4 4 4-4 4 4 2-2"/><circle cx="7" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="8" r="1" fill="currentColor" stroke="none"/></svg></div><div class="mega-text"><div class="mega-title">Meta Ads</div><div class="mega-sub">Facebook &amp; Instagram, built for ROAS.</div></div></a>
+    <a class="mega-card" href="/microsoft-ads/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 18v3M16 18v3M6 21h12"/></svg></div><div class="mega-text"><div class="mega-title">Microsoft Ads</div><div class="mega-sub">Bing Search &amp; Audience Network.</div></div></a><a class="mega-card" href="/amazon-ads/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div><div class="mega-text"><div class="mega-title">Amazon Ads</div><div class="mega-sub">Sponsored Ads, DSP &amp; marketplace.</div></div></a>
+    <a class="mega-card" href="/seo/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg></div><div class="mega-text"><div class="mega-title">SEO <span class="mega-badge">Core</span></div><div class="mega-sub">Technical, on-page, content SEO.</div></div></a>
+    <a class="mega-card" href="/local-seo/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div><div class="mega-text"><div class="mega-title">Local SEO</div><div class="mega-sub">Multi-location GBP and map pack.</div></div></a>
+    <a class="mega-card" href="/content-marketing/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 10h8M8 14h8M8 18h5"/></svg></div><div class="mega-text"><div class="mega-title">Content Marketing</div><div class="mega-sub">Blog strategy and pillar content.</div></div></a>
+    <a class="mega-card" href="/aeo-ai-search/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div><div class="mega-text"><div class="mega-title">AEO / AI Search <span class="mega-badge new">New</span></div><div class="mega-sub">ChatGPT, Perplexity, SGE visibility.</div></div></a>
+    <a class="mega-card" href="/influencer-marketing/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="10" r="3"/><circle cx="16" cy="10" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M12 20c0-3 3-5 6-5s4 1 4 3"/></svg></div><div class="mega-text"><div class="mega-title">Influencer Marketing <span class="mega-badge new">New</span></div><div class="mega-sub">Creator-led with attribution.</div></div></a>
+    <a class="mega-card" href="/performance-creatives/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><polygon points="10,10 16,12 10,14" fill="currentColor" stroke="none"/></svg></div><div class="mega-text"><div class="mega-title">Performance Creatives <span class="mega-badge hot">Hot</span></div><div class="mega-sub">Video, UGC, static, tested weekly.</div></div></a>
+  </div>
+
+  <div class="mega-grid" data-panel="convert" style="display:none">
+    <a class="mega-card" href="/web-development/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v14H4z"/><path d="M9 9l3 3-3 3M13 15h3"/></svg></div><div class="mega-text"><div class="mega-title">Web Development</div><div class="mega-sub">High-performance sites engineered to convert.</div></div></a>
+    <a class="mega-card" href="/landing-pages/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h4"/><circle cx="12" cy="19" r="0.8" fill="currentColor" stroke="none"/></svg></div><div class="mega-text"><div class="mega-title">Landing Pages</div><div class="mega-sub">Purpose-built pages for campaign traffic.</div></div></a>
+    <a class="mega-card" href="/cro/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M3 4h18l-7 9v6l-4 2v-8z"/></svg></div><div class="mega-text"><div class="mega-title">Conversion Rate Optimization</div><div class="mega-sub">Funnel diagnostics and lift programs.</div></div></a>
+    <a class="mega-card" href="/ab-testing/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/><path d="M7 10v4M17 10v4"/></svg></div><div class="mega-text"><div class="mega-title">A/B Testing &amp; Experimentation</div><div class="mega-sub">Statistically honest winners, shipped weekly.</div></div></a>
+  </div>
+
+  <div class="mega-grid" data-panel="scale" style="display:none">
+    <a class="mega-card" href="/zoho-crm/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><div class="mega-text"><div class="mega-title">Zoho CRM Implementation <span class="mega-badge">Core</span></div><div class="mega-sub">End-to-end CRM, workflows, and sales ops.</div></div></a>
+    <a class="mega-card" href="/marketing-automation/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8"/></svg></div><div class="mega-text"><div class="mega-title">Marketing Automation</div><div class="mega-sub">Nurture, scoring, lifecycle flows.</div></div></a>
+    <a class="mega-card" href="/analytics-attribution/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="6"/><rect x="12" y="9" width="3" height="10"/><rect x="17" y="5" width="3" height="14"/></svg></div><div class="mega-text"><div class="mega-title">Analytics &amp; Attribution</div><div class="mega-sub">GA4, server-side, multi-touch models.</div></div></a>
+    <a class="mega-card" href="/sales-enablement/" onclick="closeMega()"><div class="mega-icon"><svg viewBox="0 0 24 24"><path d="M5 12l3-3 4 4 5-5 2 2"/><path d="M5 20h14"/><circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="8" r="1" fill="currentColor" stroke="none"/></svg></div><div class="mega-text"><div class="mega-title">Sales Enablement</div><div class="mega-sub">Playbooks, dashboards, team onboarding.</div></div></a>
+  </div>
+
+  <div class="mega-promo">
+    <div>
+      <div class="mega-promo-lbl">The Consultus Digital Method</div>
+      <h3 class="mega-promo-title">Growth isn't a channel. It's a <span class="sem">system</span>.</h3>
+      <p class="mega-promo-desc">The five-step framework turns ad spend into predictable pipeline.</p>
+    </div>
+    <a class="mega-promo-cta" href="/services/" onclick="closeMega()">Explore the methodology →</a>
+  </div>
+</div>
+<script>
+function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
+function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
+function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }
+</script>
+<script src="/assets/mobile-nav.js" defer></script>
+<?php wp_footer(); ?>
+</body>
+</html>

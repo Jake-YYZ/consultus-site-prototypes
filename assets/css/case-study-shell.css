@@ -396,6 +396,10 @@
   line-height: 1.5;
   color: #2A2A2A;
 }
+/* Six-step timeline (Dragonscale, Gordon's). A class, not an inline style, so the 900px rule below can stack it on tablets and phones. */
+.ecw-tl.ecw-tl-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
 /* Laptop frames */
 .ecw-browser {
   border: 10px solid #141414;
@@ -569,7 +573,8 @@
   .ecw-hooks {
     grid-template-columns: 1fr;
   }
-  .ecw-tl {
+  .ecw-tl,
+  .ecw-tl.ecw-tl-6 {
     grid-template-columns: 1fr;
     gap: 28px;
   }

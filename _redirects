@@ -10,8 +10,8 @@
 /services/google-ads/  /google-ads/  301
 /industries/healthcare/  /healthcare/  301
 
-# NOTE: the blog stays at /blog/ (hub) and /blog/<slug>/ (all 214 posts). The redesigned
-#       'Insights' hub should be served at /blog/, or 301 /insights/ -> /blog/.
+# NOTE: the blog is WordPress at /blog/ (hub) and /blog/<slug>/. Those URLs are not redirected here.
+#       /insights/ was never a live URL, so it has no redirect.
 
 # --- URL restructure + retired pages (64 redirects) ---
 /about-us-online-marketing-agency/                /about/  301

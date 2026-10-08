@@ -105,13 +105,7 @@ All buttons are pills (`border-radius: 100px`):
 
 **Amazon Ads page** (`amazon-ads/`): service page (Sponsored Products / Brands / Display, Amazon DSP, Storefront/A+, listing optimization), measured on ACOS/TACOS/MER, links to the Dragonscale ecommerce case study + /meta-ads/, /google-ads/, /cro/. Added to the Services mega-menu (Acquire, after Microsoft Ads, box icon), the `svc-marquee` pill bar, and the homepage/`services/` `service-block` Acquire group.
 
-**Sticky case study video banner** (`assets/case-study-banner.js`, loaded by every page via a `<script defer>` tag before `</body>`):
-- Floating bottom-right card promoting the E11ement case study video (Wistia media `3fl1o2nq2n`, account `consultus.wistia.com`).
-- First page of a session: card slides in after 1.2s, video auto-plays muted and loops. Click anywhere on it = full-screen theater with sound, resuming from the teaser's position, with "See All Case Studies" and "Book a Call" CTAs.
-- Closing the card, closing the theater, or visiting later pages in the same session collapses it to the **conversion dock**: a bottom-center black bar with the video pill, a rotating "Explore: [service]" link (cycles every 3.5s), and a yellow Book a Call button. State lives in sessionStorage key `csBannerState`; clear sessionStorage to see the auto-open again.
-- Skips the `/case-studies/` hub, respects `prefers-reduced-motion`, detects the GitHub Pages prefix at runtime for its CTA links.
-- Muted autoplay must be triggered through the Wistia player API in `onReady` (`video.mute(); video.play()`); the `autoPlay=true` embed option alone does not fire.
-- To swap in a future video: change `WISTIA_ID` and `TITLE` at the top of the file.
+**Sticky case study video banner: REMOVED (Oct 7 2026, at the user's request).** The bottom-right E11ement video card and the bottom-center "conversion dock" pill (video pill, rotating Explore link, Book a Call) are no longer on any page: the `<script src="/assets/case-study-banner.js" defer>` tag was taken out of every static page and the blog theme footer. The script file is still in `assets/` but nothing loads it. Don't add the tag back to new pages.
 
 **Homepage manifesto band** (`#manifesto` section + `#csx-styles` in `index.html`): "tailored programs, not cookie-cutter" positioning statement after the client logo strip, with pill links to all 10 industry pages. Red strikethrough on "Cookie-cutter" via `.csx-strike`.
 

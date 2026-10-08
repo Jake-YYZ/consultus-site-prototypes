@@ -2533,6 +2533,11 @@ footer {
 .footer-social a:hover {
   background: rgba(255,255,255,0.15);
 }
+.footer-social a:focus-visible {
+  background: rgba(255,255,255,0.15);
+  outline: 2px solid #FFEC00;
+  outline-offset: 2px;
+}
 .footer-social svg {
   width: 15px;
   height: 15px;
@@ -6316,5 +6321,296 @@ footer {
 @media (max-width: 560px) {
   .svc-area-grid {
     grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* ========== MOBILE MENU (Oct 2026) ========== */
+/* The burger lives inside .nav-links after "Book a Call". assets/mobile-nav.js builds #mobile-nav from the page's own header links and Services menu.
+   The button carries the hidden attribute in the HTML, so a browser still holding an older cached copy of this file shows nothing instead of an
+   unstyled button (Kinsta caches CSS for 10 years); the display rules below override the attribute. */
+.nav-toggle {
+  display: none;
+  position: relative;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 100px;
+  background: #F5F2EC;
+  color: #141414;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.25s ease;
+}
+.nav-toggle:hover {
+  background: #E1DCD1;
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid #1A40C7;
+  outline-offset: 2px;
+}
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.25s ease, background 0.2s ease;
+}
+.nav-toggle-bars {
+  position: relative;
+}
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.nav-toggle-bars::before {
+  top: -6px;
+}
+.nav-toggle-bars::after {
+  top: 6px;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars {
+  background: transparent;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.mobile-nav {
+  display: none;
+}
+@keyframes mnavIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+  nav.main .nav-links {
+    flex-wrap: nowrap;
+  }
+  /* Lock the page behind the menu through <body> only. <html> must stay overflow: visible so body's value goes to the
+     viewport; hiding overflow on <html> too turns <body> into its own scroller and the sticky header scrolls away. */
+  html.mnav-open body {
+    overflow: hidden;
+  }
+  .mobile-nav {
+    position: fixed;
+    top: var(--mnav-top, 68px);
+    left: var(--mnav-left, 0px);
+    width: var(--mnav-w, 100%);
+    box-sizing: border-box;
+    bottom: 0;
+    z-index: 900;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px max(20px, calc((var(--mnav-w, 100vw) - 640px) / 2)) calc(36px + env(safe-area-inset-bottom, 0px));
+    background: #FAF8F3;
+    border-top: 1px solid rgba(20, 20, 20, 0.06);
+  }
+  .mobile-nav:not([hidden]) {
+    display: block;
+    animation: mnavIn 0.22s ease both;
+  }
+  .mobile-nav:focus {
+    outline: none;
+  }
+  .mnav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mnav-item {
+    border-bottom: 1px solid #E1DCD1;
+  }
+  .mnav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-height: 64px;
+    margin: 0;
+    padding: 12px 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: #141414;
+    font-family: var(--sans);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mnav-link:hover,
+  .mnav-link:focus-visible,
+  .mnav-link[aria-current="page"] {
+    color: #1A40C7;
+  }
+  .mnav-link:focus-visible,
+  .mnav-group-list a:focus-visible,
+  .mnav-cta:focus-visible {
+    outline: 2px solid #1A40C7;
+    outline-offset: -2px;
+  }
+  .mnav-chevron {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-3px) rotate(45deg);
+    transition: transform 0.25s ease;
+  }
+  .mnav-sub-toggle[aria-expanded="true"] .mnav-chevron {
+    transform: translateY(3px) rotate(-135deg);
+  }
+  .mnav-sub {
+    padding: 2px 0 22px;
+  }
+  .mnav-sub:not([hidden]) {
+    animation: mnavIn 0.2s ease both;
+  }
+  .mnav-group + .mnav-group {
+    margin-top: 22px;
+  }
+  .mnav-group-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 4px;
+    color: #6A686B;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .mnav-group-label::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: #1A40C7;
+  }
+  .mnav-group-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mnav-group-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 8px 2px;
+    border-top: 1px solid rgba(20, 20, 20, 0.07);
+    color: #2A2A2A;
+    font-size: 17px;
+    line-height: 1.3;
+    text-decoration: none;
+  }
+  .mnav-group-list a:hover,
+  .mnav-group-list a:focus-visible,
+  .mnav-group-list a[aria-current="page"] {
+    color: #1A40C7;
+  }
+  .mnav-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #FFEC00;
+    color: #141414;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .mnav-badge.new {
+    background: #1A40C7;
+    color: #FAF8F3;
+  }
+  .mnav-badge.hot {
+    background: linear-gradient(135deg, #FF4D00 0%, #FFEC00 100%);
+  }
+  .mnav-foot {
+    padding-top: 28px;
+  }
+  .mnav-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 18px 26px;
+    border-radius: 100px;
+    background: #141414;
+    color: #FAF8F3;
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .mnav-cta:hover,
+  .mnav-cta:active,
+  .mnav-cta:focus-visible {
+    background: #FFEC00;
+    color: #141414;
+  }
+}
+/* Service pages add an arrow icon after "Book a Call" (service.css); drop it on phones so the header stays on one row */
+@media (max-width: 400px) {
+  nav.main .nav-cta::after {
+    display: none;
+  }
+}
+/* Below ~350px the logo, "Book a Call" and the burger no longer fit on one row at full size */
+@media (max-width: 355px) {
+  nav.main .nav-links .nav-cta {
+    padding: 9px 14px;
+    font-size: 12.5px;
+  }
+}
+@media (max-width: 335px) {
+  nav.main .logo img {
+    height: 24px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav:not([hidden]),
+  .mnav-sub:not([hidden]) {
+    animation: none;
+  }
+  .nav-toggle,
+  .nav-toggle-bars,
+  .nav-toggle-bars::before,
+  .nav-toggle-bars::after,
+  .mnav-chevron,
+  .mnav-cta {
+    transition: none;
   }
 }
