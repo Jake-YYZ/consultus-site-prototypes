@@ -53,9 +53,13 @@ a {
 }
 .sec-head {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin-bottom: 60px;
+}
+/* section title sits under its label on the left; an intro paragraph runs the full width, close under the title */
+.sec-head + p {
+  margin-top: -32px;
 }
 .case-bottom {
   display: flex;
@@ -82,6 +86,9 @@ a {
     grid-template-columns: 1fr;
     gap: 24px;
     margin-bottom: 40px;
+  }
+  .sec-head + p {
+    margin-top: -16px;
   }
 }
 .if-right {
@@ -257,10 +264,10 @@ section.hero-cover .hero-bg {
   z-index: 5;
 }
 </style>
-  <meta name="description" content="How Consultus repositioned Ontario's largest downsizing and estate settlement company, rebuilt gogordons.com, and delivered 53 attributed paid leads in month one at a $164 CPL, well under benchmark." />
+  <meta name="description" content="How Consultus Digital repositioned Ontario's largest downsizing and estate settlement company, rebuilt gogordons.com, and delivered 53 attributed paid leads in month one at a $164 CPL, well under benchmark." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/gordons-downsizing/" />
   <meta property="og:title" content="Gordon's Downsizing case study: Real Estate Plus, under one roof | Consultus Digital" />
-  <meta property="og:description" content="How Consultus repositioned Ontario's largest downsizing and estate settlement company: rebuilt website, two-persona creative engine, 53 leads at $164 each." />
+  <meta property="og:description" content="How Consultus Digital repositioned Ontario's largest downsizing and estate settlement company: rebuilt website, two-persona creative engine, 53 leads at $164 each." />
   <meta property="og:url" content="https://consultusdigital.com/case-studies/gordons-downsizing/" />
   <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
   <meta property="og:image:width" content="1600">
@@ -270,7 +277,7 @@ section.hero-cover .hero-bg {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
   <meta name="twitter:title" content="Gordon's Downsizing case study: Real Estate Plus, under one roof | Consultus Digital" />
-  <meta name="twitter:description" content="How Consultus repositioned Ontario's largest downsizing and estate settlement company: rebuilt website, two-persona creative engine, 53 leads at $164 each." />
+  <meta name="twitter:description" content="How Consultus Digital repositioned Ontario's largest downsizing and estate settlement company: rebuilt website, two-persona creative engine, 53 leads at $164 each." />
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -686,7 +693,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl dark">The Scoreboard</div>
         <h2 class="sec-title">The creative earns its keep, <span class="sem">tracked to the CRM</span>.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Mid-program we wired clean attribution from every ad through to the CRM, so creative decisions run on lead quality, not just clicks.</p>
+      <p style="font-size:17px;line-height:1.55;color:#C7C5C8">Mid-program we wired clean attribution from every ad through to the CRM, so creative decisions run on lead quality, not just clicks.</p>
       <div class="ecw-mdash rv st-scale">
         <div class="ecw-mdash-bar"><span></span><span></span><span></span></div>
         <div class="ecw-mstats">
@@ -729,7 +736,7 @@ section.hero-cover .hero-bg {
           </div>
         </div>
       </div>
-      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Stats are from the May client report. Per-creative verdicts summarized; swap with the live report each month.</p>
+      <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">Stats are from the May client report. Per-creative verdicts are summarized.</p>
     </div>
   </section>
 

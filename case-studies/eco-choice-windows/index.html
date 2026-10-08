@@ -53,9 +53,18 @@ a {
 }
 .sec-head {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin-bottom: 60px;
+}
+/* section title sits under its label on the left; an intro paragraph runs the full width, close under the title */
+.sec-head + p {
+  margin-top: -32px;
+}
+/* The Output header sits inside The Work's section, which already has side padding, so its own padding is dropped to line it up with the other headers */
+.sec .csm-sec .csm-head {
+  padding-left: 0;
+  padding-right: 0;
 }
 .case-bottom {
   display: flex;
@@ -82,6 +91,9 @@ a {
     grid-template-columns: 1fr;
     gap: 24px;
     margin-bottom: 40px;
+  }
+  .sec-head + p {
+    margin-top: -16px;
   }
 }
 .if-right {
@@ -260,7 +272,7 @@ section.hero-cover .hero-bg {
   <meta name="description" content="Website, paid media creative, and CRO for Eco Choice Windows &amp; Doors. One team, one scoreboard, every layer of the funnel built to convert." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/eco-choice-windows/" />
   <meta property="og:title" content="Eco Choice Windows & Doors case study: the full-funnel build | Consultus Digital" />
-  <meta property="og:description" content="Four buyer personas reverse engineered into pages, creative, CRO experiments, a rebuilt search account, and Zoho CRM attribution. The Consultus full-funnel build, live in market." />
+  <meta property="og:description" content="Four buyer personas reverse engineered into pages, creative, CRO experiments, a rebuilt search account, and Zoho CRM attribution. The Consultus Digital full-funnel build, live in market." />
   <meta property="og:url" content="https://consultusdigital.com/case-studies/eco-choice-windows/" />
   <meta property="og:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
   <meta property="og:image:width" content="1600">
@@ -270,7 +282,7 @@ section.hero-cover .hero-bg {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://consultusdigital.com/assets/brand/office-wall.jpg">
   <meta name="twitter:title" content="Eco Choice Windows & Doors case study: the full-funnel build | Consultus Digital" />
-  <meta name="twitter:description" content="Four buyer personas reverse engineered into pages, creative, CRO experiments, a rebuilt search account, and Zoho CRM attribution. The Consultus full-funnel build, live in market." />
+  <meta name="twitter:description" content="Four buyer personas reverse engineered into pages, creative, CRO experiments, a rebuilt search account, and Zoho CRM attribution. The Consultus Digital full-funnel build, live in market." />
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -468,7 +480,6 @@ section.hero-cover .hero-bg {
           <div class="ecw-gmock-d">Canadian-made, energy efficient, installed by pros. 0% financing till 2027. Free quote.</div>
         </div></div>
         <div class="ecw-hv-card ecw-hv-a"><video src="/assets/work/eco-choice/video-loop-4.mp4" autoplay muted loop playsinline></video></div>
-        <div class="ecw-hv-card ecw-hv-d"><div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice landing page" tabindex="-1"></iframe></div></div>
         <div class="ecw-hv-card ecw-hv-c"><div class="ecw-zmock">
           <div class="ecw-mock-tag" style="color:#2D8F5F">Zoho CRM &middot; Attribution</div>
           <div class="ecw-zmock-head">Lead #EC-4821</div>
@@ -549,7 +560,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl dark">The Personas</div>
         <h2 class="sec-title">We reverse engineered the <span class="sem">buyer</span>.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Before a single dollar of media ran, we mapped who actually replaces windows in the GTA and what makes each of them move. Four personas. Four hook families. Every ad below answers to one of them.</p>
+      <p style="font-size:17px;line-height:1.55;color:#C7C5C8">Before a single dollar of media ran, we mapped who actually replaces windows in the GTA and what makes each of them move. Four personas. Four hook families. Every ad below answers to one of them.</p>
       <div class="ecw-personas">
         <div class="ecw-persona rv">
           <div class="ecw-persona-tag">Persona 01</div>
@@ -627,7 +638,7 @@ section.hero-cover .hero-bg {
           <div class="content-block" style="border-top:none;padding-top:0"><h3>01. Audit</h3><div><p>We inherited a flat account: broad keywords, one-size ad copy, and repair-intent traffic quietly burning budget on a company that sells replacements.</p></div></div>
           <div class="content-block"><h3>02. Search, by intent</h3><div><p>Ad groups split by what the searcher actually wants: window replacement, door replacement, tilt and turn, brand. Headlines pinned so the offer never rotates out of position one.</p></div></div>
           <div class="content-block"><h3>03. Performance Max</h3><div><p>PMax runs on curated asset groups built from the Meta-proven creative, so Google's machine learns from hooks that already won, not stock guesses.</p></div></div>
-          <div class="content-block"><h3>04. The negative wall</h3><div><p>Repair, parts, DIY, rental. Blocked before they spend a dollar. Then every search click lands on the angle-matched dynamic page you'll see below.</p></div></div>
+          <div class="content-block"><h3>04. The negative wall</h3><div><p>Repair, parts, DIY, rental. Blocked before they spend a dollar. Then every search click lands on an angle-matched dynamic page.</p></div></div>
         </div>
         <div class="ecw-tree rv">
           <div class="ecw-tree-head"><span>Google Ads &middot; Account Structure</span><span>Rebuilt Apr 2026</span></div>
@@ -646,47 +657,6 @@ section.hero-cover .hero-bg {
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sec-head rv">
-      <div class="section-lbl">The Pages</div>
-      <h2 class="sec-title">Layer one, <span class="sem">live</span>.</h2>
-    </div>
-    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">These aren't mockups. The left laptop is the live campaign page Meta traffic lands on. The right one is the same build doing something smarter for Google Ads: it rewrites its own pain points to match the search. And the annotations are the CRO loop at work, every experiment starts as a written hypothesis in Zoho PageSense, the winner becomes the new baseline, and the next test starts the same day.</p>
-    <div class="ecw-pages-grid">
-      <div class="ecw-browser rv">
-        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca</div></div>
-        <div class="ecw-cro-overlay">
-          <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 01 &middot; PageSense</div><div class="h">"Quote form above the fold lifts mobile starts."</div><div class="u">+34%<small>Form Starts &middot; B Beat A</small></div><span class="w">Winner &middot; Now The Baseline</span></div>
-          <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 02 &middot; PageSense</div><div class="h">"Three-step quote flow beats the long form."</div><div class="u">+21%<small>Completed Quotes</small></div><span class="w">Winner &middot; Now The Baseline</span></div>
-        </div>
-        <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/" title="Eco Choice campaign landing page" tabindex="-1"></iframe></div>
-        <div class="ecw-browser-foot"><span class="flbl">Campaign LP &middot; Triple-Pane Installed In A Day</span><a href="https://landing.ecochoicewindows.ca/" target="_blank" rel="noopener">Visit live &rarr;</a></div>
-      </div>
-      <div class="ecw-browser rv">
-        <div class="ecw-browser-bar"><div class="bdots"><span></span><span></span><span></span></div><div class="burl">landing.ecochoicewindows.ca/?angle=drafty-windows</div></div>
-        <div class="ecw-cro-overlay">
-          <div class="ecw-cro-chip"><div class="t">CRO &middot; Experiment 03 &middot; Live Now</div><div class="h">"Financing badge beside the form lifts Bill Fighter submits."</div><div class="u">&hellip;<small>Heat Maps + A/B Running</small></div><span class="w run">Collecting Data</span></div>
-        </div>
-        <div class="ecw-frame"><iframe src="https://landing.ecochoicewindows.ca/?angle=drafty-windows" title="Eco Choice dynamic Google Ads landing page" tabindex="-1"></iframe></div>
-        <div class="ecw-browser-foot"><span class="flbl">Dynamic Google Ads LP &middot; One Page, Seven Angles</span><a href="https://landing.ecochoicewindows.ca/?angle=drafty-windows" target="_blank" rel="noopener">Visit live &rarr;</a></div>
-      </div>
-    </div>
-    <div class="ecw-ab-wrap rv">
-      <div class="ecw-ab-copy">
-        <h3>Variants get verdicts.</h3>
-        <p>Every page change runs as an A/B in Zoho PageSense. Winners swipe right into the new baseline. Losers get archived with their receipts. No opinions, just verdicts.</p>
-      </div>
-      <div class="ecw-ab" aria-hidden="true">
-        <div class="ecw-ab-card c1"><div><div class="t">Variant B &middot; Experiment 01</div><div class="h">Quote form above the fold</div></div><div class="r">5.2x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Winner</div></div>
-        <div class="ecw-ab-card c2 lose"><div><div class="t">Variant A &middot; Experiment 01</div><div class="h">Long-scroll form below gallery</div></div><div class="r">2.4x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Archived</div></div>
-        <div class="ecw-ab-card c3"><div><div class="t">Variant B &middot; Experiment 02</div><div class="h">Three-step quote flow</div></div><div class="r">4.8x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Winner</div></div>
-        <div class="ecw-ab-card c4 lose"><div><div class="t">Variant A &middot; Experiment 02</div><div class="h">Single long form</div></div><div class="r">3.1x<small>Return On Ad Spend</small></div><div class="ecw-ab-stamp">Archived</div></div>
-      </div>
-    </div>
-
-  </section>
-
-
   
   <section class="sec bone-full">
     <div class="sec-inner">
@@ -694,7 +664,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl">The Motion</div>
         <h2 class="sec-title">Hooks are tested, not <span class="sem">guessed</span>.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">Five scripts went to camera. Every hook is a hypothesis: the format, the first line, the first frame. Winners graduate into statics, headlines, and the landing page itself.</p>
+      <p style="font-size:17px;line-height:1.55;color:#2A2A2A">Five scripts went to camera. Every hook is a hypothesis: the format, the first line, the first frame. Winners graduate into statics, headlines, and the landing page itself.</p>
       <div class="ecw-hooks">
         <div class="ecw-hook rv">
           <video src="/assets/work/eco-choice/video-loop-1.mp4" muted loop playsinline></video>
@@ -724,7 +694,7 @@ section.hero-cover .hero-bg {
         <div class="section-lbl dark">The Scoreboard</div>
         <h2 class="sec-title">Every ad earns its budget, or <span class="sem">loses it</span>.</h2>
       </div>
-      <p style="font-size:17px;line-height:1.55;color:#C7C5C8;max-width:680px">Creative analytics run on every test: hook rate, hold rate, return on spend. Winners scale the same week. Losers die before they burn budget. The scoreboard decides, not opinions.</p>
+      <p style="font-size:17px;line-height:1.55;color:#C7C5C8">Creative analytics run on every test: hook rate, hold rate, return on spend. Winners scale the same week. Losers die before they burn budget. The scoreboard decides, not opinions.</p>
       <div class="ecw-mdash rv">
         <div class="ecw-mdash-bar"><span></span><span></span><span></span></div>
         <div class="ecw-mstats">
@@ -775,7 +745,7 @@ section.hero-cover .hero-bg {
           </div>
         </div>
       </div>
-            <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#5e5c5a;margin-top:18px">[PROTOTYPE NOTE] Numbers are illustrative placeholders. Swap in the live creative analytics export before this ships.</p>
+            <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:0.06em;color:#C7C5C8;margin-top:18px">Illustrative example. Figures are sample data, not client results.</p>
     </div>
   </section>
 
@@ -785,7 +755,7 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">The Attribution</div>
       <h2 class="sec-title">Every quote knows <span class="sem">which ad sent it</span>.</h2>
     </div>
-    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">No more "leads are up, not sure why." Source, campaign, creative, and page angle ride with every lead from first click to closed revenue inside Zoho CRM.</p>
+    <p style="font-size:17px;line-height:1.55;color:#2A2A2A">No more "leads are up, not sure why." Source, campaign, creative, and page angle ride with every lead from first click to closed revenue inside Zoho CRM.</p>
     <div class="ecw-attr-grid">
       <ul class="ecw-journey rv">
         <li><span class="jdot"></span><div class="jlbl">Touch 01 &middot; Meta</div><div class="jtxt">Homeowner stops on the Comment Reply energy ad. UTM tags fire on the click.</div></li>
@@ -816,7 +786,7 @@ section.hero-cover .hero-bg {
         </div>
       </div>
     </div>
-    <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#8C8A87;margin-top:24px">[PROTOTYPE NOTE] Sample record shown. Field mapping mirrors the live Zoho CRM build.</p>
+    <p style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.06em;color:#8C8A87;margin-top:24px">Sample record shown. Field mapping mirrors the live Zoho CRM build.</p>
   </section>
 
   <section class="sec">
@@ -824,7 +794,7 @@ section.hero-cover .hero-bg {
       <div class="section-lbl" id="the-work">The Work</div>
       <h2 class="sec-title">Straight from the <span class="sem">working files</span>.</h2>
     </div>
-    <p style="font-size:17px;line-height:1.55;color:#2A2A2A;max-width:680px">Eleven statics. Five video scripts. One brand system. Everything below shipped to Meta, concepted and produced in-house.</p>
+    <p style="font-size:17px;line-height:1.55;color:#2A2A2A">Eleven statics. Five video scripts. One brand system. Everything below shipped to Meta, concepted and produced in-house.</p>
 
   <!-- Work-in-motion marquee -->
   <section class="csm-sec" id="work-in-motion">
@@ -840,9 +810,6 @@ section.hero-cover .hero-bg {
       </section>
 
 
-          <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Experiments</div><div class="v">Running</div><div class="s">A/B tests + heat maps via PageSense</div></div>
-      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Attribution</div><div class="v">Wired</div><div class="s">Click to closed revenue in Zoho CRM</div></div>
-      <div class="ecw-status-cell"><div class="k"><span class="sdot"></span>Verified Results</div><div class="v">QBR 1 &middot; July 2026</div><div class="s">Numbers published when they're facts</div></div>
     
   </section>
 
