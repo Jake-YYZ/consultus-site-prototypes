@@ -227,6 +227,7 @@ Then open `http://localhost:8080/` (homepage) or `http://localhost:8080/<folder>
 - Live preview URL format: `https://jake-yyz.github.io/consultus-site-prototypes/<folder>/`
   (homepage: `https://jake-yyz.github.io/consultus-site-prototypes/`)
 - The workflow rewrites root-relative URLs (`href="/..."`, `src="/..."`, `location.href='/...'`, `url(/...)`) to include the `/consultus-site-prototypes/` prefix at publish time. **Local files keep plain root-relative paths** — write new pages with `/assets/...` and `/contact/`-style links and the workflow handles the rest.
+- **Pushed Oct 8 2026 (user: "push everything"):** the branch `launch-qa-2026-10-08` (about 35 commits of launch QA) is on GitHub; `main` is still at `0f325e78`, so GitHub Pages still shows the OLD site until the branch is merged into `main`. The repo is PUBLIC: CLAUDE.md (it names the staging address, the `kinsta-staging` SSH alias and the server folder; no keys or passwords), `tools/` and `seo-migration/` are visible on GitHub, and a push to `main` also publishes every file on Pages (the workflow copies everything except `.git` and `.github`, so CLAUDE.md would be served at `/consultus-site-prototypes/CLAUDE.md`). Before merging to `main`, decide whether CLAUDE.md should stay in the repo.
 - After a push, deploys take about 1 minute. When a page is done, give Jake BOTH links: local (`http://localhost:8080/<folder>/`) and live (`https://jake-yyz.github.io/consultus-site-prototypes/<folder>/`).
 
 ## Kinsta staging (Oct 6 2026)
