@@ -3,6 +3,7 @@
 // usage: node tools/qa/qa_narrow_text.mjs --base=http://localhost:8080 --pages=divisions,healthcare --width=1440
 // Centered blocks (auto margins or text-align:center) are skipped on purpose; review the rest by eye.
 // --heading also lists paragraphs (capped or not) that are clearly narrower than the heading right above them.
+// --squeezed=N lists text sitting in a column narrower than N px (run at --width=390: finds two-column blocks that do not stack on a phone).
 // --blocks also lists capped containers (FAQ lists, text wrappers, card groups) that stop short of the box they sit in.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -46,6 +47,18 @@ const FIND = `(() => {
       while (prev && !/^H[1-6]$/.test(prev.tagName)) prev = prev.previousElementSibling;
       if (prev) headW = Math.round(prev.getBoundingClientRect().width);
       out.push({ el: name(el), parent: name(par), text: text.slice(0, 70), width: Math.round(r.width), room: Math.round(inner), maxWidth: cs.maxWidth, headingWidth: headW, y: Math.round(r.top + scrollY) });
+    }
+  }
+  const squeeze = ${Number(args.squeezed || 0)};
+  if (squeeze > 0) {
+    // text squeezed into a column narrower than the given width (a two-column block that does not stack on a phone)
+    for (const el of document.querySelectorAll('p, li, h1, h2, h3, h4, blockquote, figcaption, summary, span, div')) {
+      if (!vis(el) || el.closest('footer, nav, #services-mega-menu, #mobile-nav, .svc-marquee-bar, [aria-hidden=true]')) continue;
+      if (el.children.length > 0 && el.tagName !== 'P' && !/^H[1-4]$/.test(el.tagName)) continue;
+      const text = (el.innerText || '').trim(); if (text.length < 40 || /\\n/.test(text.slice(0, 40)) && el.tagName === 'DIV') continue;
+      const r = el.getBoundingClientRect(); const cs = getComputedStyle(el);
+      if (cs.display === 'inline') continue;
+      if (r.width < squeeze) out.push({ el: 'SQUEEZED ' + name(el), parent: name(el.parentElement), text: text.slice(0, 60).replace(/\\s+/g, ' '), width: Math.round(r.width), room: Math.round(innerWidth), maxWidth: cs.maxWidth, headingWidth: null, y: Math.round(r.top + scrollY) });
     }
   }
   if (${args.blocks ? 'true' : 'false'}) {
