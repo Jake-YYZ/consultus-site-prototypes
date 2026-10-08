@@ -304,6 +304,12 @@ section.hero-cover .hero-bg {
   gap: 56px;
   align-items: start;
 }
+@media (max-width: 860px) {
+  .ecw-brief-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
 .ecw-ns {
   background: #FFFFFF;
   border: 1px solid rgba(20,20,20,0.1);
@@ -312,6 +318,11 @@ section.hero-cover .hero-bg {
   box-shadow: 0 24px 56px -30px rgba(20,20,20,0.35);
   position: sticky;
   top: 100px;
+}
+@media (max-width: 860px) {
+  .ecw-ns {
+    position: static;
+  }
 }
 .ecw-ns-head {
   font-family: var(--mono);

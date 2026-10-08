@@ -96,11 +96,11 @@ async function runOne(slug, width) {
     for (let y = 0, i = 1; y < H; y += CHUNK, i++) {
       const h = Math.min(CHUNK, H - y);
       const r = await s.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { x: 0, y, width: Math.min(W, width), height: h, scale: 1 } });
-      const f = `${OUT}/${slug}-${width}-${String(i).padStart(2, '0')}.png`;
+      const f = `${OUT}/${slug.replace(/\//g, '__')}-${width}-${String(i).padStart(2, '0')}.png`;
       fs.writeFileSync(f, Buffer.from(r.data, 'base64')); out.shots.push(f);
     }
   }
-  fs.writeFileSync(`${OUT}/${slug}-${width}.json`, JSON.stringify(out, null, 1));
+  fs.writeFileSync(`${OUT}/${slug.replace(/\//g, '__')}-${width}.json`, JSON.stringify(out, null, 1));
   ws.close();
   await fetch(`http://127.0.0.1:${PORT}/json/close/${id}`).catch(() => {});
   return out;

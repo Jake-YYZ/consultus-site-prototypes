@@ -3,6 +3,7 @@
 // usage: node tools/qa/qa_narrow_text.mjs --base=http://localhost:8080 --pages=divisions,healthcare --width=1440
 // Centered blocks (auto margins or text-align:center) are skipped on purpose; review the rest by eye.
 // --heading also lists paragraphs (capped or not) that are clearly narrower than the heading right above them.
+// --noscroll skips the scroll through the page (much faster; layout does not depend on lazy images).
 // --squeezed=N lists text sitting in a column narrower than N px (run at --width=390: finds two-column blocks that do not stack on a phone).
 // --blocks also lists capped containers (FAQ lists, text wrappers, card groups) that stop short of the box they sit in.
 import { spawn } from 'node:child_process';
@@ -87,7 +88,7 @@ try {
     await s.send('Emulation.setDeviceMetricsOverride', { width: WIDTH, height: 900, deviceScaleFactor: 1, mobile: false });
     let loaded; const lp = new Promise(r => { loaded = r; }); s.on(m => { if (m.method === 'Page.loadEventFired') loaded(); });
     await s.send('Page.navigate', { url: `${BASE}/${slug}/` }); await Promise.race([lp, sleep(30000)]); await sleep(1500);
-    await s.ev(`(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } window.scrollTo(0, 0); })()`);
+    if (!args.noscroll) await s.ev(`(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } window.scrollTo(0, 0); })()`);
     const found = await s.ev(FIND);
     console.log(`\\n=== ${slug} @${WIDTH}: ${found.length} capped text block(s)`);
     for (const f of found) console.log(`  y=${String(f.y).padStart(5)} ${f.el.slice(0, 34).padEnd(34)} width ${String(f.width).padStart(4)} of ${String(f.room).padStart(4)} (max-width ${f.maxWidth}${f.headingWidth ? ', heading above is ' + f.headingWidth : ''})  "${f.text}"`);
