@@ -99,6 +99,8 @@ a { text-decoration: none; }
   font-size: 1.1em; line-height: 1.5; color: var(--ink);
 }
 .bl-content img, .bl-content video, .bl-content iframe { max-width: 100%; height: auto; border-radius: 8px; }
+/* An iframe has no natural height, so height:auto squashed the YouTube embeds to a 150px strip: give them a 16:9 box. */
+.bl-content iframe { width: 100%; aspect-ratio: 16 / 9; }
 .bl-content figure { margin-left: 0; margin-right: 0; }
 .bl-content figcaption { font-size: 14px; color: var(--charcoal); margin-top: 10px; }
 .bl-content table { width: 100%; border-collapse: collapse; font-size: 15px; display: block; overflow-x: auto; }

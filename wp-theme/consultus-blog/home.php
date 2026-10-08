@@ -2,7 +2,10 @@
 /** Blog hub (/blog/): newest post as a feature, then a grid. */
 get_header();
 $feat_id = ( get_query_var( 'paged' ) < 2 ) ? cb_featured_post_id() : 0;
-$cats    = get_terms( array( 'taxonomy' => 'category', 'hide_empty' => true, 'exclude' => array( (int) get_option( 'default_category' ) ) ) );
+// Filter pills: the 10 topics with the most posts (there are ~40 categories, too many for one row). Catch-alls are left out,
+// the same two cb_category_label() skips. Every category still has its own page at /blog/category/<slug>/.
+$skip    = array_filter( array( (int) get_option( 'default_category' ), (int) ( ( $gen = get_category_by_slug( 'general-category' ) ) ? $gen->term_id : 0 ) ) );
+$cats    = get_terms( array( 'taxonomy' => 'category', 'hide_empty' => true, 'exclude' => $skip, 'orderby' => 'count', 'order' => 'DESC', 'number' => 10 ) );
 ?>
 <section class="sec bl-hero">
 	<div class="eyebrow"><span class="eyebrow-dot"></span><span>Insights &amp; Playbooks</span></div>

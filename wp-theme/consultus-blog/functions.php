@@ -23,6 +23,49 @@ add_filter( 'comments_open', '__return_false', 20 );
 add_filter( 'pings_open', '__return_false', 20 );
 add_filter( 'comments_array', '__return_empty_array', 20 );
 
+// Archive headings read "Facebook Ads", not "Category: Facebook Ads" (the eyebrow above the heading already says Category).
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+// Share image. Rank Math only falls back to a media-library attachment, so the hub, category pages and posts without a
+// featured image had no og:image. Give them the same file every static page uses (the site root's /assets/brand/og-share.jpg).
+function cb_default_share_image() {
+	return 'https://' . wp_parse_url( home_url(), PHP_URL_HOST ) . '/assets/brand/og-share.jpg';
+}
+foreach ( array( 'facebook', 'twitter' ) as $cb_network ) {
+	add_filter( "rank_math/opengraph/{$cb_network}/image", function ( $url ) {
+		return $url ? $url : cb_default_share_image();
+	} );
+	add_filter( "rank_math/opengraph/{$cb_network}/image_array", function ( $image ) {
+		if ( is_array( $image ) && isset( $image['url'] ) && cb_default_share_image() === $image['url'] ) {
+			$image += array( 'width' => 1200, 'height' => 630, 'type' => 'image/jpeg', 'alt' => 'Consultus Digital' );
+		}
+		return $image;
+	} );
+}
+
+// Don't reveal login names. The old site answered 404 to /?author=1 and 401 to the REST user list; without this,
+// /?author=1 redirects to /author/<login>/ and /wp-json/wp/v2/users prints every account, the administrator included.
+add_action( 'template_redirect', function () {
+	if ( isset( $_GET['author'] ) && ! is_admin() ) { // phpcs:ignore WordPress.Security.NonceVerification
+		global $wp_query;
+		$wp_query->set_404();
+		status_header( 404 );
+		nocache_headers();
+		include get_404_template();
+		exit;
+	}
+}, 1 );
+add_filter( 'rest_endpoints', function ( $endpoints ) {
+	if ( ! is_user_logged_in() ) {
+		foreach ( array_keys( $endpoints ) as $route ) {
+			if ( 0 === strpos( $route, '/wp/v2/users' ) ) {
+				unset( $endpoints[ $route ] );
+			}
+		}
+	}
+	return $endpoints;
+} );
+
 // Cleaner head.
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
