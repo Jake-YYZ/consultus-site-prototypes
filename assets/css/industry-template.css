@@ -547,7 +547,7 @@
   line-height: 1.6;
   color: var(--charcoal);
   margin: 22px 0 0;
-  max-width: 720px;
+  max-width: none;
 }
 #indt .bkc-stat b {
   font-family: var(--sans);
