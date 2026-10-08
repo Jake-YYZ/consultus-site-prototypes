@@ -96,6 +96,9 @@
 /healthcare-v2/work/tonic-eye-care/               /case-studies/tonic-eye-care/  301
 /medical/                                         /healthcare/  301
 
+# --- Sitemap (Oct 2026): the old WordPress site published its sitemap at /sitemap_index.xml; /sitemap.xml is now the index of the page and blog sitemaps ---
+/sitemap_index.xml                                /sitemap.xml  301
+
 # --- Rebuild at same URL (3): build these, do NOT redirect ---
 #   /insurance-industry/  (rebuild)
 #   /privacy-policy/  (rebuild)

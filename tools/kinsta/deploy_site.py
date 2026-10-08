@@ -12,7 +12,8 @@ Usage (run from anywhere; dry run by default, nothing is uploaded):
 Options:
     --skip-theme   leave the blog theme (public/blog/wp-content/themes/consultus-blog) alone
     --keep-build   keep the temporary stamped copy and print its path
-    --verify-only  upload nothing: just check that staging serves the current files and stamps
+    --verify-only  upload nothing: just check that staging serves the current files and stamps, and that
+                   /sitemap.xml lists the page sitemap and every blog post sitemap
 After uploading, Kinsta's page cache is cleared (the home page is served through PHP and Kinsta caches it,
 so without this `/` keeps showing the old page).
 
@@ -22,6 +23,7 @@ Nothing is deleted on the server except files that vanished from the theme folde
 """
 import argparse, fnmatch, hashlib, os, re, shutil, subprocess, sys, tempfile, urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
 SSH_HOST = 'kinsta-staging'                                  # entry in ~/.ssh/config
@@ -163,6 +165,58 @@ def fetch(url):
         return r.status, r.read()
 
 
+def sitemap_locs(xml):
+    return re.findall(r'<loc>\s*([^<\s]+)\s*</loc>', xml)
+
+
+def check_sitemap():
+    """/sitemap.xml is an index of the static pages (sitemap-pages.xml) and the blog's post sitemap (Rank Math, under /blog/).
+    Every child must load and hold URLs, and every post sitemap the blog publishes must be listed in /sitemap.xml:
+    if the blog ever outgrows one file (post-sitemap1.xml, post-sitemap2.xml ...), the posts in the unlisted files
+    would never reach Search Console. Children are fetched from BASE_URL by path, because the file names the
+    production domain."""
+    try:
+        status, body = fetch(BASE_URL + '/sitemap.xml')
+        text = body.decode('utf-8', 'replace')
+        kids = [urlparse(u).path for u in sitemap_locs(text)]
+        ok = status == 200 and '<sitemapindex' in text and len(kids) > 0
+    except Exception as e:
+        print(f'  BAD /sitemap.xml ({str(e)[:60]})')
+        return 1
+    bad = 0 if ok else 1
+    print(f'  {"ok " if ok else "BAD"} /sitemap.xml is a sitemap index of {len(kids)} sitemaps')
+    for path in kids:
+        try:
+            status, body = fetch(BASE_URL + path)
+            n = len(sitemap_locs(body.decode('utf-8', 'replace')))
+            ok = status == 200 and n > 0
+        except Exception as e:
+            ok, n = False, str(e)[:60]
+        bad += not ok
+        print(f'  {"ok " if ok else "BAD"} sitemap.xml lists {path} ({n} URLs)')
+    try:
+        _, body = fetch(BASE_URL + '/blog/sitemap_index.xml')
+        posts = [urlparse(u).path for u in sitemap_locs(body.decode('utf-8', 'replace')) if '/post-sitemap' in u]
+    except Exception:
+        posts = []
+    missing = [p for p in posts if p not in kids]
+    ok = bool(posts) and not missing
+    bad += not ok
+    print(f'  {"ok " if ok else "BAD"} every blog post sitemap ({", ".join(posts) or "none found"}) is listed in /sitemap.xml'
+          + (f', MISSING: {", ".join(missing)}' if missing else ''))
+    # Not a failure on staging, a reminder for launch: WordPress still has an http:// address here, so its sitemap does too.
+    for path in posts:
+        try:
+            _, body = fetch(BASE_URL + path)
+            urls = sitemap_locs(body.decode('utf-8', 'replace'))
+        except Exception:
+            continue
+        plain = [u for u in urls if u.startswith('http://')]
+        if plain:
+            print(f'  note {path}: {len(plain)} of {len(urls)} URLs start with http:// (set the WordPress address to https://consultusdigital.com/blog before launch)')
+    return bad
+
+
 def verify():
     print('Verifying on staging:')
     bad = 0
@@ -183,7 +237,7 @@ def verify():
             ok, status = False, str(e)[:60]
         bad += not ok
         print(f'  {"ok " if ok else "BAD"} {page} links {needle}')
-    return bad
+    return bad + check_sitemap()
 
 
 def main():
