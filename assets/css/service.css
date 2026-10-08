@@ -534,19 +534,6 @@ body.gads-revamp {
     padding-bottom: 38px;
   }
 }
-.gads-skip {
-  position: fixed;
-  top: -80px;
-  left: 16px;
-  z-index: 10000;
-  padding: 12px 20px;
-  background: var(--yellow);
-  color: #141414;
-  border-radius: 8px;
-}
-.gads-skip:focus {
-  top: 12px;
-}
 .gads-page section {
   scroll-margin-top: 100px;
 }

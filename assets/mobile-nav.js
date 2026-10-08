@@ -4,13 +4,66 @@
  * The panel is built here from the page's OWN header links and Services menu (#services-mega-menu), so the
  * phone menu always matches the desktop header and there is no second list to keep in sync. Styles live in
  * /assets/css/site.css (search "MOBILE MENU"). Every page that has the header loads this script.
+ *
+ * It also makes the desktop Services menu work from the keyboard (see megaMenu below).
  */
 (function () {
   'use strict';
 
   var nav = document.querySelector('nav.main');
-  var toggle = nav && nav.querySelector('.nav-toggle');
-  if (!nav || !toggle) return;
+  if (!nav) return;
+  var toggle = nav.querySelector('.nav-toggle');
+
+  /* Desktop Services menu. The header's "Services" is an <a> without an href that opens #services-mega-menu with a
+     click (toggleMega, defined in each page), so the keyboard could never reach it, a screen reader did not announce
+     it, and the menu itself sits at the very end of <body>. Here the trigger and the Acquire / Convert / Scale tabs
+     become real buttons, Enter or Space opens the menu and moves focus into it, and Escape closes it again. */
+  function megaMenu() {
+    var trigger = nav.querySelector('.nav-links > a:not([href])');
+    var mega = document.getElementById('services-mega-menu');
+    if (!trigger || !mega) return;
+    var tabs = Array.prototype.slice.call(mega.querySelectorAll('.mega-div[data-tab]'));
+
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('tabindex', '0');
+    trigger.setAttribute('aria-label', (trigger.textContent || '').replace(/[▾▼]/g, '').replace(/\s+/g, ' ').trim() || 'Services');
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-controls', mega.id);
+    trigger.setAttribute('aria-expanded', 'false');
+    tabs.forEach(function (tab) {
+      tab.setAttribute('role', 'button');
+      tab.setAttribute('tabindex', '0');
+    });
+
+    function isOpen() { return mega.classList.contains('open'); }
+    function sync() { trigger.setAttribute('aria-expanded', isOpen() ? 'true' : 'false'); }
+    /* Whoever opens or closes the menu (the trigger, the page's overlay, a link inside it), aria-expanded follows. */
+    if (window.MutationObserver) new MutationObserver(sync).observe(mega, { attributes: true, attributeFilter: ['class'] });
+
+    function onPress(el, run) {
+      el.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); run(); }
+      });
+    }
+    onPress(trigger, function () {
+      trigger.click();
+      if (isOpen()) {
+        var first = mega.querySelector('.mega-div.active') || tabs[0];
+        if (first) first.focus();
+      }
+    });
+    tabs.forEach(function (tab) { onPress(tab, function () { tab.click(); }); });
+
+    document.addEventListener('keydown', function (event) {
+      if ((event.key !== 'Escape' && event.key !== 'Esc') || !isOpen()) return;
+      var wasInside = mega.contains(document.activeElement) || document.activeElement === trigger;
+      if (typeof window.closeMega === 'function') window.closeMega();
+      if (wasInside) trigger.focus();
+    });
+  }
+  megaMenu();
+
+  if (!toggle) return;
 
   var root = document.documentElement;
   var mq = window.matchMedia('(max-width: 900px)');

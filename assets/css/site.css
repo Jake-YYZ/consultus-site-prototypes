@@ -2550,7 +2550,7 @@ footer {
   margin: 0 auto;
   padding-top: 28px;
   font-size: 11px;
-  color: #6A686B;
+  color: #8A878B;
   font-family: var(--mono);
 }
 /* Article body */
@@ -6613,4 +6613,31 @@ footer {
   .mnav-cta {
     transition: none;
   }
+}
+
+/* DESKTOP SERVICES MENU: a visible keyboard focus. The "Services" trigger and the Acquire / Convert / Scale tabs are
+   buttons (see /assets/mobile-nav.js), and the cards are links; none of them showed where the keyboard was. */
+nav.main .nav-links > a[role="button"]:focus-visible { outline: 2px solid #1A40C7; outline-offset: 4px; border-radius: 4px; }
+.mega-div:focus-visible { outline: 2px solid #1A40C7; outline-offset: -2px; }
+.mega-card:focus-visible { outline: 2px solid #1A40C7; outline-offset: -2px; background: rgba(26,64,199,0.04); }
+.mega-card:focus-visible .mega-icon { background: #1A40C7; }
+.mega-card:focus-visible .mega-icon svg { stroke: #FAF8F3; }
+.mega-promo-cta:focus-visible { outline: 2px solid #FFEC00; outline-offset: 4px; }
+
+/* Skip link: first thing a keyboard user reaches, jumps past the header and the services bar to <main id="main-content">.
+   Service pages use .gads-skip (it used to live in service.css), the other pages .skip-link. */
+.gads-skip, .skip-link {
+  position: fixed;
+  top: -80px;
+  left: 16px;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: var(--yellow);
+  color: #141414;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.gads-skip:focus, .skip-link:focus {
+  top: 12px;
 }
