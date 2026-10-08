@@ -3,6 +3,9 @@
 .screen-reader-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 a.bl-card, a.bl-feature, .bl-pagination a, .bl-cat { color: inherit; text-decoration: none; }
+/* The static pages reset link underlines in each page's own CSS and the blog has no such reset, so the browser's default
+   underline showed on the header menu, the Services menu, the phone menu, the footer and the buttons. Article links keep theirs (.bl-content a). */
+a { text-decoration: none; }
 
 /* ---------- Hub / archive header ---------- */
 .bl-hero { padding-top: 60px; padding-bottom: 30px; }
