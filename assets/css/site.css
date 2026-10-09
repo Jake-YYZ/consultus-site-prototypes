@@ -4970,6 +4970,8 @@ footer {
     grid-template-columns: 1fr;
     max-height: 100vh;
     height: 100vh;
+    max-height: 100dvh;
+    height: 100dvh;
     border-radius: 0;
   }
   .team-lightbox .tl-portrait {

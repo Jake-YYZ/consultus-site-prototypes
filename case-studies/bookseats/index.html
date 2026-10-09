@@ -276,6 +276,10 @@ section.hero-cover .hero-bg {
   border-radius: 8px;
   border: 1px solid rgba(20,20,20,0.14);
 }
+/* The A/B cards slide in from the sides as the page scrolls. Clip them at the edge of this full-width band so they can never widen the page (Safari on a phone let them). */
+.ecw-clip-x {
+  overflow-x: clip;
+}
 </style>
   <meta name="description" content="How Consultus Digital took BookSeats from 1.4x to 8.10x ROAS with UGC-first creative, league-specific funnels, persona testing, and a Google Ads rebuild." />
   <link rel="canonical" href="https://consultusdigital.com/case-studies/bookseats/" />
@@ -711,7 +715,7 @@ section.hero-cover .hero-bg {
     </div>
   </section>
 
-  <section class="sec bone-full">
+  <section class="sec bone-full ecw-clip-x">
     <div class="sec-inner">
       <div class="sec-head rv">
         <div class="section-lbl">The Tests</div>
