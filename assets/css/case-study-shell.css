@@ -79,7 +79,11 @@
   align-items: center;
 }
 .hero-cover .cover-main h1 {
+  text-wrap: balance;
   font-size: clamp(38px, 4.4vw, 68px);
+}
+.hero-cover .cover-main p.lede {
+  text-wrap: pretty;
 }
 .ecw-hero-visual {
   position: relative;

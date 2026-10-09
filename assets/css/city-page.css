@@ -20,6 +20,17 @@ body.cs-page .cs-sec .sec-title { font-size: clamp(30px, 3.8vw, 46px); line-heig
 body.cs-page .cs-head-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: end; }
 body.cs-page .cs-head-2 > p { margin: 0; padding-bottom: 4px; max-width: 520px; font-size: 16.5px; line-height: 1.6; color: var(--charcoal); }
 
+/* one left edge: .cs-in holds 1200px of content, so the proof bar, the stats band and the sections that were not rebuilt
+   (audit teaser, team block) get 1264px boxes (1200px plus their 32px side padding) and start where .cs-in starts.
+   The closing band keeps 1200px here; everywhere else .cta-inner is 1136px (see site.css). */
+body.cs-page .cfh-proof-row { max-width: 1264px; }
+body.cs-page .sec-inner { max-width: 1264px; }
+body.cs-page .sec:not(.dark-full):not(.bone-full) { max-width: 1264px; }
+body.cs-page .cta-inner { max-width: 1200px; }
+body.cs-page .cta-title,
+body.cs-page .cfh-hero .cfh-display,
+body.cs-page .cfh-lede { text-wrap: wrap; }
+
 /* sections that were not rebuilt (audit teaser, team block) get the same rhythm */
 body.cs-page .sec:not(.dark-full):not(.bone-full) { padding-top: 72px; padding-bottom: 72px; }
 body.cs-page .sec-inner { padding-top: 72px; padding-bottom: 72px; }

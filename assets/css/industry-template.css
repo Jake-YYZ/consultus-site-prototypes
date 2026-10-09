@@ -24,7 +24,7 @@
   overflow: hidden;
 }
 #indt .ix-hero-in {
-  max-width: 1200px;
+  max-width: 1136px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.02fr .98fr;
@@ -59,6 +59,7 @@
   margin: 20px 0 0;
 }
 #indt .ix-lede {
+  text-wrap: pretty;
   font-size: 19px;
   line-height: 1.55;
   color: var(--charcoal);
@@ -658,7 +659,7 @@
   border-bottom: 1px solid #E1DCD1;
 }
 #indt .clients-inner {
-  max-width: 1200px;
+  max-width: 1136px;
   margin: 0 auto;
   display: flex;
   align-items: center;

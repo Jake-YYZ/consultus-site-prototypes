@@ -2083,8 +2083,9 @@ nav.main {
   letter-spacing: -0.05em;
   pointer-events: none;
 }
+/* 1136px = the content width of a .sec (1200px minus its 32px side padding), so the closing band starts on the same edge as the sections above it */
 .cta-inner {
-  max-width: 1200px;
+  max-width: 1136px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -2099,6 +2100,18 @@ nav.main {
 }
 .cta-title .sem {
   color: #FFEC00;
+}
+/* Line breaks. The hero, clients strip and closing band are 1136px wide (they used to be 1200px), so a headline that just fit
+   on one line can now wrap: balanced breaks keep one word from hanging alone on the last line. Browsers that do not know
+   text-wrap ignore these two rules and wrap as before. The city service pages keep their 1200px bands and their old breaks
+   (city-page.css). */
+.cta-title,
+.fh-hero h1,
+.cfh-hero .cfh-display {
+  text-wrap: balance;
+}
+.cfh-lede {
+  text-wrap: pretty;
 }
 /* Feature band (case study style) */
 .feature-band {
