@@ -631,7 +631,7 @@
   font-size: 9.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
 }
 .ecw-mstat .v {
   display: flex;
@@ -647,7 +647,7 @@
   font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   font-size: 10.5px;
   font-weight: 600;
-  color: #2D8F5F;
+  color: #237A4E;
   background: #E7F4EE;
   border-radius: 6px;
   padding: 3px 8px;
@@ -656,7 +656,7 @@
   font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   font-size: 10.5px;
   font-weight: 600;
-  color: #D94545;
+  color: #B93030;
   background: #FBEAEA;
   border-radius: 6px;
   padding: 3px 8px;
@@ -761,7 +761,7 @@
   font-size: 8.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #B4B1AD;
+  color: #6A686B;
   margin: 11px 0 7px;
 }
 .ecw-mchips {
@@ -790,7 +790,7 @@
 }
 .ecw-mchips i.kill {
   background: #FBEAEA;
-  color: #D94545;
+  color: #B93030;
 }
 @media (max-width: 960px) {
   .ecw-mcards {
@@ -817,7 +817,7 @@
   font-size: 7.5px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
 }
 .ecw-zmock .zroas b {
   background: #FFEC00;
@@ -978,7 +978,7 @@ body,
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
   margin-top: 2px;
 }
 .ecw-ab-stamp {
@@ -1317,7 +1317,7 @@ body,
   font-size: 8.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
 }
 .ecw-zmock .zr b {
   color: #141414;
@@ -1369,7 +1369,7 @@ body,
   font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -1448,7 +1448,7 @@ body,
   font-weight: 400;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
   margin-top: 3px;
 }
 .ecw-cro-chip .w {
@@ -1527,6 +1527,9 @@ body,
   text-transform: uppercase;
   color: #1A40C7;
 }
+.dark-full .ecw-journey .jlbl {
+  color: #B4BFEB;
+}
 .ecw-journey .jtxt {
   font-size: 15px;
   color: #2A2A2A;
@@ -1578,7 +1581,7 @@ body,
   font-size: 10.5px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
   padding-top: 2px;
 }
 .ecw-crm-row .v {
@@ -1609,7 +1612,7 @@ body,
   padding: 6px 12px;
   border-radius: 100px;
   border: 1px solid #2D8F5F;
-  color: #2D8F5F;
+  color: #237A4E;
 }
 .ecw-stage.won {
   background: #FFEC00;
@@ -1669,7 +1672,7 @@ body,
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
   margin-top: 4px;
 }
 .ecw-exp-pill {
@@ -1764,7 +1767,7 @@ body,
   border-radius: 4px;
 }
 .ecw-tree-body .branch .dim {
-  color: #8C8A87;
+  color: #6A686B;
 }
 .ecw-tree-foot {
   font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace;
@@ -1984,7 +1987,7 @@ body,
   font-size: 9px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8C8A87;
+  color: #6A686B;
   margin-top: 9px;
   display: flex;
   justify-content: space-between;
