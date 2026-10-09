@@ -5,7 +5,7 @@ Kinsta does not read Netlify's _redirects, and WordPress now only handles /blog/
 real file or folder lands on the root index.php, so the redirect map lives there.
 
 Usage (from anywhere):  python3 tools/kinsta/build_front_controller.py
-Reads   <repo>/_redirects          (lines: <old-path>  <new-path>  <301|302>)
+Reads   <repo>/_redirects          (lines: <old-path>  <new-path>  <301|302>, or <old-path>  -  410 for a page that is gone)
 Writes  tools/kinsta/index.php     (deploy to the server root: public/index.php)
         <old-path>/index.php       for each old path that still exists as a page folder (a stub page
                                    cannot be redirected by index.php alone, because nginx serves the folder
@@ -35,7 +35,7 @@ CONTROLLER = r"""<?php
  *
  * Kinsta sends any URL that is not a real file or folder to this file:
  *  - "/"                   -> the static homepage
- *  - an old URL in the map -> a permanent redirect to its new page (query strings are kept)
+ *  - an old URL in the map -> a permanent redirect to its new page (query strings are kept), or 410 Gone
  *  - "/blog/..."           -> WordPress (installed in /blog)
  *  - anything else         -> the static 404 page
  */
@@ -57,6 +57,12 @@ if ( '/' === $path || '/index.php' === $path ) {
 $key = strtolower( rtrim( $path, '/' ) );
 if ( isset( $redirects[ $key ] ) ) {
 	list( $to, $status ) = $redirects[ $key ];
+	if ( 410 === $status ) {
+		http_response_code( 410 );
+		header( 'Content-Type: text/html; charset=UTF-8' );
+		readfile( __DIR__ . '/404.html' );
+		exit;
+	}
 	$query = isset( $_SERVER['QUERY_STRING'] ) ? str_replace( array( "\r", "\n" ), '', $_SERVER['QUERY_STRING'] ) : '';
 	if ( '' !== $query ) {
 		$to .= ( false === strpos( $to, '?' ) ? '?' : '&' ) . $query;
@@ -97,8 +103,9 @@ def main():
         if not line.startswith('/'):
             continue
         parts = line.split()
-        if len(parts) != 3 or parts[2] not in ('301', '302'):
-            problems.append('line %d: expected "<old> <new> <301|302>", got %r' % (n, line.strip()))
+        gone = len(parts) == 3 and parts[1] == '-' and parts[2] == '410'
+        if len(parts) != 3 or (parts[2] not in ('301', '302') and not gone):
+            problems.append('line %d: expected "<old> <new> <301|302>" or "<old> - 410", got %r' % (n, line.strip()))
             continue
         rules.append((n, parts[0], parts[1], int(parts[2])))
 
@@ -111,11 +118,13 @@ def main():
         if re.search(r'[*:?#]', old):
             problems.append('line %d: wildcards/params are not supported (%s)' % (n, old))
     for n, old, new, status in rules:
+        if status == 410:
+            continue
         if norm(new) == norm(old):
             problems.append('line %d: redirects to itself (%s)' % (n, old))
         elif norm(new) in seen:
             problems.append('line %d: chain, %s -> %s which is itself redirected' % (n, old, new))
-        if not new.startswith('http') and not page_exists(new):
+        if not new.startswith('http') and not new.startswith('/blog/') and not page_exists(new):   # blog posts live in WordPress, the test script checks them on the server
             problems.append('line %d: destination %s does not exist in the site' % (n, new))
 
     if problems:
@@ -131,7 +140,7 @@ def main():
     stubs = []
     for n, old, new, status in rules:
         folder = os.path.join(ROOT, old.strip('/'))
-        if os.path.isdir(folder) and os.path.exists(os.path.join(folder, 'index.html')):
+        if status != 410 and os.path.isdir(folder) and os.path.exists(os.path.join(folder, 'index.html')):
             open(os.path.join(folder, 'index.php'), 'w', encoding='utf-8').write(
                 HEADER_STUB.replace('{status}', str(status)).replace('{to}', new))
             stubs.append(old)

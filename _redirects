@@ -6,6 +6,13 @@
 /team/  /about/  301
 /our-process/  /about/  301
 
+# --- Old URLs that still have inbound links (Semrush backlink check, Oct 9 2026; they were not in the SEO plan's URL list). The live site 301s each of them to a URL that is redirected further down, so they go straight to the final page ---
+/website-development-toronto/                     /web-development/  301
+/website-design-toronto/                          /web-development/  301
+/contactus/                                       /contact/  301
+/crm-implementations-toronto/                     /zoho-crm/  301
+/general-category/top-5-free-marketing-courses-for-2020/  /blog/top-5-free-digital-marketing-courses/  301
+
 # --- Stub pages (HTML meta-refresh stubs kept as fallback for hosts without redirect support) ---
 /services/google-ads/  /google-ads/  301
 /industries/healthcare/  /healthcare/  301
@@ -104,9 +111,9 @@
 #   /privacy-policy/  (rebuild)
 #   /reputation-advertising-toronto/  BUILT (keeps slug: ranks #1 "reputation management firms")
 
-# --- Prune (3): serve 410 Gone, UNLESS the URL has backlinks (then 301) ---
-#   /landing/andromeda-unpacked-webinar/  410
-#   /links/  410
-#   /site-map/  410
+# --- Prune (3): serve 410 Gone, UNLESS the URL has backlinks (then 301). Semrush backlink check Oct 9 2026: none of the three has a backlink, so 410 ---
+/landing/andromeda-unpacked-webinar/              -  410
+/links/                                           -  410
+/site-map/                                        -  410
 
 # --- Blog consolidations (30): 301 each merged post to its survivor, set in content review (06-blog-inventory.csv) ---

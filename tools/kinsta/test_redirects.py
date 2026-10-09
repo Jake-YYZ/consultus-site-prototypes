@@ -2,7 +2,7 @@
 """Test every redirect in _redirects against a running site, plus a few must-not-break pages.
 
 Usage: python3 tools/kinsta/test_redirects.py [BASE_URL]      (default: the Kinsta staging URL)
-For each rule it checks: the old URL answers 301 with the right Location; the new page answers 200.
+For each rule it checks: the old URL answers 301 with the right Location; the new page answers 200 (a "-  410" rule: the old URL answers 410).
 For a sample of rules it also checks the no-trailing-slash, UPPER-CASE and ?utm query-string variants.
 """
 import concurrent.futures as cf
@@ -35,9 +35,13 @@ for line in open(os.path.join(ROOT, '_redirects'), encoding='utf-8'):
 
 jobs = []   # (label, url, expected_status, expected_location_path or None)
 for i, (old, new, status) in enumerate(rules):
+    if status == 410:
+        jobs.append(('gone  ' + old, BASE + old, 410, None))
+        continue
     jobs.append(('rule  ' + old, BASE + old, status, new))
     jobs.append(('dest  ' + new, BASE + new, 200, None))
-    if not old.endswith('.html') and i % 4 == 0:
+    stub = os.path.isdir(os.path.join(ROOT, old.strip('/')))   # a stub folder is redirected by its own index.php: nginx adds the slash first and the query is not kept
+    if not old.endswith('.html') and not stub and i % 4 == 0:
         jobs.append(('no-slash  ' + old, BASE + old.rstrip('/'), status, new))
         jobs.append(('UPPER  ' + old, BASE + old.upper().replace('.HTML', '.html'), status, new))
         jobs.append(('query  ' + old, BASE + old + '?utm_source=test', status, new + '?utm_source=test'))
