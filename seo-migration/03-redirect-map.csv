@@ -170,15 +170,15 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/5-benefits-working-with-a-google-partner-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/5-effective-content-writing-tips/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/5-steps-to-create-a-powerful-digital-marketing-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/5-tips-facebook-ads-creation/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/5-tips-facebook-ads-creation/,/blog/how-to-create-compelling-visuals-for-your-facebook-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/5-ways-create-content-google-adwords/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
-/blog/6-benefits-google-ads-management-agency/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/6-benefits-google-ads-management-agency/,/blog/5-benefits-working-with-a-google-partner-agency/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/6-google-ads-best-practices-for-high-converting-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/6-tips-updating-website/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/6-ways-engaging-content-can-help-your-business-goals/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/7-benefits-to-linkedin-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/7-proven-growth-marketing-strategies-that-drive-roi/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/7-tips-for-creating-effective-facebook-ads-that-convert/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/7-tips-for-creating-effective-facebook-ads-that-convert/,/blog/how-to-create-compelling-visuals-for-your-facebook-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/8-ways-to-increase-your-google-ads-ctr/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/9-best-practices-for-conversion-rate-optimization/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/9-business-growth-strategies-in-2023/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
@@ -196,7 +196,7 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/best-social-media-management-tools-for-2024/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/best-tech-stack-digital-marketing-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/best-ways-utilize-local-store-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/boost-your-conversion-rates-with-these-tips/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/boost-your-conversion-rates-with-these-tips/,/blog/9-best-practices-for-conversion-rate-optimization/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/boosting-sales-with-user-generated-content-ugc-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/build-business-visual-brand-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/building-your-email-list-with-lead-magnets/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -217,7 +217,7 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/copywriting-in-conversion-rate-optimization-cro/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/copywriting-tips-increase-conversions/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/creative-best-practices-for-youtube-ad-design-and-video-production/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/crm-for-small-businesses-how-to-implement-and-leverage-crm-for-growth-and-success/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/crm-for-small-businesses-how-to-implement-and-leverage-crm-for-growth-and-success/,/zoho-crm/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/crm-marketing-automation-integration/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/cro-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/cro-vs-seo-working-together/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -226,21 +226,21 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/digital-marketing-trends/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/digital-transformation-business-success/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/driving-retail-sales-digital-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/ecommerce-seo-how-to-get-started/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
-/blog/ecommerce-seo-tips-to-increase-traffic/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/ecommerce-seo-how-to-get-started/,/blog/10-seo-ecommerce-tips-that-actually-work/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
+/blog/ecommerce-seo-tips-to-increase-traffic/,/blog/10-seo-ecommerce-tips-that-actually-work/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/effective-content-marketing-for-law-firms-best-practices-for-blogging-email-and-video/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/email-marketing-ecommerce-how-to-boost-sales/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/email-marketing-more-important-than-ever/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/expert-remarketing-strategies/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/expert-remarketing-strategies/,/google-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/future-proof-seo-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/generate-leads-with-content-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/google-ads-benchmark-a-guide-for-small-businesses/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/google-ads-paid-search/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/google-ads-paid-search/,/blog/quick-guide-to-google-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/google-ads-vs-facebook-ads-what-you-need-to-know/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/google-business-profile-optimization/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/growth-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/guest-blogging-inbound-marketing-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/guide-to-google-ad-campaigns-search-ads/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/guide-to-google-ad-campaigns-search-ads/,/blog/quick-guide-to-google-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/harnessing-power-of-different-types-ugc-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/hiding-likes-influencer-marketing/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/how-can-blogging-help-grow-my-business/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -250,8 +250,8 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/how-to-best-utilize-experiential-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/how-to-boost-your-business-with-15k-cdap/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/how-to-build-a-growth-marketing-plan/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/how-to-choose-the-right-crm-system-for-your-business-tips-and-best-practices/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
-/blog/how-to-create-a-facebook-ads-strategy-that-works-for-your-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/how-to-choose-the-right-crm-system-for-your-business-tips-and-best-practices/,/zoho-crm/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
+/blog/how-to-create-a-facebook-ads-strategy-that-works-for-your-business/,/blog/the-dos-and-donts-of-facebook-advertising/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/how-to-create-compelling-email-newsletters-that-will-be-opened-and-read/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/how-to-create-compelling-visuals-for-your-facebook-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/how-to-create-high-converting-tiktok-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -264,10 +264,10 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/how-to-use-seo-to-boost-your-online-reputation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/how-to-utilize-instagram-shopping/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/how-to-write-successful-google-ads-copy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/how-your-business-can-grow-with-influencer-marketing/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/how-your-business-can-grow-with-influencer-marketing/,/blog/benefits-of-influencer-marketing/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/improve-lead-generation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/improve-sales-process/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/improve-website-conversion-rate/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/improve-website-conversion-rate/,/blog/why-your-website-conversion-rates-suck/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/improve-your-short-form-video-content/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/increase-website-traffic-by-using-these-4-seo-blogging-tips/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/increase-your-website-revenue-with-cro-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -276,7 +276,7 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/innovative-insurance-marketing-tactics-how-to-stand-out-in-a-crowded-market/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/leverage-social-media-for-seo-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/linkedin-message-ads-a-complete-guide/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/local-seo-improve-visibility-google/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/local-seo-improve-visibility-google/,/blog/the-ultimate-local-seo-tactic-how-to-optimize-your-business-for-ai-voice-search/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/marketing-automation-for-insurance-how-to-streamline-your-processes-and-improve-efficiency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/marketing-automation-is-your-digital-marketing-secure-efficient/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/mastering-perplexity-ai-top-seo-strategies-for-success/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -287,7 +287,7 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/online-competitor-analysis-preparing-for-2024/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/partner-with-influencer-marketing-agency/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/performance-marketing-vs-digital-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/power-of-social-proof-with-conversion-rate-optimization/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/power-of-social-proof-with-conversion-rate-optimization/,/blog/9-best-practices-for-conversion-rate-optimization/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/product-listing-ads-management-guide/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/pros-cons-facebook-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/push-and-pull-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -296,11 +296,11 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/quick-guide-to-google-ads-campaigns-video-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/quick-guide-to-google-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/quick-guide-to-google-shopping-ads/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/rank-business-locally-maps/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/rank-business-locally-maps/,/blog/the-ultimate-local-seo-tactic-how-to-optimize-your-business-for-ai-voice-search/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/real-time-marketing-social-media-2019/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/reasons-your-business-should-apply-for-cdap/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
-/blog/remarketing-advertising-for-ecommerce/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
-/blog/remarketing-right-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/remarketing-advertising-for-ecommerce/,/google-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
+/blog/remarketing-right-business/,/google-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/reputation-management-mistakes/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/role-of-social-media-reputation-management/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/sales-enablement/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
@@ -313,24 +313,24 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/small-business-seo-budget-guide-2025/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/social-media-advertising-platforms/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/social-media-scams-targeting-businesses/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/social-proof/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/social-proof/,/blog/video-testimonials-benefits-for-business/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/strategies-for-increasing-email-open-rates/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/strategies-to-boost-your-seo/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/strategies-to-boost-your-seo/,/blog/future-proof-seo-strategy/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/the-basics-conversion-rate-optimization/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/the-beginners-guide-to-crm-understanding-the-basics-and-benefits-for-your-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
-/blog/the-beginners-guide-to-microsoft-advertising-how-to-get-started/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/the-beginners-guide-to-crm-understanding-the-basics-and-benefits-for-your-business/,/zoho-crm/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
+/blog/the-beginners-guide-to-microsoft-advertising-how-to-get-started/,/microsoft-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/the-connection-between-content-marketing-and-sales-enablement/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-dos-and-donts-of-facebook-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-dos-and-donts-of-tiktok-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-eight-best-seo-tools-to-boost-your-rankings-in-2025/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/the-impact-of-effective-sales-enablement-on-customer-experience/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-power-of-a-b-testing-how-small-changes-lead-to-big-conversions-infographic/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/the-power-of-bing-ads-why-your-business-should-be-using-microsoft-advertising/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/the-power-of-bing-ads-why-your-business-should-be-using-microsoft-advertising/,/microsoft-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/the-power-of-seo-for-law-firms/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-secrets-of-direct-response-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-top-5-benefits-of-instagram-advertising/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/the-ultimate-local-seo-tactic-how-to-optimize-your-business-for-ai-voice-search/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/tiktok-ads-how-to-win-more-customers/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/tiktok-ads-how-to-win-more-customers/,/blog/how-to-create-high-converting-tiktok-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/tips-choosing-right-seo-specialist/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/tips-to-create-high-converting-landing-page/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/top-10-blog-writing-tips-2019/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
@@ -357,20 +357,20 @@ old_url,new_target,http_status,disposition,confidence,type,rationale,DECISION (J
 /blog/what-is-seo-cloaking-and-how-to-avoid-it/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/what-to-know-cdap-interest-free-loan/,KEEP (same URL),200,blog_refresh,high,Blog,Preserve URL 1:1. Content refresh suggested.,"Confirmed, keep at same URL"
 /blog/when-to-hire-a-sales-consultant/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/which-crm-system-is-right-for-your-business/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/which-crm-system-is-right-for-your-business/,/zoho-crm/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/why-canadian-smbs-must-undergo-a-digital-marketing-and-sales-transformation/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/why-choose-consultus-digital-as-your-cdap-digital-advisor/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/why-consultus-is-better/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/why-every-business-should-be-a-b-testing/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
-/blog/why-google-ads-management-service-agency/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/why-every-business-should-be-a-b-testing/,/blog/5-a-b-testing-techniques-for-boosting-your-websites-conversion-rate/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
+/blog/why-google-ads-management-service-agency/,/blog/5-benefits-working-with-a-google-partner-agency/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/why-reputation-management-matters-more-than-ever/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/why-you-need-a-social-media-strategy/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/why-your-advertising-hook-matters/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/why-your-business-needs-crm/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/why-your-business-needs-crm/,/zoho-crm/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/why-your-business-needs-video-marketing/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/why-your-ppc-campaign-needs-landing-page/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /blog/why-your-website-conversion-rates-suck/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
-/blog/work-with-facebook-advertising-agency/,301 target TBD in content review,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all)
+/blog/work-with-facebook-advertising-agency/,/meta-ads/,301,blog_consolidate,medium,Blog,Overlaps other posts; merge then 301 to the surviving post.,Confirmed 301 (Jake: do all). Target approved Oct 9 2026 (QA round); post set to draft, 301 in the blog theme
 /blog/youtube-advertising-how-to-set-up-a-video-ad/,KEEP (same URL),200,blog_keep,high,Blog,Preserve URL 1:1.,"Confirmed, keep at same URL"
 /website-development-toronto/,/web-development/,301,redirect_exact_equivalent,high,Page,"Not in the original inventory. Live site 301s it to /web-development-toronto/, which maps to /web-development/. Semrush: 67 backlinks from 6 domains.",Added Oct 9 2026 (QA backlink check)
 /website-design-toronto/,/web-development/,301,redirect_exact_equivalent,high,Page,"Not in the original inventory. Live site 301s it to /web-design-toronto/, which maps to /web-development/. Semrush: 22 backlinks from 6 domains.",Added Oct 9 2026 (QA backlink check)

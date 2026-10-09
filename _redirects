@@ -116,4 +116,4 @@
 /links/                                           -  410
 /site-map/                                        -  410
 
-# --- Blog consolidations (30): 301 each merged post to its survivor, set in content review (06-blog-inventory.csv) ---
+# --- Blog consolidations (30): the merged posts are drafts in WordPress and cb_blog_redirects() in wp-theme/consultus-blog/functions.php 301s them (targets: seo-migration/blog-consolidation-proposal.csv, approved Oct 9 2026). Nothing to list here: /blog/ is handled by WordPress ---
