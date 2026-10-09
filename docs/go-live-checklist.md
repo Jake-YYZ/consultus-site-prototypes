@@ -48,7 +48,7 @@ on a core update; delete it again) and the blog no longer prints its version.
   only after the visitor presses Accept. Visitors who decline or ignore the banner are not tracked and get no chat.
   Expect fewer measured visits than on the old site.
 - To ask only some visitors (for example the UK, the EU and Quebec) and load the tags at once for everyone else, change
-  `needsChoice()` in `assets/consent.js` and the "load at once" branch of `init()`. Ask your lawyer who must be asked.
+  `needsChoice()` in `assets/consent.js` (visitors it answers false for get the tags at once, without a banner). Ask your lawyer who must be asked.
 - After launch run GTM Preview. The container needs a trigger on the `zoho_form_submit` event or ad conversions for the
   contact form will not fire.
 - Decide whether the privacy policy sentence "where we provide one, through the consent choice presented on this site"
@@ -56,7 +56,7 @@ on a core update; delete it again) and the blog no longer prints its version.
 
 ## 5. Contact form
 
-- A test lead labelled TEST was sent to Zoho CRM on Oct 9 2026 (last name "TEST website QA (ignore)"). Delete it in Zoho.
+- A test lead labelled TEST is in Zoho CRM (Leads, id 4629781000074923001, name and company "TEST website QA (ignore)", sent Oct 9 2026). Delete it in Zoho. Note for later tests: Zoho silently drops a submission whose email it rejects (`example.com` never arrived), and a lead shows up about a minute after the post.
 - Spam: the form has only a hidden trap and a 2 second delay. Add Cloudflare Turnstile (needs keys from Cloudflare and a
   small server relay) before launch if the junk-lead rate of the old form (11 of the last 12) matters.
 

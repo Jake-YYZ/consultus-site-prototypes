@@ -23,7 +23,8 @@
   }
   function write(v) { try { localStorage.setItem(KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {} }
 
-  // Everyone is asked today. A region test could go here (for example only the UK, the EU and Quebec).
+  // Everyone is asked today. To ask only some visitors (for example the UK, the EU and Quebec), return false here for the
+  // others: they get the tags at once, without a banner (and without a "Cookie settings" choice being needed).
   function needsChoice() { return true; }
 
   function loadTags() {
@@ -112,7 +113,7 @@
   function init() {
     var state = read();
     if (state === 'granted') loadTags();
-    else if (state === null && needsChoice()) show(false);
+    else if (state === null) { if (needsChoice()) show(false); else loadTags(); }
     document.addEventListener('click', function (e) {
       var t = e.target.closest ? e.target.closest('[data-cookie-settings]') : null;
       if (!t) return;
