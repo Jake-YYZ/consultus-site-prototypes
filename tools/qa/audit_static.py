@@ -2,7 +2,7 @@
 """Static audit of the 18 service pages + /services/ hub (copy rules, SEO tags, JSON-LD, links, images, shared blocks).
 Read-only. Usage: python3 tools/qa/audit_static.py [page-folder ...]   (default: the 19 service pages)
 Known false positives: links to /blog/ (WordPress, not in this repo), the Services trigger without href, the hidden
-mega menu text, FAQ questions split by inline spans, <h3> that holds only an image. Needs: pip install beautifulsoup4 lxml"""
+mega menu text, <h3> that holds only an image. Needs: pip install beautifulsoup4 lxml"""
 import json, os, re, sys, tempfile
 from collections import Counter, defaultdict
 from urllib.parse import urlparse, unquote
@@ -40,6 +40,9 @@ def visible_text(soup):
         t.decompose()
     for c in s.find_all(string=lambda x: isinstance(x, Comment)):
         c.extract()
+    for t in s.find_all(['span', 'em', 'strong', 'b', 'i', 'mark', 'small', 'sup', 'sub', 'abbr', 'code']):
+        t.unwrap()   # inline markup (the accent <span class="sem">) must not split a sentence into separate words
+    s.smooth()
     return s.get_text(' ', strip=True)
 
 

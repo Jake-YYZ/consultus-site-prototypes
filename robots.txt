@@ -1,5 +1,7 @@
 # robots.txt for consultusdigital.com
 User-agent: *
 Allow: /
+Disallow: /blog/wp-admin/
+Allow: /blog/wp-admin/admin-ajax.php
 
 Sitemap: https://consultusdigital.com/sitemap.xml

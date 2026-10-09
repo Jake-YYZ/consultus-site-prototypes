@@ -1,3 +1,4 @@
+</main>
 <footer>
     <div class="footer-inner">
       <div class="footer-logo-row"><img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital"/></div>

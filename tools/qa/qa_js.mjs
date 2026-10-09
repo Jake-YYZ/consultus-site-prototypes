@@ -13,6 +13,7 @@ const pages = args.all ? allPages() : (args.pages ?? '').split(',');
 const PORT = 9333 + Math.floor(Math.random() * 500);
 const userDir = fs.mkdtempSync('/tmp/qa-chrome-');
 const chrome = spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', ['--headless=new', `--remote-debugging-port=${PORT}`, `--user-data-dir=${userDir}`, '--no-first-run', '--disable-gpu', '--hide-scrollbars', '--mute-audio', '--remote-allow-origins=*', 'about:blank'], { stdio: 'ignore' });
+for (const sig of ['SIGTERM', 'SIGINT']) process.on(sig, () => { try { chrome.kill(); } catch {} process.exit(1); });   // killing a run must not leave its Chrome behind
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 for (let i = 0; i < 150; i++) { try { if ((await fetch(`http://127.0.0.1:${PORT}/json/version`)).ok) break; } catch {} await sleep(200); }
 let bad = 0, n = 0;

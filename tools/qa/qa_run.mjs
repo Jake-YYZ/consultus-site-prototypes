@@ -18,6 +18,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const userDir = fs.mkdtempSync('/tmp/qa-chrome-');
 const chrome = spawn(CHROME, ['--headless=new', `--remote-debugging-port=${PORT}`, `--user-data-dir=${userDir}`, '--no-first-run', '--disable-gpu',
   '--hide-scrollbars', '--mute-audio', '--autoplay-policy=no-user-gesture-required', '--remote-allow-origins=*', 'about:blank'], { stdio: 'ignore' });
+for (const sig of ['SIGTERM', 'SIGINT']) process.on(sig, () => { try { chrome.kill(); } catch {} process.exit(1); });   // killing a run must not leave its Chrome behind
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function waitReady() {

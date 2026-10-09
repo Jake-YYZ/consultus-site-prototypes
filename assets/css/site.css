@@ -795,6 +795,7 @@ nav.main {
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 100px;
   margin-bottom: 28px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 .division-badge-icon {
@@ -1129,6 +1130,7 @@ nav.main {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,236,0,0.3);
   border-radius: 100px;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   margin-bottom: 28px;
 }
@@ -3372,6 +3374,7 @@ footer {
   max-width: 62%;
   z-index: 3;
   background: rgba(13,13,13,0.88);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   color: var(--paper);
   border-radius: 14px;
@@ -3482,6 +3485,7 @@ footer {
 }
 .ov-chip {
   background: rgba(250,248,243,0.14);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   padding: 6px 10px;
   border-radius: 999px;
@@ -6040,6 +6044,7 @@ footer {
   text-transform: uppercase;
   z-index: 5;
   pointer-events: none;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 /* When media has been dropped in, hide any sibling SVG/placeholder-mockup */
@@ -6075,6 +6080,7 @@ footer {
   text-transform: uppercase;
   z-index: 3;
   pointer-events: none;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 .hero-bg[data-media-slug] svg,
