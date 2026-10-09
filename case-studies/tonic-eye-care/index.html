@@ -689,8 +689,8 @@ section.hero-cover .hero-bg {
       </div>
       <div class="tab-collage" aria-hidden="true">
         <div class="tab-cc tab-c-static img"><img src="/assets/work/tonic/static-vision-therapy.png" alt="" loading="lazy"></div>
-        <div class="tab-cc tab-c-hook"><video src="/assets/work/tonic/hook-1.mp4" muted loop playsinline autoplay preload="metadata"></video></div>
-        <div class="tab-cc tab-c-ugc"><video src="/assets/work/tonic/ugc.mp4" muted loop playsinline autoplay preload="metadata"></video></div>
+        <div class="tab-cc tab-c-hook"><video src="/assets/work/tonic/hook-1.mp4" muted loop playsinline preload="none" aria-hidden="true"></video></div>
+        <div class="tab-cc tab-c-ugc"><video src="/assets/work/tonic/ugc.mp4" muted loop playsinline preload="none" aria-hidden="true"></video></div>
         <div class="tab-lap"><div class="tab-screen"><img src="/assets/work/tonic/site.jpg" alt="Tonic Eye Care website" loading="lazy"></div></div>
       </div>
       <div class="cover-meta">
@@ -745,8 +745,8 @@ section.hero-cover .hero-bg {
     <div class="tab-tests">
       <div class="tab-test">
         <div class="tab-creatives">
-          <figure class="tab-cr win"><div class="tab-media"><video src="/assets/work/tonic/hook-1.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="tab-badge">Winner</span></div><figcaption>Hook 1</figcaption></figure>
-          <figure class="tab-cr"><div class="tab-media"><video src="/assets/work/tonic/hook-2.mp4" muted loop playsinline autoplay preload="metadata"></video></div><figcaption>Hook 2</figcaption></figure>
+          <figure class="tab-cr win"><div class="tab-media"><video src="/assets/work/tonic/hook-1.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="tab-badge">Winner</span></div><figcaption>Hook 1</figcaption></figure>
+          <figure class="tab-cr"><div class="tab-media"><video src="/assets/work/tonic/hook-2.mp4" muted loop playsinline preload="none" aria-hidden="true"></video></div><figcaption>Hook 2</figcaption></figure>
         </div>
         <div class="tab-verdict">
           <div class="t">Test 1 &middot; Ad Hooks</div>
@@ -758,7 +758,7 @@ section.hero-cover .hero-bg {
       <div class="tab-test">
         <div class="tab-creatives">
           <figure class="tab-cr"><div class="tab-media"><img src="/assets/work/tonic/static-vision-therapy.png" alt="Static vision therapy ad" loading="lazy"></div><figcaption>Static Ad</figcaption></figure>
-          <figure class="tab-cr win"><div class="tab-media"><video src="/assets/work/tonic/ugc.mp4" muted loop playsinline autoplay preload="metadata"></video><span class="tab-badge">Winner</span></div><figcaption>UGC Video</figcaption></figure>
+          <figure class="tab-cr win"><div class="tab-media"><video src="/assets/work/tonic/ugc.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="tab-badge">Winner</span></div><figcaption>UGC Video</figcaption></figure>
         </div>
         <div class="tab-verdict">
           <div class="t">Test 2 &middot; Ad Creative Types</div>
@@ -1349,5 +1349,6 @@ if (typeof setMegaTab !== 'function') {
 }
 </script>
 <script src="/assets/mobile-nav.js" defer></script>
+<script src="/assets/lazy-video.js" defer></script>
 </body>
 </html>
