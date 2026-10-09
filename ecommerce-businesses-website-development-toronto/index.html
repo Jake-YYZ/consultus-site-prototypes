@@ -22,6 +22,7 @@
   <meta property="og:title" content="Ecommerce Website Development Toronto | Consultus Digital">
   <meta property="og:description" content="Website development for ecommerce brands in Toronto. A dedicated ecommerce practice building fast, high-converting online stores.">
   <meta property="og:url" content="https://consultusdigital.com/ecommerce-businesses-website-development-toronto/">
+  <meta property="og:site_name" content="Consultus Digital">
   <meta property="og:image" content="https://consultusdigital.com/assets/brand/og-share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -456,10 +457,10 @@ section.hero-cover .hero-bg {
       <div class="section-lbl">Key Benefits</div>
       <h2 class="sec-title">What ecommerce brands can expect from our <span class="sem">Web Development</span> work.</h2>
     </div>
-    <div class="principle-row" style="border-top:none"><div class="principle-num">/01</div><div class="principle-head">Memorable First Impression.</div><p class="principle-body">Your website often serves as the initial point of contact between your potential clients and your business. A polished <a href="https://consultusdigital.com/web-design-toronto/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">web design</a> is testament to your credibility and professionalism.</p></div>
+    <div class="principle-row" style="border-top:none"><div class="principle-num">/01</div><div class="principle-head">Memorable First Impression.</div><p class="principle-body">Your website often serves as the initial point of contact between your potential clients and your business. A polished <a href="/web-development/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">web design</a> is testament to your credibility and professionalism.</p></div>
     <div class="principle-row"><div class="principle-num">/02</div><div class="principle-head">Streamlined Client Engagement.</div><p class="principle-body">An intuitive, user-friendly website simplifies the client journey, removing friction at every step from research to conversion.</p></div>
     <div class="principle-row"><div class="principle-num">/03</div><div class="principle-head">Fostering Trust and Reliability.</div><p class="principle-body">A meticulously crafted website showcases your expertise, reassuring clients that your business can fulfill their needs competently.</p></div>
-    <div class="principle-row"><div class="principle-num">/04</div><div class="principle-head">Built for Search Performance.</div><p class="principle-body">We build sites with technical <a href="https://consultusdigital.com/seo-toronto/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">SEO</a> baked in: schema, fast load times, semantic HTML, and clean information architecture that search engines reward.</p></div>
+    <div class="principle-row"><div class="principle-num">/04</div><div class="principle-head">Built for Search Performance.</div><p class="principle-body">We build sites with technical <a href="/seo-toronto/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">SEO</a> baked in: schema, fast load times, semantic HTML, and clean information architecture that search engines reward.</p></div>
   </section>
 
   <section class="sec bone-full">
@@ -655,98 +656,12 @@ section.hero-cover .hero-bg {
 
 
 <script>
-  function goPage(which) {
-    var base = '../Consultus - Website Inspo - Final.html';
-    if (!which || which === 'home') { window.location.href = base; }
-    else { window.location.href = base + '#' + which; }
-  }
   function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }
 </script>
 
 
-<script>
-/* file:// LINK REWRITER v3 (2026-04-27) */
-(function(){
-  if (window.location.protocol !== 'file:') return;
-  var path = decodeURIComponent(window.location.pathname);
-  var marker = '/Consultus Website Recamp/';
-  var idx = path.indexOf(marker);
-  if (idx < 0) return;
-  var rootPath = path.substring(0, idx + marker.length).replace(/ /g, '%20');
-  var rootURL = 'file://' + rootPath;
-  var prodURL = 'https://consultusdigital.com/';
-
-  function ensureIndex(p) {
-    // Append index.html if path ends with / and has no query/hash
-    var qHash = p.search(/[?#]/);
-    var pathPart = qHash >= 0 ? p.substring(0, qHash) : p;
-    var rest = qHash >= 0 ? p.substring(qHash) : '';
-    if (pathPart.endsWith('/')) return pathPart + 'index.html' + rest;
-    return p;
-  }
-
-  function toLocal(href) {
-    if (!href) return href;
-    if (href.indexOf(prodURL) === 0) {
-      // https://consultusdigital.com/X/ -> file://rootURL/X/index.html
-      return ensureIndex(rootURL + href.substring(prodURL.length));
-    }
-    if (href.indexOf('https://www.consultusdigital.com/') === 0) {
-      return ensureIndex(rootURL + href.substring('https://www.consultusdigital.com/'.length));
-    }
-    if (href.charAt(0) === '/' && href.indexOf('//') !== 0 && href.indexOf('/#') !== 0) {
-      return ensureIndex(rootURL + href.substring(1));
-    }
-    if (href.indexOf('file://') === 0) {
-      return ensureIndex(href);
-    }
-    return href;
-  }
-
-  function rewrite(){
-    document.querySelectorAll('a[href]').forEach(function(a){
-      var h = a.getAttribute('href');
-      if (!h || h.indexOf('//') === 0 || h.indexOf('/#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('javascript:') === 0) return;
-      var newH = toLocal(h);
-      if (newH !== h) a.setAttribute('href', newH);
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', rewrite);
-  } else {
-    rewrite();
-  }
-  window.addEventListener('hashchange', rewrite);
-
-  // Intercept clicks. If the click target has an onclick that navigates via
-  // window.location.href='/X/', rewrite the destination before the JS runs.
-  document.addEventListener('click', function(e){
-    var t = e.target;
-    while (t && t !== document) {
-      var oc = t.getAttribute && t.getAttribute('onclick');
-      if (oc && oc.indexOf("window.location.href") !== -1) {
-        // Extract the URL from window.location.href='X' or window.location.href="X"
-        var m = oc.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
-        if (m) {
-          var newDest = toLocal(m[1]);
-          if (newDest !== m[1]) {
-            e.preventDefault();
-            e.stopPropagation();
-            window.location.href = newDest;
-            return false;
-          }
-        }
-      }
-      t = t.parentNode;
-    }
-  }, true);
-
-  // Also re-run rewrite on click in case dynamic links were added
-  document.addEventListener('click', function(){ setTimeout(rewrite, 0); }, true);
-})();
-</script>
 
 <!-- ===== Services mega-menu DOM (ported from SPA) ===== -->
 <div class="mega-overlay-bg" id="megaOverlay" onclick="closeMega()"></div>

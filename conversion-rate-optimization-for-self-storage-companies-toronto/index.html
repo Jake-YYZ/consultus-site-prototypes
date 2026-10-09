@@ -22,6 +22,7 @@
   <meta property="og:title" content="Self-Storage CRO Services Toronto | Consultus Digital">
   <meta property="og:description" content="Conversion rate optimization (CRO) for self-storage operators in Toronto. A dedicated self-storage practice that lifts move-in conversions.">
   <meta property="og:url" content="https://consultusdigital.com/conversion-rate-optimization-for-self-storage-companies-toronto/">
+  <meta property="og:site_name" content="Consultus Digital">
   <meta property="og:image" content="https://consultusdigital.com/assets/brand/og-share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -374,7 +375,7 @@ section.hero-cover .hero-bg {
       <div class="cover-main" style="text-align:center">
         <div class="eyebrow yellow-dot fade-in delay-1" style="justify-content:center"><span>Self-Storage &middot; Conversion Rate Optimization (CRO)</span></div>
         <h1 class="display fade-in delay-2" style="margin-left:auto;margin-right:auto">Conversion Rate Optimization for <span class="sem">Self-Storage</span> Operators.</h1>
-        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">Conversion rate optimization built on disciplined experimentation. Audit, hypothesize, <a href="https://consultusdigital.com/blog/5-a-b-testing-techniques-for-boosting-your-websites-conversion-rate/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">A/B test</a>, compound. Every test ties back to revenue.</p>
+        <p class="lede fade-in delay-3" style="margin-left:auto;margin-right:auto">Conversion rate optimization built on disciplined experimentation. Audit, hypothesize, <a href="/blog/5-a-b-testing-techniques-for-boosting-your-websites-conversion-rate/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">A/B test</a>, compound. Every test ties back to revenue.</p>
         <div class="hero-ctas fade-in delay-3" style="margin-top:40px;justify-content:center">
           <a class="btn primary cta-yellow-hover" href="/contact/">Book Your Free Strategy Session &rarr;</a>
           <a class="btn secondary" style="background:transparent;color:#141414;border:1px solid rgba(20,20,20,0.2)" href="/results/">See Results</a>
@@ -445,7 +446,7 @@ section.hero-cover .hero-bg {
       <div class="method-grid cols-4">
         <div class="accent-card"><div class="ac-eyebrow">/01 Comprehensive Analysis</div><div class="ac-value">Heatmaps, behaviour, KPIs.</div><p class="ac-body">We initiate the process by conducting a thorough analysis of your website, user behaviour, conversion funnels, and key performance indicators. The objective is to find the load-bearing leaks before we touch design.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/02 A/B Testing</div><div class="ac-value">Statistical discipline.</div><p class="ac-body">Controlled experiments compare different versions of pages and elements to determine which variants drive higher conversions. Tests run to significance, not to gut feel.</p></div>
-        <div class="accent-card"><div class="ac-eyebrow">/03 Landing Page Optimization</div><div class="ac-value">Aligned to the campaign.</div><p class="ac-body">For specific campaigns, we go the extra mile by optimizing <a href="https://consultusdigital.com/landing-page-design-toronto/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">landing pages</a> to align perfectly with the campaign message, resulting in dramatic improvement in conversion rates.</p></div>
+        <div class="accent-card"><div class="ac-eyebrow">/03 Landing Page Optimization</div><div class="ac-value">Aligned to the campaign.</div><p class="ac-body">For specific campaigns, we go the extra mile by optimizing <a href="/landing-pages/" style="color:#1A40C7;text-decoration:underline;text-underline-offset:3px">landing pages</a> to align perfectly with the campaign message, resulting in dramatic improvement in conversion rates.</p></div>
         <div class="accent-card"><div class="ac-eyebrow">/04 Conversion Tracking</div><div class="ac-value">Every action measured.</div><p class="ac-body">We deploy precise conversion tracking so every meaningful action on your site is captured and attributed correctly. Better data feeds better decisions.</p></div>
       </div>
     </div>
@@ -655,98 +656,12 @@ section.hero-cover .hero-bg {
 
 
 <script>
-  function goPage(which) {
-    var base = '../Consultus - Website Inspo - Final.html';
-    if (!which || which === 'home') { window.location.href = base; }
-    else { window.location.href = base + '#' + which; }
-  }
   function toggleMega(id, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById(id); var overlay = document.getElementById('megaOverlay'); if (!menu) return; var isOpen = menu.classList.contains('open'); document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); if (!isOpen) { menu.classList.add('open'); if (overlay) overlay.classList.add('open'); } else { if (overlay) overlay.classList.remove('open'); } }
 function closeMega(){ document.querySelectorAll('.mega').forEach(function(m){ m.classList.remove('open'); }); var overlay = document.getElementById('megaOverlay'); if (overlay) overlay.classList.remove('open'); }
 function setMegaTab(tab, evt){ if(evt) evt.stopPropagation(); var menu = document.getElementById('services-mega-menu'); if (!menu) return; menu.querySelectorAll('.mega-div').forEach(function(d){ d.classList.toggle('active', d.dataset.tab === tab); }); menu.querySelectorAll('.mega-grid').forEach(function(g){ g.style.display = (g.dataset.panel === tab) ? '' : 'none'; }); }
 </script>
 
 
-<script>
-/* file:// LINK REWRITER v3 (2026-04-27) */
-(function(){
-  if (window.location.protocol !== 'file:') return;
-  var path = decodeURIComponent(window.location.pathname);
-  var marker = '/Consultus Website Recamp/';
-  var idx = path.indexOf(marker);
-  if (idx < 0) return;
-  var rootPath = path.substring(0, idx + marker.length).replace(/ /g, '%20');
-  var rootURL = 'file://' + rootPath;
-  var prodURL = 'https://consultusdigital.com/';
-
-  function ensureIndex(p) {
-    // Append index.html if path ends with / and has no query/hash
-    var qHash = p.search(/[?#]/);
-    var pathPart = qHash >= 0 ? p.substring(0, qHash) : p;
-    var rest = qHash >= 0 ? p.substring(qHash) : '';
-    if (pathPart.endsWith('/')) return pathPart + 'index.html' + rest;
-    return p;
-  }
-
-  function toLocal(href) {
-    if (!href) return href;
-    if (href.indexOf(prodURL) === 0) {
-      // https://consultusdigital.com/X/ -> file://rootURL/X/index.html
-      return ensureIndex(rootURL + href.substring(prodURL.length));
-    }
-    if (href.indexOf('https://www.consultusdigital.com/') === 0) {
-      return ensureIndex(rootURL + href.substring('https://www.consultusdigital.com/'.length));
-    }
-    if (href.charAt(0) === '/' && href.indexOf('//') !== 0 && href.indexOf('/#') !== 0) {
-      return ensureIndex(rootURL + href.substring(1));
-    }
-    if (href.indexOf('file://') === 0) {
-      return ensureIndex(href);
-    }
-    return href;
-  }
-
-  function rewrite(){
-    document.querySelectorAll('a[href]').forEach(function(a){
-      var h = a.getAttribute('href');
-      if (!h || h.indexOf('//') === 0 || h.indexOf('/#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('javascript:') === 0) return;
-      var newH = toLocal(h);
-      if (newH !== h) a.setAttribute('href', newH);
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', rewrite);
-  } else {
-    rewrite();
-  }
-  window.addEventListener('hashchange', rewrite);
-
-  // Intercept clicks. If the click target has an onclick that navigates via
-  // window.location.href='/X/', rewrite the destination before the JS runs.
-  document.addEventListener('click', function(e){
-    var t = e.target;
-    while (t && t !== document) {
-      var oc = t.getAttribute && t.getAttribute('onclick');
-      if (oc && oc.indexOf("window.location.href") !== -1) {
-        // Extract the URL from window.location.href='X' or window.location.href="X"
-        var m = oc.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
-        if (m) {
-          var newDest = toLocal(m[1]);
-          if (newDest !== m[1]) {
-            e.preventDefault();
-            e.stopPropagation();
-            window.location.href = newDest;
-            return false;
-          }
-        }
-      }
-      t = t.parentNode;
-    }
-  }, true);
-
-  // Also re-run rewrite on click in case dynamic links were added
-  document.addEventListener('click', function(){ setTimeout(rewrite, 0); }, true);
-})();
-</script>
 
 <!-- ===== Services mega-menu DOM (ported from SPA) ===== -->
 <div class="mega-overlay-bg" id="megaOverlay" onclick="closeMega()"></div>
