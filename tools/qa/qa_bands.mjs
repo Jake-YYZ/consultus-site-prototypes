@@ -98,7 +98,7 @@ try {
     await s.send('Emulation.setDeviceMetricsOverride', { width: WIDTH, height: 900, deviceScaleFactor: 1, mobile: false });
     let loaded; const lp = new Promise(r => { loaded = r; }); s.on(m => { if (m.method === 'Page.loadEventFired') loaded(); });
     try {
-      await s.send('Page.navigate', { url: `${BASE}/${slug}/` }); await Promise.race([lp, sleep(30000)]); await sleep(1100);
+      await s.send('Page.navigate', { url: `${BASE}/${slug}${slug ? '/' : ''}` }); await Promise.race([lp, sleep(30000)]); await sleep(1100);
       if (args.scroll) await s.ev(`(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 70)); } window.scrollTo(0, 0); await new Promise(r => setTimeout(r, 500)); })()`);
       const res = await s.ev(MEASURE);
       results.push({ slug, ...res });
