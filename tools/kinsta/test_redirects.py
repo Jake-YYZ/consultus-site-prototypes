@@ -47,6 +47,9 @@ for label, path, want in (
         ('blog 404', '/blog/no-such-post-xyz/', 404), ('unknown old url', '/no-such-page-xyz/', 404),
         ('insights was never live', '/insights/', 404), ('wp login', '/blog/wp-login.php', 200)):
     jobs.append(('keeps working: ' + label, BASE + path, want, None))
+# Old blog URLs that WordPress redirects (cb_blog_redirects() in wp-theme/consultus-blog/functions.php)
+jobs.append(('blog redirect  2023 AI post', BASE + '/blog/my-take-on-how-ai-will-transform-digital-marketing-in-2023/', 301, '/blog/how-ai-will-transform-digital-marketing-in-2025/'))
+jobs.append(('blog redirect target', BASE + '/blog/how-ai-will-transform-digital-marketing-in-2025/', 200, None))
 
 
 def run(job):

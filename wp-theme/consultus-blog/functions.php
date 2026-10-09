@@ -130,3 +130,31 @@ function cb_card_image( $post_id = null, $size = 'cb-card' ) {
 	}
 	return '';
 }
+
+/**
+ * Old blog URLs that the current live site answers with a 301. WordPress only knows the posts that exist, so
+ * without this an old link gets a 404 instead of the post it was moved to. Keys and values are full paths with the
+ * /blog prefix and a trailing slash. Add the 30 merged posts here once their targets are decided
+ * (seo-migration/06-blog-inventory.csv, "consolidate").
+ */
+function cb_blog_redirects() {
+	return array(
+		'/blog/my-take-on-how-ai-will-transform-digital-marketing-in-2023/' => '/blog/how-ai-will-transform-digital-marketing-in-2025/',
+	);
+}
+
+add_action(
+	'template_redirect',
+	function () {
+		if ( ! is_404() ) {
+			return;
+		}
+		$path = trailingslashit( strtolower( (string) strtok( isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '', '?' ) ) );
+		$map  = cb_blog_redirects();
+		if ( isset( $map[ $path ] ) ) {
+			wp_redirect( home_url( preg_replace( '#^/blog#', '', $map[ $path ] ) ), 301 );
+			exit;
+		}
+	},
+	1
+);
