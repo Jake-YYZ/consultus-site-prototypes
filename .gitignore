@@ -11,3 +11,6 @@ zivb9k9s
 *.log
 .claude/settings.local.json
 HANDOFF.md
+
+# Playwright (WebKit QA): the packages are downloaded, not committed
+tools/qa/webkit/node_modules/

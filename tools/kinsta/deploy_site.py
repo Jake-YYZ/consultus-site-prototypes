@@ -249,9 +249,8 @@ def main():
     args = ap.parse_args()
     dry = not args.apply
     if args.verify_only:
-        for path in ('/assets/css/site.css', '/assets/css/service.css', '/assets/css/case-study-shell.css', '/assets/css/city-page.css', '/assets/css/division.css',
-                     '/assets/css/industry-template.css', '/assets/fonts.css', '/assets/division.js', '/assets/mobile-nav.js', '/assets/zoho-form.js'):
-            stamp_for(path)
+        for f in sorted([*(ROOT / 'assets').glob('*.css'), *(ROOT / 'assets').glob('*.js'), *(ROOT / 'assets' / 'css').glob('*.css')]):   # every shipped stylesheet and script
+            stamp_for('/' + f.relative_to(ROOT).as_posix())
         sys.exit(1 if verify() else 0)
 
     tmp = Path(tempfile.mkdtemp(prefix='consultus-deploy-'))

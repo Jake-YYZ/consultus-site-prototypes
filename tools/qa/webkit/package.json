@@ -1,0 +1,9 @@
+{
+  "name": "consultus-qa-webkit",
+  "private": true,
+  "description": "Playwright's WebKit build (the Safari engine) for the site QA scripts in tools/qa. Install with: npm install && npx playwright install webkit",
+  "type": "module",
+  "dependencies": {
+    "playwright": "1.64.0"
+  }
+}

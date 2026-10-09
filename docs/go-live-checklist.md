@@ -15,6 +15,10 @@ Everything under "Already done on staging" is finished and only needs repeating 
 - **Sitemap dates.** 130 of the 145 `<lastmod>` dates in `sitemap-pages.xml` say June 2026. Set them to the launch date.
 - **Front controller.** Upload `tools/kinsta/index.php` to the production `public/index.php` (92 rules: 89 redirects,
   3 `410 Gone`). Then run `python3 tools/kinsta/test_redirects.py https://consultusdigital.com`.
+- **Look at the site on a real iPhone once.** Safari's engine was tested with Playwright's WebKit (Oct 9 2026: four bugs
+  found and fixed), but that has no Safari toolbar and none of iOS's media rules (Low Power Mode stops autoplay). On an
+  iPhone open the homepage, a city page (the hero photo), a service page (the hero animation, scroll away and back), About
+  (open a team bio) and Contact (the form).
 
 ## 2. Redirects the host has to do (they are not in the repo)
 
