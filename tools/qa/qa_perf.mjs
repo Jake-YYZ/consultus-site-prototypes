@@ -1,8 +1,9 @@
 // First-load weight and layout stability of pages: bytes transferred by type, number of requests (and video requests), the largest
 // contentful paint and the cumulative layout shift, in a phone-sized window (default) with the cache off and no scrolling.
 // Headless Chrome via the DevTools protocol, no npm packages (macOS path).
-// usage: node tools/qa/qa_perf.mjs --base=https://stg-consultusdigital-staging.kinsta.cloud --pages=,cro,case-studies/bookseats --width=390 [--wait=4000] [--scroll]
+// usage: node tools/qa/qa_perf.mjs --base=https://stg-consultusdigital-staging.kinsta.cloud --pages=,cro,case-studies/bookseats --width=390 [--wait=4000] [--scroll] [--list]
 // An empty page name is the homepage. --scroll scrolls to the bottom first (what a reader who goes through the whole page downloads).
+// --list also prints the heaviest requests of each page.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 const args = Object.fromEntries(process.argv.slice(2).map(a => { const [k, ...v] = a.replace(/^--/, '').split('='); return [k, v.length ? v.join('=') : true]; }));
@@ -57,6 +58,7 @@ try {
       const kb = n => Math.round(n / 1024);
       const row = { page: slug || 'home', width: WIDTH, totalKB: kb(total), mediaKB: kb(mediaBytes), mediaReqs: media, imgKB: kb(by.Image || 0), scriptKB: kb(by.Script || 0), cssKB: kb(by.Stylesheet || 0), fontKB: kb(by.Font || 0), requests: reqs.size, lcp: m.lcp, cls: m.cls };
       rows.push(row);
+      if (args.list) { const top = [...reqs.values()].filter(r => r.bytes).sort((a, b) => b.bytes - a.bytes).slice(0, 8); for (const r of top) console.log(`      ${String(kb(r.bytes)).padStart(6)} KB  ${(r.type || '').padEnd(10)} ${r.url.replace(/^https?:\/\/[^/]+/, '').slice(0, 110)}`); }
       console.log(`${row.page.padEnd(40)} ${String(row.width).padStart(4)}px  total ${String(row.totalKB).padStart(6)} KB  video ${String(row.mediaKB).padStart(6)} KB (${row.mediaReqs} req)  img ${String(row.imgKB).padStart(5)}  js ${String(row.scriptKB).padStart(4)}  css ${String(row.cssKB).padStart(4)}  font ${String(row.fontKB).padStart(4)}  reqs ${String(row.requests).padStart(3)}  LCP ${String(row.lcp).padStart(5)} ms  CLS ${row.cls}`);
     } catch (e) { console.log(`ERR ${slug}: ${e.message}`); }
     ws.close(); await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`).catch(() => {});
