@@ -69,6 +69,7 @@ add_filter( 'rest_endpoints', function ( $endpoints ) {
 // Cleaner head.
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'wp_head', 'wp_generator' );   // do not print the WordPress version in every page
 
 // Listing pages: 9 cards per page (3 x 3 grid). The hub also pins the latest post as a feature, which is excluded from the grid.
 function cb_featured_post_id() {
