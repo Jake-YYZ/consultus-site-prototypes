@@ -120,7 +120,7 @@
 
       <div class="footer-bottom">
         <div>© 2026 Consultus Digital Inc.</div>
-        <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a><a href="#cookie-settings" data-cookie-settings style="margin-left:16px;cursor:pointer">Cookie settings</a></div>
+        <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a></div>
       </div>
     
   </footer>

@@ -42,17 +42,14 @@ Already fine on staging: `/blog/xmlrpc.php` answers 403, the user list and autho
 (CLAUDE.md, tools, seo-migration, `_redirects`) is served, WordPress's `readme.html` is deleted (WordPress puts it back
 on a core update; delete it again) and the blog no longer prints its version.
 
-## 4. Tracking and the cookie banner
+## 4. Tracking
 
-- Google Tag Manager (`GTM-MGSZK8WC`) and the Zoho chat now load from `assets/consent.js`, only on consultusdigital.com and
-  only after the visitor presses Accept. Visitors who decline or ignore the banner are not tracked and get no chat.
-  Expect fewer measured visits than on the old site.
-- To ask only some visitors (for example the UK, the EU and Quebec) and load the tags at once for everyone else, change
-  `needsChoice()` in `assets/consent.js` (visitors it answers false for get the tags at once, without a banner). Ask your lawyer who must be asked.
+- Google Tag Manager (`GTM-MGSZK8WC`) and the Zoho chat load for every visitor on consultusdigital.com and `www.`, as on the
+  old site, from the head of every page (they never load on staging, GitHub Pages or localhost).
+- There is no cookie banner. One was built on Oct 9 2026 and removed the same day because it was not wanted. If a lawyer
+  later says one is needed for UK, EU or Quebec visitors, it is a separate piece of work.
 - After launch run GTM Preview. The container needs a trigger on the `zoho_form_submit` event or ad conversions for the
   contact form will not fire.
-- Decide whether the privacy policy sentence "where we provide one, through the consent choice presented on this site"
-  should now mention the "Cookie settings" link in the footer.
 
 ## 5. Contact form
 
