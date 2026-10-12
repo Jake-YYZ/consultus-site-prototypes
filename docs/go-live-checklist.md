@@ -33,15 +33,12 @@ Everything under "Already done on staging" is finished and only needs repeating 
   iPhone open the homepage, a city page (the hero photo), a service page (the hero animation, scroll away and back), About
   (open a team bio) and Contact (the form).
 
-- **Client reviews (Jake's testimonials kit).** The new reviews component is built on 35 pages (see CLAUDE.md "Client reviews"). The
-  user decided that quotes Jake sourced are accurate and real, so only the photos hold up go-live: Jake has to say where his photos came
-  from and that each person agreed (his Drive folder "Enhanced sources (Gemini)" holds `-gemini.jpg` source files for 13 of the 23, and
-  Stanislav's and Laura's new photos look different from the portraits that were on the site). Also open with Jake: whether the two
-  Healthcare quotes approved on Oct 5 are approved for every page, whether Tricia Oldfield wrote the Zoho directory review (it is not
-  used yet), photos for Siea Newton (Bow City) and Sara Cumming (Harmony), and the Comwave logo (a Rogers lockup). Justin Stone,
-  Daniel Szypka and Dave Bangar stay out until Jake confirms; they are not in `tools/reviews/reviews.json` (the repository is public).
-  When Jake clears one: add the person to the JSON, run `python3 tools/reviews/make_assets.py` and
-  `python3 tools/build_reviews.py --write`, then `node tools/qa/qa_reviews.mjs`.
+- **Client reviews (Jake's testimonials kit).** Built on 35 pages and on staging (see CLAUDE.md "Client reviews"). Nothing blocks go-live: the
+  user decided to use Jake's photos as they are. Waiting on Jake only for additions: photos for Siea Newton (Bow City, her quote is off
+  until then), Sara Cumming (Harmony), Dave Bangar, Tricia Oldfield, Melissa Graham and Alex Roell; his OK on the quotes he drafted
+  (Justin Stone, Daniel Szypka, Dave Bangar, kept out of `tools/reviews/reviews.json` because the repository is public); and whether Tricia
+  wrote the Zoho directory review. When Jake sends one: add the person to the JSON, run `python3 tools/reviews/make_assets.py` and
+  `python3 tools/build_reviews.py --write`, then `node tools/qa/qa_reviews.mjs` and deploy.
 
 ## 2. Redirects the host has to do (they are not in the repo)
 
