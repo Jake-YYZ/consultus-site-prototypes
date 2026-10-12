@@ -1,0 +1,218 @@
+/*
+ * Consultus Digital, reviews.css
+ * The client reviews component (.crv): a featured-review carousel, a review wall and a single-quote card.
+ * Every rule is scoped to .crv, so it cannot change any other component, and no shared stylesheet is edited for it.
+ * The markup is written by tools/build_reviews.py from tools/reviews/reviews.json (do not edit the blocks between the
+ * "reviews:begin" and "reviews:end" comments by hand). Behaviour: /assets/reviews.js.
+ * Layout rule learned from the agency QA (Oct 2026): a photo never gets a fixed height (width:100%; height:auto only).
+ */
+
+.crv {
+  --crv-gap: clamp(28px, 4vw, 56px);
+  position: relative;
+  color: var(--ink, #141414);
+  font-family: var(--sans, 'NuberNext', 'Helvetica Neue', Arial, sans-serif);
+  text-align: left;
+}
+.crv *, .crv *::before, .crv *::after { box-sizing: border-box; }
+:where(.crv) img { max-width: 100%; }
+
+/* ---------- a review: photo on the left, words on the right ---------- */
+.crv-slide {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.32fr);
+  gap: var(--crv-gap);
+  align-items: center;
+  min-width: 0;
+}
+.crv-photo { margin: 0; justify-self: center; width: 100%; max-width: 340px; }
+.crv-photo img { display: block; width: 100%; height: auto; }
+.crv-body { min-width: 0; }
+.crv-quote { margin: 0; padding: 0; border: 0; quotes: none; }
+.crv-quote::before {
+  content: "\201C";
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 72px;
+  line-height: 0.8;
+  color: var(--deep-blue, #1A40C7);
+  margin-bottom: 14px;
+}
+.crv-quote p {
+  margin: 0;
+  font-size: clamp(19px, 2vw, 26px);
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  color: var(--ink, #141414);
+  font-style: normal;
+}
+.crv-quote p + p { margin-top: 0.7em; }
+.crv-credit { margin-top: 26px; display: grid; gap: 4px; }
+.crv-name { font-size: 20px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; color: var(--ink, #141414); }
+.crv-role { font-size: 15px; line-height: 1.4; color: var(--charcoal, #6A686B); }
+.crv-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 20px; }
+.crv-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono, ui-monospace, 'SF Mono', Menlo, Consolas, monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal, #6A686B);
+}
+.crv-source::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--deep-blue, #1A40C7); }
+.crv-logo { display: block; width: auto; height: auto; max-width: 160px; max-height: 44px; object-fit: contain; object-position: left center; }
+
+/* ---------- carousel ---------- */
+.crv-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.crv-viewport::-webkit-scrollbar { display: none; }
+.crv-viewport:focus-visible { outline: 2px solid var(--deep-blue, #1A40C7); outline-offset: 6px; border-radius: 6px; }
+.crv-track { display: flex; }
+.crv-track > .crv-slide { flex: 0 0 100%; scroll-snap-align: start; }
+.crv-controls { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
+.crv-btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--ink, #141414);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink, #141414);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.crv-btn svg { width: 16px; height: 16px; display: block; }
+.crv-btn:hover:not(:disabled) { background: var(--deep-blue, #1A40C7); border-color: var(--deep-blue, #1A40C7); color: #fff; }
+.crv-btn:focus-visible { outline: 2px solid var(--deep-blue, #1A40C7); outline-offset: 3px; }
+.crv-btn:disabled { opacity: 0.3; cursor: default; }
+.crv-count {
+  min-width: 3.6em;
+  text-align: center;
+  font-family: var(--mono, ui-monospace, 'SF Mono', Menlo, Consolas, monospace);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--charcoal, #6A686B);
+}
+
+/* ---------- the homepage: a featured panel above a wall of reviews ---------- */
+.crv--wall > .crv-featured {
+  padding: clamp(24px, 4vw, 52px);
+  background: var(--bone, #F5F2EC);
+  border: 1px solid var(--bone-border, #E1DCD1);
+  border-radius: 18px;
+}
+.crv-wall { margin-top: clamp(40px, 6vw, 72px); }
+.crv-wall-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.crv-wall-label {
+  font-family: var(--mono, ui-monospace, 'SF Mono', Menlo, Consolas, monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal, #6A686B);
+}
+.crv-wall-list { list-style: none; margin: 0; padding: 0; column-width: 300px; column-count: 3; column-gap: 20px; }
+.crv-card {
+  break-inside: avoid;
+  display: grid;
+  gap: 16px;
+  margin: 0 0 20px;
+  padding: 24px;
+  background: var(--pure, #fff);
+  border: 1px solid var(--bone-border, #E1DCD1);
+  border-radius: 14px;
+}
+.crv-card-head { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.crv-avatar { flex: none; width: 64px; margin: 0; }
+.crv-avatar img { display: block; width: 100%; height: auto; }
+.crv-card .crv-credit { margin: 0; gap: 2px; min-width: 0; }
+.crv-card .crv-name { font-size: 16px; }
+.crv-card .crv-role { font-size: 13px; }
+.crv-card .crv-text { margin: 0; font-size: 15px; line-height: 1.55; color: rgba(20, 20, 20, 0.82); }
+.crv-card .crv-text p { margin: 0; }
+.crv-card .crv-text p + p { margin-top: 0.6em; }
+.crv-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.crv-card .crv-logo { max-width: 110px; max-height: 28px; object-position: right center; }
+.crv-readmore {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--deep-blue, #1A40C7);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.crv-readmore:hover { color: var(--ink, #141414); }
+.crv-readmore:focus-visible { outline: 2px solid var(--deep-blue, #1A40C7); outline-offset: 3px; border-radius: 3px; }
+/* only when the script is running: long reviews are cut to a few lines with a "Read more" button, and the wall shows its first cards */
+.crv-js .crv-card:not(.is-open) .crv-text.is-clamped { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 7; line-clamp: 7; overflow: hidden; }
+.crv-js .crv-card[hidden] { display: none; }
+.crv-more-wrap { display: flex; justify-content: center; margin-top: 12px; }
+.crv-more {
+  padding: 14px 26px;
+  border: 1px solid var(--graphite, #2A2A2A);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--ink, #141414);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.crv-more:hover { background: var(--ink, #141414); color: var(--paper, #FAF8F3); }
+.crv-more:focus-visible { outline: 2px solid var(--deep-blue, #1A40C7); outline-offset: 3px; }
+
+/* ---------- one review on its own (case studies, industry and division pages) ---------- */
+.crv--single .crv-slide { grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr); }
+.crv--single .crv-photo { max-width: 220px; }
+.crv--single .crv-quote p { font-size: clamp(18px, 1.8vw, 23px); }
+.crv--single .crv-quote::before { font-size: 56px; margin-bottom: 10px; }
+.crv--single .crv-credit { margin-top: 20px; }
+.crv--single .crv-name { font-size: 18px; }
+.crv--center .crv-slide { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 28px; }
+.crv--center .crv-photo { max-width: 190px; }
+.crv--center .crv-quote::before { margin-left: auto; margin-right: auto; }
+.crv--center .crv-meta { justify-content: center; }
+.crv--center .crv-logo { object-position: center; }
+.crv--center .crv-quote p { font-size: clamp(20px, 2.2vw, 28px); }
+
+/* ---------- tablets and phones ---------- */
+@media (max-width: 900px) {
+  .crv-slide { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; }
+  .crv-photo { max-width: 260px; }
+  .crv-quote p { font-size: clamp(17px, 2.4vw, 22px); }
+  .crv-wall-list { column-count: 2; }
+}
+@media (max-width: 640px) {
+  .crv-slide, .crv--single .crv-slide { grid-template-columns: minmax(0, 1fr); gap: 24px; align-content: start; }
+  .crv-photo, .crv--single .crv-photo { max-width: 230px; }
+  .crv-quote::before { font-size: 56px; margin-bottom: 10px; }
+  .crv-quote p, .crv--single .crv-quote p, .crv--center .crv-quote p { font-size: 18px; line-height: 1.5; }
+  .crv-credit { margin-top: 18px; }
+  .crv-name { font-size: 18px; }
+  .crv-controls { margin-top: 24px; }
+  .crv-btn { width: 44px; height: 44px; }
+  .crv-wall-list { column-count: 1; column-width: auto; }
+  .crv--wall > .crv-featured { padding: 24px 20px; border-radius: 14px; }
+  .crv-card { padding: 20px; }
+  .crv-logo { max-width: 140px; max-height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crv-viewport { scroll-behavior: auto; }
+  .crv-btn, .crv-more { transition: none; }
+}

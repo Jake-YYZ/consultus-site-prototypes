@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "about": "Source of truth for the client reviews on the site. tools/build_reviews.py reads this file and writes the review blocks into the pages. Quote text is final display text: 'Consultus Digital' in full, no em dashes, apostrophes as the typographic character. People whose quote is not cleared yet are NOT in this file on purpose (the repository is public); add them here only when they are cleared. Source of the quotes: Jake's kit (Drive: Website Testimonials, quotes.csv, Oct 9 2026) and the pages as they were on Oct 12 2026.",
+  "people": [
+    {
+      "id": "nick-chan",
+      "name": "Nick Chan",
+      "title": "Operations & Finance",
+      "company": "Tonic Eye Care",
+      "source": "Google review",
+      "photo": { "stem": "nick-chan-tonic-eye-care-consultus-digital-testimonial" },
+      "alt": "Nick Chan, Tonic Eye Care, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/tonic.webp",
+      "logo_alt": "Tonic Eye Care logo",
+      "quote": "Would highly recommend Consultus Digital - they’ve had great communication and have brought creative ideas to the table. We’ve been using them for SEO and Meta ads management, and have also transferred over Google Ads management as well. We’ve seen some positive results so far and are excited to continue growing with their support!",
+      "edits": ["'Consultus' written as 'Consultus Digital'"],
+      "variants": {
+        "tonic": {
+          "source": "Case study",
+          "quote": "Would highly recommend Consultus Digital. Great communication, and they bring creative ideas to the table. We use them for SEO and Meta ads, and moved our Google Ads management over to them too. Positive results so far, and we’re excited to keep growing with their support."
+        }
+      }
+    },
+    {
+      "id": "andrea-hardy",
+      "name": "Andrea Hardy",
+      "title": "Founder",
+      "company": "Ignite Nutrition",
+      "source": "Client quote",
+      "photo": { "stem": "andrea-hardy-ignite-nutrition-consultus-digital-testimonial" },
+      "alt": "Andrea Hardy, Ignite Nutrition, client of Consultus Digital",
+      "logo": "/assets/work/logos/ignite.png",
+      "logo_alt": "Ignite Nutrition logo",
+      "quote": "They took the time to understand what post-menopausal clients need to hear before they book. The campaign and the page match how we talk to patients, and the inquiries coming in are the right fit for our dietitians."
+    },
+    {
+      "id": "stefanie-antunes",
+      "name": "Stefanie Antunes",
+      "title": "Founder",
+      "company": "Discover Birth",
+      "source": "Client quote",
+      "photo": { "stem": "stefanie-antunes-discover-birth-consultus-digital-testimonial" },
+      "alt": "Stefanie Antunes, Discover Birth, client of Consultus Digital",
+      "logo": "/assets/work/logos/discover.png",
+      "logo_alt": "Discover Birth logo",
+      "quote": "The team rebuilt our site while we kept running classes and births, and it never felt like a second job for us. Families tell us the new site feels like us. And we’re getting found in cities we used to be invisible in."
+    },
+    {
+      "id": "joseph-zayouna",
+      "name": "Joseph Zayouna",
+      "title": "Founder & Managing Partner",
+      "company": "Zayouna Law Firm",
+      "source": "Client quote",
+      "photo": { "stem": "joseph-zayouna-zayouna-law-consultus-digital-testimonial" },
+      "alt": "Joseph Zayouna, Zayouna Law, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/zayouna.webp",
+      "logo_alt": "Zayouna Law Firm logo",
+      "quote": "Consultus Digital has looked after our website, search, social and paid media since 2021. What sets them apart is that they care about what happens after the lead comes in, not just how many come in. When something needs attention, they’re on it.",
+      "edits": ["'Consultus' written as 'Consultus Digital'"]
+    },
+    {
+      "id": "adam-gordon",
+      "name": "Adam Gordon",
+      "title": "President",
+      "company": "Gordons Real Estate Brokerage",
+      "source": "Google review",
+      "photo": { "stem": "adam-gordon-gordons-real-estate-consultus-digital-testimonial" },
+      "alt": "Adam Gordon, Gordons Real Estate, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/gordons.webp",
+      "logo_alt": "Gordon's logo",
+      "quote": "We’ve recently engaged Consultus Digital to manage our website update and ongoing paid media and creative support. We have been very happy with the work thus far and believe them to be an upstanding company and team. We are excited about what the year will bring and will continue to let others know about Consultus Digital!",
+      "variants": {
+        "gordons-case": {
+          "source": "Client quote",
+          "title": "",
+          "company": "Gordon's Downsizing & Estate Services",
+          "quote": "Amazing work team, thank you all for your efforts in getting this live."
+        }
+      }
+    },
+    {
+      "id": "jennifer-oegema",
+      "name": "Jennifer Oegema",
+      "title": "President",
+      "company": "Oegema, Nicholson & Associates Insurance Brokers",
+      "source": "Clutch review",
+      "photo": { "stem": "jennifer-oegema-oegema-nicholson-insurance-consultus-digital-testimonial" },
+      "alt": "Jennifer Oegema, Oegema Nicholson Insurance, client of Consultus Digital",
+      "logo": "/assets/work/logos/oegema.webp",
+      "logo_alt": "Oegema, Nicholson & Associates logo",
+      "quote": "Consultus Digital has done an impeccable job. Insurance content is dry, and they’ve made the most of it. Our followers, sales leads, and brand recognition have increased. Our competitors have commented on how funny and entertaining our socials are."
+    },
+    {
+      "id": "dean-arnill",
+      "name": "Dean Arnill",
+      "title": "",
+      "company": "Western Asphalt Products",
+      "source": "Google review",
+      "photo": { "stem": "dean-arnill-western-asphalt-consultus-digital-testimonial" },
+      "alt": "Dean Arnill, Western Asphalt, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/western-asphalt.webp",
+      "logo_alt": "Western Asphalt logo",
+      "quote": "Extremely happy with the overall experience working with Consultus Digital. I had the pleasure of working with Mo. Everything Mo said he was going to do, he did! We worked with Consultus Digital on a new website. Mo and the team brought our website from 2012 into 2024. Mo offered suggestions on the ways customers interact with websites, what works well, what doesn’t work well and ultimately we ended up with a very professional modern website. I would 100% recommend the Consultus Digital team!",
+      "edits": ["escaped exclamation marks fixed", "space before the last exclamation mark removed"],
+      "variants": {
+        "western-asphalt": {
+          "source": "Client quote",
+          "quote": "Everything Mo said he was going to do, he did. The team brought our website from 2012 into 2024, and we ended up with a very professional, modern website. I would 100% recommend the Consultus Digital team."
+        }
+      }
+    },
+    {
+      "id": "joseph-demarinis",
+      "name": "Joseph DeMarinis",
+      "title": "Founder",
+      "company": "BookSeats.com",
+      "source": "Client quote",
+      "photo": { "stem": "joseph-demarinis-bookseats-consultus-digital-testimonial" },
+      "alt": "Joseph DeMarinis, BookSeats, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/bookseats.webp",
+      "logo_alt": "BookSeats logo",
+      "quote": "Consultus Digital helped us scale our Meta advertising efforts with a well-executed UGC strategy. The results spoke for themselves.",
+      "variants": {
+        "ecommerce": {
+          "quote": "Consultus Digital helped us scale our Meta advertising with a well-executed UGC strategy. The results spoke for themselves."
+        }
+      }
+    },
+    {
+      "id": "victoria-buott",
+      "name": "Victoria Buott",
+      "title": "Director of Marketing",
+      "company": "Spieth America",
+      "source": "Case study",
+      "photo": { "stem": "victoria-buott-spieth-america-consultus-digital-testimonial" },
+      "alt": "Victoria Buott, Spieth America, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/spieth.webp",
+      "logo_alt": "Spieth America logo",
+      "quote": "Working with Consultus Digital over the last year has allowed us to scale our online business significantly. We’ve learned so much in the short time working with them about our business that we’ve not only been able to apply to our digital marketing efforts but other aspects of our business. We continue to be impressed with their new innovative way of thinking in the search space, which included one of the best digital reporting dashboards I’ve seen in 17 years of digital marketing.",
+      "edits": ["'Consultus digital' written as 'Consultus Digital'"],
+      "variants": {
+        "spieth-case": {
+          "source": "Case study",
+          "company": "Spieth America & Canada",
+          "quote": "Working with Consultus Digital over the last year has allowed us to scale our online business significantly. We continue to be impressed with their innovative way of thinking in the search space, which included one of the best digital reporting dashboards I’ve seen in 17 years of digital marketing."
+        },
+        "retail": {
+          "source": "Client quote",
+          "quote": "Working with Consultus Digital over the last year has allowed us to scale our online business significantly. Their thinking in the search space continues to impress us."
+        }
+      }
+    },
+    {
+      "id": "shaun-oriold",
+      "name": "Shaun Oriold",
+      "title": "Owner",
+      "company": "Closet Envy Inc.",
+      "source": "Clutch review",
+      "photo": { "stem": "shaun-oriold-closet-envy-consultus-digital-testimonial" },
+      "alt": "Shaun Oriold, Closet Envy, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/shaun-oriold.webp",
+      "logo_alt": "Closet Envy Inc. logo",
+      "quote": "Consultus Digital is willing to get a thorough understanding of our CRM before making the requested changes. The system needed some cleanup before we could move forward, and the team didn’t just jump in and do the requested work, as others had tried to do."
+    },
+    {
+      "id": "kim-benedict",
+      "name": "Kim Benedict",
+      "title": "",
+      "company": "TalentMinded",
+      "source": "Google review",
+      "photo": { "stem": "kim-benedict-talentminded-consultus-digital-testimonial" },
+      "alt": "Kim Benedict, TalentMinded, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/kim-benedict.webp",
+      "logo_alt": "TalentMinded logo",
+      "quote": "We had an excellent experience with Consultus Digital for our digital marketing needs at TalentMinded. Their team was professional, knowledgeable, and highly responsive throughout the entire process. They provided us with comprehensive digital marketing framework that will significantly enhance our online presence and outreach efforts. Consultus Digital took the time to understand our unique business goals and crafted strategies tailored to our needs. Their expertise in SEO, content marketing, and social media management was evident in the results we received. Working with Consultus Digital has had a positive impact on our business. We highly recommend Consultus Digital to any business looking for top-notch digital marketing services."
+    },
+    {
+      "id": "shawn-mintz",
+      "name": "Shawn Mintz",
+      "title": "",
+      "company": "",
+      "source": "Google review",
+      "photo": { "stem": "shawn-mintz-consultus-digital-client-review" },
+      "alt": "Shawn Mintz, Consultus Digital client",
+      "logo": null,
+      "logo_alt": "",
+      "quote": "I love companies that walk the walk, and that’s what sold us on Consultus Digital. Everything they talk about and every strategy they recommend, they have used themselves, and that’s what helps them stand out from the competition. They took the time to understand our company and our current marketing and sales efforts and then crafted a detailed plan to take everything to the next level.",
+      "edits": ["em dash replaced with a comma"]
+    },
+    {
+      "id": "tara-moore-jones",
+      "name": "Tara Moore-Jones",
+      "title": "",
+      "company": "",
+      "source": "Google review",
+      "photo": { "stem": "tara-moore-jones-consultus-digital-client-review" },
+      "alt": "Tara Moore-Jones, Consultus Digital client",
+      "logo": null,
+      "logo_alt": "",
+      "quote": "Helped us out of a bind very efficiently! Highly recommend!"
+    },
+    {
+      "id": "laura-harvey",
+      "name": "Laura Harvey",
+      "title": "CEO",
+      "company": "Ontario Business Central Inc.",
+      "source": "Case study",
+      "photo": { "stem": "laura-harvey-ontario-business-central-consultus-digital-testimonial" },
+      "alt": "Laura Harvey, Ontario Business Central, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/obc.webp",
+      "logo_alt": "Ontario Business Central logo",
+      "quote": "I began using Consultus Digital in January of 2022 after being with a competitor for many years. The team at Consultus Digital has helped us to increase revenues over the last number of months and has brought new engaging ideas to increase our exposure within our market. They are a great team who do amazing SEO, Google ads and CRO. Highly recommend.",
+      "edits": ["'Consultus' written as 'Consultus Digital'"],
+      "variants": {
+        "obc-case": {
+          "company": "Ontario Business Central",
+          "quote": "I began using Consultus Digital in January 2022 after being with a competitor for many years. The team at Consultus Digital has helped increase revenues over the last number of months and bring new engaging ideas to increase our exposure within our industry."
+        }
+      }
+    },
+    {
+      "id": "helen-stergiou",
+      "name": "Helen Stergiou",
+      "title": "Partner",
+      "company": "The Office Shop",
+      "source": "Case study",
+      "photo": { "stem": "helen-stergiou-the-office-shop-consultus-digital-testimonial" },
+      "alt": "Helen Stergiou, The Office Shop, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/office-shop.webp",
+      "logo_alt": "The Office Shop logo",
+      "quote": "The team at Consultus Digital won our business due to their thorough assessment and realignment of our digital sales and marketing strategy. Within only a few weeks of partnering with them, we increased our inbound leads significantly by reconfiguring the user experience of our website.",
+      "edits": ["final period added"]
+    },
+    {
+      "id": "stanislav-kojokin",
+      "name": "Stanislav Kojokin",
+      "title": "CEO",
+      "company": "KASE Insurance",
+      "source": "Google review",
+      "photo": { "stem": "stanislav-kojokin-kase-insurance-consultus-digital-testimonial" },
+      "alt": "Stanislav Kojokin, KASE Insurance, client of Consultus Digital",
+      "logo": "/assets/services/kase-logo.webp",
+      "logo_alt": "KASE Insurance logo",
+      "quote": "My firm, KASE Insurance Inc., has partnered with Consultus Digital two years ago. At that time we had no online strategy. The team have helped us rebuild our website and created an SEO strategy that has provided us with 150% ROI! Consultus Digital has an amazing customer service team and they truly care about their clients and delivering on their promises. I strongly recommend the Consultus Digital team to all my friends and clients.",
+      "edits": ["staff name removed (Jake, Oct 9 2026)"]
+    },
+    {
+      "id": "maureen-dwight",
+      "name": "Maureen Dwight",
+      "title": "President",
+      "company": "Healthy Back",
+      "source": "Clutch review",
+      "photo": { "stem": "maureen-dwight-healthy-back-consultus-digital-testimonial" },
+      "alt": "Maureen Dwight, Healthy Back, client of Consultus Digital",
+      "logo": "/assets/work/logos/healthy-back.png",
+      "logo_alt": "Healthy Back logo",
+      "quote": "Their team is very personable and interested in my success. They’re also very creative in their approach to solving challenges."
+    },
+    {
+      "id": "kristin-finley",
+      "name": "Kristin Finley",
+      "title": "",
+      "company": "Eva's Original",
+      "source": "Google review",
+      "photo": { "stem": "kristin-finley-evas-original-consultus-digital-testimonial" },
+      "alt": "Kristin Finley, Eva's Original, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/kristin-finley.webp",
+      "logo_alt": "Eva's Original logo",
+      "quote": "Wonderful service! Best consulting company we’ve worked with over the last many years. Jake is so down to earth, transparent and very good at what he does. Really enjoyed working with him and his team, and we’re looking forward to working together again over the next several years."
+    },
+    {
+      "id": "sara-giles",
+      "name": "Sara Giles",
+      "title": "Director of Marketing",
+      "company": "Schoolcraft Memorial Hospital",
+      "source": "Google review",
+      "photo": { "stem": "sara-giles-schoolcraft-memorial-hospital-consultus-digital-testimonial" },
+      "alt": "Sara Giles, Schoolcraft Memorial Hospital, client of Consultus Digital",
+      "logo": "/assets/work/logos/schoolcraft.png",
+      "logo_alt": "Schoolcraft Memorial Hospital logo",
+      "quote": "I have been working with the team on a webpage redesign and I couldn’t be happier.",
+      "edits": ["former staff names removed at Jake's request"]
+    },
+    {
+      "id": "melissa-graham",
+      "name": "Melissa Graham",
+      "title": "Manager",
+      "company": "Orr Insurance",
+      "source": "Client quote",
+      "photo": { "src": "/assets/services/melissa.webp" },
+      "alt": "Melissa Graham, Orr Insurance, client of Consultus Digital",
+      "logo": "/assets/services/orr-logo.webp",
+      "logo_alt": "Orr Insurance & Investment logo",
+      "quote": "Such a great team to work with! Created an amazing new website for us along with managing all our paid digital ads each month.",
+      "edits": ["not in Jake's kit: the quote and photo already on the site"]
+    },
+    {
+      "id": "tricia-oldfield",
+      "name": "Tricia Oldfield",
+      "title": "Vice President",
+      "company": "eCycle Solutions",
+      "source": "Client quote",
+      "photo": { "src": "/assets/services/tricia.webp" },
+      "alt": "Tricia Oldfield, eCycle Solutions, client of Consultus Digital",
+      "logo": "/assets/services/ecycle-logo.webp",
+      "logo_alt": "eCycle Solutions logo",
+      "quote": "As the VP of both Sales and Marketing for one of Canada’s largest electronic recycling companies, I wear many hats. I rely on the team at Consultus Digital to act as my outsourced, internal marketing team. Over the past 3 years, they’ve provided our company everything from website development to social media management. I would highly recommend the team at Consultus Digital to any business looking for a partner in navigating the complex world of digital.",
+      "edits": ["the quote and photo already on the site (not in Jake's kit). The Zoho directory review in the kit is not used yet: Jake's sheet says to confirm Tricia wrote it before her name goes on it (it is posted under the company name)"],
+      "variants": {
+        "ecycle-case": {
+          "title": "VP Marketing & Sales",
+          "quote": "Working with their team was an exceptional experience. Their project management was seamless. They mapped our sales process thoroughly, ran a focus group for validation, and capped it off with an in-person training day that was instrumental for our team’s adoption. They were true partners in our success."
+        },
+        "b2b": {
+          "title": "VP Marketing & Sales",
+          "quote": "Working with their team was an exceptional experience. They mapped our sales process thoroughly, ran a focus group for validation, and were true partners in our success."
+        }
+      }
+    },
+    {
+      "id": "jason-dam",
+      "name": "Jason Dam",
+      "title": "Owner",
+      "company": "Dragonscale Supplies",
+      "source": "Clutch review",
+      "photo": { "stem": "jason-dam-dragonscale-supplies-consultus-digital-testimonial" },
+      "alt": "Jason Dam, Dragonscale Supplies, client of Consultus Digital",
+      "logo": "/assets/work/logos/cards/dragonscale.webp",
+      "logo_alt": "Dragonscale Supplies logo",
+      "quote": "The team has been able to take our Google Ads and Meta Ads and scale them from $1,000 per month to almost $30,000 per month with considerable success, maintaining a high 10+ ROAS in certain months. Our sales have increased as a direct result of traffic driven by the ads.",
+      "edits": ["Clutch review (Aug 2026) was posted anonymously; shown with his name and photo, cleared by Jake on Oct 9 2026 (quotes.csv)"]
+    },
+    {
+      "id": "ben-fishbein",
+      "name": "Ben Fishbein",
+      "title": "Marketing Manager",
+      "company": "Comwave",
+      "source": "Clutch review",
+      "photo": { "stem": "ben-fishbein-comwave-consultus-digital-testimonial" },
+      "alt": "Ben Fishbein, Comwave, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/ben-fishbein.webp",
+      "logo_alt": "Comwave logo",
+      "quote": "What impressed us most about Consultus Digital Inc is that every strategy or idea presented to us is truly bespoke. In my experience within the industry, I’ve witnessed many agencies sell templated, one size fits all solutions to businesses. This is not the case with Consultus Digital - their work is thoughtful and original.",
+      "edits": ["'Consultus' written as 'Consultus Digital'; 'i'v' corrected to 'I’ve'; Clutch review (Oct 2022) was posted anonymously, shown with his name and photo, cleared by Jake on Oct 9 2026 (quotes.csv); the results line in the CSV is not used"]
+    }
+  ],
+  "blocks": {
+    "home": {
+      "page": "index.html",
+      "style": "wall",
+      "featured": ["joseph-zayouna", "victoria-buott", "stanislav-kojokin", "laura-harvey", "dean-arnill"],
+      "wall": ["nick-chan", "helen-stergiou", "jason-dam", "shaun-oriold", "jennifer-oegema", "stefanie-antunes", "adam-gordon", "maureen-dwight", "kristin-finley", "joseph-demarinis", "sara-giles", "andrea-hardy", "kim-benedict", "ben-fishbein", "shawn-mintz", "tara-moore-jones", "melissa-graham", "tricia-oldfield"]
+    },
+    "service": {
+      "pages": ["ab-testing", "aeo-ai-search", "amazon-ads", "analytics-attribution", "content-marketing", "cro", "google-ads", "influencer-marketing", "landing-pages", "local-seo", "marketing-automation", "meta-ads", "microsoft-ads", "performance-creatives", "sales-enablement", "seo", "web-development", "zoho-crm"],
+      "style": "featured",
+      "people": ["stanislav-kojokin", "helen-stergiou", "laura-harvey", "melissa-graham", "tricia-oldfield", "joseph-zayouna", "victoria-buott", "dean-arnill"]
+    },
+    "division-healthcare": {
+      "page": "healthcare/index.html",
+      "style": "featured",
+      "people": ["nick-chan:tonic", "stefanie-antunes", "andrea-hardy", "sara-giles", "maureen-dwight"]
+    },
+    "division-trades": {
+      "page": "home-services-marketing/index.html",
+      "style": "single-row",
+      "people": ["dean-arnill:western-asphalt"]
+    },
+    "industry-b2b": { "page": "b2b-saas-marketing/index.html", "style": "single-row", "people": ["tricia-oldfield:b2b"] },
+    "industry-ecommerce": { "page": "ecommerce-marketing-toronto/index.html", "style": "single-row", "people": ["joseph-demarinis:ecommerce"] },
+    "industry-retail": { "page": "retail-consumer-marketing/index.html", "style": "single-row", "people": ["victoria-buott:retail"] },
+    "industry-professional": { "page": "professional-services-marketing/index.html", "style": "remove", "why": "Siea Newton has no photo yet (Jake's rule: no photo, no quote)" },
+    "industry-law": { "page": "law-firm-marketing-toronto/index.html", "style": "single-row", "people": ["joseph-zayouna"] },
+    "case-bow-city-storage": { "page": "case-studies/bow-city-storage/index.html", "style": "remove", "why": "Siea Newton has no photo yet (Jake's rule)" },
+    "case-ecycle": { "page": "case-studies/ecycle/index.html", "style": "single-center", "people": ["tricia-oldfield:ecycle-case"] },
+    "case-office-shop": { "page": "case-studies/office-shop/index.html", "style": "single-center", "people": ["helen-stergiou"] },
+    "case-spieth-america": { "page": "case-studies/spieth-america/index.html", "style": "single-center", "people": ["victoria-buott:spieth-case"] },
+    "case-tonic-eye-care": { "page": "case-studies/tonic-eye-care/index.html", "style": "single-center", "people": ["nick-chan:tonic"] },
+    "case-western-asphalt": { "page": "case-studies/western-asphalt/index.html", "style": "single-center", "people": ["dean-arnill:western-asphalt"] },
+    "case-bookseats": { "page": "case-studies/bookseats/index.html", "style": "single-center", "people": ["joseph-demarinis"] },
+    "case-gordons-downsizing": { "page": "case-studies/gordons-downsizing/index.html", "style": "single-center", "people": ["adam-gordon:gordons-case"] },
+    "case-zayouna-law-firm": { "page": "case-studies/zayouna-law-firm/index.html", "style": "single-center", "people": ["joseph-zayouna"] },
+    "case-dragonscale-supplies": { "page": "case-studies/dragonscale-supplies/index.html", "style": "single-center", "people": ["jason-dam"] },
+    "case-ontario-business-central": { "page": "case-studies/ontario-business-central/index.html", "style": "single-center", "people": ["laura-harvey:obc-case"] }
+  }
+}
