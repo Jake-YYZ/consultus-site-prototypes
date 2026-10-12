@@ -7,10 +7,13 @@ Everything under "Already done on staging" is finished and only needs repeating 
 
 - **Production deploy.** `tools/kinsta/deploy_site.py` has the staging host, folder and URL as constants at the top;
   point them at production (or run it against the production Kinsta site) and deploy with `--apply`.
-- **Blog, one more time before the switch.** The live blog keeps changing (posts scheduled meanwhile, for example
-  `offline-conversion-tracking-clinics`). Re-run the blog sync (`tools/blog-sync`, see CLAUDE.md) so staging matches live, then
-  collapse the double slashes the staging copy has in post bodies and image fields (both forms, `--all-tables --skip-columns=guid`,
-  `--dry-run` first): `wp search-replace 'kinsta.cloud//' 'kinsta.cloud/'` and `wp search-replace 'consultusdigital.com//' 'consultusdigital.com/'`,
+- **Blog, one more time before the switch.** The staging blog REPLACES the live blog, so staging is the source of truth and its
+  edits stay (repointed links, alt text, the `//` fixes). The live blog keeps changing meanwhile (posts scheduled or edited there,
+  for example `offline-conversion-tracking-clinics`): copy over only what is new or changed on live (`tools/blog-sync`, see
+  CLAUDE.md), and never overwrite a post that was edited on staging. If `offline-conversion-tracking-clinics` comes over, put its link
+  back in `healthcare-ads-rejected` (it was unlinked because the page did not exist on staging). Then collapse the double slashes
+  in what came over (both forms, `--all-tables --skip-columns=guid`, `--dry-run` first):
+  `wp search-replace 'kinsta.cloud//' 'kinsta.cloud/'` and `wp search-replace 'consultusdigital.com//' 'consultusdigital.com/'`,
   then repoint the internal links (`tools/blog-sync/server/repoint_redirects.php`, dry run first). Images written as
   `consultusdigital.com/wp-content/uploads/...` (root path) 404 here, uploads live under `/blog/wp-content/uploads/`.
   Run `python3 tools/qa/crawl_site.py` afterwards: it must report 0 links with `//`, 0 links to redirecting URLs and 0 failing targets.
