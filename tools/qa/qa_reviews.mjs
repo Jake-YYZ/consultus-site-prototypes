@@ -50,7 +50,7 @@ for (const engine of engines) {
       page.on('pageerror', e => { if (!NOISE.test(String(e.message || e))) problems.push('uncaught: ' + String(e.message || e).slice(0, 140)); });
       // "Failed to load resource" has no URL: a failure of OUR files is caught by the response handler below (HTTP 4xx on /assets/), the rest comes
       // from a client's embedded page (Gordon's and others answer 403 to headless browsers)
-      page.on('console', m => { if (m.type() === 'error' && !/googletagmanager|salesiq|zoho|favicon|Failed to load resource|Beacon API|clarity/i.test(m.text())) problems.push('console: ' + m.text().slice(0, 140)); });
+      page.on('console', m => { if (m.type() === 'error' && !/googletagmanager|salesiq|zoho|favicon|Failed to load resource|Beacon API|clarity|intercom/i.test(m.text())) problems.push('console: ' + m.text().slice(0, 140)); });
       page.on('response', r => { if (r.status() >= 400 && /\/assets\//.test(r.url())) problems.push(`HTTP ${r.status()}: ${r.url().replace(/^https?:\/\/[^/]+/, '')}`); });
       for (const t of targets) {
         runs++;
