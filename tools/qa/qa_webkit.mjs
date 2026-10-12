@@ -5,7 +5,8 @@
 // Options: --mode=phone|desktop|both (default both; phone = iPhone 15 size, Mobile Safari user agent, touch, 3x)
 //          --shots=1 viewport screenshots (add --full=1 for full-page ones)   --nomenu=1 skips the menu / FAQ clicks
 // Per page and mode it reports: console errors and warnings, uncaught errors, failed requests, HTTP 4xx/5xx, horizontal overflow,
-// broken images, videos that did not start, a Services menu / phone menu / FAQ interaction test (never submits the contact form).
+// broken images, videos that did not start, photos drawn at the wrong shape (STRETCHED), logos wider than their card (LOGO CLIPPED), a Services menu /
+// phone menu / FAQ interaction test (never submits the contact form).
 // WebKit here is Playwright's own build of the Safari engine: close to Safari, not the iOS Simulator (no Safari UI, no iOS quirks).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -54,7 +55,11 @@ const PAGE_METRICS = `(() => {
   // A WebKit-only sizing bug (percentage widths inside shrink-wrapped flex or grid items) looks like this; small logos have no aspect-ratio and are ignored.
   const natural = e => (e.matches && e.matches('img, video') ? [e] : [...e.querySelectorAll('img, video')]).some(m => (m.naturalWidth || m.videoWidth || Number(m.getAttribute('width')) || 0) >= 300);
   const collapsed = [...document.querySelectorAll('body *')].map(e => ({ e, r: e.getBoundingClientRect() })).filter(x => x.r.width > 0 && x.r.width < 100 && getComputedStyle(x.e).aspectRatio !== 'auto' && getComputedStyle(x.e).display !== 'none' && getComputedStyle(x.e).position !== 'absolute' && !x.e.closest('[class*=marquee], [class*=track], [hidden]') && natural(x.e)).slice(0, 3).map(x => x.e.tagName.toLowerCase() + (typeof x.e.className === 'string' && x.e.className ? '.' + x.e.className.trim().split(/\\s+/)[0] : '') + ' ' + Math.round(x.r.width) + 'px wide');
-  return { overflow, widest, broken, videos, h1, collapsed, title: document.title };
+  // photos drawn at a different shape than the file (a fixed height next to width:100% does this): more than 6% off, with no object-fit to crop or letterbox them
+  const stretched = [...document.images].filter(i => { if (!i.naturalWidth || /\\.svg(\\?|$)/i.test(i.currentSrc)) return false; const r = i.getBoundingClientRect(); if (r.width < 40 || r.height < 40 || getComputedStyle(i).display === 'none') return false; if (!['fill', ''].includes(getComputedStyle(i).objectFit)) return false; const k = (r.width / r.height) / (i.naturalWidth / i.naturalHeight); return k < 0.94 || k > 1.06; }).slice(0, 3).map(i => i.currentSrc.split('/').pop() + ' drawn ' + Math.round(i.getBoundingClientRect().width) + 'x' + Math.round(i.getBoundingClientRect().height) + ' from ' + i.naturalWidth + 'x' + i.naturalHeight);
+  // logos wider than the card they sit in (the partner wall's Microsoft logo was 188px in a 169px card): an svg or img inside a *logo* box that sticks out of its card
+  const logoClip = [...document.querySelectorAll('[class*=logo] svg, [class*=logo] img, svg[class*=logo], img[class*=logo]')].filter(e => { const card = e.closest('[class*=card]'); if (!card) return false; const a = e.getBoundingClientRect(), b = card.getBoundingClientRect(); return a.width > 0 && (a.left < b.left + 1 || a.right > b.right - 1); }).slice(0, 3).map(e => (e.closest('[class*=card]').className || '').toString().split(' ')[0] + ': ' + Math.round(e.getBoundingClientRect().width) + 'px logo in a ' + Math.round(e.closest('[class*=card]').getBoundingClientRect().width) + 'px card');
+  return { overflow, widest, broken, videos, h1, collapsed, stretched, logoClip, title: document.title };
 })()`;
 
 async function scrollThrough(page) {
@@ -123,6 +128,8 @@ for (const slug of pages) {
       if (over) flags.push(`OVERFLOW ${m.overflow.scrollWidth}>${m.overflow.clientWidth} ${m.widest.join(' | ')}`);
       if (m.broken.length) flags.push('broken images: ' + m.broken.slice(0, 3).join(', '));
       if (m.collapsed.length) flags.push('COLLAPSED: ' + m.collapsed.join(' | '));
+      if (m.stretched.length) flags.push('STRETCHED: ' + m.stretched.join(' | '));
+      if (m.logoClip.length) flags.push('LOGO CLIPPED: ' + m.logoClip.join(' | '));
       if (vErr.length) flags.push('video errors: ' + vErr.join(', '));
       if (consoleMsgs.length) flags.push('console: ' + [...new Set(consoleMsgs)].slice(0, 3).join(' || '));
       if (problems.length) flags.push(...[...new Set(problems)].slice(0, 4));

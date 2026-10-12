@@ -2376,6 +2376,14 @@ footer {
   width: auto;
   display: block;
 }
+.footer-logo-row a {
+  display: inline-block;
+}
+.footer-logo-row a:focus-visible {
+  outline: 2px solid #FFEC00;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 .footer-cols {
   display: grid;
   grid-template-columns: repeat(4, 1fr) 1.4fr;
@@ -2751,6 +2759,11 @@ footer {
     }
     .stat {
       padding: 0 0 0 20px;
+    }
+    /* one column: every stat sits on the same left edge (the 2nd and 4th used to keep the two-column divider and its padding) */
+    .stat-row .stat {
+      padding-left: 0;
+      border-left: none;
     }
     .stat-num {
       font-size: 44px;

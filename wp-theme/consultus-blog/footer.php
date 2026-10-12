@@ -1,7 +1,7 @@
 </main>
 <footer>
     <div class="footer-inner">
-      <div class="footer-logo-row"><img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital"/></div>
+      <div class="footer-logo-row"><a href="/" aria-label="Consultus Digital home"><img src="/assets/brand/consultus-wordmark-light.png" alt="Consultus Digital"/></a></div>
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Navigation</h4>
@@ -116,7 +116,7 @@
 
       <div class="footer-bottom">
         <div>© 2026 Consultus Digital Inc.</div>
-        <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a></div>
+        <div><a href="/privacy-policy/" style="margin-left:16px;cursor:pointer">Privacy</a><a href="/site-map/" style="margin-left:16px;cursor:pointer">Sitemap</a></div>
       </div>
     
   </footer>

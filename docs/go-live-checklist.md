@@ -7,14 +7,24 @@ Everything under "Already done on staging" is finished and only needs repeating 
 
 - **Production deploy.** `tools/kinsta/deploy_site.py` has the staging host, folder and URL as constants at the top;
   point them at production (or run it against the production Kinsta site) and deploy with `--apply`.
+- **Blog, one more time before the switch.** The live blog keeps changing (posts scheduled meanwhile, for example
+  `offline-conversion-tracking-clinics`). Re-run the blog sync (`tools/blog-sync`, see CLAUDE.md) so staging matches live, then
+  collapse the double slashes the staging copy has in post bodies and image fields (both forms, `--all-tables --skip-columns=guid`,
+  `--dry-run` first): `wp search-replace 'kinsta.cloud//' 'kinsta.cloud/'` and `wp search-replace 'consultusdigital.com//' 'consultusdigital.com/'`,
+  then repoint the internal links (`tools/blog-sync/server/repoint_redirects.php`, dry run first). Images written as
+  `consultusdigital.com/wp-content/uploads/...` (root path) 404 here, uploads live under `/blog/wp-content/uploads/`.
+  Run `python3 tools/qa/crawl_site.py` afterwards: it must report 0 links with `//`, 0 links to redirecting URLs and 0 failing targets.
 - **Blog domain.** Take a database export, then replace the staging address inside the blog database:
   `wp search-replace 'https://stg-consultusdigital-staging.kinsta.cloud' 'https://consultusdigital.com' --all-tables --skip-columns=guid`
   (run from `public/blog`), then `wp cache flush`, `wp rankmath sitemap generate` and a Kinsta cache purge.
 - **Staging noindex.** Staging sends `X-Robots-Tag: noindex, nofollow` on every page. Production must not:
   check with `curl -sI https://consultusdigital.com/ | grep -i robots` (no output is correct).
-- **Sitemap dates.** 130 of the 145 `<lastmod>` dates in `sitemap-pages.xml` say June 2026. Set them to the launch date.
-- **Front controller.** Upload `tools/kinsta/index.php` to the production `public/index.php` (92 rules: 89 redirects,
-  3 `410 Gone`). Then run `python3 tools/kinsta/test_redirects.py https://consultusdigital.com`.
+- **Sitemap dates.** Most of the 146 `<lastmod>` dates in `sitemap-pages.xml` say June 2026. Set them to the launch date.
+- **Front controller.** Upload `tools/kinsta/index.php` to the production `public/index.php` (93 rules: 91 redirects,
+  one of them the `/author/*` prefix rule, and 2 `410 Gone`; it also sends any URL with `//` to the clean address). Then run
+  `python3 tools/kinsta/test_redirects.py https://consultusdigital.com`.
+- **Search Console tag.** `google-site-verification` (the same value the live homepage carries) is in the homepage and the
+  blog header, so ownership carries over. Check it is in the production HTML of `/`.
 - **Look at the site on a real iPhone once.** Safari's engine was tested with Playwright's WebKit (Oct 9 2026: four bugs
   found and fixed), but that has no Safari toolbar and none of iOS's media rules (Low Power Mode stops autoplay). On an
   iPhone open the homepage, a city page (the hero photo), a service page (the hero animation, scroll away and back), About
@@ -52,8 +62,9 @@ on a core update; delete it again) and the blog no longer prints its version.
   old site, from the head of every page (they never load on staging, GitHub Pages or localhost).
 - There is no cookie banner. One was built on Oct 9 2026 and removed the same day because it was not wanted. If a lawyer
   later says one is needed for UK, EU or Quebec visitors, it is a separate piece of work.
-- After launch run GTM Preview. The container needs a trigger on the `zoho_form_submit` event or ad conversions for the
-  contact form will not fire.
+- After launch run GTM Preview. The contact form now goes to `/thank-you/` after sending (it pushes `zoho_form_submit` first).
+  The live container already has triggers on `/thank-you/`, `/thank-you-cdap/` and `/thankyou`: submit one form and confirm the
+  conversion tags fire on `/thank-you/` and that GA4 (`G-CJZMEB102J`) and Google Ads (`AW-11041559906`) load from the container.
 
 ## 5. Contact form
 
@@ -63,7 +74,7 @@ on a core update; delete it again) and the blog no longer prints its version.
 
 ## 6. After the switch
 
-- Search Console: add the property, submit `https://consultusdigital.com/sitemap.xml`.
+- Search Console: add the property (the tag is already in the pages), submit `https://consultusdigital.com/sitemap.xml`.
 - Keep the OLD sitemap files (`/page-sitemap.xml`, `/case_study-sitemap.xml`, `/author-sitemap.xml`) reachable for about
   30 days so Google re-crawls the old URLs and meets the redirects (frozen copies from the live site are needed).
 - LinkedIn, Facebook and Slack cache link previews: re-scrape the key pages with their debug tools (the share image is the

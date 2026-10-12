@@ -19,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#FAF8F3">
+<meta name="google-site-verification" content="iDyULdCErUT8XoEpvL39cautBPq9dMdPWTjy518bPkY">
 <link rel="stylesheet" href="/assets/fonts.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <?php wp_head(); ?>

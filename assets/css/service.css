@@ -1790,6 +1790,7 @@ body.gads-revamp {
 .gads-portrait {
   display: block;
   width: 100%;
+  height: auto;
 }
 .gads-quote-mark {
   font-size: 70px;
@@ -2189,9 +2190,6 @@ body.gads-revamp {
   .gads-portrait-wrap {
     padding: 10px;
   }
-  .gads-portrait {
-    height: 320px;
-  }
   .gads-testimonial blockquote {
     font-size: 15px;
   }
@@ -2568,9 +2566,6 @@ body.gads-revamp {
     margin: auto;
     padding: 10px 16px 0;
   }
-  .gads-portrait {
-    height: 305px;
-  }
   .gads-testimonial blockquote {
     font-size: 16px;
   }
@@ -2823,12 +2818,13 @@ body.gads-revamp {
 #gads-context .gads-split p a {
   color: #1A40C7 !important;
 }
+/* hover on a light surface goes to ink: the old yellow was 1.1:1 on paper and the link disappeared (the yellow hover stays on the blue and dark surfaces below) */
 .gads-page a.gads-link:hover,
 .gads-page a.gads-inline-link:hover,
 .gads-page p a:hover,
 #gads-context .gads-split p a:hover {
-  color: #FFEC00 !important;
-  text-decoration-color: #FFEC00 !important;
+  color: #141414 !important;
+  text-decoration-color: #141414 !important;
 }
 #gads-context .gads-split p a strong {
   font-family: 'NuberNext-DemiBold';
@@ -2880,6 +2876,26 @@ body.gads-revamp {
 .gads-dark p a:hover {
   color: var(--blue-soft) !important;
   text-decoration-color: var(--blue-soft) !important;
+}
+/* the closing blue band: the link is pale blue and turns yellow on hover, the same on every page */
+.gads-page .gads-final p a {
+  color: #DCE4FF !important;
+  text-decoration-color: #DCE4FF;
+}
+.gads-page .gads-final p a:hover {
+  color: #FFEC00 !important;
+  text-decoration-color: #FFEC00 !important;
+}
+/* card titles that are links have no underline: they turn blue on hover, like the other card links */
+.gads-page .gads-complement h3 a:hover,
+.gads-page .gads-complement h3 a.gads-inline-link:hover {
+  color: #1A40C7 !important;
+}
+/* whatever the colour, an inline link also gets a heavier underline on hover, so no link is left without a visible change */
+.gads-page a.gads-link:hover,
+.gads-page a.gads-inline-link:hover,
+.gads-page p a:hover {
+  text-decoration-thickness: 2px;
 }
 .gads-carousel-controls button:before {
   position: absolute;
@@ -3369,9 +3385,6 @@ body #csb-dock .csb-dock-explore .csb-x-svc:after {
   footer {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .footer-cols {
-    grid-template-columns: 1fr 1fr;
   }
   .footer-proof {
     padding-bottom: 20px;

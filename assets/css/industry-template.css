@@ -775,6 +775,22 @@
   height: 30px;
   width: auto;
 }
+/* Keep the wider logos (Microsoft, Meta, Zoho, TikTok, LinkedIn) inside their cards on phones */
+#indt .pw-logo {
+  max-width: 100%;
+}
+#indt .pw-logo svg {
+  max-width: 100%;
+  min-width: 0;
+}
+#indt .pw-tier {
+  text-align: center;
+}
+@media (max-width: 480px) {
+  #indt .pw-card {
+    padding: 28px 12px;
+  }
+}
 #indt .pw-tier {
   font-family: var(--mono);
   font-size: 9.5px;

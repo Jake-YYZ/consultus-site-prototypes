@@ -1,7 +1,8 @@
 /* Sends website forms to Zoho CRM as new Leads.
    Any <form data-zoho-form> is handled here. The form carries Zoho's own hidden
    keys (xnQsjsdp, xmIwtLD, actionType), so one form = one Zoho Web Form.
-   This script adds the ad-tracking fields, posts to Zoho, and shows the thank-you. */
+   This script adds the ad-tracking fields, posts to Zoho, and sends the visitor to the form's thank-you page
+   (data-thanks="/thank-you/"; a form without that attribute shows the thank-you message in place). */
 (function () {
   var ENDPOINT = 'https://crm.zoho.com/crm/WebToLeadForm';
   var KEY = 'csAttribution';
@@ -80,7 +81,14 @@
       fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
         .then(function () {
           if (window.dataLayer) window.dataLayer.push({ event: 'zoho_form_submit', form_id: form.id || 'zoho-form' });
-          showDone();
+          var thanks = form.getAttribute('data-thanks');
+          if (thanks) {
+            // The ad and analytics conversions fire when the thank-you page loads (the Tag Manager container has triggers keyed to /thank-you/).
+            window.location.assign(thanks);
+            setTimeout(showDone, 3000);   // if the browser did not leave the page, still show the message
+          } else {
+            showDone();
+          }
         })
         .catch(function () {
           if (btn) { btn.disabled = false; btn.innerHTML = label; }

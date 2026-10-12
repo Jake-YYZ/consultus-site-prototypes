@@ -3,5 +3,6 @@ User-agent: *
 Allow: /
 Disallow: /blog/wp-admin/
 Allow: /blog/wp-admin/admin-ajax.php
+Disallow: /blog/page/*
 
 Sitemap: https://consultusdigital.com/sitemap.xml

@@ -1,4 +1,4 @@
-// Contact form in the Safari engine (Playwright WebKit): empty submit is refused, a filled one is "sent" and the thank-you appears.
+// Contact form in the Safari engine (Playwright WebKit): empty submit is refused, a filled one is "sent" and the browser lands on /thank-you/.
 // Nothing reaches Zoho: the browser answers the call to crm.zoho.com itself (context.route), so no lead is created.
 // usage: node tools/qa/qa_webkit_form.mjs --base=https://stg-consultusdigital-staging.kinsta.cloud
 // (one-time setup is in the header of qa_webkit.mjs)
@@ -13,7 +13,12 @@ for (const mode of ['phone', 'desktop']) {
   const ctx = await browser.newContext(mode === 'phone' ? { ...devices['iPhone 15'], locale: 'en-CA' } : { viewport: { width: 1440, height: 900 }, locale: 'en-CA' });
   const sent = [];
   await ctx.route(/crm\.zoho\.com/, async route => { sent.push({ method: route.request().method(), url: route.request().url(), body: route.request().postData() || '' }); await route.fulfill({ status: 200, contentType: 'text/plain', body: 'ok' }); });
-  await ctx.addInitScript(() => { window.dataLayer = window.dataLayer || []; });
+  // remember every dataLayer push in sessionStorage: the form leaves the page right after sending, so the page's own copy is gone
+  await ctx.addInitScript(() => {
+    window.dataLayer = window.dataLayer || [];
+    const orig = window.dataLayer.push.bind(window.dataLayer);
+    window.dataLayer.push = function () { try { const a = JSON.parse(sessionStorage.getItem('__dl') || '[]'); a.push(arguments[0]); sessionStorage.setItem('__dl', JSON.stringify(a)); } catch (e) {} return orig.apply(null, arguments); };
+  });
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push(String(e.message || e).slice(0, 140)));
@@ -32,10 +37,19 @@ for (const mode of ['phone', 'desktop']) {
   await page.fill('#ct-company', 'QA Safari Test (not sent)');
   await page.selectOption('#ct-revenue', { index: 1 });
   await page.click('#contact-zoho-form button[type="submit"]');
-  await page.waitForSelector('[data-zoho-done]:not([hidden])', { timeout: 8000 }).catch(() => {});
-  const done = await page.evaluate(() => { const d = document.querySelector('[data-zoho-done]'); return { shown: !!d && !d.hidden, formHidden: document.querySelector('#contact-zoho-form').hidden, focused: document.activeElement === d, dl: (window.dataLayer || []).filter(x => x && x.event === 'zoho_form_submit').length }; });
-  out.push(['thank-you shown and form hidden', done.shown && done.formHidden]);
-  out.push(['thank-you takes focus (screen readers announce it)', done.focused]);
+  await page.waitForURL(/\/thank-you\/?$/, { timeout: 10000 }).catch(() => {});
+  await page.waitForLoadState('load').catch(() => {});
+  const done = await page.evaluate(() => ({
+    url: location.pathname,
+    h1: (document.querySelector('h1') || {}).textContent || '',
+    robots: (document.querySelector('meta[name="robots"]') || {}).content || '',
+    title: document.title,
+    dl: JSON.parse(sessionStorage.getItem('__dl') || '[]').filter(x => x && x.event === 'zoho_form_submit').length,
+    canonical: (document.querySelector('link[rel="canonical"]') || {}).href || '',
+  }));
+  out.push(['after sending, the browser is on /thank-you/', /\/thank-you\/?$/.test(done.url)]);
+  out.push(['thank-you page says thank you', /thank you/i.test(done.h1)]);
+  out.push(['thank-you page is noindex and has its own title and canonical', /noindex/.test(done.robots) && /^Thank You/.test(done.title) && /\/thank-you\/$/.test(done.canonical)]);
   out.push(['dataLayer event zoho_form_submit pushed once', done.dl === 1]);
   const post = sent.find(s => s.method === 'POST');
   const fields = post ? [...new URLSearchParams(post.body).entries()] : [];
