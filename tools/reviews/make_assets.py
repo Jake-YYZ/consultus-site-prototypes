@@ -20,7 +20,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 DATA = os.path.join(ROOT, 'tools', 'reviews', 'reviews.json')
 OUT = os.path.join(ROOT, 'assets', 'reviews')
 LOGO_OUT = os.path.join(OUT, 'logos')
-LOGO_HINTS = {'ben-fishbein': ['comwave'], 'shaun-oriold': ['closet-envy', 'closetenvy'], 'kim-benedict': ['talentminded', 'talent-minded'], 'kristin-finley': ['evas', 'eva-s', 'eva_s']}
+LOGO_HINTS = {'ben-fishbein': ['comwave'], 'justin-stone': ['hersey-bins'], 'daniel-szypka': ['tph-group'], 'shaun-oriold': ['closet-envy', 'closetenvy'], 'kim-benedict': ['talentminded', 'talent-minded'], 'kristin-finley': ['evas', 'eva-s', 'eva_s']}
 
 
 def arg(name):

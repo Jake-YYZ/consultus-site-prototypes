@@ -344,6 +344,32 @@
       "logo_alt": "Comwave logo",
       "quote": "What impressed us most about Consultus Digital Inc is that every strategy or idea presented to us is truly bespoke. In my experience within the industry, I’ve witnessed many agencies sell templated, one size fits all solutions to businesses. This is not the case with Consultus Digital - their work is thoughtful and original.",
       "edits": ["'Consultus' written as 'Consultus Digital'; 'i'v' corrected to 'I’ve'; Clutch review (Oct 2022) was posted anonymously, shown with his name and photo, cleared by Jake on Oct 9 2026 (quotes.csv); the results line in the CSV is not used"]
+    },
+    {
+      "id": "justin-stone",
+      "name": "Justin Stone",
+      "title": "Owner",
+      "company": "Hersey Bins",
+      "source": "Client quote",
+      "photo": { "stem": "justin-stone-hersey-bins-consultus-digital-testimonial" },
+      "alt": "Justin Stone, Hersey Bins, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/justin-stone.webp",
+      "logo_alt": "Hersey Bins logo",
+      "quote": "Consultus Digital runs our SEO and now our Google Ads too. They write the content, build the links and handle the technical side, and every month I can see what was done and what it brought in. More bin rental calls from the areas we wanted. Easy people to deal with.",
+      "edits": ["'Consultus' written as 'Consultus Digital'; Jake's sheet marks it as drafted for the client's OK, the user said on Oct 12 2026 that it is the client's quote and to use it where there is a photo"]
+    },
+    {
+      "id": "daniel-szypka",
+      "name": "Daniel Szypka",
+      "title": "Owner",
+      "company": "The TPH Group / PaintMyCondo.ca",
+      "source": "Client quote",
+      "photo": { "stem": "daniel-szypka-tph-group-consultus-digital-testimonial" },
+      "alt": "Daniel Szypka, TPH Group, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/daniel-szypka.webp",
+      "logo_alt": "The TPH Group / PaintMyCondo.ca logo",
+      "quote": "We’ve worked with Consultus Digital on PaintMyCondo for years now. Website, search, ads, they’ve handled all of it and they treat our business like their own. When something needs fixing it gets fixed, and the leads keep coming in.",
+      "edits": ["'Consultus' written as 'Consultus Digital'; Jake's sheet marks it as drafted for the client's OK, the user said on Oct 12 2026 that it is the client's quote and to use it where there is a photo"]
     }
   ],
   "blocks": {
@@ -351,7 +377,7 @@
       "page": "index.html",
       "style": "wall",
       "featured": ["joseph-zayouna", "victoria-buott", "stanislav-kojokin", "laura-harvey", "dean-arnill"],
-      "wall": ["nick-chan", "helen-stergiou", "jason-dam", "shaun-oriold", "jennifer-oegema", "stefanie-antunes", "adam-gordon", "maureen-dwight", "kristin-finley", "joseph-demarinis", "sara-giles", "andrea-hardy", "kim-benedict", "ben-fishbein", "shawn-mintz", "tara-moore-jones", "melissa-graham", "tricia-oldfield"]
+      "wall": ["nick-chan", "helen-stergiou", "jason-dam", "justin-stone", "shaun-oriold", "jennifer-oegema", "stefanie-antunes", "adam-gordon", "maureen-dwight", "kristin-finley", "joseph-demarinis", "sara-giles", "andrea-hardy", "kim-benedict", "daniel-szypka", "ben-fishbein", "shawn-mintz", "tara-moore-jones", "melissa-graham", "tricia-oldfield"]
     },
     "service": {
       "pages": ["ab-testing", "aeo-ai-search", "amazon-ads", "analytics-attribution", "content-marketing", "cro", "google-ads", "influencer-marketing", "landing-pages", "local-seo", "marketing-automation", "meta-ads", "microsoft-ads", "performance-creatives", "sales-enablement", "seo", "web-development", "zoho-crm"],
@@ -365,8 +391,8 @@
     },
     "division-trades": {
       "page": "home-services-marketing/index.html",
-      "style": "single-row",
-      "people": ["dean-arnill:western-asphalt"]
+      "style": "featured",
+      "people": ["dean-arnill:western-asphalt", "justin-stone", "daniel-szypka"]
     },
     "industry-b2b": { "page": "b2b-saas-marketing/index.html", "style": "single-row", "people": ["tricia-oldfield:b2b"] },
     "industry-ecommerce": { "page": "ecommerce-marketing-toronto/index.html", "style": "single-row", "people": ["joseph-demarinis:ecommerce"] },

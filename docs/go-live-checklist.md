@@ -35,9 +35,9 @@ Everything under "Already done on staging" is finished and only needs repeating 
 
 - **Client reviews (Jake's testimonials kit).** Built on 35 pages and on staging (see CLAUDE.md "Client reviews"). Nothing blocks go-live: the
   user decided to use Jake's photos as they are. Waiting on Jake only for additions: photos for Siea Newton (Bow City, her quote is off
-  until then), Sara Cumming (Harmony), Dave Bangar, Tricia Oldfield, Melissa Graham and Alex Roell; his OK on the quotes he drafted
-  (Justin Stone, Daniel Szypka, Dave Bangar, kept out of `tools/reviews/reviews.json` because the repository is public); and whether Tricia
-  wrote the Zoho directory review. When Jake sends one: add the person to the JSON, run `python3 tools/reviews/make_assets.py` and
+  until then), Sara Cumming (Harmony), Dave Bangar (his quote waits for the headshot), Tricia Oldfield, Melissa Graham and Alex Roell;
+  and whether Tricia wrote the Zoho directory review. Justin Stone's and Daniel Szypka's quotes (Jake's sheet says drafted for the
+  client's OK) are in on the user's word that they are the clients' own (Oct 12 2026). When Jake sends one: add the person to the JSON, run `python3 tools/reviews/make_assets.py` and
   `python3 tools/build_reviews.py --write`, then `node tools/qa/qa_reviews.mjs` and deploy.
 
 ## 2. Redirects the host has to do (they are not in the repo)
