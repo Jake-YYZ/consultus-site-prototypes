@@ -202,7 +202,7 @@ def quote_html(text, tag_cls):
 def credit_html(p):
     role = role_of(p)
     return '<div class="crv-credit"><strong class="crv-name">%s</strong>%s</div>' % (
-        e(p['name']), '<span class="crv-role">%s</span>' % e(role) if role else '')
+        e(p.get('display_name') or p['name']), '<span class="crv-role">%s</span>' % e(role) if role else '')
 
 
 def slide_html(p, ph, i=None, n=None, show_source=True):
@@ -273,7 +273,7 @@ def card_html(p, ph):
         '</li>'
     ) % (
         photo_html(p, ph, 'crv-avatar', None, use420=True),
-        e(p['name']),
+        e(p.get('display_name') or p['name']),
         '<span class="crv-role">%s</span>' % e(role) if role else '',
         quote_html(p['quote'], 'crv-text'),
         ''.join(foot),
