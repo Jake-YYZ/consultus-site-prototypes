@@ -140,6 +140,8 @@ function cb_card_image( $post_id = null, $size = 'cb-card' ) {
 function cb_blog_redirects() {
 	return array(
 		'/blog/my-take-on-how-ai-will-transform-digital-marketing-in-2023/' => '/blog/how-ai-will-transform-digital-marketing-in-2025/',
+		// The same 2023 post under the slug it had on staging (live never had this address); the post is a draft now.
+		'/blog/my-take-how-ai-digital-marketing-2023/' => '/blog/how-ai-will-transform-digital-marketing-in-2025/',
 		// The 30 merged posts (seo-migration/blog-consolidation-proposal.csv, approved Oct 9 2026). The posts themselves are set to draft,
 		// which makes WordPress answer their old URL with a 404, and the rule below turns that into a 301.
 		'/blog/ecommerce-seo-how-to-get-started/' => '/blog/10-seo-ecommerce-tips-that-actually-work/',
@@ -196,6 +198,14 @@ add_action(
 		$map  = cb_blog_redirects();
 		if ( isset( $map[ $path ] ) ) {
 			wp_redirect( cb_site_url( $map[ $path ] ), 301 );
+			exit;
+		}
+		// The old site served blog page N at /blog/N/. Here it is /blog/page/N/, and without this WordPress guesses a post whose
+		// slug starts with N. Beyond the last page there is nothing to show, so those go to the blog hub.
+		if ( preg_match( '#^/blog/([0-9]{1,3})/$#', $path, $m ) ) {
+			$pages = max( 1, (int) ceil( (int) wp_count_posts()->publish / max( 1, (int) get_option( 'posts_per_page' ) ) ) );
+			$n     = (int) $m[1];
+			wp_redirect( ( $n >= 2 && $n <= $pages ) ? home_url( '/page/' . $n . '/' ) : home_url( '/' ), 301 );
 			exit;
 		}
 	},

@@ -36,16 +36,33 @@ CONTROLLER = r"""<?php
  * Kinsta sends any URL that is not a real file or folder to this file:
  *  - "/"                   -> the static homepage
  *  - an old URL in the map -> a permanent redirect to its new page (query strings are kept), or 410 Gone
+ *  - "/prefix/*" rules      -> everything under that prefix goes to one page
+ *  - an address with "//"   -> a permanent redirect to the same address with single slashes
  *  - "/blog/..."           -> WordPress (installed in /blog)
  *  - anything else         -> the static 404 page
  */
 $redirects = array(
 {rules}
 );
+$prefix_redirects = array(
+{prefix_rules}
+);
 
-$uri  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '/';
-$path = rawurldecode( (string) parse_url( $uri, PHP_URL_PATH ) );
-$path = preg_replace( '#/{2,}#', '/', $path );
+$uri = isset( $_SERVER['REQUEST_URI'] ) ? (string) $_SERVER['REQUEST_URI'] : '/';
+// Not parse_url(): it reads "//blog/post/" as a host called "blog". Cut the query off by hand instead.
+$raw   = (string) strtok( $uri, '?#' );
+$query = isset( $_SERVER['QUERY_STRING'] ) ? str_replace( array( "\r", "\n" ), '', $_SERVER['QUERY_STRING'] ) : '';
+if ( '' === $raw ) {
+	$raw = '/';
+}
+// A double slash ("https://host//blog/post/") is a mistake in a link, not another page. The old site answered "//" with a 301 too.
+// Leading slashes collapse to one, so the Location is always a path on this host.
+if ( false !== strpos( $raw, '//' ) ) {
+	header( 'Cache-Control: public, max-age=3600' );
+	header( 'Location: ' . preg_replace( '#/{2,}#', '/', $raw ) . ( '' !== $query ? '?' . $query : '' ), true, 301 );
+	exit;
+}
+$path = rawurldecode( $raw );
 
 if ( '/' === $path || '/index.php' === $path ) {
 	header( 'Content-Type: text/html; charset=UTF-8' );
@@ -54,16 +71,24 @@ if ( '/' === $path || '/index.php' === $path ) {
 }
 
 // Old URLs. Matching ignores a trailing slash and letter case.
-$key = strtolower( rtrim( $path, '/' ) );
-if ( isset( $redirects[ $key ] ) ) {
-	list( $to, $status ) = $redirects[ $key ];
+$key  = strtolower( rtrim( $path, '/' ) );
+$rule = isset( $redirects[ $key ] ) ? $redirects[ $key ] : null;
+if ( null === $rule ) {
+	foreach ( $prefix_redirects as $prefix => $candidate ) {
+		if ( 0 === strpos( $key . '/', $prefix ) ) {
+			$rule = $candidate;
+			break;
+		}
+	}
+}
+if ( null !== $rule ) {
+	list( $to, $status ) = $rule;
 	if ( 410 === $status ) {
 		http_response_code( 410 );
 		header( 'Content-Type: text/html; charset=UTF-8' );
 		readfile( __DIR__ . '/404.html' );
 		exit;
 	}
-	$query = isset( $_SERVER['QUERY_STRING'] ) ? str_replace( array( "\r", "\n" ), '', $_SERVER['QUERY_STRING'] ) : '';
 	if ( '' !== $query ) {
 		$to .= ( false === strpos( $to, '?' ) ? '?' : '&' ) . $query;
 	}
@@ -109,6 +134,10 @@ def main():
             continue
         rules.append((n, parts[0], parts[1], int(parts[2])))
 
+    # "/prefix/*  /target/  301": everything under /prefix/ goes to one page (no splat: the target is fixed)
+    prefix_rules = [r for r in rules if r[1].endswith('/*')]
+    rules = [r for r in rules if not r[1].endswith('/*')]
+
     seen = {}
     for n, old, new, status in rules:
         k = norm(old)
@@ -117,6 +146,16 @@ def main():
         seen[k] = n
         if re.search(r'[*:?#]', old):
             problems.append('line %d: wildcards/params are not supported (%s)' % (n, old))
+    seen_prefix = {}
+    for n, old, new, status in prefix_rules:
+        k = old[:-1].lower()
+        if re.search(r'[*:?#]', old[:-2]) or status == 410:
+            problems.append('line %d: a prefix rule is "/prefix/*  /target/  301|302" (%s)' % (n, old))
+        if k in seen_prefix:
+            problems.append('line %d: duplicate of line %d (%s)' % (n, seen_prefix[k], old))
+        seen_prefix[k] = n
+        if not new.startswith('http') and not new.startswith('/blog/') and not page_exists(new):
+            problems.append('line %d: destination %s does not exist in the site' % (n, new))
     for n, old, new, status in rules:
         if status == 410:
             continue
@@ -135,7 +174,9 @@ def main():
 
     body = '\n'.join("\t'%s' => array( '%s', %d )," % (norm(old).replace("'", "\\'"), new.replace("'", "\\'"), status)
                      for _, old, new, status in sorted(rules, key=lambda r: norm(r[1])))
-    open(OUT, 'w', encoding='utf-8').write(CONTROLLER.replace('{count}', str(len(rules))).replace('{rules}', body))
+    prefix_body = '\n'.join("\t'%s' => array( '%s', %d )," % (old[:-1].lower().replace("'", "\\'"), new.replace("'", "\\'"), status)
+                            for _, old, new, status in sorted(prefix_rules, key=lambda r: r[1].lower()))
+    open(OUT, 'w', encoding='utf-8').write(CONTROLLER.replace('{count}', str(len(rules) + len(prefix_rules))).replace('{rules}', body).replace('{prefix_rules}', prefix_body))
 
     stubs = []
     for n, old, new, status in rules:
@@ -144,7 +185,7 @@ def main():
             open(os.path.join(folder, 'index.php'), 'w', encoding='utf-8').write(
                 HEADER_STUB.replace('{status}', str(status)).replace('{to}', new))
             stubs.append(old)
-    print('%d rules -> %s' % (len(rules), os.path.relpath(OUT, ROOT)))
+    print('%d rules (%d of them prefix rules) -> %s' % (len(rules) + len(prefix_rules), len(prefix_rules), os.path.relpath(OUT, ROOT)))
     print('stub folders given a real redirect:', stubs or 'none')
 
 

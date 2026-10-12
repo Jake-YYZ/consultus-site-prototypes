@@ -106,14 +106,18 @@
 # --- Sitemap (Oct 2026): the old WordPress site published its sitemap at /sitemap_index.xml; /sitemap.xml is now the index of the page and blog sitemaps ---
 /sitemap_index.xml                                /sitemap.xml  301
 
-# --- Rebuild at same URL (3): build these, do NOT redirect ---
+# --- Agency QA (Oct 12 2026): live URLs that were real pages and had no rule. /blog/<N>/ pagination is handled in WordPress (cb_blog_redirects hook). ---
+/questionnaire/                                   /contact/  301
+/author/*                                         /blog/  301
+
+# --- Rebuild at same URL (4): build these, do NOT redirect ---
 #   /insurance-industry/  (rebuild)
 #   /privacy-policy/  (rebuild)
 #   /reputation-advertising-toronto/  BUILT (keeps slug: ranks #1 "reputation management firms")
+#   /site-map/  BUILT Oct 12 2026 as the visitor HTML sitemap (it was a 410 before; the agency's QA asked for it)
 
-# --- Prune (3): serve 410 Gone, UNLESS the URL has backlinks (then 301). Semrush backlink check Oct 9 2026: none of the three has a backlink, so 410 ---
+# --- Prune (2): serve 410 Gone, UNLESS the URL has backlinks (then 301). Semrush backlink check Oct 9 2026: neither has a backlink, so 410 ---
 /landing/andromeda-unpacked-webinar/              -  410
 /links/                                           -  410
-/site-map/                                        -  410
 
 # --- Blog consolidations (30): the merged posts are drafts in WordPress and cb_blog_redirects() in wp-theme/consultus-blog/functions.php 301s them (targets: seo-migration/blog-consolidation-proposal.csv, approved Oct 9 2026). Nothing to list here: /blog/ is handled by WordPress ---

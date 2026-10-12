@@ -35,6 +35,11 @@ for line in open(os.path.join(ROOT, '_redirects'), encoding='utf-8'):
 
 jobs = []   # (label, url, expected_status, expected_location_path or None)
 for i, (old, new, status) in enumerate(rules):
+    if old.endswith('/*'):   # prefix rule: test a sample address under the prefix
+        jobs.append(('prefix  ' + old, BASE + old[:-1] + 'jake-matzanke/', status, new))
+        jobs.append(('prefix deeper  ' + old, BASE + old[:-1] + 'jake-matzanke/page/2/', status, new))
+        jobs.append(('dest  ' + new, BASE + new, 200, None))
+        continue
     if status == 410:
         jobs.append(('gone  ' + old, BASE + old, 410, None))
         continue
@@ -49,8 +54,18 @@ for label, path, want in (
         ('home', '/', 200), ('about page', '/about/', 200), ('blog hub', '/blog/', 200),
         ('blog post', '/blog/healthcare-ads-rejected/', 200), ('blog page 2', '/blog/page/2/', 200),
         ('blog 404', '/blog/no-such-post-xyz/', 404), ('unknown old url', '/no-such-page-xyz/', 404),
-        ('insights was never live', '/insights/', 404), ('wp login', '/blog/wp-login.php', 200)):
+        ('insights was never live', '/insights/', 404), ('wp login', '/blog/wp-login.php', 200),
+        ('HTML sitemap', '/site-map/', 200), ('thank-you page', '/thank-you/', 200)):
     jobs.append(('keeps working: ' + label, BASE + path, want, None))
+# Double slashes in an address are a link mistake: the front controller sends them to the clean address
+for label, path, loc in (('double slash on a post', '//blog/cro-strategy/', '/blog/cro-strategy/'),
+                         ('double slash on the home page', '//', '/'),
+                         ('double slash keeps the query', '//blog/page/2/?utm=1', '/blog/page/2/?utm=1')):
+    jobs.append(('slash  ' + label, BASE + path, 301, loc))
+# The old site served blog page N at /blog/N/; here it is /blog/page/N/ (beyond the last page: the blog hub)
+jobs.append(('old pagination  /blog/2/', BASE + '/blog/2/', 301, '/blog/page/2/'))
+jobs.append(('old pagination  /blog/9/', BASE + '/blog/9/', 301, '/blog/page/9/'))
+jobs.append(('old pagination beyond the last page  /blog/99/', BASE + '/blog/99/', 301, '/blog/'))
 # Old blog URLs that WordPress redirects (cb_blog_redirects() in wp-theme/consultus-blog/functions.php: the 2023 AI post and the 30 merged posts)
 import re
 theme = open(os.path.join(ROOT, 'wp-theme', 'consultus-blog', 'functions.php'), encoding='utf-8').read()
