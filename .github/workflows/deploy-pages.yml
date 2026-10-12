@@ -35,9 +35,12 @@ jobs:
           rsync -a --exclude '.git' --exclude '.github' ./ /tmp/site/
           # The href= pattern also matches JS "location.href='...'" assignments,
           # so a separate rule for those would double-prefix them.
+          # srcset holds several comma-separated URLs (the client review photos), and data-thanks is
+          # where the contact form goes after sending; neither is matched by the attribute rule above.
           find /tmp/site \( -name '*.html' -o -name '*.css' \) -print0 | xargs -0 perl -pi -e '
-            s{((?:href|src|action|poster|content|data-src)=)(["\x27])/(?!/)}{$1$2/consultus-site-prototypes/}g;
+            s{((?:href|src|action|poster|content|data-src|data-thanks)=)(["\x27])/(?!/)}{$1$2/consultus-site-prototypes/}g;
             s{(url\()(["\x27]?)/(?!/)}{$1$2/consultus-site-prototypes/}g;
+            s{(srcset=)(["\x27])([^"\x27]*)\2}{ my ($a, $q, $v) = ($1, $2, $3); $v =~ s{(^|,\s*)/(?!/)}{$1/consultus-site-prototypes/}g; "$a$q$v$q" }ge;
           '
 
       - name: Keep preview site out of search engines
