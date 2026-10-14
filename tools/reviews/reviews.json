@@ -193,12 +193,12 @@
       "id": "tara-moore-jones",
       "name": "Tara Moore-Jones",
       "title": "",
-      "company": "",
+      "company": "The Japanese Paper Place",
       "source": "Google review",
       "photo": { "stem": "tara-moore-jones-consultus-digital-client-review" },
-      "alt": "Tara Moore-Jones, Consultus Digital client",
-      "logo": null,
-      "logo_alt": "",
+      "alt": "Tara Moore-Jones, The Japanese Paper Place, client of Consultus Digital",
+      "logo": "/assets/reviews/logos/tara-moore-jones-japanese-paper-place.webp",
+      "logo_alt": "The Japanese Paper Place logo",
       "quote": "Helped us out of a bind very efficiently! Highly recommend!"
     },
     {
@@ -366,8 +366,8 @@
       "source": "Client quote",
       "photo": { "stem": "daniel-szypka-tph-group-consultus-digital-testimonial" },
       "alt": "Daniel Szypka, TPH Group, client of Consultus Digital",
-      "logo": "/assets/reviews/logos/daniel-szypka.webp",
-      "logo_alt": "The TPH Group / PaintMyCondo.ca logo",
+      "logo": "/assets/reviews/logos/daniel-szypka-tph-group.webp",
+      "logo_alt": "The TPH Group logo",
       "quote": "We’ve worked with Consultus Digital on PaintMyCondo for years now. Website, search, ads, they’ve handled all of it and they treat our business like their own. When something needs fixing it gets fixed, and the leads keep coming in.",
       "edits": ["'Consultus' written as 'Consultus Digital'; Jake's sheet marks it as drafted for the client's OK, the user said on Oct 12 2026 that it is the client's quote and to use it where there is a photo"]
     }
