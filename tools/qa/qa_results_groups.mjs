@@ -54,6 +54,18 @@ for (const g of groups) {
   }
 }
 
+// no ad twice in a group: file names that differ only by the size (1x1, 4x5, 9x16, 4-5 ...) are the same ad in another ratio.
+// One tile per ad: the same ad in three sizes reads as a page full of repeats (found Oct 14 2026 on Paint My Condo and ONA).
+for (const g of groups) {
+  const seen = {};
+  for (const t of g.tiles) {
+    const k = t.src.split('/').pop().replace(/\.[a-z0-9]+$/i, '').replace(/-lite$/, '').replace(/[-_]?(1x1|4x5|9x16|1-1|4-5|9-16)(?=$|[-_])/gi, '');
+    (seen[k] = seen[k] || []).push(t.src.split('/').pop());
+  }
+  const dups = Object.entries(seen).filter(([, v]) => v.length > 1);
+  ok(dups.length === 0, `${g.id}: no ad appears twice in another size` + (dups.length ? ': ' + JSON.stringify(dups) : ''));
+}
+
 // images load, with the pixel size the tag says
 const imgs = await page.evaluate(async () => {
   const out = [];
