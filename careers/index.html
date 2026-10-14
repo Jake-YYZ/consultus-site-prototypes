@@ -473,6 +473,14 @@ a {
 }
 </style>
   <main id="main-content">
+  <!-- RECRUITMENT SCAM ALERT (links to the notice above Open positions) -->
+  <aside class="fn-alert" aria-label="Recruitment scam alert">
+    <div class="fn-alert-in">
+      <span class="fn-alert-lead"><span class="fn-alert-dot" aria-hidden="true"></span><strong>Recruitment scam alert.</strong></span>
+      <span class="fn-alert-text">We never ask candidates for payment, and we only email from @consultusdigital.com.</span>
+      <a href="#hiring-notice">Read the notice</a>
+    </div>
+  </aside>
   <section class="fh-hero">
     <div class="fh-in">
       <div class="fh-copy">
@@ -480,7 +488,7 @@ a {
         <h1>Grow your <span class="sem">career</span>. Make an impact. Join a <span style="white-space:nowrap">5-star</span> team.</h1>
         <p class="fh-lede">We're transforming businesses across North America, and we're looking for people who care about the craft as much as we do. Hybrid, learning-led, growth-driven.</p>
         <div class="fh-ctas">
-          <a class="btn primary cta-yellow-hover" href="mailto:careers@consultusdigital.com">Get in Touch &rarr;</a>
+          <a class="btn primary cta-yellow-hover" href="mailto:info@consultusdigital.com">Get in Touch &rarr;</a>
         </div>
       </div>
       <div class="fh-fan" aria-hidden="true">
@@ -596,6 +604,43 @@ a {
     </div>
   </section>
 
+  <!-- RECRUITMENT FRAUD NOTICE -->
+  <section id="hiring-notice" class="fn-sec" aria-labelledby="fn-title">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <div class="section-lbl dark">Candidate notice</div>
+        <h2 class="sec-title" id="fn-title">Protect yourself from recruitment <span class="sem">fraud</span>.</h2>
+        <div>
+          <p class="fn-lede">People are falsely claiming to hire for remote positions at Consultus Digital. These offers are not from us. Here is how to tell a real Consultus Digital opportunity from a fake one.</p>
+        </div>
+      </div>
+      <div class="fn-grid">
+        <article class="fn-card">
+          <span class="fn-num">01</span>
+          <h3>We never ask for payment.</h3>
+          <p>No step in our hiring process requires you to pay anything or share financial details, such as bank account or credit card information. Anyone who asks isn't from Consultus Digital.</p>
+        </article>
+        <article class="fn-card">
+          <span class="fn-num">02</span>
+          <h3>Real roles are listed here.</h3>
+          <p>Every legitimate opening is posted on our official careers page, consultusdigital.com/careers. If a role isn't listed here, it isn't ours.</p>
+        </article>
+        <article class="fn-card">
+          <span class="fn-num">03</span>
+          <h3>We only email from @consultusdigital.com.</h3>
+          <p>All official communication comes from an @consultusdigital.com address. Check the full sender address before you reply. Messages from personal accounts or any other domain are not from us.</p>
+        </article>
+      </div>
+      <div class="fn-report">
+        <div class="fn-report-copy">
+          <h3>Received a suspicious offer?</h3>
+          <p>Don't send money or personal information. Forward the message to <a href="mailto:info@consultusdigital.com">info@consultusdigital.com</a> and we'll confirm whether it came from us.</p>
+        </div>
+        <a class="btn primary on-dark" href="mailto:info@consultusdigital.com?subject=Suspicious%20recruitment%20message">Report a suspicious message</a>
+      </div>
+    </div>
+  </section>
+
   <!-- OPEN POSITIONS -->
   <section id="open-roles" class="sec bone-full">
     <div class="sec-inner">
@@ -603,7 +648,7 @@ a {
         <div class="section-lbl">Your Next Chapter</div>
         <h2 class="sec-title">Open <span class="sem">positions</span>.</h2>
         <div>
-          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0">We're not currently hiring for any specific roles. However, if you think you'd be a perfect fit with us, please <a href="mailto:careers@consultusdigital.com" style="color:#1A40C7;text-decoration:underline;text-underline-offset:2px">get in touch</a>.</p>
+          <p style="font-size:17px;line-height:1.65;color:#2A2A2A;margin:0">We're not currently hiring for any specific roles. However, if you think you'd be a perfect fit with us, please <a href="mailto:info@consultusdigital.com" style="color:#1A40C7;text-decoration:underline;text-underline-offset:2px">get in touch</a>.</p>
         </div>
       </div>
     </div>
@@ -615,7 +660,7 @@ a {
       <div class="eyebrow dark" style="margin-bottom:32px"><span class="eyebrow-dot"></span><span>Ready to build something?</span></div>
       <h2 class="cta-title">Come <span class="sem">grow</span> with us.</h2>
       <div class="hero-ctas" style="gap:16px;justify-content:flex-start">
-        <a class="btn secondary on-dark" href="mailto:careers@consultusdigital.com" style="background:transparent;color:#FAF8F3;border:1px solid rgba(250,248,243,0.35)">Email careers@consultusdigital.com</a>
+        <a class="btn secondary on-dark" href="mailto:info@consultusdigital.com" style="background:transparent;color:#FAF8F3;border:1px solid rgba(250,248,243,0.35)">Email info@consultusdigital.com</a>
       </div>
     </div>
   </section>
@@ -977,6 +1022,143 @@ a {
     gap: 24px;
   }
 }
+
+  /* Recruitment fraud notice: alert strip at the top of main, full notice above Open positions */
+  .fn-alert {
+    background: #0D0D0D;
+    color: #FAF8F3;
+    padding: 12px 32px;
+  }
+  .fn-alert-in {
+    max-width: 1136px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 14px;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: center;
+  }
+  .fn-alert-lead {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fn-alert-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #D94545;
+  }
+  .fn-alert strong {
+    font-weight: 600;
+  }
+  .fn-alert-text {
+    color: #C7C5C8;
+  }
+  .fn-alert a {
+    color: #FAF8F3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+  }
+  .fn-sec {
+    background: #0D0D0D;
+    color: #FAF8F3;
+    scroll-margin-top: 72px;
+  }
+  .fn-sec .sec-title {
+    color: #FAF8F3;
+  }
+  .fn-sec .sec-title .sem {
+    color: #FFEC00;
+  }
+  .fn-lede {
+    font-size: 17px;
+    line-height: 1.65;
+    color: #C7C5C8;
+    margin: 0;
+    max-width: 760px;
+  }
+  .fn-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .fn-card {
+    flex: 1 1 300px;
+    min-width: 0;
+    background: #161616;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .fn-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: #8C8A87;
+  }
+  .fn-card h3,
+  .fn-report h3 {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #FAF8F3;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  .fn-card p,
+  .fn-report p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #A8A5A0;
+    margin: 0;
+  }
+  .fn-report {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 40px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid #262626;
+  }
+  .fn-report-copy {
+    flex: 1 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fn-report h3 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .fn-report-copy a {
+    color: #FAF8F3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 900px) {
+    .fn-report {
+      margin-top: 40px;
+    }
+  }
+  @media (max-width: 600px) {
+    .fn-alert {
+      padding: 12px 16px;
+    }
+  }
 </style>
 
 </main>
@@ -1039,7 +1221,7 @@ a {
           <h4>Contact Us</h4>
           <div class="footer-contact-sub">(416) 460-1810</div>
           <h4>Want to join the team?</h4>
-          <div class="footer-contact-line">careers@consultusdigital.com</div>
+          <div class="footer-contact-line">info@consultusdigital.com</div>
         </div>
         <div class="footer-col">
           <h4>Digital &amp; CRM</h4>
