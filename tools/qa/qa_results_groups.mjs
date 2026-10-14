@@ -36,7 +36,7 @@ const groups = await page.evaluate(() => [...document.querySelectorAll('.rl-cgro
     chip: chip ? +chip.querySelector('i').textContent : null,
     tiles: tiles.map(t => {
       const v = t.querySelector('video'), im = t.querySelector('img'), el = v || im;
-      return { kind: v ? 'video' : 'img', src: el.getAttribute('src'), full: v ? v.getAttribute('data-full') : null, w: +el.getAttribute('width'), h: +el.getAttribute('height'), ar: parseFloat(t.style.getPropertyValue('--ar')), alt: im ? im.getAttribute('alt') : null };
+      return { kind: v ? 'video' : 'img', src: el.getAttribute('src'), sound: v ? v.getAttribute('data-sound') : null, w: +el.getAttribute('width'), h: +el.getAttribute('height'), ar: parseFloat(t.style.getPropertyValue('--ar')), alt: im ? im.getAttribute('alt') : null };
     }),
   };
 }));
@@ -95,40 +95,47 @@ ok(badVids.length === 0, `${vids.length} videos: file 200, real size = tag, leng
 const heavy = vids.filter(v => v.bytes > 2.5e6);
 ok(heavy.length === 0, `no loop over 2.5 MB` + (heavy.length ? ': ' + heavy.map(v => v.src + ' ' + v.bytes).join(', ') : ''));
 
-// ads with a voice: the tile is a silent preview loop, the larger view plays the whole ad WITH sound (a prospect has to be able to listen).
-// data-full files answer, have the tile's size and are longer than the loop; opened with a click the video is not muted, not looping, and plays.
-const fulls = groups.flatMap(g => g.tiles.filter(t => t.full).map(t => ({ g: g.id, ...t })));
-const fullInfo = await page.evaluate(async list => {
+// Every video ad can be HEARD. The grid tile is a silent preview loop (browsers block autoplay with sound); its larger view plays the file named in
+// data-sound with the sound on. Only the carousels (slideshows made from pictures) have no audio. A prospect has to be able to listen to an ad.
+const videoTiles = groups.flatMap(g => g.tiles.filter(t => t.kind === 'video').map(t => ({ g: g.id, ...t })));
+const silent = videoTiles.filter(t => !t.sound && !/carousel/.test(t.src));
+ok(videoTiles.length > 0 && silent.length === 0, `every video ad has a file with sound (${videoTiles.filter(t => t.sound).length} of ${videoTiles.length} video tiles; the rest are carousels)` + (silent.length ? ': silent: ' + silent.map(t => t.src).join(', ') : ''));
+const sounds = videoTiles.filter(t => t.sound);
+const soundInfo = await page.evaluate(async list => {
   const out = [];
   for (const t of list) {
-    const r = await fetch(t.full, { method: 'HEAD' }).catch(() => null);
-    const probe = document.createElement('video'); probe.muted = true; probe.preload = 'metadata'; probe.src = t.full;
+    const r = await fetch(t.sound, { method: 'HEAD' }).catch(() => null);
+    const probe = document.createElement('video'); probe.muted = true; probe.preload = 'metadata'; probe.src = t.sound;
     const meta = await new Promise(res => { probe.addEventListener('loadedmetadata', () => res({ w: probe.videoWidth, h: probe.videoHeight, d: probe.duration })); probe.addEventListener('error', () => res(null)); setTimeout(() => res(null), 15000); });
-    out.push({ g: t.g, full: t.full, status: r && r.status, bytes: r && +r.headers.get('content-length'), meta, w: t.w, h: t.h });
+    out.push({ sound: t.sound, status: r && r.status, meta, w: t.w, h: t.h });
   }
   return out;
-}, fulls);
-const badFull = fullInfo.filter(f => f.status !== 200 || !f.meta || f.meta.w !== f.w || f.meta.h !== f.h || !(f.meta.d > 15));
-ok(fulls.length > 0 && badFull.length === 0, `${fulls.length} full-length ads with sound: file 200, same size as the tile, longer than 15 s` + (badFull.length ? ': ' + JSON.stringify(badFull.slice(0, 3)) : ''));
-for (const id of [...new Set(fulls.map(f => f.g))]) {
+}, sounds);
+const badSound = soundInfo.filter(f => f.status !== 200 || !f.meta || f.meta.w !== f.w || f.meta.h !== f.h || !(f.meta.d >= 7.5));
+ok(sounds.length > 0 && badSound.length === 0, `${sounds.length} files with sound: 200, same size as their tile, at least 7.5 s` + (badSound.length ? ': ' + JSON.stringify(badSound.slice(0, 3)) : ''));
+// open each one in the larger view: sound on, no loop, controls, it starts by itself, and (Chrome) audio is really decoded
+const soundBad = [];
+for (const id of [...new Set(sounds.map(f => f.g))]) {
   await page.click(`.rl-chip[data-client="${id}"]`);
-  await page.waitForTimeout(300);
-  const sel = `#rl-c-${id} .rl-creative:has(video[data-full])`;
-  const n = await page.locator(sel).count();
-  const card = page.locator(sel).last();
-  await card.scrollIntoViewIfNeeded();
-  await card.click();
-  await page.waitForTimeout(3000);
-  const st = await page.evaluate(() => { const v = document.querySelector('#rl-lb-stage video'); return v ? { src: v.getAttribute('src'), muted: v.muted, vol: v.volume, loop: v.loop, paused: v.paused, t: v.currentTime, controls: v.controls, audio: typeof v.webkitAudioDecodedByteCount === 'number' ? v.webkitAudioDecodedByteCount : null, label: v.getAttribute('aria-label') } : null; });
-  ok(!!st && /-full\.mp4$/.test(st.src) && st.muted === false && st.vol > 0 && st.loop === false && st.controls, `${id}: the larger view of an ad with a voice opens the full video with sound on, no loop, with controls (${n} such tiles) ` + JSON.stringify(st));
-  ok(!!st && st.paused === false && st.t > 0.5, `${id}: it starts playing by itself after the click (at ${st && st.t.toFixed(1)} s)`);
-  if (st && st.audio !== null) ok(st.audio > 0, `${id}: the browser decoded audio (${st.audio} bytes)`);
-  await page.keyboard.press('Escape');
-  await page.waitForTimeout(200);
-  const after = await page.evaluate(() => ({ hidden: document.getElementById('rl-lb').hidden, videos: document.querySelectorAll('#rl-lb-stage video').length }));
-  ok(after.hidden && after.videos === 0, `${id}: closing the larger view stops the video (it is removed)`);
+  await page.waitForTimeout(250);
+  const cards = page.locator(`#rl-c-${id} .rl-creative:has(video[data-sound])`);
+  const n = await cards.count();
+  for (let k = 0; k < n; k++) {
+    const card = cards.nth(k);
+    await card.scrollIntoViewIfNeeded();
+    await card.click();
+    await page.waitForTimeout(2600);
+    const st = await page.evaluate(() => { const v = document.querySelector('#rl-lb-stage video'); return v ? { src: v.getAttribute('src'), muted: v.muted, vol: v.volume, loop: v.loop, paused: v.paused, t: v.currentTime, controls: v.controls, audio: typeof v.webkitAudioDecodedByteCount === 'number' ? v.webkitAudioDecodedByteCount : null } : null; });
+    const good = !!st && /-(full|sound)\.mp4$/.test(st.src) && st.muted === false && st.vol > 0 && st.loop === false && st.controls && st.paused === false && st.t > 0.4 && (st.audio === null || st.audio > 0);
+    if (!good) soundBad.push(`${id} #${k + 1} ${JSON.stringify(st)}`);
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(150);
+  }
   await page.click('.rl-chip[data-client="all"]');
 }
+ok(soundBad.length === 0, `all ${sounds.length} ads open in the larger view with sound on, no loop, controls, playing by itself` + (engine === 'chromium' ? ', audio decoded' : '') + (soundBad.length ? ': ' + soundBad.slice(0, 3).join(' | ') : ''));
+const afterClose = await page.evaluate(() => ({ hidden: document.getElementById('rl-lb').hidden, videos: document.querySelectorAll('#rl-lb-stage video').length }));
+ok(afterClose.hidden && afterClose.videos === 0, 'closing the larger view stops and removes the video');
 
 // closed state: four tiles visible per group
 const visible = await page.evaluate(() => [...document.querySelectorAll('.rl-cgroup')].map(g => ({ id: g.getAttribute('data-client'), open: g.classList.contains('rl-open'), vis: [...g.querySelectorAll('.rl-mcols > .rl-creative')].filter(t => t.offsetWidth > 0).length, n: g.querySelectorAll('.rl-mcols > .rl-creative').length })));
