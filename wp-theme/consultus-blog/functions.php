@@ -66,6 +66,17 @@ add_filter( 'rest_endpoints', function ( $endpoints ) {
 	return $endpoints;
 } );
 
+// Twitter embeds. The embed code Twitter returns links to twitter.com, which now answers with a 301 to x.com. WordPress 7.1 only
+// recognises twitter.com addresses as embeds, so a post keeps its twitter.com address (changing it to x.com would turn the
+// embed into a plain link) and the link inside the embed is rewritten here. This also covers the copy that WordPress cached
+// in the post's meta, because the filter runs every time the embed is printed.
+add_filter( 'embed_oembed_html', function ( $html ) {
+	if ( is_string( $html ) && false !== strpos( $html, 'twitter-tweet' ) ) {
+		$html = preg_replace( '~href="https://twitter\.com/([^"?#]+)(?:\?[^"#]*)?"~', 'href="https://x.com/$1"', $html );
+	}
+	return $html;
+}, 20 );
+
 // Cleaner head.
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -142,6 +153,8 @@ function cb_blog_redirects() {
 		'/blog/my-take-on-how-ai-will-transform-digital-marketing-in-2023/' => '/blog/how-ai-will-transform-digital-marketing-in-2025/',
 		// The same 2023 post under the slug it had on staging (live never had this address); the post is a draft now.
 		'/blog/my-take-how-ai-digital-marketing-2023/' => '/blog/how-ai-will-transform-digital-marketing-in-2025/',
+		// A post that no longer exists but is still in Google's index (Ectesso's Google index sheet, Oct 13 2026).
+		'/blog/jane-app-conversion-tracking/' => '/blog/',
 		// The 30 merged posts (seo-migration/blog-consolidation-proposal.csv, approved Oct 9 2026). The posts themselves are set to draft,
 		// which makes WordPress answer their old URL with a 404, and the rule below turns that into a 301.
 		'/blog/ecommerce-seo-how-to-get-started/' => '/blog/10-seo-ecommerce-tips-that-actually-work/',

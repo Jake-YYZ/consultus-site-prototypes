@@ -90,3 +90,16 @@ on a core update; delete it again) and the blog no longer prints its version.
 - LinkedIn, Facebook and Slack cache link previews: re-scrape the key pages with their debug tools (the share image is the
   new `og-share.jpg`).
 - Re-run `python3 tools/kinsta/deploy_site.py --verify-only` and the page checks in `tools/qa/` against production.
+
+## 7. Status after the switch (Oct 14 2026)
+
+- The site is live on the Kinsta live environment (same server as staging, SSH port 19539, alias `kinsta-live`). Changes are
+  deployed with `python3 tools/kinsta/deploy_site.py --target live` (dry run, then `--apply`); nothing is pushed to staging any more.
+- Still open and not in the repo: the host redirects of section 2 (checked Oct 14: `http://`, `https://www.`, `http://www.`,
+  `/index.html` and `/index.php` all answer 200 with no redirect), the security headers of section 3, a fresh test of the contact
+  form with an email address that is not already a Zoho lead (marketing@consultusdigital.com is, so Zoho sent no new-lead email),
+  Turnstile for the form, 2FA on the shared agency login, and the Zoho web-form admin notification email.
+- Live has things the repo does not: `public/access/` (created Oct 13 17:28, `check.php` and `config.php`; ask who made it),
+  `public/clients/`, `public/health/`, and the plugin `wps-hide-login`. The deploy tool leaves them alone.
+- Posts and pages are edited on the live database now: export it first (`wp db export` into `private/`), dry run, apply, check
+  with plain requests (a browser against the live domain runs GTM and the Zoho chat).

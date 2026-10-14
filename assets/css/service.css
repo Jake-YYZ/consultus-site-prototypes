@@ -4201,3 +4201,28 @@ p.faq-desc {
     font-size: clamp(26px, 6vw, 44px);
   }
 }
+
+/* ---- Photo beside a card list (Oct 14 2026, post-launch QA: "too much space on the right side", "alignment") ----
+   The card lists run at their natural height (no scroll boxes), so the list is often taller than the photo beside it.
+   1. On desktop the photo keeps pace with the reader (sticky) on every page, as it already did on Amazon Ads, SEO, Performance
+      Creatives and Local SEO (their own rules, later in those pages, still win).
+   2. The photo may grow a little taller than it could (900px, 810px in "importance"), so when the list is only slightly taller
+      the two bottoms line up instead of missing by 19 to 38px.
+   3. No spacer under the last card: CRO and Meta Ads still carried the 170px spacer of the old scroll box.
+   Tablets (up to 1100px) already stretch the photo to the list; phones stack it above the cards. */
+.gads-page .scroll-content .gads-stack-card:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 1101px) {
+  .gads-tall-photo {
+    max-height: 1000px;
+  }
+  #gads-importance .gads-tall-photo {
+    max-height: 880px;
+  }
+  .gads-page .gads-feature-split > .gads-tall-photo {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+  }
+}

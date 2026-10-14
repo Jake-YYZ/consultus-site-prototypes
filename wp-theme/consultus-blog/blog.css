@@ -6,6 +6,9 @@ a.bl-card, a.bl-feature, .bl-pagination a, .bl-cat { color: inherit; text-decora
 /* The static pages reset link underlines in each page's own CSS and the blog has no such reset, so the browser's default
    underline showed on the header menu, the Services menu, the phone menu, the footer and the buttons. Article links keep theirs (.bl-content a). */
 a { text-decoration: none; }
+/* The same goes for colour: static pages set `a { color: inherit }` in their own CSS, the blog did not, so the footer's Privacy and
+   Sitemap links showed in the browser's default blue. They take the footer's grey, as on every other page. */
+.footer-bottom a { color: inherit; }
 
 /* ---------- Hub / archive header ---------- */
 .bl-hero { padding-top: 60px; padding-bottom: 30px; }

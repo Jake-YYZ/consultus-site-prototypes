@@ -6,13 +6,14 @@ A changed file at the same URL never reaches a browser that already has it. So t
 uploaded gets  href="/assets/css/site.css?v=<10 hex chars of the file's SHA-1>"  on every /assets/...css|js link.
 Change a file and its stamp changes, so every page asks for the new URL. The repo's own HTML is never modified.
 
-Usage (run from anywhere; dry run by default, nothing is uploaded):
-    python3 tools/kinsta/deploy_site.py              # show what would change on staging
-    python3 tools/kinsta/deploy_site.py --apply      # back up the server files, upload, verify
+Usage (run from anywhere; dry run by default, nothing is uploaded; --target is required, there is no default):
+    python3 tools/kinsta/deploy_site.py --target live              # show what would change on the live site
+    python3 tools/kinsta/deploy_site.py --target live --apply      # back up the server files, upload, verify
+    (--target staging does the same for the staging environment)
 Options:
     --skip-theme   leave the blog theme (public/blog/wp-content/themes/consultus-blog) alone
     --keep-build   keep the temporary stamped copy and print its path
-    --verify-only  upload nothing: just check that staging serves the current files and stamps, and that
+    --verify-only  upload nothing: just check that the target serves the current files and stamps, and that
                    /sitemap.xml lists the page sitemap and every blog post sitemap
 After uploading, Kinsta's page cache is cleared (the home page is served through PHP and Kinsta caches it,
 so without this `/` keeps showing the old page).
@@ -21,16 +22,24 @@ Not touched here: the root public/index.php front controller (generated from _re
 tools/kinsta/build_front_controller.py) and WordPress itself under public/blog/ (except the theme folder).
 Nothing is deleted on the server except files that vanished from the theme folder.
 """
-import argparse, fnmatch, hashlib, os, re, shutil, subprocess, sys, tempfile, urllib.request
+import argparse, fnmatch, hashlib, os, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
-SSH_HOST = 'kinsta-staging'                                  # entry in ~/.ssh/config
+# The two Kinsta environments (same server, same folder name, different SSH port and database). Pick one with --target;
+# there is no default, so nothing can go to the wrong one by accident. SSH_HOST and BASE_URL are set from it in main().
+TARGETS = {
+    'staging': {'ssh_host': 'kinsta-staging', 'base_url': 'https://stg-consultusdigital-staging.kinsta.cloud'},   # entries in ~/.ssh/config
+    'live': {'ssh_host': 'kinsta-live', 'base_url': 'https://consultusdigital.com'},
+}
+SSH_HOST = None
+BASE_URL = None
+TARGET = None
+LIST_ALL = False
 REMOTE_ROOT = '/www/consultusdigital_643/public'
 REMOTE_THEME = REMOTE_ROOT + '/blog/wp-content/themes/consultus-blog'
 REMOTE_BACKUPS = '/www/consultusdigital_643/private'
-BASE_URL = 'https://stg-consultusdigital-staging.kinsta.cloud'
 THEME_SRC = ROOT / 'wp-theme' / 'consultus-blog'
 
 # Never uploaded with the site (same list as the earlier manual rsync, plus local-only files).
@@ -133,10 +142,11 @@ def rsync(label, src, dest, dry, extra=()):
     new = [l.split(' ', 1)[1].strip() for l in res.stdout.splitlines() if re.match(r'^<f\+\+\+', l)]
     deleted = [l.split(' ', 1)[1].strip() for l in res.stdout.splitlines() if l.startswith('*deleting')]
     print(f'  {label}: {len(changed)} file(s) {"would be " if dry else ""}sent ({len(new)} new), {len(deleted)} {"would be " if dry else ""}deleted')
-    for name in changed[:8]:
+    shown = len(changed) if LIST_ALL else 8
+    for name in changed[:shown]:
         print(f'      {name}')
-    if len(changed) > 8:
-        print(f'      ... and {len(changed) - 8} more')
+    if len(changed) > shown:
+        print(f'      ... and {len(changed) - shown} more (add --list-all to see every file)')
     for name in deleted[:5]:
         print(f'      DELETE {name}')
     return changed
@@ -160,9 +170,14 @@ def purge_kinsta_cache():
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (deploy check)'})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.status, r.read()
+    """(status, body) through curl: macOS's own Python (LibreSSL 2.8) cannot complete the TLS handshake with the live
+    site's Cloudflare edge (TLSV1_ALERT_PROTOCOL_VERSION), curl can."""
+    res = subprocess.run(['curl', '-sS', '-L', '-m', '40', '-A', 'Mozilla/5.0 (deploy check)', '-w', '\n%{http_code}', url],
+                         capture_output=True)
+    if res.returncode != 0:
+        raise OSError(res.stderr.decode('utf-8', 'replace').strip()[:80] or f'curl exit {res.returncode}')
+    body, _, code = res.stdout.rpartition(b'\n')
+    return int(code), body
 
 
 def sitemap_locs(xml):
@@ -204,7 +219,7 @@ def check_sitemap():
     bad += not ok
     print(f'  {"ok " if ok else "BAD"} every blog post sitemap ({", ".join(posts) or "none found"}) is listed in /sitemap.xml'
           + (f', MISSING: {", ".join(missing)}' if missing else ''))
-    # Not a failure on staging, a reminder for launch: WordPress still has an http:// address here, so its sitemap does too.
+    # A reminder, not a failure: a WordPress that still has an http:// address prints an http:// sitemap.
     for path in posts:
         try:
             _, body = fetch(BASE_URL + path)
@@ -213,12 +228,12 @@ def check_sitemap():
             continue
         plain = [u for u in urls if u.startswith('http://')]
         if plain:
-            print(f'  note {path}: {len(plain)} of {len(urls)} URLs start with http:// (set the WordPress address to https://consultusdigital.com/blog before launch)')
+            print(f'  note {path}: {len(plain)} of {len(urls)} URLs start with http:// (check the WordPress address)')
     return bad
 
 
 def verify():
-    print('Verifying on staging:')
+    print(f'Verifying on {TARGET}:')
     bad = 0
     for path, stamp in sorted(_stamps.items()):
         url = f'{BASE_URL}{path}?v={stamp}'
@@ -242,11 +257,18 @@ def verify():
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--target', choices=sorted(TARGETS), required=True, help='which Kinsta environment (no default)')
     ap.add_argument('--apply', action='store_true', help='really upload (default is a dry run)')
     ap.add_argument('--skip-theme', action='store_true')
     ap.add_argument('--keep-build', action='store_true')
+    ap.add_argument('--list-all', action='store_true', help='print every file that would be sent, not the first 8')
     ap.add_argument('--verify-only', action='store_true')
     args = ap.parse_args()
+    global SSH_HOST, BASE_URL, TARGET, LIST_ALL
+    TARGET = args.target
+    LIST_ALL = args.list_all
+    SSH_HOST, BASE_URL = TARGETS[TARGET]['ssh_host'], TARGETS[TARGET]['base_url']
+    live = TARGET == 'live'
     dry = not args.apply
     if args.verify_only:
         for f in sorted([*(ROOT / 'assets').glob('*.css'), *(ROOT / 'assets').glob('*.js'), *(ROOT / 'assets' / 'css').glob('*.css')]):   # every shipped stylesheet and script
@@ -261,7 +283,7 @@ def main():
         for built in (site_build, theme_build):
             if built.exists():
                 normalize_permissions(built)
-        print(f'{"DRY RUN" if dry else "APPLY"} -> {SSH_HOST}:{REMOTE_ROOT}')
+        print(f'{"DRY RUN" if dry else "APPLY"} -> {TARGET} ({SSH_HOST}:{REMOTE_ROOT})')
         print(f'Stamped {n_pages} HTML/PHP file(s)' + (f' and {n_theme} theme file(s)' if not args.skip_theme else '') + '. Version stamps:')
         for path, stamp in sorted(_stamps.items()):
             print(f'  {path}?v={stamp}')
@@ -269,11 +291,14 @@ def main():
         if not dry:
             backup_on_server()
         print('Site:')
-        rsync('assets, images, CSS, JS, other non-page files', ROOT, REMOTE_ROOT, dry, excl + ['--exclude', '*.html', '--exclude', '*.php'])
+        # Live: compare by content (files that arrived through Kinsta's push do not carry the repo's dates), and never
+        # delete anything there. Staging keeps the old behaviour (dates, and --delete inside the theme folder only).
+        rsync('assets, images, CSS, JS, other non-page files', ROOT, REMOTE_ROOT, dry,
+              excl + ['--exclude', '*.html', '--exclude', '*.php'] + (['--checksum'] if live else []))
         rsync('pages (stamped HTML/PHP)', site_build, REMOTE_ROOT, dry, ['--checksum'])
         if not args.skip_theme:
             print('Blog theme:')
-            rsync('theme files (stamped)', theme_build, REMOTE_THEME, dry, ['--checksum', '--delete'])
+            rsync('theme files (stamped)', theme_build, REMOTE_THEME, dry, ['--checksum'] + ([] if live else ['--delete']))
         if dry:
             print('\nDry run only: nothing was uploaded. Add --apply to upload.')
         else:

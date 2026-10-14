@@ -77,10 +77,7 @@
           </div>
           <div class="clutch-badge">
             <div class="clutch-left">Reviewed on<div class="clutch-logo">Clutch</div></div>
-            <div class="clutch-rating">
-              <div class="clutch-stars">★★★★☆</div>
-              <div class="clutch-reviews">4.4 rating</div>
-            </div>
+            <div class="clutch-tagline">Top rated internet marketing agency</div>
           </div>
           </div>
           <div class="footer-social">
